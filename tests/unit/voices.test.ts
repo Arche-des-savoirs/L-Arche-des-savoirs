@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { frenchVoices, loadFrenchVoices } from '../../src/platform/voices';
+import { frenchVoices, loadFrenchVoices, loadVoices } from '../../src/platform/voices';
 
 const v = (name: string, lang: string, localService: boolean) => ({ name, lang, localService }) as SpeechSynthesisVoice;
 const all = [
@@ -38,5 +38,28 @@ describe('voix françaises', () => {
 
   it('renvoie une liste vide sans synthèse vocale', async () => {
     expect(await loadFrenchVoices(undefined)).toEqual([]);
+  });
+});
+
+describe('chargement tardif des voix', () => {
+  it("trouve les voix par interrogation même sans voiceschanged", async () => {
+    let ready = false;
+    const synth = { getVoices: () => (ready ? all : []) };
+    setTimeout(() => (ready = true), 300);
+    const res = await loadVoices(synth, 3000);
+    expect(res).toHaveLength(5);
+    expect(res.filter((x) => x.lang.startsWith('fr'))).toHaveLength(4);
+  });
+
+  it('abandonne proprement après le délai', async () => {
+    const res = await loadVoices({ getVoices: () => [] }, 300);
+    expect(res).toEqual([]);
+  });
+});
+
+describe('préférence fr-FR', () => {
+  it('met le français de France avant le Canada, même écrit fr_FR', () => {
+    const list = [v('français Canada', 'fr_CA', true), v('français France', 'fr_FR', true)];
+    expect(frenchVoices(list).map((x) => x.name)).toEqual(['français France', 'français Canada']);
   });
 });

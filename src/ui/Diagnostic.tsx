@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'preact/hooks';
-import { loadFrenchVoices, speak, type VoiceInfo } from '../platform/voices';
+import { loadVoices, speak, type VoiceInfo } from '../platform/voices';
 import { bumpOpenCount, ensurePersistentStorage, type StorageStatus } from '../storage/db';
 import { offlineReady, swStatus } from '../pwa';
 import { wakeLockState } from './App';
@@ -23,12 +23,16 @@ function Row({ label, value, ok }: { label: string; value: string; ok?: boolean 
 
 export function Diagnostic({ onBack }: { onBack: () => void }) {
   const [voices, setVoices] = useState<VoiceInfo[] | null>(null);
+  const refreshVoices = () => {
+    setVoices(null);
+    void loadVoices().then(setVoices);
+  };
   const [storage, setStorage] = useState<StorageStatus | null>(null);
   const [opens, setOpens] = useState<number | null>(null);
   const [online, setOnline] = useState(navigator.onLine);
 
   useEffect(() => {
-    void loadFrenchVoices().then(setVoices);
+    void loadVoices().then(setVoices);
     void ensurePersistentStorage().then(setStorage);
     void bumpOpenCount().then(setOpens);
     const on = () => setOnline(navigator.onLine);
@@ -40,6 +44,7 @@ export function Diagnostic({ onBack }: { onBack: () => void }) {
     };
   }, []);
 
+  const fr = (voices ?? []).filter((v) => v.lang.toLowerCase().startsWith('fr'));
   const scr = `${screen.width} × ${screen.height} (échelle ${devicePixelRatio}), fenêtre ${innerWidth} × ${innerHeight}`;
 
   return (
@@ -66,24 +71,35 @@ export function Diagnostic({ onBack }: { onBack: () => void }) {
           <Row label="Écran" value={scr} />
         </tbody>
       </table>
-      <h2>Voix françaises vues par Edge</h2>
+      <h2>Voix vues par Edge</h2>
+      <div class="ui-voice-actions">
+        <button class="ui-btn ui-btn-small" onClick={refreshVoices}>
+          Rafraîchir
+        </button>
+        <button class="ui-btn ui-btn-small" onClick={() => speak("Bonjour ! Je suis la voix par défaut de l'Arche des Savoirs.")}>
+          Tester la voix par défaut
+        </button>
+      </div>
       {voices === null ? (
-        <p>Recherche des voix…</p>
-      ) : voices.length === 0 ? (
-        <p class="ui-ko">Aucune voix française trouvée.</p>
+        <p>Recherche des voix (jusqu'à 10 secondes)…</p>
       ) : (
-        <ul class="ui-voices">
-          {voices.map((v) => (
-            <li key={v.name}>
-              <span>
-                {v.name} <small>({v.lang}, {v.local ? 'hors ligne' : 'en ligne seulement'})</small>
-              </span>
-              <button class="ui-btn ui-btn-small" onClick={() => speak("Bonjour ! Je suis la voix de l'Arche des Savoirs.", v.name)}>
-                Écouter
-              </button>
-            </li>
-          ))}
-        </ul>
+        <>
+          <p class={fr.length > 0 ? 'ui-ok' : 'ui-ko'}>
+            {'speechSynthesis' in globalThis ? `${voices.length} voix au total, dont ${fr.length} en français.` : 'Synthèse vocale absente de ce navigateur.'}
+          </p>
+          <ul class="ui-voices">
+            {(fr.length > 0 ? fr : voices).map((v) => (
+              <li key={v.name}>
+                <span>
+                  {v.name} <small>({v.lang}, {v.local ? 'hors ligne' : 'en ligne seulement'})</small>
+                </span>
+                <button class="ui-btn ui-btn-small" onClick={() => speak("Bonjour ! Je suis la voix de l'Arche des Savoirs.", v.name)}>
+                  Écouter
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
       )}
     </main>
   );

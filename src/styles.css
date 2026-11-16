@@ -38,3 +38,4 @@ body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color
 .ui-voices { list-style: none; padding: 0; display: grid; gap: 12px; }
 .ui-voices li { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 8px 16px; background: var(--night-2); border-radius: 12px; }
 .ui-voices small { color: var(--muted); }
+.ui-voice-actions { display: flex; gap: 12px; margin-bottom: 12px; }
