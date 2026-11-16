@@ -45,7 +45,7 @@ export function Concert() {
     else setState(n >= 2 ? 'revele' : 'reessai');
   };
   const next = () => {
-    recordResult({ questionId: `${ch.id}-concert-${p}`, player: p, subject: 'musique', level: 2, verdict: state === 'juste' ? 'juste' : 'faux', attempts: tries, helped: false, response: NOTE_NAMES[picked ?? 0] ?? '', at: Date.now() });
+    recordResult({ questionId: `${ch.id}-concert-${p}`, player: p, subject: 'musique', level: 2, verdict: state === 'juste' ? 'juste' : 'faux', attempts: tries, helped: false, response: NOTE_NAMES[picked ?? 0] ?? '', at: Date.now(), prompt: `Mesure : ${m.prompt}`, expected: NOTE_NAMES[m.missing] });
     setK(k + 1), setReady(false), setTries(0), setPicked(null), setState('choix');
   };
   const shown = state === 'juste' || state === 'revele' ? m.missing : null;

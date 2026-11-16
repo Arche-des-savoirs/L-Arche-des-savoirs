@@ -50,7 +50,7 @@ export function Tour({ mancheIndex, player }: { mancheIndex: number; player: Pla
 
   const q = questions[i]!;
   const done = (o: Outcome) => {
-    recordResult({ questionId: q.id, player, subject: q.subject, level: q.level, ...o, at: Date.now() }, !manche.placement);
+    recordResult({ questionId: q.id, player, subject: q.subject, level: q.level, ...o, at: Date.now(), prompt: q.prompt, expected: q.answer === undefined ? undefined : Array.isArray(q.answer) ? q.answer.join(' → ') : String(q.answer) }, !manche.placement);
     if (manche.placement) {
       const next = [...ladder, { level: q.level, correct: o.verdict === 'juste' || o.verdict === 'valide-soeurs', helped: o.helped || o.attempts > 1 }];
       setLadder(next);

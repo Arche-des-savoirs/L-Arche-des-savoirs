@@ -52,6 +52,11 @@ export interface QuestionResult {
   helped: boolean;
   response: string;
   at: number;
+  /** Consigne et réponse attendue, pour l'historique du mode parent. */
+  prompt?: string;
+  expected?: string;
+  /** Décision du parent sur une réponse à valider. */
+  parent?: 'ok' | 'ko';
 }
 
 /** Ce que la difficulté adaptative retient d'un résultat. `null` = ne compte ni pour monter ni pour descendre. */
