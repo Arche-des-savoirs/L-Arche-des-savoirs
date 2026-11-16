@@ -1,6 +1,6 @@
 import { defineConfig } from '@playwright/test';
 
-// Surface Go 3 : écran 1920 × 1280 à 150 % → fenêtre CSS d'environ 1280 × 853.
+// Surface Go 3 mesurée le 16/11 : fenêtre CSS 1239 × 775 à l'échelle 1,55 (app installée).
 export default defineConfig({
   testDir: 'tests/e2e',
   timeout: 60_000,
@@ -8,8 +8,8 @@ export default defineConfig({
   reporter: [['list']],
   use: {
     baseURL: 'http://localhost:4173/L-Arche-des-savoirs/',
-    viewport: { width: 1280, height: 853 },
-    deviceScaleFactor: 1.5,
+    viewport: { width: 1239, height: 775 },
+    deviceScaleFactor: 1.55,
     hasTouch: true,
     locale: 'fr-FR',
     serviceWorkers: 'allow'

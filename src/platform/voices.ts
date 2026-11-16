@@ -10,7 +10,7 @@ export interface VoiceInfo {
 
 interface SynthLike {
   getVoices(): SpeechSynthesisVoice[];
-  addEventListener?(type: 'voiceschanged', cb: () => void, opts?: { once: boolean }): void;
+  addEventListener?(type: 'voiceschanged', cb: () => void): void;
 }
 
 const toInfo = (v: SpeechSynthesisVoice): VoiceInfo => ({ name: v.name, lang: v.lang, local: v.localService });
@@ -22,33 +22,51 @@ export function frenchVoices(all: SpeechSynthesisVoice[]): SpeechSynthesisVoice[
     .sort((a, b) => Number(b.localService) - Number(a.localService) || a.name.localeCompare(b.name));
 }
 
-/** Les voix arrivent parfois après le chargement : on attend `voiceschanged` (1,5 s max). */
-export function loadFrenchVoices(synth: SynthLike | undefined = globalThis.speechSynthesis): Promise<VoiceInfo[]> {
+/**
+ * Toutes les voix vues par le navigateur. Edge remplit parfois la liste tard,
+ * et `voiceschanged` peut partir avant qu'on l'écoute : on interroge aussi
+ * la liste toutes les 250 ms, jusqu'à `timeoutMs`.
+ */
+export function loadVoices(synth: SynthLike | undefined = globalThis.speechSynthesis, timeoutMs = 10000): Promise<VoiceInfo[]> {
   if (!synth) return Promise.resolve([]);
-  const read = () => frenchVoices(synth.getVoices()).map(toInfo);
+  const read = () =>
+    [...synth.getVoices()]
+      .sort((a, b) => Number(b.localService) - Number(a.localService) || a.name.localeCompare(b.name))
+      .map(toInfo);
   const now = read();
   if (now.length > 0) return Promise.resolve(now);
   return new Promise((resolve) => {
-    const timer = setTimeout(() => resolve(read()), 1500);
-    synth.addEventListener?.(
-      'voiceschanged',
-      () => {
-        clearTimeout(timer);
-        resolve(read());
-      },
-      { once: true }
-    );
+    let done = false;
+    const finish = () => {
+      if (done) return;
+      done = true;
+      clearInterval(poll);
+      clearTimeout(timer);
+      resolve(read());
+    };
+    const poll = setInterval(() => {
+      if (synth.getVoices().length > 0) finish();
+    }, 250);
+    const timer = setTimeout(finish, timeoutMs);
+    synth.addEventListener?.('voiceschanged', () => {
+      if (synth.getVoices().length > 0) finish();
+    });
   });
+}
+
+/** Voix françaises seulement, voix hors ligne en premier. */
+export async function loadFrenchVoices(synth: SynthLike | undefined = globalThis.speechSynthesis, timeoutMs = 10000): Promise<VoiceInfo[]> {
+  return (await loadVoices(synth, timeoutMs)).filter((v) => v.lang.toLowerCase().startsWith('fr'));
 }
 
 /** Lit un texte. Hors ligne, seule une voix locale fonctionne : on la préfère. */
 export function speak(text: string, voiceName?: string, rate = 0.95): boolean {
   const synth = globalThis.speechSynthesis;
   if (!synth || typeof SpeechSynthesisUtterance === 'undefined') return false;
-  const voices = frenchVoices(synth.getVoices());
+  const all = synth.getVoices();
   const online = typeof navigator !== 'undefined' ? navigator.onLine : true;
-  const usable = voices.filter((v) => online || v.localService);
-  const voice = usable.find((v) => v.name === voiceName) ?? usable[0];
+  const usable = frenchVoices(all).filter((v) => online || v.localService);
+  const voice = all.find((v) => v.name === voiceName) ?? usable[0];
   synth.cancel();
   const u = new SpeechSynthesisUtterance(text);
   u.lang = voice?.lang ?? 'fr-FR';
