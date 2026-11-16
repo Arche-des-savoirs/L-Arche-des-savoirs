@@ -51,7 +51,7 @@ async function createAvatars(page: Page) {
   }
 }
 
-const NEXT = ['Suivant →', 'Continuer', 'Commencer la manche', 'On reprend !', 'Terminer la séance', 'Voir ce qui se passe', 'Second vote', 'Commencer le vote secret', 'Voir la traduction'];
+const NEXT = ['Ouvrir le chapitre', 'Suivant →', 'Continuer', 'Commencer la manche', 'On reprend !', 'Terminer la séance', 'Voir ce qui se passe', 'Second vote', 'Commencer le vote secret', 'Voir la traduction'];
 
 /** Joue l'étape visible avec une réponse quelconque (juste ou fausse) : sert à traverser une séance entière. */
 async function autoStep(page: Page, voteIndex: { n: number }, captures: Set<string>) {
@@ -118,6 +118,11 @@ async function playUntilTomorrow(page: Page, captures = new Set<string>()) {
 test('première séance : avatars, ouverture, tours, aides, placement, pause, à demain', async ({ page }) => {
   await page.goto('./');
   await createAvatars(page);
+  await expect(page.getByRole('heading', { name: 'La Porte des Trois Lueurs' })).toBeVisible();
+  await expect.poll(() => page.locator('.ui-intro-image').evaluate((i: HTMLImageElement) => i.naturalWidth)).toBeGreaterThan(1000);
+  await page.waitForTimeout(1300); // fin du fondu d'apparition
+  await cap(page, 'intro-chapitre');
+  await page.getByRole('button', { name: 'Ouvrir le chapitre' }).click();
   await expect(page.getByRole('heading', { name: /Jour 1 — L'arrivée à l'Arche/ })).toBeVisible();
   await cap(page, 'ouverture');
   for (let i = 0; i < 6; i++) await page.getByRole('button', { name: 'Suivant →' }).click();

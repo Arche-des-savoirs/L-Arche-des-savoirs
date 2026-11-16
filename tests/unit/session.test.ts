@@ -7,15 +7,19 @@ const ch = CHAPTERS[0]!;
 const order = rotation(0).turnOrder;
 
 describe('déroulé des séances du chapitre 1', () => {
-  it('jour 1 : ouverture, espagnol, 4 manches × 3 tours, une pause au milieu, clôture', () => {
+  it('jour 1 : illustration, ouverture, espagnol, 4 manches × 3 tours, une pause au milieu, clôture', () => {
     const plan = dayPlan(ch, ch.days[0]!, order);
-    expect(plan[0]).toEqual({ kind: 'ouverture' });
-    expect(plan[1]).toEqual({ kind: 'espagnol' });
+    expect(plan[0]).toEqual({ kind: 'intro' });
+    expect(plan[1]).toEqual({ kind: 'ouverture' });
+    expect(plan[2]).toEqual({ kind: 'espagnol' });
     expect(plan.filter((s) => s.kind === 'tour')).toHaveLength(12);
     const pause = plan.findIndex((s) => s.kind === 'pause');
     expect(plan[pause - 1]).toEqual({ kind: 'tour', manche: 1, player: order[2] });
     expect(plan.at(-1)).toEqual({ kind: 'cloture' });
     expect(plan.some((s) => s.kind === 'conseil')).toBe(false);
+  });
+  it("les jours 2 à 5 n'ont pas d'illustration plein écran", () => {
+    for (const d of ch.days.slice(1)) expect(dayPlan(ch, d, order)[0]).toEqual({ kind: 'ouverture' });
   });
   it('jour 5 : le Conseil et la Convergence ouvrent la séance, le Concert la termine', () => {
     const plan = dayPlan(ch, ch.days[4]!, order).map((s) => s.kind);
