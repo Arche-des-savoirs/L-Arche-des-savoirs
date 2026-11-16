@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "icons": "node scripts/make-icons.mjs"
+    "icons": "node scripts/make-icons.mjs",
+    "simulate": "vite-node scripts/simulate-endings.ts"
   },
   "dependencies": {
     "@preact/signals": "^2.11.4",
