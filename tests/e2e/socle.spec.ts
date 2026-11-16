@@ -3,7 +3,9 @@ import { expect, test } from '@playwright/test';
 test("l'accueil s'affiche avec la scène et les boutons", async ({ page }) => {
   await page.goto('./');
   await expect(page.getByRole('heading', { name: "L'Arche des Savoirs" })).toBeVisible();
-  await expect(page.getByRole('img', { name: 'La Porte des Trois Lueurs' })).toBeVisible();
+  const img = page.getByRole('img', { name: /Illustration du chapitre 1/ });
+  await expect(img).toBeVisible();
+  await expect.poll(() => img.evaluate((i: HTMLImageElement) => i.naturalWidth)).toBeGreaterThan(1000);
   await expect(page.getByRole('button', { name: 'Diagnostic' })).toBeVisible();
   await page.screenshot({ path: 'test-results/captures/accueil.png' });
 });
@@ -41,5 +43,8 @@ test("l'app démarre sans réseau une fois installée", async ({ page, context }
   await page.getByRole('button', { name: 'Diagnostic' }).click();
   await expect(page.getByRole('cell', { name: 'Hors ligne', exact: true })).toBeVisible();
   await expect(page.getByText('Prêt : le jeu marche sans réseau')).toBeVisible();
+  // Les illustrations sont dans le cache : elles s'affichent sans réseau.
+  const ok = await page.evaluate(async () => (await Promise.all(['ch01', 'ch15', 'ch30', 'epilogue'].map((n) => fetch(`images/chapitres/${n}.webp`).then((r) => r.ok && r.headers.get('content-type')?.includes('image'))))).every(Boolean));
+  expect(ok).toBe(true);
   await page.screenshot({ path: 'test-results/captures/hors-ligne.png', fullPage: true });
 });

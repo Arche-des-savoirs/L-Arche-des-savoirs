@@ -1,7 +1,7 @@
 // Séance du jour : aiguille vers l'écran de l'étape courante. Chaque étape terminée est sauvegardée.
 import { useEffect, useState } from 'preact/hooks';
-import scene from '../../assets/scenes/porte-trois-lueurs.svg?raw';
 import { NAMES } from '../../engine/profile';
+import { chapterImage } from '../../content/images';
 import { chapter, currentStep, day, finishSession, nextStep, plan, route, save } from '../store';
 import { Card, Dialogue } from '../parts/Common';
 import { Tour } from '../parts/Tour';
@@ -37,6 +37,8 @@ export function Session() {
 
   let body;
   switch (step.kind) {
+    case 'intro':
+      return <ChapterIntro key={key} />;
     case 'ouverture':
       body = (
         <Card wide>
@@ -104,7 +106,7 @@ export function Session() {
 
   return (
     <main class="ui-session">
-      <div class="ui-scene ui-scene-dim" dangerouslySetInnerHTML={{ __html: scene }} />
+      <img class="ui-backdrop ui-backdrop-dim" src={chapterImage(ch.number)} alt="" aria-hidden="true" />
       <header class="ui-session-bar">
         <button class="ui-btn ui-btn-small" onClick={() => (route.value = 'accueil')}>
           ⌂ Accueil
@@ -115,6 +117,32 @@ export function Session() {
         <progress max={plan.value.length} value={progress.step + 1} aria-label="Avancement de la séance" />
       </header>
       <div class="ui-session-body">{body}</div>
+    </main>
+  );
+}
+
+/** Ouverture d'un chapitre : son illustration en plein écran, sans recadrage. */
+function ChapterIntro() {
+  const ch = chapter.value!;
+  const src = chapterImage(ch.number);
+  return (
+    <main class="ui-intro">
+      <img class="ui-intro-blur" src={src} alt="" aria-hidden="true" />
+      <img class="ui-intro-image" src={src} alt={`Illustration du chapitre ${ch.number} : ${ch.title}`} />
+      <div class="ui-intro-caption">
+        <div class="ui-intro-text">
+          <p class="ui-kicker">
+            Acte {ch.act} · Chapitre {ch.number}
+          </p>
+          <h1 class="ui-intro-title">{ch.title}</h1>
+        </div>
+        <button class="ui-btn ui-btn-main" onClick={nextStep}>
+          Ouvrir le chapitre
+        </button>
+      </div>
+      <button class="ui-btn ui-btn-small ui-intro-home" onClick={() => (route.value = 'accueil')}>
+        ⌂ Accueil
+      </button>
     </main>
   );
 }

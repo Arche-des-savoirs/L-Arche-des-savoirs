@@ -15,7 +15,6 @@ html, body, #app { margin: 0; height: 100%; background: var(--night); color: var
 body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color: transparent; }
 
 .ui-home { position: relative; height: 100%; overflow: hidden; }
-.ui-scene, .ui-scene svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .ui-home-panel { position: absolute; left: 0; right: 0; top: 2.5%; text-align: center; padding: 0 24px; pointer-events: none; }
 .ui-title { margin: 0; font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 700; color: var(--gold); text-shadow: 0 2px 0 #10152f, 0 0 24px rgba(244, 201, 93, .35); letter-spacing: .02em; }
 .ui-subtitle { margin: .4rem 0 1rem; color: var(--ink); text-shadow: 0 1px 0 #10152f; }
@@ -43,7 +42,6 @@ body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color
 /* ───────── Séance ───────── */
 .ui-page, .ui-session { position: relative; height: 100%; overflow: hidden; display: flex; flex-direction: column; }
 .ui-page { overflow-y: auto; align-items: center; }
-.ui-scene-dim { opacity: .28; pointer-events: none; }
 .ui-session-bar { position: relative; z-index: 1; display: flex; align-items: center; gap: 20px; padding: 10px 20px; width: 100%; background: rgba(16, 21, 47, .7); }
 .ui-session-bar progress { flex: 1; max-width: 360px; margin-left: auto; height: 10px; accent-color: var(--gold); }
 .ui-session-body { position: relative; z-index: 1; flex: 1; overflow-y: auto; display: flex; justify-content: center; align-items: flex-start; padding: 16px 24px 24px; }
@@ -121,3 +119,18 @@ body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color
 .ui-swatch.ui-selected { outline: 4px solid var(--ink); outline-offset: 2px; }
 .ui-summary { display: flex; gap: 24px; justify-content: center; margin-bottom: 12px; }
 .ui-summary-cell { display: grid; justify-items: center; gap: 4px; }
+
+/* ───────── Illustrations de chapitre ───────── */
+.ui-backdrop { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+.ui-backdrop-dim { opacity: .3; filter: saturate(.8); }
+.ui-backdrop-shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(16, 21, 47, .85) 0%, rgba(16, 21, 47, 0) 26%), linear-gradient(90deg, rgba(16, 21, 47, .8) 0%, rgba(16, 21, 47, 0) 34%); }
+.ui-intro { position: relative; height: 100%; overflow: hidden; background: #10152f; }
+.ui-intro-blur { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); object-fit: cover; filter: blur(28px) brightness(.55); }
+.ui-intro-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; animation: ui-intro-in 1.2s ease-out both; }
+.ui-intro-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 32px 24px; display: flex; align-items: flex-end; gap: 24px; background: linear-gradient(0deg, rgba(16, 21, 47, .92) 0%, rgba(16, 21, 47, .6) 60%, rgba(16, 21, 47, 0) 100%); }
+.ui-intro-caption .ui-kicker { margin: 0 0 4px; }
+.ui-intro-text { flex: 1; }
+.ui-intro-title { margin: 0; font-size: 2.2rem; color: var(--gold); text-shadow: 0 2px 0 #10152f; }
+.ui-intro-home { position: absolute; top: 12px; left: 16px; }
+@keyframes ui-intro-in { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .ui-intro-image { animation: none; } }

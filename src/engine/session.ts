@@ -5,6 +5,7 @@ import type { PlayerId } from './types';
 import { DECISION_DAY } from './game';
 
 export type Step =
+  | { kind: 'intro' }
   | { kind: 'ouverture' }
   | { kind: 'espagnol' }
   | { kind: 'conseil' }
@@ -15,9 +16,10 @@ export type Step =
   | { kind: 'concert' }
   | { kind: 'cloture' };
 
-/** Étapes d'un jour. La Pause Éclair coupe la séance en deux ; le Conseil ouvre le jour 5. */
+/** Étapes d'un jour. L'illustration ouvre le jour 1 ; la Pause Éclair coupe la séance en deux ; le Conseil ouvre le jour 5. */
 export function dayPlan(ch: Chapter, day: Day, turnOrder: readonly PlayerId[]): Step[] {
-  const steps: Step[] = [{ kind: 'ouverture' }];
+  // Le premier jour d'un chapitre s'ouvre sur son illustration en plein écran.
+  const steps: Step[] = day.n === 1 && ch.introImage ? [{ kind: 'intro' }, { kind: 'ouverture' }] : [{ kind: 'ouverture' }];
   if (ch.espagnol.length > 0) steps.push({ kind: 'espagnol' });
   if (day.n === DECISION_DAY && ch.decision) steps.push({ kind: 'conseil' }, { kind: 'convergence' });
   const pauseAfter = Math.ceil(day.manches.length / 2);

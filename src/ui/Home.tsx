@@ -1,5 +1,5 @@
-import scene from '../assets/scenes/porte-trois-lueurs.svg?raw';
 import { chapterOf } from '../content/chapters';
+import { chapterImage } from '../content/images';
 import { route, save, startOrResume } from './store';
 
 function toggleFullscreen() {
@@ -14,7 +14,8 @@ export function Home() {
   const label = game.session ? 'Reprendre la séance' : fresh ? "Commencer l'aventure" : 'Séance du jour';
   return (
     <main class="ui-home">
-      <div class="ui-scene" dangerouslySetInnerHTML={{ __html: scene }} />
+      <img class="ui-backdrop" src={chapterImage(game.position.chapter)} alt={`Illustration du chapitre ${game.position.chapter}${ch ? ` : ${ch.title}` : ''}`} />
+      <div class="ui-backdrop-shade" aria-hidden="true" />
       <div class="ui-home-panel">
         <h1 class="ui-title">L'Arche des Savoirs</h1>
         <p class="ui-subtitle">
