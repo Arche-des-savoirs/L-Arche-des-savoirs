@@ -49,11 +49,17 @@ days:
     title: Le jardin vide
     decor: Les Champs de l'Arche au crépuscule. Les épis sont gris, la brume rampe entre les sillons.
     opening:
-      - { who: narrateur, text: "Le lendemain, l'Arche se réveille sans un grain dans ses greniers. Les champs sont devenus gris, et de petites créatures de brume filent entre les sillons, des épis plein les bras." }
-      - { who: thessaly, text: "Des Oublions. Ils volent les graines, puis ils oublient pourquoi. Il faut rallumer les Champs avant que tout s'efface." }
-      - { who: thessaly, to: axelle, text: "Axelle, ta lueur voit les choses minuscules. Cherche les graines tombées." }
-      - { who: mouf, text: "Bonjour ! Je suis… heu… je suis venu pour… J'ai oublié. Vous voulez un épi ?" }
-      - { who: plume, text: "Regardez cet épi : il y a une trace de plume dessus. Je la connais… mais je ne sais pas d'où." }
+      - { who: narrateur, text: "Le lendemain, l'Arche se réveille sans un grain dans ses greniers. Les cuisiniers ouvrent les sacs : vides. Les boulangers ouvrent les huches : vides. Même les souris de l'Arche, qui ont toujours un petit stock caché, se grattent la tête." }
+      - { who: narrateur, text: "Thessaly mène les apprenties à l'avant du navire, là où s'étendent les Champs de l'Arche, de grandes prairies suspendues au-dessus de la mer. D'habitude, le blé y ondule comme une mer d'or." }
+      - { who: narrateur, text: "Mais ce matin, les champs sont gris. Les épis sont gris, les fleurs sont grises, et une brume basse rampe entre les sillons comme un chat qui chasse. Et dans cette brume courent de petites créatures rondes, les bras chargés d'épis." }
+      - { who: thessaly, text: "Des Oublions. Ce sont des créatures de brouillard. Ils volent les graines… puis ils oublient pourquoi. Il faut rallumer les Champs avant que tout soit effacé." }
+      - { who: thessaly, to: axelle, text: "Axelle, ta lueur voit les choses minuscules. Cherche les graines tombées : chacune est une petite étincelle qui attend." }
+      - { who: narrateur, text: "Un Oublion plus rond que les autres s'arrête net devant les filles. Il a un épi dans la bouche, deux grands yeux étonnés, et l'air de ne plus savoir du tout ce qu'il fait là." }
+      - { who: mouf, text: "Bonjour ! Je suis… heu… je suis venu pour… J'ai oublié. Vous voulez un épi ? Il est très bon. Je crois. Je ne m'en souviens plus." }
+      - { who: maelle, text: "Comment tu t'appelles ?" }
+      - { who: mouf, text: "Mouf ! Non… Moufle ? Mouf. Allez, Mouf. C'est joli, Mouf." }
+      - { who: plume, text: "Regardez cet épi : il y a une trace de plume dessus, toute fine, presque dorée. Je la connais… mais je ne sais pas d'où. C'est comme un mot qu'on a sur le bout de la langue." }
+      - { who: thessaly, text: "Garde cette sensation, Plume. Les souvenirs perdus reviennent souvent par le nez avant de revenir par la tête." }
     manches:
       - id: m1
         title: Les graines tombées
@@ -107,18 +113,26 @@ days:
             - { gen: maths.arrondi }
     pause: "Les Oublions s'enfuient ! Courez sur place comme eux pendant 10 secondes, puis figez-vous comme un épouvantail."
     closing:
-      - { who: narrateur, text: "Quelques graines se rallument d'une lueur dorée. Sur la colline, un garçon en gilet vert vous observe, une carte roulée sous le bras." }
-      - { who: nilo, text: "Pas mal, pour des apprenties. Moi, c'est Nilo. Cartographe. Enfin… presque." }
-      - { who: plume, text: "Sa carte a des bords tout effacés. Bizarre, non ?" }
+      - { who: narrateur, text: "Les graines ramassées se rallument une à une, comme des braises qu'on souffle. Là où elles tombent, un brin de blé doré perce la brume." }
+      - { who: narrateur, text: "Sur la colline, un garçon en gilet vert observe la scène depuis un moment, assis sur un rocher. Il a les cheveux en bataille, des rouleaux de cartes sous le bras, et le sourire de quelqu'un qui en sait plus qu'il ne le dit." }
+      - { who: nilo, text: "Pas mal, pour des apprenties. Moi, c'est Nilo. Cartographe. Enfin… presque cartographe. Disons cartographe en devenir." }
+      - { who: narrateur, text: "Il déroule une carte pour la leur montrer. Mais les bords de la carte sont effacés, comme rongés par la brume. Là où devraient être les rivières et les villes, il n'y a que du blanc." }
+      - { who: plume, text: "Sa carte a des bords tout effacés. Bizarre, non ? Une carte qui oublie… je n'en avais jamais vu." }
+      - { who: nilo, text: "C'est… une carte spéciale. Très rare. On ne pose pas de questions sur les cartes rares. C'est la règle des cartographes." }
 
   # ─────────────────────────── JOUR 2 ───────────────────────────
   - n: 2
     title: Le champ de blé
     decor: Un champ immense où le blé repousse par endroits, doré au milieu de la brume grise.
     opening:
-      - { who: thessaly, text: "Aujourd'hui, nous faisons repousser le blé. Il faut partager les gerbes justement : chaque sillon a droit à sa part." }
-      - { who: nilo, text: "Je peux aider à porter les gerbes. Promis, je ne les garde pas. Enfin… pas toutes." }
-      - { who: mouf, text: "Moi je porte celle-là ! Euh… c'est quoi, une gerbe ?" }
+      - { who: narrateur, text: "Le deuxième jour, le soleil se lève rouge sur les Champs. Au milieu du gris, une bande de blé doré brille déjà, là où les graines ont été rallumées hier. Elle ondule doucement, comme si elle respirait." }
+      - { who: thessaly, text: "Aujourd'hui, nous faisons repousser le blé. Mais attention : la terre de l'Arche est juste. Elle ne donne qu'à ceux qui partagent justement. Chaque sillon a droit à sa part." }
+      - { who: narrateur, text: "Thessaly s'agenouille et pose la main sur la terre. Sous ses doigts, une lumière douce court dans les sillons, comme de l'eau dans des rigoles." }
+      - { who: thessaly, text: "Autrefois, on disait que les Champs de l'Arche étaient nés d'une seule graine, offerte par un enfant à un voyageur affamé. Depuis, chaque épi se souvient de ce partage." }
+      - { who: nilo, text: "Je peux aider à porter les gerbes. Promis, je ne les garde pas. Enfin… pas toutes. Enfin… je plaisante. Presque." }
+      - { who: mouf, text: "Moi je porte celle-là ! Euh… c'est quoi, une gerbe ? Ah, c'est ça ? C'est lourd. Je la pose. Voilà. Mission accomplie." }
+      - { who: thessaly, to: axelle, text: "Axelle, regarde les épis : certains sont doubles, d'autres à moitié. Compte-les bien, la terre aime qu'on soit précis." }
+      - { who: narrateur, text: "Le fauconneau de Rafaelle s'envole au-dessus du champ et pousse un petit cri. Tout au fond, près de la lisière, des pas ont écrasé le blé pendant la nuit. Des pas de bottes, pas des pattes d'Oublion." }
     manches:
       - id: m1
         title: Doubles et moitiés
@@ -171,9 +185,11 @@ days:
             - { gen: maths.fraction-de }
     pause: "Le vent passe sur le blé : balancez-vous de gauche à droite comme des épis, trois fois, puis tournez sur vous-mêmes !"
     closing:
-      - { who: narrateur, text: "Le blé se redresse, doré, sur la moitié du champ. Mais le soir, une gerbe a disparu du tas." }
-      - { who: mouf, text: "C'est pas moi ! Je crois. Je ne me souviens pas." }
-      - { who: plume, text: "Il y a des traces de bottes… et pas des pattes d'Oublion." }
+      - { who: narrateur, text: "Le blé se redresse, doré, sur la moitié du champ. Il chante quand le vent passe, un chant très ancien, sans paroles, qui fait sourire même Thessaly." }
+      - { who: narrateur, text: "Les apprenties empilent les gerbes en un tas magnifique au bord du champ. Mais le soir, quand elles reviennent, une gerbe a disparu du tas." }
+      - { who: mouf, text: "C'est pas moi ! Je crois. Je ne me souviens pas. Mais je crois que ce n'est pas moi. J'ai une tête de voleur ?" }
+      - { who: plume, text: "Il y a des traces de bottes… et pas des pattes d'Oublion. Quelqu'un avec des bottes est venu ici. Quelqu'un qui sait où il va." }
+      - { who: narrateur, text: "Sur la colline, Nilo est assis à la même place qu'hier. Il siffle un air léger, les mains derrière la tête. Il a l'air très, très innocent." }
     reward: "un sac de Graines Dorées"
 
   # ─────────────────────────── JOUR 3 ───────────────────────────
@@ -181,9 +197,14 @@ days:
     title: Le verger
     decor: Un verger aux pommiers gris. Quelques pommes rouges brillent encore sous la brume.
     opening:
-      - { who: thessaly, text: "Le verger a oublié les saisons. Il faut lui rappeler quand fleurir, quand donner ses fruits." }
-      - { who: nilo, text: "Je connais un raccourci pour le verger ! Il est sur ma carte… enfin, sur ce qu'il en reste." }
+      - { who: narrateur, text: "Le troisième jour, la route mène au verger de l'Arche. Les pommiers sont alignés comme une armée endormie, gris de la racine à la cime. Pas une fleur, pas une feuille verte. Seules quelques pommes rouges brillent encore, cachées sous la brume, comme des lanternes oubliées." }
+      - { who: thessaly, text: "Le verger a oublié les saisons. Il ne sait plus quand fleurir, ni quand donner ses fruits. Il faut lui rappeler le temps qui passe : le printemps, l'été, l'automne, l'hiver." }
+      - { who: nilo, text: "Je connais un raccourci pour le verger ! Il est sur ma carte… enfin, sur ce qu'il en reste. Par ici ! Non, par là. Bon, suivez-moi, on verra bien." }
+      - { who: narrateur, text: "Le raccourci de Nilo les fait passer par un buisson de ronces, un ruisseau et un tas de feuilles mortes. Ils arrivent au verger en même temps que s'ils avaient pris le chemin normal, mais beaucoup plus décoiffés." }
       - { who: thessaly, to: axelle, text: "Axelle, compte les pommes tombées. Chaque pomme comptée reprend sa couleur." }
+      - { who: thessaly, text: "Autrefois, les Archivistes cueillaient ces pommes pour faire la compote des fêtes. On disait qu'elle donnait des rêves de voyage." }
+      - { who: plume, text: "Moi, j'en ai mangé une fois. J'ai rêvé que j'étais un nuage. C'était très mou." }
+      - { who: narrateur, text: "Au milieu du verger se dresse un pommier plus vieux que les autres. Sur son tronc, quelqu'un a gravé il y a longtemps une petite lanterne et une plume. Plume s'arrête devant, la queue immobile." }
     manches:
       - id: m1
         title: Les pommes tombées
@@ -235,10 +256,12 @@ days:
             - { gen: maths.multiplication }
     pause: "Cueillette géante : tendez les bras le plus haut possible pour attraper une pomme imaginaire, cinq fois de suite !"
     closing:
-      - { who: narrateur, text: "Les pommiers se couvrent de fleurs, puis de fruits rouges, en un seul souffle. Nilo croque une pomme, très content de lui." }
-      - { who: nilo, text: "Vous voyez ? Mon raccourci marchait. Enfin, à peu près." }
+      - { who: narrateur, text: "D'un seul souffle, les pommiers se couvrent de fleurs blanches, puis de feuilles vertes, puis de fruits rouges et brillants. Les abeilles reviennent en bourdonnant comme si elles n'étaient jamais parties." }
+      - { who: narrateur, text: "Nilo croque une pomme, très content de lui, comme si tout ça était grâce à son raccourci." }
+      - { who: nilo, text: "Vous voyez ? Mon raccourci marchait. Enfin, à peu près. Enfin, on est arrivés." }
       - { who: plume, text: "Nilo, ta carte… d'où elle vient, au juste ?" }
-      - { who: nilo, text: "Oh, celle-là ? Un cadeau. D'un… monsieur. Peu importe !" }
+      - { who: nilo, text: "Oh, celle-là ? Un cadeau. D'un… monsieur. Un monsieur très gentil, très gris. Peu importe ! Qui veut une pomme ?" }
+      - { who: narrateur, text: "Thessaly ne dit rien. Mais elle regarde la carte de Nilo un long moment, et son visage devient soucieux." }
     reward: "un Panier du Verger"
 
   # ─────────────────────────── JOUR 4 ───────────────────────────
@@ -246,9 +269,15 @@ days:
     title: Le moulin
     decor: Un vieux moulin à vent dont les ailes sont immobiles. À ses pieds, un épouvantail grisâtre se penche lentement.
     opening:
-      - { who: thessaly, text: "Le moulin ne tourne plus : sans lui, pas de farine. Et voici son gardien." }
-      - { who: epouvantail, text: "Qui êtes-vous ? Qui suis-je ? Ah oui… l'Épouvantail-Qui-Oublie. Prouvez que vous savez compter, ou partez !" }
-      - { who: plume, text: "Il a l'air plus perdu que méchant, celui-là." }
+      - { who: narrateur, text: "Le quatrième jour, un bruit manque dans les Champs : le grand moulin de l'Arche s'est tu. Ses quatre ailes, larges comme des voiles de navire, sont immobiles contre le ciel. Sans lui, pas de farine, et sans farine, pas de pain pour personne." }
+      - { who: narrateur, text: "Au pied du moulin, un épouvantail grisâtre se penche lentement, d'un côté puis de l'autre, comme quelqu'un qui cherche ses lunettes." }
+      - { who: epouvantail, text: "Qui êtes-vous ? Qui suis-je ? Ah oui… l'Épouvantail-Qui-Oublie. Je garde quelque chose ici. Je ne sais plus quoi. Prouvez que vous savez compter, ou partez !" }
+      - { who: thessaly, text: "C'est le Gardien du moulin. Le Brouillard lui a pris sa mémoire. Il n'est pas méchant : il a peur, comme tous ceux qui ont oublié." }
+      - { who: plume, text: "Il a l'air plus perdu que méchant, celui-là. Il me fait un peu de peine, en fait." }
+      - { who: thessaly, text: "Pour réveiller le moulin, il faudra comprendre comment il marche : la roue, le levier, le vent. Et pour réveiller l'Épouvantail, il faudra lui rappeler à quoi il sert." }
+      - { who: thessaly, to: axelle, text: "Axelle, regarde les ailes du moulin. Combien en a-t-il ? Et combien de tours feront-elles si le vent revient ?" }
+      - { who: mouf, text: "Moi, j'aide ! Je souffle sur les ailes ! Fffff ! … Ça ne marche pas. Je suis un brouillard, pas un vent." }
+      - { who: narrateur, text: "Derrière les meules de foin, une ombre en gilet vert se glisse sans bruit. Personne ne la remarque. Personne, sauf le fauconneau de Rafaelle, qui tourne la tête et ne la quitte plus des yeux." }
     manches:
       - id: m1
         title: Les tables du meunier
@@ -301,10 +330,12 @@ days:
             - { id: ch02-j4-ra-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule −5 − 3.", answer: -8, hint: "Tu descends encore de 3 sous zéro." }
     pause: "Faites tourner vos bras comme les ailes du moulin : dix tours en avant, dix tours en arrière !"
     closing:
-      - { who: narrateur, text: "Les ailes du moulin se remettent à tourner. L'Épouvantail se redresse et sourit pour la première fois." }
-      - { who: epouvantail, text: "Je me souviens ! Je garde le blé pour qu'il pousse, pas pour faire peur. Merci, petites lueurs." }
-      - { who: narrateur, text: "Mais dans le soleil couchant, une silhouette en gilet vert file entre les meules, la dernière gerbe de blé sous le bras." }
+      - { who: narrateur, text: "Les ailes du moulin frémissent, puis se mettent à tourner, d'abord lentement, puis de plus en plus vite. À l'intérieur, la meule chante en écrasant le grain, et une farine blanche et lumineuse s'envole par la fenêtre." }
+      - { who: narrateur, text: "L'Épouvantail se redresse. Ses yeux de bouton brillent. Pour la première fois, il sourit." }
+      - { who: epouvantail, text: "Je me souviens ! Je garde le blé pour qu'il pousse, pas pour faire peur. Merci, petites lueurs. Je vous dois ma mémoire." }
+      - { who: narrateur, text: "Mais dans le soleil couchant, une silhouette en gilet vert file entre les meules, la dernière gerbe de blé sous le bras. Elle court vite, très vite, vers la lisière des Champs." }
       - { who: mouf, text: "Hé ! Lui, il n'a pas oublié ce qu'il volait !" }
+      - { who: plume, text: "C'était Nilo. J'en suis sûr. Il sentait la pomme et la carte mouillée." }
     reward: "la Farine de Lumière"
 
   # ─────────────────────────── JOUR 5 ───────────────────────────
@@ -312,8 +343,11 @@ days:
     title: Le Concert de la Récolte
     decor: Au centre des Champs, la Guitare de l'Arche est posée sur une meule de foin. Le blé attend sa musique.
     opening:
-      - { who: thessaly, text: "Ce soir, nous jouons la mélodie qui fait pousser chaque plante. Mais d'abord, il faut décider pour Nilo." }
-      - { who: plume, text: "Il a pris la dernière gerbe. Sans elle, la mélodie sera incomplète." }
+      - { who: narrateur, text: "Le cinquième soir, tout le peuple de l'Arche se rassemble dans les Champs. Les cuisiniers, les mousses, les vieux archivistes en robe, même les souris. Au centre, posée sur une meule de foin, la Guitare de l'Arche attend." }
+      - { who: thessaly, text: "Ce soir, nous jouons la Mélodie de la Récolte. C'est la plus vieille chanson de l'Arche : elle fait pousser chaque plante qui l'entend. Mais il lui manque une gerbe pour être complète." }
+      - { who: plume, text: "Il a pris la dernière gerbe. Sans elle, la mélodie sera incomplète, comme une phrase sans point." }
+      - { who: narrateur, text: "Tout le monde se tourne vers la lisière. Là, dans l'ombre, Nilo se tient immobile, la gerbe serrée contre lui. Il a l'air moins fier qu'hier. Il a l'air d'avoir froid." }
+      - { who: thessaly, text: "Il nous faut décider ce que nous faisons de lui. C'est à vous, apprenties. Le Conseil de la Lanterne vous appartient." }
     manches:
       - id: m1
         title: Les parts de la gerbe
@@ -358,8 +392,10 @@ days:
         rafaelle: { given: [1, 0.5, 0.5], missing: 2, prompt: "Noire, croche, croche, blanche" }
     pause: "Danse de la récolte : frappez dans vos mains sur le temps, et tapez du pied sur le contretemps !"
     closing:
-      - { who: narrateur, text: "La Guitare chante, et le blé repousse en vagues dorées sur tous les Champs. Les Oublions s'arrêtent de courir et écoutent, la bouche ouverte." }
-      - { who: mouf, text: "C'est joli… Je crois que je m'appelle… non, c'est parti. Mais c'était joli." }
-      - { who: thessaly, text: "La récolte est revenue. Mais regardez : le Brouillard monte du port. La ville n'est pas loin." }
-      - { who: plume, text: "Dans la paille, une lettre est tombée de la poche de Nilo. Elle porte le sceau de Thessaly…" }
+      - { who: narrateur, text: "La Guitare chante, et sa musique roule sur les Champs comme une vague d'or. Partout où elle passe, le blé se redresse, les épis se gonflent, et la brume recule en grondant doucement." }
+      - { who: narrateur, text: "Les Oublions s'arrêtent de courir. Ils écoutent, la bouche ouverte, et certains laissent tomber leurs épis volés pour mieux taper dans leurs mains de brume." }
+      - { who: mouf, text: "C'est joli… Je crois que je m'appelle… non, c'est parti. Mais c'était joli. Je m'en souviendrai. Peut-être." }
+      - { who: thessaly, text: "La récolte est revenue. Le pain cuira demain dans tous les fours de l'Arche. Mais regardez là-bas : le Brouillard monte du port. La ville n'est pas loin." }
+      - { who: narrateur, text: "Thessaly offre aux apprenties une Graine de Lumière. Plantée dans l'Arche, elle fera pousser un petit jardin secret, où l'on pourra se reposer quand tout ira mal." }
+      - { who: plume, text: "Dans la paille, une lettre est tombée de la poche de Nilo. Elle porte le sceau de Thessaly… mais elle n'a jamais été envoyée. Pourquoi Nilo l'avait-il ?" }
     reward: "la Graine de Lumière et un nouveau fragment de la Carte Vivante"

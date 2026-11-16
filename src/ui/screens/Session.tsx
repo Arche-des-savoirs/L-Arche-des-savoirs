@@ -3,7 +3,7 @@ import { useEffect, useState } from 'preact/hooks';
 import { NAMES } from '../../engine/profile';
 import { chapterImage } from '../../content/images';
 import { chapter, currentStep, day, finishSession, nextStep, plan, route, save } from '../store';
-import { Card, Dialogue } from '../parts/Common';
+import { Card, ChapterHeading, Dialogue, roman } from '../parts/Common';
 import { Tour } from '../parts/Tour';
 import { Vote } from '../parts/Vote';
 import { Concert } from '../parts/Concert';
@@ -42,12 +42,7 @@ export function Session() {
     case 'ouverture':
       body = (
         <Card wide>
-          <p class="ui-kicker">
-            Chapitre {ch.number} · {ch.title}
-          </p>
-          <h2 class="ui-card-title">
-            Jour {d.n} — {d.title}
-          </h2>
+          <ChapterHeading chapter={ch.number} title={ch.title} day={d.n} dayTitle={d.title} />
           <p class="ui-decor">{d.decor}</p>
           <Dialogue lines={d.opening} onDone={nextStep} />
         </Card>
@@ -96,7 +91,7 @@ export function Session() {
     case 'cloture':
       body = (
         <Card wide>
-          <h2 class="ui-card-title">Fin du jour {d.n}</h2>
+          <ChapterHeading chapter={ch.number} title={ch.title} day={d.n} dayTitle="la nuit tombe" />
           <Dialogue lines={d.closing} onDone={finishSession} doneLabel="Terminer la séance" />
           {d.reward && <p class="ui-reward">🏅 Récompense : {d.reward}</p>}
         </Card>
@@ -112,7 +107,7 @@ export function Session() {
           ⌂ Accueil
         </button>
         <span>
-          Chapitre {ch.number} · Jour {d.n}
+          Chapitre {roman(ch.number)} · Jour {roman(d.n)}
         </span>
         <progress max={plan.value.length} value={progress.step + 1} aria-label="Avancement de la séance" />
       </header>
@@ -131,8 +126,8 @@ function ChapterIntro() {
       <img class="ui-intro-image" src={src} alt={`Illustration du chapitre ${ch.number} : ${ch.title}`} />
       <div class="ui-intro-caption">
         <div class="ui-intro-text">
-          <p class="ui-kicker">
-            Acte {ch.act} · Chapitre {ch.number}
+          <p class="ui-grimoire-kicker">
+            Acte {roman(ch.act)} · Chapitre {roman(ch.number)}
           </p>
           <h1 class="ui-intro-title">{ch.title}</h1>
         </div>

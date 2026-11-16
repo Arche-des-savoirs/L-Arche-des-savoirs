@@ -51,13 +51,18 @@ days:
     title: L'arrivée à l'Arche
     decor: Le pont d'un navire-bibliothèque sur une mer de brume. Du sable gris recouvre une partie des étagères.
     opening:
-      - { who: narrateur, text: "Trois livres s'allument en même temps dans trois maisons : un livre doré, un livre blanc, un livre rose. Les pages s'envolent dans la brume et déposent trois enfants sur le pont de l'Arche." }
-      - { who: thessaly, text: "Trois lueurs, un seul jour. L'Arche n'avait pas appelé trois apprenties à la fois depuis des siècles. Axelle, Maelle, Rafaelle : approchez." }
-      - { who: thessaly, to: axelle, text: "Axelle, ta lanterne est dorée comme le matin. Tu es la Veilleuse : rien de petit ne t'échappe." }
-      - { who: thessaly, to: maelle, text: "Maelle, ta lanterne est blanche comme le plein jour. Tu es la Cartographe : les chemins te font confiance, même les plus fous." }
-      - { who: thessaly, to: rafaelle, text: "Rafaelle, ta lanterne est rose comme le ciel du soir. Tu es l'Archiviste : tu lis ce que les anciens ont laissé. Bienvenida." }
-      - { who: narrateur, text: "Plume se pose sur chaque épaule et prend un instant la forme de chaque compagnon : le lionceau d'Axelle, le louveteau de Maelle, le fauconneau de Rafaelle." }
-      - { who: thessaly, text: "Le Brouillard d'Oubli monte. Pour le repousser, il faut ouvrir la Porte des Trois Lueurs. Elle ne s'ouvre que si vous trouvez les trois clés ensemble." }
+      - { who: narrateur, text: "Écoutez. Il existe, quelque part entre le jour et le rêve, une mer que personne ne trouve sur les cartes : la Mer des Jours. Sur cette mer navigue un navire immense, plus haut qu'une cathédrale, dont les coques et les tours sont faites d'étagères. C'est l'Arche des Savoirs. Elle porte tous les livres du monde, et dans chaque livre dort un souvenir." }
+      - { who: narrateur, text: "Ce soir-là, dans trois maisons, trois livres se sont allumés en même temps. Un livre doré, comme le soleil qui se lève. Un livre blanc, comme le plein midi. Un livre rose, comme le ciel du soir. Leurs pages se sont envolées en tourbillon, tels des oiseaux de lumière, et elles ont emporté trois sœurs à travers la nuit." }
+      - { who: narrateur, text: "Quand le vent retombe, Axelle, Maelle et Rafaelle se tiennent sur le pont de l'Arche. Le bois craque doucement sous leurs pieds. Des lanternes flottent au-dessus des mâts, et l'air sent le papier ancien, la cire et le sel." }
+      - { who: thessaly, text: "Trois lueurs, en un seul soir. Cela n'était plus arrivé depuis des siècles. Je m'appelle Thessaly, Grande Archiviste de l'Arche. Approchez, n'ayez pas peur : ce navire vous attendait." }
+      - { who: thessaly, to: axelle, text: "Axelle, ta lanterne est dorée comme le matin. Tu seras la Veilleuse : rien de petit ne t'échappe, ni une graine, ni un secret, ni une étoile." }
+      - { who: thessaly, to: maelle, text: "Maelle, ta lanterne est blanche comme le plein jour. Tu seras la Cartographe : les chemins te font confiance, même les plus fous." }
+      - { who: thessaly, to: rafaelle, text: "Rafaelle, ta lanterne est rose comme le ciel du soir. Tu seras l'Archiviste : tu sauras lire ce que les anciens ont laissé. Bienvenida, como dicen en el sur." }
+      - { who: narrateur, text: "Alors une petite boule de lumière rousse dégringole du grand mât. C'est un renardeau, avec une lanterne dorée accrochée au bout de la queue. Il fait une pirouette, une deuxième… et pouf ! le voilà coupé en trois petits renards de lumière, un sur chaque épaule." }
+      - { who: plume, text: "C'est moi le vrai Plume ! — Non, c'est moi ! — Arrêtez, c'est évidemment moi, j'ai la plus belle queue !" }
+      - { who: narrateur, text: "Les trois étincelles se chamaillent, puis se changent en compagnons : un lionceau doré pour Axelle, un louveteau gris-bleu pour Maelle, un fauconneau caramel pour Rafaelle. Plume, redevenu un seul renard, fait semblant de n'avoir rien vu." }
+      - { who: thessaly, text: "Écoutez-moi bien, maintenant. Depuis quelques nuits, un Brouillard d'Oubli monte de la mer. Là où il passe, les livres se vident et les gens oublient. Du sable gris tombe des étagères, et personne ne sait d'où il vient." }
+      - { who: thessaly, text: "Au cœur de l'Arche se trouve la Porte des Trois Lueurs. Si elle s'ouvre, l'Arche reprendra des forces. Mais elle n'obéit qu'à trois clés, trouvées ensemble. Avant cela, le Gardien du Seuil veut savoir ce que vous valez. Montez l'échelle des savoirs, marche après marche." }
     manches:
       - id: m1
         title: L'épreuve d'entrée
@@ -135,17 +140,26 @@ days:
             - { id: ch01-j1-ra-m4b, subject: maths, level: 4, kind: nombre, prompt: "L'huile représente 25 % de 80 mL de mélange. Combien de mL d'eau y a-t-il ?", answer: 60, hint: "25 % de 80, c'est 20 mL d'huile." }
     pause: "Gardiennes, debout ! Comptez ensemble 10 sauts, ou faites trois pas de danse au rythme de la guitare."
     closing:
-      - { who: narrateur, text: "Le Gardien se dissout. Un fragment de carte tombe : trois chiffres s'y dessinent, mais ils sont mélangés." }
-      - { who: plume, text: "Ça sent… la maison. Ça sent quelqu'un qui cherche." }
-      - { who: thessaly, text: "Demain, nous suivrons le fil des signes. Reposez-vous." }
+      - { who: narrateur, text: "La dernière marche s'illumine. Le Gardien du Seuil, une haute silhouette de pierre et de lierre, incline lentement la tête, puis se dissout en poussière d'étoiles." }
+      - { who: narrateur, text: "À sa place tombe un fragment de carte, tiède comme une main. Trois chiffres y brillent, mais ils sont mélangés, comme si quelqu'un avait voulu les cacher." }
+      - { who: plume, text: "Ça sent… la maison. Ça sent quelqu'un qui cherche. Je ne sais pas pourquoi je dis ça. Oubliez." }
+      - { who: thessaly, text: "Vous avez bien travaillé, toutes les trois. Ce soir, vous dormirez dans la cabine des apprenties, sous les hublots qui regardent les étoiles." }
+      - { who: narrateur, text: "Mais avant de s'endormir, Rafaelle remarque une chose étrange : sur l'étagère près de son lit, un livre a perdu tous ses mots. À leur place, il ne reste qu'un fin sable gris." }
 
   # ─────────────────────────── JOUR 2 ───────────────────────────
   - n: 2
     title: La Salle des Signes
     decor: Une salle ronde aux murs couverts de lettres et de nombres, des chiffres recouverts de sable gris.
     opening:
-      - { who: thessaly, text: "Les signes du mur se sont mélangés. Remettez-les en ordre, et la première clé apparaîtra." }
-      - { who: plume, text: "Moi je compte jusqu'à… heu… beaucoup. Vous, vous comptez mieux." }
+      - { who: narrateur, text: "Le matin se lève sur la Mer des Jours. Les voiles de l'Arche se gonflent d'un vent doux qui sent l'encre fraîche, et les mouettes de papier tournent autour des mâts." }
+      - { who: narrateur, text: "Thessaly guide les trois sœurs dans un escalier en colimaçon qui descend, descend, jusqu'à une porte ronde couverte de chiffres. Derrière elle s'ouvre la Salle des Signes." }
+      - { who: narrateur, text: "C'est une salle ronde comme l'intérieur d'une montre. Sur ses murs, des milliers de lettres et de nombres sont gravés dans la pierre. Autrefois, ils brillaient et chantaient. Aujourd'hui, ils sont couverts de sable gris, et ils se sont mélangés comme des feuilles après la tempête." }
+      - { who: thessaly, text: "Chaque signe de cette salle a une place. Quand ils sont en ordre, ils forment une clé. Le Brouillard les a mélangés pour que personne ne la retrouve." }
+      - { who: thessaly, to: axelle, text: "Axelle, tu vois ce petit chiffre qui tremble là-bas, sous la poussière ? Il attend que quelqu'un le remette à sa place." }
+      - { who: plume, text: "Moi, je compte jusqu'à… heu… beaucoup. Après beaucoup, il y a quoi ? Beaucoup-et-demi ?" }
+      - { who: maelle, text: "Après beaucoup, il y a « encore plus ». Tout le monde sait ça, Plume." }
+      - { who: narrateur, text: "Le louveteau de Maelle pose sa truffe contre le mur et grogne doucement. Sous ses yeux, une rangée de nombres frissonne, comme si elle se réveillait." }
+      - { who: thessaly, text: "Le Gardien des Signes vit dans les murs. Il ne se montre qu'à ceux qui savent compter avec patience. Commencez par les suites : elles sont le chemin le plus sûr vers la clé." }
     manches:
       - id: m1
         title: Les suites du mur
@@ -198,8 +212,11 @@ days:
             - { gen: maths.fraction-de }
     pause: "Mime ton compagnon : le lion rugit, le loup hurle à la lune, le faucon déploie ses ailes !"
     closing:
-      - { who: narrateur, text: "Les signes reprennent leur place. Au centre du mur, une clé dorée se détache : la Clé des Signes." }
-      - { who: plume, text: "Une clé ! Je savais qu'elle était là. Enfin… presque." }
+      - { who: narrateur, text: "Un à un, les signes reprennent leur place. Le sable gris glisse des murs comme une neige qui fond, et toute la salle se met à briller d'un bleu profond." }
+      - { who: narrateur, text: "Au centre, là où les murs se rejoignent, une clé dorée se détache de la pierre et descend lentement, en tournant sur elle-même, jusqu'aux mains d'Axelle." }
+      - { who: plume, text: "Une clé ! Je savais qu'elle était là. Enfin… presque. Enfin… j'espérais." }
+      - { who: thessaly, text: "La Clé des Signes. Une sur trois. Gardez-la bien : le Brouillard voudra la reprendre." }
+      - { who: narrateur, text: "Ce soir-là, Plume reste longtemps éveillé à la proue, à regarder la mer. Sa lanterne clignote, comme si elle cherchait à envoyer un message à quelqu'un, très loin." }
     reward: "la Clé des Signes"
 
   # ─────────────────────────── JOUR 3 ───────────────────────────
@@ -207,8 +224,15 @@ days:
     title: La Salle des Chemins
     decor: Une rotonde dont le sol est un grand planisphère aux couleurs délavées.
     opening:
-      - { who: thessaly, text: "Les chemins du monde se sont effacés du sol. Maelle, ton loup sent déjà le nord, n'est-ce pas ?" }
-      - { who: maelle, text: "Il dit que le nord, c'est par là. Ou par là. Il réfléchit." }
+      - { who: narrateur, text: "Le troisième jour, l'Arche entre dans un banc de brume si épais que les lanternes des mâts ne sont plus que des points pâles. On n'entend plus que le clapotis de l'eau, et le grincement du bois." }
+      - { who: narrateur, text: "Thessaly ouvre une porte de cuivre. Derrière, une immense rotonde : son sol est une carte du monde, peinte il y a mille ans. Mais les couleurs ont pâli, et les chemins qui reliaient les villes se sont effacés, comme des traces de pas dans la neige." }
+      - { who: thessaly, text: "Voici la Salle des Chemins. Chaque route que les marins de l'Arche ont suivie est inscrite ici. Si les chemins disparaissent, l'Arche ne saura plus où aller." }
+      - { who: thessaly, to: maelle, text: "Maelle, ton louveteau sent déjà le nord, n'est-ce pas ?" }
+      - { who: maelle, text: "Il dit que le nord, c'est par là. Ou par là. Il réfléchit. C'est un loup très réfléchi." }
+      - { who: narrateur, text: "Le louveteau tourne trois fois sur lui-même, la boussole dorée à son cou s'agite… puis s'arrête net, pointée vers une montagne peinte sur le sol." }
+      - { who: plume, text: "Moi aussi, je sens le nord ! Il sent… le fromage. Non, pardon, ça c'est la cuisine." }
+      - { who: thessaly, to: rafaelle, text: "Pour redessiner les chemins, il faudra mesurer les distances, calculer les durées et suivre la lumière. Rafaelle, ton fauconneau voit loin : qu'il surveille le plafond." }
+      - { who: narrateur, text: "Car là-haut, dans l'ombre de la coupole, quelque chose bouge. Une fine pluie de sable gris tombe sans bruit, grain après grain, sur la carte du monde." }
     manches:
       - id: m1
         title: Le planisphère
@@ -266,8 +290,11 @@ days:
             - { gen: maths.fraction-de }
     pause: "Boussole humaine : tout le monde se tourne vers le nord… puis vers le sud… puis on tourne sur soi-même !"
     closing:
-      - { who: narrateur, text: "Les routes se redessinent sur le sol. Au bout de la plus longue, une clé blanche brille : la Clé des Routes." }
-      - { who: thessaly, text: "Deux clés. Il en manque une. Et le sable gris continue de tomber." }
+      - { who: narrateur, text: "Les routes se redessinent sur le sol, une à une, en fils d'argent. Des mers bleues reprennent leur couleur, des forêts verdissent, des montagnes se dressent dans la lumière." }
+      - { who: narrateur, text: "Au bout du plus long chemin, là où il touche le bord du monde, une clé blanche brille comme une étoile tombée. Maelle la ramasse : elle est fraîche comme l'eau d'une source." }
+      - { who: thessaly, text: "Deux clés. Il en manque une. Et le sable gris continue de tomber… plus vite qu'hier." }
+      - { who: plume, text: "Je n'aime pas ce sable. Il me fait penser à… à rien. C'est ça qui est bizarre : il me fait penser à rien du tout." }
+      - { who: narrateur, text: "Cette nuit-là, Axelle rêve d'une plage grise et d'une lanterne qui s'éloigne sur l'eau. Quand elle se réveille, elle ne se souvient plus de rien. Seule sa lanterne dorée brille un peu plus fort que d'habitude." }
     reward: "la Clé des Routes"
 
   # ─────────────────────────── JOUR 4 ───────────────────────────
@@ -275,8 +302,15 @@ days:
     title: La Salle des Âges
     decor: Un couloir en spirale ; chaque tour descend d'une époque.
     opening:
-      - { who: thessaly, text: "Ici dorment les siècles. Rafaelle, tu sauras lire ce qu'ils ont laissé." }
-      - { who: plume, text: "Il fait noir… Ma lanterne fait de son mieux." }
+      - { who: narrateur, text: "Le quatrième jour, Thessaly conduit les apprenties vers le cœur le plus ancien de l'Arche. Ici, les couloirs sont si vieux que le bois est devenu pierre, et la pierre est devenue presque transparente." }
+      - { who: narrateur, text: "Devant elles s'ouvre un couloir en spirale qui descend dans le noir. À chaque tour, l'air change : il sent d'abord le papier, puis le parchemin, puis l'argile des tablettes, puis la fumée des premiers feux." }
+      - { who: thessaly, text: "C'est la Salle des Âges. Chaque tour de la spirale descend d'une époque. Tout en bas dorment les premiers souvenirs des hommes." }
+      - { who: thessaly, to: rafaelle, text: "Rafaelle, c'est ici que tu seras la plus précieuse. Tu sauras lire ce que les siècles ont laissé, même quand l'écriture a vieilli." }
+      - { who: rafaelle, text: "Si les murs me parlent en latin, je ferai de mon mieux. S'ils parlent en espagnol, ça ira tout seul." }
+      - { who: plume, text: "Il fait noir… Ma lanterne fait de son mieux. Elle fait vraiment de son mieux. Vous voulez que je la secoue ?" }
+      - { who: narrateur, text: "La lanterne de Plume éclaire des fresques : des chasseurs qui dessinent des bisons, des bâtisseurs qui élèvent des pyramides, des moines qui recopient des livres à la lueur d'une bougie. Tous ont un point commun : ils transmettent ce qu'ils savent." }
+      - { who: thessaly, text: "La dernière clé est cachée tout au fond. Mais pour descendre, il faut remettre les époques dans l'ordre. Le Gardien des Âges n'ouvre le passage qu'à ceux qui savent d'où ils viennent." }
+      - { who: narrateur, text: "Tout en bas, très loin, quelque chose respire lentement. Une lueur grise monte, puis s'éteint, puis remonte, comme le battement d'un cœur endormi." }
     manches:
       - id: m1
         title: La frise des époques
@@ -341,8 +375,12 @@ days:
             - { gen: maths.multiplication }
     pause: "Statues du temps : quand la musique s'arrête, figez-vous comme une statue antique !"
     closing:
-      - { who: narrateur, text: "Au fond de la spirale, une clé rose sort de la pierre : la Clé des Âges. Du sable gris coule du plafond." }
-      - { who: plume, text: "Hiii ! … Non, rien. J'ai juste éternué. En criant." }
+      - { who: narrateur, text: "Au fond de la spirale, la pierre s'ouvre comme une fleur. Une clé rose en sort, encore tiède, gravée de minuscules lettres que seule Rafaelle sait lire : « Celui qui se souvient n'est jamais seul. »" }
+      - { who: narrateur, text: "Mais au même instant, un filet de sable gris coule du plafond, puis un autre, puis un troisième. La lueur grise, tout en bas, s'est rapprochée." }
+      - { who: plume, text: "Hiii ! … Non, rien. J'ai juste éternué. En criant. Ça arrive à tout le monde." }
+      - { who: thessaly, text: "Remontons. Vite, mais sans courir. Le Brouillard sent la peur, mais il ne supporte pas les rires." }
+      - { who: narrateur, text: "Alors les trois sœurs remontent la spirale en riant de l'éternuement de Plume, et le sable gris, derrière elles, s'arrête de couler." }
+      - { who: thessaly, text: "Demain, nous jouerons pour la Porte. Dormez bien : il vous faudra vos trois voix." }
     reward: "la Clé des Âges"
 
   # ─────────────────────────── JOUR 5 ───────────────────────────
@@ -350,8 +388,13 @@ days:
     title: Le Concert de la Porte
     decor: Devant la Porte des Trois Lueurs, trois cordes tendues attendent les trois clés.
     opening:
-      - { who: thessaly, text: "Voici la Guitare de l'Arche. La Porte ne s'ouvre que si les trois clés sonnent ensemble." }
-      - { who: thessaly, text: "Une mesure dure 4 temps. Ronde : 4 temps. Blanche : 2. Noire : 1. Croche : un demi-temps." }
+      - { who: narrateur, text: "Le cinquième jour, toute l'Arche retient son souffle. Les livres se taisent sur les étagères, les voiles ne claquent plus, et même la mer semble écouter." }
+      - { who: narrateur, text: "Au bout d'un long couloir de colonnes se dresse la Porte des Trois Lueurs. Elle est haute comme trois arbres, sculptée de lianes et de constellations. En son centre, trois serrures attendent : une dorée, une blanche, une rose." }
+      - { who: thessaly, text: "Voici la Guitare de l'Arche. Elle a été construite par les premiers Archivistes. Ses cordes ne vibrent que si plusieurs cœurs jouent ensemble." }
+      - { who: thessaly, text: "La Porte ne s'ouvre pas à la force. Elle s'ouvre à la musique. Chacune de vous jouera sa mesure, et les trois clés devront sonner ensemble." }
+      - { who: thessaly, text: "Souvenez-vous : une mesure dure quatre temps. La ronde dure quatre temps, la blanche deux, la noire un, et la croche un demi-temps." }
+      - { who: plume, text: "Moi, je chante faux. Mais très fort. C'est une qualité, non ?" }
+      - { who: narrateur, text: "Mais sur le seuil de la Porte, quelque chose attire l'œil de Plume : une trace de sable gris, longue et fine, qui serpente vers le pont. Comme si quelqu'un était venu ici pendant la nuit." }
     manches:
       - id: m1
         title: Les trois partitions
@@ -393,7 +436,10 @@ days:
         rafaelle: { given: [2, 1, 0.5], missing: 0.5, prompt: "Blanche, noire, croche, croche" }
     pause: "Danse et guitare : inventez ensemble une phrase de trois mesures et jouez-la !"
     closing:
-      - { who: narrateur, text: "La Porte s'ouvre sur le Hall des Cartes : le plafond est une carte du monde qui palpite. Les trois clés fusionnent en une Lanterne." }
-      - { who: thessaly, text: "Vous avez joué à trois voix, et la Porte a écouté. C'est la première fois depuis longtemps qu'elle s'ouvre sans force." }
-      - { who: narrateur, text: "Plume s'approche d'une trace de sable gris sur le seuil et frissonne. Au loin, le jardin de l'Arche a perdu sa récolte, et un inconnu observe depuis l'ombre." }
+      - { who: narrateur, text: "La dernière note s'envole. Pendant un instant, il n'y a plus un bruit. Puis les trois serrures s'allument en même temps, dorée, blanche et rose, et la Porte s'ouvre sans un grincement." }
+      - { who: narrateur, text: "Derrière elle s'étend le Hall des Cartes. Son plafond est une immense carte du monde qui palpite comme un ciel vivant. Les trois clés s'envolent des mains des filles, se rejoignent dans les airs, et fondent en une seule lanterne." }
+      - { who: thessaly, text: "Vous avez joué à trois voix, et la Porte a écouté. C'est la première fois depuis très longtemps qu'elle s'ouvre sans force. Vous êtes désormais apprenties de l'Arche." }
+      - { who: narrateur, text: "Thessaly pose sur leurs épaules trois capes bleu nuit, brodées d'étoiles d'or. Elles sont un peu grandes, mais elles sentent la lavande et l'aventure." }
+      - { who: plume, text: "Quand vous êtes là, la trace fait moins peur. Mais elle est toujours là. Et elle sent… je ne sais pas. Elle sent quelqu'un de triste." }
+      - { who: narrateur, text: "Au même moment, loin à l'avant du navire, le jardin de l'Arche perd sa récolte en une seule nuit. Et dans l'ombre des épis gris, un inconnu observe les lumières, une carte roulée sous le bras." }
     reward: "les Capes d'Apprenties, la Guitare de l'Arche et le premier fragment de la Carte Vivante"

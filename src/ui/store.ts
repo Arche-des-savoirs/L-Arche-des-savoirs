@@ -111,6 +111,10 @@ export function setPin(pin: string) {
 export function setVoice(voiceName: string | undefined, rate: number) {
   update((s) => ({ ...s, settings: { ...s.settings, voiceName, rate } }));
 }
+export const autoRead = () => save.value.settings.autoRead !== false;
+export function setAutoRead(on: boolean) {
+  update((s) => ({ ...s, settings: { ...s.settings, autoRead: on } }));
+}
 export function parentDecide(session: number, index: number, verdict: 'ok' | 'ko') {
   update((s) => ({ ...s, history: decide(s.history, session, index, verdict) }));
 }
