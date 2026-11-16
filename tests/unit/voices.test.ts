@@ -56,3 +56,10 @@ describe('chargement tardif des voix', () => {
     expect(res).toEqual([]);
   });
 });
+
+describe('préférence fr-FR', () => {
+  it('met le français de France avant le Canada, même écrit fr_FR', () => {
+    const list = [v('français Canada', 'fr_CA', true), v('français France', 'fr_FR', true)];
+    expect(frenchVoices(list).map((x) => x.name)).toEqual(['français France', 'français Canada']);
+  });
+});

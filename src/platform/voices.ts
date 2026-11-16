@@ -15,11 +15,16 @@ interface SynthLike {
 
 const toInfo = (v: SpeechSynthesisVoice): VoiceInfo => ({ name: v.name, lang: v.lang, local: v.localService });
 
+/** Français de France d'abord (Edge écrit parfois « fr_FR » au lieu de « fr-FR »). */
+const isFrFR = (lang: string) => /^fr[-_]fr$/i.test(lang);
+const byPreference = (a: SpeechSynthesisVoice, b: SpeechSynthesisVoice) =>
+  Number(b.localService) - Number(a.localService) || Number(isFrFR(b.lang)) - Number(isFrFR(a.lang)) || a.name.localeCompare(b.name);
+
 /** Voix fr-*, voix locales (hors ligne) en premier. */
 export function frenchVoices(all: SpeechSynthesisVoice[]): SpeechSynthesisVoice[] {
   return all
     .filter((v) => v.lang.toLowerCase().startsWith('fr'))
-    .sort((a, b) => Number(b.localService) - Number(a.localService) || a.name.localeCompare(b.name));
+    .sort(byPreference);
 }
 
 /**
@@ -30,9 +35,7 @@ export function frenchVoices(all: SpeechSynthesisVoice[]): SpeechSynthesisVoice[
 export function loadVoices(synth: SynthLike | undefined = globalThis.speechSynthesis, timeoutMs = 10000): Promise<VoiceInfo[]> {
   if (!synth) return Promise.resolve([]);
   const read = () =>
-    [...synth.getVoices()]
-      .sort((a, b) => Number(b.localService) - Number(a.localService) || a.name.localeCompare(b.name))
-      .map(toInfo);
+    [...synth.getVoices()].sort(byPreference).map(toInfo);
   const now = read();
   if (now.length > 0) return Promise.resolve(now);
   return new Promise((resolve) => {
