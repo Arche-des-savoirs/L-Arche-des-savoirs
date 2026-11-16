@@ -9,8 +9,9 @@ import type { Profile } from '../engine/profile';
 import type { PlayerId } from '../engine/types';
 import type { Subject } from '../content/schema';
 import { emptySave, loadSave, writeSave, type SaveData } from '../storage/save';
+import { decide } from '../engine/parent';
 
-export type Route = 'chargement' | 'accueil' | 'diagnostic' | 'avatars' | 'seance' | 'a-demain' | 'bientot';
+export type Route = 'chargement' | 'accueil' | 'diagnostic' | 'parent' | 'avatars' | 'seance' | 'a-demain' | 'bientot';
 export const route = signal<Route>('chargement');
 export const save = signal<SaveData>(emptySave());
 export const lastError = signal<string | null>(null);
@@ -91,9 +92,32 @@ export function nextStep() {
   update((x) => ({ ...x, progress: { ...x.progress!, step: x.progress!.step + 1 } }));
 }
 
-export function finishSession() {
+export function finishSession(now = Date.now()) {
+  const before = save.value;
   if (!dispatch({ type: 'TERMINER_SESSION' })) return;
+  const p = before.progress;
+  const sess = before.game.session;
+  if (p && sess)
+    update((s) => ({ ...s, history: [...s.history, { chapter: p.chapter, day: p.day, startedAt: sess.startedAt, endedAt: now, extra: sess.extra, results: p.results }] }));
   route.value = 'a-demain';
+}
+
+// ───────── Mode parent ─────────
+
+export const checkPin = (pin: string) => pin === save.value.settings.pin;
+export function setPin(pin: string) {
+  update((s) => ({ ...s, settings: { ...s.settings, pin } }));
+}
+export function setVoice(voiceName: string | undefined, rate: number) {
+  update((s) => ({ ...s, settings: { ...s.settings, voiceName, rate } }));
+}
+export function parentDecide(session: number, index: number, verdict: 'ok' | 'ko') {
+  update((s) => ({ ...s, history: decide(s.history, session, index, verdict) }));
+}
+/** Remplace toute la sauvegarde par un import (après confirmation du parent). */
+export async function replaceSave(data: SaveData) {
+  save.value = data;
+  await persist();
 }
 
 export function useTeamCall(manche: number) {

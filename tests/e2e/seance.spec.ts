@@ -182,6 +182,15 @@ test('première séance : avatars, ouverture, tours, aides, placement, pause, à
   await page.getByRole('button', { name: "Retour à l'accueil" }).click();
   await page.getByRole('button', { name: 'Séance du jour' }).click();
   await expect(page.getByText('La session du jour est déjà jouée')).toBeVisible();
+
+  // La séance jouée apparaît dans l'historique du mode parent.
+  await page.getByRole('button', { name: "Retour à l'accueil" }).click();
+  await page.getByRole('heading', { name: "L'Arche des Savoirs" }).dispatchEvent('pointerdown');
+  await page.waitForTimeout(3200);
+  for (const d of '0000') await page.locator('.ui-pin-keys .ui-key', { hasText: new RegExp(`^${d}$`) }).click();
+  await page.getByRole('tab', { name: 'Historique' }).click();
+  await expect(page.locator('.ui-history-row')).toHaveCount(1);
+  await expect(page.locator('.ui-history-row')).toContainText('Ch. 1 · Jour 1');
 });
 
 test('jour 5 : vote secret, palabre, Décideuse, Convergence et Concert', async ({ page }) => {
