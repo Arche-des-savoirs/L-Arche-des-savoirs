@@ -1,0 +1,399 @@
+# Chapitre 1 — La Porte des Trois Lueurs
+# Source : doc « Chapitre 1, version 2 (séance commune) », validé le 16/11.
+# Lueurs : dorée (Axelle, Veilleuse), blanche (Maelle, Cartographe), rose (Rafaelle, Archiviste).
+# Niveaux : 1 à 3 = classe de la fille ; 4 et 5 = classe supérieure.
+# Une ligne « gen » tire une question d'un générateur à graine fixe (src/generators).
+
+id: ch01
+number: 1
+act: 1
+title: La Porte des Trois Lueurs
+introImage: ch01
+scene: porte-trois-lueurs
+
+espagnol:
+  - { es: "Bienvenida.", fr: "Bienvenue." }
+  - { es: "La luz abre la puerta.", fr: "La lumière ouvre la porte." }
+  - { es: "El camino empieza aquí.", fr: "Le chemin commence ici." }
+  - { es: "Los siglos duermen en los libros.", fr: "Les siècles dorment dans les livres." }
+  - { es: "Tres luces, una puerta.", fr: "Trois lumières, une porte." }
+
+# Décision du Conseil de la Lanterne (début du jour 5) — doc des 93 variantes, chapitre 1.
+# A = Lien, B = Courage, C = Mémoire. Effets sur les compteurs : src/content/decisions.ts.
+decision:
+  prompt: "Une trace de sable gris mène à la Porte. Que faire de cette trace ?"
+  options:
+    A:
+      label: Rassurer Plume
+      scene: "Plume se blottit entre les trois et chuchote ce qu'il ressent : une odeur de maison. La porte s'ouvre sur une lumière tiède."
+      line: { who: plume, text: "Quand vous êtes là, la trace fait moins peur." }
+      habillage: "Les partitions sont écrites comme trois berceuses ; la mesure manquante est la note qui « réconforte »."
+    B:
+      label: Suivre la trace
+      scene: "La trace de sable court jusqu'à la porte, que les filles doivent ouvrir avant qu'elle ne s'efface."
+      line: { who: thessaly, text: "Vite, elle s'efface !" }
+      habillage: "Les partitions deviennent une course : chaque mesure est un pas, le métronome accélère d'un cran."
+    C:
+      label: Noter la trace
+      scene: "Le Livre des traces se pose sur le pupitre ; la porte ne s'ouvre qu'avec une page remplie."
+      line: { who: thessaly, text: "Une trace bien notée vaut un chemin." }
+      habillage: "Chaque mesure est copiée dans le Livre ; la note manquante est « recopiée » avant d'être jouée."
+
+repliquesAbsurdes:
+  - "Excusez-moi, monsieur le Gardien, vous avez du sable sur le nez."
+  - "Je réponds si vous me dites votre gâteau préféré."
+  - "Mon loup dit que vous êtes mal coiffé. Moi, je n'ai rien dit."
+  - "Un, deux, trois, soleil ! Ah zut, vous avez bougé."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: L'arrivée à l'Arche
+    decor: Le pont d'un navire-bibliothèque sur une mer de brume. Du sable gris recouvre une partie des étagères.
+    opening:
+      - { who: narrateur, text: "Trois livres s'allument en même temps dans trois maisons : un livre doré, un livre blanc, un livre rose. Les pages s'envolent dans la brume et déposent trois enfants sur le pont de l'Arche." }
+      - { who: thessaly, text: "Trois lueurs, un seul jour. L'Arche n'avait pas appelé trois apprenties à la fois depuis des siècles. Axelle, Maelle, Rafaelle : approchez." }
+      - { who: thessaly, to: axelle, text: "Axelle, ta lanterne est dorée comme le matin. Tu es la Veilleuse : rien de petit ne t'échappe." }
+      - { who: thessaly, to: maelle, text: "Maelle, ta lanterne est blanche comme le plein jour. Tu es la Cartographe : les chemins te font confiance, même les plus fous." }
+      - { who: thessaly, to: rafaelle, text: "Rafaelle, ta lanterne est rose comme le ciel du soir. Tu es l'Archiviste : tu lis ce que les anciens ont laissé. Bienvenida." }
+      - { who: narrateur, text: "Plume se pose sur chaque épaule et prend un instant la forme de chaque compagnon : le lionceau d'Axelle, le louveteau de Maelle, le fauconneau de Rafaelle." }
+      - { who: thessaly, text: "Le Brouillard d'Oubli monte. Pour le repousser, il faut ouvrir la Porte des Trois Lueurs. Elle ne s'ouvre que si vous trouvez les trois clés ensemble." }
+    manches:
+      - id: m1
+        title: L'épreuve d'entrée
+        intro: "Chaque apprentie gravit l'échelle des savoirs. Une marche réussie sans aide : on monte d'un cran."
+        placement: true
+        tours:
+          axelle:
+            - { id: ch01-j1-ax-p1, subject: maths, level: 1, kind: nombre, prompt: "Complète : 396, 397, …, 399.", answer: 398, hint: "On avance de 1 à chaque fois." }
+            - { id: ch01-j1-ax-p2, subject: maths, level: 2, kind: ordre, prompt: "Range du plus petit au plus grand.", choices: ["305", "530", "350", "503", "53"], answer: ["53", "305", "350", "503", "530"], hint: "Le nombre qui a le moins de chiffres est le plus petit." }
+            - { id: ch01-j1-ax-p3, subject: maths, level: 3, kind: nombre, prompt: "Pose et calcule : 247 + 135.", answer: 382, hint: "7 + 5 = 12 : on écrit 2 et on retient 1." }
+            - { id: ch01-j1-ax-p4, subject: maths, level: 4, kind: nombre, prompt: "4 caisses de 12 livres. Combien de livres en tout ?", answer: 48, hint: "C'est 12 + 12 + 12 + 12." }
+            - { id: ch01-j1-ax-p5, subject: maths, level: 5, kind: nombre, prompt: "Partage 36 livres en 4 piles égales. Combien par pile ?", answer: 9, hint: "Combien de fois 4 dans 36 ?" }
+          maelle:
+            - { id: ch01-j1-ma-p1, subject: maths, level: 1, kind: qcm, prompt: "Quel nombre est le plus grand ?", choices: ["304 799", "340 799"], answer: "340 799", hint: "Compare les chiffres des dizaines de mille." }
+            - { id: ch01-j1-ma-p2, subject: maths, level: 2, kind: nombre, prompt: "Calcule les 3/4 de 20.", answer: 15, hint: "Un quart de 20, c'est 5." }
+            - { id: ch01-j1-ma-p3, subject: maths, level: 3, kind: court, prompt: "Un spectacle commence à 14 h 45 et dure 1 h 50. Quand finit-il ?", answer: "16 h 35", accept: ["16:35", "16h35"], clock: "14:45", hint: "Ajoute 1 h, puis 50 minutes : 15 h 45 + 50 min." }
+            - { id: ch01-j1-ma-p4, subject: maths, level: 4, kind: nombre, prompt: "Quel est le chiffre des dixièmes dans 52,87 ?", answer: 8, hint: "Le chiffre juste après la virgule." }
+            - { id: ch01-j1-ma-p5, subject: maths, level: 5, kind: qcm, prompt: "Entre quels nombres entiers se place 7/4 ?", choices: ["entre 0 et 1", "entre 1 et 2", "entre 2 et 3"], answer: "entre 1 et 2", hint: "4/4 = 1 et 8/4 = 2." }
+          rafaelle:
+            - { id: ch01-j1-ra-p1, subject: maths, level: 1, kind: nombre, prompt: "Arrondis 3,68 au dixième.", answer: 3.7, hint: "Regarde le chiffre des centièmes." }
+            - { id: ch01-j1-ra-p2, subject: maths, level: 2, kind: nombre, prompt: "Calcule les 2/5 de 35.", answer: 14, hint: "Un cinquième de 35, c'est 7." }
+            - { id: ch01-j1-ra-p3, subject: maths, level: 3, kind: nombre, prompt: "Calcule 12,5 × 0,1.", answer: 1.25, hint: "Multiplier par 0,1, c'est diviser par 10." }
+            - { id: ch01-j1-ra-p4, subject: maths, level: 4, kind: nombre, prompt: "Calcule (−3) + 5.", answer: 2, hint: "Pars de −3 et avance de 5 sur la droite graduée." }
+            - { id: ch01-j1-ra-p5, subject: maths, level: 5, kind: nombre, prompt: "Calcule 25 % de 80.", answer: 20, hint: "25 %, c'est le quart." }
+      - id: m2
+        title: Le plan de l'Arche
+        intro: "Le plan du pont est effacé. Chaque apprentie en rétablit une partie."
+        tours:
+          axelle:
+            - { id: ch01-j1-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Le pont est à gauche de la tour. Où est la tour par rapport au pont ?", choices: ["à gauche", "à droite", "devant"], answer: "à droite", hint: "Si le pont est à gauche de la tour, la tour est de l'autre côté." }
+            - { id: ch01-j1-ax-m2b, subject: maths, level: 2, kind: nombre, prompt: "Les trois chemins mesurent 3 m, 4 m et 5 m. Quelle est la longueur totale, en mètres ?", answer: 12, hint: "Ajoute les trois longueurs." }
+            - { gen: maths.conversion }
+          maelle:
+            - { id: ch01-j1-ma-m2a, subject: sciences, level: 2, kind: qcm, prompt: "Le loup-boussole regarde le soleil couchant. Vers où pointe-t-il ?", choices: ["le nord", "le sud", "l'est", "l'ouest"], answer: "l'ouest", hint: "Le soleil se lève à l'est et se couche à l'ouest." }
+            - { id: ch01-j1-ma-m2b, subject: maths, level: 3, kind: nombre, prompt: "Sur le plan, 1 cm = 10 m. Le pont mesure 4,5 cm. Quelle est sa longueur réelle, en mètres ?", answer: 45, hint: "Chaque centimètre vaut 10 mètres." }
+            - { gen: maths.conversion }
+          rafaelle:
+            - { id: ch01-j1-ra-m2a, subject: maths, level: 2, kind: nombre, prompt: "Le pont fait les 3/4 de 80 m. Combien de mètres ?", answer: 60, hint: "Un quart de 80, c'est 20." }
+            - { id: ch01-j1-ra-m2b, subject: maths, level: 3, kind: qcm, prompt: "Comment s'appelle la droite formée des points à égale distance des deux tours ?", choices: ["la médiane", "la médiatrice", "la bissectrice"], answer: "la médiatrice", hint: "Elle coupe le segment en son milieu, à angle droit." }
+            - { id: ch01-j1-ra-m2c, subject: maths, level: 4, kind: nombre, prompt: "Calcule le périmètre d'un bassin rond de rayon 5 m (π ≈ 3,14), en mètres.", answer: 31.4, hint: "Périmètre = 2 × π × rayon." }
+      - id: m3
+        title: La Salle des Signes
+        intro: "Des lettres ont glissé hors des murs. Il faut leur rendre leur sens."
+        tours:
+          axelle:
+            - id: ch01-j1-ax-m3a
+              subject: francais
+              level: 2
+              kind: libre
+              validation: soeurs
+              read: "Chères apprenties, l'Arche est en danger. Le sable gris couvre les livres. Plume a peur, car il sent quelque chose qu'il connaît. Restez ensemble et suivez les lueurs. Thessaly."
+              prompt: "Lis le message de Thessaly à voix haute. Pourquoi Plume tremble-t-il ?"
+              hint: "Relis la phrase qui commence par « Plume a peur »."
+            - { id: ch01-j1-ax-m3b, subject: francais, level: 3, kind: court, prompt: "Conjugue « nous chantons » à l'imparfait.", answer: "nous chantions", hint: "À l'imparfait, « nous » se termine par -ions." }
+          maelle:
+            - { id: ch01-j1-ma-m3a, subject: francais, level: 2, kind: qcm, prompt: "« La louve garde la clé. » Quel est le complément d'objet direct ?", choices: ["la louve", "garde", "la clé"], answer: "la clé", hint: "La louve garde quoi ?" }
+            - { id: ch01-j1-ma-m3b, subject: francais, level: 3, kind: court, prompt: "Mets « nous ouvrons la porte » au passé composé.", answer: "nous avons ouvert la porte", hint: "Auxiliaire avoir + participe passé d'ouvrir." }
+          rafaelle:
+            - { id: ch01-j1-ra-m3a, subject: francais, level: 2, kind: court, prompt: "Accorde : « Les apprenties sont (arrivé). »", answer: "arrivées", accept: ["les apprenties sont arrivees"], hint: "Avec être, le participe s'accorde avec le sujet : féminin pluriel." }
+            - { id: ch01-j1-ra-m3b, subject: francais, level: 3, kind: court, prompt: "« Bibliothèque » vient de biblio (livre) et thèque (rangement). Donne un autre mot de la même famille.", answer: "bibliothécaire", accept: ["bibliophile", "bibliographie"], hint: "Qui travaille dans une bibliothèque ?" }
+            - { id: ch01-j1-ra-m3c, subject: espagnol, level: 3, kind: court, prompt: "Traduis : « La luz abre la puerta ».", answer: "la lumière ouvre la porte", hint: "Luz a donné « lucide » et « lumière »." }
+      - id: m4
+        title: Le Défi du Gardien
+        intro: "Une créature de sable bloque l'escalier : le Gardien de l'Oubli du pont."
+        tours:
+          axelle:
+            - { id: ch01-j1-ax-m4a, subject: sciences, level: 2, kind: court, prompt: "La glace fond au soleil. Comment s'appelle ce changement ?", answer: "la fusion", hint: "Le solide devient liquide." }
+            - { id: ch01-j1-ax-m4b, subject: sciences, level: 2, kind: qcm, prompt: "Quels sont les trois états de l'eau ?", choices: ["solide, liquide, gaz", "chaud, tiède, froid", "glace, neige, pluie"], answer: "solide, liquide, gaz", hint: "Glace, eau, vapeur." }
+            - { id: ch01-j1-ax-m4c, subject: maths, level: 4, kind: nombre, prompt: "Un coffre contient 4 piles de 12 livres. On en retire 9. Combien en reste-t-il ?", answer: 39, hint: "4 × 12 = 48, puis enlève 9." }
+          maelle:
+            - { id: ch01-j1-ma-m4a, subject: sciences, level: 3, kind: qcm, prompt: "Comment séparer du sable, de l'eau et du sel ?", choices: ["filtrer, puis laisser l'eau s'évaporer", "tout faire bouillir", "secouer très fort"], answer: "filtrer, puis laisser l'eau s'évaporer", hint: "Le filtre garde le sable ; le sel reste quand l'eau s'en va." }
+            - { id: ch01-j1-ma-m4b, subject: maths, level: 3, kind: court, prompt: "L'ombre du cadran a avancé de 20 minutes. Il était 14 h 45 : quelle heure est-il ?", answer: "15 h 05", accept: ["15:05", "15h05"], clock: "14:45", hint: "14 h 45 + 15 min = 15 h. Il reste 5 minutes." }
+          rafaelle:
+            - { id: ch01-j1-ra-m4a, subject: sciences, level: 3, kind: court, prompt: "Comment séparer l'huile et l'eau ?", answer: "la décantation", accept: ["decanter", "par decantation"], hint: "On laisse reposer : l'huile remonte." }
+            - { id: ch01-j1-ra-m4b, subject: maths, level: 4, kind: nombre, prompt: "L'huile représente 25 % de 80 mL de mélange. Combien de mL d'eau y a-t-il ?", answer: 60, hint: "25 % de 80, c'est 20 mL d'huile." }
+    pause: "Gardiennes, debout ! Comptez ensemble 10 sauts, ou faites trois pas de danse au rythme de la guitare."
+    closing:
+      - { who: narrateur, text: "Le Gardien se dissout. Un fragment de carte tombe : trois chiffres s'y dessinent, mais ils sont mélangés." }
+      - { who: plume, text: "Ça sent… la maison. Ça sent quelqu'un qui cherche." }
+      - { who: thessaly, text: "Demain, nous suivrons le fil des signes. Reposez-vous." }
+
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: La Salle des Signes
+    decor: Une salle ronde aux murs couverts de lettres et de nombres, des chiffres recouverts de sable gris.
+    opening:
+      - { who: thessaly, text: "Les signes du mur se sont mélangés. Remettez-les en ordre, et la première clé apparaîtra." }
+      - { who: plume, text: "Moi je compte jusqu'à… heu… beaucoup. Vous, vous comptez mieux." }
+    manches:
+      - id: m1
+        title: Les suites du mur
+        tours:
+          axelle:
+            - { id: ch01-j2-ax-m1a, subject: maths, level: 2, kind: court, prompt: "Complète : 15, 30, 45, …, … (écris les deux nombres).", answer: "60 75", accept: ["60, 75", "60 et 75"], hint: "On ajoute 15 à chaque fois." }
+            - { gen: maths.suite, count: 2 }
+          maelle:
+            - { gen: maths.suite }
+            - { gen: maths.comparer }
+          rafaelle:
+            - { gen: maths.suite }
+            - { gen: maths.arrondi }
+      - id: m2
+        title: Les nombres écrits
+        tours:
+          axelle:
+            - { id: ch01-j2-ax-m2a, subject: maths, level: 2, kind: nombre, prompt: "Quel est le double de 35 ?", answer: 70, hint: "35 + 35." }
+            - { id: ch01-j2-ax-m2b, subject: maths, level: 2, kind: nombre, prompt: "Quelle est la moitié de 90 ?", answer: 45, hint: "Partage 90 en deux parts égales." }
+            - { gen: maths.multiplication }
+          maelle:
+            - { id: ch01-j2-ma-m2a, subject: francais, level: 2, kind: court, prompt: "Écris 407 205 en lettres.", answer: "quatre cent sept mille deux cent cinq", hint: "Lis d'abord les milliers : quatre cent sept mille." }
+            - { id: ch01-j2-ma-m2b, subject: maths, level: 4, kind: court, prompt: "Écris 23,5 sous forme de fraction décimale.", answer: "235/10", accept: ["235 / 10"], hint: "23,5 = 235 dixièmes." }
+          rafaelle:
+            - { id: ch01-j2-ra-m2a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 12,5 + 7,75.", answer: 20.25, hint: "Aligne les virgules." }
+            - { id: ch01-j2-ra-m2b, subject: espagnol, level: 2, kind: court, prompt: "Écris 47 en espagnol.", answer: "cuarenta y siete", hint: "40 = cuarenta, 7 = siete." }
+      - id: m3
+        title: Problèmes de signes
+        tours:
+          axelle:
+            - { id: ch01-j2-ax-m3a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 8 × 6.", answer: 48, hint: "8 × 5 = 40, plus 8." }
+            - { id: ch01-j2-ax-m3b, subject: maths, level: 4, kind: nombre, prompt: "Combien de dizaines y a-t-il dans 370 ?", answer: 37, hint: "Cache le zéro des unités." }
+          maelle:
+            - { id: ch01-j2-ma-m3a, subject: maths, level: 3, kind: court, prompt: "Les aiguilles montrent 3 h 40. Quelle heure sera-t-il 35 minutes plus tard ?", answer: "4 h 15", accept: ["4:15", "4h15", "16 h 15", "16h15"], clock: "3:40", hint: "3 h 40 + 20 min = 4 h. Il reste 15 minutes." }
+            - { id: ch01-j2-ma-m3b, subject: maths, level: 4, kind: nombre, prompt: "Quel est le chiffre des centièmes dans 8,076 ?", answer: 7, hint: "Dixièmes, puis centièmes, puis millièmes." }
+          rafaelle:
+            - { id: ch01-j2-ra-m3a, subject: maths, level: 4, kind: nombre, prompt: "Calcule (−4) + (−3).", answer: -7, hint: "Deux dettes s'additionnent." }
+            - { id: ch01-j2-ra-m3b, subject: maths, level: 5, kind: nombre, prompt: "Un nombre augmenté de 25 % donne 100. Quel est ce nombre ?", answer: 80, hint: "Le nombre + son quart = 100." }
+      - id: m4
+        title: Le Défi du Gardien des Signes
+        tours:
+          axelle:
+            - { gen: maths.addition }
+            - { gen: maths.fraction-de }
+          maelle:
+            - { gen: maths.duree }
+            - { gen: maths.fraction-de }
+          rafaelle:
+            - { gen: maths.multiplication }
+            - { gen: maths.fraction-de }
+    pause: "Mime ton compagnon : le lion rugit, le loup hurle à la lune, le faucon déploie ses ailes !"
+    closing:
+      - { who: narrateur, text: "Les signes reprennent leur place. Au centre du mur, une clé dorée se détache : la Clé des Signes." }
+      - { who: plume, text: "Une clé ! Je savais qu'elle était là. Enfin… presque." }
+    reward: "la Clé des Signes"
+
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: La Salle des Chemins
+    decor: Une rotonde dont le sol est un grand planisphère aux couleurs délavées.
+    opening:
+      - { who: thessaly, text: "Les chemins du monde se sont effacés du sol. Maelle, ton loup sent déjà le nord, n'est-ce pas ?" }
+      - { who: maelle, text: "Il dit que le nord, c'est par là. Ou par là. Il réfléchit." }
+    manches:
+      - id: m1
+        title: Le planisphère
+        tours:
+          axelle:
+            - { id: ch01-j3-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Quel océan se trouve à l'ouest de l'Europe ?", choices: ["l'océan Atlantique", "l'océan Pacifique", "l'océan Indien"], answer: "l'océan Atlantique", hint: "C'est l'océan qui borde la France." }
+            - { id: ch01-j3-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Un trajet dure 30 minutes. Quelle fraction d'heure est-ce ?", choices: ["le quart", "la moitié", "les trois quarts"], answer: "la moitié", hint: "Une heure, c'est 60 minutes." }
+          maelle:
+            - { id: ch01-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Lequel de ces noms est un océan ?", choices: ["l'Afrique", "l'océan Indien", "l'Amérique"], answer: "l'océan Indien", hint: "Les continents sont des terres, les océans sont de l'eau." }
+            - { id: ch01-j3-ma-m1b, subject: histoire-geo, level: 3, kind: ordre, prompt: "Range du plus ancien au plus récent.", choices: ["Louis XIV", "château fort", "François Ier"], answer: ["château fort", "François Ier", "Louis XIV"], hint: "Le château fort date du Moyen Âge." }
+          rafaelle:
+            - { id: ch01-j3-ra-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Lequel de ces lieux est un grand foyer de peuplement mondial ?", choices: ["l'Asie de l'Est", "le Sahara", "l'Antarctique"], answer: "l'Asie de l'Est", hint: "Pense aux pays les plus peuplés du monde." }
+            - id: ch01-j3-ra-m1b
+              subject: histoire-geo
+              level: 3
+              kind: libre
+              validation: soeurs
+              prompt: "Habiter une métropole : cite deux fonctions importantes d'une très grande ville."
+              hint: "Pense aux sièges d'entreprises, aux universités, aux gares et aéroports, aux musées."
+      - id: m2
+        title: Durées et distances
+        tours:
+          axelle:
+            - { id: ch01-j3-ax-m2a, subject: maths, level: 4, kind: court, prompt: "Départ à 9 h, trajet de 1 h 30. À quelle heure arrive-t-on ?", answer: "10 h 30", accept: ["10:30", "10h30"], clock: "9:00", hint: "9 h + 1 h = 10 h. Ajoute la demi-heure." }
+            - { gen: maths.duree }
+          maelle:
+            - { id: ch01-j3-ma-m2a, subject: maths, level: 4, kind: court, prompt: "Un convoi part à 8 h 20 et roule 2 h 45. À quelle heure arrive-t-il ?", answer: "11 h 05", accept: ["11:05", "11h05"], clock: "8:20", hint: "8 h 20 + 2 h = 10 h 20. Ajoute 45 minutes." }
+            - { id: ch01-j3-ma-m2b, subject: maths, level: 4, kind: nombre, prompt: "La route fait 2,5 km. Combien de mètres ?", answer: 2500, hint: "1 km = 1 000 m." }
+          rafaelle:
+            - { id: ch01-j3-ra-m2a, subject: maths, level: 4, kind: nombre, prompt: "À 12 km/h, quelle distance parcourt-on en 30 minutes, en km ?", answer: 6, hint: "30 minutes, c'est la moitié d'une heure." }
+            - { id: ch01-j3-ra-m2b, subject: maths, level: 4, kind: nombre, prompt: "3 livres coûtent 12 €. Combien coûtent 5 livres, en euros ?", answer: 20, hint: "Cherche d'abord le prix d'un livre." }
+      - id: m3
+        title: La lumière des chemins
+        tours:
+          axelle:
+            - { id: ch01-j3-ax-m3a, subject: sciences, level: 2, kind: qcm, prompt: "Le matin, le Soleil se lève…", choices: ["à l'est", "à l'ouest", "au nord"], answer: "à l'est", hint: "Il se couche à l'ouest." }
+            - { gen: maths.conversion }
+          maelle:
+            - { id: ch01-j3-ma-m3a, subject: sciences, level: 2, kind: qcm, prompt: "À midi, l'ombre d'un bâton est…", choices: ["la plus courte de la journée", "la plus longue de la journée", "invisible"], answer: "la plus courte de la journée", hint: "À midi, le Soleil est le plus haut dans le ciel." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch01-j3-ra-m3a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi voit-on un objet qui n'émet pas de lumière ?", choices: ["il renvoie la lumière qu'il reçoit", "il est chaud", "nos yeux envoient de la lumière"], answer: "il renvoie la lumière qu'il reçoit", hint: "Sans lampe, dans le noir, on ne voit plus le livre." }
+            - { gen: maths.conversion }
+      - id: m4
+        title: Le Défi du Gardien des Chemins
+        tours:
+          axelle:
+            - { gen: maths.multiplication }
+            - { gen: maths.ranger }
+          maelle:
+            - { gen: maths.multiplication }
+            - { gen: maths.arrondi }
+          rafaelle:
+            - { gen: maths.addition }
+            - { gen: maths.fraction-de }
+    pause: "Boussole humaine : tout le monde se tourne vers le nord… puis vers le sud… puis on tourne sur soi-même !"
+    closing:
+      - { who: narrateur, text: "Les routes se redessinent sur le sol. Au bout de la plus longue, une clé blanche brille : la Clé des Routes." }
+      - { who: thessaly, text: "Deux clés. Il en manque une. Et le sable gris continue de tomber." }
+    reward: "la Clé des Routes"
+
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: La Salle des Âges
+    decor: Un couloir en spirale ; chaque tour descend d'une époque.
+    opening:
+      - { who: thessaly, text: "Ici dorment les siècles. Rafaelle, tu sauras lire ce qu'ils ont laissé." }
+      - { who: plume, text: "Il fait noir… Ma lanterne fait de son mieux." }
+    manches:
+      - id: m1
+        title: La frise des époques
+        tours:
+          axelle:
+            - { id: ch01-j4-ax-m1a, subject: histoire-geo, level: 2, kind: ordre, prompt: "Range du plus ancien au plus récent.", choices: ["Moyen Âge", "Préhistoire", "Antiquité"], answer: ["Préhistoire", "Antiquité", "Moyen Âge"], hint: "La Préhistoire, c'est avant l'écriture." }
+            - { id: ch01-j4-ax-m1b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Le silex taillé vient…", choices: ["d'autrefois", "d'aujourd'hui"], answer: "d'autrefois", hint: "Les premiers humains taillaient la pierre." }
+          maelle:
+            - { id: ch01-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Au Moyen Âge, qui travaille la terre du seigneur ?", choices: ["les paysans", "les chevaliers", "les moines"], answer: "les paysans", hint: "Ils vivent au village, près du château." }
+            - { id: ch01-j4-ma-m1b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Louis XIV (1638-1715) a vécu surtout au…", choices: ["XVIe siècle", "XVIIe siècle", "XVIIIe siècle"], answer: "XVIIe siècle", hint: "Les années 1600 forment le XVIIe siècle." }
+          rafaelle:
+            - { id: ch01-j4-ra-m1a, subject: histoire-geo, level: 2, kind: ordre, prompt: "Range du plus ancien au plus récent.", choices: ["premières écritures", "chasseurs-cueilleurs", "premiers agriculteurs"], answer: ["chasseurs-cueilleurs", "premiers agriculteurs", "premières écritures"], hint: "L'agriculture apparaît au Néolithique, l'écriture plus tard." }
+            - { id: ch01-j4-ra-m1b, subject: maths, level: 3, kind: nombre, prompt: "Écris 8 milliards en chiffres.", answer: 8000000000, hint: "Un milliard, c'est 1 suivi de 9 zéros." }
+      - id: m2
+        title: Les grands nombres des siècles
+        tours:
+          axelle:
+            - { gen: maths.comparer }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch01-j4-ma-m2a, subject: maths, level: 4, kind: nombre, prompt: "Louis XIV naît en 1638 et meurt en 1715. Quel âge a-t-il à sa mort ?", answer: 77, hint: "Calcule 1715 − 1638." }
+            - { id: ch01-j4-ma-m2b, subject: maths, level: 4, kind: court, prompt: "Une horloge indique 5 h 50. Quelle heure sera-t-il 40 minutes plus tard ?", answer: "6 h 30", accept: ["6:30", "6h30"], clock: "5:50", hint: "5 h 50 + 10 min = 6 h. Il reste 30 minutes." }
+          rafaelle:
+            - { id: ch01-j4-ra-m2a, subject: maths, level: 4, kind: nombre, prompt: "Entre −753 et +476, combien d'années s'écoulent ?", answer: 1229, hint: "753 ans jusqu'à l'an 0, puis 476 ans." }
+            - { gen: maths.comparer }
+      - id: m3
+        title: Les archives parlent
+        tours:
+          axelle:
+            - id: ch01-j4-ax-m3a
+              subject: histoire-geo
+              level: 4
+              kind: libre
+              validation: soeurs
+              prompt: "Au Néolithique, les humains deviennent éleveurs. Pourquoi cela change-t-il leur vie ?"
+              hint: "Ils n'ont plus besoin de suivre les troupeaux : ils restent au même endroit."
+            - { id: ch01-j4-ax-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "La bougie servait à…", choices: ["s'éclairer", "téléphoner", "se chauffer les pieds"], answer: "s'éclairer", hint: "Avant l'électricité." }
+          maelle:
+            - { id: ch01-j4-ma-m3a, subject: francais, level: 3, kind: court, prompt: "Mets au pluriel : « le vieux château ».", answer: "les vieux châteaux", hint: "Les noms en -eau prennent un x au pluriel." }
+            - { gen: maths.conversion }
+          rafaelle:
+            - id: ch01-j4-ra-m3a
+              subject: espagnol
+              level: 4
+              kind: libre
+              validation: soeurs
+              read: "Los siglos duermen en los libros."
+              prompt: "Lis l'inscription en espagnol et explique-la à tes sœurs."
+              hint: "Siglos = siècles ; duermen = dorment."
+            - { gen: maths.arrondi }
+      - id: m4
+        title: Le Défi du Gardien des Âges
+        tours:
+          axelle:
+            - { gen: maths.addition }
+            - { gen: maths.multiplication }
+          maelle:
+            - { gen: maths.ranger }
+            - { gen: maths.duree }
+          rafaelle:
+            - { gen: maths.ranger }
+            - { gen: maths.multiplication }
+    pause: "Statues du temps : quand la musique s'arrête, figez-vous comme une statue antique !"
+    closing:
+      - { who: narrateur, text: "Au fond de la spirale, une clé rose sort de la pierre : la Clé des Âges. Du sable gris coule du plafond." }
+      - { who: plume, text: "Hiii ! … Non, rien. J'ai juste éternué. En criant." }
+    reward: "la Clé des Âges"
+
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: Le Concert de la Porte
+    decor: Devant la Porte des Trois Lueurs, trois cordes tendues attendent les trois clés.
+    opening:
+      - { who: thessaly, text: "Voici la Guitare de l'Arche. La Porte ne s'ouvre que si les trois clés sonnent ensemble." }
+      - { who: thessaly, text: "Une mesure dure 4 temps. Ronde : 4 temps. Blanche : 2. Noire : 1. Croche : un demi-temps." }
+    manches:
+      - id: m1
+        title: Les trois partitions
+        intro: "Chaque apprentie trouve la note qui manque dans sa mesure."
+        tours:
+          axelle:
+            - { id: ch01-j5-ax-m1a, subject: musique, level: 3, kind: qcm, prompt: "Noire + noire + ? = 4 temps.", choices: ["une ronde", "une blanche", "une croche"], answer: "une blanche", hint: "Deux noires font 2 temps. Il en manque 2." }
+          maelle:
+            - { id: ch01-j5-ma-m1a, subject: musique, level: 3, kind: qcm, prompt: "Blanche + noire + croche + ? = 4 temps.", choices: ["une noire", "une croche", "une blanche"], answer: "une croche", hint: "2 + 1 + 1/2 = 3 et demi. Il manque un demi-temps." }
+          rafaelle:
+            - { id: ch01-j5-ra-m1a, subject: musique, level: 4, kind: court, prompt: "La mesure vaut 1. Blanche = 1/2, noire = 1/4, croche = 1/8. Il y a une blanche, une noire et une croche : quelle fraction manque ?", answer: "1/8", accept: ["une croche"], hint: "1/2 + 1/4 + 1/8 = 7/8." }
+      - id: m2
+        title: Réviser pour ouvrir
+        intro: "La Porte tremble : elle redemande une épreuve de chaque jour, au niveau supérieur."
+        tours:
+          axelle:
+            - { id: ch01-j5-ax-m2a, subject: maths, level: 4, kind: nombre, prompt: "8 × 6 ?", answer: 48 }
+            - { id: ch01-j5-ax-m2b, subject: maths, level: 4, kind: court, prompt: "9 h + 1 h 30 ?", answer: "10 h 30", accept: ["10:30", "10h30"], clock: "9:00" }
+          maelle:
+            - { id: ch01-j5-ma-m2a, subject: maths, level: 4, kind: court, prompt: "5 h 50 + 40 min ?", answer: "6 h 30", accept: ["6:30", "6h30"], clock: "5:50" }
+            - { id: ch01-j5-ma-m2b, subject: maths, level: 4, kind: nombre, prompt: "Louis XIV (1638-1715) : quel âge à son décès ?", answer: 77 }
+          rafaelle:
+            - { id: ch01-j5-ra-m2a, subject: maths, level: 4, kind: nombre, prompt: "(−4) + (−3) ?", answer: -7 }
+            - { id: ch01-j5-ra-m2b, subject: espagnol, level: 4, kind: court, prompt: "Traduis : « Tres luces, una puerta ».", answer: "trois lumières une porte", accept: ["trois lumieres, une porte"] }
+      - id: m3
+        title: Le Concert
+        intro: "Le métronome bat 4 temps. Chaque apprentie tape sa mesure, puis toutes ensemble. La cheffe d'orchestre donne le départ."
+        tours:
+          axelle:
+            - { id: ch01-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, blanche." }
+          maelle:
+            - { id: ch01-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, noire, croche, croche." }
+          rafaelle:
+            - { id: ch01-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, noire, croche, croche." }
+    concert:
+      measures:
+        axelle: { given: [1, 1], missing: 2, prompt: "Noire, noire, blanche" }
+        maelle: { given: [2, 1, 0.5], missing: 0.5, prompt: "Blanche, noire, croche, croche" }
+        rafaelle: { given: [2, 1, 0.5], missing: 0.5, prompt: "Blanche, noire, croche, croche" }
+    pause: "Danse et guitare : inventez ensemble une phrase de trois mesures et jouez-la !"
+    closing:
+      - { who: narrateur, text: "La Porte s'ouvre sur le Hall des Cartes : le plafond est une carte du monde qui palpite. Les trois clés fusionnent en une Lanterne." }
+      - { who: thessaly, text: "Vous avez joué à trois voix, et la Porte a écouté. C'est la première fois depuis longtemps qu'elle s'ouvre sans force." }
+      - { who: narrateur, text: "Plume s'approche d'une trace de sable gris sur le seuil et frissonne. Au loin, le jardin de l'Arche a perdu sa récolte, et un inconnu observe depuis l'ombre." }
+    reward: "les Capes d'Apprenties, la Guitare de l'Arche et le premier fragment de la Carte Vivante"

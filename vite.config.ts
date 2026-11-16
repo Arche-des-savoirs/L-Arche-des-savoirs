@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitest/config';
 import preact from '@preact/preset-vite';
 import { VitePWA } from 'vite-plugin-pwa';
+import { yamlPlugin } from './scripts/vite-yaml';
 
 // Publié sur https://arche-des-savoirs.github.io/L-Arche-des-savoirs/
 const base = '/L-Arche-des-savoirs/';
@@ -9,6 +10,7 @@ export default defineConfig({
   base,
   define: { __APP_VERSION__: JSON.stringify(process.env.npm_package_version ?? '0.0.0') },
   plugins: [
+    yamlPlugin(),
     preact(),
     VitePWA({
       registerType: 'autoUpdate',
