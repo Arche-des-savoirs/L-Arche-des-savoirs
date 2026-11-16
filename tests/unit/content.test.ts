@@ -18,7 +18,50 @@ function selfCheck(q: Question) {
   if (q.kind === 'ordre') expect([...(q.answer as string[])].sort(), q.id).toEqual([...(q.choices ?? [])].sort());
   const resp = q.kind === 'ordre' ? (q.answer as string[]) : typeof q.answer === 'number' ? String(q.answer).replace('.', ',') : String(q.answer);
   expect(checkAnswer(q, resp), `${q.id} : ${q.prompt}`).toBe('juste');
+  for (const alt of q.accept ?? []) expect(checkAnswer(q, alt), `${q.id} accepte « ${alt} »`).toBe('juste');
 }
+
+const KNOWN_SPEAKERS = ['narrateur', 'thessaly', 'plume', 'gardien', 'nilo', 'mouf', 'epouvantail', 'veilleur', 'habitant', 'axelle', 'maelle', 'rafaelle'];
+
+describe.each(CHAPTERS.map((c) => [c.number, c] as const))('chapitre %i (tous les chapitres écrits)', (_n, ch) => {
+  it('a 5 jours, 3 à 4 manches par jour et un tour par fille dans chaque manche', () => {
+    expect(ch.days.map((d) => d.n)).toEqual([1, 2, 3, 4, 5]);
+    for (const d of ch.days) {
+      expect(d.manches.length).toBeGreaterThanOrEqual(3);
+      for (const m of d.manches) expect(Object.keys(m.tours).sort()).toEqual([...PLAYERS].sort());
+    }
+  });
+  it('a une décision A/B/C, une phrase espagnole par jour et des répliques pour Maelle', () => {
+    expect(ch.decision).toBeDefined();
+    expect(ch.espagnol).toHaveLength(5);
+    expect(ch.repliquesAbsurdes.length).toBeGreaterThanOrEqual(4);
+  });
+  it('a des identifiants uniques, préfixés par son id', () => {
+    const ids = ch.days.flatMap((d) => d.manches.flatMap((m) => Object.values(m.tours).flat())).flatMap((i) => ('id' in i ? [i.id] : []));
+    expect(new Set(ids).size).toBe(ids.length);
+    for (const id of ids) expect(id.startsWith(`${ch.id}-`), id).toBe(true);
+  });
+  it('fait parler uniquement des personnages connus', () => {
+    const lines = [...ch.days.flatMap((d) => [...d.opening, ...d.closing]), ...Object.values(ch.decision!.options).map((o) => o.line)];
+    for (const l of lines) expect(KNOWN_SPEAKERS, l.text).toContain(l.who);
+  });
+  it('chaque question accepte sa propre réponse et ses variantes, à tous les niveaux', () => {
+    for (const d of ch.days)
+      for (const m of d.manches)
+        for (const p of PLAYERS)
+          for (const lv of LEVELS) resolveTour(ch, d.n, m.id, p, lv).forEach(selfCheck);
+  });
+  it('les mesures du Concert font 4 temps', () => {
+    for (const d of ch.days)
+      for (const m of Object.values(d.concert?.measures ?? {})) expect(m.given.reduce((a, b) => a + b, 0) + m.missing).toBe(4);
+  });
+});
+
+describe('enchaînement des chapitres', () => {
+  it('les chapitres écrits se suivent sans trou, à partir du 1', () => {
+    expect(CHAPTERS.map((c) => c.number)).toEqual(CHAPTERS.map((_, i) => i + 1));
+  });
+});
 
 describe('chapitre 1', () => {
   const ch = CHAPTERS[0]!;
