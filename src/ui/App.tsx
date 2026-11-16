@@ -3,9 +3,11 @@ import { useEffect } from 'preact/hooks';
 import { createWakeLock, type WakeLockState } from '../platform/wakeLock';
 import { Home } from './Home';
 import { Diagnostic } from './Diagnostic';
+import { init, route } from './store';
+import { Session } from './screens/Session';
+import { Avatars } from './screens/Avatars';
+import { ADemain, Bientot } from './screens/ADemain';
 
-export type Screen = 'accueil' | 'diagnostic';
-export const screen = signal<Screen>('accueil');
 export const wakeLockState = signal<WakeLockState>('released');
 
 const wakeLock = createWakeLock();
@@ -15,6 +17,22 @@ export function App() {
   useEffect(() => {
     wakeLockState.value = wakeLock.state;
     void wakeLock.acquire();
+    void init();
   }, []);
-  return screen.value === 'diagnostic' ? <Diagnostic onBack={() => (screen.value = 'accueil')} /> : <Home onDiagnostic={() => (screen.value = 'diagnostic')} />;
+  switch (route.value) {
+    case 'chargement':
+      return <main class="ui-page" aria-busy="true" />;
+    case 'diagnostic':
+      return <Diagnostic onBack={() => (route.value = 'accueil')} />;
+    case 'avatars':
+      return <Avatars />;
+    case 'seance':
+      return <Session />;
+    case 'a-demain':
+      return <ADemain />;
+    case 'bientot':
+      return <Bientot />;
+    default:
+      return <Home />;
+  }
 }
