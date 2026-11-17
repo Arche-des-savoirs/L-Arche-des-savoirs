@@ -25,6 +25,8 @@ export interface Settings {
   rate: number;
   /** Lecture automatique des dialogues, comme un conteur (activée par défaut). */
   autoRead?: boolean;
+  /** Mode test du parent : boutons Avancer/Retour, séances illimitées, « aller à ». Désactivé par défaut. */
+  testMode?: boolean;
 }
 
 export const emptySave = (): SaveData => ({
@@ -47,6 +49,11 @@ export async function loadSave(database: ArcheDB = defaultDb): Promise<SaveData>
     if (row && row.value !== undefined) out[k] = row.value;
   });
   return out as unknown as SaveData;
+}
+
+/** Efface toute la partie de cet appareil (progression, profils, historique, réglages, code parent). */
+export async function wipeSave(database: ArcheDB = defaultDb): Promise<void> {
+  await database.meta.clear();
 }
 
 export async function writeSave(data: SaveData, database: ArcheDB = defaultDb): Promise<void> {

@@ -8,7 +8,7 @@ import { dayPlan, newProgress, skillSignal, type QuestionResult } from '../engin
 import type { Profile } from '../engine/profile';
 import type { PlayerId } from '../engine/types';
 import type { Subject } from '../content/schema';
-import { emptySave, loadSave, writeSave, type SaveData } from '../storage/save';
+import { emptySave, loadSave, wipeSave, writeSave, type SaveData } from '../storage/save';
 import { decide } from '../engine/parent';
 
 export type Route = 'chargement' | 'accueil' | 'diagnostic' | 'parent' | 'avatars' | 'seance' | 'a-demain' | 'bientot';
@@ -71,7 +71,7 @@ export function startOrResume(now = Date.now()) {
     return;
   }
   if (!s.game.session) {
-    if (!dispatch({ type: 'DEMARRER_SESSION', now })) {
+    if (!dispatch({ type: 'DEMARRER_SESSION', now, bypassCalendar: testMode() })) {
       route.value = 'a-demain';
       return;
     }
@@ -88,8 +88,18 @@ export function saveProfiles(profiles: Record<PlayerId, Profile>) {
 export function nextStep() {
   const s = save.value;
   if (!s.progress) return;
+  // Mode test : sauter le Conseil sans voter choisit l'option A, sinon la séance ne pourrait pas se terminer.
+  if (testMode() && currentStep.value?.kind === 'conseil' && s.game.session && !s.game.session.decided)
+    dispatch({ type: 'DECIDER', record: { first: { axelle: 'A', maelle: 'A', rafaelle: 'A' }, palabre: false, result: 'A' } });
   if (s.progress.step + 1 >= plan.value.length) return finishSession();
   update((x) => ({ ...x, progress: { ...x.progress!, step: x.progress!.step + 1 } }));
+}
+
+/** Mode test : revenir à l'étape précédente de la séance. */
+export function prevStep() {
+  const s = save.value;
+  if (!s.progress || s.progress.step === 0) return;
+  update((x) => ({ ...x, progress: { ...x.progress!, step: x.progress!.step - 1 } }));
 }
 
 export function finishSession(now = Date.now()) {
@@ -111,6 +121,22 @@ export function setPin(pin: string) {
 export function setVoice(voiceName: string | undefined, rate: number) {
   update((s) => ({ ...s, settings: { ...s.settings, voiceName, rate } }));
 }
+export const testMode = () => save.value.settings.testMode === true;
+export function setTestMode(on: boolean) {
+  update((s) => ({ ...s, settings: { ...s.settings, testMode: on } }));
+}
+/** Mode test : placer la partie sur un chapitre et un jour (la séance en cours est abandonnée). */
+export function jumpTo(chapter: number, day: number) {
+  if (dispatch({ type: 'TEST_ALLER_A', position: { chapter, day } })) update((s) => ({ ...s, progress: null }));
+}
+/** Réinitialisation complète : on vide la base puis on recharge l'app, comme au premier lancement. */
+export async function resetEverything(reload: () => void = () => location.reload()) {
+  await queue;
+  await wipeSave();
+  save.value = emptySave();
+  reload();
+}
+
 export const autoRead = () => save.value.settings.autoRead !== false;
 export function setAutoRead(on: boolean) {
   update((s) => ({ ...s, settings: { ...s.settings, autoRead: on } }));
