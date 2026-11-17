@@ -1,4 +1,4 @@
-// Concert de la Porte : chaque fille complète sa mesure, puis les trois mesures sont jouées ensemble.
+// Concert (jour 5) : chaque fille complète sa mesure, puis les trois mesures sont jouées ensemble.
 import { useState } from 'preact/hooks';
 import { playRhythm } from '../../platform/audio';
 import { NAMES } from '../../engine/profile';
@@ -20,8 +20,8 @@ export function Concert() {
 
   if (k >= order.length)
     return (
-      <Card title="Le Concert de la Porte">
-        <p class="ui-line">Les trois mesures sont prêtes. Jouez-les ensemble : la Porte écoute !</p>
+      <Card title={day.value!.title}>
+        <p class="ui-line">Les trois mesures sont prêtes. Jouez-les ensemble : la Guitare écoute !</p>
         <div class="ui-row">
           <button class="ui-btn" onClick={() => playRhythm(order.flatMap((p) => [...concert.measures[p]!.given, concert.measures[p]!.missing]))}>
             🎵 Jouer le Concert

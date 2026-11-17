@@ -242,7 +242,10 @@ test('jour 5 : vote secret, palabre, Décideuse, Convergence et Concert', async 
 
 for (const [n, title, day1] of [
   [2, 'Les Champs de Brume', 'Le jardin vide'],
-  [3, 'La Ville de Brume', 'Les remparts']
+  [3, 'La Ville de Brume', 'Les remparts'],
+  [4, 'La Route des Brumes', 'Le carrefour'],
+  [5, 'Le Pigeon et le Câble', 'La station'],
+  [6, 'Le Royaume des Ombres', "La Porte d'Ombre"]
 ] as const) {
   test(`chapitre ${n} : illustration, jour 1 joué en entier, puis jour 2`, async ({ page }) => {
     await page.goto('./');

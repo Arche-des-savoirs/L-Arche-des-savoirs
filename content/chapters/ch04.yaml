@@ -1,0 +1,429 @@
+# Chapitre 4 — La Route des Brumes
+# Sources : Plan narratif v2 (traverser la mer des Jours, l'itinéraire de Nilo est faux, « se trompe-t-il ou ment-il ? »),
+# doc « Saison 1, chapitres 2 à 9 » (thèmes des jours, Passeur Sans Rives, phrase de Plume, Boussole du Loup, accroche du pigeon),
+# Banque d'exercices S1-C4 (questions), doc des variantes (décision : que faire du Passeur Sans Rives ?).
+# Thessaly a disparu : les légendes sont racontées par Nilo, le voleur-conteur. Vigilance Maelle au jour 2 (heures) : horloge visible, montée lente.
+
+id: ch04
+number: 4
+act: 1
+title: La Route des Brumes
+introImage: ch04
+scene: route-des-brumes
+
+espagnol:
+  - { es: "El camino es largo.", fr: "Le chemin est long." }
+  - { es: "¿Qué hora es?", fr: "Quelle heure est-il ?" }
+  - { es: "El puente es de piedra.", fr: "Le pont est en pierre." }
+  - { es: "Mira las estrellas.", fr: "Regarde les étoiles." }
+  - { es: "Cruzaremos el río.", fr: "Nous traverserons la rivière." }
+
+decision:
+  prompt: "Le Passeur Sans Rives ne sait plus où sont les rives, et la mer des Jours est devant vous. Que faire de lui ?"
+  options:
+    A:
+      label: Le guider jusqu'à la rive
+      scene: "Le Passeur marche avec les apprenties, de plus en plus sûr de lui. À chaque pas, il se redresse, et devant eux, un raccourci s'ouvre dans la brume."
+      line: { who: passeur, text: "Je me souviens d'un ponton… avec une cloche. Oui. Une cloche !" }
+      habillage: "L'horaire est celui d'un convoi : les pauses sont les temps de repos du vieux Passeur."
+    B:
+      label: Traverser par le gué
+      scene: "Le gué est dangereux, les pierres glissent sous l'eau grise. Chacune choisit sa pierre, et la marée commence à monter."
+      line: { who: thessaly, text: "(une voix, très loin, dans la canne) Pas trop vite, mes lueurs. Pas trop vite." }
+      habillage: "L'horaire est tendu : l'heure d'arrivée est une limite à ne pas dépasser, avant la marée."
+    C:
+      label: Corriger sa carte
+      scene: "La carte du Passeur est étalée sur un rocher plat. Le loup-boussole de Maelle montre le nord, et les apprenties tracent ensemble le chemin secret."
+      line: { who: maelle, text: "Le loup montre le nord. Alors la rive est… par là !" }
+      habillage: "L'horaire est calculé sur la carte corrigée, avec des distances à mesurer."
+
+repliquesAbsurdes:
+  - "Monsieur le Passeur, quelle heure est-il ? Nilo dit qu'il est hirondelle et quart."
+  - "Votre barque a un nom ? Je propose « Barquette ». Ou « Gérard »."
+  - "Si vous ne trouvez plus la rive, c'est peut-être la rive qui s'est perdue. Il faut l'appeler !"
+  - "Mon loup-boussole montre le nord. Ou le goûter. Je ne sais jamais."
+  - "Je réponds si vous ramez en chantant. Une petite chanson. Allez !"
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: Le carrefour
+    decor: Un carrefour de quatre routes noyées de brume. Les panneaux de bois ont perdu leurs mots.
+    opening:
+      - { who: narrateur, text: "Il était une fois trois apprenties qui marchaient vers l'est, sans leur maîtresse. Derrière elles, la Ville de Brume chantait encore les noms retrouvés. Devant elles, la route s'enfonçait dans un pays blanc, si blanc qu'on ne voyait plus où finissait la terre et où commençait le ciel." }
+      - { who: narrateur, text: "Axelle portait la canne de Thessaly, serrée contre son cœur. Sur le pommeau d'argent, la petite lumière battait toujours, doucement, comme un cœur qui dort. Et de temps en temps, la canne frémissait, et pointait vers l'est." }
+      - { who: narrateur, text: "Personne ne parlait beaucoup. Rafaelle marchait devant, le menton levé, pour montrer qu'elle n'avait pas peur. Maelle comptait ses pas à voix basse, pour ne pas penser. Et Axelle, toute petite sous sa cape dorée, tenait la canne comme on tient la main de quelqu'un qu'on aime." }
+      - { who: narrateur, text: "Au premier soir, elles arrivèrent à un carrefour. Quatre routes partaient vers les quatre coins du monde. Au milieu se dressait un vieux poteau couvert de panneaux de bois. Mais les panneaux étaient muets : le Brouillard avait mangé tous leurs mots." }
+      - { who: nilo, text: "Pas de panique ! J'ai une carte. Une vraie carte de voleur, avec des chemins secrets. D'après elle, il faut prendre la route du nord. Sans hésiter." }
+      - { who: rafaelle, text: "Nilo, la canne montre l'est. Pas le nord. L'est." }
+      - { who: nilo, text: "Ah. Alors la canne se trompe. Ou ma carte. Ou les deux. Bon, on va dire que c'est la canne." }
+      - { who: narrateur, text: "Ce soir-là, autour du feu, Nilo raconta une légende. Il s'assit sur une pierre, baissa la voix, et les flammes dansèrent dans ses yeux malicieux." }
+      - { who: mouf, text: "Une histoire ! J'adore les histoires. Je les oublie tout de suite, alors elles sont toujours neuves." }
+      - { who: nilo, text: "Autrefois, les panneaux de ce pays savaient parler. Quand un voyageur se perdait, ils l'appelaient par son nom et lui chantaient le chemin. Puis le Brouillard est venu, et les panneaux se sont tus. On dit qu'ils ne retrouveront leur voix que le jour où quelqu'un saura lire la route sans eux : avec les pas, les nombres et les étoiles." }
+      - { who: plume, text: "Alors c'est nous. On va lire la route. Thessaly aurait dit : un pas, puis un autre, et on recommence." }
+      - { who: narrateur, text: "Maelle sentit quelque chose bouger dans sa poche. C'était son loup-boussole, tout petit, qui s'était réveillé. Il dressa le museau, renifla le vent… et pointa vers l'est, lui aussi." }
+    manches:
+      - id: m1
+        title: Les pas codés
+        intro: "Pour sortir du carrefour, il faut coder ses pas dans la brume."
+        tours:
+          axelle:
+            - { id: ch04-j1-ax-m1a, subject: maths, level: 2, kind: nombre, prompt: "Pour aller tout droit, puis à gauche, puis tout droit : combien de tournants ?", answer: 1, hint: "Compte seulement les fois où tu changes de direction." }
+            - { id: ch04-j1-ax-m1b, subject: maths, level: 2, kind: nombre, prompt: "Tu fais 3 pas, puis 4 pas, puis 3 pas. Combien de pas en tout ?", answer: 10, hint: "3 + 4 = 7, puis encore 3." }
+          maelle:
+            - { id: ch04-j1-ma-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Le Soleil se lève à l'est. Où se couche-t-il ?", choices: ["à l'ouest", "au nord", "au sud"], answer: "à l'ouest", hint: "C'est le point cardinal opposé à l'est." }
+            - { id: ch04-j1-ma-m1b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Sur une rose des vents, quel point est entre le nord et l'est ?", choices: ["le nord-est", "le sud-ouest", "le nord-ouest"], answer: "le nord-est", hint: "On colle les deux noms." }
+          rafaelle:
+            - { id: ch04-j1-ra-m1a, subject: maths, level: 1, kind: nombre, prompt: "Combien font 3 500 m en kilomètres ?", answer: 3.5, hint: "1 km = 1 000 m." }
+            - { id: ch04-j1-ra-m1b, subject: maths, level: 2, kind: nombre, prompt: "Sur une carte au 1/50 000, 4 cm représentent combien de mètres ?", answer: 2000, hint: "4 × 50 000 = 200 000 cm. Puis en mètres." }
+      - id: m2
+        title: Les bornes du chemin
+        tours:
+          axelle:
+            - { id: ch04-j1-ax-m2a, subject: maths, level: 1, kind: nombre, prompt: "Compte de 10 en 10 : 30, 40, 50, … Quel nombre vient après ?", answer: 60, hint: "Ajoute une dizaine." }
+            - { id: ch04-j1-ax-m2b, subject: maths, level: 1, kind: nombre, prompt: "Calcule 8 + 7.", answer: 15, hint: "8 + 2 = 10, puis encore 5." }
+          maelle:
+            - { id: ch04-j1-ma-m2a, subject: maths, level: 1, kind: nombre, prompt: "Combien de mètres dans 3 km ?", answer: 3000, hint: "1 km = 1 000 m." }
+            - { id: ch04-j1-ma-m2b, subject: maths, level: 2, kind: nombre, prompt: "Combien de mètres dans 2,5 km ?", answer: 2500, hint: "2 km = 2 000 m, et un demi-kilomètre = 500 m." }
+          rafaelle:
+            - { id: ch04-j1-ra-m2a, subject: maths, level: 1, kind: nombre, prompt: "Calcule 4,2 × 5.", answer: 21, hint: "4 × 5 = 20, et 0,2 × 5 = 1." }
+            - { gen: maths.conversion }
+      - id: m3
+        title: Les panneaux muets
+        intro: "Les panneaux ont perdu leurs mots. On leur en rend quelques-uns."
+        tours:
+          axelle:
+            - { id: ch04-j1-ax-m3a, subject: francais, level: 3, kind: court, prompt: "« Le Passeur n'a plus de rives. » Qui n'a plus de rives ?", answer: "le Passeur", accept: ["Passeur"], hint: "Cherche le personnage au début de la phrase." }
+            - { id: ch04-j1-ax-m3b, subject: francais, level: 3, kind: court, prompt: "Écris au pluriel : « la rive est loin » → « les … sont loin ».", answer: "rives", accept: ["les rives"], hint: "Au pluriel, on ajoute souvent un s." }
+          maelle:
+            - { id: ch04-j1-ma-m3a, subject: francais, level: 3, kind: qcm, prompt: "Choisis : « (Ou / Où) est la rive ? »", choices: ["Ou", "Où"], answer: "Où", hint: "On parle d'un lieu : il faut l'accent." }
+            - { id: ch04-j1-ma-m3b, subject: francais, level: 2, kind: court, prompt: "Conjugue au futur : « Nous (traverser) ».", answer: "nous traverserons", accept: ["traverserons"], hint: "Futur : l'infinitif + -ons." }
+          rafaelle:
+            - { id: ch04-j1-ra-m3a, subject: francais, level: 1, kind: qcm, prompt: "« sur la route » : quelle est la nature de « sur » ?", choices: ["préposition", "adverbe", "adjectif"], answer: "préposition", hint: "Il introduit un complément : sur, sous, dans, vers…" }
+            - { id: ch04-j1-ra-m3b, subject: espagnol, level: 2, kind: court, prompt: "Traduis : « el camino ».", answer: "le chemin", accept: ["chemin", "la route", "route"], hint: "Regarde la phrase du jour." }
+      - id: m4
+        title: Le Défi du carrefour
+        tours:
+          axelle:
+            - { id: ch04-j1-ax-m4a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 34 + 29.", answer: 63, hint: "34 + 30 = 64, puis on enlève 1." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch04-j1-ma-m4a, subject: maths, level: 1, kind: nombre, prompt: "Calcule 25 × 4.", answer: 100, hint: "4 fois 25 centimes, ça fait un euro." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch04-j1-ra-m4a, subject: francais, level: 2, kind: court, prompt: "Conjugue au passé simple : « Ils (traverser) ».", answer: "ils traversèrent", accept: ["traversèrent"], hint: "Verbe en -er : -èrent à la 3e personne du pluriel." }
+            - { gen: maths.arrondi }
+    pause: "Le carrefour : tournez-vous vers le nord, puis l'est, puis le sud, puis l'ouest, en faisant un grand pas à chaque fois. Et on recommence en sens inverse !"
+    closing:
+      - { who: narrateur, text: "Quand la dernière réponse fut donnée, un grincement monta du vieux poteau. Le panneau de l'est trembla, et des lettres d'or apparurent sur le bois, une à une, comme si une main invisible les écrivait : « Vers la mer des Jours »." }
+      - { who: narrateur, text: "Les autres panneaux restèrent muets. Mais celui-là brillait si fort qu'il éclairait la route comme une lanterne posée par terre." }
+      - { who: rafaelle, text: "La mer des Jours… Thessaly en parlait dans ses leçons. Une mer où l'on dit que chaque vague est une journée qui passe." }
+      - { who: nilo, text: "Bon. D'accord. La canne avait raison. Ma carte doit être un peu… de travers. Mais avouez qu'elle est jolie !" }
+      - { who: narrateur, text: "Maelle se pencha sur la carte de Nilo. Les chemins y étaient dessinés avec soin, les rivières aussi, les montagnes aussi. Mais tout était faux. Pas un peu faux : exactement faux, comme dans un miroir. Nilo s'était-il trompé… ou avait-il menti ?" }
+      - { who: narrateur, text: "Cette nuit-là, Plume s'endormit en boule contre la canne. Et dans son sommeil, il murmura une phrase que personne ne lui avait apprise : « Chaque pas qu'on fait, quelqu'un l'a fait avant nous. »" }
+      - { who: narrateur, text: "Axelle remonta doucement la couverture sur le petit renard de lumière. Au-dessus d'eux, les étoiles perçaient enfin la brume, une à une, comme des clous d'or plantés dans la nuit. Et quelque part à l'est, très loin, l'une d'elles clignota deux fois, comme un signal." }
+
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Le gué
+    decor: Une rivière grise et large. Des pierres plates affleurent. Sur la rive, une barque attend, et un vieux barreur regarde l'eau sans la voir.
+    opening:
+      - { who: narrateur, text: "Le deuxième jour, la route descendit vers une rivière large et grise, qui coulait sans bruit vers la mer des Jours. L'eau était si lente qu'on aurait dit qu'elle hésitait. Au milieu, des pierres plates affleuraient, comme les marches d'un escalier couché." }
+      - { who: narrateur, text: "Sur la berge attendait une barque peinte en bleu, avec une lanterne éteinte à la proue. Et dans la barque, un vieil homme tenait sa rame à deux mains, immobile, le regard perdu dans la brume." }
+      - { who: passeur, text: "Bonjour, voyageuses. Je suis le Passeur. Depuis toujours, je fais traverser les gens d'une rive à l'autre. Mais le Brouillard m'a pris les rives. Je ne sais plus où elles sont. Et je ne sais plus quelle heure il est. Quand on ne sait plus l'heure, on ne sait plus quand partir." }
+      - { who: narrateur, text: "Il montra une grande horloge de cuivre, clouée au poteau du ponton. Ses aiguilles tournaient au hasard, parfois en avant, parfois en arrière, comme deux danseuses ivres de sommeil." }
+      - { who: passeur, text: "Autrefois, je connaissais chaque heure par son nom. L'heure des pêcheurs, l'heure du pain chaud, l'heure où les enfants rentrent de l'école en courant. Maintenant, toutes les heures se ressemblent. Elles sont grises, comme l'eau." }
+      - { who: plume, text: "Maelle, regarde. L'horloge a besoin de quelqu'un qui sait lire le temps. Une Cartographe du Temps." }
+      - { who: maelle, text: "Moi ? Mais les heures, c'est ce que je trouve le plus dur…" }
+      - { who: nilo, text: "Justement ! C'est toujours le plus dur qui devient le plus beau. Écoute la légende de la rivière des heures." }
+      - { who: nilo, text: "Il y a très longtemps, une petite fille vivait au bord de cette rivière. Elle ne savait pas lire l'heure, et tout le monde se moquait d'elle. Alors chaque matin, elle s'asseyait sur une pierre et comptait les vagues. Une vague, une minute. Soixante vagues, une heure. Un jour, l'horloge du village s'est arrêtée, et c'est elle, la petite fille, qui a dit l'heure à tout le monde. Depuis, on appelle cette pierre la Pierre de Celle-Qui-Compte." }
+      - { who: rafaelle, text: "Maelle, on est là. On t'aide. Tu décides quand on part, et on vérifie avec toi." }
+      - { who: narrateur, text: "Maelle prit une grande inspiration. Son loup-boussole sauta sur son épaule et posa sa petite patte sur le cadran de cuivre, comme pour dire : on commence par ici." }
+    manches:
+      - id: m1
+        title: L'horloge du Passeur
+        intro: "Maelle est la Cartographe du Temps : elle décide quand on part. Ses sœurs l'aident."
+        tours:
+          axelle:
+            - { id: ch04-j2-ax-m1a, subject: maths, level: 1, kind: nombre, prompt: "Combien d'heures dans une journée entière ?", answer: 24, hint: "Deux fois 12." }
+            - { id: ch04-j2-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Il est 3 h pile. Où est la grande aiguille ?", choices: ["sur 12", "sur 3", "sur 6"], answer: "sur 12", hint: "À l'heure pile, la grande aiguille est tout en haut." }
+          maelle:
+            - { id: ch04-j2-ma-m1a, subject: maths, level: 1, kind: nombre, prompt: "Combien de minutes dans 1 heure ?", answer: 60, clock: "1:00", hint: "La grande aiguille fait un tour complet : 60 petits traits." }
+            - { id: ch04-j2-ma-m1b, subject: maths, level: 2, kind: court, prompt: "La petite aiguille est entre 5 et 6, la grande est sur 2. Quelle heure est-il ?", answer: "5 h 10", accept: ["5h10", "5:10", "17 h 10", "17h10"], clock: "5:10", hint: "Grande aiguille sur 2 : 2 × 5 = 10 minutes." }
+          rafaelle:
+            - { id: ch04-j2-ra-m1a, subject: maths, level: 1, kind: nombre, prompt: "Combien de minutes font 2 h 15 ?", answer: 135, hint: "2 × 60 = 120, plus 15." }
+            - { id: ch04-j2-ra-m1b, subject: maths, level: 2, kind: court, prompt: "Calcule 8 h 50 + 2 h 25.", answer: "11 h 15", accept: ["11h15", "11:15"], hint: "50 min + 25 min = 75 min = 1 h 15." }
+      - id: m2
+        title: Les pierres du gué
+        tours:
+          axelle:
+            - { id: ch04-j2-ax-m2a, subject: maths, level: 2, kind: nombre, prompt: "Combien de centimètres dans 1 mètre ?", answer: 100, hint: "Regarde ta règle : un mètre, c'est cent petits centimètres." }
+            - { id: ch04-j2-ax-m2b, subject: maths, level: 3, kind: nombre, prompt: "Combien de centimètres font 2 m 50 cm ?", answer: 250, hint: "2 m = 200 cm, plus 50." }
+          maelle:
+            - { id: ch04-j2-ma-m2a, subject: maths, level: 2, kind: court, prompt: "De 8 h 30 à 10 h : combien de temps ?", answer: "1 h 30", accept: ["1h30", "90 min", "90 minutes"], clock: "8:30", hint: "De 8 h 30 à 9 h 30 : une heure. Puis jusqu'à 10 h." }
+            - { id: ch04-j2-ma-m2b, subject: maths, level: 2, kind: court, prompt: "De 9 h 45 à 11 h 10 : combien de temps ?", answer: "1 h 25", accept: ["1h25", "85 min", "85 minutes"], clock: "9:45", hint: "De 9 h 45 à 10 h 45 : 1 h. Puis de 10 h 45 à 11 h 10." }
+          rafaelle:
+            - { id: ch04-j2-ra-m2a, subject: maths, level: 2, kind: nombre, prompt: "Le Passeur rame 120 km en 3 h. Quelle est sa vitesse, en km/h ?", answer: 40, hint: "Combien de km en une seule heure ?" }
+            - { id: ch04-j2-ra-m2b, subject: maths, level: 2, kind: nombre, prompt: "On marche 6 km en 1 h 30. Combien de km en 3 h ?", answer: 12, hint: "3 h, c'est deux fois 1 h 30." }
+      - id: m3
+        title: La marée des heures
+        tours:
+          axelle:
+            - { id: ch04-j2-ax-m3a, subject: maths, level: 3, kind: nombre, prompt: "On marche de 2 h à 5 h. Combien d'heures ?", answer: 3, hint: "Compte : 3, 4, 5." }
+            - { id: ch04-j2-ax-m3b, subject: maths, level: 3, kind: court, prompt: "3 pauses de 10 minutes : combien de temps en tout ?", answer: "30 min", accept: ["30", "30 minutes"], hint: "10 + 10 + 10." }
+          maelle:
+            - { id: ch04-j2-ma-m3a, subject: maths, level: 2, kind: nombre, prompt: "120 minutes, c'est combien d'heures ?", answer: 2, clock: "2:00", hint: "60 minutes = 1 heure." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch04-j2-ra-m3a, subject: maths, level: 3, kind: court, prompt: "On arrive à 18 h 05 après 2 h 40 de route. À quelle heure est-on parti ?", answer: "15 h 25", accept: ["15h25", "15:25"], hint: "18 h 05 − 2 h = 16 h 05. Puis enlève 40 min." }
+            - { id: ch04-j2-ra-m3b, subject: maths, level: 3, kind: nombre, prompt: "Distance = vitesse × durée. À 50 km/h pendant 3 h 30, combien de km ?", answer: 175, hint: "3 h 30 = 3,5 h." }
+      - id: m4
+        title: Le Défi du Passeur
+        tours:
+          axelle:
+            - { id: ch04-j2-ax-m4a, subject: maths, level: 3, kind: nombre, prompt: "Pose et calcule : 65 + 27.", answer: 92, hint: "5 + 7 = 12 : on écrit 2 et on retient 1." }
+            - { id: ch04-j2-ax-m4b, subject: maths, level: 4, kind: nombre, prompt: "1 h 30, c'est combien de minutes ?", answer: 90, hint: "60 minutes, plus 30." }
+          maelle:
+            - { id: ch04-j2-ma-m4a, subject: maths, level: 3, kind: court, prompt: "Départ à 7 h 40, on marche 2 h 35. À quelle heure arrive-t-on ?", answer: "10 h 15", accept: ["10h15", "10:15"], clock: "7:40", hint: "7 h 40 + 2 h = 9 h 40. Puis + 35 min." }
+            - { id: ch04-j2-ma-m4b, subject: maths, level: 3, kind: court, prompt: "1,5 h, c'est combien d'heures et de minutes ?", answer: "1 h 30", accept: ["1h30", "90 min", "90 minutes"], hint: "0,5 h, c'est une demi-heure." }
+          rafaelle:
+            - { id: ch04-j2-ra-m4a, subject: maths, level: 4, kind: nombre, prompt: "Une distance de 90 km est parcourue en 3 h à la vitesse x. Résous 3x = 90.", answer: 30, accept: ["x = 30"], hint: "Divise 90 par 3." }
+            - { id: ch04-j2-ra-m4b, subject: espagnol, level: 2, kind: qcm, prompt: "« ¿Qué hora es? » veut dire…", choices: ["Quelle heure est-il ?", "Où est la rivière ?", "Comment vas-tu ?"], answer: "Quelle heure est-il ?", hint: "Regarde la phrase du jour." }
+    pause: "Le gué : sautez d'une pierre imaginaire à l'autre, sur un pied, en comptant les secondes. Celle qui touche l'eau… recommence en riant !"
+    closing:
+      - { who: narrateur, text: "Quand Maelle donna la dernière heure, les deux aiguilles de cuivre s'arrêtèrent de danser. Elles se posèrent, bien droites, sur la bonne heure. Et dans la barque, la lanterne de proue s'alluma d'une petite flamme bleue." }
+      - { who: passeur, text: "Il est l'heure. Je le sens. Je l'avais oublié, ce petit frisson qu'on a quand il est l'heure de partir." }
+      - { who: narrateur, text: "Le Passeur ne retrouva pas encore ses rives. Mais il se leva dans sa barque, et pour la première fois depuis des années, il plongea sa rame dans l'eau grise. La rivière sembla se réveiller, et murmura." }
+      - { who: maelle, text: "C'est moi qui ai décidé quand on partait. Moi ! Avec les heures !" }
+      - { who: nilo, text: "Je l'avais dit : le plus dur devient le plus beau. Bon, moi, je confonds toujours l'heure et l'hirondelle. Mais toi, tu es la Cartographe du Temps." }
+      - { who: narrateur, text: "Ce soir-là, en traversant le gué, Rafaelle aperçut sous l'eau claire une pierre plus large que les autres. Gravée dessus, à demi effacée, il y avait une petite lanterne. La même que dans le registre de la Ville de Brume. Plume la regarda longtemps, puis détourna les yeux." }
+      - { who: rafaelle, text: "Plume ? Tu la connais, cette petite lanterne ?" }
+      - { who: plume, text: "Non. Enfin… je ne crois pas. Elle me fait juste un drôle de pincement, là, dans la poitrine. Comme quand on entend une chanson qu'on a oubliée." }
+    reward: "l'Horloge du Passeur"
+
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: Le pont de pierre
+    decor: Un grand pont de pierre à sept arches au-dessus d'un ravin. Sur chaque arche, une inscription à demi effacée et un cadran de pierre.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, la route grimpa dans les collines et s'arrêta net au bord d'un ravin. Tout au fond, on entendait un torrent rugir dans le brouillard. Et au-dessus du vide, un pont de pierre immense enjambait le ravin sur sept arches, comme un dragon endormi." }
+      - { who: narrateur, text: "Sur chaque arche, il y avait une inscription et un cadran de pierre. Mais quand Axelle posa le pied sur la première dalle, le pont gronda. Une voix de pierre, lente et grave, monta des profondeurs." }
+      - { who: gardien, text: "Je suis le Pont des Sept Jours. Je laisse passer ceux qui savent compter les jours, les semaines et les saisons. Les autres, je les garde ici, avec le brouillard, jusqu'à ce qu'ils oublient pourquoi ils étaient venus." }
+      - { who: nilo, text: "Celui-là, je le connais. Enfin… je connais sa légende. Approchez." }
+      - { who: nilo, text: "On raconte qu'autrefois, le soleil et la lune se disputaient la route. Le soleil voulait que le monde soit toujours le jour, la lune voulait qu'il soit toujours la nuit. Alors un vieux maçon a construit ce pont, avec sept arches, une pour chaque jour de la semaine. Le soleil passe dessus le matin, la lune passe dessus le soir, et ils ne se croisent jamais. C'est comme ça qu'il y a des jours et des nuits." }
+      - { who: axelle, text: "C'est vrai, Nilo ? Ou c'est encore une histoire de ta carte ?" }
+      - { who: nilo, text: "Toutes les légendes sont un peu vraies. Surtout celles qu'on raconte le soir." }
+      - { who: narrateur, text: "Rafaelle s'approcha de la quatrième arche. L'inscription y était en espagnol, et les lettres brillaient faiblement sous la mousse : « El puente es de piedra, pero el tiempo es de agua. » Le pont est de pierre, mais le temps est d'eau." }
+      - { who: rafaelle, text: "Thessaly m'a appris que les inscriptions anciennes sont des lettres envoyées au futur. Celui qui a gravé ça savait qu'un jour, quelqu'un le lirait. Et ce quelqu'un, aujourd'hui, c'est moi." }
+      - { who: plume, text: "Et regardez la carte de Nilo, posée sur la pierre… Elle est à l'envers ! Il la tient à l'envers depuis le début !" }
+      - { who: nilo, text: "À l'envers ? Mais non. C'est le monde qui est à l'endroit. Bon… d'accord. Je la retourne. Voilà. Oh. Ça marche beaucoup mieux, en fait." }
+    manches:
+      - id: m1
+        title: Les sept arches
+        tours:
+          axelle:
+            - { id: ch04-j3-ax-m1a, subject: francais, level: 1, kind: court, prompt: "Quel jour vient après mercredi ?", answer: "jeudi", hint: "Lundi, mardi, mercredi…" }
+            - { id: ch04-j3-ax-m1b, subject: maths, level: 2, kind: nombre, prompt: "Combien de jours dans une semaine ?", answer: 7, hint: "Le pont a autant d'arches." }
+          maelle:
+            - { id: ch04-j3-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "À midi, quand le Soleil est le plus haut, l'ombre d'un bâton est…", choices: ["la plus courte de la journée", "la plus longue de la journée", "invisible toute la journée"], answer: "la plus courte de la journée", hint: "Le Soleil est presque au-dessus de ta tête." }
+            - { id: ch04-j3-ma-m1b, subject: sciences, level: 2, kind: qcm, prompt: "Le matin, le Soleil est du côté de l'est. De quel côté est l'ombre d'un arbre ?", choices: ["vers l'ouest", "vers l'est", "sous l'arbre"], answer: "vers l'ouest", hint: "L'ombre est toujours de l'autre côté de la lumière." }
+          rafaelle:
+            - { id: ch04-j3-ra-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi y a-t-il des jours et des nuits ?", choices: ["parce que la Terre tourne sur elle-même", "parce que le Soleil s'éteint la nuit", "parce que la Lune cache le Soleil"], answer: "parce que la Terre tourne sur elle-même", hint: "Elle fait un tour en 24 heures." }
+            - { id: ch04-j3-ra-m1b, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi y a-t-il des saisons ?", choices: ["l'axe de la Terre est incliné", "la Terre s'éloigne du Soleil en hiver", "le Soleil brille moins fort en hiver"], answer: "l'axe de la Terre est incliné", hint: "Les rayons arrivent plus ou moins penchés selon la saison." }
+      - id: m2
+        title: Le calendrier du pont
+        tours:
+          axelle:
+            - { id: ch04-j3-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Quel mois vient après janvier ?", choices: ["février", "mars", "décembre"], answer: "février", hint: "C'est le mois le plus court." }
+            - { id: ch04-j3-ax-m2b, subject: maths, level: 3, kind: nombre, prompt: "Combien de mois dans une année ?", answer: 12, hint: "De janvier à décembre." }
+          maelle:
+            - { id: ch04-j3-ma-m2a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 38 × 5.", answer: 190, hint: "38 × 10 = 380, puis la moitié." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch04-j3-ra-m2a, subject: maths, level: 2, kind: nombre, prompt: "Arrondis 4 862 à la centaine.", answer: 4900, hint: "Regarde le chiffre des dizaines : 6." }
+            - { id: ch04-j3-ra-m2b, subject: maths, level: 3, kind: qcm, prompt: "Ordre de grandeur de 398 × 21 ?", choices: ["8 000", "800", "80 000"], answer: "8 000", hint: "400 × 20." }
+      - id: m3
+        title: L'inscription de pierre
+        intro: "Sur la quatrième arche, une inscription en espagnol attend Rafaelle."
+        tours:
+          axelle:
+            - { id: ch04-j3-ax-m3a, subject: maths, level: 3, kind: qcm, prompt: "Il est 4 h et demie. Que montre la grande aiguille ?", choices: ["le 6", "le 12", "le 4"], answer: "le 6", hint: "Une demi-heure : la grande aiguille est tout en bas." }
+            - { id: ch04-j3-ax-m3b, subject: maths, level: 3, kind: nombre, prompt: "Calcule 90 − 45.", answer: 45, hint: "La moitié de 90." }
+          maelle:
+            - { id: ch04-j3-ma-m3a, subject: maths, level: 2, kind: qcm, prompt: "Il est 16 h 45. Que montre la grande aiguille ?", choices: ["le 9", "le 4", "le 3"], answer: "le 9", clock: "16:45", hint: "45 minutes : 9 × 5." }
+            - { id: ch04-j3-ma-m3b, subject: francais, level: 3, kind: court, prompt: "« Le Passeur cherche sa rive. » Quel est le verbe ?", answer: "cherche", hint: "C'est l'action." }
+          rafaelle:
+            - { id: ch04-j3-ra-m3a, subject: espagnol, level: 3, kind: qcm, prompt: "« El puente es de piedra » veut dire…", choices: ["Le pont est en pierre.", "Le pont est en bois.", "La pierre est sous le pont."], answer: "Le pont est en pierre.", read: "El puente es de piedra.", hint: "Piedra ressemble à « pierre »." }
+            - { id: ch04-j3-ra-m3b, subject: espagnol, level: 3, kind: court, prompt: "Traduis : « Vamos por el camino largo ».", answer: "Nous prenons le long chemin", accept: ["nous prenons le chemin long", "on prend le long chemin", "nous allons par le long chemin", "nous passons par le long chemin"], hint: "Vamos = nous allons. Largo = long." }
+      - id: m4
+        title: Le Défi du pont
+        tours:
+          axelle:
+            - { id: ch04-j3-ax-m4a, subject: maths, level: 3, kind: nombre, prompt: "Calcule 56 − 23.", answer: 33, hint: "Enlève 2 dizaines, puis 3 unités." }
+            - { id: ch04-j3-ax-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule 4 × 6.", answer: 24, hint: "6 + 6 + 6 + 6." }
+          maelle:
+            - { id: ch04-j3-ma-m4a, subject: maths, level: 3, kind: nombre, prompt: "Calcule 252 ÷ 6.", answer: 42, hint: "240 ÷ 6 = 40. Reste 12." }
+            - { id: ch04-j3-ma-m4b, subject: francais, level: 4, kind: court, prompt: "Conjugue à l'imparfait : « Ils (avancer) ».", answer: "ils avançaient", accept: ["avançaient"], hint: "Attention à la cédille devant le a." }
+          rafaelle:
+            - { id: ch04-j3-ra-m4a, subject: maths, level: 3, kind: nombre, prompt: "Calcule 15 % de 200.", answer: 30, hint: "10 % = 20, 5 % = 10." }
+            - { id: ch04-j3-ra-m4b, subject: maths, level: 3, kind: nombre, prompt: "Calcule les 2/3 d'un trajet de 18 km, en km.", answer: 12, hint: "Un tiers de 18, c'est 6." }
+    pause: "Le pont des sept jours : dites les jours de la semaine en faisant un grand pas pour chacun. Au dimanche, sautez le plus haut possible !"
+    closing:
+      - { who: narrateur, text: "Une à une, les sept arches s'allumèrent, d'une lueur douce comme l'aube. Le grondement de pierre se tut. Le Pont des Sept Jours avait reconnu ses voyageuses, et il les laissa passer, dalle après dalle, au-dessus du torrent qui rugissait toujours." }
+      - { who: gardien, text: "Passez, apprenties. Le temps est d'eau, et vous savez le compter. C'est assez pour traverser." }
+      - { who: narrateur, text: "De l'autre côté, la brume s'ouvrit un instant. Et pour la première fois, elles la virent : la mer des Jours. Une mer immense, argentée, où chaque vague portait une petite lueur, comme une journée qui s'en va vers le large." }
+      - { who: maelle, text: "Nilo… ta carte était à l'envers depuis le début. Tu le savais ?" }
+      - { who: nilo, text: "Je… non. Enfin, peut-être. Quand on m'a donné cette carte, on m'a dit de ne jamais la retourner. Je ne sais plus qui me l'a dit. C'est bizarre, non ? Je ne me souviens plus de son visage." }
+      - { who: narrateur, text: "Les trois sœurs échangèrent un regard. Nilo s'était-il trompé, ou avait-il menti ? Pour l'instant, personne ne le savait. Pas même Nilo." }
+      - { who: axelle, text: "Moi, je crois que Nilo est gentil. Il a juste une carte bizarre. Et une mémoire un peu trouée, comme une chaussette." }
+      - { who: nilo, text: "Une chaussette ! Merci, Axelle. C'est la plus belle chose qu'on m'ait jamais dite. Enfin, je crois. Je ne me souviens pas des autres." }
+      - { who: narrateur, text: "Et la canne de Thessaly, dans la main d'Axelle, se tourna doucement vers une colline où brillaient, très loin, de petits feux qui clignotaient." }
+    reward: "la Carte Retournée de Nilo"
+
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: La colline des signaux
+    decor: Le sommet d'une colline couronné de tours de feu. Les feux s'allument et s'éteignent, en un langage oublié.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, les apprenties gravirent la colline des signaux. Tout en haut se dressaient douze tours de pierre, disposées en cercle comme les heures d'une horloge. Sur chaque tour brûlait un grand feu." }
+      - { who: narrateur, text: "Mais les feux s'allumaient et s'éteignaient n'importe comment, sans ordre, comme des lucioles affolées. Autrefois, ces feux parlaient : ils envoyaient des messages d'une colline à l'autre, d'un bout du monde jusqu'à l'autre bout. Aujourd'hui, ils bégayaient." }
+      - { who: narrateur, text: "Autour des tours, le vent sifflait entre les pierres. On voyait de là-haut toute la route parcourue : le carrefour, le gué, le pont aux sept arches. Et devant, immense et argentée, la mer des Jours, qui respirait lentement sous la brume." }
+      - { who: nilo, text: "Ça, c'est la plus belle légende de toute la route. Asseyez-vous." }
+      - { who: nilo, text: "Il y a très longtemps, le monde était si grand que les gens ne savaient pas qu'il y avait d'autres gens, ailleurs. Les continents étaient comme des îles qui ne se parlaient jamais. Alors une vieille gardienne de feux a eu une idée : elle a allumé un feu sur une colline. Puis quelqu'un, très loin, a vu la lumière, et en a allumé un autre. Et un autre encore. En une seule nuit, les feux ont fait le tour du monde. Et tout le monde a su qu'il n'était pas seul." }
+      - { who: rafaelle, text: "Une gardienne de feux… avec une canne ?" }
+      - { who: nilo, text: "La légende ne le dit pas. Mais si j'étais vous, je regarderais la canne." }
+      - { who: narrateur, text: "La canne de Thessaly brillait plus fort que jamais. Sa lumière pulsait au même rythme que l'un des feux, tout là-bas, sur une colline lointaine, de l'autre côté de la mer." }
+      - { who: plume, text: "Elle est là-bas. Je le sens. Thessaly est quelque part au bout des feux. Il faut leur réapprendre à parler, pour qu'ils nous montrent le chemin." }
+      - { who: narrateur, text: "Le vent se leva. La brume monta de la mer en longues écharpes grises. Et les apprenties, chacune devant une tour, se mirent au travail." }
+      - { who: mouf, text: "Je peux aider ? Je sais souffler sur les feux. Enfin… je sais les éteindre. C'est presque pareil, non ? Non ? Bon. Je vais m'asseoir." }
+    manches:
+      - id: m1
+        title: Les nombres des feux
+        tours:
+          axelle:
+            - { id: ch04-j4-ax-m1a, subject: maths, level: 3, kind: nombre, prompt: "Écris en chiffres : quatre cent soixante-dix.", answer: 470, hint: "4 centaines, 7 dizaines, 0 unité." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch04-j4-ma-m1a, subject: maths, level: 3, kind: nombre, prompt: "Sur la carte, 1 cm représente 5 km. Combien de km pour 6 cm ?", answer: 30, hint: "6 fois 5 km." }
+            - { id: ch04-j4-ma-m1b, subject: maths, level: 3, kind: nombre, prompt: "On marche 4 km en 1 h. Combien de km en 3 h ?", answer: 12, hint: "3 fois 4 km." }
+          rafaelle:
+            - { id: ch04-j4-ra-m1a, subject: maths, level: 3, kind: nombre, prompt: "3 pas font 2 m. Combien de mètres pour 12 pas ?", answer: 8, hint: "12 pas, c'est 4 fois 3 pas." }
+            - { id: ch04-j4-ra-m1b, subject: maths, level: 3, kind: qcm, prompt: "Un virage de 135° : quel type d'angle ?", choices: ["obtus", "aigu", "droit"], answer: "obtus", hint: "Plus grand qu'un angle droit (90°)." }
+      - id: m2
+        title: Les continents et les océans
+        tours:
+          axelle:
+            - { id: ch04-j4-ax-m2a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Sur une carte, la mer et les océans sont coloriés en…", choices: ["bleu", "vert", "marron"], answer: "bleu", hint: "La couleur de l'eau." }
+            - { id: ch04-j4-ax-m2b, subject: maths, level: 3, kind: nombre, prompt: "Calcule 300 + 200 + 50.", answer: 550, hint: "300 + 200 = 500." }
+          maelle:
+            - { id: ch04-j4-ma-m2a, subject: histoire-geo, level: 2, kind: nombre, prompt: "Combien y a-t-il de continents ? (Europe, Asie, Afrique, Amérique, Océanie, Antarctique)", answer: 6, hint: "Compte-les dans la parenthèse." }
+            - { id: ch04-j4-ma-m2b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Quel est le plus grand océan du monde ?", choices: ["l'océan Pacifique", "l'océan Atlantique", "l'océan Indien"], answer: "l'océan Pacifique", hint: "Son nom veut dire « paisible »." }
+          rafaelle:
+            - { id: ch04-j4-ra-m2a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Où vit la plus grande partie des habitants de la Terre ?", choices: ["en Asie", "en Océanie", "en Antarctique"], answer: "en Asie", hint: "La Chine et l'Inde s'y trouvent." }
+            - { id: ch04-j4-ra-m2b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi les hommes vivent-ils peu dans les grands déserts ?", choices: ["il y a très peu d'eau", "il y fait toujours nuit", "il est interdit d'y aller"], answer: "il y a très peu d'eau", hint: "De quoi a-t-on besoin pour vivre et cultiver ?" }
+      - id: m3
+        title: Le message des feux
+        intro: "Chaque apprentie écrit un petit bout du message que les feux vont porter."
+        tours:
+          axelle:
+            - { id: ch04-j4-ax-m3a, subject: francais, level: 3, kind: libre, validation: soeurs, prompt: "Écris une phrase pour Thessaly, avec une majuscule et un point. Puis lis-la à voix haute." }
+            - { id: ch04-j4-ax-m3b, subject: francais, level: 4, kind: court, prompt: "Mets au futur : « Il marche. »", answer: "Il marchera", accept: ["il marchera.", "marchera"], hint: "Demain, il…" }
+          maelle:
+            - { id: ch04-j4-ma-m3a, subject: francais, level: 4, kind: court, prompt: "Accorde : « Les rives sont (perdu) ».", answer: "perdues", accept: ["les rives sont perdues"], hint: "Avec être, on accorde avec le sujet : les rives, féminin pluriel." }
+            - { id: ch04-j4-ma-m3b, subject: maths, level: 4, kind: qcm, prompt: "Deux routes parallèles se croisent-elles ?", choices: ["non, jamais", "oui, une fois", "oui, deux fois"], answer: "non, jamais", hint: "Comme les deux rails d'un train." }
+          rafaelle:
+            - { id: ch04-j4-ra-m3a, subject: francais, level: 3, kind: libre, validation: soeurs, prompt: "Rédige un petit itinéraire en trois étapes pour aller du carrefour jusqu'à la colline, avec des mots de liaison (d'abord, puis, enfin)." }
+            - { id: ch04-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Une route de brouillard » : quelle figure de style ?", choices: ["une métaphore", "une comparaison", "une énumération"], answer: "une métaphore", hint: "Il n'y a pas de mot « comme »." }
+      - id: m4
+        title: Le dernier feu
+        intro: "Les trois apprenties travaillent ensemble pour rallumer le dernier feu."
+        tours:
+          axelle:
+            - { id: ch04-j4-ax-m4a, subject: maths, level: 4, kind: nombre, prompt: "Combien de mètres dans 1 km ?", answer: 1000, hint: "Kilo veut dire mille." }
+            - { id: ch04-j4-ax-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule 20 ÷ 4.", answer: 5, hint: "Partage 20 en 4 parts égales." }
+          maelle:
+            - { id: ch04-j4-ma-m4a, subject: maths, level: 4, kind: court, prompt: "Calcule 2 h 50 + 1 h 40.", answer: "4 h 30", accept: ["4h30", "4:30"], clock: "2:50", hint: "50 min + 40 min = 90 min = 1 h 30." }
+            - { id: ch04-j4-ma-m4b, subject: maths, level: 4, kind: nombre, prompt: "90 km en 2 h : quelle vitesse, en km/h ?", answer: 45, hint: "Combien en une seule heure ?" }
+          rafaelle:
+            - { id: ch04-j4-ra-m4a, subject: maths, level: 4, kind: nombre, prompt: "72 km/h, c'est combien de mètres par seconde ?", answer: 20, hint: "72 000 m en 3 600 s." }
+            - { id: ch04-j4-ra-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule −8 + 5.", answer: -3, hint: "Tu pars de −8 et tu montes de 5." }
+    pause: "Les feux de la colline : levez les bras quand le feu s'allume, baissez-les quand il s'éteint. Une sœur donne le rythme, de plus en plus vite !"
+    closing:
+      - { who: narrateur, text: "Le dernier feu s'embrasa d'un coup, si haut que les flammes semblèrent lécher les étoiles. Alors les douze tours se mirent à parler. Allumé, éteint, allumé, allumé… Le message partit de colline en colline, au-dessus de la mer des Jours, et très loin, de l'autre côté, un petit feu répondit." }
+      - { who: plume, text: "Il a répondu ! Quelqu'un a répondu ! Là-bas, vous voyez ?" }
+      - { who: narrateur, text: "La canne de Thessaly trembla dans les mains d'Axelle. Et cette fois, ce ne fut pas seulement une lumière : ce fut une voix. Lointaine, fatiguée, mais si douce qu'Axelle en eut les larmes aux yeux." }
+      - { who: thessaly, text: "(une voix, très loin) Mes lueurs… je vous vois. Traversez la mer. Le Passeur connaît le chemin, même s'il l'a oublié." }
+      - { who: narrateur, text: "Puis la voix se tut, et la canne redevint silencieuse. Mais la petite lumière du pommeau battait plus vite, plus fort, comme un cœur qui a couru." }
+      - { who: nilo, text: "Bon. Je crois qu'on a une rive à retrouver. Et un vieux Passeur à convaincre." }
+      - { who: narrateur, text: "Sur le chemin du retour, Maelle sentit son loup-boussole se blottir contre elle. Il ne tremblait plus. Il montrait l'est, la mer, et quelque part au-delà, une maîtresse qui les attendait." }
+      - { who: narrateur, text: "Cette nuit-là, personne n'eut envie de dormir tout de suite. Les trois sœurs restèrent assises au pied de la dernière tour, épaule contre épaule, à regarder les feux parler au-dessus de la mer. Plume répéta sa phrase étrange, plus doucement que jamais. Et pour la première fois, Rafaelle la répéta avec lui." }
+    reward: "un Feu de la Colline, qui brûle dans la lanterne de Plume"
+
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: Le Concert de la Route
+    decor: Le rivage de la mer des Jours, à l'aube. La barque bleue du Passeur flotte près du ponton. La Guitare de l'Arche est posée sur le sable.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, à l'aube, les apprenties descendirent sur le rivage de la mer des Jours. Le sable était gris, l'eau était d'argent, et chaque vague qui venait mourir à leurs pieds portait une petite lueur, comme une journée qui disait au revoir." }
+      - { who: narrateur, text: "Le Passeur les attendait près de sa barque bleue. Il avait mis son plus beau manteau, celui avec les boutons de cuivre. Mais ses yeux cherchaient toujours l'autre rive, sans la trouver." }
+      - { who: narrateur, text: "Au loin, sur la mer, les vagues se suivaient sans fin. On disait que celles d'hier repartaient vers le large, et que celles de demain attendaient leur tour, cachées derrière l'horizon. Et au milieu, il y avait aujourd'hui : une seule vague, qui brillait un peu plus que les autres." }
+      - { who: passeur, text: "Je voudrais vous faire traverser. Vraiment. Mais je ne sais plus où est l'autre rive. Si je me trompe, nous ramerons pour toujours au milieu de la mer, entre hier et demain." }
+      - { who: nilo, text: "Avant de décider, une dernière légende. Celle de la Guitare de la Route." }
+      - { who: nilo, text: "On dit que les voyageurs d'autrefois ne marchaient jamais en silence. Ils chantaient. Et leur chant avait un rythme : un pas, une note. Une pause, un silence. Quand le chant était juste, la route se raccourcissait sous leurs pieds, et le brouillard s'écartait pour les laisser passer. Quand le chant était faux, ils tournaient en rond. Alors ils ont appris à mesurer leur marche, comme on mesure une musique." }
+      - { who: nilo, text: "Et la plus grande voyageuse de toutes, dit la légende, portait une canne d'argent. Elle disait que la route n'est jamais trop longue, quand on la chante à plusieurs. Je ne sais pas qui c'était. Mais je crois que vous, vous savez." }
+      - { who: plume, text: "Thessaly disait toujours : on décide ensemble, d'abord. Alors on décide. Qu'est-ce qu'on fait pour le Passeur ?" }
+      - { who: narrateur, text: "Les trois sœurs se regardèrent. La mer murmurait. La canne de Thessaly, plantée dans le sable, brillait doucement. Et la Guitare de l'Arche attendait, ses cordes tendues comme une route." }
+      - { who: mouf, text: "Moi je vote pour qu'on prenne la barque. Elle est bleue. J'aime bien le bleu. Enfin, aujourd'hui. Demain, je ne sais pas." }
+    manches:
+      - id: m1
+        title: L'horaire de marche
+        intro: "Axelle fixe les pauses, Maelle calcule les heures d'arrivée, Rafaelle trouve la vitesse pour arriver avant la nuit."
+        tours:
+          axelle:
+            - { id: ch04-j5-ax-m1a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 120 + 80.", answer: 200, hint: "12 dizaines + 8 dizaines." }
+            - { id: ch04-j5-ax-m1b, subject: maths, level: 5, kind: court, prompt: "De 9 h 20 à 10 h 05 : combien de temps ?", answer: "45 min", accept: ["45", "45 minutes"], hint: "De 9 h 20 à 10 h : 40 min. Puis 5 de plus." }
+          maelle:
+            - { id: ch04-j5-ma-m1a, subject: maths, level: 3, kind: court, prompt: "On arrive à 15 h 10 après 1 h 45 de marche. À quelle heure est-on parti ?", answer: "13 h 25", accept: ["13h25", "13:25"], clock: "15:10", hint: "15 h 10 − 1 h = 14 h 10. Puis enlève 45 min." }
+            - { id: ch04-j5-ma-m1b, subject: maths, level: 3, kind: court, prompt: "3 pauses de 20 minutes : combien de temps en tout ?", answer: "1 h", accept: ["1h", "60 min", "60 minutes", "une heure"], hint: "3 × 20 = 60 minutes." }
+          rafaelle:
+            - { id: ch04-j5-ra-m1a, subject: maths, level: 3, kind: nombre, prompt: "La barque doit faire 30 km avant la nuit, dans 2 h. À quelle vitesse, en km/h ?", answer: 15, hint: "30 km en 2 h : combien en une heure ?" }
+            - { id: ch04-j5-ra-m1b, subject: maths, level: 4, kind: nombre, prompt: "Trouve la médiane de 3, 7 et 9.", answer: 7, hint: "La valeur du milieu, une fois rangées." }
+      - id: m2
+        title: Le défi de la mer des Jours
+        intro: "Pour que la Guitare joue juste, chaque apprentie relève un défi de la classe supérieure."
+        tours:
+          axelle:
+            - { id: ch04-j5-ax-m2a, subject: maths, level: 5, kind: nombre, prompt: "Calcule 8 × 9.", answer: 72, hint: "8 × 10 = 80, moins 8." }
+            - { id: ch04-j5-ax-m2b, subject: maths, level: 5, kind: nombre, prompt: "On marche 5 km en 1 h. Combien de km en 4 h ?", answer: 20, hint: "4 fois 5 km." }
+          maelle:
+            - { id: ch04-j5-ma-m2a, subject: maths, level: 5, kind: nombre, prompt: "Distance = vitesse × temps. À 60 km/h pendant 2,5 h, combien de km ?", answer: 150, hint: "60 × 2 = 120, plus la moitié de 60." }
+            - { id: ch04-j5-ma-m2b, subject: maths, level: 5, kind: nombre, prompt: "3 h 20 min, c'est combien de minutes ?", answer: 200, hint: "3 × 60 = 180, plus 20." }
+          rafaelle:
+            - { id: ch04-j5-ra-m2a, subject: maths, level: 5, kind: nombre, prompt: "Résous : 4x − 5 = 15.", answer: 5, accept: ["x = 5"], hint: "4x = 20." }
+            - { id: ch04-j5-ra-m2b, subject: maths, level: 5, kind: nombre, prompt: "Calcule 3² + 4².", answer: 25, hint: "9 + 16." }
+      - id: m3
+        title: Le chant de la route
+        intro: "Les trois apprenties chantent la marche. La Guitare accompagne chaque pas."
+        tours:
+          axelle:
+            - { id: ch04-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Marche sur place en chantant « un pas, deux pas, trois pas, pause ». Tes sœurs tapent le rythme avec toi." }
+          maelle:
+            - { id: ch04-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Invente une phrase qui rime avec « rivière » et chante-la sur l'air que tu veux." }
+          rafaelle:
+            - { id: ch04-j5-ra-m3a, subject: espagnol, level: 3, kind: libre, validation: soeurs, prompt: "Dis en espagnol : « Nous traverserons la rivière. » Puis chante-le !", read: "Cruzaremos el río." }
+    concert:
+      measures:
+        axelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire (un pas par temps)" }
+        maelle: { given: [2, 1], missing: 1, prompt: "Blanche, noire (un grand pas, un petit pas)" }
+        rafaelle: { given: [0.5, 0.5, 1], missing: 2, prompt: "Croche, croche, noire, blanche" }
+    pause: "La marche des voyageurs : marchez autour de la pièce en chantant, un pas sur chaque temps. Quand la musique s'arrête, statue !"
+    closing:
+      - { who: narrateur, text: "La Guitare se mit à jouer toute seule, une marche lente et joyeuse. À chaque note, la brume s'écartait un peu plus sur la mer. Et soudain, très loin, on vit apparaître une ligne sombre sur l'horizon : l'autre rive." }
+      - { who: passeur, text: "La rive… Ma rive ! Je la vois ! Elle était là depuis toujours. C'est moi qui ne savais plus la regarder." }
+      - { who: narrateur, text: "Le vieux Passeur pleura de joie dans sa barbe. Puis il sortit de sa poche un petit objet de laiton et le posa dans la main de Maelle. C'était une boussole, et sur son couvercle, un loup était gravé." }
+      - { who: passeur, text: "Elle appartenait à une voyageuse avec une canne, qui m'a fait traverser il y a longtemps. Elle m'a dit : un jour, une petite fille au loup viendra. Donne-la-lui." }
+      - { who: maelle, text: "La Boussole du Loup… Elle montre le nord, et elle montre aussi autre chose. Regardez : l'aiguille tremble vers l'est, comme la canne. Comme si elles parlaient ensemble." }
+      - { who: nilo, text: "Une voyageuse avec une canne… Thessaly était déjà passée par ici. Elle savait qu'on viendrait." }
+      - { who: narrateur, text: "La barque bleue glissa sur la mer des Jours. Les vagues portaient leurs petites lueurs, et les apprenties, assises à la proue, les regardaient passer comme des souvenirs." }
+      - { who: narrateur, text: "Quand elles posèrent le pied sur l'autre rive, un pigeon tomba du ciel, épuisé, aux pieds de Rafaelle. À sa patte, un message était attaché. Une adresse, et trois mots, tracés d'une main tremblante : « Aidez-moi, vite »." }
+    reward: "la Boussole du Loup et un nouveau fragment de la Carte Vivante"

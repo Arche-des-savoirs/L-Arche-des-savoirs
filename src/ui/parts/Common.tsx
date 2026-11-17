@@ -17,7 +17,11 @@ const SPEAKERS: Record<string, string> = {
   mouf: 'Mouf',
   epouvantail: "L'Épouvantail-Qui-Oublie",
   veilleur: 'Le Veilleur',
-  habitant: 'Un habitant'
+  habitant: 'Un habitant',
+  passeur: 'Le Passeur Sans Rives',
+  pigeon: 'Pigeon',
+  fil: 'Le Fil Sans Fin',
+  reine: 'La Reine Sans Ombre'
 };
 const speaker = (who: string) => SPEAKERS[who] ?? NAMES[who as PlayerId] ?? who;
 

@@ -1,0 +1,421 @@
+# Chapitre 6 — Le Royaume des Ombres
+# Sources : Plan narratif v2 (cadrans solaires à l'heure fausse, message caché dans les ombres, une ombre en trop suit les filles, Plume refuse de dire ce qu'il voit),
+# doc « Saison 1, chapitres 2 à 9 » (Reine Sans Ombre, thèmes des jours, Lanterne d'Ombre, accroche du Tribunal des Mémoires),
+# Banque d'exercices S1-C6 (questions), doc des variantes (décision : que faire de la Reine Sans Ombre ?).
+# Vigilance Axelle au jour 3 : la perte de l'ombre est courte, jouée comme un jeu de mouvement, et ses sœurs la lui rendent.
+# Les légendes sont racontées par Nilo ; Thessaly parle par un message de Pigeon.
+
+id: ch06
+number: 6
+act: 1
+title: Le Royaume des Ombres
+introImage: ch06
+scene: royaume-des-ombres
+
+espagnol:
+  - { es: "La sombra sigue a la luz.", fr: "L'ombre suit la lumière." }
+  - { es: "¿Qué hora es en el reloj de sol?", fr: "Quelle heure est-il au cadran solaire ?" }
+  - { es: "Mi sombra baila conmigo.", fr: "Mon ombre danse avec moi." }
+  - { es: "La reina vive en el palacio.", fr: "La reine vit dans le palais." }
+  - { es: "Vi mi sombra.", fr: "J'ai vu mon ombre." }
+
+decision:
+  prompt: "La Reine Sans Ombre règne par la peur, mais elle a l'air si seule. Que faire de la Reine ?"
+  options:
+    A:
+      label: Lui rendre son ombre par le jeu
+      scene: "La Reine rit pour la première fois depuis cent ans. Elle joue à cache-ombre avec les apprenties, entre les colonnes du palais, et sa couronne tombe de travers."
+      line: { who: reine, text: "Mon ombre est drôle ! Regardez, elle a de grandes oreilles !" }
+      habillage: "Les ombres forment un petit théâtre de silhouettes ; la forme à retrouver est celle de la Reine."
+    B:
+      label: La défier
+      scene: "La Reine se dresse, haute et pâle, et lance ses ombres contre les apprenties. Les filles les alignent une à une pour l'arrêter."
+      line: { who: reine, text: "Montrez-moi ce que vous valez, petites lueurs !" }
+      habillage: "Les ombres sont mobiles : il faut les aligner vite, avant qu'elles s'échappent."
+    C:
+      label: Lui montrer les souvenirs
+      scene: "Chaque ombre porte un souvenir : un chant, un visage, un jouet d'enfant. La Reine les regarde passer, et ses yeux se mouillent."
+      line: { who: reine, text: "Cette ombre… ce jouet… ça me revient. J'avais une poupée de chiffon." }
+      habillage: "Les ombres sont des portraits ; leur longueur se calcule par proportionnalité à partir d'un objet connu."
+
+repliquesAbsurdes:
+  - "Madame la Reine, votre ombre est partie ? Elle est peut-être en vacances. À la plage !"
+  - "Mon ombre à moi, elle imite tout ce que je fais. C'est une copieuse."
+  - "Je réponds si vous me prêtez votre couronne. Juste pour voir l'ombre qu'elle fait."
+  - "Mon loup a peur de son ombre. Mais son ombre a peur de lui aussi. Ils sont quittes."
+  - "Vous n'avez pas d'ombre ? Alors vous ne pouvez jamais être en retard pour la sieste à l'ombre !"
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: La Porte d'Ombre
+    decor: Un col de montagne noir, au crépuscule éternel. Une immense porte de basalte se dresse entre deux falaises, et des ombres sans corps glissent sur la roche.
+    opening:
+      - { who: narrateur, text: "Il était une fois un royaume où le soleil s'était arrêté de se lever. Il ne s'était pas éteint, non. Il restait juste là, tout au bord de l'horizon, comme un enfant qui n'ose pas entrer dans une pièce. Et dans cette lumière rasante, éternelle, les ombres étaient devenues si longues qu'un jour, elles s'étaient détachées des gens." }
+      - { who: narrateur, text: "C'est vers ce royaume que marchaient les trois apprenties, après trois jours de route à travers les montagnes noires. La Boussole du Loup tremblait. La canne de Thessaly brillait. Et Pigeon, perché sur l'épaule de Rafaelle, ne roucoulait plus du tout." }
+      - { who: narrateur, text: "Au sommet du col se dressait une porte immense, taillée dans une pierre noire et luisante. Pas de poignée, pas de serrure. Juste une inscription gravée au-dessus du linteau, et tout autour, sur la roche, des ombres qui glissaient sans personne pour les porter. Une ombre de cheval qui galopait. Une ombre de marchande qui comptait ses pièces. Une ombre d'enfant qui sautait à la corde." }
+      - { who: nilo, text: "Ça, c'est le Royaume des Ombres. Je vous préviens, je n'ai pas de carte pour ici. Même à l'envers." }
+      - { who: nilo, text: "Mais j'ai une légende. On raconte qu'autrefois, ici, vivait une reine si belle que son ombre en était jalouse. Un jour, l'ombre a dit : « Moi aussi, je veux régner. » Et elle est partie, en emportant avec elle tous les souvenirs de la reine. Depuis, la reine n'a plus d'ombre, plus de souvenirs, et elle a décidé que personne, dans son royaume, n'en aurait plus non plus." }
+      - { who: axelle, text: "C'est triste. Elle doit se sentir toute seule, la reine." }
+      - { who: narrateur, text: "Rafaelle s'approcha de la porte et lut l'inscription à voix haute : « Seul entre qui sait d'où vient l'ombre. » Les lettres s'allumèrent faiblement, puis s'éteignirent, comme si la porte attendait la suite." }
+      - { who: plume, text: "Une ombre, ça vient de la lumière. Thessaly nous l'a dit, au tout premier jour. Pas de lumière, pas d'ombre. Il faut le prouver à la porte." }
+      - { who: narrateur, text: "Mais Plume, en disant cela, regarda derrière les apprenties. Sur la roche, il y avait leurs trois ombres, bien collées à leurs pieds. Et à côté… il y en avait une quatrième. Petite. Avec, au bout d'un bras, la forme d'une minuscule lanterne." }
+    manches:
+      - id: m1
+        title: D'où vient l'ombre
+        intro: "Pour ouvrir la Porte d'Ombre, il faut prouver qu'une ombre est un effet de la lumière."
+        tours:
+          axelle:
+            - { id: ch06-j1-ax-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pour faire une ombre, il faut de la lumière et…", choices: ["un objet", "de l'eau", "du vent"], answer: "un objet", hint: "Quelque chose doit arrêter la lumière." }
+            - { id: ch06-j1-ax-m1b, subject: sciences, level: 1, kind: qcm, prompt: "La nuit, quand il fait tout noir, voit-on son ombre ?", choices: ["non", "oui"], answer: "non", hint: "Pas de lumière, pas d'ombre." }
+          maelle:
+            - { id: ch06-j1-ma-m1a, subject: sciences, level: 1, kind: court, prompt: "Complète : la lumière se propage en ligne…", answer: "droite", accept: ["ligne droite"], hint: "Comme un rayon laser." }
+            - { id: ch06-j1-ma-m1b, subject: sciences, level: 2, kind: qcm, prompt: "Si l'objet s'approche de la lampe, son ombre devient…", choices: ["plus grande", "plus petite", "pareille"], answer: "plus grande", hint: "Mets ta main tout près d'une lampe de poche." }
+          rafaelle:
+            - { id: ch06-j1-ra-m1a, subject: sciences, level: 1, kind: qcm, prompt: "Ordre de grandeur de la vitesse de la lumière dans le vide ?", choices: ["300 000 km/s", "300 km/h", "3 000 m/s"], answer: "300 000 km/s", hint: "C'est la vitesse la plus grande qui existe." }
+            - { id: ch06-j1-ra-m1b, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi l'ombre d'un objet a-t-elle la même forme que lui ?", choices: ["la lumière se propage en ligne droite", "l'ombre copie l'objet par magie", "l'objet colorie le sol"], answer: "la lumière se propage en ligne droite", hint: "Les rayons rasent les bords de l'objet." }
+      - id: m2
+        title: Le jour et la nuit
+        tours:
+          axelle:
+            - { id: ch06-j1-ax-m2a, subject: sciences, level: 2, kind: qcm, prompt: "Qu'est-ce qui vient après la nuit ?", choices: ["le jour", "la nuit", "le soir"], answer: "le jour", hint: "Le matin, le soleil se lève." }
+            - { id: ch06-j1-ax-m2b, subject: francais, level: 2, kind: court, prompt: "« L'ombre de Plume est grande. » De qui parle-t-on ?", answer: "de Plume", accept: ["Plume"], hint: "L'ombre de qui ?" }
+          maelle:
+            - { id: ch06-j1-ma-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quelle est la nature du mot « sombre » ?", choices: ["adjectif", "nom", "verbe"], answer: "adjectif", hint: "Il décrit quelque chose : une nuit sombre." }
+            - { id: ch06-j1-ma-m2b, subject: francais, level: 2, kind: court, prompt: "Conjugue au présent : « Elles (danser) ».", answer: "elles dansent", accept: ["dansent"], hint: "Ils, elles : -ent." }
+          rafaelle:
+            - { id: ch06-j1-ra-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quelle est la nature du mot « ombre » ?", choices: ["nom", "verbe", "adverbe"], answer: "nom", hint: "On peut dire « une ombre »." }
+            - { id: ch06-j1-ra-m2b, subject: francais, level: 3, kind: libre, validation: soeurs, prompt: "Explique en deux ou trois phrases pourquoi on a une ombre au soleil, comme si tu l'expliquais à la Porte." }
+      - id: m3
+        title: Les formes sur la roche
+        tours:
+          axelle:
+            - { id: ch06-j1-ax-m3a, subject: maths, level: 1, kind: nombre, prompt: "Combien de côtés a un triangle ?", answer: 3, hint: "Tri veut dire trois." }
+            - { id: ch06-j1-ax-m3b, subject: maths, level: 1, kind: nombre, prompt: "Combien de côtés a un carré ?", answer: 4, hint: "Compte-les en faisant le tour." }
+          maelle:
+            - { id: ch06-j1-ma-m3a, subject: maths, level: 1, kind: nombre, prompt: "Un losange a combien de côtés égaux ?", answer: 4, hint: "Tous ses côtés ont la même longueur." }
+            - { id: ch06-j1-ma-m3b, subject: maths, level: 1, kind: nombre, prompt: "Calcule 6 × 9.", answer: 54, hint: "6 × 10 − 6." }
+          rafaelle:
+            - { id: ch06-j1-ra-m3a, subject: maths, level: 1, kind: nombre, prompt: "Combien d'axes de symétrie a un triangle équilatéral ?", answer: 3, hint: "Un pour chaque sommet." }
+            - { id: ch06-j1-ra-m3b, subject: maths, level: 1, kind: nombre, prompt: "Calcule 6,4 × 5.", answer: 32, hint: "6 × 5 = 30 et 0,4 × 5 = 2." }
+      - id: m4
+        title: Le Défi de la Porte
+        tours:
+          axelle:
+            - { id: ch06-j1-ax-m4a, subject: maths, level: 1, kind: nombre, prompt: "Calcule 9 + 9.", answer: 18, hint: "Le double de 9." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch06-j1-ma-m4a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 64 × 5.", answer: 320, hint: "64 × 10 = 640, puis la moitié." }
+            - { gen: maths.comparer }
+          rafaelle:
+            - { id: ch06-j1-ra-m4a, subject: espagnol, level: 2, kind: court, prompt: "Traduis : « la sombra ».", answer: "l'ombre", accept: ["ombre", "une ombre"], hint: "Regarde la phrase du jour." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu des ombres : une sœur fait un geste lentement, les deux autres sont ses ombres et l'imitent exactement. On change de rôle à chaque fois !"
+    closing:
+      - { who: narrateur, text: "Quand la dernière réponse fut donnée, l'inscription s'alluma d'une lumière blanche. La Porte d'Ombre trembla, et ses deux battants de pierre s'ouvrirent sans un bruit, comme deux grandes ailes noires qui se déplient." }
+      - { who: narrateur, text: "Derrière s'étendait le Royaume des Ombres. Une ville de tours fines et de jardins de pierre, baignée d'une lumière d'or et de cendre, celle du soleil qui ne se levait jamais. Dans les rues, les gens marchaient sans ombre, le regard vide. Et les ombres, elles, marchaient sans gens, libres et silencieuses." }
+      - { who: rafaelle, text: "Ils n'ont plus d'ombre… et ils n'ont plus l'air de se souvenir de rien. Comme les habitants de la Ville de Brume avec leurs noms." }
+      - { who: nilo, text: "Le Brouillard ne vole pas toujours la même chose. Parfois des noms, parfois des heures, parfois des ombres. Mais au fond, c'est toujours la même chose qu'il prend : les souvenirs." }
+      - { who: maelle, text: "Plume… tout à l'heure, tu as regardé derrière nous. Tu as vu quelque chose ?" }
+      - { who: plume, text: "Non. Rien. Je n'ai rien vu. On avance ?" }
+      - { who: narrateur, text: "Mais en franchissant la porte, Axelle se retourna une dernière fois. Sur la roche, à côté de leurs ombres, la petite ombre à la lanterne était toujours là. Elle ne faisait pas peur. Elle avait l'air de les attendre. Et quand Axelle lui fit un petit signe de la main, l'ombre leva sa lanterne, comme pour dire bonjour." }
+
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Le cadran
+    decor: Une grande place pavée de marbre. Au centre, un immense cadran solaire dont l'ombre indique une heure fausse.
+    opening:
+      - { who: narrateur, text: "Le deuxième jour, si l'on peut parler de jour dans un pays où le soleil ne se lève pas, les apprenties arrivèrent sur la grande place du royaume. Elle était pavée de marbre blanc, et en son centre se dressait un cadran solaire immense, avec une aiguille de bronze haute comme un arbre." }
+      - { who: narrateur, text: "Tout autour du cadran, les habitants attendaient. Ils regardaient l'ombre de l'aiguille, immobiles, comme s'ils attendaient qu'elle leur dise quoi faire. Mais l'ombre ne bougeait pas. Elle restait plantée sur le même chiffre, depuis des années." }
+      - { who: nilo, text: "Le cadran dit qu'il est six heures. Il dit six heures depuis cent ans. Les gens d'ici ne savent plus s'il faut se lever, manger ou dormir. Alors ils ne font rien. Ils attendent." }
+      - { who: mouf, text: "Moi aussi, je ne sais jamais quelle heure il est. Mais moi, c'est parce que j'oublie de regarder. Eux, c'est plus grave." }
+      - { who: narrateur, text: "C'est alors que Pigeon se mit à battre des ailes. Il fouilla sous ses plumes, sortit un petit rouleau de papier et le tendit à Rafaelle, l'air très fier." }
+      - { who: pigeon, text: "Un message de Thessaly ! Il est arrivé cette nuit. Et cette fois, je vais le lire à l'endroit. Promis." }
+      - { who: pigeon, text: "« Mes lueurs. Le cadran ment, parce que son ombre a été volée. Mais une ombre vraie ne ment jamais. Regardez les vôtres. Je vous ai caché un mot dans les ombres de la place. Je vous embrasse. T. » Voilà. À l'endroit. Je suis très fier de moi." }
+      - { who: axelle, text: "Un mot caché dans les ombres ? Mais comment on lit une ombre ?" }
+      - { who: nilo, text: "Avec le temps. Écoutez la légende du berger qui lisait l'heure dans son bâton. Il plantait son bâton dans l'herbe, et regardait l'ombre tourner. Le matin, elle était longue et partait vers l'ouest. À midi, elle se faisait toute petite. Le soir, elle s'allongeait de nouveau, vers l'est. Ce berger n'avait jamais vu d'horloge de sa vie. Mais il n'était jamais en retard pour rentrer ses moutons." }
+      - { who: maelle, text: "Alors si on comprend comment l'ombre bouge, on saura la vraie heure. Et peut-être trouver le mot de Thessaly." }
+    manches:
+      - id: m1
+        title: L'ombre qui tourne
+        tours:
+          axelle:
+            - { id: ch06-j2-ax-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Le matin, on se lève et on prend le petit déjeuner. Le soir…", choices: ["on dîne et on va se coucher", "on prend le petit déjeuner", "on va à l'école"], answer: "on dîne et on va se coucher", hint: "Pense à ta journée." }
+            - { id: ch06-j2-ax-m1b, subject: maths, level: 2, kind: court, prompt: "La petite aiguille est sur 3, la grande sur 12. Quelle heure est-il ?", answer: "3 h", accept: ["3h", "3 heures", "15 h", "15h", "3:00"], hint: "Grande aiguille sur 12 : l'heure pile." }
+          maelle:
+            - { id: ch06-j2-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Au cours de la journée, la longueur de l'ombre d'un bâton…", choices: ["change", "ne change jamais", "disparaît le matin"], answer: "change", hint: "Le Soleil monte puis redescend." }
+            - { id: ch06-j2-ma-m1b, subject: sciences, level: 3, kind: qcm, prompt: "À quel moment l'ombre est-elle la plus longue ?", choices: ["le matin tôt ou le soir", "à midi", "elle est toujours pareille"], answer: "le matin tôt ou le soir", hint: "Quand le Soleil est bas sur l'horizon." }
+          rafaelle:
+            - { id: ch06-j2-ra-m1a, subject: sciences, level: 2, kind: qcm, prompt: "En combien de temps la Terre fait-elle un tour sur elle-même ?", choices: ["environ 24 heures", "un an", "un mois"], answer: "environ 24 heures", hint: "Un jour et une nuit." }
+            - { id: ch06-j2-ra-m1b, subject: sciences, level: 3, kind: qcm, prompt: "En combien de temps la Terre fait-elle le tour du Soleil ?", choices: ["environ 365 jours", "24 heures", "7 jours"], answer: "environ 365 jours", hint: "C'est la durée d'une année." }
+      - id: m2
+        title: Les heures du cadran
+        tours:
+          axelle:
+            - { id: ch06-j2-ax-m2a, subject: maths, level: 3, kind: court, prompt: "La petite aiguille est entre 7 et 8, la grande est sur 6. Quelle heure est-il ?", answer: "7 h 30", accept: ["7h30", "7 heures et demie", "7:30", "19 h 30", "19h30"], hint: "Grande aiguille sur 6 : et demie." }
+            - { id: ch06-j2-ax-m2b, subject: maths, level: 3, kind: nombre, prompt: "Quelle est la moitié de 18 ?", answer: 9, hint: "9 + 9 = 18." }
+          maelle:
+            - { id: ch06-j2-ma-m2a, subject: maths, level: 3, kind: court, prompt: "Une ombre reste de 10 h 40 à 12 h 05. Combien de temps ?", answer: "1 h 25", accept: ["1h25", "85 min", "85 minutes"], clock: "10:40", hint: "De 10 h 40 à 11 h 40 : 1 h. Puis jusqu'à 12 h 05." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch06-j2-ra-m2a, subject: maths, level: 2, kind: nombre, prompt: "Combien de secondes dans une heure ?", answer: 3600, hint: "60 minutes de 60 secondes." }
+            - { id: ch06-j2-ra-m2b, subject: maths, level: 3, kind: court, prompt: "Le cadran a pris 2 h 45 de retard, puis encore 1 h 30. Quel est le retard total ?", answer: "4 h 15", accept: ["4h15", "255 min"], hint: "45 min + 30 min = 75 min." }
+      - id: m3
+        title: Le mot caché dans les ombres
+        intro: "Le message de Thessaly est caché dans les ombres de la place. Il faut le reconstituer."
+        tours:
+          axelle:
+            - { id: ch06-j2-ax-m3a, subject: francais, level: 3, kind: court, prompt: "Quel est le verbe de la phrase « L'ombre danse. » ?", answer: "danse", hint: "Que fait l'ombre ?" }
+            - { id: ch06-j2-ax-m3b, subject: francais, level: 2, kind: ordre, prompt: "Remets les mots dans l'ordre pour lire le message.", choices: ["courage", "lueurs", "mes"], answer: ["courage", "mes", "lueurs"], hint: "Un encouragement, puis à qui il s'adresse." }
+          maelle:
+            - { id: ch06-j2-ma-m3a, subject: francais, level: 3, kind: qcm, prompt: "Choisis : « (Ce / Se) soir, l'ombre (se / ce) lève. »", choices: ["Ce… se", "Se… ce", "Ce… ce"], answer: "Ce… se", hint: "« Ce soir » : on montre. « se lève » : le verbe se lever." }
+            - { id: ch06-j2-ma-m3b, subject: francais, level: 3, kind: court, prompt: "Accorde : « Les ombres (créé) ».", answer: "créées", accept: ["les ombres créées"], hint: "Ombres : féminin pluriel. Attention, trois e !" }
+          rafaelle:
+            - { id: ch06-j2-ra-m3a, subject: espagnol, level: 3, kind: court, prompt: "Le mot caché est en espagnol : « La sombra sigue a la luz ». Traduis-le.", answer: "L'ombre suit la lumière", accept: ["l'ombre suit la lumiere"], read: "La sombra sigue a la luz.", hint: "Luz = lumière. Sigue = suit." }
+            - { id: ch06-j2-ra-m3b, subject: francais, level: 3, kind: court, prompt: "« L'ombre bouge quand la lumière change. » Écris la proposition subordonnée.", answer: "quand la lumière change", hint: "Elle commence par un mot subordonnant." }
+      - id: m4
+        title: Le Défi du cadran
+        tours:
+          axelle:
+            - { id: ch06-j2-ax-m4a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 27 + 35.", answer: 62, hint: "27 + 30 = 57, puis + 5." }
+            - { id: ch06-j2-ax-m4b, subject: maths, level: 2, kind: nombre, prompt: "Calcule 70 − 28.", answer: 42, hint: "70 − 30 = 40, puis on rajoute 2." }
+          maelle:
+            - { id: ch06-j2-ma-m4a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 135 ÷ 5.", answer: 27, hint: "100 ÷ 5 = 20 et 35 ÷ 5 = 7." }
+            - { id: ch06-j2-ma-m4b, subject: francais, level: 4, kind: court, prompt: "Conjugue au futur : « Elle (retrouver) ».", answer: "elle retrouvera", accept: ["retrouvera"], hint: "L'infinitif + -a." }
+          rafaelle:
+            - { id: ch06-j2-ra-m4a, subject: francais, level: 2, kind: court, prompt: "Conjugue au passé composé : « Tu (projeter) ».", answer: "tu as projeté", accept: ["as projeté"], hint: "Avoir + participe passé." }
+            - { id: ch06-j2-ra-m4b, subject: maths, level: 3, kind: nombre, prompt: "Calcule la moyenne de 5, 7, 9 et 11.", answer: 8, hint: "La somme fait 32. Divise par 4." }
+    pause: "Le cadran humain : une sœur fait l'aiguille avec son bras. Les autres disent l'heure qu'elle montre. Puis on tourne, de plus en plus vite !"
+    closing:
+      - { who: narrateur, text: "Quand les apprenties eurent rassemblé toutes les pièces du message, quelque chose d'étonnant se produisit. Leurs trois ombres, sur le marbre, se mirent à bouger toutes seules. Elles glissèrent jusqu'au pied du grand cadran, et se couchèrent à côté de l'aiguille de bronze." }
+      - { who: narrateur, text: "Et l'ombre de l'aiguille, pour la première fois depuis cent ans, bougea. D'un cran. Puis d'un autre. Elle tourna lentement autour du cadran, jusqu'à se poser sur la vraie heure. Un murmure parcourut la foule des habitants." }
+      - { who: habitant, text: "Il est… il est l'heure du goûter ! Je m'en souviens ! Avant, à cette heure-là, ma grand-mère faisait des crêpes !" }
+      - { who: narrateur, text: "Un vieil homme éclata de rire. Une petite fille courut chercher sa mère. Et sous les pieds de la petite fille, timidement, une ombre réapparut. Toute petite, toute pâle. Mais elle était là." }
+      - { who: axelle, text: "Regardez, elle saute dessus pour voir si elle est vraiment là ! Comme moi quand j'étais petite. Enfin, plus petite." }
+      - { who: maelle, text: "Elle a retrouvé son ombre ! Parce qu'elle s'est souvenue de quelque chose !" }
+      - { who: nilo, text: "Ombres et souvenirs, c'est la même chose ici. Retrouve l'un, et l'autre revient. La Reine doit savoir ça. C'est pour ça qu'elle a peur." }
+      - { who: narrateur, text: "Mais au moment de quitter la place, Rafaelle compta les ombres du groupe. Elle compta deux fois, pour être sûre. Il y en avait une de trop. Une petite ombre, avec une lanterne au bout du bras. Et quand elle se retourna vers Plume pour lui demander, le petit renard regardait ailleurs, très obstinément." }
+
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: La salle des Silhouettes
+    decor: Une salle immense aux murs blancs, éclairée par mille bougies. Sur les murs, des silhouettes d'ombre dansent, figées ou vivantes.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, les apprenties entrèrent dans le palais de la Reine par une petite porte de service. Nilo l'avait trouvée, bien sûr. Les voleurs trouvent toujours les petites portes." }
+      - { who: nilo, text: "En réalité, c'est la porte des cuisines. Elle sent la soupe. Si quelqu'un a faim, je connais aussi le chemin du garde-manger. Pour les urgences." }
+      - { who: narrateur, text: "Elle donnait sur une salle immense, la plus étrange qu'elles aient jamais vue. Les murs étaient blancs comme de la neige, et éclairés par mille bougies posées sur des chandeliers d'argent. Et sur ces murs blancs, il y avait des silhouettes : des centaines d'ombres, épinglées comme des papillons dans une collection." }
+      - { who: nilo, text: "La salle des Silhouettes. C'est ici que la Reine garde les ombres qu'elle a prises. Chaque ombre, un souvenir. Elle les regarde, paraît-il, chaque soir. Sans jamais réussir à s'en souvenir." }
+      - { who: narrateur, text: "Certaines silhouettes étaient symétriques et parfaites, comme des papillons. D'autres étaient coupées en deux, et cherchaient leur moitié sur le mur d'en face. Il y avait des carrés, des triangles, des formes de maisons, de bateaux, d'enfants." }
+      - { who: plume, text: "Ne vous approchez pas trop des bougies. Ici, les ombres sont… joueuses." }
+      - { who: narrateur, text: "Il avait à peine fini sa phrase qu'Axelle passa devant un grand chandelier. Et hop ! Son ombre se détacha de ses pieds, comme une feuille qui s'envole, et fila le long du mur en riant sans bruit. Axelle n'eut même pas le temps d'avoir peur. Elle regarda ses pieds, puis le mur, et ouvrit de grands yeux." }
+      - { who: axelle, text: "Hé ! Mon ombre ! Elle part ! Reviens !" }
+      - { who: rafaelle, text: "Axelle, regarde-la : elle ne s'enfuit pas, elle joue. Elle veut que tu l'attrapes. On va t'aider. Maelle, tu bloques à gauche. Moi, je bloque à droite." }
+      - { who: narrateur, text: "Et voilà les trois sœurs qui courent dans la grande salle, autour des chandeliers, en riant aux éclats. L'ombre d'Axelle sautait d'un mur à l'autre, faisait des pirouettes, se cachait derrière une silhouette de bateau. Mais à chaque bonne réponse des apprenties, elle ralentissait un peu, comme si elle se souvenait à qui elle appartenait." }
+    manches:
+      - id: m1
+        title: Attrape ton ombre
+        intro: "L'ombre d'Axelle joue à cache-cache. Chaque bonne réponse la ramène un peu plus près."
+        tours:
+          axelle:
+            - { id: ch06-j3-ax-m1a, subject: maths, level: 2, kind: qcm, prompt: "Un cœur a-t-il un axe de symétrie ?", choices: ["oui", "non"], answer: "oui", hint: "Plie-le en deux, du haut vers la pointe." }
+            - { id: ch06-j3-ax-m1b, subject: maths, level: 3, kind: court, prompt: "Trois points posés sur une même droite sont…", answer: "alignés", hint: "Comme des enfants bien rangés en file." }
+          maelle:
+            - { id: ch06-j3-ma-m1a, subject: maths, level: 2, kind: nombre, prompt: "Combien d'axes de symétrie a un rectangle (qui n'est pas un carré) ?", answer: 2, hint: "Un dans la longueur, un dans la largeur." }
+            - { id: ch06-j3-ma-m1b, subject: maths, level: 3, kind: court, prompt: "Complète : un angle aigu est plus petit que…", answer: "90°", accept: ["90", "90 degrés", "un angle droit", "angle droit"], hint: "Plus petit qu'un coin d'équerre." }
+          rafaelle:
+            - { id: ch06-j3-ra-m1a, subject: maths, level: 3, kind: qcm, prompt: "Quel est le symétrique du point A(2 ; 3) par rapport à l'axe vertical x = 0 ?", choices: ["(−2 ; 3)", "(2 ; −3)", "(−2 ; −3)"], answer: "(−2 ; 3)", hint: "L'abscisse change de signe, l'ordonnée reste." }
+            - { id: ch06-j3-ra-m1b, subject: maths, level: 3, kind: nombre, prompt: "Dans un triangle, deux angles mesurent 35° et 85°. Combien mesure le troisième, en degrés ?", answer: 60, hint: "180 − 35 − 85." }
+      - id: m2
+        title: Les silhouettes coupées
+        intro: "Les silhouettes coupées en deux cherchent leur moitié. On les reconstitue."
+        tours:
+          axelle:
+            - { id: ch06-j3-ax-m2a, subject: maths, level: 3, kind: nombre, prompt: "Un rectangle a combien d'angles droits ?", answer: 4, hint: "Un à chaque coin." }
+            - { id: ch06-j3-ax-m2b, subject: maths, level: 3, kind: nombre, prompt: "Calcule 3 × 6.", answer: 18, hint: "6 + 6 + 6." }
+          maelle:
+            - { id: ch06-j3-ma-m2a, subject: maths, level: 2, kind: court, prompt: "Périmètre d'un rectangle de 7 cm sur 3 cm ?", answer: "20 cm", accept: ["20"], hint: "7 + 3 + 7 + 3." }
+            - { id: ch06-j3-ma-m2b, subject: maths, level: 2, kind: court, prompt: "Aire d'un rectangle de 7 cm sur 3 cm ?", answer: "21 cm²", accept: ["21", "21 cm2"], hint: "7 × 3." }
+          rafaelle:
+            - { id: ch06-j3-ra-m2a, subject: maths, level: 2, kind: court, prompt: "Quelle fraction d'un carré représentent 3 de ses 4 quarts ?", answer: "3/4", hint: "Trois parts sur quatre." }
+            - { id: ch06-j3-ra-m2b, subject: maths, level: 2, kind: court, prompt: "Calcule 5/8 − 1/4.", answer: "3/8", hint: "1/4 = 2/8." }
+      - id: m3
+        title: L'ombre revient
+        tours:
+          axelle:
+            - { id: ch06-j3-ax-m3a, subject: francais, level: 3, kind: court, prompt: "Complète au pluriel : « Les ombres sont (grand) ».", answer: "grandes", accept: ["les ombres sont grandes"], hint: "Ombres : féminin pluriel, donc -es." }
+            - { id: ch06-j3-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Quelle est l'ombre la plus longue ?", choices: ["2 m", "50 cm", "1 m"], answer: "2 m", hint: "1 m = 100 cm." }
+          maelle:
+            - { id: ch06-j3-ma-m3a, subject: maths, level: 3, kind: nombre, prompt: "Calcule 2/5 de 35.", answer: 14, hint: "1/5 de 35 = 7." }
+            - { gen: maths.fraction-de }
+          rafaelle:
+            - { id: ch06-j3-ra-m3a, subject: francais, level: 3, kind: court, prompt: "Accorde le participe : « Les histoires que nous avons (écrit) ».", answer: "écrites", accept: ["les histoires que nous avons écrites"], hint: "COD placé avant : on accorde avec « histoires »." }
+            - { id: ch06-j3-ra-m3b, subject: maths, level: 3, kind: court, prompt: "Réduis : 3a + 2a.", answer: "5a", hint: "3 pommes + 2 pommes." }
+      - id: m4
+        title: Le Défi des Silhouettes
+        intro: "Les trois apprenties travaillent ensemble pour rendre son ombre à Axelle, pour de bon."
+        tours:
+          axelle:
+            - { id: ch06-j3-ax-m4a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 5 × 7.", answer: 35, hint: "5, 10, 15, 20, 25, 30, 35." }
+            - { id: ch06-j3-ax-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule 1/3 de 27.", answer: 9, hint: "Partage 27 en 3 parts égales." }
+          maelle:
+            - { id: ch06-j3-ma-m4a, subject: maths, level: 4, kind: nombre, prompt: "Aire d'un triangle rectangle dont les côtés de l'angle droit mesurent 6 et 4 ?", answer: 12, hint: "La moitié d'un rectangle de 6 sur 4." }
+            - { id: ch06-j3-ma-m4b, subject: maths, level: 4, kind: court, prompt: "Aire d'un carré de 9 cm de côté ?", answer: "81 cm²", accept: ["81", "81 cm2"], hint: "9 × 9." }
+          rafaelle:
+            - { id: ch06-j3-ra-m4a, subject: maths, level: 4, kind: nombre, prompt: "Résous : 4x − 3 = 13.", answer: 4, accept: ["x = 4"], hint: "4x = 16." }
+            - { id: ch06-j3-ra-m4b, subject: maths, level: 4, kind: court, prompt: "Calcule 3/5 ÷ 3.", answer: "1/5", hint: "Partager trois cinquièmes en 3." }
+    pause: "Attrape ton ombre ! Chacune essaie de marcher sur l'ombre (imaginaire) de ses sœurs, pendant que les autres l'esquivent. Dix secondes, puis on change !"
+    closing:
+      - { who: narrateur, text: "À la dernière bonne réponse, l'ombre d'Axelle s'arrêta au milieu de la salle. Elle se retourna, regarda Axelle, et revint en trottinant, comme un petit chien qui a fini de jouer. Elle se recolla à ses pieds avec un petit « plop » silencieux, et ne bougea plus." }
+      - { who: axelle, text: "Elle est revenue ! Elle voulait juste jouer. Elle n'était pas méchante. Elle s'ennuyait, toute seule sur le mur." }
+      - { who: maelle, text: "On l'a eue à trois. Tu vois, Axelle, une ombre ne part jamais vraiment, quand on a des sœurs pour la rattraper." }
+      - { who: narrateur, text: "Alors toutes les silhouettes épinglées sur les murs se mirent à frémir. Elles avaient vu le jeu. Et elles voulaient jouer, elles aussi. Une silhouette de bateau se décrocha, puis une de maison, puis une de petit garçon. Elles glissèrent par les fenêtres, vers la ville, chacune à la recherche de la personne qu'elle avait perdue." }
+      - { who: narrateur, text: "Au fond de la salle, une grande porte s'ouvrit. Une femme se tenait sur le seuil. Grande, pâle, vêtue d'une robe de nuit étoilée, avec une couronne d'argent sur ses cheveux blancs. Sous ses pieds, sur le marbre, il n'y avait rien. Pas la moindre ombre." }
+      - { who: reine, text: "Qui ose libérer mes ombres ? Qui ose jouer, dans mon palais ? Ici, on ne joue pas. Ici, on oublie." }
+      - { who: narrateur, text: "La Reine Sans Ombre regarda longtemps les trois apprenties. Puis son regard tomba sur Plume, et sur la petite ombre à lanterne qui se tenait, discrète, dans un coin de la salle. Et pour la première fois, son visage de marbre trembla." }
+      - { who: narrateur, text: "Elle ne dit plus rien. Elle se retourna et disparut dans le couloir, dans un froissement de robe étoilée. Mais elle n'avait pas fait épingler les apprenties sur le mur. Et toute la nuit, on entendit, très loin dans le palais, quelqu'un qui fredonnait une berceuse oubliée." }
+    reward: "un Ruban d'Ombre, qui garde les ombres collées à leurs pieds"
+
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Le palais antique
+    decor: La salle du trône, bâtie comme un temple antique, avec des colonnes, des fresques et une grande frise du temps qui court sur les murs.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, la Reine Sans Ombre fit appeler les apprenties dans la salle du trône. C'était une salle immense, bâtie comme un temple des temps anciens, avec des colonnes de marbre, des fresques peintes et un plafond si haut qu'on n'en voyait pas le bout." }
+      - { who: narrateur, text: "Sur les murs courait une frise qui faisait tout le tour de la salle. Elle racontait l'histoire du monde : les premiers hommes autour du feu, les premières villes au bord des fleuves, les pyramides, les temples grecs, les routes de Rome, les châteaux forts, et ainsi de suite, jusqu'à aujourd'hui. Mais par endroits, la frise était effacée, comme si quelqu'un avait passé une éponge sur l'histoire." }
+      - { who: reine, text: "Vous voyez cette frise ? C'est la mémoire de mon royaume. Mon ombre l'a emportée en partant. Si vous savez la reconstituer, je vous écouterai. Sinon, vos ombres resteront ici, épinglées sur mes murs." }
+      - { who: nilo, text: "Elle ne plaisante pas. Mais elle n'a pas l'air méchante, juste… perdue. Écoutez, je connais une légende sur ce palais." }
+      - { who: nilo, text: "On raconte que ce palais a été construit par les premiers bâtisseurs du monde. Ils écrivaient sur des tablettes d'argile, comptaient les étoiles, et gravaient les noms des rois sur la pierre pour ne jamais les oublier. Ils disaient : « Un peuple qui oublie son histoire, c'est un arbre qui oublie ses racines. Il tombe au premier coup de vent. »" }
+      - { who: narrateur, text: "Rafaelle s'approcha d'une colonne. À sa base, sous la poussière, il y avait une inscription. Elle n'était pas en latin, ni en grec. Elle était en espagnol. « La reina vive en el palacio, pero su sombra vive en su corazón. »" }
+      - { who: rafaelle, text: "« La reine vit dans le palais, mais son ombre vit dans son cœur. » Son ombre n'est pas partie loin. Elle est cachée en elle." }
+      - { who: plume, text: "Alors il faut l'aider à se souvenir. Et pour se souvenir de soi, on commence par se souvenir de l'histoire. Comme une frise. Hier, aujourd'hui, demain." }
+      - { who: narrateur, text: "Sur le trône, la Reine ne disait rien. Mais ses longues mains blanches serraient les accoudoirs, et elle regardait la frise effacée avec une tristesse immense, celle de quelqu'un qui a perdu quelque chose sans savoir quoi." }
+    manches:
+      - id: m1
+        title: La frise du temps
+        tours:
+          axelle:
+            - { id: ch06-j4-ax-m1a, subject: histoire-geo, level: 2, kind: ordre, prompt: "Range dans l'ordre du temps.", choices: ["demain", "hier", "aujourd'hui"], answer: ["hier", "aujourd'hui", "demain"], hint: "Commence par ce qui est déjà passé." }
+            - { id: ch06-j4-ax-m1b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Qu'est-ce qui est le plus ancien ?", choices: ["un château fort", "une voiture", "un téléphone"], answer: "un château fort", hint: "Au temps des chevaliers." }
+          maelle:
+            - { id: ch06-j4-ma-m1a, subject: histoire-geo, level: 2, kind: ordre, prompt: "Range ces périodes dans l'ordre.", choices: ["l'époque contemporaine", "le Moyen Âge", "l'Antiquité"], answer: ["l'Antiquité", "le Moyen Âge", "l'époque contemporaine"], hint: "Les Romains, puis les chevaliers, puis nous." }
+            - { id: ch06-j4-ma-m1b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Au Moyen Âge, qui vivait dans le château fort ?", choices: ["le seigneur", "les ouvriers d'usine", "les astronautes"], answer: "le seigneur", hint: "Il protégeait les paysans de ses terres." }
+          rafaelle:
+            - { id: ch06-j4-ra-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Où sont apparues les premières villes et l'écriture ?", choices: ["au bord des grands fleuves (Mésopotamie, Égypte)", "dans les déserts glacés", "au sommet des montagnes"], answer: "au bord des grands fleuves (Mésopotamie, Égypte)", hint: "Le Tigre, l'Euphrate, le Nil." }
+            - { id: ch06-j4-ra-m1b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Les Égyptiens écrivaient avec…", choices: ["des hiéroglyphes", "l'alphabet latin", "des emojis"], answer: "des hiéroglyphes", hint: "Des petits dessins gravés ou peints." }
+      - id: m2
+        title: Les fresques effacées
+        tours:
+          axelle:
+            - { id: ch06-j4-ax-m2a, subject: maths, level: 3, kind: nombre, prompt: "Combien de faces a un cube ?", answer: 6, hint: "Comme un dé : 1, 2, 3, 4, 5, 6." }
+            - { id: ch06-j4-ax-m2b, subject: maths, level: 3, kind: nombre, prompt: "Pose et calcule : 54 + 38.", answer: 92, hint: "4 + 8 = 12 : on écrit 2 et on retient 1." }
+          maelle:
+            - { id: ch06-j4-ma-m2a, subject: maths, level: 3, kind: nombre, prompt: "Combien d'arêtes a un cube ?", answer: 12, hint: "4 en haut, 4 en bas, 4 debout." }
+            - { id: ch06-j4-ma-m2b, subject: maths, level: 3, kind: nombre, prompt: "Calcule 4,8 + 3,6.", answer: 8.4, hint: "48 + 36 = 84." }
+          rafaelle:
+            - { id: ch06-j4-ra-m2a, subject: maths, level: 3, kind: court, prompt: "Volume d'un cube de 3 cm d'arête ?", answer: "27 cm³", accept: ["27", "27 cm3"], hint: "3 × 3 × 3." }
+            - { id: ch06-j4-ra-m2b, subject: maths, level: 3, kind: nombre, prompt: "Calcule 30 % de 90.", answer: 27, hint: "10 % = 9." }
+      - id: m3
+        title: L'inscription de la colonne
+        intro: "L'inscription en espagnol de la colonne cache un secret de la Reine."
+        tours:
+          axelle:
+            - { id: ch06-j4-ax-m3a, subject: francais, level: 4, kind: court, prompt: "Mets au passé composé : « Elle danse. »", answer: "Elle a dansé", accept: ["a dansé", "elle a dansé."], hint: "Elle a…" }
+            - { id: ch06-j4-ax-m3b, subject: francais, level: 4, kind: court, prompt: "Un animal, des… ?", answer: "animaux", accept: ["des animaux"], hint: "Comme un cheval, des chevaux." }
+          maelle:
+            - { id: ch06-j4-ma-m3a, subject: francais, level: 4, kind: court, prompt: "« La Reine cherche son ombre. » Quel est le COD ?", answer: "son ombre", hint: "La Reine cherche quoi ?" }
+            - { id: ch06-j4-ma-m3b, subject: maths, level: 3, kind: nombre, prompt: "Calcule 2,5 m en centimètres.", answer: 250, hint: "1 m = 100 cm." }
+          rafaelle:
+            - { id: ch06-j4-ra-m3a, subject: espagnol, level: 3, kind: qcm, prompt: "« La reina vive en el palacio » veut dire…", choices: ["La reine vit dans le palais.", "La reine quitte le palais.", "Le palais est vide."], answer: "La reine vit dans le palais.", read: "La reina vive en el palacio.", hint: "Vive = vit." }
+            - { id: ch06-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Une reine sans ombre » : que symbolise l'ombre perdue ?", choices: ["la perte de son identité et de ses souvenirs", "un problème d'éclairage", "la nuit qui tombe"], answer: "la perte de son identité et de ses souvenirs", hint: "Qu'a-t-elle perdu en même temps que son ombre ?" }
+      - id: m4
+        title: Le trône de la Reine
+        intro: "Les trois apprenties travaillent ensemble pour reconstituer la dernière partie de la frise."
+        tours:
+          axelle:
+            - { id: ch06-j4-ax-m4a, subject: maths, level: 4, kind: nombre, prompt: "Combien de sommets a un pavé (comme une boîte à chaussures) ?", answer: 8, hint: "4 coins en haut, 4 coins en bas." }
+            - { id: ch06-j4-ax-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule 24 ÷ 6.", answer: 4, hint: "6 × 4 = 24." }
+          maelle:
+            - { id: ch06-j4-ma-m4a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 168 ÷ 7.", answer: 24, hint: "140 ÷ 7 = 20. Reste 28." }
+            - { id: ch06-j4-ma-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule 3,5 × 4.", answer: 14, hint: "3 × 4 = 12 et 0,5 × 4 = 2." }
+          rafaelle:
+            - { id: ch06-j4-ra-m4a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 3³ (3 au cube).", answer: 27, hint: "3 × 3 × 3." }
+            - { id: ch06-j4-ra-m4b, subject: francais, level: 4, kind: court, prompt: "Conjugue au subjonctif présent : « Que tu (voir) ».", answer: "que tu voies", accept: ["voies"], hint: "Que tu voi…es." }
+    pause: "Les statues du palais : prenez la pose d'une statue antique (un roi, un dieu, un athlète). Les sœurs doivent deviner qui vous êtes !"
+    closing:
+      - { who: narrateur, text: "Quand la dernière partie de la frise fut reconstituée, les fresques s'illuminèrent, de la première à la dernière. Les premiers hommes autour du feu, les villes au bord des fleuves, les temples, les châteaux, et tout au bout, sur le dernier morceau de mur, une image nouvelle apparut." }
+      - { who: narrateur, text: "C'était une petite fille, avec une couronne de papier sur la tête et une poupée de chiffon dans les bras. Elle riait. Et derrière elle, sur le mur, il y avait son ombre, qui riait aussi." }
+      - { who: reine, text: "Cette petite fille… je la connais. Je crois que… c'était moi. Avant. Avant que j'oublie." }
+      - { who: narrateur, text: "La Reine se leva de son trône. Elle descendit les marches, lentement, et s'approcha de la fresque. Elle posa la main sur la petite fille peinte. Et sous ses pieds, l'espace d'une seconde, quelque chose frémit sur le marbre. Une ombre, très pâle, qui hésitait à revenir." }
+      - { who: maelle, text: "Elle a presque retrouvé son ombre. Il lui manque juste un dernier souvenir. Le plus important." }
+      - { who: narrateur, text: "Cette nuit-là, Rafaelle ne dormait pas. Elle regardait la petite ombre à lanterne, qui se tenait près de la fenêtre et regardait la lune. Elle s'approcha de Plume, tout doucement." }
+      - { who: rafaelle, text: "Plume. Je sais que tu la vois, toi aussi. L'ombre en trop. Qui est-ce ?" }
+      - { who: plume, text: "Je ne sais pas. C'est vrai, Rafaelle, je ne sais pas. Mais quand je la regarde, j'ai envie de pleurer et de rire en même temps. Alors je préfère ne pas la regarder. Pas encore." }
+    reward: "un Fragment de la Frise"
+
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: Le Concert des Ombres
+    decor: La salle du trône plongée dans l'obscurité. Trois lanternes posées sur le sol, et sur le grand mur blanc, l'ombre que la Reine a perdue.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, la Reine Sans Ombre fit éteindre toutes les bougies du palais. La salle du trône fut plongée dans un noir profond, velouté, comme l'intérieur d'une boîte à bijoux. Il ne restait que trois lumières : les trois lanternes des apprenties, la dorée, la blanche et la rose." }
+      - { who: reine, text: "Mon ombre est là, quelque part sur ce mur. Je la sens. Mais elle ne veut pas revenir. Elle a peur de moi, je crois. Et moi, j'ai peur de ce qu'elle va me rappeler." }
+      - { who: narrateur, text: "Sur le grand mur blanc, au fond de la salle, il y avait en effet une forme sombre, floue, qui bougeait à peine. Elle ressemblait à la Reine, mais en plus petit, en plus jeune, et elle se cachait les yeux avec les mains." }
+      - { who: nilo, text: "Pour la dernière fois dans ce royaume, une légende. Celle des trois lanternes." }
+      - { who: nilo, text: "On raconte qu'une ombre perdue ne revient jamais avec une seule lumière. Avec une seule lumière, elle a une seule forme, et elle a peur. Mais si trois lumières l'éclairent en même temps, depuis trois côtés différents, et que les trois ombres se rejoignent exactement au même endroit, alors l'ombre comprend qu'on l'aime de tous les côtés. Et elle revient." }
+      - { who: axelle, text: "Trois lumières… comme nous. On est trois !" }
+      - { who: rafaelle, text: "Il faut placer nos lanternes au bon endroit, à la bonne distance, pour que nos trois ombres tombent pile sur la sienne. Ça se calcule." }
+      - { who: plume, text: "Mais d'abord, on décide ensemble ce qu'on fait pour la Reine. Thessaly aurait voulu qu'on y réfléchisse bien. Elle n'est pas notre ennemie. Elle est juste perdue." }
+      - { who: narrateur, text: "Dans un coin de la salle, la petite ombre à lanterne s'était approchée. Elle regardait, elle aussi. Et Pigeon, perché sur une colonne, retenait son souffle." }
+    manches:
+      - id: m1
+        title: Les trois lanternes
+        intro: "Axelle choisit la forme, Maelle trouve où placer la lampe, Rafaelle calcule la longueur de l'ombre."
+        tours:
+          axelle:
+            - { id: ch06-j5-ax-m1a, subject: maths, level: 4, kind: nombre, prompt: "Combien de centimètres font 1 m 20 cm ?", answer: 120, hint: "1 m = 100 cm, plus 20." }
+            - { id: ch06-j5-ax-m1b, subject: maths, level: 3, kind: qcm, prompt: "Un dé est…", choices: ["un cube", "une boule", "un cône"], answer: "un cube", hint: "Il a 6 faces carrées." }
+          maelle:
+            - { id: ch06-j5-ma-m1a, subject: maths, level: 3, kind: nombre, prompt: "Un bâton de 1 m a une ombre de 2 m. Quelle est l'ombre, en mètres, d'un bâton de 3 m ?", answer: 6, hint: "L'ombre est deux fois plus longue que le bâton." }
+            - { id: ch06-j5-ma-m1b, subject: maths, level: 4, kind: nombre, prompt: "L'ombre vaut 2 fois la hauteur. Quelle est l'ombre, en mètres, d'un objet de 4,5 m ?", answer: 9, hint: "4,5 × 2." }
+          rafaelle:
+            - { id: ch06-j5-ra-m1a, subject: maths, level: 2, kind: nombre, prompt: "Un arbre de 4 m fait une ombre de 6 m. Quelle est l'ombre, en mètres, d'un arbre de 10 m ?", answer: 15, hint: "L'ombre fait une fois et demie la hauteur." }
+            - { id: ch06-j5-ra-m1b, subject: maths, level: 4, kind: nombre, prompt: "M est sur [AB], N sur [AC], et (MN) // (BC). AM = 2, AB = 6, AN = 3. Combien mesure AC ?", answer: 9, hint: "AM/AB = AN/AC : 2/6 = 3/AC." }
+      - id: m2
+        title: Le défi de la Reine
+        intro: "Pour que les trois ombres se rejoignent, chaque apprentie relève un défi de la classe supérieure."
+        tours:
+          axelle:
+            - { id: ch06-j5-ax-m2a, subject: maths, level: 5, kind: court, prompt: "Périmètre d'un carré de 5 cm de côté ?", answer: "20 cm", accept: ["20"], hint: "4 côtés de 5 cm." }
+            - { id: ch06-j5-ax-m2b, subject: maths, level: 5, kind: nombre, prompt: "Calcule 1/4 de 40.", answer: 10, hint: "La moitié de la moitié." }
+          maelle:
+            - { id: ch06-j5-ma-m2a, subject: maths, level: 5, kind: nombre, prompt: "Calcule 20 % de 45.", answer: 9, hint: "10 % = 4,5." }
+            - { id: ch06-j5-ma-m2b, subject: maths, level: 5, kind: nombre, prompt: "Périmètre d'un cercle de rayon 5 (prends π = 3,14) ?", answer: 31.4, hint: "Périmètre = 2 × π × rayon." }
+          rafaelle:
+            - { id: ch06-j5-ra-m2a, subject: maths, level: 5, kind: court, prompt: "Factorise : 6x + 9.", answer: "3(2x + 3)", accept: ["3(2x+3)", "3 (2x + 3)", "3×(2x+3)"], hint: "6 et 9 sont tous les deux des multiples de 3." }
+            - { id: ch06-j5-ra-m2b, subject: maths, level: 5, kind: nombre, prompt: "Un triangle rectangle a des côtés de l'angle droit de 5 et 12. Combien mesure l'hypoténuse ?", answer: 13, hint: "5² + 12² = 25 + 144." }
+      - id: m3
+        title: Le théâtre d'ombres
+        intro: "Les trois apprenties font un petit théâtre d'ombres pour la Reine, avec leurs mains et leurs lanternes."
+        tours:
+          axelle:
+            - { id: ch06-j5-ax-m3a, subject: sciences, level: 3, kind: libre, validation: soeurs, prompt: "Avec tes mains devant une lampe, fais l'ombre d'un animal. Tes sœurs doivent deviner lequel !" }
+          maelle:
+            - { id: ch06-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Invente une petite chanson de deux phrases pour la Reine, qui rime avec « ombre »." }
+          rafaelle:
+            - { id: ch06-j5-ra-m3a, subject: espagnol, level: 3, kind: libre, validation: soeurs, prompt: "Dis en espagnol : « J'ai vu mon ombre. » Puis invente une deuxième phrase en espagnol avec « sombra ».", read: "Vi mi sombra." }
+    concert:
+      measures:
+        axelle: { given: [1, 1], missing: 2, prompt: "Noire, noire" }
+        maelle: { given: [2, 0.5, 0.5], missing: 1, prompt: "Blanche, croche, croche" }
+        rafaelle: { given: [0.5, 0.5, 0.5, 0.5], missing: 2, prompt: "Croche, croche, croche, croche" }
+    pause: "La danse des ombres : dansez toutes les trois en même temps, en faisant exactement les mêmes gestes, comme une seule ombre à trois corps !"
+    closing:
+      - { who: narrateur, text: "Les trois lanternes brillèrent ensemble, chacune depuis son coin de la salle. Et sur le grand mur, les trois ombres des apprenties glissèrent, lentement, jusqu'à se poser exactement sur l'ombre de la petite fille. Elles se rejoignirent. Elles se superposèrent. Et l'ombre perdue retira ses mains de ses yeux." }
+      - { who: narrateur, text: "Alors elle quitta le mur. Elle traversa la salle en courant, comme une enfant qui rentre à la maison après l'école, et se jeta dans les bras de la Reine. Quand elle se recolla à ses pieds, toutes les bougies du palais se rallumèrent d'un seul coup." }
+      - { who: reine, text: "Je me souviens. Je me souviens de tout. De ma poupée, de ma mère qui chantait, du jardin où je jouais. J'avais oublié que j'avais été une petite fille. Merci… Merci, petites lueurs." }
+      - { who: narrateur, text: "Dehors, sur l'horizon, le soleil qui ne se levait plus fit un petit bond. Il monta d'un cran dans le ciel. Juste un cran. Mais dans tout le royaume, les ombres revinrent à leurs habitants, et les rues s'emplirent de cris de joie." }
+      - { who: narrateur, text: "La Reine offrit aux apprenties une lanterne étrange, faite de verre noir. Quand on l'allumait, elle ne faisait pas de lumière : elle faisait de l'ombre. Et dans cette ombre, disait-elle, on pouvait voir ce qui était caché." }
+      - { who: narrateur, text: "Mais avant de les laisser partir, la Reine leur tendit aussi une lettre. Une grande lettre officielle, fermée par un cachet de cire grise. Elle ne venait pas d'elle. Elle était arrivée cette nuit, posée sur son trône par une main que personne n'avait vue." }
+      - { who: rafaelle, text: "« Les apprenties de l'Arche sont convoquées devant le Tribunal des Mémoires, pour avoir réveillé ce qui doit rester oublié. »" }
+      - { who: narrateur, text: "Personne ne dit rien. Dans un coin de la salle, la petite ombre à lanterne avait disparu. Et Plume, pour la première fois depuis le début du voyage, n'avait plus du tout envie de faire des blagues." }
+    reward: "la Lanterne d'Ombre et un nouveau fragment de la Carte Vivante"
