@@ -72,7 +72,8 @@ export const newGame = (): GameState => ({
 });
 
 export type Action =
-  | { type: 'DEMARRER_SESSION'; now: number }
+  | { type: 'DEMARRER_SESSION'; now: number; /** Mode test du parent : ignore la limite d'une séance par jour. */ bypassCalendar?: boolean }
+  | { type: 'TEST_ALLER_A'; position: Position }
   | { type: 'DECIDER'; record: Omit<ChoiceRecord, 'chapter'> }
   | { type: 'CHOISIR_FIN'; record: Omit<FinalRecord, 'doors'> }
   | { type: 'TERMINER_SESSION' }
@@ -108,7 +109,7 @@ export function createReducer(decisionOf: (chapter: number) => DecisionDef) {
       case 'DEMARRER_SESSION': {
         if (state.session) fail('Une session est déjà en cours.');
         if (state.final) fail(state.final.result === 'F5' ? 'Choisissez d’abord le carrefour où revenir.' : "L'aventure est terminée.");
-        const check = canPlay(state.calendar, new Date(action.now));
+        const check = action.bypassCalendar ? ({ ok: true, extra: false } as const) : canPlay(state.calendar, new Date(action.now));
         if (!check.ok) fail(check.reason === 'deja-joue' ? 'La session du jour est déjà jouée : à demain !' : "L'horloge de la tablette a reculé : demande le code parent.");
         const extra = check.ok && check.extra;
         return {
@@ -172,6 +173,13 @@ export function createReducer(decisionOf: (chapter: number) => DecisionDef) {
           choices: state.choices.slice(0, snap.choicesLength),
           checkpoints
         };
+      }
+
+      case 'TEST_ALLER_A': {
+        const { chapter, day } = action.position;
+        if (chapter < 1 || chapter > LAST_CHAPTER || day < 1 || day > daysIn(chapter)) fail('Position inconnue.');
+        const { final: _f, ...rest } = state;
+        return { ...rest, position: { chapter, day }, session: null };
       }
 
       case 'PARENT_SESSION_EN_PLUS':

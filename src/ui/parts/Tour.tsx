@@ -5,7 +5,7 @@ import { placementDone } from '../../engine/difficulty';
 import { supportRoles } from '../../engine/session';
 import { NAMES, ROLES } from '../../engine/profile';
 import type { PlayerId } from '../../engine/types';
-import { applyPlacement, chapter, day, levelOf, nextStep, recordResult, save, useTeamCall } from '../store';
+import { applyPlacement, chapter, day, levelOf, nextStep, recordResult, save, testMode, useTeamCall } from '../store';
 import { Card, Handover, PlayerAvatar } from './Common';
 import { QuestionView, type Outcome } from './QuestionView';
 
@@ -96,6 +96,17 @@ export function Tour({ mancheIndex, player }: { mancheIndex: number; player: Pla
           </div>
         )}
       </header>
+      {testMode() && (
+        <div class="ui-test-bar" role="toolbar" aria-label="Mode test">
+          <span>Mode test</span>
+          <button class="ui-btn ui-btn-small" onClick={() => setI(i - 1)} disabled={i === 0}>
+            ⏮ Question précédente
+          </button>
+          <button class="ui-btn ui-btn-small" onClick={() => (i + 1 < questions.length ? setI(i + 1) : nextStep())}>
+            ⏭ Question suivante
+          </button>
+        </div>
+      )}
       {absurd && <p class="ui-hint">{absurd}</p>}
       <QuestionView key={`${i}-${q.id}`} q={q} player={player} gardienne={roles.gardienne} voix={roles.voix} teamCallAvailable={teamCallAvailable} onTeamCall={() => useTeamCall(mancheIndex)} onDone={done} />
     </div>

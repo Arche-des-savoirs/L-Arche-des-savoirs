@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'preact/hooks';
 import { NAMES } from '../../engine/profile';
 import { chapterImage } from '../../content/images';
-import { chapter, currentStep, day, finishSession, nextStep, plan, route, save } from '../store';
+import { chapter, currentStep, day, finishSession, nextStep, plan, prevStep, route, save, testMode } from '../store';
 import { Card, ChapterHeading, Dialogue, roman } from '../parts/Common';
 import { Tour } from '../parts/Tour';
 import { Vote } from '../parts/Vote';
@@ -109,6 +109,17 @@ export function Session() {
         <span>
           Chapitre {roman(ch.number)} · Jour {roman(d.n)}
         </span>
+        {testMode() && (
+          <span class="ui-test-bar" role="toolbar" aria-label="Mode test, étapes">
+            <span>Mode test</span>
+            <button class="ui-btn ui-btn-small" onClick={prevStep} disabled={progress.step === 0}>
+              ⏮ Étape
+            </button>
+            <button class="ui-btn ui-btn-small" onClick={nextStep}>
+              Étape ⏭
+            </button>
+          </span>
+        )}
         <progress max={plan.value.length} value={progress.step + 1} aria-label="Avancement de la séance" />
       </header>
       <div class="ui-session-body">{body}</div>

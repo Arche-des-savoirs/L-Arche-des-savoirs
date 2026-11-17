@@ -95,3 +95,22 @@ describe('déroulé de partie', () => {
     expect(s).toEqual(copy);
   });
 });
+
+describe('outils de test du parent', () => {
+  const reduce = createReducer(decisionOf);
+  it('le mode test enchaîne plusieurs séances le même jour', () => {
+    const now = new Date(2027, 0, 10, 18).getTime();
+    let s = reduce(newGame(), { type: 'DEMARRER_SESSION', now });
+    s = reduce(s, { type: 'TERMINER_SESSION' });
+    expect(() => reduce(s, { type: 'DEMARRER_SESSION', now: now + 1000 })).toThrow(GameRuleError);
+    s = reduce(s, { type: 'DEMARRER_SESSION', now: now + 1000, bypassCalendar: true });
+    expect(s.session).not.toBeNull();
+  });
+  it('« aller à » place la partie sur un chapitre et un jour, sans séance en cours', () => {
+    let s = reduce(newGame(), { type: 'DEMARRER_SESSION', now: Date.now() });
+    s = reduce(s, { type: 'TEST_ALLER_A', position: { chapter: 3, day: 4 } });
+    expect(s.position).toEqual({ chapter: 3, day: 4 });
+    expect(s.session).toBeNull();
+    expect(() => reduce(s, { type: 'TEST_ALLER_A', position: { chapter: 3, day: 6 } })).toThrow(GameRuleError);
+  });
+});

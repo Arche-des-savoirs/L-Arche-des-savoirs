@@ -9,7 +9,8 @@ import { PLAYERS, type Option } from '../../engine/types';
 import type { Subject } from '../../content/schema';
 import { loadFrenchVoices, type VoiceInfo } from '../../platform/voices';
 import { fromExport, toExport } from '../../storage/save';
-import { autoRead, dispatch, lastError, parentDecide, replaceSave, route, save, setAutoRead, setPin, setVoice } from '../store';
+import { autoRead, dispatch, jumpTo, lastError, parentDecide, replaceSave, resetEverything, route, save, setAutoRead, setPin, setTestMode, setVoice, testMode } from '../store';
+import { CHAPTERS } from '../../content/chapters';
 import { say } from '../voice';
 import { Card } from '../parts/Common';
 
@@ -214,6 +215,9 @@ function Reglages({ now }: { now: number }) {
   const [msg, setMsg] = useState<string | null>(null);
   const [importData, setImportData] = useState<ReturnType<typeof fromExport> | null>(null);
   const [fixTo, setFixTo] = useState<Option | null>(null);
+  const [wipeStep, setWipeStep] = useState<0 | 1>(0);
+  const [wipeWord, setWipeWord] = useState('');
+  const [jump, setJump] = useState({ chapter: game.position.chapter, day: game.position.day });
 
   useEffect(() => {
     void loadFrenchVoices().then(setVoices);
@@ -318,7 +322,7 @@ function Reglages({ now }: { now: number }) {
           Vitesse : {rate.toFixed(2).replace('.', ',')}
           <input type="range" min="0.7" max="1.2" step="0.05" value={rate} onInput={(e) => setRate(Number(e.currentTarget.value))} onChange={() => setVoice(settings.voiceName, rate)} />
         </label>
-        <label class="ui-row">
+        <label class="ui-check">
           <input type="checkbox" checked={autoRead()} onChange={(e) => setAutoRead(e.currentTarget.checked)} /> Lecture automatique des dialogues (le conteur)
         </label>
         <button class="ui-btn" onClick={() => say('Bonjour les apprenties, bienvenue dans l’Arche des Savoirs.')}>
@@ -344,6 +348,47 @@ function Reglages({ now }: { now: number }) {
         </form>
       </Card>
 
+      <Card title="Mode test (pour le parent)">
+        <p class="ui-muted">Pour vérifier les chapitres rapidement. À désactiver avant de rendre la tablette aux filles.</p>
+        <label class="ui-check">
+          <input type="checkbox" checked={testMode()} onChange={(e) => setTestMode(e.currentTarget.checked)} />
+          <span>Activer le mode test : boutons Avancer et Retour sur les questions et les étapes, séances illimitées</span>
+        </label>
+        {testMode() && (
+          <div class="ui-row">
+            <label>
+              Chapitre{' '}
+              <select class="ui-select" value={jump.chapter} onChange={(e) => setJump({ chapter: Number(e.currentTarget.value), day: 1 })} aria-label="Chapitre">
+                {CHAPTERS.map((c) => (
+                  <option key={c.number} value={c.number}>
+                    {c.number} — {c.title}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label>
+              Jour{' '}
+              <select class="ui-select" value={jump.day} onChange={(e) => setJump({ ...jump, day: Number(e.currentTarget.value) })} aria-label="Jour">
+                {(CHAPTERS.find((c) => c.number === jump.chapter)?.days ?? []).map((d) => (
+                  <option key={d.n} value={d.n}>
+                    {d.n} — {d.title}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <button
+              class="ui-btn"
+              onClick={() => {
+                jumpTo(jump.chapter, jump.day);
+                setMsg(`Partie placée au chapitre ${jump.chapter}, jour ${jump.day}.`);
+              }}
+            >
+              Aller à
+            </button>
+          </div>
+        )}
+      </Card>
+
       <Card title="Sauvegarde">
         <p class="ui-muted">L'export contient toute la partie : progression, votes, niveaux, historique et réglages.</p>
         <div class="ui-row">
@@ -354,6 +399,34 @@ function Reglages({ now }: { now: number }) {
             Importer…
             <input type="file" accept="application/json,.json" onChange={(e) => pickFile(e.currentTarget.files?.[0])} aria-label="Fichier de sauvegarde à importer" />
           </label>
+        </div>
+        <div class="ui-danger">
+          <h3>Réinitialiser cet appareil</h3>
+          <p>Efface tout sur cette tablette : progression, avatars, votes, niveaux, historique, réglages et code parent (retour à 0000). L'app repart du tout début. Pense à exporter avant.</p>
+          {wipeStep === 0 ? (
+            <button class="ui-btn ui-btn-danger" onClick={() => setWipeStep(1)}>
+              Tout réinitialiser…
+            </button>
+          ) : (
+            <form
+              class="ui-row"
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (wipeWord.trim().toUpperCase() === 'EFFACER') void resetEverything();
+              }}
+            >
+              <label>
+                Pour confirmer, écris EFFACER :{' '}
+                <input class="ui-input ui-input-pin" value={wipeWord} onInput={(e) => setWipeWord(e.currentTarget.value)} aria-label="Écris EFFACER pour confirmer" autocomplete="off" />
+              </label>
+              <button class="ui-btn ui-btn-danger" type="submit" disabled={wipeWord.trim().toUpperCase() !== 'EFFACER'}>
+                Effacer définitivement
+              </button>
+              <button class="ui-btn" type="button" onClick={() => (setWipeStep(0), setWipeWord(''))}>
+                Annuler
+              </button>
+            </form>
+          )}
         </div>
         {importData && (
           <div class="ui-hint">
