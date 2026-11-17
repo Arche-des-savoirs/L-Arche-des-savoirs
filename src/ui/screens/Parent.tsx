@@ -9,7 +9,7 @@ import { PLAYERS, type Option } from '../../engine/types';
 import type { Subject } from '../../content/schema';
 import { loadFrenchVoices, type VoiceInfo } from '../../platform/voices';
 import { fromExport, toExport } from '../../storage/save';
-import { autoRead, dispatch, lastError, parentDecide, replaceSave, route, save, setAutoRead, setPin, setVoice } from '../store';
+import { autoRead, dispatch, lastError, parentDecide, replaceSave, resetEverything, route, save, setAutoRead, setPin, setVoice } from '../store';
 import { say } from '../voice';
 import { Card } from '../parts/Common';
 
@@ -214,6 +214,8 @@ function Reglages({ now }: { now: number }) {
   const [msg, setMsg] = useState<string | null>(null);
   const [importData, setImportData] = useState<ReturnType<typeof fromExport> | null>(null);
   const [fixTo, setFixTo] = useState<Option | null>(null);
+  const [resetOpen, setResetOpen] = useState(false);
+  const [resetWord, setResetWord] = useState('');
 
   useEffect(() => {
     void loadFrenchVoices().then(setVoices);
@@ -375,6 +377,44 @@ function Reglages({ now }: { now: number }) {
               </button>
             </div>
           </div>
+        )}
+      </Card>
+      <Card title="Réinitialiser l'appareil">
+        <p>
+          Efface <strong>tout</strong> sur cette tablette : progression, votes, avatars, niveaux, historique, réponses à valider, voix et code parent (qui redevient 0000). Le jeu repart du chapitre 1, jour 1.
+        </p>
+        <p class="ui-muted">Conseil : exporte d'abord la sauvegarde (ci-dessus) si tu veux pouvoir revenir en arrière.</p>
+        {!resetOpen ? (
+          <button class="ui-btn ui-btn-danger" onClick={() => setResetOpen(true)}>
+            Réinitialiser complètement…
+          </button>
+        ) : (
+          <form
+            class="ui-row"
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (resetWord.trim().toUpperCase() !== 'EFFACER') return;
+              void resetEverything();
+            }}
+          >
+            <label class="ui-row">
+              Pour confirmer, écris <strong>EFFACER</strong> :
+              <input class="ui-input ui-input-short" value={resetWord} onInput={(e) => setResetWord(e.currentTarget.value)} aria-label="Mot de confirmation" autocomplete="off" />
+            </label>
+            <button class="ui-btn ui-btn-danger" type="submit" disabled={resetWord.trim().toUpperCase() !== 'EFFACER'}>
+              Tout effacer
+            </button>
+            <button
+              class="ui-btn"
+              type="button"
+              onClick={() => {
+                setResetOpen(false);
+                setResetWord('');
+              }}
+            >
+              Annuler
+            </button>
+          </form>
         )}
       </Card>
     </div>

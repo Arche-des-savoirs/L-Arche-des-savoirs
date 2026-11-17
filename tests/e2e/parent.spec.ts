@@ -111,3 +111,35 @@ test('bilan, historique par séance, validation, séance en plus, correction de 
   for (const d of '2468') await page.locator('.ui-pin-keys .ui-key', { hasText: new RegExp(`^${d}$`) }).click();
   await expect(page.getByRole('tab', { name: 'À valider (0)' })).toBeVisible();
 });
+
+test("réinitialisation complète : tout est effacé et le jeu repart du début", async ({ page }) => {
+  await page.goto('./');
+  await seedPlayed(page);
+  await openParent(page);
+  await page.getByRole('tab', { name: 'Réglages' }).click();
+  await page.getByLabel('Nouveau code à 4 chiffres').fill('1357');
+  await page.getByRole('button', { name: 'Changer le code' }).click();
+  await page.getByRole('button', { name: 'Réinitialiser complètement…' }).click();
+  const confirm = page.getByRole('button', { name: 'Tout effacer' });
+  await expect(confirm).toBeDisabled();
+  await page.getByLabel('Mot de confirmation').fill('effacer');
+  await cap(page, 'parent-reinitialiser');
+  await confirm.click();
+
+  // Retour à l'accueil, partie neuve.
+  await expect(page.getByRole('button', { name: "Commencer l'aventure" })).toBeVisible();
+  await expect(page.getByText(/Chapitre 1 · La Porte des Trois Lueurs · Jour 1/)).toBeVisible();
+
+  // Rien ne revient après un rechargement ; le code redevient 0000 ; l'historique est vide.
+  await page.waitForTimeout(400);
+  await page.reload();
+  await expect(page.getByRole('button', { name: "Commencer l'aventure" })).toBeVisible();
+  await openParent(page, '0000');
+  await page.getByRole('tab', { name: 'Historique' }).click();
+  await expect(page.getByText("Aucune séance terminée pour l'instant.")).toBeVisible();
+
+  // Les avatars sont à recréer.
+  await page.getByRole('button', { name: '← Quitter le mode parent' }).click();
+  await page.getByRole('button', { name: "Commencer l'aventure" }).click();
+  await expect(page.getByRole('heading', { name: /Axelle, la Veilleuse : crée ton avatar/ })).toBeVisible();
+});

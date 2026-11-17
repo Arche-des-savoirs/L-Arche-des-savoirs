@@ -9,6 +9,7 @@ import type { Profile } from '../engine/profile';
 import type { PlayerId } from '../engine/types';
 import type { Subject } from '../content/schema';
 import { emptySave, loadSave, writeSave, type SaveData } from '../storage/save';
+import { db } from '../storage/db';
 import { decide } from '../engine/parent';
 
 export type Route = 'chargement' | 'accueil' | 'diagnostic' | 'parent' | 'avatars' | 'seance' | 'a-demain' | 'bientot';
@@ -122,6 +123,20 @@ export function parentDecide(session: number, index: number, verdict: 'ok' | 'ko
 export async function replaceSave(data: SaveData) {
   save.value = data;
   await persist();
+}
+
+/**
+ * Réinitialisation complète de l'appareil : partie, avatars, niveaux, historique, code et réglages.
+ * L'app reste installée et hors ligne (le cache du service worker n'est pas touché).
+ */
+export async function resetEverything() {
+  globalThis.speechSynthesis?.cancel();
+  await queue; // attend la fin des écritures en cours
+  await db.meta.clear();
+  lastError.value = null;
+  save.value = emptySave();
+  await persist();
+  route.value = 'accueil';
 }
 
 export function useTeamCall(manche: number) {
