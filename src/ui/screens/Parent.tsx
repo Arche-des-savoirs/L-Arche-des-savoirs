@@ -9,7 +9,7 @@ import { PLAYERS, type Option } from '../../engine/types';
 import type { Subject } from '../../content/schema';
 import { loadFrenchVoices, type VoiceInfo } from '../../platform/voices';
 import { fromExport, toExport } from '../../storage/save';
-import { dispatch, lastError, parentDecide, replaceSave, route, save, setPin, setVoice } from '../store';
+import { autoRead, dispatch, lastError, parentDecide, replaceSave, route, save, setAutoRead, setPin, setVoice } from '../store';
 import { say } from '../voice';
 import { Card } from '../parts/Common';
 
@@ -317,6 +317,9 @@ function Reglages({ now }: { now: number }) {
         <label class="ui-row">
           Vitesse : {rate.toFixed(2).replace('.', ',')}
           <input type="range" min="0.7" max="1.2" step="0.05" value={rate} onInput={(e) => setRate(Number(e.currentTarget.value))} onChange={() => setVoice(settings.voiceName, rate)} />
+        </label>
+        <label class="ui-row">
+          <input type="checkbox" checked={autoRead()} onChange={(e) => setAutoRead(e.currentTarget.checked)} /> Lecture automatique des dialogues (le conteur)
         </label>
         <button class="ui-btn" onClick={() => say('Bonjour les apprenties, bienvenue dans l’Arche des Savoirs.')}>
           🔊 Tester

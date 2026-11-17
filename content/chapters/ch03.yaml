@@ -49,11 +49,17 @@ days:
     title: Les remparts
     decor: Un vieux port entouré de remparts. Les maisons n'ont plus de portes, les ruelles pavées luisent de brume.
     opening:
-      - { who: narrateur, text: "Thessaly mène les apprenties jusqu'à la ville voisine. Les maisons du port n'ont plus de portes, et les habitants se croisent sans se reconnaître." }
-      - { who: thessaly, text: "Ici, les gens ont oublié leur propre nom. Nous allons les leur rendre, un par un." }
-      - { who: nilo, text: "Coucou ! Je passais par là. Par hasard. Totalement par hasard." }
-      - { who: thessaly, to: axelle, text: "Axelle, reste près de moi. Ta lueur nous montre où mettre les pieds." }
-      - { who: plume, text: "Regardez au loin, sur la colline : un sablier immense. Il est tout gris." }
+      - { who: narrateur, text: "Au-delà des Champs, sur la côte, se dresse une ville de pierre aux toits pointus : la Ville de Brume. Autrefois, on l'appelait la Ville des Mille Noms, parce que chacun de ses habitants avait un nom qui chantait." }
+      - { who: narrateur, text: "Thessaly y mène les apprenties par un matin pâle. Les remparts sont hauts, couverts de lierre gris. Le port est silencieux. Et dans les ruelles pavées, quelque chose ne va pas : les maisons n'ont plus de portes." }
+      - { who: narrateur, text: "Là où devraient s'ouvrir les portes, il n'y a que du mur. Les habitants marchent dans les rues sans se regarder, sans se saluer. Ils se croisent comme des inconnus, parce qu'ils ont oublié leur propre nom." }
+      - { who: thessaly, text: "Ici, le Brouillard a pris les noms. Et quand on n'a plus de nom, on ne trouve plus sa maison. Nous allons les leur rendre, un par un." }
+      - { who: nilo, text: "Coucou ! Je passais par là. Par hasard. Totalement par hasard. Je ne vous suivais pas du tout." }
+      - { who: rafaelle, text: "Nilo… tu as une lettre de Thessaly dans ta poche. Tu nous expliques ?" }
+      - { who: nilo, text: "Plus tard ! Promis. Là, on a une ville à sauver, non ? Les explications, c'est pour les jours calmes." }
+      - { who: thessaly, to: axelle, text: "Axelle, reste près de moi. Ta lueur nous montre où mettre les pieds, et ces pavés sont glissants." }
+      - { who: narrateur, text: "Sur la colline qui domine la ville, une silhouette immense se découpe dans la brume. C'est un sablier, haut comme une tour, en verre et en bronze. Son sable est gris. Et il coule… vers le haut." }
+      - { who: plume, text: "Regardez, sur la colline : un sablier immense. Il est tout gris. Et le sable monte au lieu de descendre. Ça ne devrait pas être possible." }
+      - { who: thessaly, text: "Ne le regardez pas trop longtemps. Le Sablier Gris attire ceux qui le fixent. Pour l'instant, occupons-nous des remparts." }
     manches:
       - id: m1
         title: À gauche, à droite
@@ -106,18 +112,27 @@ days:
             - { gen: maths.arrondi }
     pause: "Les remparts sont hauts : marchez sur la pointe des pieds comme des gardes, puis accroupissez-vous comme des espions, trois fois !"
     closing:
-      - { who: narrateur, text: "Les portes de la première rue réapparaissent, une à une. Un fil de lumière dorée s'allume entre les pavés et serpente vers la colline." }
-      - { who: thessaly, text: "Ce fil mène au Sablier Gris. Nous n'irons pas seules là-bas. Pas encore." }
-      - { who: plume, text: "Le fil sent… la même chose que la trace de plume. Je ne comprends pas." }
+      - { who: narrateur, text: "Les portes de la première rue réapparaissent, une à une, avec un petit « clac » joyeux. Une vieille dame retrouve la sienne, l'ouvre, et respire l'odeur de sa cuisine avec un sourire immense." }
+      - { who: narrateur, text: "Puis un fil de lumière dorée s'allume entre les pavés. Il serpente à travers la ville, monte les escaliers, contourne les fontaines… et file droit vers la colline du Sablier." }
+      - { who: thessaly, text: "Ce fil mène au Sablier Gris. Nous n'irons pas seules là-bas. Pas encore. Pas sans savoir ce qui nous attend." }
+      - { who: plume, text: "Le fil sent… la même chose que la trace de plume sur l'épi. Je ne comprends pas. Pourquoi est-ce que tout me parle de quelque chose que j'ai oublié ?" }
+      - { who: narrateur, text: "Ce soir-là, Thessaly reste longtemps à la fenêtre de l'auberge. Elle regarde le Sablier, et sa main serre très fort le pommeau de sa canne." }
 
   # ─────────────────────────── JOUR 2 ───────────────────────────
   - n: 2
     title: Le marché
     decor: Une place de marché aux étals vides. Les marchands ne savent plus le prix de rien.
     opening:
-      - { who: thessaly, text: "Au marché, les prix se sont effacés. Il faut aider les marchands à compter juste." }
-      - { who: nilo, text: "Moi, je suis très fort pour marchander. C'est-à-dire… pour ne rien payer." }
+      - { who: narrateur, text: "Le deuxième jour, les apprenties descendent au marché. C'est une grande place ronde, entourée d'arcades, où se pressent d'habitude des centaines de marchands venus de toutes les mers." }
+      - { who: narrateur, text: "Mais aujourd'hui, les étals sont presque vides. Les marchands restent derrière leurs paniers, le regard perdu. Ils ne savent plus le prix de rien. L'un vend une pomme pour mille pièces, un autre donne un tapis pour un caillou." }
+      - { who: thessaly, text: "Au marché, les nombres se sont effacés. Sans les nombres, personne ne peut échanger, et une ville qui n'échange plus s'endort. Il faut aider les marchands à compter juste." }
+      - { who: nilo, text: "Moi, je suis très fort pour marchander. C'est-à-dire… pour ne rien payer. C'est un talent rare." }
       - { who: plume, text: "Nilo !" }
+      - { who: nilo, text: "Je plaisante ! Enfin… à moitié." }
+      - { who: narrateur, text: "Un marchand venu du Sud a gardé, lui, une pancarte en espagnol. Il fait de grands gestes vers Rafaelle, soulagé que quelqu'un puisse le comprendre." }
+      - { who: thessaly, to: rafaelle, text: "Rafaelle, tu vois ? Une langue est un pont. Celui qui en parle deux traverse deux fois plus de rivières." }
+      - { who: thessaly, to: axelle, text: "Axelle, compte les pièces dans ta main. Un euro, deux euros… Chaque pièce bien comptée rend un sourire à un marchand." }
+      - { who: narrateur, text: "Mouf est là aussi, on ne sait pas comment. Il essaie d'acheter une écharpe avec une feuille morte. Le marchand, perplexe, accepte." }
     manches:
       - id: m1
         title: Les pièces et les billets
@@ -170,8 +185,11 @@ days:
             - { gen: maths.fraction-de }
     pause: "Le marché s'anime : faites semblant de porter un panier très lourd, d'un bout à l'autre de la pièce, puis un panier tout léger !"
     closing:
-      - { who: narrateur, text: "Les étals se remplissent de couleurs. Un vieux marchand retrouve le prix de ses pommes… et le nom de sa fille, qu'il appelle en riant." }
-      - { who: thessaly, text: "Bien. Mais je n'aime pas cette brume qui descend de la colline. Restez près de moi demain." }
+      - { who: narrateur, text: "Les étals se remplissent de couleurs : des oranges, des tissus brodés, des épices qui sentent le soleil. Les marchands crient de nouveau leurs prix, et la place résonne comme une ruche." }
+      - { who: narrateur, text: "Un vieux marchand retrouve le prix de ses pommes… et soudain, en riant, le nom de sa fille. Il l'appelle à travers toute la place, et elle accourt dans ses bras." }
+      - { who: mouf, text: "J'ai une écharpe ! Je l'ai payée avec une feuille. C'est une bonne affaire ? Je crois que c'est une bonne affaire." }
+      - { who: thessaly, text: "Bien. Mais je n'aime pas cette brume qui descend de la colline. Elle est plus épaisse ce soir. Restez près de moi demain." }
+      - { who: narrateur, text: "Cette nuit-là, le sable du Sablier Gris monte un peu plus vite. Et dans les rues encore sans portes, des silhouettes de brume se rassemblent, sans bruit." }
     reward: "une Bourse de Pièces Brillantes"
 
   # ─────────────────────────── JOUR 3 ───────────────────────────
@@ -179,9 +197,15 @@ days:
     title: La mairie des Noms
     decor: Une mairie aux grandes tables couvertes de registres. Les pages se sont vidées de leurs noms.
     opening:
-      - { who: thessaly, text: "Les noms de la ville étaient gardés ici. Le Brouillard les a effacés des registres. Retrouvons-les." }
-      - { who: nilo, text: "Moi, mon nom, je ne l'oublierai jamais. N-I-L-O. Facile." }
-      - { who: plume, text: "Moi, j'en ai plusieurs. Plume, Plumeau, Plumichou… Heu. Non, juste Plume." }
+      - { who: narrateur, text: "Le troisième jour, Thessaly conduit les apprenties à la mairie de la ville, un grand bâtiment aux colonnes blanches, surmonté d'une horloge arrêtée." }
+      - { who: narrateur, text: "À l'intérieur, une salle immense est remplie de registres, alignés sur des étagères jusqu'au plafond. Chaque registre contient les noms des habitants : ceux qui sont nés ici, ceux qui se sont mariés ici, ceux qui y ont vécu." }
+      - { who: narrateur, text: "Mais quand Maelle ouvre le premier registre, les pages sont blanches. Toutes. Le Brouillard a bu l'encre, et les noms se sont envolés comme des papillons." }
+      - { who: thessaly, text: "Les noms de la ville étaient gardés ici. Sans eux, les habitants ne savent plus qui ils sont. Retrouvons-les, avec patience, lettre par lettre." }
+      - { who: thessaly, text: "Un nom, c'est la première chose qu'on nous offre. Avant même de savoir parler, on sait répondre à son nom." }
+      - { who: nilo, text: "Moi, mon nom, je ne l'oublierai jamais. N-I-L-O. Facile. Quatre lettres, zéro problème." }
+      - { who: plume, text: "Moi, j'en ai plusieurs. Plume, Plumeau, Plumichou… Heu. Non, juste Plume. Je crois. Pourquoi je dis toujours « je crois » ?" }
+      - { who: thessaly, to: axelle, text: "Axelle, toi qui vois les choses minuscules, cherche les lettres qui flottent encore dans la poussière. Elles sont toutes petites." }
+      - { who: narrateur, text: "Et c'est vrai : dans les rayons de lumière qui traversent les fenêtres, de minuscules lettres dorées flottent comme de la poussière d'or, en attendant qu'on les remette à leur place." }
     manches:
       - id: m1
         title: L'ordre des registres
@@ -233,9 +257,11 @@ days:
             - { id: ch03-j3-ra-m4b, subject: espagnol, level: 4, kind: court, prompt: "Traduis : « Ayer busqué el nombre ».", answer: "Hier, j'ai cherché le nom", accept: ["hier j'ai cherché le nom"], hint: "Ayer = hier. Buscar = chercher." }
     pause: "Appelez-vous ! Chacune dit son prénom en le chantant, de plus en plus fort, puis tout doucement."
     closing:
-      - { who: narrateur, text: "Les registres se remplissent de lettres. Dans la rue, des habitants s'appellent par leur nom pour la première fois depuis des années." }
-      - { who: thessaly, text: "Demain, nous monterons à la Tour de Garde. De là-haut, on voit tout le fil de lumière." }
-      - { who: nilo, text: "La Tour ? Hum. Ma carte dit qu'il ne faut pas y aller la nuit. Enfin… je crois. Elle est un peu effacée." }
+      - { who: narrateur, text: "Les registres se remplissent de lettres, page après page. Par les fenêtres ouvertes, on entend les habitants s'appeler par leur nom pour la première fois depuis des années." }
+      - { who: narrateur, text: "« Marguerite ! » « Anselme ! » « Petit Jo ! » Les portes s'ouvrent dans toute la ville, et des rires montent des rues comme des bulles de savon." }
+      - { who: thessaly, text: "Demain, nous monterons à la Tour de Garde. De là-haut, on voit tout le fil de lumière, et peut-être d'où vient le Brouillard." }
+      - { who: nilo, text: "La Tour ? Hum. Ma carte dit qu'il ne faut pas y aller la nuit. Enfin… je crois. Elle est un peu effacée. Beaucoup effacée." }
+      - { who: narrateur, text: "Dans un registre resté ouvert, une seule page est encore blanche. Rafaelle la regarde longtemps. En bas de la page, presque invisible, il y a le dessin d'une toute petite lanterne." }
     reward: "la Plume des Registres"
 
   # ─────────────────────────── JOUR 4 ───────────────────────────
@@ -243,9 +269,15 @@ days:
     title: La Tour de Garde
     decor: Une tour de pierre au bout du port. Son gardien, le Veilleur, tient un trousseau de clés rouillées.
     opening:
-      - { who: veilleur, text: "Halte ! Je suis le Veilleur. Je garde les clés de la ville. Mais j'ai oublié laquelle ouvre la Tour…" }
-      - { who: thessaly, text: "Aidons-le. Chaque bonne réponse lui rend une clé." }
-      - { who: plume, text: "Le Brouillard monte vite, ce soir. Je n'aime pas ça." }
+      - { who: narrateur, text: "Le quatrième jour, le ciel est couleur de cendre. Au bout du port, la Tour de Garde se dresse sur un rocher noir, battu par les vagues. C'est d'elle que les veilleurs d'autrefois surveillaient la mer et allumaient le grand feu pour guider les navires." }
+      - { who: narrateur, text: "Devant la porte de la Tour, un vieil homme en manteau rapiécé tient un trousseau de clés rouillées. Il en essaie une, puis une autre, puis une autre, sans jamais trouver la bonne." }
+      - { who: veilleur, text: "Halte ! Je suis le Veilleur. Je garde les clés de la ville depuis cinquante ans. Mais j'ai oublié laquelle ouvre la Tour… Et j'ai oublié pourquoi il faut l'ouvrir." }
+      - { who: thessaly, text: "Aidons-le. Chaque bonne réponse lui rend une clé. Et du haut de la Tour, nous verrons enfin d'où vient le Brouillard." }
+      - { who: narrateur, text: "Thessaly parle calmement, mais les apprenties remarquent qu'elle ne quitte plus des yeux la mer. Là-bas, à l'horizon, une vague de brume grise avance, haute comme une falaise." }
+      - { who: plume, text: "Le Brouillard monte vite, ce soir. Je n'aime pas ça. Ma lanterne non plus : elle clignote toute seule." }
+      - { who: thessaly, text: "Axelle, Maelle, Rafaelle. Quoi qu'il arrive, restez ensemble. Trois lueurs ensemble sont plus fortes que n'importe quel brouillard. Promettez-le-moi." }
+      - { who: narrateur, text: "Les trois sœurs se regardent, un peu surprises par la voix de Thessaly. Puis elles hochent la tête toutes les trois en même temps." }
+      - { who: thessaly, to: axelle, text: "Axelle, tiens bien ta lanterne. Elle est plus forte que tu ne le crois." }
     manches:
       - id: m1
         title: Les suites du Veilleur
@@ -297,10 +329,12 @@ days:
             - { id: ch03-j4-ra-m4b, subject: maths, level: 4, kind: court, prompt: "Calcule 3/4 ÷ 3.", answer: "1/4", hint: "Partager trois quarts en 3, c'est un quart chacun." }
     pause: "Pause des gardes : tenez-vous droites comme des statues pendant 10 secondes, sans rire… si vous y arrivez !"
     closing:
-      - { who: narrateur, text: "Le dernier verrou cède. Au même instant, une vague de brouillard monte de la mer et éteint toutes les lanternes. Il fait noir, et il fait silence." }
-      - { who: narrateur, text: "Quand la lumière revient, Thessaly n'est plus là. Sa canne est tombée sur les pavés." }
-      - { who: plume, text: "Elle… elle était juste là. Je suis là, moi. On reste ensemble, d'accord ?" }
-      - { who: nilo, text: "On va la retrouver. Je vous le promets." }
+      - { who: narrateur, text: "Le dernier verrou cède avec un grand « clong » de bronze. La porte de la Tour s'ouvre. Mais au même instant, la vague de brouillard touche le port, monte le long du rocher, et éteint toutes les lanternes d'un seul souffle." }
+      - { who: narrateur, text: "Il fait noir. Il fait silence. On n'entend plus que la mer. Pendant un long moment, personne ne bouge." }
+      - { who: narrateur, text: "Puis, doucement, les trois lanternes des apprenties se rallument d'elles-mêmes : la dorée, la blanche, la rose. Quand la lumière revient, Thessaly n'est plus là. Sa canne est tombée sur les pavés." }
+      - { who: plume, text: "Elle… elle était juste là. Je suis là, moi. On reste ensemble, d'accord ? C'est ce qu'elle a dit. On reste ensemble." }
+      - { who: nilo, text: "On va la retrouver. Je vous le promets. Cette fois, c'est une vraie promesse. Pas une promesse de Nilo. Une vraie." }
+      - { who: narrateur, text: "Axelle ramasse la canne. Elle est tiède, comme si quelqu'un venait de la lâcher. Et tout en haut, sur le pommeau d'argent, une petite lumière bat doucement, comme un cœur." }
     reward: "la Canne de Thessaly"
 
   # ─────────────────────────── JOUR 5 ───────────────────────────
@@ -308,8 +342,12 @@ days:
     title: La nuit de la décision
     decor: La place de la ville, de nuit. La canne de Thessaly tremble doucement, posée au milieu des apprenties.
     opening:
-      - { who: narrateur, text: "Les trois apprenties sont seules avec Plume et Nilo. La canne de Thessaly frémit, comme si elle voulait montrer un chemin." }
-      - { who: plume, text: "Thessaly nous a appris à chercher ensemble. Alors on décide ensemble, d'abord." }
+      - { who: narrateur, text: "La nuit est tombée sur la Ville de Brume. Sur la grande place, les apprenties se sont assises en cercle, avec Plume, Nilo et Mouf. Personne n'a envie de dormir." }
+      - { who: narrateur, text: "Au milieu du cercle, la canne de Thessaly est posée sur les pavés. Sa lumière bat toujours. Et de temps en temps, elle frémit, comme si elle voulait montrer un chemin." }
+      - { who: plume, text: "Thessaly nous a appris à chercher ensemble. Alors on décide ensemble, d'abord. Comme elle aurait voulu." }
+      - { who: nilo, text: "Il faut que je vous dise quelque chose. La lettre de Thessaly… je l'ai trouvée sur la route, avant de vous rencontrer. Je ne l'ai pas volée. Elle disait juste : « Protégez les trois lueurs. » Je n'ai pas compris. Maintenant, je comprends un peu." }
+      - { who: mouf, text: "Moi, je ne comprends rien. Mais je reste avec vous. C'est mieux que de courir dans le brouillard avec des épis." }
+      - { who: narrateur, text: "Autour de la place, les habitants qui ont retrouvé leur nom sortent un à un de leurs maisons. Ils apportent des lanternes, des couvertures, des bols de soupe chaude. Ils ne disent rien. Ils sont juste là." }
     manches:
       - id: m1
         title: La Guitare des Noms
@@ -349,7 +387,10 @@ days:
             - { id: ch03-j5-ra-m3a, subject: espagnol, level: 3, kind: libre, validation: soeurs, prompt: "Dis en espagnol : « Nous allons la chercher. » Puis chante-le !", read: "Vamos a buscarla." }
     pause: "La ville chante : chacune tape un rythme sur ses genoux, et les autres doivent le répéter !"
     closing:
-      - { who: narrateur, text: "La ville se remet à chanter. Un à un, les habitants retrouvent leur nom. Le dernier nom, que personne ne retrouve, est celui d'un enfant." }
-      - { who: narrateur, text: "Plume baisse les yeux. Il ne dit rien." }
-      - { who: nilo, text: "Regardez la canne ! Elle tremble… vers l'est, sur la route de brume." }
+      - { who: narrateur, text: "La ville se remet à chanter. Un à un, les habitants chantent leur nom retrouvé, et chaque nom est une note qui monte dans la nuit. La brume recule jusqu'aux remparts, puis jusqu'à la mer." }
+      - { who: narrateur, text: "Mais le dernier nom, personne ne le retrouve. C'est celui d'un enfant, inscrit autrefois dans le registre, à côté d'une toute petite lanterne. Personne ne se souvient de lui." }
+      - { who: narrateur, text: "Plume baisse les yeux. Il ne dit rien. Sa lanterne, au bout de sa queue, devient toute pâle." }
+      - { who: mouf, text: "Ça va, Plume ? Tu veux mon écharpe ? Elle est très chaude. Je l'ai payée avec une feuille." }
+      - { who: nilo, text: "Regardez la canne ! Elle tremble… elle tourne… elle se pointe vers l'est, sur la route de brume." }
+      - { who: narrateur, text: "Les trois sœurs se lèvent. Devant elles, la route de l'est s'enfonce dans la nuit. Quelque part au bout, Thessaly les attend. Et demain, l'aventure continue." }
     reward: "un nouveau fragment de la Carte Vivante"

@@ -23,6 +23,8 @@ export interface Settings {
   /** Voix de lecture choisie par le parent (sinon : première voix fr-FR locale). */
   voiceName?: string;
   rate: number;
+  /** Lecture automatique des dialogues, comme un conteur (activée par défaut). */
+  autoRead?: boolean;
 }
 
 export const emptySave = (): SaveData => ({

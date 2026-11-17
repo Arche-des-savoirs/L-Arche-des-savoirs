@@ -124,9 +124,9 @@ test('première séance : avatars, ouverture, tours, aides, placement, pause, à
   await page.waitForTimeout(1300); // fin du fondu d'apparition
   await cap(page, 'intro-chapitre');
   await page.getByRole('button', { name: 'Ouvrir le chapitre' }).click();
-  await expect(page.getByRole('heading', { name: /Jour 1 — L'arrivée à l'Arche/ })).toBeVisible();
+  await expect(page.locator('.ui-grimoire-day')).toHaveText("Jour I · L'arrivée à l'Arche");
   await cap(page, 'ouverture');
-  for (let i = 0; i < 6; i++) await page.getByRole('button', { name: 'Suivant →' }).click();
+  while (await page.getByRole('button', { name: 'Suivant →' }).isVisible()) await page.getByRole('button', { name: 'Suivant →' }).click();
   await page.getByRole('button', { name: 'Continuer' }).click();
   await expect(page.getByText('Bienvenida.')).toBeVisible();
   await cap(page, 'espagnol');
@@ -258,7 +258,7 @@ for (const [n, title, day1] of [
     await page.waitForTimeout(1300);
     await cap(page, `intro-chapitre-${n}`);
     await page.getByRole('button', { name: 'Ouvrir le chapitre' }).click();
-    await expect(page.getByRole('heading', { name: new RegExp(`Jour 1 — ${day1}`) })).toBeVisible();
+    await expect(page.locator('.ui-grimoire-day')).toHaveText(`Jour I · ${day1}`);
     await cap(page, `ouverture-chapitre-${n}`);
     await playUntilTomorrow(page);
     await expect(page.getByText(new RegExp(`Prochaine séance : chapitre ${n}.*jour 2`))).toBeVisible();

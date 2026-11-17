@@ -162,3 +162,36 @@ body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color
 .ui-file { display: inline-flex; align-items: center; position: relative; overflow: hidden; }
 .ui-file input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
 .ui-input-pin::placeholder { letter-spacing: normal; }
+
+/* ───────── Grimoire : titres gravés et récit ───────── */
+:root {
+  --font-epic: 'Cinzel', 'Trajan Pro', Georgia, serif;
+  --font-tale: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --gold-glow: 0 0 18px rgba(244, 201, 93, .45), 0 0 2px rgba(255, 236, 170, .9), 0 2px 0 #10152f;
+}
+.ui-title, .ui-card-title, .ui-intro-title, .ui-big-name, .ui-grimoire-title { font-family: var(--font-epic); letter-spacing: .04em; }
+.ui-title { font-weight: 700; text-shadow: var(--gold-glow); }
+.ui-card-title { font-weight: 600; text-shadow: 0 0 12px rgba(244, 201, 93, .3); }
+
+.ui-grimoire-head { text-align: center; margin: 0 0 14px; }
+.ui-grimoire-kicker { margin: 0; font-family: var(--font-epic); font-weight: 600; font-size: .95rem; letter-spacing: .32em; text-transform: uppercase; color: #d8b968; }
+.ui-grimoire-title { margin: 4px 0 10px; font-weight: 700; font-size: 2.3rem; line-height: 1.1; text-transform: uppercase; color: var(--gold); text-shadow: var(--gold-glow); background: linear-gradient(180deg, #fff1c2 0%, #f4c95d 45%, #c9932e 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 10px rgba(244, 201, 93, .35)); }
+.ui-grimoire-day { display: inline-block; margin: 0; padding: 6px 26px; font-family: var(--font-epic); font-weight: 600; font-size: 1.1rem; letter-spacing: .18em; text-transform: uppercase; color: #f3e3b0; border-top: 1px solid rgba(244, 201, 93, .6); border-bottom: 1px solid rgba(244, 201, 93, .6); background: linear-gradient(90deg, transparent, rgba(244, 201, 93, .12), transparent); }
+.ui-grimoire-sep { color: var(--gold); }
+.ui-decor { font-family: var(--font-tale); font-size: 1.25rem; text-align: center; color: #c9cbe6; margin: 10px auto 18px; max-width: 46em; }
+
+.ui-speaker { font-family: var(--font-epic); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: .95rem; color: var(--gold); }
+.ui-speaker-to { font-family: var(--font-tale); font-style: italic; text-transform: none; letter-spacing: 0; color: var(--muted); }
+.ui-tale { font-family: var(--font-tale); font-weight: 500; font-size: 1.7rem; line-height: 1.45; color: #f6efdc; animation: ui-tale-in .6s ease-out both; }
+.ui-tale-narrator::first-letter { float: left; font-family: var(--font-epic); font-weight: 700; font-size: 3.6em; line-height: .82; margin: .06em .12em 0 0; color: var(--gold); text-shadow: var(--gold-glow); }
+.ui-tale-voice { font-style: italic; padding-left: 18px; border-left: 3px solid rgba(244, 201, 93, .55); }
+.ui-tale-voice::before { content: '« '; color: var(--gold); font-style: normal; }
+.ui-tale-voice::after { content: ' »'; color: var(--gold); font-style: normal; }
+.ui-dialogue { min-height: 260px; }
+.ui-dialogue-narrator .ui-speaker { color: #d8b968; }
+.ui-card { background: radial-gradient(120% 140% at 50% 0%, rgba(43, 54, 110, .96) 0%, rgba(26, 33, 69, .96) 60%); border: 1px solid rgba(244, 201, 93, .35); box-shadow: 0 10px 40px rgba(0, 0, 0, .45), inset 0 0 0 1px rgba(255, 255, 255, .03), inset 0 0 40px rgba(244, 201, 93, .05); }
+.ui-intro-title { font-weight: 700; font-size: 2.6rem; text-shadow: var(--gold-glow); }
+.ui-reward { font-family: var(--font-tale); font-size: 1.4rem; font-style: italic; }
+@keyframes ui-tale-in { from { opacity: 0; transform: translateY(6px); filter: blur(2px); } to { opacity: 1; transform: none; filter: none; } }
+@media (prefers-reduced-motion: reduce) { .ui-tale { animation: none; } }
+.ui-tale-narrator { padding-top: .45em; }
