@@ -8,7 +8,17 @@ import { save } from '../store';
 import { Avatar } from './Avatar';
 import { say, stopSpeaking } from '../voice';
 
-const SPEAKERS: Record<string, string> = { narrateur: 'Le narrateur', thessaly: 'Thessaly', plume: 'Plume', gardien: 'Le Gardien' };
+const SPEAKERS: Record<string, string> = {
+  narrateur: 'Le narrateur',
+  thessaly: 'Thessaly',
+  plume: 'Plume',
+  gardien: 'Le Gardien',
+  nilo: 'Nilo',
+  mouf: 'Mouf',
+  epouvantail: "L'Épouvantail-Qui-Oublie",
+  veilleur: 'Le Veilleur',
+  habitant: 'Un habitant'
+};
 const speaker = (who: string) => SPEAKERS[who] ?? NAMES[who as PlayerId] ?? who;
 
 export function Card({ title, children, wide }: { title?: string; children: ComponentChildren; wide?: boolean }) {

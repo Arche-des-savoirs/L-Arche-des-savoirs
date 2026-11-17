@@ -5,7 +5,8 @@ test.describe.configure({ timeout: 300_000 });
 const cap = (page: Page, name: string) => page.screenshot({ path: `test-results/captures/${name}.png` });
 
 /** Écrit directement dans la sauvegarde IndexedDB (clé → valeur de la table meta), puis recharge. */
-async function seed(page: Page, patch: (data: Record<string, any>) => void) {
+async function seed(page: Page, patch: (data: Record<string, any>) => void, chapter?: number) {
+  if (chapter) await page.evaluate((c) => (location.hash = String(c)), chapter);
   // L'accueil n'apparaît qu'après la première lecture : la base existe alors avec sa table meta.
   await expect(page.getByRole('navigation', { name: 'Menu principal' })).toBeVisible();
   await page.evaluate(
@@ -238,3 +239,28 @@ test('jour 5 : vote secret, palabre, Décideuse, Convergence et Concert', async 
   await expect(page.getByText(/Prochaine séance : chapitre 2/)).toBeVisible();
   await cap(page, 'fin-chapitre-1');
 });
+
+for (const [n, title, day1] of [
+  [2, 'Les Champs de Brume', 'Le jardin vide'],
+  [3, 'La Ville de Brume', 'Les remparts']
+] as const) {
+  test(`chapitre ${n} : illustration, jour 1 joué en entier, puis jour 2`, async ({ page }) => {
+    await page.goto('./');
+    await seed(page, (d) => {
+      const prof = (hair: string, cape: string, accessory: string) => ({ hair, cape, accessory, companionConfirmed: true });
+      d.profiles = { axelle: prof('laches', 'or', 'etoile'), maelle: prof('tresse', 'argent', 'noeud'), rafaelle: prof('queue', 'rose', 'fleur') };
+      d.game = { version: 1, position: { chapter: Number(new URL(location.href).hash.slice(1)) || 0, day: 1 }, sessionsPlayed: 0, counters: { L: 0, C: 0, M: 0, O: 0 }, flags: [], choices: [], checkpoints: {}, calendar: { extraGranted: [], extraUsed: [] }, session: null, endingsSeen: [] };
+      d.progress = null;
+    }, n);
+    await page.getByRole('button', { name: /Commencer l'aventure|Séance du jour/ }).click();
+    await expect(page.getByRole('heading', { name: title })).toBeVisible();
+    await expect.poll(() => page.locator('.ui-intro-image').evaluate((i: HTMLImageElement) => i.naturalWidth)).toBeGreaterThan(1000);
+    await page.waitForTimeout(1300);
+    await cap(page, `intro-chapitre-${n}`);
+    await page.getByRole('button', { name: 'Ouvrir le chapitre' }).click();
+    await expect(page.getByRole('heading', { name: new RegExp(`Jour 1 — ${day1}`) })).toBeVisible();
+    await cap(page, `ouverture-chapitre-${n}`);
+    await playUntilTomorrow(page);
+    await expect(page.getByText(new RegExp(`Prochaine séance : chapitre ${n}.*jour 2`))).toBeVisible();
+  });
+}
