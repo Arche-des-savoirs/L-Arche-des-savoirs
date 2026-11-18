@@ -57,7 +57,8 @@ const VOICES = {
   maelle: 'Leda',
   rafaelle: 'Erinome',
   marchand: 'Schedar',
-  peseur: 'Sulafat'
+  peseur: 'Sulafat',
+  rouage: 'Zephyr'
 };
 
 function readApiKey() {

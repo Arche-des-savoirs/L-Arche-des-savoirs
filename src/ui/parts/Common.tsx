@@ -28,7 +28,8 @@ const SPEAKERS: Record<string, string> = {
   cartea: 'Dame Cartéa',
   albin: "Albin, l'Écho du Jardin",
   marchand: 'Le Marchand',
-  peseur: 'Le Peseur de Brume'
+  peseur: 'Le Peseur de Brume',
+  rouage: 'Rouage'
 };
 const speaker = (who: string) => SPEAKERS[who] ?? NAMES[who as PlayerId] ?? who;
 /** Texte réellement lu à voix haute : annonce le personnage avant sa réplique, sauf pour le narrateur (prose, pas une citation). */
