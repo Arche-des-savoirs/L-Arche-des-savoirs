@@ -1,0 +1,390 @@
+# Chapitre 17 — La Galerie des Tableaux Vivants
+# Suite directe du chapitre 16 : la carte vivante mène les sœurs vers une galerie creusée
+# dans la roche, où des tableaux anciens s'animent doucement au passage des voyageurs.
+# Aucun nouveau personnage voisé : la galerie est habitée par Trame (déjà établie, voix
+# Alnilam), l'entité tissée de fils lumineux qui relie les tableaux entre eux. Décision avec
+# effet ORVANE : src/content/decisions.ts attribue [1, 0, 1] aux options A/B/C (orvane +1 en
+# A, +0 en B, +1 en C). Le texte reflète cet écart : A et C renforcent le lien avec Orvane,
+# B reste neutre.
+
+id: ch17
+number: 17
+act: 2
+title: La Galerie des Tableaux Vivants
+introImage: ch17
+scene: galerie-tableaux
+
+espagnol:
+  - { es: "El cuadro respira lentamente.", fr: "Le tableau respire lentement." }
+  - { es: "Un hilo conecta todo.", fr: "Un fil relie tout." }
+  - { es: "La pintura guarda un secreto.", fr: "La peinture garde un secret." }
+  - { es: "Miremos con atención.", fr: "Regardons avec attention." }
+  - { es: "El color cuenta el tiempo.", fr: "La couleur raconte le temps." }
+
+decision:
+  prompt: "Trame tend un fil scintillant entre deux tableaux voisins, l'un représentant une tempête, l'autre un ciel parfaitement calme. « Il ne reste qu'un seul tableau vide, au fond de la galerie. Que décidez-vous d'y tisser ? »"
+  options:
+    A:
+      label: Tisser ensemble la scène du voyage entier
+      scene: "Axelle entraîne ses sœurs devant le tableau vide, et toutes les trois, la main posée sur la toile, laissent leurs souvenirs communs se mêler aux fils de Trame, jusqu'à ce qu'apparaisse une scène où elles se tiennent, toutes trois, par la main."
+      line: { who: trame, text: "Un souvenir tissé à trois mains tient toujours plus solidement qu'un souvenir tissé seul. Ce tableau-ci ne s'effacera jamais." }
+      habillage: "Chaque épreuve devient un fil à tisser ensemble, où chacune apporte sa part du motif final."
+    B:
+      label: Laisser le tableau vide, pour plus tard
+      scene: "Rafaelle propose de ne rien tisser pour l'instant, estimant que certains souvenirs méritent d'attendre d'être vraiment vécus avant d'être fixés sur une toile."
+      line: { who: trame, text: "Un tableau vide n'est jamais un échec. C'est simplement une promesse que l'avenir se chargera de tenir, à son heure." }
+      habillage: "Les épreuves deviennent des pauses réfléchies, où il vaut mieux parfois attendre le bon moment pour répondre."
+    C:
+      label: Tisser le souvenir le plus difficile du voyage
+      scene: "Maelle choisit de tisser, sans rien adoucir, le souvenir de la traversée du détroit de brume, et les fils de Trame dessinent une scène sombre mais traversée, en son centre, d'une lumière dorée."
+      line: { who: trame, text: "Les souvenirs les plus difficiles, une fois tissés avec honnêteté, deviennent souvent les tableaux les plus lumineux de toute une galerie." }
+      habillage: "Les épreuves deviennent des fils à démêler avec patience, pour faire apparaître la vérité cachée derrière chaque difficulté."
+
+repliquesAbsurdes:
+  - "Si un tableau respire, est-ce qu'il faut lui souhaiter une bonne nuit avant de quitter la galerie ?"
+  - "Mon renard a essayé de mordiller un fil de Trame. Le fil a juste changé de couleur, amusé, et mon renard a eu l'air très déçu."
+  - "Est-ce qu'un tableau de tempête peut vraiment mouiller la galerie, ou c'est juste pour nous impressionner ?"
+  - "Si je reste trop longtemps devant un tableau, est-ce que je risque de me retrouver tissée dedans, moi aussi ?"
+  - "On a vu des cartes vivantes et un automate qui parle. Des tableaux qui respirent, honnêtement, ça devient presque banal."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: La galerie creusée dans la roche
+    decor: Une galerie tout en longueur, creusée à même la roche de la montagne, ses murs couverts de tableaux anciens dont les scènes peintes semblent, par instants, bouger très lentement.
+    opening:
+      - { who: narrateur, text: "La carte vivante conduisit les trois sœurs vers une galerie tout en longueur, creusée à même la roche de la montagne, ses murs couverts de tableaux anciens aux cadres dorés." }
+      - { who: narrateur, text: "En s'approchant du premier tableau, représentant un champ de blé doré sous un ciel d'été, Axelle crut voir, l'espace d'un instant, les épis de blé onduler doucement, comme sous l'effet d'un vent réel." }
+      - { who: axelle, text: "Ce tableau... il vient de bouger ! J'en suis sûre !" }
+      - { who: nilo, text: "Après les cartes vivantes et l'automate parlant, je ne suis même plus surpris que les tableaux s'y mettent aussi." }
+      - { who: narrateur, text: "Un fil scintillant, fin comme un cheveu de lumière, se détacha soudain du cadre du tableau voisin, se tendant dans les airs avant de prendre une forme presque humaine." }
+      - { who: trame, text: "Bienvenue dans ma galerie, petites voyageuses. Ici, chaque tableau respire un peu, pour peu qu'on prenne le temps de le regarder vraiment." }
+      - { who: rafaelle, text: "C'est vous qui faites bouger les tableaux ainsi ?" }
+      - { who: trame, text: "Je ne les fais pas bouger, petite Archiviste. Je les relie, simplement, les uns aux autres, par des fils que vous pouvez voir, là, scintiller entre les cadres." }
+      - { who: maelle, text: "Pourquoi relier des tableaux entre eux ?" }
+      - { who: trame, text: "Parce qu'aucune scène, aussi belle soit-elle, n'existe vraiment seule. Chaque tableau raconte un peu mieux son histoire, relié aux autres." }
+    manches:
+      - id: m1
+        title: Premiers pas dans la galerie
+        tours:
+          axelle:
+            - { id: ch17-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on un lieu où l'on expose des tableaux ?", choices: ["une galerie", "un marché", "un atelier", "un grenier", "un hall"], answer: "une galerie", hint: "C'est le mot utilisé dans le récit." }
+            - { id: ch17-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 + 9.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "7 + 9 = 7 + 7 + 2." }
+          maelle:
+            - { id: ch17-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi un tableau peint peut-il parfois sembler légèrement « bouger » sous certains éclairages ?", choices: ["parce que la lumière changeante joue sur les reliefs de la peinture", "parce qu'un tableau bouge toujours vraiment", "parce que les couleurs s'évaporent", "cela n'a aucune explication possible", "parce que le cadre tourne tout seul"], answer: "parce que la lumière changeante joue sur les reliefs de la peinture", hint: "Pense à l'effet de la lumière sur une surface peinte en relief." }
+            - { id: ch17-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 78 + 56.", choices: ["130", "132", "134", "136", "138"], answer: "134", hint: "78 + 60 − 4." }
+          rafaelle:
+            - { id: ch17-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi les galeries de peinture étaient-elles autrefois considérées comme des lieux de mémoire importants ?", choices: ["parce qu'elles conservaient des scènes et des moments qu'on voulait transmettre", "parce que les tableaux n'avaient jamais aucune valeur", "parce que c'était toujours interdit d'y entrer", "parce que les galeries n'existaient pas vraiment", "cela n'a jamais eu aucune importance"], answer: "parce qu'elles conservaient des scènes et des moments qu'on voulait transmettre", hint: "Pense à ce que raconte chaque tableau, selon Trame." }
+            - { id: ch17-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 16 × 7.", choices: ["102", "108", "110", "112", "116"], answer: "112", hint: "16 × 7 = 16 × 7." }
+      - id: m2
+        title: Trame, fil de lumière
+        tours:
+          axelle:
+            - { id: ch17-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Un fil scintillant se détacha du cadre. » ?", choices: ["du cadre", "se détacha", "Un fil scintillant", "scintillant", "cadre"], answer: "Un fil scintillant", hint: "Qu'est-ce qui se détache du cadre ?" }
+            - { id: ch17-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 13 − 5.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "13 − 5 = 8." }
+          maelle:
+            - { id: ch17-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « scintillant » dans « un fil scintillant » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le fil de Trame." }
+            - { id: ch17-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 378 ÷ 6.", choices: ["58", "61", "63", "65", "68"], answer: "63", hint: "6 × 63 = 378." }
+          rafaelle:
+            - { id: ch17-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Aucune scène, aussi belle soit-elle, n'existe vraiment seule. » : que signifie cette phrase ?", choices: ["qu'une scène isolée n'a jamais aucun sens", "que chaque scène prend davantage de sens une fois reliée aux autres", "qu'il ne faut jamais peindre une seule scène", "que les scènes belles n'ont jamais d'importance", "que toutes les scènes sont identiques"], answer: "que chaque scène prend davantage de sens une fois reliée aux autres", hint: "Relis bien ce que répond Trame à Maelle." }
+            - { id: ch17-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14² − 130.", choices: ["56", "60", "64", "66", "70"], answer: "66", hint: "196 − 130." }
+      - id: m3
+        title: Des cadres dorés
+        tours:
+          axelle:
+            - { id: ch17-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 6 tableaux sur un mur, et 5 sur un autre. Combien de tableaux en tout ?", choices: ["9", "10", "11", "12", "13"], answer: "11", hint: "6 + 5." }
+            - { id: ch17-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi encadre-t-on souvent un tableau avec un cadre doré ?", choices: ["pour le protéger et mettre en valeur la peinture", "pour qu'il pèse plus lourd", "pour qu'il se décompose plus vite", "cela n'a aucune utilité", "pour qu'on ne le voie plus du tout"], answer: "pour le protéger et mettre en valeur la peinture", hint: "Pense à l'utilité d'un cadre autour d'une peinture." }
+          maelle:
+            - { id: ch17-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 34 × 4.", choices: ["130", "132", "134", "136", "138"], answer: "136", hint: "34 × 4 = 35 × 4 − 4." }
+            - { id: ch17-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi un tableau de paysage représente-t-il souvent un moment précis, comme un été ou une tempête ?", choices: ["pour fixer un instant particulier dans la mémoire", "parce que c'est toujours interdit de peindre autre chose", "parce que les paysages ne changent jamais", "cela n'a aucune raison particulière", "parce que les artistes détestent la variété"], answer: "pour fixer un instant particulier dans la mémoire", hint: "Pense au champ de blé sous le ciel d'été, décrit au début du chapitre." }
+          rafaelle:
+            - { id: ch17-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x + 6 = 41.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "5x = 35." }
+            - { id: ch17-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Les épis de blé (onduler) doucement. »", choices: ["ont ondulé", "ondulaient", "onduleront", "ondulent", "ondulant"], answer: "ont ondulé", hint: "Passé composé = avoir + participe passé." }
+      - id: m4
+        title: Premières observations
+        tours:
+          axelle:
+            - { id: ch17-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 3.", choices: ["24", "25", "27", "29", "30"], answer: "27", hint: "9 × 3 = 9 + 9 + 9." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch17-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 240 − 95.", choices: ["140", "143", "145", "147", "150"], answer: "145", hint: "240 − 100 + 5." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch17-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El cuadro respira lentamente. »", choices: ["Le tableau brille fort.", "Le tableau respire lentement.", "Le tableau tombe doucement.", "Le tableau disparaît vite.", "Le tableau chante doucement."], answer: "Le tableau respire lentement.", hint: "« Respira lentamente » = respire lentement." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu du tableau vivant : une sœur s'immobilise dans une pose, comme un personnage de tableau, pendant que les deux autres inventent, à voix haute, l'histoire que ce tableau pourrait raconter."
+    closing:
+      - { who: narrateur, text: "La lumière de la galerie baissait doucement, et Trame, ses fils scintillants repliés en une forme plus discrète, les observa s'éloigner avec une attention bienveillante." }
+      - { who: trame, text: "Demain, je vous montrerai les tableaux les plus anciens de cette galerie — ceux qui ont vu passer bien des voyageurs avant vous." }
+      - { who: rafaelle, text: "On a hâte de les découvrir, Trame." }
+      - { who: narrateur, text: "En quittant la galerie, Maelle se retourna une dernière fois vers le champ de blé doré, et crut voir, l'espace d'un battement de cœur, un fil de lumière le relier doucement au tableau voisin." }
+    reward: "la découverte de la Galerie des Tableaux Vivants"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Les tableaux les plus anciens
+    decor: Le fond de la galerie, plus sombre, où les tableaux les plus anciens, aux couleurs ternies par le temps, semblent pourtant receler, sous leur patine, une lumière particulière.
+    opening:
+      - { who: narrateur, text: "Le lendemain, Trame les guida vers le fond de la galerie, plus sombre, où les tableaux les plus anciens, aux couleurs ternies par le temps, semblaient pourtant receler, sous leur patine, une lumière particulière." }
+      - { who: trame, text: "Ceux-ci datent d'avant ma propre mémoire. J'ai hérité de ces fils, un jour, sans savoir exactement qui les avait tissés en premier." }
+      - { who: axelle, text: "Vous ne savez pas qui a commencé à relier tous ces tableaux ?" }
+      - { who: trame, text: "Pas avec certitude, petite Veilleuse. Mais je soupçonne que ce lien existait bien avant moi, et qu'il continuera bien après que j'aurai cessé de le tisser." }
+      - { who: maelle, text: "Ce tableau-ci, tout au fond, représente une montagne presque identique à celle qu'on escalade en ce moment. C'est une coïncidence ?" }
+      - { who: trame, text: "Rien, dans cette galerie, n'est tout à fait une coïncidence, petite Cartographe. Les fils savent souvent où mener, bien avant qu'on le comprenne soi-même." }
+      - { who: rafaelle, text: "Est-ce que ce tableau pourrait nous montrer ce qui nous attend, plus haut dans la montagne ?" }
+      - { who: trame, text: "Peut-être. Ou peut-être montre-t-il simplement ce que vous espérez y trouver. La différence, parfois, est plus fine qu'elle n'y paraît." }
+    manches:
+      - id: m1
+        title: Des couleurs ternies
+        tours:
+          axelle:
+            - { id: ch17-j2-ax-m1a, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi les couleurs d'un très vieux tableau peuvent-elles ternir avec le temps ?", choices: ["à cause de la lumière, de la poussière et du vieillissement des pigments", "parce que les couleurs disparaissent toujours en un jour", "cela n'a aucune explication connue", "parce que la peinture ancienne n'a jamais de couleur", "parce que le cadre absorbe les couleurs"], answer: "à cause de la lumière, de la poussière et du vieillissement des pigments", hint: "Pense à ce qui abîme une peinture exposée très longtemps." }
+            - { id: ch17-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 9.", choices: ["15", "16", "17", "18", "19"], answer: "17", hint: "8 + 9 = 8 + 8 + 1." }
+          maelle:
+            - { id: ch17-j2-ma-m1a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « ancien » dans « tableaux les plus anciens » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit les tableaux." }
+            - { id: ch17-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 455 ÷ 7.", choices: ["55", "60", "63", "65", "68"], answer: "65", hint: "7 × 65 = 455." }
+          rafaelle:
+            - { id: ch17-j2-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Les fils savent souvent où mener, bien avant qu'on le comprenne soi-même. » : que suggère cette phrase sur la nature de Trame ?", choices: ["qu'elle se trompe toujours sur tout", "qu'elle perçoit des liens que les voyageurs ne saisissent pas encore eux-mêmes", "qu'elle ne sait jamais rien de précis", "qu'elle déteste la montagne", "qu'elle n'a aucun lien avec les tableaux"], answer: "qu'elle perçoit des liens que les voyageurs ne saisissent pas encore eux-mêmes", hint: "Relis ce que répond Trame à Maelle sur la coïncidence." }
+            - { id: ch17-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 11² − 85.", choices: ["32", "34", "36", "38", "40"], answer: "36", hint: "121 − 85." }
+      - id: m2
+        title: Un lien plus ancien que Trame
+        tours:
+          axelle:
+            - { id: ch17-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 6.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "14 − 6 = 8." }
+            - { id: ch17-j2-ax-m2b, subject: histoire-geo, level: 1, kind: qcm, prompt: "Pourquoi une tradition ou un savoir peut-il se transmettre sans que l'on connaisse exactement celui qui l'a créé en premier ?", choices: ["parce que les origines très anciennes se perdent parfois dans le temps", "parce que personne ne transmet jamais rien", "parce que c'est toujours écrit quelque part de manière certaine", "cela n'arrive jamais en réalité", "parce que les traditions naissent toutes en un seul jour"], answer: "parce que les origines très anciennes se perdent parfois dans le temps", hint: "Pense à ce que dit Trame sur l'origine des fils qu'elle tisse." }
+          maelle:
+            - { id: ch17-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 4.", choices: ["108", "112", "114", "116", "120"], answer: "116", hint: "30 × 4 − 4." }
+            - { id: ch17-j2-ma-m2b, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi deux paysages très éloignés géographiquement peuvent-ils parfois se ressembler fortement ?", choices: ["parce que des montagnes, des rivières ou des forêts peuvent se former de façon semblable un peu partout", "parce que tous les paysages du monde sont identiques", "cela n'arrive jamais en réalité", "parce que les artistes copient toujours les mêmes montagnes", "parce que la nature ne produit jamais deux formes semblables"], answer: "parce que des montagnes, des rivières ou des forêts peuvent se former de façon semblable un peu partout", hint: "Pense à pourquoi le tableau du fond ressemble à la montagne qu'elles escaladent." }
+          rafaelle:
+            - { id: ch17-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 6².", choices: ["40", "43", "45", "47", "49"], answer: "45", hint: "81 − 36." }
+            - { id: ch17-j2-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Un hilo conecta todo. »", choices: ["Un fil relie tout.", "Un fil casse tout.", "Un fil cache tout.", "Un fil pèse tout.", "Un fil efface tout."], answer: "Un fil relie tout.", hint: "« Conecta » = relie." }
+      - id: m3
+        title: Ce que le tableau pourrait montrer
+        tours:
+          axelle:
+            - { id: ch17-j2-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Ce tableau pourrait montrer la suite. » ?", choices: ["la suite", "pourrait montrer", "Ce tableau", "montrer", "pourrait"], answer: "Ce tableau", hint: "Qu'est-ce qui pourrait montrer la suite ?" }
+            - { id: ch17-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 6.", choices: ["36", "38", "40", "42", "44"], answer: "42", hint: "7 × 6 = 7 × 6." }
+          maelle:
+            - { id: ch17-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 414 ÷ 6.", choices: ["63", "66", "68", "69", "71"], answer: "69", hint: "6 × 69 = 414." }
+            - { id: ch17-j2-ma-m3b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « fine » dans « plus fine qu'elle n'y paraît » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Elle décrit la différence entre espérer et prédire." }
+          rafaelle:
+            - { id: ch17-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 7/10 − 3/10.", choices: ["3/10", "4/10", "5/10", "6/10", "7/10"], answer: "4/10", hint: "7 − 3 = 4, même dénominateur." }
+            - { id: ch17-j2-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au présent : « Nous (espérer) retrouver ce paysage, plus haut. »", choices: ["nous espérons", "nous espérez", "nous espèrent", "nous espérions", "nous espérerons"], answer: "nous espérons", hint: "Nous : -ons." }
+      - id: m4
+        title: Observer avec attention
+        tours:
+          axelle:
+            - { id: ch17-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 8.", choices: ["42", "44", "46", "48", "50"], answer: "48", hint: "6 × 8 = 6 × 4 × 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch17-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 330 − 158.", choices: ["165", "170", "172", "174", "176"], answer: "172", hint: "330 − 160 + 2." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch17-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Miremos con atención. »", choices: ["Regardons avec attention.", "Partons tout de suite.", "Oublions ce tableau.", "Fermons les yeux.", "Courons très vite."], answer: "Regardons avec attention.", hint: "« Miremos con atención » = regardons avec attention." }
+            - { gen: maths.ranger }
+    pause: "Le jeu du fil invisible : une sœur tend les bras comme si elle tissait un fil entre deux objets de la pièce ; les deux autres doivent deviner quels deux objets elle relie, et pourquoi."
+    closing:
+      - { who: narrateur, text: "Trame referma doucement ses fils autour du tableau de la montagne, comme pour le protéger pour la nuit, avant de se tourner une dernière fois vers les trois sœurs." }
+      - { who: trame, text: "Demain, je vous montrerai comment on tisse, soi-même, un nouveau fil entre deux tableaux. C'est un art plus délicat qu'il n'y paraît." }
+      - { who: maelle, text: "On a hâte d'essayer, Trame." }
+      - { who: narrateur, text: "En quittant la galerie, Rafaelle resta un instant immobile devant le tableau de la montagne, cherchant à deviner, dans les reliefs peints, ce que la suite de leur ascension pourrait bien leur réserver." }
+    reward: "la découverte des tableaux les plus anciens, et du lien qui les unit"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: Apprendre à tisser un fil
+    decor: Le centre de la galerie, où Trame déploie, entre ses mains de lumière, plusieurs fils scintillants qu'elle propose aux trois sœurs d'apprendre à manier à leur tour.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, Trame les attendait au centre de la galerie, plusieurs fils scintillants déployés entre ses mains de lumière, comme une toile encore inachevée." }
+      - { who: trame, text: "Tisser un fil n'est pas très difficile, en soi. Le plus dur, c'est de choisir avec sincérité ce que l'on veut relier, et pourquoi." }
+      - { who: rafaelle, text: "Comment choisit-on, justement, ce qu'il faut relier ?" }
+      - { who: trame, text: "En écoutant ce qui vous semble appartenir à la même histoire, même si cela n'est pas toujours évident au premier regard." }
+      - { who: axelle, text: "On peut essayer, nous aussi ? Juste pour voir ce que ça donne ?" }
+      - { who: trame, text: "J'espérais justement vous le proposer, petite Veilleuse. Prenez chacune un fil, et choisissez deux souvenirs de votre voyage à relier ensemble." }
+      - { who: maelle, text: "Et si on se trompe, et qu'on relie deux souvenirs qui n'ont, au fond, rien à voir ?" }
+      - { who: trame, text: "Il n'existe pas vraiment d'erreur, en matière de fils, petite Cartographe. Seulement des liens qu'on n'avait pas encore remarqués." }
+    manches:
+      - id: m1
+        title: Choisir ce que l'on relie
+        tours:
+          axelle:
+            - { id: ch17-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 5 fils tendus entre les tableaux, et 2 nouveaux sont ajoutés. Combien de fils en tout ?", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "5 + 2." }
+            - { id: ch17-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Tisser un fil n'est pas très difficile. » ?", choices: ["pas très difficile", "n'est pas", "Tisser un fil", "un fil", "difficile"], answer: "Tisser un fil", hint: "Qu'est-ce qui n'est pas très difficile ?" }
+          maelle:
+            - { id: ch17-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi relier des souvenirs entre eux peut-il aider à mieux comprendre une histoire vécue ?", choices: ["parce que cela fait apparaître des liens et un sens qu'on ne voyait pas isolément", "parce que relier des souvenirs les efface toujours", "parce que cela n'a jamais aucun effet", "parce qu'un souvenir isolé est toujours plus clair", "cela n'a aucun rapport avec la compréhension"], answer: "parce que cela fait apparaître des liens et un sens qu'on ne voyait pas isolément", hint: "Pense à ce que propose de faire Trame avec les tableaux." }
+            - { id: ch17-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 67 + 58.", choices: ["120", "123", "125", "128", "130"], answer: "125", hint: "67 + 60 − 2." }
+          rafaelle:
+            - { id: ch17-j3-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi deux événements très différents en apparence peuvent-ils, malgré tout, faire partie d'une même histoire plus large ?", choices: ["parce qu'ils peuvent partager une cause, une conséquence ou un sens commun", "parce que cela n'arrive jamais vraiment", "parce que tous les événements sont toujours identiques", "parce que l'histoire ne relie jamais rien entre eux", "cela dépend uniquement du hasard, sans aucune autre raison"], answer: "parce qu'ils peuvent partager une cause, une conséquence ou un sens commun", hint: "Repense à ce que dit Trame sur l'absence d'erreur en matière de fils." }
+            - { id: ch17-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 18 × 6.", choices: ["102", "104", "106", "108", "110"], answer: "108", hint: "18 × 6 = 18 × 3 × 2." }
+      - id: m2
+        title: Un lien jamais faux
+        tours:
+          axelle:
+            - { id: ch17-j3-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 + 7.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "8 + 7 = 8 + 8 − 1." }
+            - { id: ch17-j3-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un fil de lumière, dans ce récit, peut-il relier deux tableaux sans jamais se casser ?", choices: ["parce que c'est un phénomène magique propre à cette galerie", "parce que tous les fils ordinaires ne cassent jamais", "cela n'a aucune explication particulière", "parce que la lumière ne peut jamais former de fil", "parce que les tableaux attirent toujours la lumière"], answer: "parce que c'est un phénomène magique propre à cette galerie", hint: "Souviens-toi : ce n'est pas un fil ordinaire, mais un fil tissé par Trame." }
+          maelle:
+            - { id: ch17-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 441 ÷ 7.", choices: ["57", "61", "63", "65", "67"], answer: "63", hint: "7 × 63 = 441." }
+            - { id: ch17-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « sincérité » dans « avec sincérité » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "nom", hint: "C'est une qualité évoquée par Trame." }
+          rafaelle:
+            - { id: ch17-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10² − 8².", choices: ["30", "32", "34", "36", "38"], answer: "36", hint: "100 − 64." }
+            - { id: ch17-j3-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « La pintura guarda un secreto. »", choices: ["La peinture garde un secret.", "La peinture s'efface vite.", "La peinture brille au soleil.", "La peinture tombe du mur.", "La peinture change de couleur."], answer: "La peinture garde un secret.", hint: "« Guarda un secreto » = garde un secret." }
+      - id: m3
+        title: Premiers essais de tissage
+        tours:
+          axelle:
+            - { id: ch17-j3-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « relier » ?", choices: ["séparer", "tisser", "tendre", "scintiller", "accrocher"], answer: "séparer", hint: "Le contraire de ce que fait Trame avec ses fils." }
+            - { id: ch17-j3-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 16 − 7.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "16 − 6 = 10, puis − 1." }
+          maelle:
+            - { id: ch17-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 52 × 3.", choices: ["150", "153", "155", "156", "158"], answer: "156", hint: "52 × 3 = 50 × 3 + 2 × 3." }
+            - { id: ch17-j3-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi apprendre un art délicat, comme le tissage de fils, demande-t-il souvent de la patience ?", choices: ["parce qu'il faut du temps pour comprendre les gestes justes", "parce que la patience n'a jamais aucun rapport avec l'apprentissage", "parce qu'un art délicat s'apprend toujours en une seconde", "cela ne demande jamais de patience particulière", "parce que seuls certains sont capables d'apprendre quoi que ce soit"], answer: "parce qu'il faut du temps pour comprendre les gestes justes", hint: "Pense à la manière dont Trame enseigne, pas à pas, aux trois sœurs." }
+          rafaelle:
+            - { id: ch17-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 4x + 9 = 37.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "4x = 28." }
+            - { id: ch17-j3-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Il n'existe pas vraiment d'erreur, en matière de fils. » : que révèle cette phrase sur la philosophie de Trame ?", choices: ["qu'elle considère chaque lien comme une découverte plutôt qu'une faute possible", "qu'elle pense que tout est toujours parfait sans exception", "qu'elle refuse catégoriquement toute erreur", "qu'elle ne croit à aucun lien entre les choses", "qu'elle déteste qu'on tisse de nouveaux fils"], answer: "qu'elle considère chaque lien comme une découverte plutôt qu'une faute possible", hint: "Relis bien sa réponse à la question de Maelle." }
+      - id: m4
+        title: Tisser avec soin
+        tours:
+          axelle:
+            - { id: ch17-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 4.", choices: ["32", "34", "36", "38", "40"], answer: "36", hint: "9 × 4 = 9 × 2 × 2." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch17-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 290 − 136.", choices: ["150", "154", "156", "158", "160"], answer: "154", hint: "290 − 140 + 4." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch17-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El color cuenta el tiempo. »", choices: ["La couleur raconte le temps.", "La couleur cache le temps.", "La couleur efface le temps.", "La couleur arrête le temps.", "La couleur crée le temps."], answer: "La couleur raconte le temps.", hint: "« Cuenta el tiempo » = raconte le temps." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu des deux souvenirs : chaque sœur choisit, à voix haute, deux souvenirs du voyage qui lui semblent reliés, et explique en une phrase pourquoi, selon elle, ces deux souvenirs vont ensemble."
+    closing:
+      - { who: narrateur, text: "À la fin de la journée, trois petits fils scintillants, tissés par les mains encore maladroites des sœurs, reliaient discrètement trois tableaux de la galerie, formant un tout nouveau motif." }
+      - { who: trame, text: "Vos premiers fils. Ils ne sont pas parfaitement droits, mais ils tiennent, et c'est exactement ce qui compte le plus." }
+      - { who: axelle, text: "On peut vraiment les garder, même s'ils ne sont pas parfaits ?" }
+      - { who: trame, text: "Surtout parce qu'ils ne sont pas parfaits, petite Veilleuse. Un fil trop parfait oublie souvent la main qui l'a tissé." }
+      - { who: narrateur, text: "En s'éloignant pour la nuit, les trois sœurs sentirent, derrière elles, leurs trois fils scintiller doucement dans l'obscurité grandissante de la galerie." }
+    reward: "trois premiers fils tissés de leurs propres mains"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Le tableau vide
+    decor: Le tout fond de la galerie, où un unique cadre doré, resté vide depuis toujours, attend contre le mur de pierre, entouré de fils scintillants qui ne demandent qu'à s'y rattacher.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, Trame les mena jusqu'au tout fond de la galerie, où un unique cadre doré, resté vide depuis toujours, attendait contre le mur de pierre, entouré de fils scintillants qui ne demandaient qu'à s'y rattacher." }
+      - { who: trame, text: "Celui-ci attend depuis plus longtemps que tous les autres tableaux réunis. Aucun voyageur, jusqu'à présent, n'a jamais su quoi en faire." }
+      - { who: rafaelle, text: "Pourquoi aucun voyageur n'a-t-il jamais réussi à le remplir ?" }
+      - { who: trame, text: "Parce qu'il demande une réponse sincère à une question simple, mais difficile : que voulez-vous que la galerie se souvienne de vous, une fois que vous serez reparties ?" }
+      - { who: maelle, text: "C'est une question qui mérite qu'on y réfléchisse vraiment, avant de répondre trop vite." }
+      - { who: trame, text: "C'est exactement pour cela, petite Cartographe, que ce tableau est resté vide si longtemps. Il n'y a aucune urgence à le remplir mal." }
+      - { who: axelle, text: "On a encore un jour entier pour y réfléchir, alors ?" }
+      - { who: trame, text: "Un jour entier, petite Veilleuse. Utilisez-le bien." }
+    manches:
+      - id: m1
+        title: Un cadre resté vide
+        tours:
+          axelle:
+            - { id: ch17-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « vide » ?", choices: ["plein", "doré", "ancien", "léger", "silencieux"], answer: "plein", hint: "Le contraire d'un cadre resté sans peinture." }
+            - { id: ch17-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 6.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "9 + 6 = 9 + 9 − 3." }
+          maelle:
+            - { id: ch17-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi une question simple peut-elle, parfois, être plus difficile à résoudre qu'une question complexe ?", choices: ["parce qu'elle touche à quelque chose de personnel ou d'essentiel, qu'il faut prendre le temps de comprendre", "parce qu'une question simple n'a jamais de vraie réponse", "parce que les questions complexes sont toujours plus faciles", "cela n'a aucun lien avec la difficulté réelle", "parce que personne ne réfléchit jamais à une question simple"], answer: "parce qu'elle touche à quelque chose de personnel ou d'essentiel, qu'il faut prendre le temps de comprendre", hint: "Pense à la question que pose Trame sur ce qu'on veut qu'on se souvienne de soi." }
+            - { id: ch17-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 504 − 268.", choices: ["226", "230", "233", "236", "240"], answer: "236", hint: "504 − 270 + 2." }
+          rafaelle:
+            - { id: ch17-j4-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi attendre avant de répondre à une question importante peut-il, parfois, être préférable à une réponse rapide ?", choices: ["parce que le temps permet de réfléchir avec plus de sincérité", "parce qu'il ne faut jamais répondre à aucune question", "parce qu'une réponse rapide est toujours la meilleure", "cela n'a aucune utilité particulière", "parce qu'attendre efface toujours la question posée"], answer: "parce que le temps permet de réfléchir avec plus de sincérité", hint: "Repense à ce que dit Trame sur l'absence d'urgence à remplir ce tableau." }
+            - { id: ch17-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15² − 140.", choices: ["75", "80", "85", "87", "90"], answer: "85", hint: "225 − 140." }
+      - id: m2
+        title: Que voulez-vous qu'on se souvienne de vous
+        tours:
+          axelle:
+            - { id: ch17-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 5.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "14 − 4 = 10, puis − 1." }
+            - { id: ch17-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi prendre le temps de réfléchir avant d'agir peut-il, parfois, mener à un meilleur résultat ?", choices: ["parce que cela laisse le temps d'éviter les erreurs précipitées", "parce que réfléchir ne sert jamais à rien", "parce qu'agir vite est toujours préférable", "cela n'a aucun effet sur le résultat final", "parce que le temps n'a jamais d'influence sur une décision"], answer: "parce que cela laisse le temps d'éviter les erreurs précipitées", hint: "Pense à ce que suggère Trame en laissant les sœurs réfléchir une journée entière." }
+          maelle:
+            - { id: ch17-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 23 × 6.", choices: ["132", "136", "138", "140", "144"], answer: "138", hint: "23 × 6 = 20 × 6 + 3 × 6." }
+            - { id: ch17-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « sincère » dans « une réponse sincère » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la réponse attendue par le tableau vide." }
+          rafaelle:
+            - { id: ch17-j4-ra-m2a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 6/7 − 3/7.", choices: ["2/7", "3/7", "4/7", "5/7", "6/7"], answer: "3/7", hint: "6 − 3 = 3, même dénominateur." }
+            - { id: ch17-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « La couleur raconte le temps » en espagnol ?", choices: ["El color cuenta el tiempo.", "Un hilo conecta todo.", "El cuadro respira lentamente.", "La pintura guarda un secreto.", "Miremos con atención."], answer: "El color cuenta el tiempo.", hint: "Relis la phrase du jour 3." }
+      - id: m3
+        title: Réfléchir, toutes les trois
+        tours:
+          axelle:
+            - { id: ch17-j4-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Ce tableau attend depuis longtemps. » ?", choices: ["depuis longtemps", "attend", "Ce tableau", "longtemps", "ce"], answer: "Ce tableau", hint: "Qu'est-ce qui attend depuis longtemps ?" }
+            - { id: ch17-j4-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 5.", choices: ["35", "38", "40", "42", "45"], answer: "40", hint: "8 × 5 = 8 × 10 ÷ 2." }
+          maelle:
+            - { id: ch17-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 480 ÷ 6.", choices: ["70", "75", "78", "80", "85"], answer: "80", hint: "6 × 80 = 480." }
+            - { id: ch17-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi une décision prise ensemble, à plusieurs, est-elle parfois plus solide qu'une décision prise seul ?", choices: ["parce qu'elle réunit différents points de vue avant d'aboutir à un choix commun", "parce qu'une décision seule est toujours meilleure", "cela n'a aucune importance particulière", "parce que décider à plusieurs prend toujours moins de temps", "parce que personne ne doit jamais décider ensemble de quoi que ce soit"], answer: "parce qu'elle réunit différents points de vue avant d'aboutir à un choix commun", hint: "Pense à pourquoi les trois sœurs réfléchissent ensemble à cette question." }
+          rafaelle:
+            - { id: ch17-j4-ra-m3a, subject: maths, level: 5, kind: qcm, prompt: "Résous : 7x − 9 = 40.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "7x = 49." }
+            - { id: ch17-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Il n'y a aucune urgence à le remplir mal. » : que révèle cette phrase sur la philosophie de Trame ?", choices: ["qu'il vaut mieux attendre et bien choisir que se précipiter", "qu'il faut toujours remplir un tableau le plus vite possible", "qu'un mauvais choix n'a jamais aucune importance", "qu'elle refuse que l'on remplisse jamais ce tableau", "qu'elle déteste toute forme de réflexion"], answer: "qu'il vaut mieux attendre et bien choisir que se précipiter", hint: "Relis bien la phrase, en lien avec le temps laissé aux sœurs." }
+      - id: m4
+        title: Se préparer à choisir
+        tours:
+          axelle:
+            - { id: ch17-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 7.", choices: ["42", "45", "47", "49", "51"], answer: "49", hint: "7 × 7 = 7 × 6 + 7." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch17-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 305 − 148.", choices: ["150", "155", "157", "159", "162"], answer: "157", hint: "305 − 150 + 2." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch17-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14 × 8.", choices: ["104", "108", "110", "112", "116"], answer: "112", hint: "14 × 8 = 14 × 8." }
+            - { gen: maths.duree }
+    pause: "Le jeu de la phrase à trois : chaque sœur propose une phrase courte qui résumerait, selon elle, ce que la galerie devrait retenir de leur passage, puis toutes les trois cherchent à les assembler en une seule idée."
+    closing:
+      - { who: narrateur, text: "Trame resta à distance respectueuse tout l'après-midi, laissant les trois sœurs discuter longuement, à voix basse, devant le cadre toujours vide." }
+      - { who: trame, text: "Demain, je sentirai, à travers mes fils, si vous avez trouvé votre réponse. Prenez cette dernière soirée pour vous assurer d'être sincères, toutes les trois." }
+      - { who: rafaelle, text: "On y arrivera, Trame. On a presque trouvé, je crois." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs regagnaient l'Arche, Nilo trottina un instant devant le cadre vide, comme s'il cherchait, lui aussi à sa manière, ce qu'il aimerait qu'on se souvienne de lui." }
+    reward: "une réflexion commune sur ce que la galerie retiendra d'elles"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: Le dernier fil
+    decor: Le fond de la galerie, de nouveau, où le cadre doré, toujours vide, attend, entouré des fils scintillants de Trame, prêts à se tendre vers lui dès que les sœurs auront choisi.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, Trame les attendait au pied du cadre vide, ses fils scintillants déjà tendus en demi-cercle, prêts à se resserrer dès que les sœurs auraient fait leur choix." }
+      - { who: trame, text: "Il ne reste qu'un seul tableau vide, au fond de la galerie. Que décidez-vous d'y tisser ?" }
+      - { who: nilo, text: "Allez, les filles. Après tout ce qu'on a appris cette semaine, cette réponse-là, elle sera la bonne, quelle qu'elle soit." }
+    manches:
+      - id: m1
+        title: Ce que la galerie a appris
+        intro: "Trame interroge chaque sœur sur tout ce que cette semaine dans la galerie lui a appris."
+        tours:
+          axelle:
+            - { id: ch17-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on un lieu où l'on expose des tableaux ?", choices: ["une galerie", "un marché", "un atelier", "un grenier", "un hall"], answer: "une galerie", hint: "C'est le mot du tout premier jour." }
+            - { id: ch17-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 + 8.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "8 + 8 = 16." }
+          maelle:
+            - { id: ch17-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi les couleurs d'un très vieux tableau peuvent-elles ternir avec le temps, selon ce que tu as appris cette semaine ?", choices: ["à cause de la lumière, de la poussière et du vieillissement des pigments", "parce que les couleurs disparaissent toujours en un jour", "cela n'a aucune explication connue", "parce que la peinture ancienne n'a jamais de couleur", "parce que le cadre absorbe les couleurs"], answer: "à cause de la lumière, de la poussière et du vieillissement des pigments", hint: "Repense à ta propre question du deuxième jour." }
+            - { id: ch17-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 37 × 4.", choices: ["138", "142", "144", "146", "148"], answer: "148", hint: "37 × 4 = 40 × 4 − 3 × 4." }
+          rafaelle:
+            - { id: ch17-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que la question du tableau vide est autant une question sur la mémoire que sur l'identité ?", choices: ["parce qu'elle demande de choisir ce qu'on veut transmettre de soi au fil du temps", "parce que la mémoire et l'identité n'ont aucun lien entre elles", "parce qu'un tableau vide n'a jamais aucune question à poser", "parce que Trame refuse toute réflexion sur l'identité", "parce que cette question ne concerne que les tableaux, jamais les personnes"], answer: "parce qu'elle demande de choisir ce qu'on veut transmettre de soi au fil du temps", hint: "Repense à la question posée par Trame le quatrième jour." }
+            - { id: ch17-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 4/9 + 4/9.", choices: ["7/9", "8/9", "1", "9/18", "6/9"], answer: "8/9", hint: "4 + 4 = 8, même dénominateur." }
+      - id: m2
+        title: Avant de tisser
+        intro: "Il faut relier tout ce que la semaine a appris pour choisir, vraiment, ce qui sera tissé dans le dernier tableau."
+        tours:
+          axelle:
+            - { id: ch17-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux une réponse donnée avec tout son cœur, sans rien cacher ?", choices: ["sincère", "pressée", "fausse", "oubliée", "lointaine"], answer: "sincère", hint: "C'est le mot que répète Trame le quatrième jour." }
+            - { id: ch17-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 15 − 6.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "15 − 5 = 10, puis − 1." }
+          maelle:
+            - { id: ch17-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi cette galerie, creusée dans la roche de la montagne, a-t-elle une importance particulière dans le voyage des trois sœurs ?", choices: ["il n'a aucune importance réelle", "elle leur apprend à relier leurs souvenirs et à choisir ce qu'elles veulent laisser derrière elles", "elle les empêche d'avancer vers le sommet", "elle se trouve très loin des montagnes", "personne n'y passe jamais vraiment"], answer: "elle leur apprend à relier leurs souvenirs et à choisir ce qu'elles veulent laisser derrière elles", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de Trame." }
+            - { id: ch17-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 432 ÷ 6.", choices: ["68", "70", "72", "74", "76"], answer: "72", hint: "6 × 72 = 432." }
+          rafaelle:
+            - { id: ch17-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 13² − 100.", choices: ["59", "63", "65", "69", "73"], answer: "69", hint: "169 − 100." }
+            - { id: ch17-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Il ne reste qu'un seul tableau vide, au fond de la galerie. » : quel est le sujet de cette phrase ?", choices: ["au fond de la galerie", "ne reste", "un seul tableau vide", "vide", "fond"], answer: "un seul tableau vide", hint: "Qu'est-ce qu'il reste, au fond de la galerie ?" }
+      - id: m3
+        title: Le Chant de la Galerie
+        intro: "La galerie elle-même semble répondre : les fils de Trame ne se tendent vraiment que si les trois sœurs trouvent, ensemble, le bon rythme."
+        tours:
+          axelle:
+            - { id: ch17-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, blanche." }
+          maelle:
+            - { id: ch17-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, noire, noire." }
+          rafaelle:
+            - { id: ch17-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : ronde." }
+    concert:
+      measures:
+        axelle: { given: [1, 1], missing: 2, prompt: "Noire, noire, blanche" }
+        maelle: { given: [2, 1], missing: 1, prompt: "Blanche, noire, noire" }
+        rafaelle: { given: [], missing: 4, prompt: "Ronde" }
+    pause: "Le dernier regard sur la galerie : chacune choisit, avant de partir, le tableau qu'elle aimerait le plus revoir un jour, et dit pourquoi à voix haute."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant de la Galerie résonna entre les cadres dorés, et les fils de Trame, d'un seul coup, se tendirent tous ensemble vers le tableau vide, comme pour l'inviter à répondre, enfin." }
+      - { who: trame, text: "Alors ? Qu'avez-vous décidé d'y tisser ?" }
+      - { who: narrateur, text: "Sous les yeux émerveillés des trois sœurs, le cadre doré commença à s'emplir lentement d'une scène tissée de lumière, racontant, à sa manière, tout ce qu'elles avaient choisi d'y laisser." }
+      - { who: trame, text: "Merci. Ce tableau attendait depuis si longtemps une réponse comme celle-là." }
+      - { who: rafaelle, text: "Merci à vous, Trame. Pour la galerie, pour les fils, et pour nous avoir appris à relier ce qui comptait vraiment." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs quittaient la galerie, elles sentirent, derrière elles, tous les tableaux scintiller un instant plus fort, comme pour les saluer une dernière fois avant leur départ." }
+      - { who: nilo, text: "Bon. Encore une étape de passée. J'espère que la montagne a prévu quelque chose d'un peu moins artistique, pour changer un peu." }
+      - { who: axelle, text: "On a toujours fini par trouver notre chemin, jusqu'ici. Et maintenant, en plus, il y a un tableau, quelque part, qui se souviendra de nous." }
+    reward: "le dernier tableau tissé, et le lien d'Orvane renforcé par la galerie"
