@@ -58,7 +58,8 @@ const VOICES = {
   rafaelle: 'Erinome',
   marchand: 'Schedar',
   peseur: 'Sulafat',
-  rouage: 'Zephyr'
+  rouage: 'Zephyr',
+  chrono: 'Kore'
 };
 
 function readApiKey() {
