@@ -1,0 +1,378 @@
+# Chapitre 21 — L'Horloger des Marées Hautes
+# Nouveau personnage : Chrono, un horloger aux allures de vieux sage, qui vit au bord d'une
+# mer intérieure rythmée par des marées étranges, et répare le temps lui-même quand il se
+# dérègle. Prépare directement le chapitre 22 (Chrono affaibli, Sablier de Poche). Effet
+# ORVANE [1, -1, 0] (decisions.ts) : A = orvane +1, B = orvane -1, C = orvane +0 (neutre).
+
+id: ch21
+number: 21
+act: 2
+title: L'Horloger des Marées Hautes
+introImage: ch21
+scene: horloger-marees-hautes
+
+espagnol:
+  - { es: "El tiempo se puede reparar.", fr: "Le temps peut se réparer." }
+  - { es: "La marea sube y baja.", fr: "La marée monte et descend." }
+  - { es: "El relojero trabaja solo.", fr: "L'horloger travaille seul." }
+  - { es: "Ayudar no cuesta nada.", fr: "Aider ne coûte rien." }
+  - { es: "El reloj más viejo aún funciona.", fr: "L'horloge la plus vieille fonctionne encore." }
+
+decision:
+  prompt: "Chrono, penché sur une horloge démesurée dont les rouages grincent douloureusement, lève à peine les yeux. « Le temps, par ici, se dérègle plus vite que je ne peux le réparer. Voulez-vous m'aider, ou préférez-vous poursuivre votre chemin sans vous attarder ? »"
+  options:
+    A:
+      label: Rester plusieurs jours pour l'aider à réparer les horloges
+      scene: "Axelle convainc ses sœurs de rester aussi longtemps que nécessaire, pour aider Chrono à réparer, une à une, les horloges déréglées de la mer intérieure."
+      line: { who: chrono, text: "Du temps donné pour réparer le temps lui-même, voilà une aide que je n'oublierai pas, petite Veilleuse." }
+      habillage: "Les épreuves prennent la forme de réparations patientes, rouage après rouage, sans se laisser décourager par la lenteur du travail."
+    B:
+      label: Repartir rapidement, en laissant Chrono se débrouiller seul
+      scene: "Rafaelle, pressée par le temps qui leur reste pour atteindre le sommet, propose de ne pas s'attarder et de laisser Chrono régler ses horloges par ses propres moyens."
+      line: { who: chrono, text: "Je comprends votre hâte, petite Archiviste. Mais sachez que certaines marées n'attendent, elles non plus, qu'une seule occasion de se régler." }
+      habillage: "Les épreuves se résolvent vite, sans s'attarder davantage que nécessaire, par souci d'avancer au plus vite vers le sommet."
+    C:
+      label: Proposer d'aider seulement pour une horloge, la plus urgente
+      scene: "Maelle suggère un compromis : aider Chrono à réparer seulement l'horloge la plus urgente, celle qui menace de se briser en premier, sans s'attarder sur les autres."
+      line: { who: chrono, text: "Une aide mesurée, mais réelle, petite Cartographe. Ce ne sera pas suffisant pour tout réparer, mais ce sera, déjà, un bon début." }
+      habillage: "Les épreuves se concentrent sur une seule réparation prioritaire, menée avec soin, sans chercher à tout résoudre à la fois."
+
+repliquesAbsurdes:
+  - "Si le temps se dérègle, est-ce qu'il arrive en retard à son propre rendez-vous avec lui-même ?"
+  - "Mon renard a essayé de remonter une horloge avec sa patte. Résultat : l'horloge avance maintenant à l'envers."
+  - "Est-ce qu'on peut demander à Chrono de ralentir juste un petit peu les devoirs, ou c'est hors de sa spécialité ?"
+  - "Si la marée monte et descend sans arrêt, est-ce qu'elle se fatigue, elle aussi, de temps en temps ?"
+  - "Après une bibliothèque sans fin, une mer qui mesure le temps, ça semble presque une évidence, à ce stade du voyage."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: La mer intérieure
+    decor: Une vaste mer intérieure enfermée entre de hautes falaises, dont les marées montent et descendent à un rythme étrangement irrégulier, ponctuée d'immenses horloges de pierre à demi englouties.
+    opening:
+      - { who: narrateur, text: "Le chemin, au sortir de la Bibliothèque sans Fin, déboucha sur une vaste mer intérieure enfermée entre de hautes falaises, où des marées étranges montaient et descendaient à un rythme irrégulier." }
+      - { who: narrateur, text: "Çà et là, d'immenses horloges de pierre émergeaient à moitié des eaux, certaines tournant trop vite, d'autres s'étant complètement arrêtées." }
+      - { who: rafaelle, text: "C'est très étrange... Pourquoi est-ce que les marées ne suivent pas un rythme normal, ici ?" }
+      - { who: narrateur, text: "Une silhouette voûtée, penchée sur l'une des horloges, leva la tête à leur approche : un vieil homme aux mains couvertes d'huile et de rouille, qui les observa avec curiosité." }
+      - { who: chrono, text: "Ah, des voyageuses. Je m'appelle Chrono. Je suis l'horloger de cette mer, même si, ces derniers temps, elle me donne bien du fil à retordre." }
+      - { who: axelle, text: "Vous réparez des horloges géantes, toutes seules, au milieu de cette mer ?" }
+      - { who: chrono, text: "Quelqu'un doit bien le faire, petite Veilleuse. Si le temps se dérègle trop longtemps ici, c'est toute la montagne qui finirait par en souffrir." }
+      - { who: maelle, text: "On peut peut-être vous aider, alors ? On n'est pas très douées avec les outils, mais on peut essayer." }
+      - { who: chrono, text: "Toute aide est bienvenue, petite Cartographe. Venez, laissez-moi vous montrer comment fonctionne, normalement, une horloge de marée." }
+    manches:
+      - id: m1
+        title: Une mer qui mesure le temps
+        tours:
+          axelle:
+            - { id: ch21-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on le mouvement régulier de montée et de descente du niveau de la mer ?", choices: ["la marée", "la pluie", "le courant", "la vague", "le vent"], answer: "la marée", hint: "C'est le mot utilisé dans le deuxième jour, et dans la phrase espagnole." }
+            - { id: ch21-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 5.", choices: ["12", "13", "14", "15", "16"], answer: "13", hint: "8 + 5 = 8 + 8 − 3." }
+          maelle:
+            - { id: ch21-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Qu'est-ce qui provoque, dans la réalité, le phénomène des marées sur Terre ?", choices: ["l'attraction gravitationnelle de la Lune (et un peu du Soleil) sur les océans", "le vent qui pousse l'eau deux fois par jour", "la chaleur du soleil qui fait gonfler l'eau", "les poissons qui déplacent l'eau en se déplaçant", "cela n'a aucune explication connue"], answer: "l'attraction gravitationnelle de la Lune (et un peu du Soleil) sur les océans", hint: "Pense à ce qui, dans le ciel, influence réellement les marées." }
+            - { id: ch21-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 79 + 54.", choices: ["128", "131", "133", "135", "138"], answer: "133", hint: "79 + 60 − 6." }
+          rafaelle:
+            - { id: ch21-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi, historiquement, les horlogers occupaient-ils une place importante dans de nombreuses sociétés ?", choices: ["parce que mesurer précisément le temps était essentiel pour l'organisation de la vie collective", "parce que les horlogers n'ont jamais eu aucune utilité", "cela n'a aucune importance historique", "parce que le temps n'a jamais eu besoin d'être mesuré", "parce que seules les marées comptaient, pas les horloges"], answer: "parce que mesurer précisément le temps était essentiel pour l'organisation de la vie collective", hint: "Pense à l'importance que Chrono accorde à son travail." }
+            - { id: ch21-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 18 × 5.", choices: ["80", "85", "88", "90", "92"], answer: "90", hint: "18 × 5 = 18 × 10 ÷ 2." }
+      - id: m2
+        title: Un horloger fatigué
+        tours:
+          axelle:
+            - { id: ch21-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Un vieil homme leva la tête. » ?", choices: ["la tête", "leva", "Un vieil homme", "vieil", "homme"], answer: "Un vieil homme", hint: "Qui lève la tête à l'approche des sœurs ?" }
+            - { id: ch21-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 7.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "14 − 7 = 7." }
+          maelle:
+            - { id: ch21-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « voûtée » dans « une silhouette voûtée » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la posture de Chrono." }
+            - { id: ch21-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 336 ÷ 4.", choices: ["78", "80", "82", "84", "86"], answer: "84", hint: "4 × 84 = 336." }
+          rafaelle:
+            - { id: ch21-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Si le temps se dérègle trop longtemps ici, c'est toute la montagne qui finirait par en souffrir. » : que révèle cette phrase sur l'importance du travail de Chrono ?", choices: ["que son travail a des conséquences qui dépassent largement la mer intérieure elle-même", "que son travail n'a aucune conséquence ailleurs", "que seule la mer intérieure est concernée par son travail", "que la montagne n'a aucun lien avec le temps", "que Chrono exagère totalement l'importance de son travail"], answer: "que son travail a des conséquences qui dépassent largement la mer intérieure elle-même", hint: "Repense à ce que dit Chrono sur les conséquences d'un dérèglement trop long." }
+            - { id: ch21-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 12² − 70.", choices: ["64", "68", "71", "74", "77"], answer: "74", hint: "144 − 70." }
+      - id: m3
+        title: Comment fonctionne une horloge de marée
+        tours:
+          axelle:
+            - { id: ch21-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 4 horloges d'un côté de la mer, et 5 de l'autre. Combien d'horloges en tout ?", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "4 + 5." }
+            - { id: ch21-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi les rouages d'une horloge doivent-ils s'emboîter très précisément pour bien fonctionner ?", choices: ["un mauvais emboîtement fait grincer ou bloquer tout le mécanisme", "les rouages n'ont jamais besoin d'être précis", "cela n'a aucune explication particulière", "un mauvais emboîtement rend toujours l'horloge plus rapide", "les rouages fonctionnent toujours seuls, sans jamais s'emboîter"], answer: "un mauvais emboîtement fait grincer ou bloquer tout le mécanisme", hint: "Pense aux rouages de l'horloge démesurée qui grincent douloureusement." }
+          maelle:
+            - { id: ch21-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 58 × 4.", choices: ["220", "224", "228", "230", "232"], answer: "232", hint: "58 × 4 = 60 × 4 − 2 × 4." }
+            - { id: ch21-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi un visiteur de passage peut-il proposer une aide précieuse à un artisan isolé, même sans grande expérience ?", choices: ["parce que des mains supplémentaires, même novices, accélèrent toujours un peu le travail", "parce qu'un visiteur sans expérience n'a jamais aucune utilité", "cela n'a aucun lien avec l'aide apportée à un artisan", "parce que seule l'expérience compte, jamais la bonne volonté", "parce qu'un artisan isolé refuse toujours toute aide extérieure"], answer: "parce que des mains supplémentaires, même novices, accélèrent toujours un peu le travail", hint: "Pense à la proposition d'aide de Maelle, malgré son manque d'expérience." }
+          rafaelle:
+            - { id: ch21-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 6x + 3 = 45.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "6x = 42." }
+            - { id: ch21-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Chrono (lever) la tête à leur approche. »", choices: ["a levé", "levait", "lèvera", "lève", "levant"], answer: "a levé", hint: "Passé composé = avoir + participe passé." }
+      - id: m4
+        title: Premiers outils en main
+        tours:
+          axelle:
+            - { id: ch21-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 4.", choices: ["24", "26", "27", "28", "30"], answer: "28", hint: "7 × 4 = 7 × 2 × 2." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch21-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 320 − 156.", choices: ["160", "162", "164", "166", "168"], answer: "164", hint: "320 − 160 + 4." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch21-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El tiempo se puede reparar. »", choices: ["Le temps ne s'arrête jamais.", "Le temps peut se réparer.", "Le temps avance trop vite.", "Le temps n'existe pas ici.", "Le temps se cache toujours."], answer: "Le temps peut se réparer.", hint: "« Se puede reparar » = peut se réparer." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu du tic-tac : chaque sœur imite, à voix haute, le bruit d'une horloge qui fonctionne bien, puis celui d'une horloge complètement déréglée, pour que les deux autres devinent laquelle est laquelle."
+    closing:
+      - { who: narrateur, text: "La nuit tomba sur la mer intérieure, et les horloges de pierre, à moitié englouties, continuèrent de tourner à leur rythme désordonné, projetant des ombres étranges sur l'eau sombre." }
+      - { who: chrono, text: "Demain, je vous expliquerai ce qui ne va pas, exactement, avec ces marées. Reposez-vous bien, le travail qui nous attend ne sera pas de tout repos." }
+      - { who: rafaelle, text: "On sera prêtes, promis." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs s'installaient pour la nuit au bord de la mer, le tic-tac irrégulier des horloges continuait de résonner, comme une étrange berceuse mécanique." }
+    reward: "la découverte de la mer intérieure et de Chrono, son horloger"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Ce qui ne va pas
+    decor: Le bord de la mer intérieure, où Chrono montre aux trois sœurs l'horloge la plus abîmée, dont les rouages tordus ne tournent presque plus.
+    opening:
+      - { who: narrateur, text: "Le lendemain, Chrono conduisit les trois sœurs vers l'horloge la plus abîmée de toute la mer, dont les rouages tordus ne tournaient presque plus." }
+      - { who: chrono, text: "Voici le problème, petites voyageuses. Cette horloge, la plus ancienne de toutes, s'est déréglée il y a longtemps, et elle entraîne, peu à peu, toutes les autres avec elle." }
+      - { who: axelle, text: "Comment est-ce qu'une seule horloge peut en entraîner d'autres dans son dérèglement ?" }
+      - { who: chrono, text: "Toutes ces horloges sont reliées entre elles, petite Veilleuse, comme un grand mécanisme invisible. Quand l'une se dérègle, les autres finissent par en subir les conséquences." }
+      - { who: maelle, text: "Alors si on répare celle-ci, les autres se remettraient à l'heure, elles aussi ?" }
+      - { who: chrono, text: "C'est exactement mon espoir, petite Cartographe. Mais la réparer demandera du temps, de la patience, et quelques mains supplémentaires." }
+      - { who: rafaelle, text: "On a quand même un chemin à poursuivre, vers le sommet. Est-ce qu'on a vraiment le temps de s'attarder ici ?" }
+      - { who: chrono, text: "C'est une question honnête, petite Archiviste. Réfléchissez-y bien, car je respecterai, quoi qu'il arrive, votre décision." }
+    manches:
+      - id: m1
+        title: Un mécanisme invisible
+        tours:
+          axelle:
+            - { id: ch21-j2-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire d'« ancienne » ?", choices: ["récente", "abîmée", "tordue", "lourde", "fragile"], answer: "récente", hint: "Le contraire de ce qu'est la première horloge déréglée." }
+            - { id: ch21-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 6.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "9 + 6 = 9 + 9 − 3." }
+          maelle:
+            - { id: ch21-j2-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi, dans un mécanisme composé de plusieurs engrenages reliés entre eux, le dérèglement d'une seule pièce peut-il affecter tout l'ensemble ?", choices: ["parce que chaque pièce transmet son mouvement aux pièces voisines, qui le transmettent à leur tour", "parce qu'un mécanisme n'a jamais de pièces reliées entre elles", "cela n'a aucune explication particulière", "parce qu'une seule pièce déréglée n'a jamais aucun effet sur les autres", "parce que les engrenages fonctionnent toujours indépendamment les uns des autres"], answer: "parce que chaque pièce transmet son mouvement aux pièces voisines, qui le transmettent à leur tour", hint: "Pense à ce que dit Chrono sur les horloges reliées entre elles." }
+            - { id: ch21-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 455 ÷ 7.", choices: ["55", "60", "63", "65", "68"], answer: "65", hint: "7 × 65 = 455." }
+          rafaelle:
+            - { id: ch21-j2-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi, face à un problème urgent mais qui prendrait du temps à résoudre, est-il parfois difficile de choisir entre s'y consacrer pleinement et poursuivre sa propre route ?", choices: ["parce que ces deux choix impliquent de renoncer, au moins en partie, à quelque chose d'important", "parce qu'il n'existe jamais de dilemme de ce type", "cela n'a aucun lien avec une décision difficile", "parce que la seule bonne réponse est toujours de poursuivre sa route", "parce qu'aider quelqu'un n'a jamais aucun coût"], answer: "parce que ces deux choix impliquent de renoncer, au moins en partie, à quelque chose d'important", hint: "Repense à l'hésitation de Rafaelle entre aider Chrono et poursuivre le chemin." }
+            - { id: ch21-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 16 × 6.", choices: ["90", "92", "94", "96", "98"], answer: "96", hint: "16 × 6 = 16 × 3 × 2." }
+      - id: m2
+        title: Une décision honnête
+        tours:
+          axelle:
+            - { id: ch21-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 16 − 9.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "16 − 6 = 10, puis − 3." }
+            - { id: ch21-j2-ax-m2b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Cette horloge entraîne toutes les autres. » ?", choices: ["toutes les autres", "entraîne", "Cette horloge", "cette", "horloge"], answer: "Cette horloge", hint: "Qu'est-ce qui entraîne les autres horloges dans son dérèglement ?" }
+          maelle:
+            - { id: ch21-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 36 × 4.", choices: ["138", "140", "142", "144", "146"], answer: "144", hint: "36 × 4 = 36 × 2 × 2." }
+            - { id: ch21-j2-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « honnête » dans « une question honnête » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la question de Rafaelle." }
+          rafaelle:
+            - { id: ch21-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 11² − 90.", choices: ["28", "31", "33", "35", "38"], answer: "31", hint: "121 − 90." }
+            - { id: ch21-j2-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « La marea sube y baja. »", choices: ["La marée monte et descend.", "La marée reste calme toujours.", "La marée disparaît complètement.", "La marée se transforme en pluie.", "La marée gèle en hiver."], answer: "La marée monte et descend.", hint: "« Sube y baja » = monte et descend." }
+      - id: m3
+        title: Du temps, de la patience
+        tours:
+          axelle:
+            - { id: ch21-j2-ax-m3a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on la capacité à attendre calmement sans s'énerver ?", choices: ["la patience", "la colère", "la rapidité", "la fatigue", "la curiosité"], answer: "la patience", hint: "C'est l'un des deux mots cités par Chrono pour réparer l'horloge." }
+            - { id: ch21-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 4.", choices: ["28", "30", "32", "34", "36"], answer: "32", hint: "8 × 4 = 8 × 2 × 2." }
+          maelle:
+            - { id: ch21-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 275 ÷ 5.", choices: ["50", "52", "55", "58", "60"], answer: "55", hint: "5 × 55 = 275." }
+            - { id: ch21-j2-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi certaines réparations complexes demandent-elles à la fois du temps et de la patience, et pas seulement des outils adaptés ?", choices: ["parce qu'un mécanisme délicat peut se briser davantage si on le répare trop vite ou trop brusquement", "parce que la patience n'a jamais aucune utilité dans une réparation", "cela n'a aucun lien avec la complexité d'une réparation", "parce qu'une réparation rapide est toujours préférable à une réparation lente", "parce que les outils seuls suffisent toujours, sans aucune patience"], answer: "parce qu'un mécanisme délicat peut se briser davantage si on le répare trop vite ou trop brusquement", hint: "Pense à ce que dit Chrono sur le temps nécessaire pour réparer l'horloge." }
+          rafaelle:
+            - { id: ch21-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 9x − 5 = 40.", choices: ["4", "5", "6", "7", "8"], answer: "5", hint: "9x = 45." }
+            - { id: ch21-j2-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Je respecterai, quoi qu'il arrive, votre décision. » : que révèle cette phrase sur l'attitude de Chrono ?", choices: ["qu'il laisse aux sœurs une liberté réelle de choix, sans chercher à les influencer", "qu'il impose toujours sa propre décision aux autres", "qu'il refuse catégoriquement toute aide extérieure", "qu'il n'a aucune considération pour l'avis des sœurs", "qu'il attend d'elles une seule réponse possible, sans alternative"], answer: "qu'il laisse aux sœurs une liberté réelle de choix, sans chercher à les influencer", hint: "Repense à ce que dit Chrono à Rafaelle, juste après sa question." }
+      - id: m4
+        title: Réfléchir ensemble
+        tours:
+          axelle:
+            - { id: ch21-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 6.", choices: ["30", "32", "34", "36", "38"], answer: "36", hint: "6 × 6 = 6 × 3 × 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch21-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 310 − 148.", choices: ["158", "160", "162", "164", "166"], answer: "162", hint: "310 − 150 + 2." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch21-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El relojero trabaja solo. »", choices: ["L'horloger travaille seul.", "L'horloger dort beaucoup.", "L'horloger voyage souvent.", "L'horloger chante fort.", "L'horloger mange vite."], answer: "L'horloger travaille seul.", hint: "« Trabaja solo » = travaille seul." }
+            - { gen: maths.ranger }
+    pause: "Le jeu du compte à rebours : chaque sœur compte, à voix haute, de 10 à 0 en tapant des mains sur un rythme régulier, pour s'exercer à la précision nécessaire aux réparations d'horlogerie."
+    closing:
+      - { who: narrateur, text: "Le soir venu, les trois sœurs se retrouvèrent seules un instant, loin de Chrono, pour discuter sérieusement de la décision qu'elles allaient devoir prendre." }
+      - { who: maelle, text: "On pourrait peut-être trouver un compromis, non ? Aider un peu, sans tout abandonner pour autant." }
+      - { who: axelle, text: "Je préférerais vraiment qu'on l'aide complètement. Ça me semble important." }
+      - { who: narrateur, text: "Et tandis que la discussion se poursuivait doucement, la mer intérieure continuait de monter et de descendre, indifférente, en apparence, à l'agitation des trois sœurs." }
+    reward: "la compréhension du mécanisme invisible qui relie toutes les horloges"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: Le passé de Chrono
+    decor: L'atelier de Chrono, une petite cabane de bois flottant au bord de la mer, remplie d'outils, de rouages de rechange et de vieux dessins d'horloges disparues.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, Chrono invita les trois sœurs dans son atelier, une petite cabane flottante remplie d'outils, de rouages de rechange et de vieux dessins d'horloges disparues." }
+      - { who: rafaelle, text: "Depuis combien de temps vivez-vous ici, à réparer ces horloges, tout seul ?" }
+      - { who: chrono, text: "Depuis plus longtemps que je ne saurais le dire précisément, petite Archiviste. C'est un peu ironique, pour un horloger de perdre le compte de son propre temps." }
+      - { who: maelle, text: "Vous n'avez jamais eu envie de partir, de voir autre chose que cette mer ?" }
+      - { who: chrono, text: "Parfois, petite Cartographe. Mais quelqu'un doit veiller sur ces horloges, et j'ai fini par trouver, ici, une forme de paix que je ne cherchais plus ailleurs." }
+      - { who: axelle, text: "Ça ne doit pas être facile, d'être seul si longtemps." }
+      - { who: chrono, text: "Ce n'est pas toujours facile, petite Veilleuse, c'est vrai. Mais votre visite, aussi brève soit-elle, me rappelle que la solitude n'est jamais tout à fait définitive." }
+    manches:
+      - id: m1
+        title: Un atelier flottant
+        tours:
+          axelle:
+            - { id: ch21-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 6 rouages de rechange dans une boîte, et 3 dans une autre. Combien de rouages en tout ?", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "6 + 3." }
+            - { id: ch21-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Chrono invita les trois sœurs dans son atelier. » ?", choices: ["dans son atelier", "invita", "Chrono", "les trois sœurs", "son atelier"], answer: "Chrono", hint: "Qui invite les trois sœurs dans l'atelier ?" }
+          maelle:
+            - { id: ch21-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi un artisan comme un horloger a-t-il souvent besoin de conserver de nombreuses pièces de rechange dans son atelier ?", choices: ["pour pouvoir réparer rapidement les mécanismes sans attendre de nouvelles pièces", "parce que les pièces de rechange n'ont jamais aucune utilité", "cela n'a aucune explication particulière", "parce qu'un artisan n'a jamais besoin de réparer quoi que ce soit", "parce que les pièces de rechange sont toujours inutiles en horlogerie"], answer: "pour pouvoir réparer rapidement les mécanismes sans attendre de nouvelles pièces", hint: "Pense à l'utilité des rouages de rechange dans l'atelier de Chrono." }
+            - { id: ch21-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 68 + 57.", choices: ["118", "122", "123", "125", "128"], answer: "125", hint: "68 + 60 − 3." }
+          rafaelle:
+            - { id: ch21-j3-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi certaines personnes choisissent-elles, par vocation, de vivre longtemps isolées pour accomplir une mission importante ?", choices: ["parce qu'elles considèrent cette mission comme essentielle, même au prix de la solitude", "parce que la solitude n'a jamais aucun lien avec une vocation", "cela n'a aucune raison particulière", "parce qu'une mission importante n'exige jamais aucun sacrifice", "parce que personne ne choisit jamais librement de vivre isolé"], answer: "parce qu'elles considèrent cette mission comme essentielle, même au prix de la solitude", hint: "Repense à ce que dit Chrono sur sa propre vie, consacrée à la mer intérieure." }
+            - { id: ch21-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14 × 6.", choices: ["80", "82", "84", "86", "88"], answer: "84", hint: "14 × 6 = 14 × 3 × 2." }
+      - id: m2
+        title: Perdre le compte du temps
+        tours:
+          axelle:
+            - { id: ch21-j3-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire d'« ironique » ?", choices: ["sérieux", "drôle", "amusant", "léger", "curieux"], answer: "sérieux", hint: "Le contraire d'une situation qui contraste étrangement avec la réalité." }
+            - { id: ch21-j3-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 + 9.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "7 + 9 = 7 + 7 + 2." }
+          maelle:
+            - { id: ch21-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 312 ÷ 4.", choices: ["72", "76", "78", "80", "82"], answer: "78", hint: "4 × 78 = 312." }
+            - { id: ch21-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « définitive » dans « jamais tout à fait définitive » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la solitude évoquée par Chrono." }
+          rafaelle:
+            - { id: ch21-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10² − 36.", choices: ["58", "61", "64", "66", "70"], answer: "64", hint: "100 − 36." }
+            - { id: ch21-j3-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Votre visite, aussi brève soit-elle, me rappelle que la solitude n'est jamais tout à fait définitive. » : que signifie cette phrase ?", choices: ["qu'un contact même bref peut rompre, temporairement, un sentiment d'isolement durable", "que la solitude de Chrono a toujours été totalement imaginaire", "qu'une visite brève n'a jamais aucun effet sur quelqu'un d'isolé", "que Chrono ne se sent jamais seul, en réalité", "que la solitude est toujours parfaitement définitive, sans exception"], answer: "qu'un contact même bref peut rompre, temporairement, un sentiment d'isolement durable", hint: "Relis bien la phrase complète de Chrono, juste avant." }
+      - id: m3
+        title: Une forme de paix
+        tours:
+          axelle:
+            - { id: ch21-j3-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 12 − 5.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "12 − 5 = 7." }
+            - { id: ch21-j3-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un lieu isolé et calme, comme cette mer intérieure, peut-il, pour certains, devenir un endroit apaisant plutôt qu'effrayant ?", choices: ["parce que l'absence d'agitation peut favoriser la concentration et la tranquillité d'esprit", "parce qu'un lieu isolé n'a jamais aucun effet sur les personnes qui y vivent", "cela n'a aucune explication particulière", "parce que le calme est toujours source d'ennui, jamais de paix", "parce qu'un lieu isolé rend toujours quelqu'un malheureux"], answer: "parce que l'absence d'agitation peut favoriser la concentration et la tranquillité d'esprit", hint: "Pense à ce que dit Chrono sur la paix trouvée au bord de cette mer." }
+          maelle:
+            - { id: ch21-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 47 × 4.", choices: ["178", "182", "186", "188", "190"], answer: "188", hint: "47 × 4 = 50 × 4 − 3 × 4." }
+            - { id: ch21-j3-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi partager son histoire personnelle avec des visiteurs de passage peut-il faire du bien à quelqu'un qui vit habituellement très isolé ?", choices: ["parce que raconter son vécu permet de se sentir écouté et moins seul, même temporairement", "parce que partager son histoire n'a jamais aucun effet positif", "cela n'a aucun lien avec le sentiment de solitude", "parce qu'il vaut toujours mieux garder son histoire pour soi", "parce que les visiteurs de passage n'écoutent jamais vraiment"], answer: "parce que raconter son vécu permet de se sentir écouté et moins seul, même temporairement", hint: "Repense à ce que ressent Chrono en racontant son histoire aux trois sœurs." }
+          rafaelle:
+            - { id: ch21-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 7x − 8 = 34.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "7x = 42." }
+            - { id: ch21-j3-ra-m3b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Ayudar no cuesta nada. »", choices: ["Aider ne coûte rien.", "Aider prend du temps.", "Aider fait toujours peur.", "Aider est très difficile.", "Aider rapporte toujours de l'argent."], answer: "Aider ne coûte rien.", hint: "« No cuesta nada » = ne coûte rien." }
+      - id: m4
+        title: Un rappel bienvenu
+        tours:
+          axelle:
+            - { id: ch21-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 5.", choices: ["40", "42", "44", "45", "48"], answer: "45", hint: "9 × 5 = 9 × 10 ÷ 2." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch21-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 295 − 137.", choices: ["150", "154", "156", "158", "160"], answer: "158", hint: "295 − 140 + 3." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch21-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El reloj más viejo aún funciona. »", choices: ["L'horloge la plus vieille fonctionne encore.", "L'horloge la plus vieille est cassée.", "L'horloge la plus vieille est perdue.", "L'horloge la plus vieille sonne trop fort.", "L'horloge la plus vieille a disparu."], answer: "L'horloge la plus vieille fonctionne encore.", hint: "« Aún funciona » = fonctionne encore." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu de l'histoire inversée : chaque sœur raconte, à l'envers, un petit moment de sa propre journée, en commençant par la fin, comme pour s'amuser avec le temps lui-même."
+    closing:
+      - { who: narrateur, text: "La soirée se prolongea doucement dans l'atelier flottant, entre récits et vieux dessins d'horloges, tandis que la mer intérieure continuait son rythme étrange au-dehors." }
+      - { who: chrono, text: "Demain, il faudra enfin vous décider. Prenez cette dernière nuit pour y réfléchir une dernière fois." }
+      - { who: axelle, text: "On y réfléchira, c'est promis. Merci de nous avoir raconté tout ça." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs regagnaient leur campement pour la nuit, Nilo observait Chrono s'éloigner vers son atelier, pensif, comme s'il comprenait, à sa manière, ce que signifiait vraiment la solitude." }
+    reward: "l'histoire personnelle de Chrono, et sa solitude au bord de la mer"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Se décider
+    decor: Le bord de la mer intérieure, dans la lumière grise du petit matin, où les trois sœurs retrouvent Chrono pour lui annoncer, enfin, leur décision.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, les trois sœurs retrouvèrent Chrono au bord de la mer, dans la lumière grise du petit matin, prêtes à lui annoncer leur décision." }
+      - { who: chrono, text: "Le temps, par ici, se dérègle plus vite que je ne peux le réparer. Voulez-vous m'aider, ou préférez-vous poursuivre votre chemin sans vous attarder ?" }
+      - { who: rafaelle, text: "On y a bien réfléchi, Chrono. Et on a pris une décision, toutes les trois ensemble." }
+      - { who: chrono, text: "Je vous écoute, petite Archiviste. Quelle qu'elle soit, je l'accepterai sans réserve." }
+    manches:
+      - id: m1
+        title: Peser le pour et le contre
+        tours:
+          axelle:
+            - { id: ch21-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « s'attarder » ?", choices: ["se hâter", "rester", "patienter", "s'installer", "demeurer"], answer: "se hâter", hint: "Le contraire de prendre son temps avant de repartir." }
+            - { id: ch21-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 6.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "8 + 6 = 8 + 8 − 2." }
+          maelle:
+            - { id: ch21-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi une décision prise collectivement, après discussion, est-elle souvent plus solide qu'une décision prise seule et dans l'urgence ?", choices: ["parce qu'elle tient compte de plusieurs points de vue avant de s'engager", "parce qu'une décision collective n'a jamais aucun avantage", "cela n'a aucun lien avec la qualité d'une décision", "parce qu'une décision seule est toujours meilleure", "parce que discuter ensemble retarde toujours inutilement une décision"], answer: "parce qu'elle tient compte de plusieurs points de vue avant de s'engager", hint: "Pense à la façon dont les trois sœurs ont pris leur décision, ensemble." }
+            - { id: ch21-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 92 + 59.", choices: ["146", "148", "150", "151", "153"], answer: "151", hint: "92 + 60 − 1." }
+          rafaelle:
+            - { id: ch21-j4-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Quelle qu'elle soit, je l'accepterai sans réserve. » : que révèle cette phrase sur l'attitude de Chrono ?", choices: ["qu'il respecte pleinement la décision des sœurs, sans chercher à l'influencer", "qu'il refusera forcément leur décision", "qu'il attend d'elles une seule réponse précise", "qu'il n'a aucune considération pour leur choix", "qu'il préfère décider lui-même à leur place"], answer: "qu'il respecte pleinement la décision des sœurs, sans chercher à l'influencer", hint: "Repense à l'attitude de Chrono depuis le début du chapitre." }
+            - { id: ch21-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13² − 100.", choices: ["59", "63", "66", "69", "73"], answer: "69", hint: "169 − 100." }
+      - id: m2
+        title: Le temps qui reste
+        tours:
+          axelle:
+            - { id: ch21-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 15 − 8.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "15 − 5 = 10, puis − 3." }
+            - { id: ch21-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un long voyage, comme celui des trois sœurs, oblige-t-il parfois à faire des choix entre aider quelqu'un et avancer soi-même ?", choices: ["parce que le temps et les ressources disponibles pour un voyage sont toujours limités", "parce qu'un voyage n'implique jamais de faire de choix", "cela n'a aucune explication particulière", "parce qu'aider quelqu'un n'a jamais aucun coût en temps", "parce que les voyages n'ont jamais de limite de temps"], answer: "parce que le temps et les ressources disponibles pour un voyage sont toujours limités", hint: "Pense au dilemme entre aider Chrono et poursuivre vers le sommet." }
+          maelle:
+            - { id: ch21-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 351 ÷ 3.", choices: ["107", "111", "115", "117", "119"], answer: "117", hint: "3 × 117 = 351." }
+            - { id: ch21-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « solide » dans « une décision solide » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit une décision bien réfléchie." }
+          rafaelle:
+            - { id: ch21-j4-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 8² + 2 × 10.", choices: ["74", "78", "82", "84", "88"], answer: "84", hint: "64 + 20." }
+            - { id: ch21-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Le temps peut se réparer » en espagnol ?", choices: ["El tiempo se puede reparar.", "La marea sube y baja.", "El relojero trabaja solo.", "Ayudar no cuesta nada.", "El reloj más viejo aún funciona."], answer: "El tiempo se puede reparar.", hint: "Relis la phrase du jour 1." }
+      - id: m3
+        title: Annoncer sa décision
+        tours:
+          axelle:
+            - { id: ch21-j4-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Les trois sœurs retrouvèrent Chrono. » ?", choices: ["Chrono", "retrouvèrent", "Les trois sœurs", "trois", "sœurs"], answer: "Les trois sœurs", hint: "Qui retrouve Chrono au bord de la mer ?" }
+            - { id: ch21-j4-ax-m3b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 11 − 5.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "11 − 5 = 6." }
+          maelle:
+            - { id: ch21-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 4.", choices: ["108", "112", "114", "116", "120"], answer: "116", hint: "30 × 4 − 4." }
+            - { id: ch21-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi annoncer clairement une décision, même difficile, à la personne concernée est-il souvent préférable à l'hésitation prolongée ?", choices: ["parce que cela permet à chacun de savoir à quoi s'attendre et d'avancer sereinement", "parce qu'annoncer une décision n'a jamais aucune utilité", "cela n'a aucun lien avec le respect de l'autre", "parce qu'il vaut toujours mieux rester dans l'incertitude", "parce que la clarté retarde toujours une décision"], answer: "parce que cela permet à chacun de savoir à quoi s'attendre et d'avancer sereinement", hint: "Pense à l'attitude des sœurs venues annoncer leur décision à Chrono." }
+          rafaelle:
+            - { id: ch21-j4-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 4x + 11 = 35.", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "4x = 24." }
+            - { id: ch21-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au futur simple : « Nous (décider) ensemble, toutes les trois. »", choices: ["nous déciderons", "nous décidons", "nous décidions", "nous décidâmes", "nous décidions"], answer: "nous déciderons", hint: "Futur simple de « décider »." }
+      - id: m4
+        title: Un moment de vérité
+        tours:
+          axelle:
+            - { id: ch21-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 5.", choices: ["30", "32", "33", "35", "38"], answer: "35", hint: "7 × 5 = 7 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch21-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 260 − 118.", choices: ["138", "140", "142", "144", "146"], answer: "142", hint: "260 − 120 + 2." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch21-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15 × 6.", choices: ["86", "88", "90", "92", "94"], answer: "90", hint: "15 × 6 = 15 × 3 × 2." }
+            - { gen: maths.duree }
+    pause: "Le jeu du compte à rebours final : chaque sœur compte, à voix haute et lentement, de 5 à 1, avant de prononcer, toutes ensemble, le mot qui résume leur décision commune."
+    closing:
+      - { who: narrateur, text: "Les trois sœurs échangèrent un dernier regard, puis, d'une seule voix, annoncèrent à Chrono la décision qu'elles avaient prise ensemble, après mûre réflexion." }
+      - { who: chrono, text: "Je vous entends, petites voyageuses, et je vous en remercie, quelle que soit la part que vous choisirez de m'offrir." }
+      - { who: maelle, text: "On espère vraiment que ça vous aidera, Chrono, même un petit peu." }
+      - { who: narrateur, text: "Et tandis que la mer intérieure continuait de monter et de descendre, les trois sœurs se préparèrent, chacune à sa façon, à mettre en œuvre la décision qu'elles venaient d'annoncer." }
+    reward: "la décision prise ensemble, annoncée à Chrono"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: Le temps qui avance
+    decor: Le bord de la mer intérieure, dans la lumière dorée de la fin de journée, où Chrono et les trois sœurs achèvent, chacune à leur façon, le travail entrepris ensemble.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, dans la lumière dorée de la fin de journée, Chrono et les trois sœurs achevèrent, chacune à sa façon, le travail entrepris ensemble au bord de la mer intérieure." }
+      - { who: chrono, text: "Quelle que soit l'aide que vous m'avez offerte cette semaine, sachez qu'elle a compté, bien plus que vous ne l'imaginez." }
+      - { who: nilo, text: "Allez, les filles. Une dernière chose à vérifier avant de reprendre le chemin, et on pourra dire qu'on a fait de notre mieux, ici." }
+    manches:
+      - id: m1
+        title: Ce que la mer a appris
+        intro: "Chrono interroge chaque sœur sur tout ce que cette semaine au bord de la mer intérieure lui a appris."
+        tours:
+          axelle:
+            - { id: ch21-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on le mouvement régulier de montée et de descente du niveau de la mer ?", choices: ["la marée", "la pluie", "le courant", "la vague", "le vent"], answer: "la marée", hint: "C'est le mot du titre de ce chapitre." }
+            - { id: ch21-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 + 4.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "9 + 4 = 9 + 1 + 3." }
+          maelle:
+            - { id: ch21-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Qu'est-ce qui provoque, dans la réalité, le phénomène des marées sur Terre, comme tu l'as appris cette semaine ?", choices: ["l'attraction gravitationnelle de la Lune (et un peu du Soleil) sur les océans", "le vent qui pousse l'eau deux fois par jour", "la chaleur du soleil qui fait gonfler l'eau", "les poissons qui déplacent l'eau en se déplaçant", "cela n'a aucune explication connue"], answer: "l'attraction gravitationnelle de la Lune (et un peu du Soleil) sur les océans", hint: "Repense à ta propre question du premier jour." }
+            - { id: ch21-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 44 × 4.", choices: ["168", "172", "174", "176", "178"], answer: "176", hint: "44 × 4 = 45 × 4 − 4." }
+          rafaelle:
+            - { id: ch21-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que Chrono incarne une forme de dévouement, à travers son travail au bord de cette mer ?", choices: ["parce qu'il consacre sa vie, dans la solitude, à préserver l'équilibre du temps pour tous", "parce que Chrono n'a jamais aucune responsabilité réelle", "parce qu'il abandonne toujours son travail au moindre obstacle", "parce qu'il ne se préoccupe jamais des conséquences de son travail", "parce que le dévouement n'a aucun lien avec son histoire"], answer: "parce qu'il consacre sa vie, dans la solitude, à préserver l'équilibre du temps pour tous", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de Chrono." }
+            - { id: ch21-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 6/7 − 2/7.", choices: ["2/7", "3/7", "4/7", "5/7", "6/7"], answer: "4/7", hint: "6 − 2 = 4, même dénominateur." }
+      - id: m2
+        title: Avant de repartir
+        intro: "Il faut relier tout ce que la semaine au bord de la mer a appris, avant de reprendre le chemin vers les sommets."
+        tours:
+          axelle:
+            - { id: ch21-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux une personne capable d'attendre calmement, sans s'énerver, devant une tâche longue ?", choices: ["patiente", "impatiente", "distraite", "pressée", "agitée"], answer: "patiente", hint: "C'est la qualité évoquée par Chrono pour réparer une horloge." }
+            - { id: ch21-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 16 − 8.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "16 − 8 = 8." }
+          maelle:
+            - { id: ch21-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi cette mer intérieure, et la rencontre avec Chrono, ont-elles une importance particulière dans le voyage des trois sœurs ?", choices: ["elle n'a aucune importance réelle", "elle leur apprend la valeur de l'aide désintéressée et le poids d'une décision partagée", "elle les empêche d'avancer vers le sommet", "elle se trouve très loin des montagnes", "personne n'y vit jamais vraiment"], answer: "elle leur apprend la valeur de l'aide désintéressée et le poids d'une décision partagée", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de Chrono." }
+            - { id: ch21-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 432 ÷ 6.", choices: ["68", "70", "72", "74", "76"], answer: "72", hint: "6 × 72 = 432." }
+          rafaelle:
+            - { id: ch21-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 45.", choices: ["30", "33", "36", "38", "41"], answer: "36", hint: "81 − 45." }
+            - { id: ch21-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Voulez-vous m'aider, ou préférez-vous poursuivre votre chemin ? » : quel est le sujet de la première proposition ?", choices: ["m'aider", "voulez-vous", "vous", "préférez-vous", "le chemin"], answer: "vous", hint: "À qui Chrono pose-t-il cette question ?" }
+      - id: m3
+        title: Le Chant des Marées
+        intro: "Avant de repartir, Chrono et les trois sœurs chantent une dernière fois ensemble, au rythme des marées de la mer intérieure."
+        tours:
+          axelle:
+            - { id: ch21-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, blanche." }
+          maelle:
+            - { id: ch21-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          rafaelle:
+            - { id: ch21-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, blanche." }
+    concert:
+      measures:
+        axelle: { given: [1, 1], missing: 2, prompt: "Noire, noire, blanche" }
+        maelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        rafaelle: { given: [2], missing: 2, prompt: "Blanche, blanche" }
+    pause: "Le dernier tic-tac : chaque sœur tape, une dernière fois, le rythme régulier d'une horloge bien réglée, en hommage au travail accompli auprès de Chrono."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant des Marées se répandit au-dessus de la mer intérieure, et Chrono, pour la première fois depuis leur arrivée, se tint debout, bien droit, sans la moindre fatigue dans le dos." }
+      - { who: chrono, text: "Portez-vous bien, petites voyageuses. Et sachez que, où que vous alliez désormais, le temps, de mon côté, continuera d'avancer un peu plus doucement, grâce à vous." }
+      - { who: rafaelle, text: "Merci à vous, Chrono. Pour cette mer, pour votre histoire, et pour nous avoir laissé le temps de bien choisir." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs reprenaient le chemin vers les sommets, les horloges de la mer intérieure, derrière elles, semblèrent toutes se remettre à tourner, enfin, au même rythme paisible." }
+      - { who: axelle, text: "J'espère vraiment que tout ira bien, pour lui, maintenant qu'on est parties." }
+      - { who: nilo, text: "On a fait ce qu'on pouvait. Et parfois, c'est déjà beaucoup, même pour un vieil horloger un peu fatigué." }
+    reward: "la gratitude de Chrono, et des horloges enfin remises à l'heure"
