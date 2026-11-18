@@ -6,7 +6,7 @@ import { COMPANIONS, LUEURS, NAMES, ROLES } from '../../engine/profile';
 import type { PlayerId } from '../../engine/types';
 import { autoRead, save, setAutoRead } from '../store';
 import { Avatar } from './Avatar';
-import { say, stopSpeaking } from '../voice';
+import { sayLine, stopSpeaking } from '../voice';
 
 const SPEAKERS: Record<string, string> = {
   narrateur: 'Le narrateur',
@@ -95,7 +95,7 @@ export function Dialogue({ lines, onDone, doneLabel = 'Continuer' }: { lines: Li
   const voiceOn = autoRead();
   const line = lines[i]!;
   useEffect(() => {
-    if (voiceOn) say(spoken(line));
+    if (voiceOn) sayLine(line.who, line.text, spoken(line));
     return stopSpeaking;
   }, [i, voiceOn]);
   const last = i >= lines.length - 1;
@@ -110,7 +110,7 @@ export function Dialogue({ lines, onDone, doneLabel = 'Continuer' }: { lines: Li
         {line.text}
       </p>
       <div class="ui-row">
-        <button class="ui-btn" onClick={() => say(spoken(line))}>
+        <button class="ui-btn" onClick={() => sayLine(line.who, line.text, spoken(line))}>
           🔊 Réécouter
         </button>
         <button class="ui-btn ui-btn-small" aria-pressed={!voiceOn} onClick={() => (voiceOn ? (stopSpeaking(), setAutoRead(false)) : setAutoRead(true))}>
