@@ -26,3 +26,15 @@ export const pick = <T>(rng: Rng, items: readonly T[]): T => {
   if (items.length === 0) throw new Error('Tirage dans une liste vide.');
   return items[Math.floor(rng() * items.length)] as T;
 };
+
+/** Mélange (Fisher-Yates) sans muter le tableau d'origine — même graine, même ordre. */
+export const shuffle = <T>(rng: Rng, items: readonly T[]): T[] => {
+  const a = [...items];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    const tmp = a[i]!;
+    a[i] = a[j]!;
+    a[j] = tmp;
+  }
+  return a;
+};

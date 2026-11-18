@@ -95,6 +95,7 @@ body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color
 .ui-key:disabled { opacity: .5; }
 .ui-choices { display: flex; flex-wrap: wrap; gap: 12px; }
 .ui-choice { font-size: 1.25rem; min-width: 180px; }
+.ui-choice-barre { text-decoration: line-through; opacity: .45; }
 .ui-order { display: grid; gap: 12px; }
 .ui-order-row { display: flex; flex-wrap: wrap; gap: 10px; min-height: 56px; align-items: center; }
 .ui-chip { font-size: 1.25rem; }
