@@ -34,6 +34,7 @@ export function QuestionView(props: {
   const [num, setNum] = useState('');
   const [state, setState] = useState<'saisie' | 'reessai' | 'revele' | 'bravo' | 'validation'>('saisie');
   const [response, setResponse] = useState('');
+  const [wrongChoice, setWrongChoice] = useState<string | undefined>(undefined);
   const helped = hint || team;
 
   // Le parent remonte ce composant à chaque question (key) : l'état repart de zéro sans effet de bord.
@@ -50,6 +51,7 @@ export function QuestionView(props: {
     if (v === 'a-valider') return setState('validation');
     if (v === 'juste') return setState('bravo');
     setNum('');
+    if (q.kind === 'qcm' && typeof r === 'string') setWrongChoice(r);
     setState(n >= 2 ? 'revele' : 'reessai');
   };
 
@@ -84,7 +86,7 @@ export function QuestionView(props: {
           <>
             {state === 'reessai' && <p class="ui-feedback ui-ko">Pas encore ! Encore un essai.</p>}
             {q.kind === 'nombre' && <NumberPad value={num} onChange={setNum} onSubmit={() => submit(num)} />}
-            {q.kind === 'qcm' && <Choices choices={q.choices ?? []} onPick={submit} />}
+            {q.kind === 'qcm' && <Choices choices={q.choices ?? []} onPick={submit} wrong={wrongChoice} />}
             {q.kind === 'ordre' && <Order key={attempts} choices={q.choices ?? []} onSubmit={submit} />}
             {q.kind === 'court' && <TextAnswer key={attempts} onSubmit={submit} />}
             {q.kind === 'libre' && <TextAnswer onSubmit={submit} multiline optional />}

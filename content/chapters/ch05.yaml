@@ -66,49 +66,49 @@ days:
         intro: "À quoi sert chaque objet ? Il faut le savoir pour tout rallumer."
         tours:
           axelle:
-            - { id: ch05-j1-ax-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pour allumer une lampe, le circuit doit être…", choices: ["fermé", "ouvert", "cassé"], answer: "fermé", hint: "Le courant doit pouvoir faire le tour complet." }
-            - { id: ch05-j1-ax-m1b, subject: sciences, level: 2, kind: qcm, prompt: "À quoi sert une pile dans une lampe de poche ?", choices: ["à donner l'énergie", "à faire joli", "à peser lourd"], answer: "à donner l'énergie", hint: "Sans elle, rien ne s'allume." }
+            - { id: ch05-j1-ax-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pour allumer une lampe, le circuit doit être…", choices: ["ouvert", "cassé", "fermé", "coupé", "débranché"], answer: "fermé", hint: "Le courant doit pouvoir faire le tour complet." }
+            - { id: ch05-j1-ax-m1b, subject: sciences, level: 2, kind: qcm, prompt: "À quoi sert une pile dans une lampe de poche ?", choices: ["à faire joli", "à donner l'énergie", "à peser lourd", "à mesurer le temps", "à éclairer directement"], answer: "à donner l'énergie", hint: "Sans elle, rien ne s'allume." }
           maelle:
-            - { id: ch05-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Quel appareil ouvre ou ferme un circuit ?", choices: ["l'interrupteur", "l'ampoule", "le fil"], answer: "l'interrupteur", hint: "On appuie dessus pour allumer la lumière de la chambre." }
-            - { id: ch05-j1-ma-m1b, subject: sciences, level: 1, kind: court, prompt: "Cite un matériau isolant (qui ne laisse pas passer le courant).", answer: "plastique", accept: ["le plastique", "bois", "le bois", "verre", "le verre", "caoutchouc", "le caoutchouc", "papier", "carton", "tissu"], hint: "La gaine autour des fils est faite de ce matériau." }
+            - { id: ch05-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Quel appareil ouvre ou ferme un circuit ?", choices: ["l'ampoule", "la pile", "l'interrupteur", "le fil", "la prise"], answer: "l'interrupteur", hint: "On appuie dessus pour allumer la lumière de la chambre." }
+            - { id: ch05-j1-ma-m1b, subject: sciences, level: 1, kind: qcm, prompt: "Cite un matériau isolant (qui ne laisse pas passer le courant).", choices: ["fer", "plastique", "cuivre", "aluminium", "acier"], answer: "plastique", hint: "La gaine autour des fils est faite de ce matériau." }
           rafaelle:
-            - { id: ch05-j1-ra-m1a, subject: sciences, level: 1, kind: qcm, prompt: "Quelle est l'unité de l'intensité du courant électrique ?", choices: ["l'ampère", "le volt", "le mètre"], answer: "l'ampère", hint: "Elle porte le nom d'un savant français." }
-            - { id: ch05-j1-ra-m1b, subject: sciences, level: 2, kind: qcm, prompt: "Une lampe grille et toutes les autres s'éteignent. Le montage est…", choices: ["en série", "en dérivation", "sans pile"], answer: "en série", hint: "Toutes les lampes sont sur une seule boucle." }
+            - { id: ch05-j1-ra-m1a, subject: sciences, level: 1, kind: qcm, prompt: "Quelle est l'unité de l'intensité du courant électrique ?", choices: ["le volt", "l'ampère", "le mètre", "le watt", "le joule"], answer: "l'ampère", hint: "Elle porte le nom d'un savant français." }
+            - { id: ch05-j1-ra-m1b, subject: sciences, level: 2, kind: qcm, prompt: "Une lampe grille et toutes les autres s'éteignent. Le montage est…", choices: ["en dérivation", "en série", "sans pile", "en court-circuit", "débranché"], answer: "en série", hint: "Toutes les lampes sont sur une seule boucle." }
       - id: m2
         title: Le mode d'emploi
         tours:
           axelle:
-            - { id: ch05-j1-ax-m2a, subject: francais, level: 1, kind: court, prompt: "« Le pigeon vole vers la tour. » Vers quoi vole-t-il ?", answer: "la tour", accept: ["tour", "vers la tour"], hint: "Lis la fin de la phrase." }
-            - { id: ch05-j1-ax-m2b, subject: francais, level: 2, kind: nombre, prompt: "« pigeon » : combien de syllabes ?", answer: 2, hint: "Tape dans tes mains : pi – geon." }
+            - { id: ch05-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "« Le pigeon vole vers la tour. » Vers quoi vole-t-il ?", choices: ["la mer", "la tour", "la forêt", "le village", "la montagne"], answer: "la tour", hint: "Lis la fin de la phrase." }
+            - { id: ch05-j1-ax-m2b, subject: francais, level: 2, kind: qcm, prompt: "« pigeon » : combien de syllabes ?", choices: ["1", "3", "2", "4", "5"], answer: "2", hint: "Tape dans tes mains : pi – geon." }
           maelle:
-            - { id: ch05-j1-ma-m2a, subject: francais, level: 1, kind: court, prompt: "« Le câble grince. » Quel est le verbe ?", answer: "grince", hint: "C'est ce que fait le câble." }
-            - { id: ch05-j1-ma-m2b, subject: francais, level: 2, kind: court, prompt: "Conjugue au futur : « Il (envoyer) ».", answer: "il enverra", accept: ["enverra"], hint: "Attention, ce verbe est irrégulier au futur : env…" }
+            - { id: ch05-j1-ma-m2a, subject: francais, level: 1, kind: qcm, prompt: "« Le câble grince. » Quel est le verbe ?", choices: ["câble", "grincer", "le câble", "grince", "grinçant"], answer: "grince", hint: "C'est ce que fait le câble." }
+            - { id: ch05-j1-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Conjugue au futur : « Il (envoyer) ».", choices: ["il envoyera", "il enverrait", "il enverra", "il envoira", "il envoiera"], answer: "il enverra", hint: "Attention, ce verbe est irrégulier au futur : env…" }
           rafaelle:
-            - { id: ch05-j1-ra-m2a, subject: francais, level: 1, kind: qcm, prompt: "« rapidement » : quelle est sa nature ?", choices: ["adverbe", "adjectif", "verbe"], answer: "adverbe", hint: "Il dit comment, et il finit souvent par -ment." }
+            - { id: ch05-j1-ra-m2a, subject: francais, level: 1, kind: qcm, prompt: "« rapidement » : quelle est sa nature ?", choices: ["adjectif", "nom", "adverbe", "verbe", "préposition"], answer: "adverbe", hint: "Il dit comment, et il finit souvent par -ment." }
             - { id: ch05-j1-ra-m2b, subject: francais, level: 3, kind: libre, validation: soeurs, prompt: "Écris un mode d'emploi en trois étapes pour allumer la lampe de la station (d'abord, ensuite, enfin)." }
       - id: m3
         title: Les piles et les lampes
         tours:
           axelle:
-            - { id: ch05-j1-ax-m3a, subject: maths, level: 1, kind: nombre, prompt: "Calcule 6 + 5.", answer: 11, hint: "6 + 4 = 10, puis encore 1." }
-            - { id: ch05-j1-ax-m3b, subject: maths, level: 1, kind: nombre, prompt: "Calcule 15 − 7.", answer: 8, hint: "15 − 5 = 10, puis encore 2." }
+            - { id: ch05-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 6 + 5.", choices: ["10", "12", "11", "1", "16"], answer: "11", hint: "6 + 4 = 10, puis encore 1." }
+            - { id: ch05-j1-ax-m3b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 15 − 7.", choices: ["7", "9", "22", "2", "8"], answer: "8", hint: "15 − 5 = 10, puis encore 2." }
           maelle:
-            - { id: ch05-j1-ma-m3a, subject: maths, level: 1, kind: nombre, prompt: "Calcule 9 × 8.", answer: 72, hint: "9 × 8 = 8 × 10 − 8." }
+            - { id: ch05-j1-ma-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 × 8.", choices: ["63", "64", "71", "73", "72"], answer: "72", hint: "9 × 8 = 8 × 10 − 8." }
             - { gen: maths.multiplication }
           rafaelle:
-            - { id: ch05-j1-ra-m3a, subject: maths, level: 1, kind: nombre, prompt: "Calcule 5,6 × 3.", answer: 16.8, hint: "5 × 3 = 15 et 0,6 × 3 = 1,8." }
-            - { id: ch05-j1-ra-m3b, subject: espagnol, level: 2, kind: court, prompt: "Traduis : « el mensaje ».", answer: "le message", accept: ["message"], hint: "Ça ressemble beaucoup au français." }
+            - { id: ch05-j1-ra-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 5,6 × 3.", choices: ["15,8", "16,8", "17,8", "16,3", "18,8"], answer: "16,8", hint: "5 × 3 = 15 et 0,6 × 3 = 1,8." }
+            - { id: ch05-j1-ra-m3b, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « el mensaje ».", choices: ["la lettre", "le messager", "le message", "le secret", "la carte"], answer: "le message", hint: "Ça ressemble beaucoup au français." }
       - id: m4
         title: Le Défi de la station
         tours:
           axelle:
-            - { id: ch05-j1-ax-m4a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 38 + 25.", answer: 63, hint: "38 + 20 = 58, puis + 5." }
+            - { id: ch05-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 38 + 25.", choices: ["62", "53", "63", "13", "64"], answer: "63", hint: "38 + 20 = 58, puis + 5." }
             - { gen: maths.comparer }
           maelle:
-            - { id: ch05-j1-ma-m4a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 47 × 6.", answer: 282, hint: "40 × 6 = 240 et 7 × 6 = 42." }
+            - { id: ch05-j1-ma-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 47 × 6.", choices: ["280", "282", "288", "272", "41"], answer: "282", hint: "40 × 6 = 240 et 7 × 6 = 42." }
             - { gen: maths.ranger }
           rafaelle:
-            - { id: ch05-j1-ra-m4a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 3,6 ÷ 0,9.", answer: 4, hint: "C'est comme 36 ÷ 9." }
+            - { id: ch05-j1-ra-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 3,6 ÷ 0,9.", choices: ["3", "40", "0,4", "3,6", "4"], answer: "4", hint: "C'est comme 36 ÷ 9." }
             - { gen: maths.arrondi }
     pause: "Le courant passe : formez une chaîne en vous tenant la main. La première serre la main de la suivante, qui serre la main de la dernière, de plus en plus vite !"
     closing:
@@ -142,51 +142,51 @@ days:
         title: Conducteurs et isolants
         tours:
           axelle:
-            - { id: ch05-j2-ax-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Le métal laisse-t-il passer le courant ?", choices: ["oui", "non"], answer: "oui", hint: "Les fils électriques ont un cœur en cuivre." }
-            - { id: ch05-j2-ax-m1b, subject: sciences, level: 3, kind: qcm, prompt: "Lequel ne laisse PAS passer le courant ?", choices: ["une règle en plastique", "une clé en fer", "une pièce de monnaie"], answer: "une règle en plastique", hint: "Le plastique protège les fils." }
+            - { id: ch05-j2-ax-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Le métal laisse-t-il passer le courant ?", choices: ["non", "oui", "seulement s'il est chaud", "seulement s'il est mouillé", "cela dépend de sa couleur"], answer: "oui", hint: "Les fils électriques ont un cœur en cuivre." }
+            - { id: ch05-j2-ax-m1b, subject: sciences, level: 3, kind: qcm, prompt: "Lequel ne laisse PAS passer le courant ?", choices: ["une clé en fer", "un fil de cuivre", "une règle en plastique", "une pièce de monnaie", "une cuillère en métal"], answer: "une règle en plastique", hint: "Le plastique protège les fils." }
           maelle:
-            - { id: ch05-j2-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Une pile, un fil et une lampe sont reliés en boucle. Le circuit est-il fermé ?", choices: ["oui", "non"], answer: "oui", hint: "Une boucle complète, sans coupure." }
-            - { id: ch05-j2-ma-m1b, subject: sciences, level: 2, kind: qcm, prompt: "On met une gomme à la place d'un fil. La lampe…", choices: ["reste éteinte", "brille plus fort", "brille pareil"], answer: "reste éteinte", hint: "La gomme est un isolant." }
+            - { id: ch05-j2-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Une pile, un fil et une lampe sont reliés en boucle. Le circuit est-il fermé ?", choices: ["non", "oui", "seulement avec deux piles", "seulement si le fil est long", "cela dépend de l'heure"], answer: "oui", hint: "Une boucle complète, sans coupure." }
+            - { id: ch05-j2-ma-m1b, subject: sciences, level: 2, kind: qcm, prompt: "On met une gomme à la place d'un fil. La lampe…", choices: ["brille plus fort", "clignote", "reste éteinte", "brille pareil", "change de couleur"], answer: "reste éteinte", hint: "La gomme est un isolant." }
           rafaelle:
-            - { id: ch05-j2-ra-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Quelles formes d'énergie se succèdent, de la pile à la lampe allumée ?", choices: ["chimique, puis électrique, puis lumineuse", "lumineuse, puis chimique, puis électrique", "électrique, puis chimique, puis sonore"], answer: "chimique, puis électrique, puis lumineuse", hint: "La pile contient des produits chimiques." }
-            - { id: ch05-j2-ra-m1b, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi les fils électriques sont-ils entourés de plastique ?", choices: ["pour isoler et protéger", "pour conduire mieux", "pour être plus lourds"], answer: "pour isoler et protéger", hint: "Le plastique ne laisse pas passer le courant." }
+            - { id: ch05-j2-ra-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Quelles formes d'énergie se succèdent, de la pile à la lampe allumée ?", choices: ["lumineuse, puis chimique, puis électrique", "électrique, puis lumineuse, puis chimique", "chimique, puis électrique, puis lumineuse", "électrique, puis chimique, puis sonore", "lumineuse, puis électrique, puis chimique"], answer: "chimique, puis électrique, puis lumineuse", hint: "La pile contient des produits chimiques." }
+            - { id: ch05-j2-ra-m1b, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi les fils électriques sont-ils entourés de plastique ?", choices: ["pour conduire mieux", "pour faire joli", "pour isoler et protéger", "pour être plus lourds", "pour résister au feu uniquement"], answer: "pour isoler et protéger", hint: "Le plastique ne laisse pas passer le courant." }
       - id: m2
         title: Les suites du tableau
         tours:
           axelle:
-            - { id: ch05-j2-ax-m2a, subject: maths, level: 2, kind: nombre, prompt: "Continue : 10, 20, 30, … Quel nombre vient après ?", answer: 40, hint: "Ajoute 10." }
+            - { id: ch05-j2-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Continue : 10, 20, 30, … Quel nombre vient après ?", choices: ["35", "50", "40", "45", "25"], answer: "40", hint: "Ajoute 10." }
             - { gen: maths.suite }
           maelle:
-            - { id: ch05-j2-ma-m2a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 138 ÷ 6.", answer: 23, hint: "120 ÷ 6 = 20. Reste 18." }
-            - { id: ch05-j2-ma-m2b, subject: maths, level: 2, kind: nombre, prompt: "Pigeon vole 25 minutes. Combien de secondes ?", answer: 1500, hint: "1 minute = 60 secondes." }
+            - { id: ch05-j2-ma-m2a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 138 ÷ 6.", choices: ["22", "13", "23", "24", "138"], answer: "23", hint: "120 ÷ 6 = 20. Reste 18." }
+            - { id: ch05-j2-ma-m2b, subject: maths, level: 2, kind: qcm, prompt: "Pigeon vole 25 minutes. Combien de secondes ?", choices: ["150", "1250", "1500", "60", "250"], answer: "1500", hint: "1 minute = 60 secondes." }
           rafaelle:
-            - { id: ch05-j2-ra-m2a, subject: maths, level: 2, kind: court, prompt: "Calcule 5/6 − 1/3.", answer: "1/2", accept: ["3/6"], hint: "1/3 = 2/6." }
-            - { id: ch05-j2-ra-m2b, subject: maths, level: 3, kind: nombre, prompt: "4 messages prennent 6 secondes. Combien de secondes pour 10 messages ?", answer: 15, hint: "1 message = 1,5 seconde." }
+            - { id: ch05-j2-ra-m2a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 5/6 − 1/3.", choices: ["1/3", "2/3", "1/2", "4/6", "1/6"], answer: "1/2", hint: "1/3 = 2/6." }
+            - { id: ch05-j2-ra-m2b, subject: maths, level: 3, kind: qcm, prompt: "4 messages prennent 6 secondes. Combien de secondes pour 10 messages ?", choices: ["60", "24", "15", "9", "16"], answer: "15", hint: "1 message = 1,5 seconde." }
       - id: m3
         title: Les instructions du câble
         intro: "Pour rebrancher les fils, il faut suivre des instructions dans le bon ordre."
         tours:
           axelle:
-            - { id: ch05-j2-ax-m3a, subject: maths, level: 2, kind: nombre, prompt: "Un robot avance 2, tourne à droite, avance 1. Combien de pas en tout ?", answer: 3, hint: "On ne compte que les pas, pas le tournant." }
-            - { id: ch05-j2-ax-m3b, subject: maths, level: 3, kind: nombre, prompt: "Répète 3 fois « avance de 2 ». Quelle distance en tout ?", answer: 6, hint: "2 + 2 + 2." }
+            - { id: ch05-j2-ax-m3a, subject: maths, level: 2, kind: qcm, prompt: "Un robot avance 2, tourne à droite, avance 1. Combien de pas en tout ?", choices: ["2", "4", "3", "1", "0"], answer: "3", hint: "On ne compte que les pas, pas le tournant." }
+            - { id: ch05-j2-ax-m3b, subject: maths, level: 3, kind: qcm, prompt: "Répète 3 fois « avance de 2 ». Quelle distance en tout ?", choices: ["3", "5", "6", "8", "2"], answer: "6", hint: "2 + 2 + 2." }
           maelle:
-            - { id: ch05-j2-ma-m3a, subject: maths, level: 1, kind: nombre, prompt: "« Avance 3, tourne à droite, avance 2 » : combien d'instructions ?", answer: 3, hint: "Compte les ordres, séparés par des virgules." }
-            - { id: ch05-j2-ma-m3b, subject: maths, level: 2, kind: nombre, prompt: "« Répéter 5 fois : avancer 2 ». Quelle distance ?", answer: 10, hint: "5 fois 2." }
+            - { id: ch05-j2-ma-m3a, subject: maths, level: 1, kind: qcm, prompt: "« Avance 3, tourne à droite, avance 2 » : combien d'instructions ?", choices: ["2", "4", "3", "5", "1"], answer: "3", hint: "Compte les ordres, séparés par des virgules." }
+            - { id: ch05-j2-ma-m3b, subject: maths, level: 2, kind: qcm, prompt: "« Répéter 5 fois : avancer 2 ». Quelle distance ?", choices: ["5", "7", "10", "12", "2"], answer: "10", hint: "5 fois 2." }
           rafaelle:
-            - { id: ch05-j2-ra-m3a, subject: maths, level: 2, kind: nombre, prompt: "« Répéter 6 fois : avancer 5 ». Quelle distance totale ?", answer: 30, hint: "6 × 5." }
-            - { id: ch05-j2-ra-m3b, subject: maths, level: 1, kind: qcm, prompt: "« Répéter 4 fois : avancer 4, tourner de 90° ». Quelle forme est dessinée ?", choices: ["un carré", "un triangle", "un cercle"], answer: "un carré", hint: "4 côtés égaux et 4 angles droits." }
+            - { id: ch05-j2-ra-m3a, subject: maths, level: 2, kind: qcm, prompt: "« Répéter 6 fois : avancer 5 ». Quelle distance totale ?", choices: ["25", "35", "30", "11", "6"], answer: "30", hint: "6 × 5." }
+            - { id: ch05-j2-ra-m3b, subject: maths, level: 1, kind: qcm, prompt: "« Répéter 4 fois : avancer 4, tourner de 90° ». Quelle forme est dessinée ?", choices: ["un triangle", "un rectangle", "un carré", "un cercle", "un pentagone"], answer: "un carré", hint: "4 côtés égaux et 4 angles droits." }
       - id: m4
         title: Le Défi des fils
         tours:
           axelle:
-            - { id: ch05-j2-ax-m4a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 60 − 18.", answer: 42, hint: "60 − 20 = 40, puis on rajoute 2." }
-            - { id: ch05-j2-ax-m4b, subject: maths, level: 3, kind: nombre, prompt: "Quel nombre est impair : 12, 15 ou 20 ?", answer: 15, hint: "Un nombre impair ne se partage pas en deux parts égales." }
+            - { id: ch05-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 60 − 18.", choices: ["48", "32", "42", "43", "41"], answer: "42", hint: "60 − 20 = 40, puis on rajoute 2." }
+            - { id: ch05-j2-ax-m4b, subject: maths, level: 3, kind: qcm, prompt: "Quel nombre est impair : 12, 15 ou 20 ?", choices: ["12", "18", "15", "20", "24"], answer: "15", hint: "Un nombre impair ne se partage pas en deux parts égales." }
           maelle:
-            - { id: ch05-j2-ma-m4a, subject: maths, level: 3, kind: nombre, prompt: "Calcule 3,5 + 2,75.", answer: 6.25, hint: "Écris 3,50 pour aligner les virgules." }
+            - { id: ch05-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 3,5 + 2,75.", choices: ["5,25", "6,75", "6,25", "5,85", "6,1"], answer: "6,25", hint: "Écris 3,50 pour aligner les virgules." }
             - { gen: maths.fraction-de }
           rafaelle:
-            - { id: ch05-j2-ra-m4a, subject: maths, level: 3, kind: nombre, prompt: "Calcule 40 % de 250.", answer: 100, hint: "10 % = 25." }
-            - { id: ch05-j2-ra-m4b, subject: maths, level: 3, kind: nombre, prompt: "Un triangle a deux angles de 50° et 60°. Combien mesure le troisième, en degrés ?", answer: 70, hint: "La somme des angles d'un triangle fait 180°." }
+            - { id: ch05-j2-ra-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 40 % de 250.", choices: ["25", "125", "100", "40", "90"], answer: "100", hint: "10 % = 25." }
+            - { id: ch05-j2-ra-m4b, subject: maths, level: 3, kind: qcm, prompt: "Un triangle a deux angles de 50° et 60°. Combien mesure le troisième, en degrés ?", choices: ["110", "80", "70", "60", "90"], answer: "70", hint: "La somme des angles d'un triangle fait 180°." }
     pause: "Le tableau des fils : une sœur dit « conducteur » ou « isolant ». Pour conducteur, on court sur place ; pour isolant, on se fige comme une statue !"
     closing:
       - { who: narrateur, text: "Un à un, les vrais fils retrouvèrent leur prise. Et à chaque fil rebranché, une petite lampe du tableau s'allumait, rouge, verte ou dorée. Bientôt, le grand tableau brilla comme un ciel d'été plein d'étoiles." }
@@ -220,52 +220,52 @@ days:
         intro: "Première clé : chaque lettre a un numéro. A = 1, B = 2, C = 3…"
         tours:
           axelle:
-            - { id: ch05-j3-ax-m1a, subject: francais, level: 2, kind: court, prompt: "Avec la clé A = 1, B = 2, C = 3… quelle lettre porte le numéro 3 ?", answer: "C", hint: "A, B, C : la troisième." }
-            - { id: ch05-j3-ax-m1b, subject: francais, level: 3, kind: court, prompt: "Décode avec A = 1, B = 2… : 12 – 21 – 14 – 5. (L = 12, U = 21, N = 14, E = 5)", answer: "lune", hint: "Lis les lettres dans l'ordre." }
+            - { id: ch05-j3-ax-m1a, subject: francais, level: 2, kind: qcm, prompt: "Avec la clé A = 1, B = 2, C = 3… quelle lettre porte le numéro 3 ?", choices: ["A", "B", "D", "C", "E"], answer: "C", hint: "A, B, C : la troisième." }
+            - { id: ch05-j3-ax-m1b, subject: francais, level: 3, kind: qcm, prompt: "Décode avec A = 1, B = 2… : 12 – 21 – 14 – 5. (L = 12, U = 21, N = 14, E = 5)", choices: ["neul", "unel", "lune", "lenu", "nuel"], answer: "lune", hint: "Lis les lettres dans l'ordre." }
           maelle:
-            - { id: ch05-j3-ma-m1a, subject: francais, level: 3, kind: court, prompt: "Code : chaque lettre avance d'un cran (A devient B). Code le mot « CAB ».", answer: "DBC", hint: "C → D, A → B, B → C." }
-            - { id: ch05-j3-ma-m1b, subject: francais, level: 3, kind: court, prompt: "Code : chaque lettre a avancé d'un cran. Décode « FMXFO » en reculant chaque lettre d'un cran.", answer: "ELWEN", hint: "F → E, M → L, X → W…" }
+            - { id: ch05-j3-ma-m1a, subject: francais, level: 3, kind: qcm, prompt: "Code : chaque lettre avance d'un cran (A devient B). Code le mot « CAB ».", choices: ["BZA", "ECD", "CAB", "DBC", "DCB"], answer: "DBC", hint: "C → D, A → B, B → C." }
+            - { id: ch05-j3-ma-m1b, subject: francais, level: 3, kind: qcm, prompt: "Code : chaque lettre a avancé d'un cran. Décode « FMXFO » en reculant chaque lettre d'un cran.", choices: ["FMXFO", "GNYGP", "DKVDM", "ELWEN", "ELNEW"], answer: "ELWEN", hint: "F → E, M → L, X → W…" }
           rafaelle:
-            - { id: ch05-j3-ra-m1a, subject: francais, level: 2, kind: court, prompt: "Code de César, décalage de 2 (A devient C). Code le mot « ELWEN ».", answer: "GNYGP", hint: "E → G, L → N, W → Y…" }
-            - { id: ch05-j3-ra-m1b, subject: espagnol, level: 3, kind: court, prompt: "Le message caché est en espagnol : « El mensaje es secreto ». Traduis-le.", answer: "Le message est secret", accept: ["le message est secret."], read: "El mensaje es secreto.", hint: "Regarde la phrase du jour." }
+            - { id: ch05-j3-ra-m1a, subject: francais, level: 2, kind: qcm, prompt: "Code de César, décalage de 2 (A devient C). Code le mot « ELWEN ».", choices: ["FMXFO", "ELWEN", "HOZHQ", "GNYGP", "GNPGY"], answer: "GNYGP", hint: "E → G, L → N, W → Y…" }
+            - { id: ch05-j3-ra-m1b, subject: espagnol, level: 3, kind: qcm, prompt: "Le message caché est en espagnol : « El mensaje es secreto ». Traduis-le.", choices: ["Le messager est secret", "Le message est secrète", "La lettre est secrète", "Le message est secret", "Le message est secrets"], answer: "Le message est secret", read: "El mensaje es secreto.", hint: "Regarde la phrase du jour." }
       - id: m2
         title: Les signaux de lumière
         intro: "Deuxième message : la lumière clignote, longue ou courte, comme le code Morse."
         tours:
           axelle:
-            - { id: ch05-j3-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Complète la suite : long, court, long, court, …", choices: ["long", "court"], answer: "long", hint: "Ça alterne." }
-            - { id: ch05-j3-ax-m2b, subject: maths, level: 3, kind: nombre, prompt: "Calcule 2 × 8.", answer: 16, hint: "8 + 8." }
+            - { id: ch05-j3-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Complète la suite : long, court, long, court, …", choices: ["court", "stop", "long", "double", "silence"], answer: "long", hint: "Ça alterne." }
+            - { id: ch05-j3-ax-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 2 × 8.", choices: ["10", "18", "16", "14", "6"], answer: "16", hint: "8 + 8." }
           maelle:
-            - { id: ch05-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "En Morse, S = ··· (trois courts) et O = ––– (trois longs). Que veut dire ··· ––– ··· ?", choices: ["SOS", "OSO", "SSO"], answer: "SOS", hint: "Court, long, court : S, O, S." }
-            - { id: ch05-j3-ma-m2b, subject: maths, level: 2, kind: court, prompt: "Sur une grille, la lampe est en colonne C, ligne 4. Écris sa case.", answer: "C4", accept: ["C 4", "c4"], hint: "La lettre de la colonne, puis le numéro de la ligne." }
+            - { id: ch05-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "En Morse, S = ··· (trois courts) et O = ––– (trois longs). Que veut dire ··· ––– ··· ?", choices: ["OSO", "OOS", "SOS", "SSO", "SOO"], answer: "SOS", hint: "Court, long, court : S, O, S." }
+            - { id: ch05-j3-ma-m2b, subject: maths, level: 2, kind: qcm, prompt: "Sur une grille, la lampe est en colonne C, ligne 4. Écris sa case.", choices: ["4C", "D4", "C5", "C4", "B4"], answer: "C4", hint: "La lettre de la colonne, puis le numéro de la ligne." }
           rafaelle:
-            - { id: ch05-j3-ra-m2a, subject: maths, level: 3, kind: qcm, prompt: "« Si x > 5, afficher OUI, sinon afficher NON. » Avec x = 7, que s'affiche-t-il ?", choices: ["OUI", "NON"], answer: "OUI", hint: "7 est-il plus grand que 5 ?" }
-            - { id: ch05-j3-ra-m2b, subject: maths, level: 3, kind: nombre, prompt: "a = 4, puis b = a × 3, puis a = b − 2. Que vaut a à la fin ?", answer: 10, hint: "b = 12, puis a = 12 − 2." }
+            - { id: ch05-j3-ra-m2a, subject: maths, level: 3, kind: qcm, prompt: "« Si x > 5, afficher OUI, sinon afficher NON. » Avec x = 7, que s'affiche-t-il ?", choices: ["NON", "ERREUR", "OUI", "RIEN", "7"], answer: "OUI", hint: "7 est-il plus grand que 5 ?" }
+            - { id: ch05-j3-ra-m2b, subject: maths, level: 3, kind: qcm, prompt: "a = 4, puis b = a × 3, puis a = b − 2. Que vaut a à la fin ?", choices: ["12", "2", "10", "14", "4"], answer: "10", hint: "b = 12, puis a = 12 − 2." }
       - id: m3
         title: Le papier sous l'aile
         intro: "Troisième message : le papier de Pigeon. Il faut le lire à voix haute, et à l'endroit !"
         tours:
           axelle:
             - { id: ch05-j3-ax-m3a, subject: francais, level: 2, kind: libre, validation: soeurs, prompt: "Lis à voix haute en marquant bien le point : « Le câble tremble. Plume attend. »", read: "Le câble tremble. Plume attend." }
-            - { id: ch05-j3-ax-m3b, subject: francais, level: 3, kind: court, prompt: "« Le pigeon porte le message. » Quel est le verbe ?", answer: "porte", hint: "Que fait le pigeon ?" }
+            - { id: ch05-j3-ax-m3b, subject: francais, level: 3, kind: qcm, prompt: "« Le pigeon porte le message. » Quel est le verbe ?", choices: ["pigeon", "message", "porté", "porte", "le message"], answer: "porte", hint: "Que fait le pigeon ?" }
           maelle:
-            - { id: ch05-j3-ma-m3a, subject: francais, level: 3, kind: qcm, prompt: "Choisis : « Plume (a / à) vu le pigeon. »", choices: ["a", "à"], answer: "a", hint: "Remplace par « avait » : « Plume avait vu », ça marche." }
-            - { id: ch05-j3-ma-m3b, subject: francais, level: 3, kind: court, prompt: "Accorde : « Les fils sont (cassé) ».", answer: "cassés", accept: ["les fils sont cassés"], hint: "Les fils : masculin pluriel." }
+            - { id: ch05-j3-ma-m3a, subject: francais, level: 3, kind: qcm, prompt: "Choisis : « Plume (a / à) vu le pigeon. »", choices: ["à", "as", "a", "ah", "a-t"], answer: "a", hint: "Remplace par « avait » : « Plume avait vu », ça marche." }
+            - { id: ch05-j3-ma-m3b, subject: francais, level: 3, kind: qcm, prompt: "Accorde : « Les fils sont (cassé) ».", choices: ["cassé", "cassée", "cassées", "cassés", "casser"], answer: "cassés", hint: "Les fils : masculin pluriel." }
           rafaelle:
             - { id: ch05-j3-ra-m3a, subject: francais, level: 3, kind: libre, validation: soeurs, prompt: "Lis avec l'intonation qui convient : « Vite ! Le câble cède ! Tenez bon ! »", read: "Vite ! Le câble cède ! Tenez bon !" }
-            - { id: ch05-j3-ra-m3b, subject: francais, level: 3, kind: court, prompt: "« Elle écrit au pigeon. » Quel est le COI ?", answer: "au pigeon", hint: "Elle écrit à qui ?" }
+            - { id: ch05-j3-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "« Elle écrit au pigeon. » Quel est le COI ?", choices: ["elle", "écrit", "le pigeon", "au pigeon", "au"], answer: "au pigeon", hint: "Elle écrit à qui ?" }
       - id: m4
         title: Le Défi du code
         tours:
           axelle:
-            - { id: ch05-j3-ax-m4a, subject: maths, level: 3, kind: nombre, prompt: "Pose et calcule : 57 + 36.", answer: 93, hint: "7 + 6 = 13 : on écrit 3 et on retient 1." }
-            - { id: ch05-j3-ax-m4b, subject: maths, level: 3, kind: nombre, prompt: "Pose et calcule : 82 − 47.", answer: 35, hint: "2 − 7, impossible : on emprunte une dizaine." }
+            - { id: ch05-j3-ax-m4a, subject: maths, level: 3, kind: qcm, prompt: "Pose et calcule : 57 + 36.", choices: ["83", "913", "93", "92", "94"], answer: "93", hint: "7 + 6 = 13 : on écrit 3 et on retient 1." }
+            - { id: ch05-j3-ax-m4b, subject: maths, level: 3, kind: qcm, prompt: "Pose et calcule : 82 − 47.", choices: ["45", "25", "35", "34", "36"], answer: "35", hint: "2 − 7, impossible : on emprunte une dizaine." }
           maelle:
-            - { id: ch05-j3-ma-m4a, subject: maths, level: 3, kind: nombre, prompt: "Calcule 1/5 de 40.", answer: 8, hint: "Partage 40 en 5." }
-            - { id: ch05-j3-ma-m4b, subject: maths, level: 4, kind: nombre, prompt: "x = 3, puis x = x + 2. Que vaut x ?", answer: 5, hint: "On ajoute 2 à l'ancienne valeur." }
+            - { id: ch05-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 1/5 de 40.", choices: ["5", "10", "8", "20", "4"], answer: "8", hint: "Partage 40 en 5." }
+            - { id: ch05-j3-ma-m4b, subject: maths, level: 4, kind: qcm, prompt: "x = 3, puis x = x + 2. Que vaut x ?", choices: ["3", "2", "5", "6", "23"], answer: "5", hint: "On ajoute 2 à l'ancienne valeur." }
           rafaelle:
-            - { id: ch05-j3-ra-m4a, subject: maths, level: 4, kind: nombre, prompt: "f(x) = 3x + 1. Calcule f(4).", answer: 13, hint: "3 × 4 + 1." }
-            - { id: ch05-j3-ra-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule 2⁴ (2 puissance 4).", answer: 16, hint: "2 × 2 × 2 × 2." }
+            - { id: ch05-j3-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "f(x) = 3x + 1. Calcule f(4).", choices: ["12", "7", "13", "16", "341"], answer: "13", hint: "3 × 4 + 1." }
+            - { id: ch05-j3-ra-m4b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 2⁴ (2 puissance 4).", choices: ["8", "6", "16", "10", "32"], answer: "16", hint: "2 × 2 × 2 × 2." }
     pause: "Le Morse en mouvement : un bras levé pour un signal court, deux bras pour un signal long. Envoyez S-O-S à vos sœurs !"
     closing:
       - { who: narrateur, text: "Quand les trois messages furent décodés, les apprenties les posèrent côte à côte sur la table. Séparément, ils ne voulaient rien dire. Mais ensemble, ils formaient une seule phrase, écrite de la main de Thessaly." }
@@ -298,51 +298,51 @@ days:
         intro: "Chaque apprentie écrit un morceau du message pour Thessaly."
         tours:
           axelle:
-            - { id: ch05-j4-ax-m1a, subject: francais, level: 3, kind: court, prompt: "Recopie sans faute, avec la majuscule et le point : « Nous arrivons bientôt. »", answer: "Nous arrivons bientôt.", hint: "N majuscule, et un point à la fin." }
-            - { id: ch05-j4-ax-m1b, subject: francais, level: 3, kind: court, prompt: "Accorde : « Les messages sont (court) ».", answer: "courts", accept: ["les messages sont courts"], hint: "Les messages : plusieurs, donc un s." }
+            - { id: ch05-j4-ax-m1a, subject: francais, level: 3, kind: qcm, prompt: "Recopie sans faute, avec la majuscule et le point : « Nous arrivons bientôt. »", choices: ["nous arrivons bientôt", "Nous arrivons bientôt", "Nous arrivons Bientôt.", "Nous arrivons bientot.", "Nous arrivons bientôt."], answer: "Nous arrivons bientôt.", hint: "N majuscule, et un point à la fin." }
+            - { id: ch05-j4-ax-m1b, subject: francais, level: 3, kind: qcm, prompt: "Accorde : « Les messages sont (court) ».", choices: ["court", "courte", "courtes", "courts", "courtement"], answer: "courts", hint: "Les messages : plusieurs, donc un s." }
           maelle:
             - { id: ch05-j4-ma-m1a, subject: francais, level: 3, kind: libre, validation: soeurs, prompt: "Écris un message court pour Thessaly qui dit QUI vous êtes, OÙ vous êtes et QUAND vous arrivez." }
-            - { id: ch05-j4-ma-m1b, subject: francais, level: 4, kind: court, prompt: "« Plume lit le message. » Quel est le COD ?", answer: "le message", hint: "Plume lit quoi ?" }
+            - { id: ch05-j4-ma-m1b, subject: francais, level: 4, kind: qcm, prompt: "« Plume lit le message. » Quel est le COD ?", choices: ["Plume", "lit", "au message", "le message", "la lettre"], answer: "le message", hint: "Plume lit quoi ?" }
           rafaelle:
             - { id: ch05-j4-ra-m1a, subject: francais, level: 3, kind: libre, validation: soeurs, prompt: "Rédige un message de secours d'une dizaine de lignes : ce qui s'est passé, où vous êtes, ce dont vous avez besoin, et ce que vous allez faire." }
-            - { id: ch05-j4-ra-m1b, subject: francais, level: 4, kind: court, prompt: "« Il envoie un message qui part au matin. » Écris la proposition relative.", answer: "qui part au matin", hint: "Elle commence par un pronom relatif." }
+            - { id: ch05-j4-ra-m1b, subject: francais, level: 4, kind: qcm, prompt: "« Il envoie un message qui part au matin. » Écris la proposition relative.", choices: ["un message", "il envoie", "part au matin", "qui part au matin", "qui envoie un message"], answer: "qui part au matin", hint: "Elle commence par un pronom relatif." }
       - id: m2
         title: Les cadrans de l'émetteur
         tours:
           axelle:
-            - { id: ch05-j4-ax-m2a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 7 × 4.", answer: 28, hint: "7 + 7 + 7 + 7." }
-            - { id: ch05-j4-ax-m2b, subject: maths, level: 4, kind: nombre, prompt: "« Répéter 4 fois : avancer 3 ». Quelle distance en tout ?", answer: 12, hint: "4 fois 3." }
+            - { id: ch05-j4-ax-m2a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 7 × 4.", choices: ["24", "32", "28", "11", "21"], answer: "28", hint: "7 + 7 + 7 + 7." }
+            - { id: ch05-j4-ax-m2b, subject: maths, level: 4, kind: qcm, prompt: "« Répéter 4 fois : avancer 3 ». Quelle distance en tout ?", choices: ["7", "9", "12", "15", "3"], answer: "12", hint: "4 fois 3." }
           maelle:
-            - { id: ch05-j4-ma-m2a, subject: maths, level: 3, kind: court, prompt: "Le message part à 13 h 50 et arrive à 14 h 35. Combien de temps a-t-il mis ?", answer: "45 min", accept: ["45", "45 minutes"], clock: "13:50", hint: "De 13 h 50 à 14 h : 10 min. Puis 35 de plus." }
-            - { id: ch05-j4-ma-m2b, subject: maths, level: 4, kind: nombre, prompt: "Calcule 132 ÷ 11.", answer: 12, hint: "11 × 12 = 132." }
+            - { id: ch05-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Le message part à 13 h 50 et arrive à 14 h 35. Combien de temps a-t-il mis ?", choices: ["35 min", "55 min", "45 min", "1 h 15 min", "50 min"], answer: "45 min", clock: "13:50", hint: "De 13 h 50 à 14 h : 10 min. Puis 35 de plus." }
+            - { id: ch05-j4-ma-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 132 ÷ 11.", choices: ["11", "13", "12", "121", "22"], answer: "12", hint: "11 × 12 = 132." }
           rafaelle:
-            - { id: ch05-j4-ra-m2a, subject: maths, level: 4, kind: nombre, prompt: "Résous : 2x + 7 = 19.", answer: 6, accept: ["x = 6"], hint: "2x = 12." }
-            - { id: ch05-j4-ra-m2b, subject: maths, level: 4, kind: nombre, prompt: "Calcule −6 × 3.", answer: -18, hint: "Un nombre négatif fois un positif donne un négatif." }
+            - { id: ch05-j4-ra-m2a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 2x + 7 = 19.", choices: ["13", "12", "6", "19", "9"], answer: "6", hint: "2x = 12." }
+            - { id: ch05-j4-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule −6 × 3.", choices: ["18", "−9", "−18", "−15", "−21"], answer: "−18", hint: "Un nombre négatif fois un positif donne un négatif." }
       - id: m3
         title: Les priorités du message
         tours:
           axelle:
-            - { id: ch05-j4-ax-m3a, subject: francais, level: 4, kind: court, prompt: "Mets au passé composé : « Il envoie. »", answer: "Il a envoyé", accept: ["a envoyé", "il a envoyé."], hint: "Il a…" }
-            - { id: ch05-j4-ax-m3b, subject: francais, level: 4, kind: court, prompt: "Un câble, des… ?", answer: "câbles", accept: ["des câbles"], hint: "On ajoute simplement un s." }
+            - { id: ch05-j4-ax-m3a, subject: francais, level: 4, kind: qcm, prompt: "Mets au passé composé : « Il envoie. »", choices: ["Il a envoyer", "Il avait envoyé", "Il envoya", "Il a envoyé", "Il a envoyée"], answer: "Il a envoyé", hint: "Il a…" }
+            - { id: ch05-j4-ax-m3b, subject: francais, level: 4, kind: qcm, prompt: "Un câble, des… ?", choices: ["câble", "cables", "câblees", "câbles", "câblage"], answer: "câbles", hint: "On ajoute simplement un s." }
           maelle:
-            - { id: ch05-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Quel tableau montre le mieux les heures d'arrivée des messages ?", choices: ["un tableau avec une colonne « message » et une colonne « heure »", "une seule ligne avec tout mélangé", "un dessin sans chiffres"], answer: "un tableau avec une colonne « message » et une colonne « heure »", hint: "Une colonne pour chaque information." }
-            - { id: ch05-j4-ma-m3b, subject: francais, level: 4, kind: court, prompt: "Conjugue au passé simple : « Ils (lire) ».", answer: "ils lurent", accept: ["lurent"], hint: "Lire au passé simple : il lut, ils…" }
+            - { id: ch05-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Quel tableau montre le mieux les heures d'arrivée des messages ?", choices: ["une seule ligne avec tout mélangé", "une liste de noms sans heures", "un tableau avec une colonne « message » et une colonne « heure »", "un dessin sans chiffres", "un tableau sans titre de colonnes"], answer: "un tableau avec une colonne « message » et une colonne « heure »", hint: "Une colonne pour chaque information." }
+            - { id: ch05-j4-ma-m3b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au passé simple : « Ils (lire) ».", choices: ["ils lisèrent", "ils lûrent", "ils ont lu", "ils lurent", "ils lisaient"], answer: "ils lurent", hint: "Lire au passé simple : il lut, ils…" }
           rafaelle:
-            - { id: ch05-j4-ra-m3a, subject: francais, level: 4, kind: qcm, prompt: "« Un câble vivant » : quelle figure de style ?", choices: ["une personnification", "une comparaison", "une répétition"], answer: "une personnification", hint: "On donne une qualité humaine à un objet." }
-            - { id: ch05-j4-ra-m3b, subject: espagnol, level: 4, kind: qcm, prompt: "« Ellos envían » : à quel temps ?", choices: ["présent", "futur", "passé"], answer: "présent", hint: "Ils envoient… maintenant." }
+            - { id: ch05-j4-ra-m3a, subject: francais, level: 4, kind: qcm, prompt: "« Un câble vivant » : quelle figure de style ?", choices: ["une comparaison", "une métaphore", "une personnification", "une répétition", "une énumération"], answer: "une personnification", hint: "On donne une qualité humaine à un objet." }
+            - { id: ch05-j4-ra-m3b, subject: espagnol, level: 4, kind: qcm, prompt: "« Ellos envían » : à quel temps ?", choices: ["futur", "impératif", "présent", "passé", "conditionnel"], answer: "présent", hint: "Ils envoient… maintenant." }
       - id: m4
         title: Le dernier interrupteur
         intro: "Les trois apprenties travaillent ensemble sur le dernier interrupteur. Pigeon tient la lampe dans son bec."
         tours:
           axelle:
-            - { id: ch05-j4-ax-m4a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 450 + 300.", answer: 750, hint: "4 centaines + 3 centaines." }
-            - { id: ch05-j4-ax-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule 18 ÷ 3.", answer: 6, hint: "3 × 6 = 18." }
+            - { id: ch05-j4-ax-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 450 + 300.", choices: ["700", "850", "750", "150", "650"], answer: "750", hint: "4 centaines + 3 centaines." }
+            - { id: ch05-j4-ax-m4b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 18 ÷ 3.", choices: ["5", "9", "6", "3", "15"], answer: "6", hint: "3 × 6 = 18." }
           maelle:
-            - { id: ch05-j4-ma-m4a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 6,4 ÷ 8.", answer: 0.8, hint: "64 ÷ 8 = 8, puis place la virgule." }
-            - { id: ch05-j4-ma-m4b, subject: sciences, level: 4, kind: qcm, prompt: "« Quand on clique, la lampe s'allume. » Quel est l'événement déclencheur ?", choices: ["le clic", "la lampe", "la lumière"], answer: "le clic", hint: "C'est ce qui se passe en premier." }
+            - { id: ch05-j4-ma-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 6,4 ÷ 8.", choices: ["8,0", "0,08", "0,8", "0,9", "1,8"], answer: "0,8", hint: "64 ÷ 8 = 8, puis place la virgule." }
+            - { id: ch05-j4-ma-m4b, subject: sciences, level: 4, kind: qcm, prompt: "« Quand on clique, la lampe s'allume. » Quel est l'événement déclencheur ?", choices: ["la lampe", "le bouton", "le clic", "la lumière", "l'écran"], answer: "le clic", hint: "C'est ce qui se passe en premier." }
           rafaelle:
-            - { id: ch05-j4-ra-m4a, subject: maths, level: 3, kind: nombre, prompt: "Combien d'axes de symétrie a un rectangle qui n'est pas un carré ?", answer: 2, hint: "Plie-le dans la longueur, puis dans la largeur." }
-            - { id: ch05-j4-ra-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule 2,4 × 0,5.", answer: 1.2, hint: "Multiplier par 0,5, c'est prendre la moitié." }
+            - { id: ch05-j4-ra-m4a, subject: maths, level: 3, kind: qcm, prompt: "Combien d'axes de symétrie a un rectangle qui n'est pas un carré ?", choices: ["1", "4", "2", "0", "3"], answer: "2", hint: "Plie-le dans la longueur, puis dans la largeur." }
+            - { id: ch05-j4-ra-m4b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 2,4 × 0,5.", choices: ["12", "2,4", "1,2", "0,9", "1,4"], answer: "1,2", hint: "Multiplier par 0,5, c'est prendre la moitié." }
     pause: "L'antenne dans le vent : debout, les bras en l'air, balancez-vous comme une antenne dans la tempête… sans tomber !"
     closing:
       - { who: narrateur, text: "Rafaelle abaissa le dernier interrupteur. L'ampoule en forme de goutte se mit à briller, d'abord timidement, puis de plus en plus fort, jusqu'à éclairer toute la falaise d'une lumière bleue. Les cadrans s'agitèrent. L'émetteur ronronnait." }
@@ -376,27 +376,27 @@ days:
         intro: "Axelle répare le circuit, Maelle déchiffre le code, Rafaelle corrige le programme. Les trois sections ne s'allument que si tout est juste."
         tours:
           axelle:
-            - { id: ch05-j5-ax-m1a, subject: sciences, level: 4, kind: qcm, prompt: "Dans le circuit, quel élément donne l'énergie à la lampe ?", choices: ["la pile", "l'interrupteur", "le fil"], answer: "la pile", hint: "Sans elle, rien ne marche." }
-            - { id: ch05-j5-ax-m1b, subject: maths, level: 3, kind: court, prompt: "Le robot doit aller à gauche, mais le code dit « droite ». Quel mot faut-il écrire à la place de « droite » ?", answer: "gauche", accept: ["à gauche"], hint: "C'est le contraire de droite." }
+            - { id: ch05-j5-ax-m1a, subject: sciences, level: 4, kind: qcm, prompt: "Dans le circuit, quel élément donne l'énergie à la lampe ?", choices: ["l'interrupteur", "l'ampoule", "la pile", "le fil", "la prise"], answer: "la pile", hint: "Sans elle, rien ne marche." }
+            - { id: ch05-j5-ax-m1b, subject: maths, level: 3, kind: qcm, prompt: "Le robot doit aller à gauche, mais le code dit « droite ». Quel mot faut-il écrire à la place de « droite » ?", choices: ["haut", "bas", "gauche", "avant", "arrière"], answer: "gauche", hint: "C'est le contraire de droite." }
           maelle:
-            - { id: ch05-j5-ma-m1a, subject: maths, level: 2, kind: qcm, prompt: "« Si la lampe est éteinte, appuie sur le bouton. » La lampe est éteinte. Que fais-tu ?", choices: ["j'appuie sur le bouton", "je ne fais rien", "je débranche tout"], answer: "j'appuie sur le bouton", hint: "La condition est vraie." }
-            - { id: ch05-j5-ma-m1b, subject: maths, level: 5, kind: nombre, prompt: "« Tant que la lampe est éteinte, appuie. » Il faut 3 appuis pour l'allumer. Combien de fois appuie-t-on ?", answer: 3, hint: "On s'arrête dès qu'elle s'allume." }
+            - { id: ch05-j5-ma-m1a, subject: maths, level: 2, kind: qcm, prompt: "« Si la lampe est éteinte, appuie sur le bouton. » La lampe est éteinte. Que fais-tu ?", choices: ["je ne fais rien", "j'attends", "j'appuie sur le bouton", "je débranche tout", "je change la pile"], answer: "j'appuie sur le bouton", hint: "La condition est vraie." }
+            - { id: ch05-j5-ma-m1b, subject: maths, level: 5, kind: qcm, prompt: "« Tant que la lampe est éteinte, appuie. » Il faut 3 appuis pour l'allumer. Combien de fois appuie-t-on ?", choices: ["2", "4", "3", "1", "6"], answer: "3", hint: "On s'arrête dès qu'elle s'allume." }
           rafaelle:
-            - { id: ch05-j5-ra-m1a, subject: maths, level: 5, kind: nombre, prompt: "Convertis 101 (écrit en binaire) en nombre décimal.", answer: 5, hint: "1 × 4 + 0 × 2 + 1 × 1." }
-            - { id: ch05-j5-ra-m1b, subject: maths, level: 5, kind: nombre, prompt: "Calcule 10⁻² (10 puissance −2).", answer: 0.01, hint: "C'est 1 ÷ 100." }
+            - { id: ch05-j5-ra-m1a, subject: maths, level: 5, kind: qcm, prompt: "Convertis 101 (écrit en binaire) en nombre décimal.", choices: ["101", "4", "5", "6", "3"], answer: "5", hint: "1 × 4 + 0 × 2 + 1 × 1." }
+            - { id: ch05-j5-ra-m1b, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10⁻² (10 puissance −2).", choices: ["100", "0,1", "0,01", "0,001", "−100"], answer: "0,01", hint: "C'est 1 ÷ 100." }
       - id: m2
         title: Le défi du Grand Câble
         intro: "Pour que le câble porte la réponse jusqu'à Thessaly, chaque apprentie relève un défi de la classe supérieure."
         tours:
           axelle:
-            - { id: ch05-j5-ax-m2a, subject: maths, level: 5, kind: nombre, prompt: "Calcule 9 × 6.", answer: 54, hint: "9 × 6 = 10 × 6 − 6." }
-            - { id: ch05-j5-ax-m2b, subject: maths, level: 5, kind: nombre, prompt: "Calcule 1 000 − 250.", answer: 750, hint: "1 000 − 200 = 800, puis − 50." }
+            - { id: ch05-j5-ax-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9 × 6.", choices: ["56", "52", "54", "15", "45"], answer: "54", hint: "9 × 6 = 10 × 6 − 6." }
+            - { id: ch05-j5-ax-m2b, subject: maths, level: 5, kind: qcm, prompt: "Calcule 1 000 − 250.", choices: ["850", "650", "750", "725", "775"], answer: "750", hint: "1 000 − 200 = 800, puis − 50." }
           maelle:
-            - { id: ch05-j5-ma-m2a, subject: maths, level: 5, kind: nombre, prompt: "Calcule 5 − 8.", answer: -3, hint: "On descend en dessous de zéro." }
-            - { id: ch05-j5-ma-m2b, subject: francais, level: 4, kind: court, prompt: "Conjugue au conditionnel présent : « Nous (envoyer) ».", answer: "nous enverrions", accept: ["enverrions"], hint: "Radical du futur (enverr-) + -ions." }
+            - { id: ch05-j5-ma-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 5 − 8.", choices: ["3", "−13", "−3", "13", "−2"], answer: "−3", hint: "On descend en dessous de zéro." }
+            - { id: ch05-j5-ma-m2b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au conditionnel présent : « Nous (envoyer) ».", choices: ["nous envoierions", "nous enverrons", "nous envoyons", "nous enverrions", "nous enverrait"], answer: "nous enverrions", hint: "Radical du futur (enverr-) + -ions." }
           rafaelle:
-            - { id: ch05-j5-ra-m2a, subject: maths, level: 5, kind: court, prompt: "Développe (x + 1)(x + 2).", answer: "x² + 3x + 2", accept: ["x^2 + 3x + 2", "x²+3x+2", "x^2+3x+2"], hint: "x × x + x × 2 + 1 × x + 1 × 2." }
-            - { id: ch05-j5-ra-m2b, subject: espagnol, level: 3, kind: court, prompt: "Traduis : « La paloma lleva una carta ».", answer: "Le pigeon porte une lettre", accept: ["la colombe porte une lettre", "le pigeon apporte une lettre"], read: "La paloma lleva una carta.", hint: "Paloma = pigeon (ou colombe)." }
+            - { id: ch05-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Développe (x + 1)(x + 2).", choices: ["x² + 2", "x² + 2x + 2", "x² + 3x + 1", "x² + 3x + 2", "2x² + 3x + 2"], answer: "x² + 3x + 2", hint: "x × x + x × 2 + 1 × x + 1 × 2." }
+            - { id: ch05-j5-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « La paloma lleva una carta ».", choices: ["Le pigeon porte une carte", "La colombe vole une lettre", "Le pigeon porte une lettre", "Le pigeon lit une lettre", "La paloma porte une lettre"], answer: "Le pigeon porte une lettre", read: "La paloma lleva una carta.", hint: "Paloma = pigeon (ou colombe)." }
       - id: m3
         title: La réponse lue à trois voix
         intro: "Le message final est lu à voix haute par les trois apprenties, chacune sa phrase."

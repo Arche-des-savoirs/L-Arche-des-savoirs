@@ -24,11 +24,18 @@ export function NumberPad({ value, onChange, onSubmit }: { value: string; onChan
   );
 }
 
-export function Choices({ choices, onPick, disabled }: { choices: string[]; onPick: (c: string) => void; disabled?: boolean }) {
+/** QCM à 5 réponses. Au 2e essai, `wrong` signale le choix déjà tenté : il reste visible, barré et désactivé. */
+export function Choices({ choices, onPick, disabled, wrong }: { choices: string[]; onPick: (c: string) => void; disabled?: boolean; wrong?: string }) {
   return (
     <div class="ui-choices">
       {choices.map((c) => (
-        <button key={c} class="ui-btn ui-choice" onClick={() => onPick(c)} disabled={disabled}>
+        <button
+          key={c}
+          class={`ui-btn ui-choice${c === wrong ? ' ui-choice-barre' : ''}`}
+          onClick={() => onPick(c)}
+          disabled={disabled || c === wrong}
+          aria-disabled={c === wrong}
+        >
           {c}
         </button>
       ))}

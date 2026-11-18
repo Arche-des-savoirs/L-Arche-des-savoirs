@@ -70,39 +70,39 @@ days:
         placement: true
         tours:
           axelle:
-            - { id: ch01-j1-ax-p1, subject: maths, level: 1, kind: nombre, prompt: "Complète : 396, 397, …, 399.", answer: 398, hint: "On avance de 1 à chaque fois." }
+            - { id: ch01-j1-ax-p1, subject: maths, level: 1, kind: qcm, prompt: "Complète : 396, 397, …, 399.", choices: ["397", "398", "399", "400", "396"], answer: "398", hint: "On avance de 1 à chaque fois." }
             - { id: ch01-j1-ax-p2, subject: maths, level: 2, kind: ordre, prompt: "Range du plus petit au plus grand.", choices: ["305", "530", "350", "503", "53"], answer: ["53", "305", "350", "503", "530"], hint: "Le nombre qui a le moins de chiffres est le plus petit." }
-            - { id: ch01-j1-ax-p3, subject: maths, level: 3, kind: nombre, prompt: "Pose et calcule : 247 + 135.", answer: 382, hint: "7 + 5 = 12 : on écrit 2 et on retient 1." }
-            - { id: ch01-j1-ax-p4, subject: maths, level: 4, kind: nombre, prompt: "4 caisses de 12 livres. Combien de livres en tout ?", answer: 48, hint: "C'est 12 + 12 + 12 + 12." }
-            - { id: ch01-j1-ax-p5, subject: maths, level: 5, kind: nombre, prompt: "Partage 36 livres en 4 piles égales. Combien par pile ?", answer: 9, hint: "Combien de fois 4 dans 36 ?" }
+            - { id: ch01-j1-ax-p3, subject: maths, level: 3, kind: qcm, prompt: "Pose et calcule : 247 + 135.", choices: ["372", "382", "383", "392", "112"], answer: "382", hint: "7 + 5 = 12 : on écrit 2 et on retient 1." }
+            - { id: ch01-j1-ax-p4, subject: maths, level: 4, kind: qcm, prompt: "4 caisses de 12 livres. Combien de livres en tout ?", choices: ["36", "44", "48", "52", "16"], answer: "48", hint: "C'est 12 + 12 + 12 + 12." }
+            - { id: ch01-j1-ax-p5, subject: maths, level: 5, kind: qcm, prompt: "Partage 36 livres en 4 piles égales. Combien par pile ?", choices: ["8", "9", "10", "12", "4"], answer: "9", hint: "Combien de fois 4 dans 36 ?" }
           maelle:
-            - { id: ch01-j1-ma-p1, subject: maths, level: 1, kind: qcm, prompt: "Quel nombre est le plus grand ?", choices: ["304 799", "340 799"], answer: "340 799", hint: "Compare les chiffres des dizaines de mille." }
-            - { id: ch01-j1-ma-p2, subject: maths, level: 2, kind: nombre, prompt: "Calcule les 3/4 de 20.", answer: 15, hint: "Un quart de 20, c'est 5." }
-            - { id: ch01-j1-ma-p3, subject: maths, level: 3, kind: court, prompt: "Un spectacle commence à 14 h 45 et dure 1 h 50. Quand finit-il ?", answer: "16 h 35", accept: ["16:35", "16h35"], clock: "14:45", hint: "Ajoute 1 h, puis 50 minutes : 15 h 45 + 50 min." }
-            - { id: ch01-j1-ma-p4, subject: maths, level: 4, kind: nombre, prompt: "Quel est le chiffre des dixièmes dans 52,87 ?", answer: 8, hint: "Le chiffre juste après la virgule." }
-            - { id: ch01-j1-ma-p5, subject: maths, level: 5, kind: qcm, prompt: "Entre quels nombres entiers se place 7/4 ?", choices: ["entre 0 et 1", "entre 1 et 2", "entre 2 et 3"], answer: "entre 1 et 2", hint: "4/4 = 1 et 8/4 = 2." }
+            - { id: ch01-j1-ma-p1, subject: maths, level: 1, kind: qcm, prompt: "Quel nombre est le plus grand ?", choices: ["304 799", "340 799", "304 798", "340 789", "299 999"], answer: "340 799", hint: "Compare les chiffres des dizaines de mille." }
+            - { id: ch01-j1-ma-p2, subject: maths, level: 2, kind: qcm, prompt: "Calcule les 3/4 de 20.", choices: ["5", "10", "15", "16", "20"], answer: "15", hint: "Un quart de 20, c'est 5." }
+            - { id: ch01-j1-ma-p3, subject: maths, level: 3, kind: qcm, prompt: "Un spectacle commence à 14 h 45 et dure 1 h 50. Quand finit-il ?", choices: ["15 h 45", "16 h 25", "16 h 35", "16 h 45", "17 h 35"], answer: "16 h 35", clock: "14:45", hint: "Ajoute 1 h, puis 50 minutes : 15 h 45 + 50 min." }
+            - { id: ch01-j1-ma-p4, subject: maths, level: 4, kind: qcm, prompt: "Quel est le chiffre des dixièmes dans 52,87 ?", choices: ["2", "5", "7", "8", "52"], answer: "8", hint: "Le chiffre juste après la virgule." }
+            - { id: ch01-j1-ma-p5, subject: maths, level: 5, kind: qcm, prompt: "Entre quels nombres entiers se place 7/4 ?", choices: ["entre 0 et 1", "entre 1 et 2", "entre 2 et 3", "entre 3 et 4", "entre 4 et 5"], answer: "entre 1 et 2", hint: "4/4 = 1 et 8/4 = 2." }
           rafaelle:
-            - { id: ch01-j1-ra-p1, subject: maths, level: 1, kind: nombre, prompt: "Arrondis 3,68 au dixième.", answer: 3.7, hint: "Regarde le chiffre des centièmes." }
-            - { id: ch01-j1-ra-p2, subject: maths, level: 2, kind: nombre, prompt: "Calcule les 2/5 de 35.", answer: 14, hint: "Un cinquième de 35, c'est 7." }
-            - { id: ch01-j1-ra-p3, subject: maths, level: 3, kind: nombre, prompt: "Calcule 12,5 × 0,1.", answer: 1.25, hint: "Multiplier par 0,1, c'est diviser par 10." }
-            - { id: ch01-j1-ra-p4, subject: maths, level: 4, kind: nombre, prompt: "Calcule (−3) + 5.", answer: 2, hint: "Pars de −3 et avance de 5 sur la droite graduée." }
-            - { id: ch01-j1-ra-p5, subject: maths, level: 5, kind: nombre, prompt: "Calcule 25 % de 80.", answer: 20, hint: "25 %, c'est le quart." }
+            - { id: ch01-j1-ra-p1, subject: maths, level: 1, kind: qcm, prompt: "Arrondis 3,68 au dixième.", choices: ["3,6", "3,7", "3,68", "4,0", "3,0"], answer: "3,7", hint: "Regarde le chiffre des centièmes." }
+            - { id: ch01-j1-ra-p2, subject: maths, level: 2, kind: qcm, prompt: "Calcule les 2/5 de 35.", choices: ["7", "14", "17", "21", "28"], answer: "14", hint: "Un cinquième de 35, c'est 7." }
+            - { id: ch01-j1-ra-p3, subject: maths, level: 3, kind: qcm, prompt: "Calcule 12,5 × 0,1.", choices: ["0,125", "1,2", "1,25", "12,5", "125"], answer: "1,25", hint: "Multiplier par 0,1, c'est diviser par 10." }
+            - { id: ch01-j1-ra-p4, subject: maths, level: 4, kind: qcm, prompt: "Calcule (−3) + 5.", choices: ["−8", "−2", "2", "3", "8"], answer: "2", hint: "Pars de −3 et avance de 5 sur la droite graduée." }
+            - { id: ch01-j1-ra-p5, subject: maths, level: 5, kind: qcm, prompt: "Calcule 25 % de 80.", choices: ["15", "20", "25", "40", "60"], answer: "20", hint: "25 %, c'est le quart." }
       - id: m2
         title: Le plan de l'Arche
         intro: "Le plan du pont est effacé. Chaque apprentie en rétablit une partie."
         tours:
           axelle:
-            - { id: ch01-j1-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Le pont est à gauche de la tour. Où est la tour par rapport au pont ?", choices: ["à gauche", "à droite", "devant"], answer: "à droite", hint: "Si le pont est à gauche de la tour, la tour est de l'autre côté." }
-            - { id: ch01-j1-ax-m2b, subject: maths, level: 2, kind: nombre, prompt: "Les trois chemins mesurent 3 m, 4 m et 5 m. Quelle est la longueur totale, en mètres ?", answer: 12, hint: "Ajoute les trois longueurs." }
+            - { id: ch01-j1-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Le pont est à gauche de la tour. Où est la tour par rapport au pont ?", choices: ["à gauche", "à droite", "devant", "derrière", "au milieu"], answer: "à droite", hint: "Si le pont est à gauche de la tour, la tour est de l'autre côté." }
+            - { id: ch01-j1-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Les trois chemins mesurent 3 m, 4 m et 5 m. Quelle est la longueur totale, en mètres ?", choices: ["9", "11", "12", "13", "15"], answer: "12", hint: "Ajoute les trois longueurs." }
             - { gen: maths.conversion }
           maelle:
-            - { id: ch01-j1-ma-m2a, subject: sciences, level: 2, kind: qcm, prompt: "Le loup-boussole regarde le soleil couchant. Vers où pointe-t-il ?", choices: ["le nord", "le sud", "l'est", "l'ouest"], answer: "l'ouest", hint: "Le soleil se lève à l'est et se couche à l'ouest." }
-            - { id: ch01-j1-ma-m2b, subject: maths, level: 3, kind: nombre, prompt: "Sur le plan, 1 cm = 10 m. Le pont mesure 4,5 cm. Quelle est sa longueur réelle, en mètres ?", answer: 45, hint: "Chaque centimètre vaut 10 mètres." }
+            - { id: ch01-j1-ma-m2a, subject: sciences, level: 2, kind: qcm, prompt: "Le loup-boussole regarde le soleil couchant. Vers où pointe-t-il ?", choices: ["le nord", "le sud", "l'est", "l'ouest", "le nord-est"], answer: "l'ouest", hint: "Le soleil se lève à l'est et se couche à l'ouest." }
+            - { id: ch01-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Sur le plan, 1 cm = 10 m. Le pont mesure 4,5 cm. Quelle est sa longueur réelle, en mètres ?", choices: ["4,5", "40", "45", "50", "450"], answer: "45", hint: "Chaque centimètre vaut 10 mètres." }
             - { gen: maths.conversion }
           rafaelle:
-            - { id: ch01-j1-ra-m2a, subject: maths, level: 2, kind: nombre, prompt: "Le pont fait les 3/4 de 80 m. Combien de mètres ?", answer: 60, hint: "Un quart de 80, c'est 20." }
-            - { id: ch01-j1-ra-m2b, subject: maths, level: 3, kind: qcm, prompt: "Comment s'appelle la droite formée des points à égale distance des deux tours ?", choices: ["la médiane", "la médiatrice", "la bissectrice"], answer: "la médiatrice", hint: "Elle coupe le segment en son milieu, à angle droit." }
-            - { id: ch01-j1-ra-m2c, subject: maths, level: 4, kind: nombre, prompt: "Calcule le périmètre d'un bassin rond de rayon 5 m (π ≈ 3,14), en mètres.", answer: 31.4, hint: "Périmètre = 2 × π × rayon." }
+            - { id: ch01-j1-ra-m2a, subject: maths, level: 2, kind: qcm, prompt: "Le pont fait les 3/4 de 80 m. Combien de mètres ?", choices: ["20", "40", "60", "70", "80"], answer: "60", hint: "Un quart de 80, c'est 20." }
+            - { id: ch01-j1-ra-m2b, subject: maths, level: 3, kind: qcm, prompt: "Comment s'appelle la droite formée des points à égale distance des deux tours ?", choices: ["la médiane", "la médiatrice", "la bissectrice", "la diagonale", "la tangente"], answer: "la médiatrice", hint: "Elle coupe le segment en son milieu, à angle droit." }
+            - { id: ch01-j1-ra-m2c, subject: maths, level: 4, kind: qcm, prompt: "Calcule le périmètre d'un bassin rond de rayon 5 m (π ≈ 3,14), en mètres.", choices: ["15,7", "25", "31,4", "62,8", "78,5"], answer: "31,4", hint: "Périmètre = 2 × π × rayon." }
       - id: m3
         title: La Salle des Signes
         intro: "Des lettres ont glissé hors des murs. Il faut leur rendre leur sens."
@@ -116,28 +116,28 @@ days:
               read: "Chères apprenties, l'Arche est en danger. Le sable gris couvre les livres. Plume a peur, car il sent quelque chose qu'il connaît. Restez ensemble et suivez les lueurs. Thessaly."
               prompt: "Lis le message de Thessaly à voix haute. Pourquoi Plume tremble-t-il ?"
               hint: "Relis la phrase qui commence par « Plume a peur »."
-            - { id: ch01-j1-ax-m3b, subject: francais, level: 3, kind: court, prompt: "Conjugue « nous chantons » à l'imparfait.", answer: "nous chantions", hint: "À l'imparfait, « nous » se termine par -ions." }
+            - { id: ch01-j1-ax-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue « nous chantons » à l'imparfait.", choices: ["nous chantons", "nous chantions", "nous chantiont", "nous chanterons", "nous chantâmes"], answer: "nous chantions", hint: "À l'imparfait, « nous » se termine par -ions." }
           maelle:
-            - { id: ch01-j1-ma-m3a, subject: francais, level: 2, kind: qcm, prompt: "« La louve garde la clé. » Quel est le complément d'objet direct ?", choices: ["la louve", "garde", "la clé"], answer: "la clé", hint: "La louve garde quoi ?" }
-            - { id: ch01-j1-ma-m3b, subject: francais, level: 3, kind: court, prompt: "Mets « nous ouvrons la porte » au passé composé.", answer: "nous avons ouvert la porte", hint: "Auxiliaire avoir + participe passé d'ouvrir." }
+            - { id: ch01-j1-ma-m3a, subject: francais, level: 2, kind: qcm, prompt: "« La louve garde la clé. » Quel est le complément d'objet direct ?", choices: ["la louve", "garde", "la clé", "le loup", "la porte"], answer: "la clé", hint: "La louve garde quoi ?" }
+            - { id: ch01-j1-ma-m3b, subject: francais, level: 3, kind: qcm, prompt: "Mets « nous ouvrons la porte » au passé composé.", choices: ["nous avons ouvert la porte", "nous avons ouvrit la porte", "nous avions ouvert la porte", "nous ouvrons la porte", "nous sommes ouvertes la porte"], answer: "nous avons ouvert la porte", hint: "Auxiliaire avoir + participe passé d'ouvrir." }
           rafaelle:
-            - { id: ch01-j1-ra-m3a, subject: francais, level: 2, kind: court, prompt: "Accorde : « Les apprenties sont (arrivé). »", answer: "arrivées", accept: ["les apprenties sont arrivees"], hint: "Avec être, le participe s'accorde avec le sujet : féminin pluriel." }
-            - { id: ch01-j1-ra-m3b, subject: francais, level: 3, kind: court, prompt: "« Bibliothèque » vient de biblio (livre) et thèque (rangement). Donne un autre mot de la même famille.", answer: "bibliothécaire", accept: ["bibliophile", "bibliographie"], hint: "Qui travaille dans une bibliothèque ?" }
-            - { id: ch01-j1-ra-m3c, subject: espagnol, level: 3, kind: court, prompt: "Traduis : « La luz abre la puerta ».", answer: "la lumière ouvre la porte", hint: "Luz a donné « lucide » et « lumière »." }
+            - { id: ch01-j1-ra-m3a, subject: francais, level: 2, kind: qcm, prompt: "Accorde : « Les apprenties sont (arrivé). »", choices: ["arrivé", "arrivée", "arrivés", "arrivées", "arrivante"], answer: "arrivées", hint: "Avec être, le participe s'accorde avec le sujet : féminin pluriel." }
+            - { id: ch01-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "« Bibliothèque » vient de biblio (livre) et thèque (rangement). Donne un autre mot de la même famille.", choices: ["bibliothèque", "bibliothécaire", "librairie", "lecture", "page"], answer: "bibliothécaire", hint: "Qui travaille dans une bibliothèque ?" }
+            - { id: ch01-j1-ra-m3c, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « La luz abre la puerta ».", choices: ["la lumière ferme la porte", "la lumière ouvre la fenêtre", "la lumière ouvre la porte", "le soleil ouvre la porte", "la luz abre la puerta"], answer: "la lumière ouvre la porte", hint: "Luz a donné « lucide » et « lumière »." }
       - id: m4
         title: Le Défi du Gardien
         intro: "Une créature de sable bloque l'escalier : le Gardien de l'Oubli du pont."
         tours:
           axelle:
-            - { id: ch01-j1-ax-m4a, subject: sciences, level: 2, kind: court, prompt: "La glace fond au soleil. Comment s'appelle ce changement ?", answer: "la fusion", hint: "Le solide devient liquide." }
-            - { id: ch01-j1-ax-m4b, subject: sciences, level: 2, kind: qcm, prompt: "Quels sont les trois états de l'eau ?", choices: ["solide, liquide, gaz", "chaud, tiède, froid", "glace, neige, pluie"], answer: "solide, liquide, gaz", hint: "Glace, eau, vapeur." }
-            - { id: ch01-j1-ax-m4c, subject: maths, level: 4, kind: nombre, prompt: "Un coffre contient 4 piles de 12 livres. On en retire 9. Combien en reste-t-il ?", answer: 39, hint: "4 × 12 = 48, puis enlève 9." }
+            - { id: ch01-j1-ax-m4a, subject: sciences, level: 2, kind: qcm, prompt: "La glace fond au soleil. Comment s'appelle ce changement ?", choices: ["la condensation", "l'évaporation", "la fusion", "la solidification", "la sublimation"], answer: "la fusion", hint: "Le solide devient liquide." }
+            - { id: ch01-j1-ax-m4b, subject: sciences, level: 2, kind: qcm, prompt: "Quels sont les trois états de l'eau ?", choices: ["solide, liquide, gaz", "chaud, tiède, froid", "glace, neige, pluie", "eau, vapeur, glace", "dur, mou, liquide"], answer: "solide, liquide, gaz", hint: "Glace, eau, vapeur." }
+            - { id: ch01-j1-ax-m4c, subject: maths, level: 4, kind: qcm, prompt: "Un coffre contient 4 piles de 12 livres. On en retire 9. Combien en reste-t-il ?", choices: ["37", "38", "39", "41", "48"], answer: "39", hint: "4 × 12 = 48, puis enlève 9." }
           maelle:
-            - { id: ch01-j1-ma-m4a, subject: sciences, level: 3, kind: qcm, prompt: "Comment séparer du sable, de l'eau et du sel ?", choices: ["filtrer, puis laisser l'eau s'évaporer", "tout faire bouillir", "secouer très fort"], answer: "filtrer, puis laisser l'eau s'évaporer", hint: "Le filtre garde le sable ; le sel reste quand l'eau s'en va." }
-            - { id: ch01-j1-ma-m4b, subject: maths, level: 3, kind: court, prompt: "L'ombre du cadran a avancé de 20 minutes. Il était 14 h 45 : quelle heure est-il ?", answer: "15 h 05", accept: ["15:05", "15h05"], clock: "14:45", hint: "14 h 45 + 15 min = 15 h. Il reste 5 minutes." }
+            - { id: ch01-j1-ma-m4a, subject: sciences, level: 3, kind: qcm, prompt: "Comment séparer du sable, de l'eau et du sel ?", choices: ["filtrer, puis laisser l'eau s'évaporer", "tout faire bouillir", "secouer très fort", "ajouter du sucre", "verser dans un autre verre"], answer: "filtrer, puis laisser l'eau s'évaporer", hint: "Le filtre garde le sable ; le sel reste quand l'eau s'en va." }
+            - { id: ch01-j1-ma-m4b, subject: maths, level: 3, kind: qcm, prompt: "L'ombre du cadran a avancé de 20 minutes. Il était 14 h 45 : quelle heure est-il ?", choices: ["14 h 55", "15 h 00", "15 h 05", "15 h 15", "15 h 25"], answer: "15 h 05", clock: "14:45", hint: "14 h 45 + 15 min = 15 h. Il reste 5 minutes." }
           rafaelle:
-            - { id: ch01-j1-ra-m4a, subject: sciences, level: 3, kind: court, prompt: "Comment séparer l'huile et l'eau ?", answer: "la décantation", accept: ["decanter", "par decantation"], hint: "On laisse reposer : l'huile remonte." }
-            - { id: ch01-j1-ra-m4b, subject: maths, level: 4, kind: nombre, prompt: "L'huile représente 25 % de 80 mL de mélange. Combien de mL d'eau y a-t-il ?", answer: 60, hint: "25 % de 80, c'est 20 mL d'huile." }
+            - { id: ch01-j1-ra-m4a, subject: sciences, level: 3, kind: qcm, prompt: "Comment séparer l'huile et l'eau ?", choices: ["la décantation", "la dissolution", "la distillation", "l'évaporation", "la filtration"], answer: "la décantation", hint: "On laisse reposer : l'huile remonte." }
+            - { id: ch01-j1-ra-m4b, subject: maths, level: 4, kind: qcm, prompt: "L'huile représente 25 % de 80 mL de mélange. Combien de mL d'eau y a-t-il ?", choices: ["20", "40", "55", "60", "65"], answer: "60", hint: "25 % de 80, c'est 20 mL d'huile." }
     pause: "Gardiennes, debout ! Comptez ensemble 10 sauts, ou faites trois pas de danse au rythme de la guitare."
     closing:
       - { who: narrateur, text: "La dernière marche s'illumine. Le Gardien du Seuil, une haute silhouette de pierre et de lierre, incline lentement la tête, puis se dissout en poussière d'étoiles." }
@@ -165,7 +165,7 @@ days:
         title: Les suites du mur
         tours:
           axelle:
-            - { id: ch01-j2-ax-m1a, subject: maths, level: 2, kind: court, prompt: "Complète : 15, 30, 45, …, … (écris les deux nombres).", answer: "60 75", accept: ["60, 75", "60 et 75"], hint: "On ajoute 15 à chaque fois." }
+            - { id: ch01-j2-ax-m1a, subject: maths, level: 2, kind: qcm, prompt: "Complète : 15, 30, 45, …, … (écris les deux nombres).", choices: ["50 65", "55 70", "60 75", "60 70", "65 80"], answer: "60 75", hint: "On ajoute 15 à chaque fois." }
             - { gen: maths.suite, count: 2 }
           maelle:
             - { gen: maths.suite }
@@ -177,27 +177,27 @@ days:
         title: Les nombres écrits
         tours:
           axelle:
-            - { id: ch01-j2-ax-m2a, subject: maths, level: 2, kind: nombre, prompt: "Quel est le double de 35 ?", answer: 70, hint: "35 + 35." }
-            - { id: ch01-j2-ax-m2b, subject: maths, level: 2, kind: nombre, prompt: "Quelle est la moitié de 90 ?", answer: 45, hint: "Partage 90 en deux parts égales." }
+            - { id: ch01-j2-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Quel est le double de 35 ?", choices: ["60", "65", "70", "75", "80"], answer: "70", hint: "35 + 35." }
+            - { id: ch01-j2-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Quelle est la moitié de 90 ?", choices: ["40", "43", "45", "47", "50"], answer: "45", hint: "Partage 90 en deux parts égales." }
             - { gen: maths.multiplication }
           maelle:
-            - { id: ch01-j2-ma-m2a, subject: francais, level: 2, kind: court, prompt: "Écris 407 205 en lettres.", answer: "quatre cent sept mille deux cent cinq", hint: "Lis d'abord les milliers : quatre cent sept mille." }
-            - { id: ch01-j2-ma-m2b, subject: maths, level: 4, kind: court, prompt: "Écris 23,5 sous forme de fraction décimale.", answer: "235/10", accept: ["235 / 10"], hint: "23,5 = 235 dixièmes." }
+            - { id: ch01-j2-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Écris 407 205 en lettres.", choices: ["quarante-sept mille deux cent cinq", "quatre cent sept mille deux cent cinq", "quatre cent sept mille deux cents", "quatre cent soixante-dix-sept mille deux cent cinq", "sept mille quatre cent cinq"], answer: "quatre cent sept mille deux cent cinq", hint: "Lis d'abord les milliers : quatre cent sept mille." }
+            - { id: ch01-j2-ma-m2b, subject: maths, level: 4, kind: qcm, prompt: "Écris 23,5 sous forme de fraction décimale.", choices: ["23/10", "235/10", "235/100", "2350/10", "23,5/10"], answer: "235/10", hint: "23,5 = 235 dixièmes." }
           rafaelle:
-            - { id: ch01-j2-ra-m2a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 12,5 + 7,75.", answer: 20.25, hint: "Aligne les virgules." }
-            - { id: ch01-j2-ra-m2b, subject: espagnol, level: 2, kind: court, prompt: "Écris 47 en espagnol.", answer: "cuarenta y siete", hint: "40 = cuarenta, 7 = siete." }
+            - { id: ch01-j2-ra-m2a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 12,5 + 7,75.", choices: ["19,25", "20,2", "20,25", "20,3", "21,25"], answer: "20,25", hint: "Aligne les virgules." }
+            - { id: ch01-j2-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Écris 47 en espagnol.", choices: ["cuarenta y cinco", "cuarenta y ocho", "cuarenta y siete", "cuatro y siete", "setenta y cuatro"], answer: "cuarenta y siete", hint: "40 = cuarenta, 7 = siete." }
       - id: m3
         title: Problèmes de signes
         tours:
           axelle:
-            - { id: ch01-j2-ax-m3a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 8 × 6.", answer: 48, hint: "8 × 5 = 40, plus 8." }
-            - { id: ch01-j2-ax-m3b, subject: maths, level: 4, kind: nombre, prompt: "Combien de dizaines y a-t-il dans 370 ?", answer: 37, hint: "Cache le zéro des unités." }
+            - { id: ch01-j2-ax-m3a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 8 × 6.", choices: ["42", "46", "48", "54", "56"], answer: "48", hint: "8 × 5 = 40, plus 8." }
+            - { id: ch01-j2-ax-m3b, subject: maths, level: 4, kind: qcm, prompt: "Combien de dizaines y a-t-il dans 370 ?", choices: ["3", "30", "37", "40", "370"], answer: "37", hint: "Cache le zéro des unités." }
           maelle:
-            - { id: ch01-j2-ma-m3a, subject: maths, level: 3, kind: court, prompt: "Les aiguilles montrent 3 h 40. Quelle heure sera-t-il 35 minutes plus tard ?", answer: "4 h 15", accept: ["4:15", "4h15", "16 h 15", "16h15"], clock: "3:40", hint: "3 h 40 + 20 min = 4 h. Il reste 15 minutes." }
-            - { id: ch01-j2-ma-m3b, subject: maths, level: 4, kind: nombre, prompt: "Quel est le chiffre des centièmes dans 8,076 ?", answer: 7, hint: "Dixièmes, puis centièmes, puis millièmes." }
+            - { id: ch01-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Les aiguilles montrent 3 h 40. Quelle heure sera-t-il 35 minutes plus tard ?", choices: ["4 h 05", "4 h 10", "4 h 15", "4 h 20", "4 h 25"], answer: "4 h 15", clock: "3:40", hint: "3 h 40 + 20 min = 4 h. Il reste 15 minutes." }
+            - { id: ch01-j2-ma-m3b, subject: maths, level: 4, kind: qcm, prompt: "Quel est le chiffre des centièmes dans 8,076 ?", choices: ["0", "6", "7", "8", "76"], answer: "7", hint: "Dixièmes, puis centièmes, puis millièmes." }
           rafaelle:
-            - { id: ch01-j2-ra-m3a, subject: maths, level: 4, kind: nombre, prompt: "Calcule (−4) + (−3).", answer: -7, hint: "Deux dettes s'additionnent." }
-            - { id: ch01-j2-ra-m3b, subject: maths, level: 5, kind: nombre, prompt: "Un nombre augmenté de 25 % donne 100. Quel est ce nombre ?", answer: 80, hint: "Le nombre + son quart = 100." }
+            - { id: ch01-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Calcule (−4) + (−3).", choices: ["−12", "−7", "−1", "1", "7"], answer: "−7", hint: "Deux dettes s'additionnent." }
+            - { id: ch01-j2-ra-m3b, subject: maths, level: 5, kind: qcm, prompt: "Un nombre augmenté de 25 % donne 100. Quel est ce nombre ?", choices: ["75", "80", "90", "100", "125"], answer: "80", hint: "Le nombre + son quart = 100." }
       - id: m4
         title: Le Défi du Gardien des Signes
         tours:
@@ -238,13 +238,13 @@ days:
         title: Le planisphère
         tours:
           axelle:
-            - { id: ch01-j3-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Quel océan se trouve à l'ouest de l'Europe ?", choices: ["l'océan Atlantique", "l'océan Pacifique", "l'océan Indien"], answer: "l'océan Atlantique", hint: "C'est l'océan qui borde la France." }
-            - { id: ch01-j3-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Un trajet dure 30 minutes. Quelle fraction d'heure est-ce ?", choices: ["le quart", "la moitié", "les trois quarts"], answer: "la moitié", hint: "Une heure, c'est 60 minutes." }
+            - { id: ch01-j3-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Quel océan se trouve à l'ouest de l'Europe ?", choices: ["l'océan Atlantique", "l'océan Pacifique", "l'océan Indien", "l'océan Arctique", "la mer Méditerranée"], answer: "l'océan Atlantique", hint: "C'est l'océan qui borde la France." }
+            - { id: ch01-j3-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Un trajet dure 30 minutes. Quelle fraction d'heure est-ce ?", choices: ["le quart", "la moitié", "les trois quarts", "le tiers", "le dixième"], answer: "la moitié", hint: "Une heure, c'est 60 minutes." }
           maelle:
-            - { id: ch01-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Lequel de ces noms est un océan ?", choices: ["l'Afrique", "l'océan Indien", "l'Amérique"], answer: "l'océan Indien", hint: "Les continents sont des terres, les océans sont de l'eau." }
+            - { id: ch01-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Lequel de ces noms est un océan ?", choices: ["l'Afrique", "l'océan Indien", "l'Amérique", "l'Antarctique", "l'Europe"], answer: "l'océan Indien", hint: "Les continents sont des terres, les océans sont de l'eau." }
             - { id: ch01-j3-ma-m1b, subject: histoire-geo, level: 3, kind: ordre, prompt: "Range du plus ancien au plus récent.", choices: ["Louis XIV", "château fort", "François Ier"], answer: ["château fort", "François Ier", "Louis XIV"], hint: "Le château fort date du Moyen Âge." }
           rafaelle:
-            - { id: ch01-j3-ra-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Lequel de ces lieux est un grand foyer de peuplement mondial ?", choices: ["l'Asie de l'Est", "le Sahara", "l'Antarctique"], answer: "l'Asie de l'Est", hint: "Pense aux pays les plus peuplés du monde." }
+            - { id: ch01-j3-ra-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Lequel de ces lieux est un grand foyer de peuplement mondial ?", choices: ["l'Asie de l'Est", "le Sahara", "l'Antarctique", "l'Europe de l'Ouest", "l'Amérique du Sud"], answer: "l'Asie de l'Est", hint: "Pense aux pays les plus peuplés du monde." }
             - id: ch01-j3-ra-m1b
               subject: histoire-geo
               level: 3
@@ -256,25 +256,25 @@ days:
         title: Durées et distances
         tours:
           axelle:
-            - { id: ch01-j3-ax-m2a, subject: maths, level: 4, kind: court, prompt: "Départ à 9 h, trajet de 1 h 30. À quelle heure arrive-t-on ?", answer: "10 h 30", accept: ["10:30", "10h30"], clock: "9:00", hint: "9 h + 1 h = 10 h. Ajoute la demi-heure." }
+            - { id: ch01-j3-ax-m2a, subject: maths, level: 4, kind: qcm, prompt: "Départ à 9 h, trajet de 1 h 30. À quelle heure arrive-t-on ?", choices: ["10 h 00", "10 h 15", "10 h 30", "10 h 45", "11 h 00"], answer: "10 h 30", clock: "9:00", hint: "9 h + 1 h = 10 h. Ajoute la demi-heure." }
             - { gen: maths.duree }
           maelle:
-            - { id: ch01-j3-ma-m2a, subject: maths, level: 4, kind: court, prompt: "Un convoi part à 8 h 20 et roule 2 h 45. À quelle heure arrive-t-il ?", answer: "11 h 05", accept: ["11:05", "11h05"], clock: "8:20", hint: "8 h 20 + 2 h = 10 h 20. Ajoute 45 minutes." }
-            - { id: ch01-j3-ma-m2b, subject: maths, level: 4, kind: nombre, prompt: "La route fait 2,5 km. Combien de mètres ?", answer: 2500, hint: "1 km = 1 000 m." }
+            - { id: ch01-j3-ma-m2a, subject: maths, level: 4, kind: qcm, prompt: "Un convoi part à 8 h 20 et roule 2 h 45. À quelle heure arrive-t-il ?", choices: ["10 h 05", "10 h 45", "11 h 00", "11 h 05", "11 h 15"], answer: "11 h 05", clock: "8:20", hint: "8 h 20 + 2 h = 10 h 20. Ajoute 45 minutes." }
+            - { id: ch01-j3-ma-m2b, subject: maths, level: 4, kind: qcm, prompt: "La route fait 2,5 km. Combien de mètres ?", choices: ["25", "250", "2 500", "25 000", "250 000"], answer: "2 500", hint: "1 km = 1 000 m." }
           rafaelle:
-            - { id: ch01-j3-ra-m2a, subject: maths, level: 4, kind: nombre, prompt: "À 12 km/h, quelle distance parcourt-on en 30 minutes, en km ?", answer: 6, hint: "30 minutes, c'est la moitié d'une heure." }
-            - { id: ch01-j3-ra-m2b, subject: maths, level: 4, kind: nombre, prompt: "3 livres coûtent 12 €. Combien coûtent 5 livres, en euros ?", answer: 20, hint: "Cherche d'abord le prix d'un livre." }
+            - { id: ch01-j3-ra-m2a, subject: maths, level: 4, kind: qcm, prompt: "À 12 km/h, quelle distance parcourt-on en 30 minutes, en km ?", choices: ["3", "4", "6", "12", "24"], answer: "6", hint: "30 minutes, c'est la moitié d'une heure." }
+            - { id: ch01-j3-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "3 livres coûtent 12 €. Combien coûtent 5 livres, en euros ?", choices: ["15", "16", "20", "24", "25"], answer: "20", hint: "Cherche d'abord le prix d'un livre." }
       - id: m3
         title: La lumière des chemins
         tours:
           axelle:
-            - { id: ch01-j3-ax-m3a, subject: sciences, level: 2, kind: qcm, prompt: "Le matin, le Soleil se lève…", choices: ["à l'est", "à l'ouest", "au nord"], answer: "à l'est", hint: "Il se couche à l'ouest." }
+            - { id: ch01-j3-ax-m3a, subject: sciences, level: 2, kind: qcm, prompt: "Le matin, le Soleil se lève…", choices: ["à l'est", "à l'ouest", "au nord", "au sud", "au zénith"], answer: "à l'est", hint: "Il se couche à l'ouest." }
             - { gen: maths.conversion }
           maelle:
-            - { id: ch01-j3-ma-m3a, subject: sciences, level: 2, kind: qcm, prompt: "À midi, l'ombre d'un bâton est…", choices: ["la plus courte de la journée", "la plus longue de la journée", "invisible"], answer: "la plus courte de la journée", hint: "À midi, le Soleil est le plus haut dans le ciel." }
+            - { id: ch01-j3-ma-m3a, subject: sciences, level: 2, kind: qcm, prompt: "À midi, l'ombre d'un bâton est…", choices: ["la plus courte de la journée", "la plus longue de la journée", "invisible", "la plus longue du matin", "toujours la même"], answer: "la plus courte de la journée", hint: "À midi, le Soleil est le plus haut dans le ciel." }
             - { gen: maths.duree }
           rafaelle:
-            - { id: ch01-j3-ra-m3a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi voit-on un objet qui n'émet pas de lumière ?", choices: ["il renvoie la lumière qu'il reçoit", "il est chaud", "nos yeux envoient de la lumière"], answer: "il renvoie la lumière qu'il reçoit", hint: "Sans lampe, dans le noir, on ne voit plus le livre." }
+            - { id: ch01-j3-ra-m3a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi voit-on un objet qui n'émet pas de lumière ?", choices: ["il renvoie la lumière qu'il reçoit", "il est chaud", "nos yeux envoient de la lumière", "il absorbe toute la lumière", "il crée sa propre lumière"], answer: "il renvoie la lumière qu'il reçoit", hint: "Sans lampe, dans le noir, on ne voit plus le livre." }
             - { gen: maths.conversion }
       - id: m4
         title: Le Défi du Gardien des Chemins
@@ -317,13 +317,13 @@ days:
         tours:
           axelle:
             - { id: ch01-j4-ax-m1a, subject: histoire-geo, level: 2, kind: ordre, prompt: "Range du plus ancien au plus récent.", choices: ["Moyen Âge", "Préhistoire", "Antiquité"], answer: ["Préhistoire", "Antiquité", "Moyen Âge"], hint: "La Préhistoire, c'est avant l'écriture." }
-            - { id: ch01-j4-ax-m1b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Le silex taillé vient…", choices: ["d'autrefois", "d'aujourd'hui"], answer: "d'autrefois", hint: "Les premiers humains taillaient la pierre." }
+            - { id: ch01-j4-ax-m1b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Le silex taillé vient…", choices: ["d'autrefois", "d'aujourd'hui", "de demain", "d'une usine", "d'un robot"], answer: "d'autrefois", hint: "Les premiers humains taillaient la pierre." }
           maelle:
-            - { id: ch01-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Au Moyen Âge, qui travaille la terre du seigneur ?", choices: ["les paysans", "les chevaliers", "les moines"], answer: "les paysans", hint: "Ils vivent au village, près du château." }
-            - { id: ch01-j4-ma-m1b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Louis XIV (1638-1715) a vécu surtout au…", choices: ["XVIe siècle", "XVIIe siècle", "XVIIIe siècle"], answer: "XVIIe siècle", hint: "Les années 1600 forment le XVIIe siècle." }
+            - { id: ch01-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Au Moyen Âge, qui travaille la terre du seigneur ?", choices: ["les paysans", "les chevaliers", "les moines", "les seigneurs", "les marchands"], answer: "les paysans", hint: "Ils vivent au village, près du château." }
+            - { id: ch01-j4-ma-m1b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Louis XIV (1638-1715) a vécu surtout au…", choices: ["XVIe siècle", "XVIIe siècle", "XVIIIe siècle", "XVe siècle", "XIXe siècle"], answer: "XVIIe siècle", hint: "Les années 1600 forment le XVIIe siècle." }
           rafaelle:
             - { id: ch01-j4-ra-m1a, subject: histoire-geo, level: 2, kind: ordre, prompt: "Range du plus ancien au plus récent.", choices: ["premières écritures", "chasseurs-cueilleurs", "premiers agriculteurs"], answer: ["chasseurs-cueilleurs", "premiers agriculteurs", "premières écritures"], hint: "L'agriculture apparaît au Néolithique, l'écriture plus tard." }
-            - { id: ch01-j4-ra-m1b, subject: maths, level: 3, kind: nombre, prompt: "Écris 8 milliards en chiffres.", answer: 8000000000, hint: "Un milliard, c'est 1 suivi de 9 zéros." }
+            - { id: ch01-j4-ra-m1b, subject: maths, level: 3, kind: qcm, prompt: "Écris 8 milliards en chiffres.", choices: ["8 000 000", "800 000 000", "8 000 000 000", "80 000 000 000", "8 000 000 000 000"], answer: "8 000 000 000", hint: "Un milliard, c'est 1 suivi de 9 zéros." }
       - id: m2
         title: Les grands nombres des siècles
         tours:
@@ -331,10 +331,10 @@ days:
             - { gen: maths.comparer }
             - { gen: maths.suite }
           maelle:
-            - { id: ch01-j4-ma-m2a, subject: maths, level: 4, kind: nombre, prompt: "Louis XIV naît en 1638 et meurt en 1715. Quel âge a-t-il à sa mort ?", answer: 77, hint: "Calcule 1715 − 1638." }
-            - { id: ch01-j4-ma-m2b, subject: maths, level: 4, kind: court, prompt: "Une horloge indique 5 h 50. Quelle heure sera-t-il 40 minutes plus tard ?", answer: "6 h 30", accept: ["6:30", "6h30"], clock: "5:50", hint: "5 h 50 + 10 min = 6 h. Il reste 30 minutes." }
+            - { id: ch01-j4-ma-m2a, subject: maths, level: 4, kind: qcm, prompt: "Louis XIV naît en 1638 et meurt en 1715. Quel âge a-t-il à sa mort ?", choices: ["67", "76", "77", "78", "87"], answer: "77", hint: "Calcule 1715 − 1638." }
+            - { id: ch01-j4-ma-m2b, subject: maths, level: 4, kind: qcm, prompt: "Une horloge indique 5 h 50. Quelle heure sera-t-il 40 minutes plus tard ?", choices: ["6 h 00", "6 h 10", "6 h 20", "6 h 30", "6 h 40"], answer: "6 h 30", clock: "5:50", hint: "5 h 50 + 10 min = 6 h. Il reste 30 minutes." }
           rafaelle:
-            - { id: ch01-j4-ra-m2a, subject: maths, level: 4, kind: nombre, prompt: "Entre −753 et +476, combien d'années s'écoulent ?", answer: 1229, hint: "753 ans jusqu'à l'an 0, puis 476 ans." }
+            - { id: ch01-j4-ra-m2a, subject: maths, level: 4, kind: qcm, prompt: "Entre −753 et +476, combien d'années s'écoulent ?", choices: ["277", "723", "1228", "1229", "1230"], answer: "1229", hint: "753 ans jusqu'à l'an 0, puis 476 ans." }
             - { gen: maths.comparer }
       - id: m3
         title: Les archives parlent
@@ -347,9 +347,9 @@ days:
               validation: soeurs
               prompt: "Au Néolithique, les humains deviennent éleveurs. Pourquoi cela change-t-il leur vie ?"
               hint: "Ils n'ont plus besoin de suivre les troupeaux : ils restent au même endroit."
-            - { id: ch01-j4-ax-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "La bougie servait à…", choices: ["s'éclairer", "téléphoner", "se chauffer les pieds"], answer: "s'éclairer", hint: "Avant l'électricité." }
+            - { id: ch01-j4-ax-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "La bougie servait à…", choices: ["s'éclairer", "téléphoner", "se chauffer les pieds", "voler", "nager"], answer: "s'éclairer", hint: "Avant l'électricité." }
           maelle:
-            - { id: ch01-j4-ma-m3a, subject: francais, level: 3, kind: court, prompt: "Mets au pluriel : « le vieux château ».", answer: "les vieux châteaux", hint: "Les noms en -eau prennent un x au pluriel." }
+            - { id: ch01-j4-ma-m3a, subject: francais, level: 3, kind: qcm, prompt: "Mets au pluriel : « le vieux château ».", choices: ["le vieux châteaux", "les vieilles châteaux", "les vieux chateaus", "les vieux châteaux", "les vieus châteaux"], answer: "les vieux châteaux", hint: "Les noms en -eau prennent un x au pluriel." }
             - { gen: maths.conversion }
           rafaelle:
             - id: ch01-j4-ra-m3a
@@ -401,24 +401,24 @@ days:
         intro: "Chaque apprentie trouve la note qui manque dans sa mesure."
         tours:
           axelle:
-            - { id: ch01-j5-ax-m1a, subject: musique, level: 3, kind: qcm, prompt: "Noire + noire + ? = 4 temps.", choices: ["une ronde", "une blanche", "une croche"], answer: "une blanche", hint: "Deux noires font 2 temps. Il en manque 2." }
+            - { id: ch01-j5-ax-m1a, subject: musique, level: 3, kind: qcm, prompt: "Noire + noire + ? = 4 temps.", choices: ["une ronde", "une blanche", "une croche", "une noire", "deux croches"], answer: "une blanche", hint: "Deux noires font 2 temps. Il en manque 2." }
           maelle:
-            - { id: ch01-j5-ma-m1a, subject: musique, level: 3, kind: qcm, prompt: "Blanche + noire + croche + ? = 4 temps.", choices: ["une noire", "une croche", "une blanche"], answer: "une croche", hint: "2 + 1 + 1/2 = 3 et demi. Il manque un demi-temps." }
+            - { id: ch01-j5-ma-m1a, subject: musique, level: 3, kind: qcm, prompt: "Blanche + noire + croche + ? = 4 temps.", choices: ["une noire", "une croche", "une blanche", "une ronde", "deux noires"], answer: "une croche", hint: "2 + 1 + 1/2 = 3 et demi. Il manque un demi-temps." }
           rafaelle:
-            - { id: ch01-j5-ra-m1a, subject: musique, level: 4, kind: court, prompt: "La mesure vaut 1. Blanche = 1/2, noire = 1/4, croche = 1/8. Il y a une blanche, une noire et une croche : quelle fraction manque ?", answer: "1/8", accept: ["une croche"], hint: "1/2 + 1/4 + 1/8 = 7/8." }
+            - { id: ch01-j5-ra-m1a, subject: musique, level: 4, kind: qcm, prompt: "La mesure vaut 1. Blanche = 1/2, noire = 1/4, croche = 1/8. Il y a une blanche, une noire et une croche : quelle fraction manque ?", choices: ["1/4", "1/2", "1/8", "3/8", "7/8"], answer: "1/8", hint: "1/2 + 1/4 + 1/8 = 7/8." }
       - id: m2
         title: Réviser pour ouvrir
         intro: "La Porte tremble : elle redemande une épreuve de chaque jour, au niveau supérieur."
         tours:
           axelle:
-            - { id: ch01-j5-ax-m2a, subject: maths, level: 4, kind: nombre, prompt: "8 × 6 ?", answer: 48 }
-            - { id: ch01-j5-ax-m2b, subject: maths, level: 4, kind: court, prompt: "9 h + 1 h 30 ?", answer: "10 h 30", accept: ["10:30", "10h30"], clock: "9:00" }
+            - { id: ch01-j5-ax-m2a, subject: maths, level: 4, kind: qcm, prompt: "8 × 6 ?", choices: ["42", "46", "48", "54", "56"], answer: "48" }
+            - { id: ch01-j5-ax-m2b, subject: maths, level: 4, kind: qcm, prompt: "9 h + 1 h 30 ?", choices: ["10 h 00", "10 h 15", "10 h 30", "10 h 45", "11 h 00"], answer: "10 h 30", clock: "9:00" }
           maelle:
-            - { id: ch01-j5-ma-m2a, subject: maths, level: 4, kind: court, prompt: "5 h 50 + 40 min ?", answer: "6 h 30", accept: ["6:30", "6h30"], clock: "5:50" }
-            - { id: ch01-j5-ma-m2b, subject: maths, level: 4, kind: nombre, prompt: "Louis XIV (1638-1715) : quel âge à son décès ?", answer: 77 }
+            - { id: ch01-j5-ma-m2a, subject: maths, level: 4, kind: qcm, prompt: "5 h 50 + 40 min ?", choices: ["6 h 00", "6 h 10", "6 h 20", "6 h 30", "6 h 40"], answer: "6 h 30", clock: "5:50" }
+            - { id: ch01-j5-ma-m2b, subject: maths, level: 4, kind: qcm, prompt: "Louis XIV (1638-1715) : quel âge à son décès ?", choices: ["67", "76", "77", "78", "87"], answer: "77" }
           rafaelle:
-            - { id: ch01-j5-ra-m2a, subject: maths, level: 4, kind: nombre, prompt: "(−4) + (−3) ?", answer: -7 }
-            - { id: ch01-j5-ra-m2b, subject: espagnol, level: 4, kind: court, prompt: "Traduis : « Tres luces, una puerta ».", answer: "trois lumières une porte", accept: ["trois lumieres, une porte"] }
+            - { id: ch01-j5-ra-m2a, subject: maths, level: 4, kind: qcm, prompt: "(−4) + (−3) ?", choices: ["−12", "−7", "−1", "1", "7"], answer: "−7" }
+            - { id: ch01-j5-ra-m2b, subject: espagnol, level: 4, kind: qcm, prompt: "Traduis : « Tres luces, una puerta ».", choices: ["deux lumières une porte", "trois lumières une fenêtre", "trois lumières une porte", "trois lumières trois portes", "une lumière trois portes"], answer: "trois lumières une porte" }
       - id: m3
         title: Le Concert
         intro: "Le métronome bat 4 temps. Chaque apprentie tape sa mesure, puis toutes ensemble. La cheffe d'orchestre donne le départ."

@@ -68,50 +68,50 @@ days:
         intro: "Pour sortir du carrefour, il faut coder ses pas dans la brume."
         tours:
           axelle:
-            - { id: ch04-j1-ax-m1a, subject: maths, level: 2, kind: nombre, prompt: "Pour aller tout droit, puis à gauche, puis tout droit : combien de tournants ?", answer: 1, hint: "Compte seulement les fois où tu changes de direction." }
-            - { id: ch04-j1-ax-m1b, subject: maths, level: 2, kind: nombre, prompt: "Tu fais 3 pas, puis 4 pas, puis 3 pas. Combien de pas en tout ?", answer: 10, hint: "3 + 4 = 7, puis encore 3." }
+            - { id: ch04-j1-ax-m1a, subject: maths, level: 2, kind: qcm, prompt: "Pour aller tout droit, puis à gauche, puis tout droit : combien de tournants ?", choices: ["1", "2", "0", "3", "4"], answer: "1", hint: "Compte seulement les fois où tu changes de direction." }
+            - { id: ch04-j1-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Tu fais 3 pas, puis 4 pas, puis 3 pas. Combien de pas en tout ?", choices: ["10", "7", "11", "9", "13"], answer: "10", hint: "3 + 4 = 7, puis encore 3." }
           maelle:
-            - { id: ch04-j1-ma-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Le Soleil se lève à l'est. Où se couche-t-il ?", choices: ["à l'ouest", "au nord", "au sud"], answer: "à l'ouest", hint: "C'est le point cardinal opposé à l'est." }
-            - { id: ch04-j1-ma-m1b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Sur une rose des vents, quel point est entre le nord et l'est ?", choices: ["le nord-est", "le sud-ouest", "le nord-ouest"], answer: "le nord-est", hint: "On colle les deux noms." }
+            - { id: ch04-j1-ma-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Le Soleil se lève à l'est. Où se couche-t-il ?", choices: ["à l'ouest", "au nord", "au sud", "au nord-est", "au sud-ouest"], answer: "à l'ouest", hint: "C'est le point cardinal opposé à l'est." }
+            - { id: ch04-j1-ma-m1b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Sur une rose des vents, quel point est entre le nord et l'est ?", choices: ["le nord-est", "le sud-ouest", "le nord-ouest", "le sud-est", "le sud"], answer: "le nord-est", hint: "On colle les deux noms." }
           rafaelle:
-            - { id: ch04-j1-ra-m1a, subject: maths, level: 1, kind: nombre, prompt: "Combien font 3 500 m en kilomètres ?", answer: 3.5, hint: "1 km = 1 000 m." }
-            - { id: ch04-j1-ra-m1b, subject: maths, level: 2, kind: nombre, prompt: "Sur une carte au 1/50 000, 4 cm représentent combien de mètres ?", answer: 2000, hint: "4 × 50 000 = 200 000 cm. Puis en mètres." }
+            - { id: ch04-j1-ra-m1a, subject: maths, level: 1, kind: qcm, prompt: "Combien font 3 500 m en kilomètres ?", choices: ["3,5", "35", "0,35", "350", "3,05"], answer: "3,5", hint: "1 km = 1 000 m." }
+            - { id: ch04-j1-ra-m1b, subject: maths, level: 2, kind: qcm, prompt: "Sur une carte au 1/50 000, 4 cm représentent combien de mètres ?", choices: ["2 000", "200", "20 000", "200 000", "20"], answer: "2 000", hint: "4 × 50 000 = 200 000 cm. Puis en mètres." }
       - id: m2
         title: Les bornes du chemin
         tours:
           axelle:
-            - { id: ch04-j1-ax-m2a, subject: maths, level: 1, kind: nombre, prompt: "Compte de 10 en 10 : 30, 40, 50, … Quel nombre vient après ?", answer: 60, hint: "Ajoute une dizaine." }
-            - { id: ch04-j1-ax-m2b, subject: maths, level: 1, kind: nombre, prompt: "Calcule 8 + 7.", answer: 15, hint: "8 + 2 = 10, puis encore 5." }
+            - { id: ch04-j1-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Compte de 10 en 10 : 30, 40, 50, … Quel nombre vient après ?", choices: ["60", "55", "65", "50", "70"], answer: "60", hint: "Ajoute une dizaine." }
+            - { id: ch04-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 7.", choices: ["15", "14", "16", "13", "17"], answer: "15", hint: "8 + 2 = 10, puis encore 5." }
           maelle:
-            - { id: ch04-j1-ma-m2a, subject: maths, level: 1, kind: nombre, prompt: "Combien de mètres dans 3 km ?", answer: 3000, hint: "1 km = 1 000 m." }
-            - { id: ch04-j1-ma-m2b, subject: maths, level: 2, kind: nombre, prompt: "Combien de mètres dans 2,5 km ?", answer: 2500, hint: "2 km = 2 000 m, et un demi-kilomètre = 500 m." }
+            - { id: ch04-j1-ma-m2a, subject: maths, level: 1, kind: qcm, prompt: "Combien de mètres dans 3 km ?", choices: ["3 000", "300", "30 000", "3 100", "30"], answer: "3 000", hint: "1 km = 1 000 m." }
+            - { id: ch04-j1-ma-m2b, subject: maths, level: 2, kind: qcm, prompt: "Combien de mètres dans 2,5 km ?", choices: ["2 500", "250", "25 000", "2 050", "2 005"], answer: "2 500", hint: "2 km = 2 000 m, et un demi-kilomètre = 500 m." }
           rafaelle:
-            - { id: ch04-j1-ra-m2a, subject: maths, level: 1, kind: nombre, prompt: "Calcule 4,2 × 5.", answer: 21, hint: "4 × 5 = 20, et 0,2 × 5 = 1." }
+            - { id: ch04-j1-ra-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 4,2 × 5.", choices: ["21", "20", "25", "42", "22"], answer: "21", hint: "4 × 5 = 20, et 0,2 × 5 = 1." }
             - { gen: maths.conversion }
       - id: m3
         title: Les panneaux muets
         intro: "Les panneaux ont perdu leurs mots. On leur en rend quelques-uns."
         tours:
           axelle:
-            - { id: ch04-j1-ax-m3a, subject: francais, level: 3, kind: court, prompt: "« Le Passeur n'a plus de rives. » Qui n'a plus de rives ?", answer: "le Passeur", accept: ["Passeur"], hint: "Cherche le personnage au début de la phrase." }
-            - { id: ch04-j1-ax-m3b, subject: francais, level: 3, kind: court, prompt: "Écris au pluriel : « la rive est loin » → « les … sont loin ».", answer: "rives", accept: ["les rives"], hint: "Au pluriel, on ajoute souvent un s." }
+            - { id: ch04-j1-ax-m3a, subject: francais, level: 3, kind: qcm, prompt: "« Le Passeur n'a plus de rives. » Qui n'a plus de rives ?", choices: ["les rives", "le Passeur", "Nilo", "la brume", "la carte"], answer: "le Passeur", hint: "Cherche le personnage au début de la phrase." }
+            - { id: ch04-j1-ax-m3b, subject: francais, level: 3, kind: qcm, prompt: "Écris au pluriel : « la rive est loin » → « les … sont loin ».", choices: ["rive", "rivères", "rivs", "rivent", "rives"], answer: "rives", hint: "Au pluriel, on ajoute souvent un s." }
           maelle:
-            - { id: ch04-j1-ma-m3a, subject: francais, level: 3, kind: qcm, prompt: "Choisis : « (Ou / Où) est la rive ? »", choices: ["Ou", "Où"], answer: "Où", hint: "On parle d'un lieu : il faut l'accent." }
-            - { id: ch04-j1-ma-m3b, subject: francais, level: 2, kind: court, prompt: "Conjugue au futur : « Nous (traverser) ».", answer: "nous traverserons", accept: ["traverserons"], hint: "Futur : l'infinitif + -ons." }
+            - { id: ch04-j1-ma-m3a, subject: francais, level: 3, kind: qcm, prompt: "Choisis : « (Ou / Où) est la rive ? »", choices: ["Ou", "Où", "Oû", "Hou", "Aou"], answer: "Où", hint: "On parle d'un lieu : il faut l'accent." }
+            - { id: ch04-j1-ma-m3b, subject: francais, level: 2, kind: qcm, prompt: "Conjugue au futur : « Nous (traverser) ».", choices: ["nous traversons", "nous traverserons", "nous traversions", "nous traverserions", "nous traversâmes"], answer: "nous traverserons", hint: "Futur : l'infinitif + -ons." }
           rafaelle:
-            - { id: ch04-j1-ra-m3a, subject: francais, level: 1, kind: qcm, prompt: "« sur la route » : quelle est la nature de « sur » ?", choices: ["préposition", "adverbe", "adjectif"], answer: "préposition", hint: "Il introduit un complément : sur, sous, dans, vers…" }
-            - { id: ch04-j1-ra-m3b, subject: espagnol, level: 2, kind: court, prompt: "Traduis : « el camino ».", answer: "le chemin", accept: ["chemin", "la route", "route"], hint: "Regarde la phrase du jour." }
+            - { id: ch04-j1-ra-m3a, subject: francais, level: 1, kind: qcm, prompt: "« sur la route » : quelle est la nature de « sur » ?", choices: ["adverbe", "nom", "préposition", "verbe", "adjectif"], answer: "préposition", hint: "Il introduit un complément : sur, sous, dans, vers…" }
+            - { id: ch04-j1-ra-m3b, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « el camino ».", choices: ["le champ", "la maison", "le chemin", "le ciel", "la pierre"], answer: "le chemin", hint: "Regarde la phrase du jour." }
       - id: m4
         title: Le Défi du carrefour
         tours:
           axelle:
-            - { id: ch04-j1-ax-m4a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 34 + 29.", answer: 63, hint: "34 + 30 = 64, puis on enlève 1." }
+            - { id: ch04-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 34 + 29.", choices: ["63", "64", "53", "62", "73"], answer: "63", hint: "34 + 30 = 64, puis on enlève 1." }
             - { gen: maths.comparer }
           maelle:
-            - { id: ch04-j1-ma-m4a, subject: maths, level: 1, kind: nombre, prompt: "Calcule 25 × 4.", answer: 100, hint: "4 fois 25 centimes, ça fait un euro." }
+            - { id: ch04-j1-ma-m4a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 25 × 4.", choices: ["100", "80", "90", "120", "29"], answer: "100", hint: "4 fois 25 centimes, ça fait un euro." }
             - { gen: maths.ranger }
           rafaelle:
-            - { id: ch04-j1-ra-m4a, subject: francais, level: 2, kind: court, prompt: "Conjugue au passé simple : « Ils (traverser) ».", answer: "ils traversèrent", accept: ["traversèrent"], hint: "Verbe en -er : -èrent à la 3e personne du pluriel." }
+            - { id: ch04-j1-ra-m4a, subject: francais, level: 2, kind: qcm, prompt: "Conjugue au passé simple : « Ils (traverser) ».", choices: ["ils traversaient", "ils traverseront", "ils traversèrent", "ils traversent", "ils traverserent"], answer: "ils traversèrent", hint: "Verbe en -er : -èrent à la 3e personne du pluriel." }
             - { gen: maths.arrondi }
     pause: "Le carrefour : tournez-vous vers le nord, puis l'est, puis le sud, puis l'ouest, en faisant un grand pas à chaque fois. Et on recommence en sens inverse !"
     closing:
@@ -145,50 +145,50 @@ days:
         intro: "Maelle est la Cartographe du Temps : elle décide quand on part. Ses sœurs l'aident."
         tours:
           axelle:
-            - { id: ch04-j2-ax-m1a, subject: maths, level: 1, kind: nombre, prompt: "Combien d'heures dans une journée entière ?", answer: 24, hint: "Deux fois 12." }
-            - { id: ch04-j2-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Il est 3 h pile. Où est la grande aiguille ?", choices: ["sur 12", "sur 3", "sur 6"], answer: "sur 12", hint: "À l'heure pile, la grande aiguille est tout en haut." }
+            - { id: ch04-j2-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Combien d'heures dans une journée entière ?", choices: ["24", "12", "48", "23", "25"], answer: "24", hint: "Deux fois 12." }
+            - { id: ch04-j2-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Il est 3 h pile. Où est la grande aiguille ?", choices: ["sur 12", "sur 3", "sur 6", "sur 9", "sur 1"], answer: "sur 12", hint: "À l'heure pile, la grande aiguille est tout en haut." }
           maelle:
-            - { id: ch04-j2-ma-m1a, subject: maths, level: 1, kind: nombre, prompt: "Combien de minutes dans 1 heure ?", answer: 60, clock: "1:00", hint: "La grande aiguille fait un tour complet : 60 petits traits." }
-            - { id: ch04-j2-ma-m1b, subject: maths, level: 2, kind: court, prompt: "La petite aiguille est entre 5 et 6, la grande est sur 2. Quelle heure est-il ?", answer: "5 h 10", accept: ["5h10", "5:10", "17 h 10", "17h10"], clock: "5:10", hint: "Grande aiguille sur 2 : 2 × 5 = 10 minutes." }
+            - { id: ch04-j2-ma-m1a, subject: maths, level: 1, kind: qcm, prompt: "Combien de minutes dans 1 heure ?", choices: ["60", "100", "12", "24", "30"], answer: "60", clock: "1:00", hint: "La grande aiguille fait un tour complet : 60 petits traits." }
+            - { id: ch04-j2-ma-m1b, subject: maths, level: 2, kind: qcm, prompt: "La petite aiguille est entre 5 et 6, la grande est sur 2. Quelle heure est-il ?", choices: ["5 h 10", "5 h 2", "6 h 10", "5 h 40", "2 h 05"], answer: "5 h 10", clock: "5:10", hint: "Grande aiguille sur 2 : 2 × 5 = 10 minutes." }
           rafaelle:
-            - { id: ch04-j2-ra-m1a, subject: maths, level: 1, kind: nombre, prompt: "Combien de minutes font 2 h 15 ?", answer: 135, hint: "2 × 60 = 120, plus 15." }
-            - { id: ch04-j2-ra-m1b, subject: maths, level: 2, kind: court, prompt: "Calcule 8 h 50 + 2 h 25.", answer: "11 h 15", accept: ["11h15", "11:15"], hint: "50 min + 25 min = 75 min = 1 h 15." }
+            - { id: ch04-j2-ra-m1a, subject: maths, level: 1, kind: qcm, prompt: "Combien de minutes font 2 h 15 ?", choices: ["135", "215", "125", "145", "120"], answer: "135", hint: "2 × 60 = 120, plus 15." }
+            - { id: ch04-j2-ra-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 h 50 + 2 h 25.", choices: ["11 h 15", "10 h 75", "11 h 05", "10 h 15", "11 h 25"], answer: "11 h 15", hint: "50 min + 25 min = 75 min = 1 h 15." }
       - id: m2
         title: Les pierres du gué
         tours:
           axelle:
-            - { id: ch04-j2-ax-m2a, subject: maths, level: 2, kind: nombre, prompt: "Combien de centimètres dans 1 mètre ?", answer: 100, hint: "Regarde ta règle : un mètre, c'est cent petits centimètres." }
-            - { id: ch04-j2-ax-m2b, subject: maths, level: 3, kind: nombre, prompt: "Combien de centimètres font 2 m 50 cm ?", answer: 250, hint: "2 m = 200 cm, plus 50." }
+            - { id: ch04-j2-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Combien de centimètres dans 1 mètre ?", choices: ["100", "10", "1 000", "50", "120"], answer: "100", hint: "Regarde ta règle : un mètre, c'est cent petits centimètres." }
+            - { id: ch04-j2-ax-m2b, subject: maths, level: 3, kind: qcm, prompt: "Combien de centimètres font 2 m 50 cm ?", choices: ["250", "200", "2 050", "25", "300"], answer: "250", hint: "2 m = 200 cm, plus 50." }
           maelle:
-            - { id: ch04-j2-ma-m2a, subject: maths, level: 2, kind: court, prompt: "De 8 h 30 à 10 h : combien de temps ?", answer: "1 h 30", accept: ["1h30", "90 min", "90 minutes"], clock: "8:30", hint: "De 8 h 30 à 9 h 30 : une heure. Puis jusqu'à 10 h." }
-            - { id: ch04-j2-ma-m2b, subject: maths, level: 2, kind: court, prompt: "De 9 h 45 à 11 h 10 : combien de temps ?", answer: "1 h 25", accept: ["1h25", "85 min", "85 minutes"], clock: "9:45", hint: "De 9 h 45 à 10 h 45 : 1 h. Puis de 10 h 45 à 11 h 10." }
+            - { id: ch04-j2-ma-m2a, subject: maths, level: 2, kind: qcm, prompt: "De 8 h 30 à 10 h : combien de temps ?", choices: ["1 h 30", "1 h", "2 h", "30 min", "1 h 10"], answer: "1 h 30", clock: "8:30", hint: "De 8 h 30 à 9 h 30 : une heure. Puis jusqu'à 10 h." }
+            - { id: ch04-j2-ma-m2b, subject: maths, level: 2, kind: qcm, prompt: "De 9 h 45 à 11 h 10 : combien de temps ?", choices: ["1 h 25", "1 h 15", "1 h 35", "2 h 25", "25 min"], answer: "1 h 25", clock: "9:45", hint: "De 9 h 45 à 10 h 45 : 1 h. Puis de 10 h 45 à 11 h 10." }
           rafaelle:
-            - { id: ch04-j2-ra-m2a, subject: maths, level: 2, kind: nombre, prompt: "Le Passeur rame 120 km en 3 h. Quelle est sa vitesse, en km/h ?", answer: 40, hint: "Combien de km en une seule heure ?" }
-            - { id: ch04-j2-ra-m2b, subject: maths, level: 2, kind: nombre, prompt: "On marche 6 km en 1 h 30. Combien de km en 3 h ?", answer: 12, hint: "3 h, c'est deux fois 1 h 30." }
+            - { id: ch04-j2-ra-m2a, subject: maths, level: 2, kind: qcm, prompt: "Le Passeur rame 120 km en 3 h. Quelle est sa vitesse, en km/h ?", choices: ["40", "30", "360", "60", "45"], answer: "40", hint: "Combien de km en une seule heure ?" }
+            - { id: ch04-j2-ra-m2b, subject: maths, level: 2, kind: qcm, prompt: "On marche 6 km en 1 h 30. Combien de km en 3 h ?", choices: ["12", "9", "18", "6", "24"], answer: "12", hint: "3 h, c'est deux fois 1 h 30." }
       - id: m3
         title: La marée des heures
         tours:
           axelle:
-            - { id: ch04-j2-ax-m3a, subject: maths, level: 3, kind: nombre, prompt: "On marche de 2 h à 5 h. Combien d'heures ?", answer: 3, hint: "Compte : 3, 4, 5." }
-            - { id: ch04-j2-ax-m3b, subject: maths, level: 3, kind: court, prompt: "3 pauses de 10 minutes : combien de temps en tout ?", answer: "30 min", accept: ["30", "30 minutes"], hint: "10 + 10 + 10." }
+            - { id: ch04-j2-ax-m3a, subject: maths, level: 3, kind: qcm, prompt: "On marche de 2 h à 5 h. Combien d'heures ?", choices: ["3", "2", "4", "5", "7"], answer: "3", hint: "Compte : 3, 4, 5." }
+            - { id: ch04-j2-ax-m3b, subject: maths, level: 3, kind: qcm, prompt: "3 pauses de 10 minutes : combien de temps en tout ?", choices: ["30 min", "10 min", "20 min", "40 min", "13 min"], answer: "30 min", hint: "10 + 10 + 10." }
           maelle:
-            - { id: ch04-j2-ma-m3a, subject: maths, level: 2, kind: nombre, prompt: "120 minutes, c'est combien d'heures ?", answer: 2, clock: "2:00", hint: "60 minutes = 1 heure." }
+            - { id: ch04-j2-ma-m3a, subject: maths, level: 2, kind: qcm, prompt: "120 minutes, c'est combien d'heures ?", choices: ["2", "1", "12", "20", "1,2"], answer: "2", clock: "2:00", hint: "60 minutes = 1 heure." }
             - { gen: maths.duree }
           rafaelle:
-            - { id: ch04-j2-ra-m3a, subject: maths, level: 3, kind: court, prompt: "On arrive à 18 h 05 après 2 h 40 de route. À quelle heure est-on parti ?", answer: "15 h 25", accept: ["15h25", "15:25"], hint: "18 h 05 − 2 h = 16 h 05. Puis enlève 40 min." }
-            - { id: ch04-j2-ra-m3b, subject: maths, level: 3, kind: nombre, prompt: "Distance = vitesse × durée. À 50 km/h pendant 3 h 30, combien de km ?", answer: 175, hint: "3 h 30 = 3,5 h." }
+            - { id: ch04-j2-ra-m3a, subject: maths, level: 3, kind: qcm, prompt: "On arrive à 18 h 05 après 2 h 40 de route. À quelle heure est-on parti ?", choices: ["15 h 25", "15 h 45", "16 h 25", "15 h 05", "14 h 25"], answer: "15 h 25", hint: "18 h 05 − 2 h = 16 h 05. Puis enlève 40 min." }
+            - { id: ch04-j2-ra-m3b, subject: maths, level: 3, kind: qcm, prompt: "Distance = vitesse × durée. À 50 km/h pendant 3 h 30, combien de km ?", choices: ["175", "150", "200", "165", "180"], answer: "175", hint: "3 h 30 = 3,5 h." }
       - id: m4
         title: Le Défi du Passeur
         tours:
           axelle:
-            - { id: ch04-j2-ax-m4a, subject: maths, level: 3, kind: nombre, prompt: "Pose et calcule : 65 + 27.", answer: 92, hint: "5 + 7 = 12 : on écrit 2 et on retient 1." }
-            - { id: ch04-j2-ax-m4b, subject: maths, level: 4, kind: nombre, prompt: "1 h 30, c'est combien de minutes ?", answer: 90, hint: "60 minutes, plus 30." }
+            - { id: ch04-j2-ax-m4a, subject: maths, level: 3, kind: qcm, prompt: "Pose et calcule : 65 + 27.", choices: ["92", "82", "93", "91", "102"], answer: "92", hint: "5 + 7 = 12 : on écrit 2 et on retient 1." }
+            - { id: ch04-j2-ax-m4b, subject: maths, level: 4, kind: qcm, prompt: "1 h 30, c'est combien de minutes ?", choices: ["90", "130", "60", "100", "80"], answer: "90", hint: "60 minutes, plus 30." }
           maelle:
-            - { id: ch04-j2-ma-m4a, subject: maths, level: 3, kind: court, prompt: "Départ à 7 h 40, on marche 2 h 35. À quelle heure arrive-t-on ?", answer: "10 h 15", accept: ["10h15", "10:15"], clock: "7:40", hint: "7 h 40 + 2 h = 9 h 40. Puis + 35 min." }
-            - { id: ch04-j2-ma-m4b, subject: maths, level: 3, kind: court, prompt: "1,5 h, c'est combien d'heures et de minutes ?", answer: "1 h 30", accept: ["1h30", "90 min", "90 minutes"], hint: "0,5 h, c'est une demi-heure." }
+            - { id: ch04-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Départ à 7 h 40, on marche 2 h 35. À quelle heure arrive-t-on ?", choices: ["10 h 15", "9 h 75", "10 h 05", "9 h 15", "10 h 25"], answer: "10 h 15", clock: "7:40", hint: "7 h 40 + 2 h = 9 h 40. Puis + 35 min." }
+            - { id: ch04-j2-ma-m4b, subject: maths, level: 3, kind: qcm, prompt: "1,5 h, c'est combien d'heures et de minutes ?", choices: ["1 h 30", "1 h 5", "1 h 50", "15 min", "2 h"], answer: "1 h 30", hint: "0,5 h, c'est une demi-heure." }
           rafaelle:
-            - { id: ch04-j2-ra-m4a, subject: maths, level: 4, kind: nombre, prompt: "Une distance de 90 km est parcourue en 3 h à la vitesse x. Résous 3x = 90.", answer: 30, accept: ["x = 30"], hint: "Divise 90 par 3." }
-            - { id: ch04-j2-ra-m4b, subject: espagnol, level: 2, kind: qcm, prompt: "« ¿Qué hora es? » veut dire…", choices: ["Quelle heure est-il ?", "Où est la rivière ?", "Comment vas-tu ?"], answer: "Quelle heure est-il ?", hint: "Regarde la phrase du jour." }
+            - { id: ch04-j2-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Une distance de 90 km est parcourue en 3 h à la vitesse x. Résous 3x = 90.", choices: ["30", "270", "33", "27", "3"], answer: "30", hint: "Divise 90 par 3." }
+            - { id: ch04-j2-ra-m4b, subject: espagnol, level: 2, kind: qcm, prompt: "« ¿Qué hora es? » veut dire…", choices: ["Quelle heure est-il ?", "Où est la rivière ?", "Comment vas-tu ?", "Quel est ton nom ?", "Comment t'appelles-tu ?"], answer: "Quelle heure est-il ?", hint: "Regarde la phrase du jour." }
     pause: "Le gué : sautez d'une pierre imaginaire à l'autre, sur un pied, en comptant les secondes. Celle qui touche l'eau… recommence en riant !"
     closing:
       - { who: narrateur, text: "Quand Maelle donna la dernière heure, les deux aiguilles de cuivre s'arrêtèrent de danser. Elles se posèrent, bien droites, sur la bonne heure. Et dans la barque, la lanterne de proue s'alluma d'une petite flamme bleue." }
@@ -222,51 +222,51 @@ days:
         title: Les sept arches
         tours:
           axelle:
-            - { id: ch04-j3-ax-m1a, subject: francais, level: 1, kind: court, prompt: "Quel jour vient après mercredi ?", answer: "jeudi", hint: "Lundi, mardi, mercredi…" }
-            - { id: ch04-j3-ax-m1b, subject: maths, level: 2, kind: nombre, prompt: "Combien de jours dans une semaine ?", answer: 7, hint: "Le pont a autant d'arches." }
+            - { id: ch04-j3-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel jour vient après mercredi ?", choices: ["mardi", "jeudi", "vendredi", "lundi", "dimanche"], answer: "jeudi", hint: "Lundi, mardi, mercredi…" }
+            - { id: ch04-j3-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Combien de jours dans une semaine ?", choices: ["7", "5", "6", "8", "10"], answer: "7", hint: "Le pont a autant d'arches." }
           maelle:
-            - { id: ch04-j3-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "À midi, quand le Soleil est le plus haut, l'ombre d'un bâton est…", choices: ["la plus courte de la journée", "la plus longue de la journée", "invisible toute la journée"], answer: "la plus courte de la journée", hint: "Le Soleil est presque au-dessus de ta tête." }
-            - { id: ch04-j3-ma-m1b, subject: sciences, level: 2, kind: qcm, prompt: "Le matin, le Soleil est du côté de l'est. De quel côté est l'ombre d'un arbre ?", choices: ["vers l'ouest", "vers l'est", "sous l'arbre"], answer: "vers l'ouest", hint: "L'ombre est toujours de l'autre côté de la lumière." }
+            - { id: ch04-j3-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "À midi, quand le Soleil est le plus haut, l'ombre d'un bâton est…", choices: ["la plus courte de la journée", "la plus longue de la journée", "invisible toute la journée", "la même toute la journée", "orientée vers le nord"], answer: "la plus courte de la journée", hint: "Le Soleil est presque au-dessus de ta tête." }
+            - { id: ch04-j3-ma-m1b, subject: sciences, level: 2, kind: qcm, prompt: "Le matin, le Soleil est du côté de l'est. De quel côté est l'ombre d'un arbre ?", choices: ["vers l'ouest", "vers l'est", "sous l'arbre", "vers le nord", "vers le sud"], answer: "vers l'ouest", hint: "L'ombre est toujours de l'autre côté de la lumière." }
           rafaelle:
-            - { id: ch04-j3-ra-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi y a-t-il des jours et des nuits ?", choices: ["parce que la Terre tourne sur elle-même", "parce que le Soleil s'éteint la nuit", "parce que la Lune cache le Soleil"], answer: "parce que la Terre tourne sur elle-même", hint: "Elle fait un tour en 24 heures." }
-            - { id: ch04-j3-ra-m1b, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi y a-t-il des saisons ?", choices: ["l'axe de la Terre est incliné", "la Terre s'éloigne du Soleil en hiver", "le Soleil brille moins fort en hiver"], answer: "l'axe de la Terre est incliné", hint: "Les rayons arrivent plus ou moins penchés selon la saison." }
+            - { id: ch04-j3-ra-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi y a-t-il des jours et des nuits ?", choices: ["parce que la Terre tourne sur elle-même", "parce que le Soleil s'éteint la nuit", "parce que la Lune cache le Soleil", "parce que les nuages bloquent la lumière", "parce que la Terre s'arrête la nuit"], answer: "parce que la Terre tourne sur elle-même", hint: "Elle fait un tour en 24 heures." }
+            - { id: ch04-j3-ra-m1b, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi y a-t-il des saisons ?", choices: ["l'axe de la Terre est incliné", "la Terre s'éloigne du Soleil en hiver", "le Soleil brille moins fort en hiver", "la Lune cache une partie du Soleil", "les nuages changent de couleur"], answer: "l'axe de la Terre est incliné", hint: "Les rayons arrivent plus ou moins penchés selon la saison." }
       - id: m2
         title: Le calendrier du pont
         tours:
           axelle:
-            - { id: ch04-j3-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Quel mois vient après janvier ?", choices: ["février", "mars", "décembre"], answer: "février", hint: "C'est le mois le plus court." }
-            - { id: ch04-j3-ax-m2b, subject: maths, level: 3, kind: nombre, prompt: "Combien de mois dans une année ?", answer: 12, hint: "De janvier à décembre." }
+            - { id: ch04-j3-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Quel mois vient après janvier ?", choices: ["février", "mars", "décembre", "avril", "janvier"], answer: "février", hint: "C'est le mois le plus court." }
+            - { id: ch04-j3-ax-m2b, subject: maths, level: 3, kind: qcm, prompt: "Combien de mois dans une année ?", choices: ["12", "10", "13", "4", "52"], answer: "12", hint: "De janvier à décembre." }
           maelle:
-            - { id: ch04-j3-ma-m2a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 38 × 5.", answer: 190, hint: "38 × 10 = 380, puis la moitié." }
+            - { id: ch04-j3-ma-m2a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 38 × 5.", choices: ["190", "180", "185", "195", "200"], answer: "190", hint: "38 × 10 = 380, puis la moitié." }
             - { gen: maths.multiplication }
           rafaelle:
-            - { id: ch04-j3-ra-m2a, subject: maths, level: 2, kind: nombre, prompt: "Arrondis 4 862 à la centaine.", answer: 4900, hint: "Regarde le chiffre des dizaines : 6." }
-            - { id: ch04-j3-ra-m2b, subject: maths, level: 3, kind: qcm, prompt: "Ordre de grandeur de 398 × 21 ?", choices: ["8 000", "800", "80 000"], answer: "8 000", hint: "400 × 20." }
+            - { id: ch04-j3-ra-m2a, subject: maths, level: 2, kind: qcm, prompt: "Arrondis 4 862 à la centaine.", choices: ["4 900", "4 800", "4 860", "4 000", "5 000"], answer: "4 900", hint: "Regarde le chiffre des dizaines : 6." }
+            - { id: ch04-j3-ra-m2b, subject: maths, level: 3, kind: qcm, prompt: "Ordre de grandeur de 398 × 21 ?", choices: ["8 000", "800", "80 000", "4 000", "16 000"], answer: "8 000", hint: "400 × 20." }
       - id: m3
         title: L'inscription de pierre
         intro: "Sur la quatrième arche, une inscription en espagnol attend Rafaelle."
         tours:
           axelle:
-            - { id: ch04-j3-ax-m3a, subject: maths, level: 3, kind: qcm, prompt: "Il est 4 h et demie. Que montre la grande aiguille ?", choices: ["le 6", "le 12", "le 4"], answer: "le 6", hint: "Une demi-heure : la grande aiguille est tout en bas." }
-            - { id: ch04-j3-ax-m3b, subject: maths, level: 3, kind: nombre, prompt: "Calcule 90 − 45.", answer: 45, hint: "La moitié de 90." }
+            - { id: ch04-j3-ax-m3a, subject: maths, level: 3, kind: qcm, prompt: "Il est 4 h et demie. Que montre la grande aiguille ?", choices: ["le 6", "le 12", "le 4", "le 3", "le 9"], answer: "le 6", hint: "Une demi-heure : la grande aiguille est tout en bas." }
+            - { id: ch04-j3-ax-m3b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 90 − 45.", choices: ["45", "35", "55", "40", "50"], answer: "45", hint: "La moitié de 90." }
           maelle:
-            - { id: ch04-j3-ma-m3a, subject: maths, level: 2, kind: qcm, prompt: "Il est 16 h 45. Que montre la grande aiguille ?", choices: ["le 9", "le 4", "le 3"], answer: "le 9", clock: "16:45", hint: "45 minutes : 9 × 5." }
-            - { id: ch04-j3-ma-m3b, subject: francais, level: 3, kind: court, prompt: "« Le Passeur cherche sa rive. » Quel est le verbe ?", answer: "cherche", hint: "C'est l'action." }
+            - { id: ch04-j3-ma-m3a, subject: maths, level: 2, kind: qcm, prompt: "Il est 16 h 45. Que montre la grande aiguille ?", choices: ["le 9", "le 4", "le 3", "le 12", "le 6"], answer: "le 9", clock: "16:45", hint: "45 minutes : 9 × 5." }
+            - { id: ch04-j3-ma-m3b, subject: francais, level: 3, kind: qcm, prompt: "« Le Passeur cherche sa rive. » Quel est le verbe ?", choices: ["Passeur", "cherche", "rive", "sa", "le"], answer: "cherche", hint: "C'est l'action." }
           rafaelle:
-            - { id: ch04-j3-ra-m3a, subject: espagnol, level: 3, kind: qcm, prompt: "« El puente es de piedra » veut dire…", choices: ["Le pont est en pierre.", "Le pont est en bois.", "La pierre est sous le pont."], answer: "Le pont est en pierre.", read: "El puente es de piedra.", hint: "Piedra ressemble à « pierre »." }
-            - { id: ch04-j3-ra-m3b, subject: espagnol, level: 3, kind: court, prompt: "Traduis : « Vamos por el camino largo ».", answer: "Nous prenons le long chemin", accept: ["nous prenons le chemin long", "on prend le long chemin", "nous allons par le long chemin", "nous passons par le long chemin"], hint: "Vamos = nous allons. Largo = long." }
+            - { id: ch04-j3-ra-m3a, subject: espagnol, level: 3, kind: qcm, prompt: "« El puente es de piedra » veut dire…", choices: ["Le pont est en pierre.", "Le pont est en bois.", "La pierre est sous le pont.", "Le pont est long.", "La rivière est en pierre."], answer: "Le pont est en pierre.", read: "El puente es de piedra.", hint: "Piedra ressemble à « pierre »." }
+            - { id: ch04-j3-ra-m3b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Vamos por el camino largo ».", choices: ["Nous allons par le chemin court", "Nous prenons le long chemin", "Nous prenons le chemin large", "Ils prennent le long chemin", "Nous prenons la longue rivière"], answer: "Nous prenons le long chemin", hint: "Vamos = nous allons. Largo = long." }
       - id: m4
         title: Le Défi du pont
         tours:
           axelle:
-            - { id: ch04-j3-ax-m4a, subject: maths, level: 3, kind: nombre, prompt: "Calcule 56 − 23.", answer: 33, hint: "Enlève 2 dizaines, puis 3 unités." }
-            - { id: ch04-j3-ax-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule 4 × 6.", answer: 24, hint: "6 + 6 + 6 + 6." }
+            - { id: ch04-j3-ax-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 56 − 23.", choices: ["33", "23", "43", "32", "34"], answer: "33", hint: "Enlève 2 dizaines, puis 3 unités." }
+            - { id: ch04-j3-ax-m4b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 4 × 6.", choices: ["24", "10", "20", "28", "18"], answer: "24", hint: "6 + 6 + 6 + 6." }
           maelle:
-            - { id: ch04-j3-ma-m4a, subject: maths, level: 3, kind: nombre, prompt: "Calcule 252 ÷ 6.", answer: 42, hint: "240 ÷ 6 = 40. Reste 12." }
-            - { id: ch04-j3-ma-m4b, subject: francais, level: 4, kind: court, prompt: "Conjugue à l'imparfait : « Ils (avancer) ».", answer: "ils avançaient", accept: ["avançaient"], hint: "Attention à la cédille devant le a." }
+            - { id: ch04-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 252 ÷ 6.", choices: ["42", "40", "43", "45", "36"], answer: "42", hint: "240 ÷ 6 = 40. Reste 12." }
+            - { id: ch04-j3-ma-m4b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue à l'imparfait : « Ils (avancer) ».", choices: ["ils avancaient", "ils avançaient", "ils avancèrent", "ils avanceront", "ils avancent"], answer: "ils avançaient", hint: "Attention à la cédille devant le a." }
           rafaelle:
-            - { id: ch04-j3-ra-m4a, subject: maths, level: 3, kind: nombre, prompt: "Calcule 15 % de 200.", answer: 30, hint: "10 % = 20, 5 % = 10." }
-            - { id: ch04-j3-ra-m4b, subject: maths, level: 3, kind: nombre, prompt: "Calcule les 2/3 d'un trajet de 18 km, en km.", answer: 12, hint: "Un tiers de 18, c'est 6." }
+            - { id: ch04-j3-ra-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 15 % de 200.", choices: ["30", "15", "20", "25", "40"], answer: "30", hint: "10 % = 20, 5 % = 10." }
+            - { id: ch04-j3-ra-m4b, subject: maths, level: 3, kind: qcm, prompt: "Calcule les 2/3 d'un trajet de 18 km, en km.", choices: ["12", "6", "9", "15", "36"], answer: "12", hint: "Un tiers de 18, c'est 6." }
     pause: "Le pont des sept jours : dites les jours de la semaine en faisant un grand pas pour chacun. Au dimanche, sautez le plus haut possible !"
     closing:
       - { who: narrateur, text: "Une à une, les sept arches s'allumèrent, d'une lueur douce comme l'aube. Le grondement de pierre se tut. Le Pont des Sept Jours avait reconnu ses voyageuses, et il les laissa passer, dalle après dalle, au-dessus du torrent qui rugissait toujours." }
@@ -301,52 +301,52 @@ days:
         title: Les nombres des feux
         tours:
           axelle:
-            - { id: ch04-j4-ax-m1a, subject: maths, level: 3, kind: nombre, prompt: "Écris en chiffres : quatre cent soixante-dix.", answer: 470, hint: "4 centaines, 7 dizaines, 0 unité." }
+            - { id: ch04-j4-ax-m1a, subject: maths, level: 3, kind: qcm, prompt: "Écris en chiffres : quatre cent soixante-dix.", choices: ["470", "47", "4 070", "417", "407"], answer: "470", hint: "4 centaines, 7 dizaines, 0 unité." }
             - { gen: maths.suite }
           maelle:
-            - { id: ch04-j4-ma-m1a, subject: maths, level: 3, kind: nombre, prompt: "Sur la carte, 1 cm représente 5 km. Combien de km pour 6 cm ?", answer: 30, hint: "6 fois 5 km." }
-            - { id: ch04-j4-ma-m1b, subject: maths, level: 3, kind: nombre, prompt: "On marche 4 km en 1 h. Combien de km en 3 h ?", answer: 12, hint: "3 fois 4 km." }
+            - { id: ch04-j4-ma-m1a, subject: maths, level: 3, kind: qcm, prompt: "Sur la carte, 1 cm représente 5 km. Combien de km pour 6 cm ?", choices: ["30", "11", "25", "35", "6"], answer: "30", hint: "6 fois 5 km." }
+            - { id: ch04-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "On marche 4 km en 1 h. Combien de km en 3 h ?", choices: ["12", "7", "16", "9", "20"], answer: "12", hint: "3 fois 4 km." }
           rafaelle:
-            - { id: ch04-j4-ra-m1a, subject: maths, level: 3, kind: nombre, prompt: "3 pas font 2 m. Combien de mètres pour 12 pas ?", answer: 8, hint: "12 pas, c'est 4 fois 3 pas." }
-            - { id: ch04-j4-ra-m1b, subject: maths, level: 3, kind: qcm, prompt: "Un virage de 135° : quel type d'angle ?", choices: ["obtus", "aigu", "droit"], answer: "obtus", hint: "Plus grand qu'un angle droit (90°)." }
+            - { id: ch04-j4-ra-m1a, subject: maths, level: 3, kind: qcm, prompt: "3 pas font 2 m. Combien de mètres pour 12 pas ?", choices: ["8", "6", "24", "18", "4"], answer: "8", hint: "12 pas, c'est 4 fois 3 pas." }
+            - { id: ch04-j4-ra-m1b, subject: maths, level: 3, kind: qcm, prompt: "Un virage de 135° : quel type d'angle ?", choices: ["obtus", "aigu", "droit", "plat", "nul"], answer: "obtus", hint: "Plus grand qu'un angle droit (90°)." }
       - id: m2
         title: Les continents et les océans
         tours:
           axelle:
-            - { id: ch04-j4-ax-m2a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Sur une carte, la mer et les océans sont coloriés en…", choices: ["bleu", "vert", "marron"], answer: "bleu", hint: "La couleur de l'eau." }
-            - { id: ch04-j4-ax-m2b, subject: maths, level: 3, kind: nombre, prompt: "Calcule 300 + 200 + 50.", answer: 550, hint: "300 + 200 = 500." }
+            - { id: ch04-j4-ax-m2a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Sur une carte, la mer et les océans sont coloriés en…", choices: ["bleu", "vert", "marron", "jaune", "rouge"], answer: "bleu", hint: "La couleur de l'eau." }
+            - { id: ch04-j4-ax-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 300 + 200 + 50.", choices: ["550", "500", "600", "450", "650"], answer: "550", hint: "300 + 200 = 500." }
           maelle:
-            - { id: ch04-j4-ma-m2a, subject: histoire-geo, level: 2, kind: nombre, prompt: "Combien y a-t-il de continents ? (Europe, Asie, Afrique, Amérique, Océanie, Antarctique)", answer: 6, hint: "Compte-les dans la parenthèse." }
-            - { id: ch04-j4-ma-m2b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Quel est le plus grand océan du monde ?", choices: ["l'océan Pacifique", "l'océan Atlantique", "l'océan Indien"], answer: "l'océan Pacifique", hint: "Son nom veut dire « paisible »." }
+            - { id: ch04-j4-ma-m2a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Combien y a-t-il de continents ? (Europe, Asie, Afrique, Amérique, Océanie, Antarctique)", choices: ["6", "5", "7", "4", "8"], answer: "6", hint: "Compte-les dans la parenthèse." }
+            - { id: ch04-j4-ma-m2b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Quel est le plus grand océan du monde ?", choices: ["l'océan Pacifique", "l'océan Atlantique", "l'océan Indien", "l'océan Arctique", "la mer Méditerranée"], answer: "l'océan Pacifique", hint: "Son nom veut dire « paisible »." }
           rafaelle:
-            - { id: ch04-j4-ra-m2a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Où vit la plus grande partie des habitants de la Terre ?", choices: ["en Asie", "en Océanie", "en Antarctique"], answer: "en Asie", hint: "La Chine et l'Inde s'y trouvent." }
-            - { id: ch04-j4-ra-m2b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi les hommes vivent-ils peu dans les grands déserts ?", choices: ["il y a très peu d'eau", "il y fait toujours nuit", "il est interdit d'y aller"], answer: "il y a très peu d'eau", hint: "De quoi a-t-on besoin pour vivre et cultiver ?" }
+            - { id: ch04-j4-ra-m2a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Où vit la plus grande partie des habitants de la Terre ?", choices: ["en Asie", "en Océanie", "en Antarctique", "en Europe", "en Amérique"], answer: "en Asie", hint: "La Chine et l'Inde s'y trouvent." }
+            - { id: ch04-j4-ra-m2b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi les hommes vivent-ils peu dans les grands déserts ?", choices: ["il y a très peu d'eau", "il y fait toujours nuit", "il est interdit d'y aller", "il y fait trop froid", "personne n'a de carte"], answer: "il y a très peu d'eau", hint: "De quoi a-t-on besoin pour vivre et cultiver ?" }
       - id: m3
         title: Le message des feux
         intro: "Chaque apprentie écrit un petit bout du message que les feux vont porter."
         tours:
           axelle:
             - { id: ch04-j4-ax-m3a, subject: francais, level: 3, kind: libre, validation: soeurs, prompt: "Écris une phrase pour Thessaly, avec une majuscule et un point. Puis lis-la à voix haute." }
-            - { id: ch04-j4-ax-m3b, subject: francais, level: 4, kind: court, prompt: "Mets au futur : « Il marche. »", answer: "Il marchera", accept: ["il marchera.", "marchera"], hint: "Demain, il…" }
+            - { id: ch04-j4-ax-m3b, subject: francais, level: 4, kind: qcm, prompt: "Mets au futur : « Il marche. »", choices: ["Il marche", "Il marchera", "Il marchait", "Il a marché", "Il marcherait"], answer: "Il marchera", hint: "Demain, il…" }
           maelle:
-            - { id: ch04-j4-ma-m3a, subject: francais, level: 4, kind: court, prompt: "Accorde : « Les rives sont (perdu) ».", answer: "perdues", accept: ["les rives sont perdues"], hint: "Avec être, on accorde avec le sujet : les rives, féminin pluriel." }
-            - { id: ch04-j4-ma-m3b, subject: maths, level: 4, kind: qcm, prompt: "Deux routes parallèles se croisent-elles ?", choices: ["non, jamais", "oui, une fois", "oui, deux fois"], answer: "non, jamais", hint: "Comme les deux rails d'un train." }
+            - { id: ch04-j4-ma-m3a, subject: francais, level: 4, kind: qcm, prompt: "Accorde : « Les rives sont (perdu) ».", choices: ["perdu", "perdues", "perdus", "perdue", "perdes"], answer: "perdues", hint: "Avec être, on accorde avec le sujet : les rives, féminin pluriel." }
+            - { id: ch04-j4-ma-m3b, subject: maths, level: 4, kind: qcm, prompt: "Deux routes parallèles se croisent-elles ?", choices: ["non, jamais", "oui, une fois", "oui, deux fois", "oui, à l'infini", "seulement en hiver"], answer: "non, jamais", hint: "Comme les deux rails d'un train." }
           rafaelle:
             - { id: ch04-j4-ra-m3a, subject: francais, level: 3, kind: libre, validation: soeurs, prompt: "Rédige un petit itinéraire en trois étapes pour aller du carrefour jusqu'à la colline, avec des mots de liaison (d'abord, puis, enfin)." }
-            - { id: ch04-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Une route de brouillard » : quelle figure de style ?", choices: ["une métaphore", "une comparaison", "une énumération"], answer: "une métaphore", hint: "Il n'y a pas de mot « comme »." }
+            - { id: ch04-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Une route de brouillard » : quelle figure de style ?", choices: ["une métaphore", "une comparaison", "une énumération", "une personnification", "une répétition"], answer: "une métaphore", hint: "Il n'y a pas de mot « comme »." }
       - id: m4
         title: Le dernier feu
         intro: "Les trois apprenties travaillent ensemble pour rallumer le dernier feu."
         tours:
           axelle:
-            - { id: ch04-j4-ax-m4a, subject: maths, level: 4, kind: nombre, prompt: "Combien de mètres dans 1 km ?", answer: 1000, hint: "Kilo veut dire mille." }
-            - { id: ch04-j4-ax-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule 20 ÷ 4.", answer: 5, hint: "Partage 20 en 4 parts égales." }
+            - { id: ch04-j4-ax-m4a, subject: maths, level: 4, kind: qcm, prompt: "Combien de mètres dans 1 km ?", choices: ["1 000", "100", "10 000", "500", "1 100"], answer: "1 000", hint: "Kilo veut dire mille." }
+            - { id: ch04-j4-ax-m4b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 20 ÷ 4.", choices: ["5", "4", "6", "16", "80"], answer: "5", hint: "Partage 20 en 4 parts égales." }
           maelle:
-            - { id: ch04-j4-ma-m4a, subject: maths, level: 4, kind: court, prompt: "Calcule 2 h 50 + 1 h 40.", answer: "4 h 30", accept: ["4h30", "4:30"], clock: "2:50", hint: "50 min + 40 min = 90 min = 1 h 30." }
-            - { id: ch04-j4-ma-m4b, subject: maths, level: 4, kind: nombre, prompt: "90 km en 2 h : quelle vitesse, en km/h ?", answer: 45, hint: "Combien en une seule heure ?" }
+            - { id: ch04-j4-ma-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 2 h 50 + 1 h 40.", choices: ["4 h 30", "3 h 90", "3 h 30", "4 h 90", "3 h 50"], answer: "4 h 30", clock: "2:50", hint: "50 min + 40 min = 90 min = 1 h 30." }
+            - { id: ch04-j4-ma-m4b, subject: maths, level: 4, kind: qcm, prompt: "90 km en 2 h : quelle vitesse, en km/h ?", choices: ["45", "180", "40", "50", "22"], answer: "45", hint: "Combien en une seule heure ?" }
           rafaelle:
-            - { id: ch04-j4-ra-m4a, subject: maths, level: 4, kind: nombre, prompt: "72 km/h, c'est combien de mètres par seconde ?", answer: 20, hint: "72 000 m en 3 600 s." }
-            - { id: ch04-j4-ra-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule −8 + 5.", answer: -3, hint: "Tu pars de −8 et tu montes de 5." }
+            - { id: ch04-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "72 km/h, c'est combien de mètres par seconde ?", choices: ["20", "72", "7,2", "200", "2"], answer: "20", hint: "72 000 m en 3 600 s." }
+            - { id: ch04-j4-ra-m4b, subject: maths, level: 4, kind: qcm, prompt: "Calcule −8 + 5.", choices: ["−3", "3", "−13", "13", "−2"], answer: "−3", hint: "Tu pars de −8 et tu montes de 5." }
     pause: "Les feux de la colline : levez les bras quand le feu s'allume, baissez-les quand il s'éteint. Une sœur donne le rythme, de plus en plus vite !"
     closing:
       - { who: narrateur, text: "Le dernier feu s'embrasa d'un coup, si haut que les flammes semblèrent lécher les étoiles. Alors les douze tours se mirent à parler. Allumé, éteint, allumé, allumé… Le message partit de colline en colline, au-dessus de la mer des Jours, et très loin, de l'autre côté, un petit feu répondit." }
@@ -380,27 +380,27 @@ days:
         intro: "Axelle fixe les pauses, Maelle calcule les heures d'arrivée, Rafaelle trouve la vitesse pour arriver avant la nuit."
         tours:
           axelle:
-            - { id: ch04-j5-ax-m1a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 120 + 80.", answer: 200, hint: "12 dizaines + 8 dizaines." }
-            - { id: ch04-j5-ax-m1b, subject: maths, level: 5, kind: court, prompt: "De 9 h 20 à 10 h 05 : combien de temps ?", answer: "45 min", accept: ["45", "45 minutes"], hint: "De 9 h 20 à 10 h : 40 min. Puis 5 de plus." }
+            - { id: ch04-j5-ax-m1a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 120 + 80.", choices: ["200", "190", "210", "180", "220"], answer: "200", hint: "12 dizaines + 8 dizaines." }
+            - { id: ch04-j5-ax-m1b, subject: maths, level: 5, kind: qcm, prompt: "De 9 h 20 à 10 h 05 : combien de temps ?", choices: ["45 min", "35 min", "55 min", "40 min", "15 min"], answer: "45 min", hint: "De 9 h 20 à 10 h : 40 min. Puis 5 de plus." }
           maelle:
-            - { id: ch04-j5-ma-m1a, subject: maths, level: 3, kind: court, prompt: "On arrive à 15 h 10 après 1 h 45 de marche. À quelle heure est-on parti ?", answer: "13 h 25", accept: ["13h25", "13:25"], clock: "15:10", hint: "15 h 10 − 1 h = 14 h 10. Puis enlève 45 min." }
-            - { id: ch04-j5-ma-m1b, subject: maths, level: 3, kind: court, prompt: "3 pauses de 20 minutes : combien de temps en tout ?", answer: "1 h", accept: ["1h", "60 min", "60 minutes", "une heure"], hint: "3 × 20 = 60 minutes." }
+            - { id: ch04-j5-ma-m1a, subject: maths, level: 3, kind: qcm, prompt: "On arrive à 15 h 10 après 1 h 45 de marche. À quelle heure est-on parti ?", choices: ["13 h 25", "13 h 45", "14 h 25", "13 h 05", "12 h 25"], answer: "13 h 25", clock: "15:10", hint: "15 h 10 − 1 h = 14 h 10. Puis enlève 45 min." }
+            - { id: ch04-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "3 pauses de 20 minutes : combien de temps en tout ?", choices: ["1 h", "40 min", "20 min", "1 h 20", "2 h"], answer: "1 h", hint: "3 × 20 = 60 minutes." }
           rafaelle:
-            - { id: ch04-j5-ra-m1a, subject: maths, level: 3, kind: nombre, prompt: "La barque doit faire 30 km avant la nuit, dans 2 h. À quelle vitesse, en km/h ?", answer: 15, hint: "30 km en 2 h : combien en une heure ?" }
-            - { id: ch04-j5-ra-m1b, subject: maths, level: 4, kind: nombre, prompt: "Trouve la médiane de 3, 7 et 9.", answer: 7, hint: "La valeur du milieu, une fois rangées." }
+            - { id: ch04-j5-ra-m1a, subject: maths, level: 3, kind: qcm, prompt: "La barque doit faire 30 km avant la nuit, dans 2 h. À quelle vitesse, en km/h ?", choices: ["15", "60", "10", "20", "7"], answer: "15", hint: "30 km en 2 h : combien en une heure ?" }
+            - { id: ch04-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Trouve la médiane de 3, 7 et 9.", choices: ["7", "3", "9", "6", "19"], answer: "7", hint: "La valeur du milieu, une fois rangées." }
       - id: m2
         title: Le défi de la mer des Jours
         intro: "Pour que la Guitare joue juste, chaque apprentie relève un défi de la classe supérieure."
         tours:
           axelle:
-            - { id: ch04-j5-ax-m2a, subject: maths, level: 5, kind: nombre, prompt: "Calcule 8 × 9.", answer: 72, hint: "8 × 10 = 80, moins 8." }
-            - { id: ch04-j5-ax-m2b, subject: maths, level: 5, kind: nombre, prompt: "On marche 5 km en 1 h. Combien de km en 4 h ?", answer: 20, hint: "4 fois 5 km." }
+            - { id: ch04-j5-ax-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 8 × 9.", choices: ["72", "63", "81", "64", "56"], answer: "72", hint: "8 × 10 = 80, moins 8." }
+            - { id: ch04-j5-ax-m2b, subject: maths, level: 5, kind: qcm, prompt: "On marche 5 km en 1 h. Combien de km en 4 h ?", choices: ["20", "9", "25", "16", "15"], answer: "20", hint: "4 fois 5 km." }
           maelle:
-            - { id: ch04-j5-ma-m2a, subject: maths, level: 5, kind: nombre, prompt: "Distance = vitesse × temps. À 60 km/h pendant 2,5 h, combien de km ?", answer: 150, hint: "60 × 2 = 120, plus la moitié de 60." }
-            - { id: ch04-j5-ma-m2b, subject: maths, level: 5, kind: nombre, prompt: "3 h 20 min, c'est combien de minutes ?", answer: 200, hint: "3 × 60 = 180, plus 20." }
+            - { id: ch04-j5-ma-m2a, subject: maths, level: 5, kind: qcm, prompt: "Distance = vitesse × temps. À 60 km/h pendant 2,5 h, combien de km ?", choices: ["150", "120", "180", "125", "140"], answer: "150", hint: "60 × 2 = 120, plus la moitié de 60." }
+            - { id: ch04-j5-ma-m2b, subject: maths, level: 5, kind: qcm, prompt: "3 h 20 min, c'est combien de minutes ?", choices: ["200", "320", "180", "220", "160"], answer: "200", hint: "3 × 60 = 180, plus 20." }
           rafaelle:
-            - { id: ch04-j5-ra-m2a, subject: maths, level: 5, kind: nombre, prompt: "Résous : 4x − 5 = 15.", answer: 5, accept: ["x = 5"], hint: "4x = 20." }
-            - { id: ch04-j5-ra-m2b, subject: maths, level: 5, kind: nombre, prompt: "Calcule 3² + 4².", answer: 25, hint: "9 + 16." }
+            - { id: ch04-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Résous : 4x − 5 = 15.", choices: ["5", "20", "10", "2,5", "4"], answer: "5", hint: "4x = 20." }
+            - { id: ch04-j5-ra-m2b, subject: maths, level: 5, kind: qcm, prompt: "Calcule 3² + 4².", choices: ["25", "19", "12", "49", "14"], answer: "25", hint: "9 + 16." }
       - id: m3
         title: Le chant de la route
         intro: "Les trois apprenties chantent la marche. La Guitare accompagne chaque pas."

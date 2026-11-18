@@ -66,49 +66,49 @@ days:
         intro: "Pour ouvrir la Porte d'Ombre, il faut prouver qu'une ombre est un effet de la lumière."
         tours:
           axelle:
-            - { id: ch06-j1-ax-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pour faire une ombre, il faut de la lumière et…", choices: ["un objet", "de l'eau", "du vent"], answer: "un objet", hint: "Quelque chose doit arrêter la lumière." }
-            - { id: ch06-j1-ax-m1b, subject: sciences, level: 1, kind: qcm, prompt: "La nuit, quand il fait tout noir, voit-on son ombre ?", choices: ["non", "oui"], answer: "non", hint: "Pas de lumière, pas d'ombre." }
+            - { id: ch06-j1-ax-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pour faire une ombre, il faut de la lumière et…", choices: ["de l'eau", "un objet", "du bruit", "du vent", "de la chaleur"], answer: "un objet", hint: "Quelque chose doit arrêter la lumière." }
+            - { id: ch06-j1-ax-m1b, subject: sciences, level: 1, kind: qcm, prompt: "La nuit, quand il fait tout noir, voit-on son ombre ?", choices: ["oui, un peu", "seulement avec la lune", "oui", "ça dépend", "non"], answer: "non", hint: "Pas de lumière, pas d'ombre." }
           maelle:
-            - { id: ch06-j1-ma-m1a, subject: sciences, level: 1, kind: court, prompt: "Complète : la lumière se propage en ligne…", answer: "droite", accept: ["ligne droite"], hint: "Comme un rayon laser." }
-            - { id: ch06-j1-ma-m1b, subject: sciences, level: 2, kind: qcm, prompt: "Si l'objet s'approche de la lampe, son ombre devient…", choices: ["plus grande", "plus petite", "pareille"], answer: "plus grande", hint: "Mets ta main tout près d'une lampe de poche." }
+            - { id: ch06-j1-ma-m1a, subject: sciences, level: 1, kind: qcm, prompt: "Complète : la lumière se propage en ligne…", choices: ["courbe", "droite", "ronde", "en zigzag", "en spirale"], answer: "droite", hint: "Comme un rayon laser." }
+            - { id: ch06-j1-ma-m1b, subject: sciences, level: 2, kind: qcm, prompt: "Si l'objet s'approche de la lampe, son ombre devient…", choices: ["plus petite", "elle disparaît", "plus grande", "pareille", "elle change de couleur"], answer: "plus grande", hint: "Mets ta main tout près d'une lampe de poche." }
           rafaelle:
-            - { id: ch06-j1-ra-m1a, subject: sciences, level: 1, kind: qcm, prompt: "Ordre de grandeur de la vitesse de la lumière dans le vide ?", choices: ["300 000 km/s", "300 km/h", "3 000 m/s"], answer: "300 000 km/s", hint: "C'est la vitesse la plus grande qui existe." }
-            - { id: ch06-j1-ra-m1b, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi l'ombre d'un objet a-t-elle la même forme que lui ?", choices: ["la lumière se propage en ligne droite", "l'ombre copie l'objet par magie", "l'objet colorie le sol"], answer: "la lumière se propage en ligne droite", hint: "Les rayons rasent les bords de l'objet." }
+            - { id: ch06-j1-ra-m1a, subject: sciences, level: 1, kind: qcm, prompt: "Ordre de grandeur de la vitesse de la lumière dans le vide ?", choices: ["300 km/h", "3 000 km/s", "300 000 km/s", "3 000 m/s", "30 000 km/s"], answer: "300 000 km/s", hint: "C'est la vitesse la plus grande qui existe." }
+            - { id: ch06-j1-ra-m1b, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi l'ombre d'un objet a-t-elle la même forme que lui ?", choices: ["l'ombre copie l'objet par magie", "la lumière se propage en ligne droite", "l'objet colorie le sol", "l'ombre est une réflexion du sol", "le soleil dessine les contours"], answer: "la lumière se propage en ligne droite", hint: "Les rayons rasent les bords de l'objet." }
       - id: m2
         title: Le jour et la nuit
         tours:
           axelle:
-            - { id: ch06-j1-ax-m2a, subject: sciences, level: 2, kind: qcm, prompt: "Qu'est-ce qui vient après la nuit ?", choices: ["le jour", "la nuit", "le soir"], answer: "le jour", hint: "Le matin, le soleil se lève." }
-            - { id: ch06-j1-ax-m2b, subject: francais, level: 2, kind: court, prompt: "« L'ombre de Plume est grande. » De qui parle-t-on ?", answer: "de Plume", accept: ["Plume"], hint: "L'ombre de qui ?" }
+            - { id: ch06-j1-ax-m2a, subject: sciences, level: 2, kind: qcm, prompt: "Qu'est-ce qui vient après la nuit ?", choices: ["la nuit", "le matin", "le jour", "le soir", "l'après-midi"], answer: "le jour", hint: "Le matin, le soleil se lève." }
+            - { id: ch06-j1-ax-m2b, subject: francais, level: 2, kind: qcm, prompt: "« L'ombre de Plume est grande. » De qui parle-t-on ?", choices: ["de Nilo", "d'Axelle", "de Plume", "de la Reine", "de Mouf"], answer: "de Plume", hint: "L'ombre de qui ?" }
           maelle:
-            - { id: ch06-j1-ma-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quelle est la nature du mot « sombre » ?", choices: ["adjectif", "nom", "verbe"], answer: "adjectif", hint: "Il décrit quelque chose : une nuit sombre." }
-            - { id: ch06-j1-ma-m2b, subject: francais, level: 2, kind: court, prompt: "Conjugue au présent : « Elles (danser) ».", answer: "elles dansent", accept: ["dansent"], hint: "Ils, elles : -ent." }
+            - { id: ch06-j1-ma-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quelle est la nature du mot « sombre » ?", choices: ["nom", "adverbe", "adjectif", "verbe", "pronom"], answer: "adjectif", hint: "Il décrit quelque chose : une nuit sombre." }
+            - { id: ch06-j1-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Conjugue au présent : « Elles (danser) ».", choices: ["elles dansaient", "elles danse", "elles dansent", "elles dansons", "elle dansent"], answer: "elles dansent", hint: "Ils, elles : -ent." }
           rafaelle:
-            - { id: ch06-j1-ra-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quelle est la nature du mot « ombre » ?", choices: ["nom", "verbe", "adverbe"], answer: "nom", hint: "On peut dire « une ombre »." }
+            - { id: ch06-j1-ra-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quelle est la nature du mot « ombre » ?", choices: ["verbe", "adjectif", "nom", "adverbe", "pronom"], answer: "nom", hint: "On peut dire « une ombre »." }
             - { id: ch06-j1-ra-m2b, subject: francais, level: 3, kind: libre, validation: soeurs, prompt: "Explique en deux ou trois phrases pourquoi on a une ombre au soleil, comme si tu l'expliquais à la Porte." }
       - id: m3
         title: Les formes sur la roche
         tours:
           axelle:
-            - { id: ch06-j1-ax-m3a, subject: maths, level: 1, kind: nombre, prompt: "Combien de côtés a un triangle ?", answer: 3, hint: "Tri veut dire trois." }
-            - { id: ch06-j1-ax-m3b, subject: maths, level: 1, kind: nombre, prompt: "Combien de côtés a un carré ?", answer: 4, hint: "Compte-les en faisant le tour." }
+            - { id: ch06-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Combien de côtés a un triangle ?", choices: ["2", "4", "3", "5", "6"], answer: "3", hint: "Tri veut dire trois." }
+            - { id: ch06-j1-ax-m3b, subject: maths, level: 1, kind: qcm, prompt: "Combien de côtés a un carré ?", choices: ["3", "5", "4", "6", "8"], answer: "4", hint: "Compte-les en faisant le tour." }
           maelle:
-            - { id: ch06-j1-ma-m3a, subject: maths, level: 1, kind: nombre, prompt: "Un losange a combien de côtés égaux ?", answer: 4, hint: "Tous ses côtés ont la même longueur." }
-            - { id: ch06-j1-ma-m3b, subject: maths, level: 1, kind: nombre, prompt: "Calcule 6 × 9.", answer: 54, hint: "6 × 10 − 6." }
+            - { id: ch06-j1-ma-m3a, subject: maths, level: 1, kind: qcm, prompt: "Un losange a combien de côtés égaux ?", choices: ["2", "3", "4", "0", "8"], answer: "4", hint: "Tous ses côtés ont la même longueur." }
+            - { id: ch06-j1-ma-m3b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 6 × 9.", choices: ["45", "63", "54", "56", "48"], answer: "54", hint: "6 × 10 − 6." }
           rafaelle:
-            - { id: ch06-j1-ra-m3a, subject: maths, level: 1, kind: nombre, prompt: "Combien d'axes de symétrie a un triangle équilatéral ?", answer: 3, hint: "Un pour chaque sommet." }
-            - { id: ch06-j1-ra-m3b, subject: maths, level: 1, kind: nombre, prompt: "Calcule 6,4 × 5.", answer: 32, hint: "6 × 5 = 30 et 0,4 × 5 = 2." }
+            - { id: ch06-j1-ra-m3a, subject: maths, level: 1, kind: qcm, prompt: "Combien d'axes de symétrie a un triangle équilatéral ?", choices: ["1", "2", "3", "4", "6"], answer: "3", hint: "Un pour chaque sommet." }
+            - { id: ch06-j1-ra-m3b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 6,4 × 5.", choices: ["30", "320", "32", "34", "3,2"], answer: "32", hint: "6 × 5 = 30 et 0,4 × 5 = 2." }
       - id: m4
         title: Le Défi de la Porte
         tours:
           axelle:
-            - { id: ch06-j1-ax-m4a, subject: maths, level: 1, kind: nombre, prompt: "Calcule 9 + 9.", answer: 18, hint: "Le double de 9." }
+            - { id: ch06-j1-ax-m4a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 9.", choices: ["16", "17", "18", "19", "27"], answer: "18", hint: "Le double de 9." }
             - { gen: maths.addition }
           maelle:
-            - { id: ch06-j1-ma-m4a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 64 × 5.", answer: 320, hint: "64 × 10 = 640, puis la moitié." }
+            - { id: ch06-j1-ma-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 64 × 5.", choices: ["300", "310", "320", "325", "640"], answer: "320", hint: "64 × 10 = 640, puis la moitié." }
             - { gen: maths.comparer }
           rafaelle:
-            - { id: ch06-j1-ra-m4a, subject: espagnol, level: 2, kind: court, prompt: "Traduis : « la sombra ».", answer: "l'ombre", accept: ["ombre", "une ombre"], hint: "Regarde la phrase du jour." }
+            - { id: ch06-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « la sombra ».", choices: ["la lumière", "le soleil", "l'ombre", "la clarté", "la nuit"], answer: "l'ombre", hint: "Regarde la phrase du jour." }
             - { gen: maths.fraction-de }
     pause: "Le jeu des ombres : une sœur fait un geste lentement, les deux autres sont ses ombres et l'imitent exactement. On change de rôle à chaque fois !"
     closing:
@@ -140,51 +140,51 @@ days:
         title: L'ombre qui tourne
         tours:
           axelle:
-            - { id: ch06-j2-ax-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Le matin, on se lève et on prend le petit déjeuner. Le soir…", choices: ["on dîne et on va se coucher", "on prend le petit déjeuner", "on va à l'école"], answer: "on dîne et on va se coucher", hint: "Pense à ta journée." }
-            - { id: ch06-j2-ax-m1b, subject: maths, level: 2, kind: court, prompt: "La petite aiguille est sur 3, la grande sur 12. Quelle heure est-il ?", answer: "3 h", accept: ["3h", "3 heures", "15 h", "15h", "3:00"], hint: "Grande aiguille sur 12 : l'heure pile." }
+            - { id: ch06-j2-ax-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Le matin, on se lève et on prend le petit déjeuner. Le soir…", choices: ["on prend le petit déjeuner", "on fait la sieste", "on dîne et on va se coucher", "on va à l'école", "on joue toute la nuit"], answer: "on dîne et on va se coucher", hint: "Pense à ta journée." }
+            - { id: ch06-j2-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "La petite aiguille est sur 3, la grande sur 12. Quelle heure est-il ?", choices: ["12 h", "9 h", "3 h", "4 h", "3 h 12"], answer: "3 h", hint: "Grande aiguille sur 12 : l'heure pile." }
           maelle:
-            - { id: ch06-j2-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Au cours de la journée, la longueur de l'ombre d'un bâton…", choices: ["change", "ne change jamais", "disparaît le matin"], answer: "change", hint: "Le Soleil monte puis redescend." }
-            - { id: ch06-j2-ma-m1b, subject: sciences, level: 3, kind: qcm, prompt: "À quel moment l'ombre est-elle la plus longue ?", choices: ["le matin tôt ou le soir", "à midi", "elle est toujours pareille"], answer: "le matin tôt ou le soir", hint: "Quand le Soleil est bas sur l'horizon." }
+            - { id: ch06-j2-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Au cours de la journée, la longueur de l'ombre d'un bâton…", choices: ["ne change jamais", "double toujours à midi", "change", "disparaît le matin", "n'existe que le soir"], answer: "change", hint: "Le Soleil monte puis redescend." }
+            - { id: ch06-j2-ma-m1b, subject: sciences, level: 3, kind: qcm, prompt: "À quel moment l'ombre est-elle la plus longue ?", choices: ["à midi", "la nuit", "le matin tôt ou le soir", "elle est toujours pareille", "au lever du soleil seulement"], answer: "le matin tôt ou le soir", hint: "Quand le Soleil est bas sur l'horizon." }
           rafaelle:
-            - { id: ch06-j2-ra-m1a, subject: sciences, level: 2, kind: qcm, prompt: "En combien de temps la Terre fait-elle un tour sur elle-même ?", choices: ["environ 24 heures", "un an", "un mois"], answer: "environ 24 heures", hint: "Un jour et une nuit." }
-            - { id: ch06-j2-ra-m1b, subject: sciences, level: 3, kind: qcm, prompt: "En combien de temps la Terre fait-elle le tour du Soleil ?", choices: ["environ 365 jours", "24 heures", "7 jours"], answer: "environ 365 jours", hint: "C'est la durée d'une année." }
+            - { id: ch06-j2-ra-m1a, subject: sciences, level: 2, kind: qcm, prompt: "En combien de temps la Terre fait-elle un tour sur elle-même ?", choices: ["un an", "environ 12 heures", "environ 24 heures", "un mois", "une semaine"], answer: "environ 24 heures", hint: "Un jour et une nuit." }
+            - { id: ch06-j2-ra-m1b, subject: sciences, level: 3, kind: qcm, prompt: "En combien de temps la Terre fait-elle le tour du Soleil ?", choices: ["24 heures", "environ 30 jours", "environ 365 jours", "7 jours", "environ 100 jours"], answer: "environ 365 jours", hint: "C'est la durée d'une année." }
       - id: m2
         title: Les heures du cadran
         tours:
           axelle:
-            - { id: ch06-j2-ax-m2a, subject: maths, level: 3, kind: court, prompt: "La petite aiguille est entre 7 et 8, la grande est sur 6. Quelle heure est-il ?", answer: "7 h 30", accept: ["7h30", "7 heures et demie", "7:30", "19 h 30", "19h30"], hint: "Grande aiguille sur 6 : et demie." }
-            - { id: ch06-j2-ax-m2b, subject: maths, level: 3, kind: nombre, prompt: "Quelle est la moitié de 18 ?", answer: 9, hint: "9 + 9 = 18." }
+            - { id: ch06-j2-ax-m2a, subject: maths, level: 3, kind: qcm, prompt: "La petite aiguille est entre 7 et 8, la grande est sur 6. Quelle heure est-il ?", choices: ["7 h", "7 h 45", "7 h 30", "8 h", "6 h 30"], answer: "7 h 30", hint: "Grande aiguille sur 6 : et demie." }
+            - { id: ch06-j2-ax-m2b, subject: maths, level: 3, kind: qcm, prompt: "Quelle est la moitié de 18 ?", choices: ["8", "36", "9", "10", "6"], answer: "9", hint: "9 + 9 = 18." }
           maelle:
-            - { id: ch06-j2-ma-m2a, subject: maths, level: 3, kind: court, prompt: "Une ombre reste de 10 h 40 à 12 h 05. Combien de temps ?", answer: "1 h 25", accept: ["1h25", "85 min", "85 minutes"], clock: "10:40", hint: "De 10 h 40 à 11 h 40 : 1 h. Puis jusqu'à 12 h 05." }
+            - { id: ch06-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Une ombre reste de 10 h 40 à 12 h 05. Combien de temps ?", choices: ["1 h 15", "1 h 35", "1 h 25", "1 h 05", "2 h 25"], answer: "1 h 25", clock: "10:40", hint: "De 10 h 40 à 11 h 40 : 1 h. Puis jusqu'à 12 h 05." }
             - { gen: maths.duree }
           rafaelle:
-            - { id: ch06-j2-ra-m2a, subject: maths, level: 2, kind: nombre, prompt: "Combien de secondes dans une heure ?", answer: 3600, hint: "60 minutes de 60 secondes." }
-            - { id: ch06-j2-ra-m2b, subject: maths, level: 3, kind: court, prompt: "Le cadran a pris 2 h 45 de retard, puis encore 1 h 30. Quel est le retard total ?", answer: "4 h 15", accept: ["4h15", "255 min"], hint: "45 min + 30 min = 75 min." }
+            - { id: ch06-j2-ra-m2a, subject: maths, level: 2, kind: qcm, prompt: "Combien de secondes dans une heure ?", choices: ["360", "600", "3 600", "6 000", "36 000"], answer: "3 600", hint: "60 minutes de 60 secondes." }
+            - { id: ch06-j2-ra-m2b, subject: maths, level: 3, kind: qcm, prompt: "Le cadran a pris 2 h 45 de retard, puis encore 1 h 30. Quel est le retard total ?", choices: ["3 h 15", "3 h 45", "4 h 15", "4 h 05", "4 h 30"], answer: "4 h 15", hint: "45 min + 30 min = 75 min." }
       - id: m3
         title: Le mot caché dans les ombres
         intro: "Le message de Thessaly est caché dans les ombres de la place. Il faut le reconstituer."
         tours:
           axelle:
-            - { id: ch06-j2-ax-m3a, subject: francais, level: 3, kind: court, prompt: "Quel est le verbe de la phrase « L'ombre danse. » ?", answer: "danse", hint: "Que fait l'ombre ?" }
+            - { id: ch06-j2-ax-m3a, subject: francais, level: 3, kind: qcm, prompt: "Quel est le verbe de la phrase « L'ombre danse. » ?", choices: ["ombre", "dansent", "danse", "L'ombre", "dansait"], answer: "danse", hint: "Que fait l'ombre ?" }
             - { id: ch06-j2-ax-m3b, subject: francais, level: 2, kind: ordre, prompt: "Remets les mots dans l'ordre pour lire le message.", choices: ["courage", "lueurs", "mes"], answer: ["courage", "mes", "lueurs"], hint: "Un encouragement, puis à qui il s'adresse." }
           maelle:
-            - { id: ch06-j2-ma-m3a, subject: francais, level: 3, kind: qcm, prompt: "Choisis : « (Ce / Se) soir, l'ombre (se / ce) lève. »", choices: ["Ce… se", "Se… ce", "Ce… ce"], answer: "Ce… se", hint: "« Ce soir » : on montre. « se lève » : le verbe se lever." }
-            - { id: ch06-j2-ma-m3b, subject: francais, level: 3, kind: court, prompt: "Accorde : « Les ombres (créé) ».", answer: "créées", accept: ["les ombres créées"], hint: "Ombres : féminin pluriel. Attention, trois e !" }
+            - { id: ch06-j2-ma-m3a, subject: francais, level: 3, kind: qcm, prompt: "Choisis : « (Ce / Se) soir, l'ombre (se / ce) lève. »", choices: ["Se… ce", "Se… se", "Ce… se", "Ce… ce", "Çe… se"], answer: "Ce… se", hint: "« Ce soir » : on montre. « se lève » : le verbe se lever." }
+            - { id: ch06-j2-ma-m3b, subject: francais, level: 3, kind: qcm, prompt: "Accorde : « Les ombres (créé) ».", choices: ["créé", "créés", "créées", "créée", "créer"], answer: "créées", hint: "Ombres : féminin pluriel. Attention, trois e !" }
           rafaelle:
-            - { id: ch06-j2-ra-m3a, subject: espagnol, level: 3, kind: court, prompt: "Le mot caché est en espagnol : « La sombra sigue a la luz ». Traduis-le.", answer: "L'ombre suit la lumière", accept: ["l'ombre suit la lumiere"], read: "La sombra sigue a la luz.", hint: "Luz = lumière. Sigue = suit." }
-            - { id: ch06-j2-ra-m3b, subject: francais, level: 3, kind: court, prompt: "« L'ombre bouge quand la lumière change. » Écris la proposition subordonnée.", answer: "quand la lumière change", hint: "Elle commence par un mot subordonnant." }
+            - { id: ch06-j2-ra-m3a, subject: espagnol, level: 3, kind: qcm, prompt: "Le mot caché est en espagnol : « La sombra sigue a la luz ». Traduis-le.", choices: ["La lumière suit l'ombre", "L'ombre aime la lumière", "L'ombre suit la lumière", "Le soleil suit l'ombre", "La lumière crée l'ombre"], answer: "L'ombre suit la lumière", read: "La sombra sigue a la luz.", hint: "Luz = lumière. Sigue = suit." }
+            - { id: ch06-j2-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "« L'ombre bouge quand la lumière change. » Écris la proposition subordonnée.", choices: ["L'ombre bouge", "la lumière change", "quand la lumière change", "quand l'ombre bouge", "la lumière"], answer: "quand la lumière change", hint: "Elle commence par un mot subordonnant." }
       - id: m4
         title: Le Défi du cadran
         tours:
           axelle:
-            - { id: ch06-j2-ax-m4a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 27 + 35.", answer: 62, hint: "27 + 30 = 57, puis + 5." }
-            - { id: ch06-j2-ax-m4b, subject: maths, level: 2, kind: nombre, prompt: "Calcule 70 − 28.", answer: 42, hint: "70 − 30 = 40, puis on rajoute 2." }
+            - { id: ch06-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 27 + 35.", choices: ["52", "61", "62", "63", "72"], answer: "62", hint: "27 + 30 = 57, puis + 5." }
+            - { id: ch06-j2-ax-m4b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 70 − 28.", choices: ["48", "52", "42", "32", "41"], answer: "42", hint: "70 − 30 = 40, puis on rajoute 2." }
           maelle:
-            - { id: ch06-j2-ma-m4a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 135 ÷ 5.", answer: 27, hint: "100 ÷ 5 = 20 et 35 ÷ 5 = 7." }
-            - { id: ch06-j2-ma-m4b, subject: francais, level: 4, kind: court, prompt: "Conjugue au futur : « Elle (retrouver) ».", answer: "elle retrouvera", accept: ["retrouvera"], hint: "L'infinitif + -a." }
+            - { id: ch06-j2-ma-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 135 ÷ 5.", choices: ["25", "26", "27", "28", "35"], answer: "27", hint: "100 ÷ 5 = 20 et 35 ÷ 5 = 7." }
+            - { id: ch06-j2-ma-m4b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au futur : « Elle (retrouver) ».", choices: ["elle retrouve", "elle retrouvait", "elle retrouvera", "elle a retrouvé", "elle retrouverait"], answer: "elle retrouvera", hint: "L'infinitif + -a." }
           rafaelle:
-            - { id: ch06-j2-ra-m4a, subject: francais, level: 2, kind: court, prompt: "Conjugue au passé composé : « Tu (projeter) ».", answer: "tu as projeté", accept: ["as projeté"], hint: "Avoir + participe passé." }
-            - { id: ch06-j2-ra-m4b, subject: maths, level: 3, kind: nombre, prompt: "Calcule la moyenne de 5, 7, 9 et 11.", answer: 8, hint: "La somme fait 32. Divise par 4." }
+            - { id: ch06-j2-ra-m4a, subject: francais, level: 2, kind: qcm, prompt: "Conjugue au passé composé : « Tu (projeter) ».", choices: ["tu projettes", "tu projetais", "tu as projeté", "tu avais projeté", "tu projetteras"], answer: "tu as projeté", hint: "Avoir + participe passé." }
+            - { id: ch06-j2-ra-m4b, subject: maths, level: 3, kind: qcm, prompt: "Calcule la moyenne de 5, 7, 9 et 11.", choices: ["6", "7", "8", "9", "32"], answer: "8", hint: "La somme fait 32. Divise par 4." }
     pause: "Le cadran humain : une sœur fait l'aiguille avec son bras. Les autres disent l'heure qu'elle montre. Puis on tourne, de plus en plus vite !"
     closing:
       - { who: narrateur, text: "Quand les apprenties eurent rassemblé toutes les pièces du message, quelque chose d'étonnant se produisit. Leurs trois ombres, sur le marbre, se mirent à bouger toutes seules. Elles glissèrent jusqu'au pied du grand cadran, et se couchèrent à côté de l'aiguille de bronze." }
@@ -217,52 +217,52 @@ days:
         intro: "L'ombre d'Axelle joue à cache-cache. Chaque bonne réponse la ramène un peu plus près."
         tours:
           axelle:
-            - { id: ch06-j3-ax-m1a, subject: maths, level: 2, kind: qcm, prompt: "Un cœur a-t-il un axe de symétrie ?", choices: ["oui", "non"], answer: "oui", hint: "Plie-le en deux, du haut vers la pointe." }
-            - { id: ch06-j3-ax-m1b, subject: maths, level: 3, kind: court, prompt: "Trois points posés sur une même droite sont…", answer: "alignés", hint: "Comme des enfants bien rangés en file." }
+            - { id: ch06-j3-ax-m1a, subject: maths, level: 2, kind: qcm, prompt: "Un cœur a-t-il un axe de symétrie ?", choices: ["non, jamais", "oui, mais horizontal", "oui", "seulement de profil", "ça dépend de sa taille"], answer: "oui", hint: "Plie-le en deux, du haut vers la pointe." }
+            - { id: ch06-j3-ax-m1b, subject: maths, level: 3, kind: qcm, prompt: "Trois points posés sur une même droite sont…", choices: ["parallèles", "perpendiculaires", "alignés", "superposés", "symétriques"], answer: "alignés", hint: "Comme des enfants bien rangés en file." }
           maelle:
-            - { id: ch06-j3-ma-m1a, subject: maths, level: 2, kind: nombre, prompt: "Combien d'axes de symétrie a un rectangle (qui n'est pas un carré) ?", answer: 2, hint: "Un dans la longueur, un dans la largeur." }
-            - { id: ch06-j3-ma-m1b, subject: maths, level: 3, kind: court, prompt: "Complète : un angle aigu est plus petit que…", answer: "90°", accept: ["90", "90 degrés", "un angle droit", "angle droit"], hint: "Plus petit qu'un coin d'équerre." }
+            - { id: ch06-j3-ma-m1a, subject: maths, level: 2, kind: qcm, prompt: "Combien d'axes de symétrie a un rectangle (qui n'est pas un carré) ?", choices: ["0", "1", "2", "3", "4"], answer: "2", hint: "Un dans la longueur, un dans la largeur." }
+            - { id: ch06-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Complète : un angle aigu est plus petit que…", choices: ["45°", "60°", "90°", "100°", "180°"], answer: "90°", hint: "Plus petit qu'un coin d'équerre." }
           rafaelle:
-            - { id: ch06-j3-ra-m1a, subject: maths, level: 3, kind: qcm, prompt: "Quel est le symétrique du point A(2 ; 3) par rapport à l'axe vertical x = 0 ?", choices: ["(−2 ; 3)", "(2 ; −3)", "(−2 ; −3)"], answer: "(−2 ; 3)", hint: "L'abscisse change de signe, l'ordonnée reste." }
-            - { id: ch06-j3-ra-m1b, subject: maths, level: 3, kind: nombre, prompt: "Dans un triangle, deux angles mesurent 35° et 85°. Combien mesure le troisième, en degrés ?", answer: 60, hint: "180 − 35 − 85." }
+            - { id: ch06-j3-ra-m1a, subject: maths, level: 3, kind: qcm, prompt: "Quel est le symétrique du point A(2 ; 3) par rapport à l'axe vertical x = 0 ?", choices: ["(2 ; −3)", "(2 ; 3)", "(−2 ; 3)", "(−2 ; −3)", "(3 ; −2)"], answer: "(−2 ; 3)", hint: "L'abscisse change de signe, l'ordonnée reste." }
+            - { id: ch06-j3-ra-m1b, subject: maths, level: 3, kind: qcm, prompt: "Dans un triangle, deux angles mesurent 35° et 85°. Combien mesure le troisième, en degrés ?", choices: ["50", "70", "60", "120", "180"], answer: "60", hint: "180 − 35 − 85." }
       - id: m2
         title: Les silhouettes coupées
         intro: "Les silhouettes coupées en deux cherchent leur moitié. On les reconstitue."
         tours:
           axelle:
-            - { id: ch06-j3-ax-m2a, subject: maths, level: 3, kind: nombre, prompt: "Un rectangle a combien d'angles droits ?", answer: 4, hint: "Un à chaque coin." }
-            - { id: ch06-j3-ax-m2b, subject: maths, level: 3, kind: nombre, prompt: "Calcule 3 × 6.", answer: 18, hint: "6 + 6 + 6." }
+            - { id: ch06-j3-ax-m2a, subject: maths, level: 3, kind: qcm, prompt: "Un rectangle a combien d'angles droits ?", choices: ["2", "3", "4", "0", "8"], answer: "4", hint: "Un à chaque coin." }
+            - { id: ch06-j3-ax-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 3 × 6.", choices: ["9", "15", "18", "21", "24"], answer: "18", hint: "6 + 6 + 6." }
           maelle:
-            - { id: ch06-j3-ma-m2a, subject: maths, level: 2, kind: court, prompt: "Périmètre d'un rectangle de 7 cm sur 3 cm ?", answer: "20 cm", accept: ["20"], hint: "7 + 3 + 7 + 3." }
-            - { id: ch06-j3-ma-m2b, subject: maths, level: 2, kind: court, prompt: "Aire d'un rectangle de 7 cm sur 3 cm ?", answer: "21 cm²", accept: ["21", "21 cm2"], hint: "7 × 3." }
+            - { id: ch06-j3-ma-m2a, subject: maths, level: 2, kind: qcm, prompt: "Périmètre d'un rectangle de 7 cm sur 3 cm ?", choices: ["10 cm", "21 cm", "20 cm", "14 cm", "40 cm"], answer: "20 cm", hint: "7 + 3 + 7 + 3." }
+            - { id: ch06-j3-ma-m2b, subject: maths, level: 2, kind: qcm, prompt: "Aire d'un rectangle de 7 cm sur 3 cm ?", choices: ["20 cm²", "10 cm²", "21 cm²", "14 cm²", "42 cm²"], answer: "21 cm²", hint: "7 × 3." }
           rafaelle:
-            - { id: ch06-j3-ra-m2a, subject: maths, level: 2, kind: court, prompt: "Quelle fraction d'un carré représentent 3 de ses 4 quarts ?", answer: "3/4", hint: "Trois parts sur quatre." }
-            - { id: ch06-j3-ra-m2b, subject: maths, level: 2, kind: court, prompt: "Calcule 5/8 − 1/4.", answer: "3/8", hint: "1/4 = 2/8." }
+            - { id: ch06-j3-ra-m2a, subject: maths, level: 2, kind: qcm, prompt: "Quelle fraction d'un carré représentent 3 de ses 4 quarts ?", choices: ["1/4", "2/4", "3/4", "4/3", "3/3"], answer: "3/4", hint: "Trois parts sur quatre." }
+            - { id: ch06-j3-ra-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 5/8 − 1/4.", choices: ["4/8", "1/2", "3/8", "6/8", "2/4"], answer: "3/8", hint: "1/4 = 2/8." }
       - id: m3
         title: L'ombre revient
         tours:
           axelle:
-            - { id: ch06-j3-ax-m3a, subject: francais, level: 3, kind: court, prompt: "Complète au pluriel : « Les ombres sont (grand) ».", answer: "grandes", accept: ["les ombres sont grandes"], hint: "Ombres : féminin pluriel, donc -es." }
-            - { id: ch06-j3-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Quelle est l'ombre la plus longue ?", choices: ["2 m", "50 cm", "1 m"], answer: "2 m", hint: "1 m = 100 cm." }
+            - { id: ch06-j3-ax-m3a, subject: francais, level: 3, kind: qcm, prompt: "Complète au pluriel : « Les ombres sont (grand) ».", choices: ["grand", "grands", "grandes", "grande", "grandent"], answer: "grandes", hint: "Ombres : féminin pluriel, donc -es." }
+            - { id: ch06-j3-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Quelle est l'ombre la plus longue ?", choices: ["50 cm", "150 cm", "2 m", "1 m", "3 m"], answer: "2 m", hint: "1 m = 100 cm." }
           maelle:
-            - { id: ch06-j3-ma-m3a, subject: maths, level: 3, kind: nombre, prompt: "Calcule 2/5 de 35.", answer: 14, hint: "1/5 de 35 = 7." }
+            - { id: ch06-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 2/5 de 35.", choices: ["7", "21", "14", "70", "10"], answer: "14", hint: "1/5 de 35 = 7." }
             - { gen: maths.fraction-de }
           rafaelle:
-            - { id: ch06-j3-ra-m3a, subject: francais, level: 3, kind: court, prompt: "Accorde le participe : « Les histoires que nous avons (écrit) ».", answer: "écrites", accept: ["les histoires que nous avons écrites"], hint: "COD placé avant : on accorde avec « histoires »." }
-            - { id: ch06-j3-ra-m3b, subject: maths, level: 3, kind: court, prompt: "Réduis : 3a + 2a.", answer: "5a", hint: "3 pommes + 2 pommes." }
+            - { id: ch06-j3-ra-m3a, subject: francais, level: 3, kind: qcm, prompt: "Accorde le participe : « Les histoires que nous avons (écrit) ».", choices: ["écrit", "écrits", "écrites", "écrite", "écrivé"], answer: "écrites", hint: "COD placé avant : on accorde avec « histoires »." }
+            - { id: ch06-j3-ra-m3b, subject: maths, level: 3, kind: qcm, prompt: "Réduis : 3a + 2a.", choices: ["6a", "5a²", "5a", "1a", "5"], answer: "5a", hint: "3 pommes + 2 pommes." }
       - id: m4
         title: Le Défi des Silhouettes
         intro: "Les trois apprenties travaillent ensemble pour rendre son ombre à Axelle, pour de bon."
         tours:
           axelle:
-            - { id: ch06-j3-ax-m4a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 5 × 7.", answer: 35, hint: "5, 10, 15, 20, 25, 30, 35." }
-            - { id: ch06-j3-ax-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule 1/3 de 27.", answer: 9, hint: "Partage 27 en 3 parts égales." }
+            - { id: ch06-j3-ax-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 5 × 7.", choices: ["30", "40", "35", "12", "25"], answer: "35", hint: "5, 10, 15, 20, 25, 30, 35." }
+            - { id: ch06-j3-ax-m4b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 1/3 de 27.", choices: ["3", "27", "9", "18", "6"], answer: "9", hint: "Partage 27 en 3 parts égales." }
           maelle:
-            - { id: ch06-j3-ma-m4a, subject: maths, level: 4, kind: nombre, prompt: "Aire d'un triangle rectangle dont les côtés de l'angle droit mesurent 6 et 4 ?", answer: 12, hint: "La moitié d'un rectangle de 6 sur 4." }
-            - { id: ch06-j3-ma-m4b, subject: maths, level: 4, kind: court, prompt: "Aire d'un carré de 9 cm de côté ?", answer: "81 cm²", accept: ["81", "81 cm2"], hint: "9 × 9." }
+            - { id: ch06-j3-ma-m4a, subject: maths, level: 4, kind: qcm, prompt: "Aire d'un triangle rectangle dont les côtés de l'angle droit mesurent 6 et 4 ?", choices: ["24", "10", "12", "20", "6"], answer: "12", hint: "La moitié d'un rectangle de 6 sur 4." }
+            - { id: ch06-j3-ma-m4b, subject: maths, level: 4, kind: qcm, prompt: "Aire d'un carré de 9 cm de côté ?", choices: ["18 cm²", "36 cm²", "81 cm²", "72 cm²", "90 cm²"], answer: "81 cm²", hint: "9 × 9." }
           rafaelle:
-            - { id: ch06-j3-ra-m4a, subject: maths, level: 4, kind: nombre, prompt: "Résous : 4x − 3 = 13.", answer: 4, accept: ["x = 4"], hint: "4x = 16." }
-            - { id: ch06-j3-ra-m4b, subject: maths, level: 4, kind: court, prompt: "Calcule 3/5 ÷ 3.", answer: "1/5", hint: "Partager trois cinquièmes en 3." }
+            - { id: ch06-j3-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 4x − 3 = 13.", choices: ["3", "5", "4", "16", "10"], answer: "4", hint: "4x = 16." }
+            - { id: ch06-j3-ra-m4b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 3/5 ÷ 3.", choices: ["9/15", "1/15", "1/5", "3/15", "6/5"], answer: "1/5", hint: "Partager trois cinquièmes en 3." }
     pause: "Attrape ton ombre ! Chacune essaie de marcher sur l'ombre (imaginaire) de ses sœurs, pendant que les autres l'esquivent. Dix secondes, puis on change !"
     closing:
       - { who: narrateur, text: "À la dernière bonne réponse, l'ombre d'Axelle s'arrêta au milieu de la salle. Elle se retourna, regarda Axelle, et revint en trottinant, comme un petit chien qui a fini de jouer. Elle se recolla à ses pieds avec un petit « plop » silencieux, et ne bougea plus." }
@@ -295,51 +295,51 @@ days:
         tours:
           axelle:
             - { id: ch06-j4-ax-m1a, subject: histoire-geo, level: 2, kind: ordre, prompt: "Range dans l'ordre du temps.", choices: ["demain", "hier", "aujourd'hui"], answer: ["hier", "aujourd'hui", "demain"], hint: "Commence par ce qui est déjà passé." }
-            - { id: ch06-j4-ax-m1b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Qu'est-ce qui est le plus ancien ?", choices: ["un château fort", "une voiture", "un téléphone"], answer: "un château fort", hint: "Au temps des chevaliers." }
+            - { id: ch06-j4-ax-m1b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Qu'est-ce qui est le plus ancien ?", choices: ["une voiture", "un ordinateur", "un château fort", "un téléphone", "une fusée"], answer: "un château fort", hint: "Au temps des chevaliers." }
           maelle:
             - { id: ch06-j4-ma-m1a, subject: histoire-geo, level: 2, kind: ordre, prompt: "Range ces périodes dans l'ordre.", choices: ["l'époque contemporaine", "le Moyen Âge", "l'Antiquité"], answer: ["l'Antiquité", "le Moyen Âge", "l'époque contemporaine"], hint: "Les Romains, puis les chevaliers, puis nous." }
-            - { id: ch06-j4-ma-m1b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Au Moyen Âge, qui vivait dans le château fort ?", choices: ["le seigneur", "les ouvriers d'usine", "les astronautes"], answer: "le seigneur", hint: "Il protégeait les paysans de ses terres." }
+            - { id: ch06-j4-ma-m1b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Au Moyen Âge, qui vivait dans le château fort ?", choices: ["les ouvriers d'usine", "les robots", "le seigneur", "les astronautes", "les marins pirates"], answer: "le seigneur", hint: "Il protégeait les paysans de ses terres." }
           rafaelle:
-            - { id: ch06-j4-ra-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Où sont apparues les premières villes et l'écriture ?", choices: ["au bord des grands fleuves (Mésopotamie, Égypte)", "dans les déserts glacés", "au sommet des montagnes"], answer: "au bord des grands fleuves (Mésopotamie, Égypte)", hint: "Le Tigre, l'Euphrate, le Nil." }
-            - { id: ch06-j4-ra-m1b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Les Égyptiens écrivaient avec…", choices: ["des hiéroglyphes", "l'alphabet latin", "des emojis"], answer: "des hiéroglyphes", hint: "Des petits dessins gravés ou peints." }
+            - { id: ch06-j4-ra-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Où sont apparues les premières villes et l'écriture ?", choices: ["dans les déserts glacés", "sur les îles du Pacifique", "au bord des grands fleuves (Mésopotamie, Égypte)", "au sommet des montagnes", "dans la forêt amazonienne"], answer: "au bord des grands fleuves (Mésopotamie, Égypte)", hint: "Le Tigre, l'Euphrate, le Nil." }
+            - { id: ch06-j4-ra-m1b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Les Égyptiens écrivaient avec…", choices: ["l'alphabet latin", "des chiffres romains", "des hiéroglyphes", "des emojis", "le braille"], answer: "des hiéroglyphes", hint: "Des petits dessins gravés ou peints." }
       - id: m2
         title: Les fresques effacées
         tours:
           axelle:
-            - { id: ch06-j4-ax-m2a, subject: maths, level: 3, kind: nombre, prompt: "Combien de faces a un cube ?", answer: 6, hint: "Comme un dé : 1, 2, 3, 4, 5, 6." }
-            - { id: ch06-j4-ax-m2b, subject: maths, level: 3, kind: nombre, prompt: "Pose et calcule : 54 + 38.", answer: 92, hint: "4 + 8 = 12 : on écrit 2 et on retient 1." }
+            - { id: ch06-j4-ax-m2a, subject: maths, level: 3, kind: qcm, prompt: "Combien de faces a un cube ?", choices: ["4", "8", "6", "12", "5"], answer: "6", hint: "Comme un dé : 1, 2, 3, 4, 5, 6." }
+            - { id: ch06-j4-ax-m2b, subject: maths, level: 3, kind: qcm, prompt: "Pose et calcule : 54 + 38.", choices: ["82", "91", "92", "93", "102"], answer: "92", hint: "4 + 8 = 12 : on écrit 2 et on retient 1." }
           maelle:
-            - { id: ch06-j4-ma-m2a, subject: maths, level: 3, kind: nombre, prompt: "Combien d'arêtes a un cube ?", answer: 12, hint: "4 en haut, 4 en bas, 4 debout." }
-            - { id: ch06-j4-ma-m2b, subject: maths, level: 3, kind: nombre, prompt: "Calcule 4,8 + 3,6.", answer: 8.4, hint: "48 + 36 = 84." }
+            - { id: ch06-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Combien d'arêtes a un cube ?", choices: ["6", "8", "12", "10", "24"], answer: "12", hint: "4 en haut, 4 en bas, 4 debout." }
+            - { id: ch06-j4-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 4,8 + 3,6.", choices: ["7,4", "8,14", "8,4", "9,4", "84"], answer: "8,4", hint: "48 + 36 = 84." }
           rafaelle:
-            - { id: ch06-j4-ra-m2a, subject: maths, level: 3, kind: court, prompt: "Volume d'un cube de 3 cm d'arête ?", answer: "27 cm³", accept: ["27", "27 cm3"], hint: "3 × 3 × 3." }
-            - { id: ch06-j4-ra-m2b, subject: maths, level: 3, kind: nombre, prompt: "Calcule 30 % de 90.", answer: 27, hint: "10 % = 9." }
+            - { id: ch06-j4-ra-m2a, subject: maths, level: 3, kind: qcm, prompt: "Volume d'un cube de 3 cm d'arête ?", choices: ["9 cm³", "18 cm³", "27 cm³", "81 cm³", "6 cm³"], answer: "27 cm³", hint: "3 × 3 × 3." }
+            - { id: ch06-j4-ra-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 30 % de 90.", choices: ["30", "9", "27", "60", "3"], answer: "27", hint: "10 % = 9." }
       - id: m3
         title: L'inscription de la colonne
         intro: "L'inscription en espagnol de la colonne cache un secret de la Reine."
         tours:
           axelle:
-            - { id: ch06-j4-ax-m3a, subject: francais, level: 4, kind: court, prompt: "Mets au passé composé : « Elle danse. »", answer: "Elle a dansé", accept: ["a dansé", "elle a dansé."], hint: "Elle a…" }
-            - { id: ch06-j4-ax-m3b, subject: francais, level: 4, kind: court, prompt: "Un animal, des… ?", answer: "animaux", accept: ["des animaux"], hint: "Comme un cheval, des chevaux." }
+            - { id: ch06-j4-ax-m3a, subject: francais, level: 4, kind: qcm, prompt: "Mets au passé composé : « Elle danse. »", choices: ["Elle dansait", "Elle danse", "Elle a dansé", "Elle avait dansé", "Elle dansera"], answer: "Elle a dansé", hint: "Elle a…" }
+            - { id: ch06-j4-ax-m3b, subject: francais, level: 4, kind: qcm, prompt: "Un animal, des… ?", choices: ["animals", "animaus", "animaux", "animales", "animal"], answer: "animaux", hint: "Comme un cheval, des chevaux." }
           maelle:
-            - { id: ch06-j4-ma-m3a, subject: francais, level: 4, kind: court, prompt: "« La Reine cherche son ombre. » Quel est le COD ?", answer: "son ombre", hint: "La Reine cherche quoi ?" }
-            - { id: ch06-j4-ma-m3b, subject: maths, level: 3, kind: nombre, prompt: "Calcule 2,5 m en centimètres.", answer: 250, hint: "1 m = 100 cm." }
+            - { id: ch06-j4-ma-m3a, subject: francais, level: 4, kind: qcm, prompt: "« La Reine cherche son ombre. » Quel est le COD ?", choices: ["la Reine", "cherche", "son ombre", "La Reine cherche", "son"], answer: "son ombre", hint: "La Reine cherche quoi ?" }
+            - { id: ch06-j4-ma-m3b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 2,5 m en centimètres.", choices: ["25", "205", "250", "2 500", "2 050"], answer: "250", hint: "1 m = 100 cm." }
           rafaelle:
-            - { id: ch06-j4-ra-m3a, subject: espagnol, level: 3, kind: qcm, prompt: "« La reina vive en el palacio » veut dire…", choices: ["La reine vit dans le palais.", "La reine quitte le palais.", "Le palais est vide."], answer: "La reine vit dans le palais.", read: "La reina vive en el palacio.", hint: "Vive = vit." }
-            - { id: ch06-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Une reine sans ombre » : que symbolise l'ombre perdue ?", choices: ["la perte de son identité et de ses souvenirs", "un problème d'éclairage", "la nuit qui tombe"], answer: "la perte de son identité et de ses souvenirs", hint: "Qu'a-t-elle perdu en même temps que son ombre ?" }
+            - { id: ch06-j4-ra-m3a, subject: espagnol, level: 3, kind: qcm, prompt: "« La reina vive en el palacio » veut dire…", choices: ["La reine quitte le palais.", "La reine construit le palais.", "La reine vit dans le palais.", "Le palais est vide.", "Le palais appartient à la reine."], answer: "La reine vit dans le palais.", read: "La reina vive en el palacio.", hint: "Vive = vit." }
+            - { id: ch06-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Une reine sans ombre » : que symbolise l'ombre perdue ?", choices: ["un problème d'éclairage", "la fin de l'été", "la perte de son identité et de ses souvenirs", "la nuit qui tombe", "une invention des apprenties"], answer: "la perte de son identité et de ses souvenirs", hint: "Qu'a-t-elle perdu en même temps que son ombre ?" }
       - id: m4
         title: Le trône de la Reine
         intro: "Les trois apprenties travaillent ensemble pour reconstituer la dernière partie de la frise."
         tours:
           axelle:
-            - { id: ch06-j4-ax-m4a, subject: maths, level: 4, kind: nombre, prompt: "Combien de sommets a un pavé (comme une boîte à chaussures) ?", answer: 8, hint: "4 coins en haut, 4 coins en bas." }
-            - { id: ch06-j4-ax-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule 24 ÷ 6.", answer: 4, hint: "6 × 4 = 24." }
+            - { id: ch06-j4-ax-m4a, subject: maths, level: 4, kind: qcm, prompt: "Combien de sommets a un pavé (comme une boîte à chaussures) ?", choices: ["6", "12", "8", "4", "10"], answer: "8", hint: "4 coins en haut, 4 coins en bas." }
+            - { id: ch06-j4-ax-m4b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 24 ÷ 6.", choices: ["3", "5", "4", "6", "8"], answer: "4", hint: "6 × 4 = 24." }
           maelle:
-            - { id: ch06-j4-ma-m4a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 168 ÷ 7.", answer: 24, hint: "140 ÷ 7 = 20. Reste 28." }
-            - { id: ch06-j4-ma-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule 3,5 × 4.", answer: 14, hint: "3 × 4 = 12 et 0,5 × 4 = 2." }
+            - { id: ch06-j4-ma-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 168 ÷ 7.", choices: ["22", "26", "24", "28", "34"], answer: "24", hint: "140 ÷ 7 = 20. Reste 28." }
+            - { id: ch06-j4-ma-m4b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 3,5 × 4.", choices: ["12", "13", "14", "15", "24"], answer: "14", hint: "3 × 4 = 12 et 0,5 × 4 = 2." }
           rafaelle:
-            - { id: ch06-j4-ra-m4a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 3³ (3 au cube).", answer: 27, hint: "3 × 3 × 3." }
-            - { id: ch06-j4-ra-m4b, subject: francais, level: 4, kind: court, prompt: "Conjugue au subjonctif présent : « Que tu (voir) ».", answer: "que tu voies", accept: ["voies"], hint: "Que tu voi…es." }
+            - { id: ch06-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 3³ (3 au cube).", choices: ["9", "6", "27", "81", "18"], answer: "27", hint: "3 × 3 × 3." }
+            - { id: ch06-j4-ra-m4b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au subjonctif présent : « Que tu (voir) ».", choices: ["que tu vois", "que tu voyais", "que tu voies", "que tu verras", "que tu voit"], answer: "que tu voies", hint: "Que tu voi…es." }
     pause: "Les statues du palais : prenez la pose d'une statue antique (un roi, un dieu, un athlète). Les sœurs doivent deviner qui vous êtes !"
     closing:
       - { who: narrateur, text: "Quand la dernière partie de la frise fut reconstituée, les fresques s'illuminèrent, de la première à la dernière. Les premiers hommes autour du feu, les villes au bord des fleuves, les temples, les châteaux, et tout au bout, sur le dernier morceau de mur, une image nouvelle apparut." }
@@ -372,27 +372,27 @@ days:
         intro: "Axelle choisit la forme, Maelle trouve où placer la lampe, Rafaelle calcule la longueur de l'ombre."
         tours:
           axelle:
-            - { id: ch06-j5-ax-m1a, subject: maths, level: 4, kind: nombre, prompt: "Combien de centimètres font 1 m 20 cm ?", answer: 120, hint: "1 m = 100 cm, plus 20." }
-            - { id: ch06-j5-ax-m1b, subject: maths, level: 3, kind: qcm, prompt: "Un dé est…", choices: ["un cube", "une boule", "un cône"], answer: "un cube", hint: "Il a 6 faces carrées." }
+            - { id: ch06-j5-ax-m1a, subject: maths, level: 4, kind: qcm, prompt: "Combien de centimètres font 1 m 20 cm ?", choices: ["12", "100", "120", "20", "112"], answer: "120", hint: "1 m = 100 cm, plus 20." }
+            - { id: ch06-j5-ax-m1b, subject: maths, level: 3, kind: qcm, prompt: "Un dé est…", choices: ["une boule", "une pyramide", "un cube", "un cône", "un cylindre"], answer: "un cube", hint: "Il a 6 faces carrées." }
           maelle:
-            - { id: ch06-j5-ma-m1a, subject: maths, level: 3, kind: nombre, prompt: "Un bâton de 1 m a une ombre de 2 m. Quelle est l'ombre, en mètres, d'un bâton de 3 m ?", answer: 6, hint: "L'ombre est deux fois plus longue que le bâton." }
-            - { id: ch06-j5-ma-m1b, subject: maths, level: 4, kind: nombre, prompt: "L'ombre vaut 2 fois la hauteur. Quelle est l'ombre, en mètres, d'un objet de 4,5 m ?", answer: 9, hint: "4,5 × 2." }
+            - { id: ch06-j5-ma-m1a, subject: maths, level: 3, kind: qcm, prompt: "Un bâton de 1 m a une ombre de 2 m. Quelle est l'ombre, en mètres, d'un bâton de 3 m ?", choices: ["5", "4", "6", "9", "1"], answer: "6", hint: "L'ombre est deux fois plus longue que le bâton." }
+            - { id: ch06-j5-ma-m1b, subject: maths, level: 4, kind: qcm, prompt: "L'ombre vaut 2 fois la hauteur. Quelle est l'ombre, en mètres, d'un objet de 4,5 m ?", choices: ["8,5", "9,5", "9", "6,5", "4,5"], answer: "9", hint: "4,5 × 2." }
           rafaelle:
-            - { id: ch06-j5-ra-m1a, subject: maths, level: 2, kind: nombre, prompt: "Un arbre de 4 m fait une ombre de 6 m. Quelle est l'ombre, en mètres, d'un arbre de 10 m ?", answer: 15, hint: "L'ombre fait une fois et demie la hauteur." }
-            - { id: ch06-j5-ra-m1b, subject: maths, level: 4, kind: nombre, prompt: "M est sur [AB], N sur [AC], et (MN) // (BC). AM = 2, AB = 6, AN = 3. Combien mesure AC ?", answer: 9, hint: "AM/AB = AN/AC : 2/6 = 3/AC." }
+            - { id: ch06-j5-ra-m1a, subject: maths, level: 2, kind: qcm, prompt: "Un arbre de 4 m fait une ombre de 6 m. Quelle est l'ombre, en mètres, d'un arbre de 10 m ?", choices: ["12", "20", "15", "16", "14"], answer: "15", hint: "L'ombre fait une fois et demie la hauteur." }
+            - { id: ch06-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "M est sur [AB], N sur [AC], et (MN) // (BC). AM = 2, AB = 6, AN = 3. Combien mesure AC ?", choices: ["6", "12", "9", "18", "4"], answer: "9", hint: "AM/AB = AN/AC : 2/6 = 3/AC." }
       - id: m2
         title: Le défi de la Reine
         intro: "Pour que les trois ombres se rejoignent, chaque apprentie relève un défi de la classe supérieure."
         tours:
           axelle:
-            - { id: ch06-j5-ax-m2a, subject: maths, level: 5, kind: court, prompt: "Périmètre d'un carré de 5 cm de côté ?", answer: "20 cm", accept: ["20"], hint: "4 côtés de 5 cm." }
-            - { id: ch06-j5-ax-m2b, subject: maths, level: 5, kind: nombre, prompt: "Calcule 1/4 de 40.", answer: 10, hint: "La moitié de la moitié." }
+            - { id: ch06-j5-ax-m2a, subject: maths, level: 5, kind: qcm, prompt: "Périmètre d'un carré de 5 cm de côté ?", choices: ["10 cm", "15 cm", "20 cm", "25 cm", "9 cm"], answer: "20 cm", hint: "4 côtés de 5 cm." }
+            - { id: ch06-j5-ax-m2b, subject: maths, level: 5, kind: qcm, prompt: "Calcule 1/4 de 40.", choices: ["4", "20", "10", "16", "8"], answer: "10", hint: "La moitié de la moitié." }
           maelle:
-            - { id: ch06-j5-ma-m2a, subject: maths, level: 5, kind: nombre, prompt: "Calcule 20 % de 45.", answer: 9, hint: "10 % = 4,5." }
-            - { id: ch06-j5-ma-m2b, subject: maths, level: 5, kind: nombre, prompt: "Périmètre d'un cercle de rayon 5 (prends π = 3,14) ?", answer: 31.4, hint: "Périmètre = 2 × π × rayon." }
+            - { id: ch06-j5-ma-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 20 % de 45.", choices: ["20", "4,5", "9", "90", "18"], answer: "9", hint: "10 % = 4,5." }
+            - { id: ch06-j5-ma-m2b, subject: maths, level: 5, kind: qcm, prompt: "Périmètre d'un cercle de rayon 5 (prends π = 3,14) ?", choices: ["15,7", "62,8", "31,4", "78,5", "15,4"], answer: "31,4", hint: "Périmètre = 2 × π × rayon." }
           rafaelle:
-            - { id: ch06-j5-ra-m2a, subject: maths, level: 5, kind: court, prompt: "Factorise : 6x + 9.", answer: "3(2x + 3)", accept: ["3(2x+3)", "3 (2x + 3)", "3×(2x+3)"], hint: "6 et 9 sont tous les deux des multiples de 3." }
-            - { id: ch06-j5-ra-m2b, subject: maths, level: 5, kind: nombre, prompt: "Un triangle rectangle a des côtés de l'angle droit de 5 et 12. Combien mesure l'hypoténuse ?", answer: 13, hint: "5² + 12² = 25 + 144." }
+            - { id: ch06-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Factorise : 6x + 9.", choices: ["3(2x + 9)", "6(x + 9)", "3(2x + 3)", "3x(2 + 3)", "2(3x + 3)"], answer: "3(2x + 3)", hint: "6 et 9 sont tous les deux des multiples de 3." }
+            - { id: ch06-j5-ra-m2b, subject: maths, level: 5, kind: qcm, prompt: "Un triangle rectangle a des côtés de l'angle droit de 5 et 12. Combien mesure l'hypoténuse ?", choices: ["17", "7", "13", "169", "60"], answer: "13", hint: "5² + 12² = 25 + 144." }
       - id: m3
         title: Le théâtre d'ombres
         intro: "Les trois apprenties font un petit théâtre d'ombres pour la Reine, avec leurs mains et leurs lanternes."

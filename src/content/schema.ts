@@ -6,27 +6,30 @@ export const subject = z.enum(['maths', 'francais', 'sciences', 'histoire-geo', 
 export type Subject = z.infer<typeof subject>;
 
 /** Question rédigée à la main (doc du chapitre ou banques). */
-export const question = z.object({
-  id: z.string().regex(/^[a-z0-9-]+$/),
-  subject,
-  /** 1 à 3 : niveau de la classe ; 4 à 5 : classe supérieure. */
-  level: z.number().int().min(1).max(5),
-  kind: z.enum(['nombre', 'qcm', 'court', 'ordre', 'libre']),
-  prompt: z.string().min(3),
-  choices: z.array(z.string()).min(2).optional(),
-  /** Réponse attendue : un nombre, un texte, ou une liste ordonnée. */
-  answer: z.union([z.number(), z.string(), z.array(z.string())]).optional(),
-  /** Autres réponses acceptées (formulations, unités). */
-  accept: z.array(z.string()).optional(),
-  /** Indice donné par la Gardienne de l'indice. */
-  hint: z.string().optional(),
-  /** Horloge visuelle affichée (ex. « 14:45 »), surtout pour Maelle. */
-  clock: z.string().regex(/^\d{1,2}:\d{2}$/).optional(),
-  /** Phrase à lire à voix haute par la fille (affiche le bouton Écouter). */
-  read: z.string().optional(),
-  /** Réponse libre ou orale : validée par les sœurs puis contrôlable en mode parent. */
-  validation: z.enum(['auto', 'soeurs', 'parent']).default('auto')
-});
+export const question = z
+  .object({
+    id: z.string().regex(/^[a-z0-9-]+$/),
+    subject,
+    /** 1 à 3 : niveau de la classe ; 4 à 5 : classe supérieure. */
+    level: z.number().int().min(1).max(5),
+    kind: z.enum(['nombre', 'qcm', 'court', 'ordre', 'libre']),
+    prompt: z.string().min(3),
+    /** Pour une QCM : exactement 5 choix (aucune saisie, voir CLAUDE.md). Pour un rangement : les étiquettes à ranger. */
+    choices: z.array(z.string()).min(2).optional(),
+    /** Réponse attendue : un nombre, un texte, ou une liste ordonnée. */
+    answer: z.union([z.number(), z.string(), z.array(z.string())]).optional(),
+    /** Autres réponses acceptées (formulations, unités). */
+    accept: z.array(z.string()).optional(),
+    /** Indice donné par la Gardienne de l'indice. */
+    hint: z.string().optional(),
+    /** Horloge visuelle affichée (ex. « 14:45 »), surtout pour Maelle. */
+    clock: z.string().regex(/^\d{1,2}:\d{2}$/).optional(),
+    /** Phrase à lire à voix haute par la fille (affiche le bouton Écouter). */
+    read: z.string().optional(),
+    /** Réponse libre ou orale : validée par les sœurs puis contrôlable en mode parent. */
+    validation: z.enum(['auto', 'soeurs', 'parent']).default('auto')
+  })
+  .refine((q) => q.kind !== 'qcm' || (q.choices?.length ?? 0) === 5, { message: 'Une QCM doit avoir exactement 5 choix.', path: ['choices'] });
 export type Question = z.infer<typeof question>;
 
 /** Question produite par un générateur à graine fixe. */
