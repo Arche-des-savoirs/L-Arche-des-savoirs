@@ -1,0 +1,392 @@
+# Chapitre 15 — L'Atelier aux Rouages Endormis
+# Suite directe du chapitre 14 : la carte vivante guide les sœurs vers un atelier abandonné
+# à flanc de montagne, où dort, recouvert d'un drap, un grand automate de bronze. Nouveau
+# personnage tiré de l'illustration ch15.webp : 'rouage' (voix Zephyr), un automate qui se
+# réveille peu à peu au fil de la semaine. Décision MAJEURE pour la mécanique du jeu :
+# src/content/decisions.ts attribue le flag MACHINE_EPARGNEE aux options A et C (la machine
+# est épargnée/sauvée), et PAS à l'option B (où elle est démontée pour pièces). Le texte de
+# la décision doit donc refléter fidèlement cet écart : A et C épargnent Rouage, B le
+# démonte. Pas d'effet Orvane pour ch15 (absent de ORVANE).
+
+id: ch15
+number: 15
+act: 2
+title: L'Atelier aux Rouages Endormis
+introImage: ch15
+scene: atelier-rouages
+
+espagnol:
+  - { es: "La máquina duerme desde hace mucho.", fr: "La machine dort depuis longtemps." }
+  - { es: "Vamos a repararla con cuidado.", fr: "Nous allons la réparer avec soin." }
+  - { es: "Cada engranaje tiene su lugar.", fr: "Chaque rouage a sa place." }
+  - { es: "Ella se despierta poco a poco.", fr: "Elle se réveille peu à peu." }
+  - { es: "Gracias por salvarme.", fr: "Merci de m'avoir sauvé." }
+
+decision:
+  prompt: "Rouage, à moitié réveillé, vous regarde de ses yeux de verre fatigués. « Je suis vieux, mes rouages grincent, et je ne sers plus à grand-chose. Vous pourriez me démonter pour vos outils — j'ai de belles pièces. Ou alors... » Que décidez-vous ?"
+  options:
+    A:
+      label: Réparer Rouage, pièce par pièce
+      scene: "Axelle convainc ses sœurs de passer la journée entière à huiler, visser et ajuster chaque rouage grinçant, jusqu'à ce que l'automate se redresse enfin, debout, sur ses jambes de bronze."
+      line: { who: rouage, text: "Personne... personne n'avait pris le temps, depuis si longtemps. Je me souviens, maintenant. Je me souviens de tout." }
+      habillage: "Chaque épreuve devient un assemblage patient, pièce après pièce, jusqu'à ce que tout s'enclenche parfaitement."
+    B:
+      label: Démonter Rouage pour ses pièces utiles
+      scene: "Rafaelle, pragmatique, argumente qu'un automate immobile depuis des années ne se réveillera sans doute jamais, et les trois sœurs récupèrent prudemment quelques rouages et ressorts pour réparer la carte vivante et leurs propres outils."
+      line: { who: narrateur, text: "Les rouages de Rouage, démontés un à un, cessèrent définitivement de briller, et l'atelier retomba dans un silence plus profond encore qu'avant leur arrivée." }
+      habillage: "Les épreuves deviennent une récupération méthodique, où il faut choisir vite ce qui est vraiment utile."
+    C:
+      label: Lui raconter des histoires jusqu'à l'aube
+      scene: "Maelle s'assoit en tailleur devant l'automate immobile et lui raconte, sans relâche, toute l'histoire de leur voyage, pensant qu'un peu de compagnie vaudra peut-être mieux que des outils."
+      line: { who: rouage, text: "Vos histoires... elles ont remonté quelque chose en moi, bien avant que vous ne touchiez à un seul rouage. Merci de ne pas m'avoir laissé seul." }
+      habillage: "Les épreuves deviennent des récits à partager, où il faut se souvenir avec précision de ce qui a déjà été vécu."
+
+repliquesAbsurdes:
+  - "Si Rouage grince, est-ce qu'il faut l'huiler ou juste lui dire une blague pour qu'il se détende un peu ?"
+  - "Mon renard a essayé de remonter Rouage avec sa queue. Ça n'a fait que décoiffer un peu plus l'automate."
+  - "Est-ce qu'un automate rêve, quand il dort depuis des années, ou est-ce qu'il attend juste, les yeux fermés ?"
+  - "Si je grince aussi fort que Rouage le matin, est-ce que ça veut dire que j'ai besoin d'huile moi aussi ?"
+  - "On a déjà vu des cartes vivantes. Un automate qui parle, c'est presque devenu une habitude, à ce stade du voyage."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: L'atelier abandonné
+    decor: Un atelier creusé à flanc de montagne, ses murs couverts d'outils rouillés, d'engrenages suspendus et de plans griffonnés, où repose, sous un grand drap poussiéreux, une forme immobile aux allures humaines.
+    opening:
+      - { who: narrateur, text: "La carte vivante les guida à travers un sentier étroit jusqu'à un atelier creusé à flanc de montagne, ses murs couverts d'outils rouillés, d'engrenages suspendus, et de plans griffonnés que personne n'avait relus depuis bien longtemps." }
+      - { who: narrateur, text: "Au centre de la pièce, sous un grand drap gris couvert de poussière, reposait une forme immobile, étrangement haute, aux allures presque humaines." }
+      - { who: rafaelle, text: "On dirait... une statue ? Ou peut-être quelque chose de mécanique, sous ce drap ?" }
+      - { who: nilo, text: "Je ne sais pas ce que c'est, mais ça ne sent clairement pas la pierre. Ça sent le métal et la vieille huile." }
+      - { who: narrateur, text: "Maelle, curieuse malgré elle, souleva délicatement un coin du drap, révélant une main de bronze aux doigts articulés, parfaitement immobile." }
+      - { who: maelle, text: "Une main en métal... Je crois que c'est un automate ! Un vrai automate, comme ceux dont parlent les vieux récits !" }
+      - { who: axelle, text: "Il est éteint, tu crois ? Ou juste endormi ?" }
+      - { who: narrateur, text: "Alors qu'Axelle posait la question, une faible lueur bleue clignota, une seule fois, derrière le drap, avant de s'éteindre de nouveau." }
+      - { who: rafaelle, text: "Je crois... je crois qu'il vient de cligner des yeux." }
+    manches:
+      - id: m1
+        title: Sous le grand drap
+        tours:
+          axelle:
+            - { id: ch15-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on une machine construite pour imiter les mouvements d'un être vivant ?", choices: ["un automate", "un marchand", "un peseur", "un cartographe", "un passeur"], answer: "un automate", hint: "C'est le mot utilisé dans le récit." }
+            - { id: ch15-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 6 + 9.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "6 + 9 = 6 + 6 + 3." }
+          maelle:
+            - { id: ch15-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi un mécanisme resté immobile très longtemps peut-il grincer ou se bloquer quand on le remet en marche ?", choices: ["parce qu'il devient toujours plus léger avec le temps", "parce que la rouille et le manque d'huile gênent le mouvement des pièces", "parce que le métal disparaît avec le temps", "cela n'arrive jamais à un mécanisme", "parce que le métal devient plus souple"], answer: "parce que la rouille et le manque d'huile gênent le mouvement des pièces", hint: "Pense aux outils rouillés qui couvrent les murs de l'atelier." }
+            - { id: ch15-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 67 + 58.", choices: ["115", "120", "122", "125", "128"], answer: "125", hint: "67 + 60 − 2." }
+          rafaelle:
+            - { id: ch15-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi les automates mécaniques étaient-ils considérés, autrefois, comme des prouesses techniques impressionnantes ?", choices: ["parce qu'ils n'ont jamais vraiment existé", "parce qu'ils imitaient des mouvements complexes avec de simples engrenages", "parce qu'ils étaient toujours faits d'or pur", "parce que personne ne savait construire de machines à l'époque", "cela n'a jamais impressionné personne"], answer: "parce qu'ils imitaient des mouvements complexes avec de simples engrenages", hint: "Pense à la complexité de reproduire des gestes humains avec du métal." }
+            - { id: ch15-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 18 × 7.", choices: ["116", "120", "124", "126", "130"], answer: "126", hint: "18 × 7 = 20 × 7 − 2 × 7." }
+      - id: m2
+        title: Une main de bronze
+        tours:
+          axelle:
+            - { id: ch15-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Maelle souleva le drap. » ?", choices: ["le drap", "souleva", "Maelle", "un coin", "délicatement"], answer: "Maelle", hint: "Qui soulève le drap ?" }
+            - { id: ch15-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 13 − 6.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "13 − 6 = 7." }
+          maelle:
+            - { id: ch15-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « articulés » dans « doigts articulés » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit les doigts de l'automate." }
+            - { id: ch15-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 392 ÷ 7.", choices: ["52", "54", "56", "58", "60"], answer: "56", hint: "7 × 56 = 392." }
+          rafaelle:
+            - { id: ch15-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Je crois qu'il vient de cligner des yeux. » : que révèle cette phrase sur l'état de l'automate ?", choices: ["qu'il est définitivement cassé", "qu'il n'est peut-être pas complètement inactif", "qu'il n'a jamais eu d'yeux", "qu'il s'agit d'une simple statue", "qu'il a toujours été bien réveillé"], answer: "qu'il n'est peut-être pas complètement inactif", hint: "Relis ce que remarque Rafaelle juste après la lueur bleue." }
+            - { id: ch15-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14² − 100.", choices: ["86", "90", "94", "96", "98"], answer: "96", hint: "196 − 100." }
+      - id: m3
+        title: Les outils de l'atelier
+        tours:
+          axelle:
+            - { id: ch15-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 6 outils accrochés sur un mur, et 4 sur un autre. Combien d'outils en tout ?", choices: ["8", "9", "10", "11", "12"], answer: "10", hint: "6 + 4." }
+            - { id: ch15-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un tournevis et une clé sont-ils des outils utiles pour réparer une machine ?", choices: ["ils servent à serrer, desserrer et ajuster les pièces", "ils servent uniquement à peindre", "ils ne servent à rien pour une machine", "ils servent à couper le bois", "ils servent uniquement à mesurer"], answer: "ils servent à serrer, desserrer et ajuster les pièces", hint: "Pense à ce dont on a besoin pour réparer un mécanisme." }
+          maelle:
+            - { id: ch15-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 3.", choices: ["81", "84", "87", "89", "91"], answer: "87", hint: "30 × 3 − 3." }
+            - { id: ch15-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi certains ateliers d'artisans étaient-ils autrefois installés loin des villes, en montagne ou isolés ?", choices: ["pour profiter du calme et éviter les regards indiscrets sur leurs inventions", "parce que c'était toujours interdit en ville", "parce que les montagnes offraient plus d'outils", "cela n'a jamais eu aucune raison", "parce que le métal n'existait qu'en montagne"], answer: "pour profiter du calme et éviter les regards indiscrets sur leurs inventions", hint: "Pense à l'isolement de cet atelier, creusé à flanc de montagne." }
+          rafaelle:
+            - { id: ch15-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x + 2 = 37.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "5x = 35." }
+            - { id: ch15-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Une faible lueur bleue (clignoter) une seule fois. »", choices: ["a clignoté", "clignotait", "clignotera", "clignote", "clignotant"], answer: "a clignoté", hint: "Passé composé = avoir + participe passé." }
+      - id: m4
+        title: Premières impressions
+        tours:
+          axelle:
+            - { id: ch15-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 6.", choices: ["36", "38", "40", "42", "44"], answer: "42", hint: "7 × 6 = 7 × 7 − 7." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch15-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 240 − 86.", choices: ["150", "154", "156", "158", "160"], answer: "154", hint: "240 − 90 + 4." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch15-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « La máquina duerme desde hace mucho. »", choices: ["La machine marche depuis longtemps.", "La machine dort depuis longtemps.", "La machine casse depuis longtemps.", "La machine chante depuis longtemps.", "La machine brille depuis longtemps."], answer: "La machine dort depuis longtemps.", hint: "« Duerme » = dort." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu du mécanisme silencieux : une sœur imite, sans un bruit, les gestes saccadés d'un automate ; les deux autres doivent deviner quelle action elle mime (saluer, marcher, tendre la main)."
+    closing:
+      - { who: narrateur, text: "La nuit tombait sur la montagne, et les trois sœurs, fatiguées par la découverte, décidèrent de laisser l'automate reposer encore une nuit sous son drap, avant d'oser l'approcher davantage." }
+      - { who: maelle, text: "Demain, on essaiera de comprendre ce qu'il est vraiment, et peut-être même de le réveiller complètement." }
+      - { who: axelle, text: "J'espère qu'il n'est pas méchant, au moins, une fois réveillé." }
+      - { who: nilo, text: "Si jamais il grince de travers, je serai le premier à filer vers la sortie, je vous préviens tout de suite." }
+      - { who: narrateur, text: "En quittant l'atelier, Rafaelle crut entendre, derrière elle, un très léger cliquetis, comme si quelque chose, sous le drap, venait de tourner lentement la tête pour la suivre du regard." }
+    reward: "la découverte de l'atelier abandonné et de l'automate endormi"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Le réveil de Rouage
+    decor: Le même atelier, en plein jour cette fois, le drap gris retiré et plié dans un coin, révélant un automate de bronze assis, immobile, ses yeux de verre encore ternes.
+    opening:
+      - { who: narrateur, text: "Le lendemain, les trois sœurs retirèrent entièrement le drap gris, révélant un automate de bronze assis bien droit, ses yeux de verre encore ternes, comme recouverts d'une fine poussière du temps." }
+      - { who: rafaelle, text: "Il a une forme presque humaine... Je me demande qui l'a construit, et pourquoi il a fini seul, ici, oublié de tous." }
+      - { who: narrateur, text: "Alors qu'elle posait la main sur l'épaule froide de métal, les yeux de verre s'allumèrent soudain d'une lueur bleue vive, et un grincement sourd traversa tout le corps de l'automate." }
+      - { who: rouage, text: "Dé... désolé. Mes rouages n'ont pas tourné depuis... depuis bien trop longtemps pour que je sache exactement combien." }
+      - { who: axelle, text: "Vous êtes vivant ! Enfin, pas vivant comme nous, mais... vous parlez !" }
+      - { who: rouage, text: "On m'appelait Rouage, autrefois. Je gardais cet atelier, et j'aidais celui qui m'avait construit. Puis il est parti, et je me suis arrêté, sans comprendre pourquoi." }
+      - { who: maelle, text: "Vous ne vous souvenez pas de ce qui s'est passé ensuite ?" }
+      - { who: rouage, text: "Pas encore, petite Cartographe. Ma mémoire, comme mes rouages, grince un peu. Mais elle revient, lentement, depuis que vous êtes là." }
+    manches:
+      - id: m1
+        title: Les yeux de verre s'allument
+        tours:
+          axelle:
+            - { id: ch15-j2-ax-m1a, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi les yeux de Rouage pouvaient-ils sembler « ternes » avant qu'il ne se réveille ?", choices: ["parce qu'ils étaient couverts de poussière et inactifs", "parce qu'ils étaient faits de bois", "parce qu'ils brillaient trop fort", "cela n'a aucune explication possible", "parce qu'ils changeaient de couleur chaque jour"], answer: "parce qu'ils étaient couverts de poussière et inactifs", hint: "Pense à combien de temps l'automate était resté immobile." }
+            - { id: ch15-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 4.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "9 + 4 = 9 + 1 + 3." }
+          maelle:
+            - { id: ch15-j2-ma-m1a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « froide » dans « épaule froide de métal » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit l'épaule de l'automate." }
+            - { id: ch15-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 288 ÷ 4.", choices: ["68", "70", "72", "74", "76"], answer: "72", hint: "4 × 72 = 288." }
+          rafaelle:
+            - { id: ch15-j2-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Ma mémoire, comme mes rouages, grince un peu. » : quelle figure de style rapproche ici la mémoire et les rouages ?", choices: ["une comparaison", "une négation", "une question", "une liste", "une exclamation seule"], answer: "une comparaison", hint: "Le mot « comme » relie les deux éléments." }
+            - { id: ch15-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13² − 90.", choices: ["69", "73", "76", "79", "83"], answer: "79", hint: "169 − 90." }
+      - id: m2
+        title: Le gardien de l'atelier
+        tours:
+          axelle:
+            - { id: ch15-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 15 − 8.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "15 − 7 = 8... attention : 15 − 8 = 7." }
+            - { id: ch15-j2-ax-m2b, subject: histoire-geo, level: 1, kind: qcm, prompt: "Pourquoi un inventeur pouvait-il autrefois construire un automate pour l'aider dans son atelier ?", choices: ["pour qu'il effectue des tâches répétitives à sa place", "pour décorer uniquement", "parce que c'était toujours obligatoire", "les automates ne servaient jamais à rien", "pour qu'il reste immobile pour toujours"], answer: "pour qu'il effectue des tâches répétitives à sa place", hint: "Pense au rôle que Rouage dit avoir eu autrefois." }
+          maelle:
+            - { id: ch15-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 46 × 4.", choices: ["178", "182", "184", "186", "190"], answer: "184", hint: "46 × 4 = 50 × 4 − 4 × 4." }
+            - { id: ch15-j2-ma-m2b, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi la mémoire d'un automate pourrait-elle revenir petit à petit, comme le dit Rouage, plutôt que d'un seul coup ?", choices: ["parce que ses mécanismes internes se remettent en marche progressivement", "parce que c'est toujours instantané pour une machine", "parce que les automates n'ont jamais de mémoire", "cela n'a aucun lien avec les mécanismes", "parce que la mémoire n'existe pas chez les machines"], answer: "parce que ses mécanismes internes se remettent en marche progressivement", hint: "Pense à ce que signifie un réveil « lent » pour une machine à engrenages." }
+          rafaelle:
+            - { id: ch15-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 7².", choices: ["28", "30", "32", "34", "36"], answer: "32", hint: "81 − 49." }
+            - { id: ch15-j2-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Vamos a repararla con cuidado. »", choices: ["Nous allons la casser exprès.", "Nous allons la réparer avec soin.", "Nous allons la laisser ici.", "Nous allons la vendre.", "Nous allons l'oublier."], answer: "Nous allons la réparer avec soin.", hint: "« Reparar con cuidado » = réparer avec soin." }
+      - id: m3
+        title: Une mémoire qui revient
+        tours:
+          axelle:
+            - { id: ch15-j2-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Un grincement sourd traversa son corps. » ?", choices: ["son corps", "traversa", "Un grincement sourd", "sourd", "grincement"], answer: "Un grincement sourd", hint: "Qu'est-ce qui traverse le corps de Rouage ?" }
+            - { id: ch15-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 3.", choices: ["21", "22", "24", "26", "28"], answer: "24", hint: "8 × 3 = 8 + 8 + 8." }
+          maelle:
+            - { id: ch15-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 405 ÷ 5.", choices: ["75", "78", "80", "81", "85"], answer: "81", hint: "5 × 81 = 405." }
+            - { id: ch15-j2-ma-m3b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « lentement » dans « elle revient, lentement » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adverbe", hint: "Il modifie le verbe « revient »." }
+          rafaelle:
+            - { id: ch15-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 7/9 − 3/9.", choices: ["3/9", "4/9", "5/9", "6/9", "7/9"], answer: "4/9", hint: "7 − 3 = 4, même dénominateur." }
+            - { id: ch15-j2-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au présent : « Nous (attendre) que sa mémoire revienne. »", choices: ["nous attendons", "nous attendez", "nous attendent", "nous attendions", "nous attendrons"], answer: "nous attendons", hint: "Nous : -ons." }
+      - id: m4
+        title: S'habituer à Rouage
+        tours:
+          axelle:
+            - { id: ch15-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 5.", choices: ["40", "42", "44", "45", "48"], answer: "45", hint: "9 × 5 = 9 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch15-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 215 − 97.", choices: ["114", "116", "118", "120", "122"], answer: "118", hint: "215 − 100 + 3." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch15-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Cada engranaje tiene su lugar. »", choices: ["Chaque rouage a sa place.", "Chaque rouage est cassé.", "Chaque rouage disparaît.", "Chaque rouage tourne seul.", "Chaque rouage est lourd."], answer: "Chaque rouage a sa place.", hint: "« Cada engranaje » = chaque rouage." }
+            - { gen: maths.ranger }
+    pause: "Le jeu de l'automate : une sœur se déplace par gestes saccadés comme un automate pendant dix secondes, puis s'arrête net ; les deux autres doivent deviner, à sa dernière pose, ce qu'elle était en train de faire."
+    closing:
+      - { who: narrateur, text: "Rouage resta assis, ses doigts de bronze pianotant doucement sur ses genoux, comme s'il cherchait encore, dans sa mémoire grinçante, le fil de son histoire interrompue." }
+      - { who: rouage, text: "Demain, si vous le voulez bien, je vous montrerai ce que je fabriquais, autrefois, dans cet atelier. Peut-être que cela m'aidera à me souvenir du reste." }
+      - { who: rafaelle, text: "On sera là. On a envie de comprendre qui vous étiez, avant d'avoir à décider de ce qu'on fera de vous." }
+      - { who: rouage, text: "« Décider de ce qu'on fera de moi »... Oui. Je sais que ce moment viendra. Je ne vous en voudrai pas, quel que soit votre choix." }
+      - { who: narrateur, text: "En quittant l'atelier pour la nuit, Axelle se retourna une dernière fois, et vit Rouage lever lentement une main de bronze, comme pour leur dire au revoir, maladroitement, pour la toute première fois depuis des années." }
+    reward: "le réveil de Rouage, et le début de ses souvenirs"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: Ce que fabriquait Rouage
+    decor: Un établi couvert de petites inventions inachevées — montres étranges, jouets mécaniques, oiseaux de métal aux ailes repliées — que Rouage redécouvre une à une avec une émotion grandissante.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, Rouage les conduisit, à petits pas encore mal assurés, vers un établi couvert de petites inventions inachevées : des montres étranges, des jouets mécaniques, et plusieurs oiseaux de métal aux ailes repliées." }
+      - { who: rouage, text: "Je crois... je crois que c'était mon travail. Aider mon créateur à fabriquer ces petites merveilles, une pièce à la fois, avec toute la patience qu'il me fallait." }
+      - { who: maelle, text: "Ces oiseaux... ils ont l'air presque prêts à voler ! Pourquoi sont-ils restés inachevés ?" }
+      - { who: rouage, text: "Je ne me souviens pas exactement. Mais je crois que mon créateur est parti avant d'avoir pu terminer le dernier. Et moi, je suis resté, à attendre son retour." }
+      - { who: axelle, text: "Un retour qui n'est jamais arrivé, c'est ça ?" }
+      - { who: rouage, text: "Je ne sais pas encore, petite Veilleuse. Peut-être que vous m'aiderez, justement, à le découvrir avant la fin de la semaine." }
+      - { who: rafaelle, text: "On peut essayer de terminer un de ces oiseaux, si vous voulez. Ça vous aiderait, peut-être, à vous souvenir de la suite." }
+      - { who: rouage, text: "J'aimerais beaucoup cela, petite Archiviste. Vraiment beaucoup." }
+    manches:
+      - id: m1
+        title: Les inventions inachevées
+        tours:
+          axelle:
+            - { id: ch15-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 4 oiseaux de métal sur l'établi, et 3 montres. Combien d'objets en tout ?", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "4 + 3." }
+            - { id: ch15-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Rouage fabriquait de petites merveilles. » ?", choices: ["de petites merveilles", "fabriquait", "Rouage", "petites", "merveilles"], answer: "Rouage", hint: "Qui fabriquait ces merveilles ?" }
+          maelle:
+            - { id: ch15-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi un inventeur construisait-il parfois des objets mécaniques en forme d'animaux, comme des oiseaux ?", choices: ["pour étudier et imiter les mouvements du vivant", "parce que c'était toujours interdit autrement", "parce que les animaux n'existaient pas encore", "cela n'avait jamais aucune raison précise", "pour effrayer les voisins"], answer: "pour étudier et imiter les mouvements du vivant", hint: "Pense à la fascination des inventeurs pour le vol des oiseaux." }
+            - { id: ch15-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 84 + 69.", choices: ["148", "151", "153", "155", "158"], answer: "153", hint: "84 + 70 − 1." }
+          rafaelle:
+            - { id: ch15-j3-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi le départ soudain d'un créateur pouvait-il laisser une œuvre définitivement inachevée ?", choices: ["parce qu'une œuvre complexe ne peut être terminée que par son propre créateur, le plus souvent", "parce que les œuvres inachevées n'ont jamais existé", "parce que cela n'a aucune importance pour une invention", "parce que les apprentis terminaient toujours tout seuls", "parce que les inventions se terminent toutes seules avec le temps"], answer: "parce qu'une œuvre complexe ne peut être terminée que par son propre créateur, le plus souvent", "hint": "Pense à pourquoi Rouage n'a pas terminé ces oiseaux tout seul."}
+            - { id: ch15-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 16 × 6.", choices: ["90", "92", "94", "96", "98"], answer: "96", hint: "16 × 6 = 16 × 3 × 2." }
+      - id: m2
+        title: Les oiseaux aux ailes repliées
+        tours:
+          axelle:
+            - { id: ch15-j3-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 + 5.", choices: ["10", "11", "12", "13", "14"], answer: "12", hint: "7 + 5 = 7 + 3 + 2." }
+            - { id: ch15-j3-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un oiseau mécanique a-t-il besoin d'un mécanisme précis pour que ses ailes se déplient correctement ?", choices: ["parce que le mouvement du vol est complexe à reproduire", "parce que les ailes se déplient toujours toutes seules sans mécanisme", "parce que le métal se plie naturellement comme des plumes", "cela n'a aucune importance pour un mécanisme", "parce que les ailes n'ont jamais besoin de bouger"], answer: "parce que le mouvement du vol est complexe à reproduire", hint: "Pense à la difficulté d'imiter le vol d'un vrai oiseau." }
+          maelle:
+            - { id: ch15-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 432 ÷ 6.", choices: ["68", "70", "72", "74", "76"], answer: "72", hint: "6 × 72 = 432." }
+            - { id: ch15-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « inachevées » dans « inventions inachevées » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit les inventions." }
+          rafaelle:
+            - { id: ch15-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 8² − 6².", choices: ["24", "26", "28", "30", "32"], answer: "28", hint: "64 − 36." }
+            - { id: ch15-j3-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Ella se despierta poco a poco. »", choices: ["Elle s'endort doucement.", "Elle se réveille peu à peu.", "Elle marche vite.", "Elle disparaît soudain.", "Elle chante fort."], answer: "Elle se réveille peu à peu.", hint: "« Poco a poco » = peu à peu." }
+      - id: m3
+        title: Finir un oiseau de métal
+        tours:
+          axelle:
+            - { id: ch15-j3-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « inachevé » ?", choices: ["terminé", "lourd", "petit", "froid", "rapide"], answer: "terminé", hint: "Le contraire de ce qui n'est pas fini." }
+            - { id: ch15-j3-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 16 − 9.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "16 − 6 = 10, puis − 3." }
+          maelle:
+            - { id: ch15-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 57 × 4.", choices: ["218", "222", "224", "226", "228"], answer: "228", hint: "57 × 4 = 60 × 4 − 3 × 4." }
+            - { id: ch15-j3-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi finir le travail inachevé de quelqu'un d'autre demande-t-il souvent beaucoup de respect et d'attention ?", choices: ["parce qu'il faut comprendre une intention qui n'est pas la sienne", "parce que c'est toujours interdit de le faire", "parce qu'on peut tout changer sans aucune conséquence", "cela ne demande jamais d'attention particulière", "parce que le travail inachevé n'a aucune valeur"], answer: "parce qu'il faut comprendre une intention qui n'est pas la sienne", hint: "Pense à ce que ressentent les sœurs en essayant de terminer l'oiseau de Rouage." }
+          rafaelle:
+            - { id: ch15-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 4x − 3 = 29.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "4x = 32." }
+            - { id: ch15-j3-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« J'aimerais beaucoup cela, petite Archiviste. » : que révèle cette réplique sur l'état d'esprit de Rouage ?", choices: ["de l'indifférence totale", "de l'espoir et de la gratitude", "de la colère cachée", "de la peur intense", "du mépris pour les sœurs"], answer: "de l'espoir et de la gratitude", hint: "Pense au ton employé par Rouage à ce moment du récit." }
+      - id: m4
+        title: Travailler avec soin
+        tours:
+          axelle:
+            - { id: ch15-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 9.", choices: ["48", "50", "52", "54", "56"], answer: "54", hint: "6 × 9 = 6 × 10 − 6." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch15-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 310 − 156.", choices: ["150", "154", "156", "158", "160"], answer: "154", hint: "310 − 160 + 4." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch15-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Gracias por salvarme. »", choices: ["Merci de m'avoir sauvé.", "Désolé de t'avoir dérangé.", "Au revoir, à bientôt.", "Bonne chance pour la suite.", "Merci pour ton aide."], answer: "Merci de m'avoir sauvé.", hint: "« Gracias por salvarme » = merci de m'avoir sauvé." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu des petites pièces : chaque sœur ferme les yeux et doit identifier, au toucher imaginaire, trois objets de l'établi (une plume, un rouage, une aile) en les décrivant à voix haute."
+    closing:
+      - { who: narrateur, text: "À la fin de la journée, un petit oiseau de métal reposait, presque terminé, sur l'établi, ses ailes désormais capables de se déplier lentement, comme s'il s'apprêtait enfin à prendre son envol." }
+      - { who: rouage, text: "Je me souviens, maintenant, d'une partie de ce qui s'est passé. Mon créateur devait revenir avec une pièce manquante, pour terminer ce tout dernier oiseau. Il n'est jamais revenu." }
+      - { who: maelle, text: "Vous savez pourquoi, maintenant ?" }
+      - { who: rouage, text: "Pas encore tout à fait. Mais je sens que je m'en approche, grâce à vous. Demain, peut-être, je me souviendrai enfin de la fin de cette histoire." }
+      - { who: narrateur, text: "En éteignant la dernière lampe de l'atelier, les trois sœurs laissèrent Rouage seul avec le petit oiseau presque terminé, posé délicatement entre ses mains de bronze." }
+    reward: "un oiseau de métal presque terminé, et le début d'un souvenir retrouvé"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Le souvenir retrouvé
+    decor: L'atelier, baigné d'une lumière d'après-midi poussiéreuse, où Rouage, assis sur un vieux tabouret, raconte enfin, pièce par pièce, le souvenir qui lui était resté inaccessible depuis si longtemps.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, Rouage les attendait déjà, assis sur un vieux tabouret, ses yeux de verre fixés sur un point lointain, comme s'il revivait, encore une fois, un souvenir tout juste retrouvé." }
+      - { who: rouage, text: "Je me souviens, maintenant. Mon créateur est parti chercher une pièce rare, loin dans la montagne, pour terminer le dernier oiseau. Une tempête s'est levée ce jour-là, et il n'est jamais rentré." }
+      - { who: rafaelle, text: "Vous êtes resté à l'attendre, tout ce temps, sans savoir ce qui lui était arrivé ?" }
+      - { who: rouage, text: "Je n'ai jamais vraiment su attendre autrement, petite Archiviste. Un automate fait ce pour quoi il a été construit, jusqu'à ce qu'on lui dise d'arrêter. Personne n'est jamais venu me le dire." }
+      - { who: axelle, text: "C'est terriblement triste, comme histoire." }
+      - { who: rouage, text: "C'est aussi, je crois, une histoire qui s'achève un peu, aujourd'hui, grâce à vous. Pour la première fois depuis très longtemps, je ne me sens plus tout à fait seul." }
+      - { who: maelle, text: "Qu'est-ce que vous comptez faire, maintenant que vous vous souvenez de tout ?" }
+      - { who: rouage, text: "Je ne sais pas encore, petite Cartographe. C'est peut-être justement la question que vous m'aiderez à résoudre, demain, à l'aube." }
+    manches:
+      - id: m1
+        title: La tempête dans la montagne
+        tours:
+          axelle:
+            - { id: ch15-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « rentrer » ?", choices: ["partir", "rester", "revenir", "entrer", "arriver"], answer: "partir", hint: "Le créateur de Rouage n'est jamais... rentré." }
+            - { id: ch15-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 7.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "8 + 7 = 8 + 8 − 1." }
+          maelle:
+            - { id: ch15-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi une tempête en montagne peut-elle être particulièrement dangereuse pour un voyageur ?", choices: ["parce que le vent, le froid et le brouillard rendent le chemin invisible et dangereux", "parce que les tempêtes de montagne n'existent pas vraiment", "parce que le soleil brille toujours plus fort pendant une tempête", "cela n'a aucune conséquence en montagne", "parce que les tempêtes se produisent uniquement en plaine"], answer: "parce que le vent, le froid et le brouillard rendent le chemin invisible et dangereux", hint: "Pense à pourquoi le créateur de Rouage n'est jamais rentré." }
+            - { id: ch15-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 504 − 237.", choices: ["260", "264", "267", "269", "272"], answer: "267", hint: "504 − 240 + 3." }
+          rafaelle:
+            - { id: ch15-j4-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi la fidélité d'une machine construite pour une tâche précise peut-elle devenir, avec le temps, une forme de tristesse ?", choices: ["parce qu'elle continue indéfiniment sans savoir que sa mission a pris fin", "parce que les machines ne ressentent jamais rien, selon ce récit", "parce qu'une machine s'arrête toujours toute seule au bon moment", "cela n'a aucun rapport avec le temps qui passe", "parce que la fidélité n'a jamais aucune conséquence"], answer: "parce qu'elle continue indéfiniment sans savoir que sa mission a pris fin", hint: "Repense à ce que dit Rouage sur l'attente, sans qu'on lui dise jamais d'arrêter." }
+            - { id: ch15-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15² − 125.", choices: ["90", "95", "100", "105", "110"], answer: "100", hint: "225 − 125." }
+      - id: m2
+        title: Ne plus être seul
+        tours:
+          axelle:
+            - { id: ch15-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 5.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "14 − 4 = 10, puis − 1." }
+            - { id: ch15-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi raconter une histoire difficile à voix haute peut-il, parfois, aider à se sentir moins seul ?", choices: ["parce que la partager la rend plus légère à porter", "cela n'a jamais aucun effet", "parce que raconter une histoire efface toujours les faits", "parce que parler fatigue toujours plus qu'autre chose", "parce que personne n'écoute jamais vraiment"], answer: "parce que la partager la rend plus légère à porter", hint: "Pense à ce que ressent Rouage après avoir tout raconté." }
+          maelle:
+            - { id: ch15-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 23 × 6.", choices: ["132", "136", "138", "140", "144"], answer: "138", hint: "23 × 6 = 20 × 6 + 3 × 6." }
+            - { id: ch15-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « triste » dans « terriblement triste » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit l'histoire de Rouage." }
+          rafaelle:
+            - { id: ch15-j4-ra-m2a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 5/6 − 1/6.", choices: ["2/6", "3/6", "4/6", "5/6", "1"], answer: "4/6", hint: "5 − 1 = 4, même dénominateur." }
+            - { id: ch15-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Elle se réveille peu à peu » en espagnol ?", choices: ["Ella se despierta poco a poco.", "Cada engranaje tiene su lugar.", "Vamos a repararla con cuidado.", "La máquina duerme desde hace mucho.", "Gracias por salvarme."], answer: "Ella se despierta poco a poco.", hint: "Relis la phrase du jour 3." }
+      - id: m3
+        title: Ce qui pourrait se résoudre demain
+        tours:
+          axelle:
+            - { id: ch15-j4-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Rouage ne se sent plus tout à fait seul. » ?", choices: ["tout à fait seul", "Rouage", "ne se sent plus", "seul", "plus"], answer: "Rouage", hint: "Qui ne se sent plus tout à fait seul ?" }
+            - { id: ch15-j4-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 3.", choices: ["24", "25", "27", "29", "30"], answer: "27", hint: "9 × 3 = 9 + 9 + 9." }
+          maelle:
+            - { id: ch15-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 360 ÷ 5.", choices: ["68", "70", "72", "74", "76"], answer: "72", hint: "5 × 72 = 360." }
+            - { id: ch15-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi est-il parfois difficile de décider seul de ce qu'on va devenir, après un grand changement dans sa vie ?", choices: ["parce qu'on a besoin de temps et parfois d'aide pour y voir clair", "parce que cela n'a jamais aucune difficulté", "parce que les décisions importantes se prennent toujours en une seconde", "cela n'arrive jamais à personne", "parce qu'il ne faut jamais réfléchir à son avenir"], answer: "parce qu'on a besoin de temps et parfois d'aide pour y voir clair", hint: "Repense à ce que Rouage dit sur la question de demain." }
+          rafaelle:
+            - { id: ch15-j4-ra-m3a, subject: maths, level: 5, kind: qcm, prompt: "Résous : 8x − 5 = 43.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "8x = 48." }
+            - { id: ch15-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Un automate fait ce pour quoi il a été construit, jusqu'à ce qu'on lui dise d'arrêter. » : que révèle cette phrase sur le fonctionnement de Rouage ?", choices: ["qu'il décide toujours tout seul de tout changer", "qu'il reste fidèle à sa mission tant que personne ne la modifie", "qu'il oublie instantanément toutes ses tâches", "qu'il n'a jamais eu de mission précise", "qu'il refuse systématiquement d'obéir"], answer: "qu'il reste fidèle à sa mission tant que personne ne la modifie", hint: "Relis bien la phrase, juste après la question de Rafaelle." }
+      - id: m4
+        title: Se préparer à la décision
+        tours:
+          axelle:
+            - { id: ch15-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 8.", choices: ["52", "54", "56", "58", "60"], answer: "56", hint: "7 × 8 = 7 × 4 × 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch15-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 285 − 119.", choices: ["160", "164", "166", "168", "170"], answer: "166", hint: "285 − 120 + 1." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch15-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15 × 7.", choices: ["98", "100", "103", "105", "108"], answer: "105", hint: "15 × 7 = 15 × 7." }
+            - { gen: maths.duree }
+    pause: "Le jeu de la dernière pièce : chaque sœur imagine, à voix haute, quelle aurait pu être la pièce rare que le créateur de Rouage cherchait dans la montagne, et pourquoi elle était si précieuse."
+    closing:
+      - { who: narrateur, text: "Rouage resta longtemps silencieux après avoir fini son récit, ses doigts de bronze serrés doucement autour du petit oiseau presque terminé, comme s'il y puisait un peu de réconfort." }
+      - { who: rouage, text: "Demain, il faudra que je sache ce qui m'attend. Et je crois, pour la première fois depuis très longtemps, que je ne suis plus vraiment inquiet de la réponse." }
+      - { who: rafaelle, text: "Quoi qu'il arrive, on n'oubliera pas votre histoire, Rouage. Ni celle de votre créateur." }
+      - { who: rouage, text: "C'est peut-être, au fond, tout ce qu'un automate peut espérer de mieux : ne pas être oublié." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs regagnaient l'Arche pour la nuit, Nilo s'arrêta un instant sur le seuil de l'atelier, regardant Rouage d'un air étrangement pensif, avant de les suivre en silence." }
+    reward: "le souvenir complet de Rouage, et la question de son avenir"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: Le choix de l'atelier
+    decor: L'atelier tout entier, rangé et dépoussiéré par une semaine de travail commun, où Rouage attend, assis bien droit, le petit oiseau de métal posé devant lui sur l'établi.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, l'atelier tout entier semblait transformé : rangé, dépoussiéré, les outils reposant enfin à leur place, et Rouage, assis bien droit, attendait, le petit oiseau de métal posé devant lui sur l'établi." }
+      - { who: rouage, text: "Je suis vieux, mes rouages grincent, et je ne sers plus à grand-chose. Vous pourriez me démonter pour vos outils — j'ai de belles pièces. Ou alors... c'est à vous de voir, maintenant." }
+      - { who: nilo, text: "Allez, les filles. Après tout ce qu'on a appris cette semaine, cette décision-là, on la prendra ensemble, et bien." }
+    manches:
+      - id: m1
+        title: Ce que l'atelier a appris
+        intro: "Rouage interroge chaque sœur sur tout ce que cette semaine dans l'atelier lui a appris."
+        tours:
+          axelle:
+            - { id: ch15-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on une machine construite pour imiter les mouvements d'un être vivant ?", choices: ["un automate", "un marchand", "un peseur", "un cartographe", "un passeur"], answer: "un automate", hint: "C'est le mot utilisé depuis le premier jour." }
+            - { id: ch15-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 + 6.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "9 + 6 = 9 + 9 − 3." }
+          maelle:
+            - { id: ch15-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi un mécanisme resté longtemps immobile peut-il grincer quand on le remet en marche, selon ce que tu as appris cette semaine ?", choices: ["à cause de la rouille et du manque d'huile", "cela n'arrive jamais à un mécanisme", "parce que le métal disparaît avec le temps", "parce qu'il devient toujours plus léger", "parce que le métal devient plus souple"], answer: "à cause de la rouille et du manque d'huile", hint: "Repense à ta propre question du premier jour." }
+            - { id: ch15-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 34 × 4.", choices: ["132", "134", "136", "138", "140"], answer: "136", hint: "34 × 4 = 35 × 4 − 4." }
+          rafaelle:
+            - { id: ch15-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que l'histoire de Rouage est autant une histoire de fidélité que de solitude ?", choices: ["parce qu'il est resté fidèle à sa mission tout en se retrouvant seul, sans qu'on le lui dise jamais autrement", "parce que Rouage n'a jamais rien ressenti", "parce que la solitude et la fidélité n'ont aucun lien dans ce récit", "parce que Rouage a toujours eu de la compagnie", "parce qu'il n'a jamais eu de mission précise"], answer: "parce qu'il est resté fidèle à sa mission tout en se retrouvant seul, sans qu'on le lui dise jamais autrement", hint: "Repense à l'histoire complète que Rouage a racontée le quatrième jour." }
+            - { id: ch15-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 5/7 + 1/7.", choices: ["4/7", "5/7", "6/7", "7/7", "6/14"], answer: "6/7", hint: "5 + 1 = 6, même dénominateur." }
+      - id: m2
+        title: Avant de décider
+        intro: "Il faut relier tout ce que la semaine a appris pour choisir, vraiment, ce qu'il adviendra de Rouage."
+        tours:
+          axelle:
+            - { id: ch15-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux quelqu'un qui reste fidèle à sa mission, même après des années ?", choices: ["infidèle", "loyal", "distrait", "oublieux", "indifférent"], answer: "loyal", hint: "C'est ce que Rouage est resté, malgré tout ce temps." }
+            - { id: ch15-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 16 − 7.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "16 − 6 = 10, puis − 1." }
+          maelle:
+            - { id: ch15-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi cet atelier, creusé à flanc de montagne, a-t-il une importance particulière dans le voyage des trois sœurs ?", choices: ["il n'a aucune importance réelle", "il leur apprend la patience et le respect du travail d'autrui", "il les empêche d'avancer vers le sommet", "il se trouve très loin des montagnes", "personne n'y passe jamais vraiment"], answer: "il leur apprend la patience et le respect du travail d'autrui", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de Rouage." }
+            - { id: ch15-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 480 ÷ 8.", choices: ["55", "58", "60", "62", "65"], answer: "60", hint: "8 × 60 = 480." }
+          rafaelle:
+            - { id: ch15-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 11² − 85.", choices: ["30", "32", "34", "36", "38"], answer: "36", hint: "121 − 85." }
+            - { id: ch15-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« C'est à vous de voir, maintenant. » : quel est le sujet de cette phrase ?", choices: ["maintenant", "à vous", "C'", "de voir", "vous"], answer: "C'", hint: "« C' » reprend ici ce qui doit être décidé." }
+      - id: m3
+        title: Le Chant de l'Atelier
+        intro: "L'atelier lui-même semble répondre : les rouages de Rouage ne se remettent en marche pleinement que si les trois sœurs trouvent, ensemble, le bon rythme."
+        tours:
+          axelle:
+            - { id: ch15-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          maelle:
+            - { id: ch15-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, noire, noire." }
+          rafaelle:
+            - { id: ch15-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : ronde." }
+    concert:
+      measures:
+        axelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        maelle: { given: [2, 1], missing: 1, prompt: "Blanche, noire, noire" }
+        rafaelle: { given: [], missing: 4, prompt: "Ronde" }
+    pause: "Le dernier regard sur l'atelier : chacune choisit, avant de partir, l'outil ou l'invention de l'établi qu'elle aimerait le plus revoir un jour, et dit pourquoi à voix haute."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant de l'Atelier résonna entre les murs couverts d'outils, et les rouages de Rouage, d'un seul coup, se mirent à tourner avec une fluidité qu'ils n'avaient plus connue depuis des années." }
+      - { who: rafaelle, text: "Alors, Rouage ? Comment vous sentez-vous, maintenant ?" }
+      - { who: narrateur, text: "L'automate se leva lentement, avec une aisance nouvelle, et tendit vers les trois sœurs le petit oiseau de métal, désormais parfaitement terminé, ses ailes de bronze prêtes à se déployer." }
+      - { who: rafaelle, text: "Merci, Rouage. Pour l'atelier, pour votre histoire, et pour nous avoir fait confiance." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs quittaient l'atelier, le petit oiseau de métal serré précieusement contre elles, elles sentirent, derrière elles, la montagne tout entière résonner d'un bruit de rouages joyeux, comme si l'atelier venait, enfin, de reprendre vie." }
+      - { who: nilo, text: "Bon. Un automate en plus dans l'équipe, ou un souvenir en plus dans nos têtes. Dans les deux cas, on continue. La montagne nous attend toujours." }
+      - { who: axelle, text: "On a toujours fini par trouver notre chemin, jusqu'ici. Pourquoi pas cette fois encore ?" }
+    reward: "l'issue du choix fait pour Rouage, et l'oiseau de métal terminé"
