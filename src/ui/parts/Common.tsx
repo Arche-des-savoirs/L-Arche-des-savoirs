@@ -24,7 +24,8 @@ const SPEAKERS: Record<string, string> = {
   reine: 'La Reine Sans Ombre',
   scribe: 'Le Scribe',
   devoreuse: 'La Dévoreuse',
-  trame: 'Trame'
+  trame: 'Trame',
+  cartea: 'Dame Cartéa'
 };
 const speaker = (who: string) => SPEAKERS[who] ?? NAMES[who as PlayerId] ?? who;
 /** Texte réellement lu à voix haute : annonce le personnage avant sa réplique, sauf pour le narrateur (prose, pas une citation). */

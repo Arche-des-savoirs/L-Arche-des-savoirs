@@ -51,6 +51,7 @@ const VOICES = {
   passeur: 'Achird',
   pigeon: 'Sadaltager',
   fil: 'Algenib',
+  cartea: 'Autonoe',
   axelle: 'Aoede',
   maelle: 'Leda',
   rafaelle: 'Erinome'
