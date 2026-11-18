@@ -1,0 +1,379 @@
+# Chapitre 25 — Véra, la Guetteuse d'Étoiles
+# Nouveau personnage : Véra, une astronome solitaire qui vit au sommet d'une tour de pierre,
+# et guide les voyageurs grâce à la lecture des étoiles. Voix : Pulcherrima.
+# Pas d'effet ORVANE ni de drapeau pour ce chapitre (absent de decisions.ts) : décision
+# purement narrative sur la façon d'apprendre à lire le ciel nocturne.
+
+id: ch25
+number: 25
+act: 2
+title: Véra, la Guetteuse d'Étoiles
+introImage: ch25
+scene: tour-des-etoiles
+
+espagnol:
+  - { es: "Las estrellas guían el camino.", fr: "Les étoiles guident le chemin." }
+  - { es: "La torre toca el cielo.", fr: "La tour touche le ciel." }
+  - { es: "Cada estrella tiene un nombre.", fr: "Chaque étoile a un nom." }
+  - { es: "La noche es clara esta vez.", fr: "La nuit est claire, cette fois." }
+  - { es: "Observar requiere paciencia.", fr: "Observer demande de la patience." }
+
+decision:
+  prompt: "Véra déroule une carte du ciel usée par le temps, couverte de constellations tracées à l'encre pâle. « Pour continuer votre route de nuit, il vous faudra apprendre à lire le ciel. Voulez-vous que je vous enseigne les grandes constellations, que je vous raconte leurs légendes, ou préférez-vous observer vous-mêmes, en silence, et découvrir les figures par vous-mêmes ? »"
+  options:
+    A:
+      label: Apprendre méthodiquement les grandes constellations
+      scene: "Maelle demande à Véra de lui enseigner, une à une, méthodiquement, les grandes constellations utiles pour se repérer durant un long voyage nocturne."
+      line: { who: vera, text: "Une approche méthodique, petite Cartographe. C'est exactement ainsi que j'ai moi-même appris, il y a bien longtemps, étoile après étoile." }
+      habillage: "Les épreuves prennent la forme d'un apprentissage structuré et progressif, étoile par étoile, constellation par constellation."
+    B:
+      label: Écouter les légendes qui accompagnent chaque constellation
+      scene: "Axelle préfère écouter les légendes que Véra raconte à propos de chaque constellation, pour mieux les retenir à travers les histoires qui leur donnent vie."
+      line: { who: vera, text: "Les légendes aident souvent à retenir ce que la pure mémoire oublie, petite Veilleuse. Je vais t'en raconter quelques-unes, avec plaisir." }
+      habillage: "Les épreuves se mêlent à des récits et des légendes, qui donnent du relief et du sens à chaque figure céleste."
+    C:
+      label: Observer seules, en silence, pour découvrir les figures par soi-même
+      scene: "Rafaelle choisit d'observer le ciel en silence, seule avec ses sœurs, pour tenter de découvrir elle-même les figures des constellations, sans l'aide immédiate de Véra."
+      line: { who: vera, text: "Une démarche audacieuse, petite Archiviste. Je resterai tout près, si jamais vous avez besoin d'un mot pour vous guider." }
+      habillage: "Les épreuves prennent la forme d'une observation silencieuse et personnelle, où chacune doit faire confiance à son propre regard."
+
+repliquesAbsurdes:
+  - "Si chaque étoile a un nom, est-ce qu'elles se vexent quand on les confond avec leur voisine ?"
+  - "Mon renard a essayé d'attraper une étoile filante avec sa patte. Résultat : il a juste attrapé un peu de poussière de tour."
+  - "Est-ce que Véra a une étoile préférée, ou c'est interdit d'en avoir une quand on les connaît toutes ?"
+  - "Si observer demande de la patience, est-ce que les étoiles, elles, observent aussi, de leur côté, en nous attendant ?"
+  - "Après une nacelle suspendue au-dessus d'un gouffre, grimper une tour qui touche le ciel, ça paraît presque une promenade tranquille."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: La tour qui touche le ciel
+    decor: Une haute tour de pierre isolée, dressée au sommet d'une crête rocheuse, dont le dernier étage est entièrement ouvert sur le ciel nocturne.
+    opening:
+      - { who: narrateur, text: "Après la traversée du gouffre, le sentier grimpa longuement jusqu'à une haute tour de pierre, isolée, dressée au sommet d'une crête rocheuse battue par les vents." }
+      - { who: narrateur, text: "Au dernier étage, entièrement ouvert sur le ciel, une femme âgée aux cheveux argentés observait les étoiles à travers une lunette de cuivre patiné." }
+      - { who: axelle, text: "Bonsoir ! On ne voulait pas vous déranger, on cherchait juste un abri pour la nuit." }
+      - { who: narrateur, text: "La femme se retourna lentement, un sourire doux sur le visage, et referma sa lunette avec des gestes précis, habitués." }
+      - { who: vera, text: "Vous ne me dérangez pas, petites voyageuses. Je suis Véra, et cette tour m'appartient depuis plus d'années que je ne saurais en compter." }
+      - { who: maelle, text: "Vous observez les étoiles toutes les nuits, comme ça, toute seule ?" }
+      - { who: vera, text: "Toutes les nuits claires, petite Cartographe. Le ciel ne se répète jamais vraiment, et j'aime en garder la mémoire." }
+      - { who: rafaelle, text: "Et vous pourriez nous apprendre, un peu, à lire ce ciel-là ?" }
+      - { who: vera, text: "Avec grand plaisir, petite Archiviste. Restez quelques jours ici, et je vous montrerai tout ce que je sais." }
+    manches:
+      - id: m1
+        title: Une tour isolée
+        tours:
+          axelle:
+            - { id: ch25-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on une personne qui observe et étudie les étoiles et le ciel nocturne ?", choices: ["une astronome", "une jardinière", "une bergère", "une tisserande", "une marchande"], answer: "une astronome", hint: "C'est le métier pratiqué par Véra, dans sa tour." }
+            - { id: ch25-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 6 + 7.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "6 + 7 = 6 + 6 + 1." }
+          maelle:
+            - { id: ch25-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi une tour isolée et élevée est-elle particulièrement bien placée pour observer le ciel nocturne ?", choices: ["elle offre un horizon dégagé et s'éloigne des lumières et obstacles du sol", "une tour élevée empêche toujours de voir le ciel", "cela n'a aucune explication particulière", "l'altitude n'a jamais aucun effet sur l'observation du ciel", "il vaut toujours mieux observer les étoiles depuis une vallée encaissée"], answer: "elle offre un horizon dégagé et s'éloigne des lumières et obstacles du sol", hint: "Pense à la position de la tour de Véra, au sommet de la crête rocheuse." }
+            - { id: ch25-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 64 + 58.", choices: ["118", "120", "122", "124", "126"], answer: "122", hint: "64 + 60 − 2." }
+          rafaelle:
+            - { id: ch25-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi, historiquement, l'observation des étoiles a-t-elle souvent servi à se repérer durant les voyages nocturnes ?", choices: ["parce que la position de certaines étoiles reste stable et permet de s'orienter sans autre instrument", "parce que les étoiles n'ont jamais aucune utilité pour se repérer", "cela n'a aucune importance historique", "parce qu'il est toujours impossible de se repérer la nuit", "parce que les étoiles changent de position toutes les minutes"], answer: "parce que la position de certaines étoiles reste stable et permet de s'orienter sans autre instrument", hint: "Pense à l'utilité, pour un voyageur de nuit, de savoir lire les étoiles comme Véra le propose." }
+            - { id: ch25-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 17 × 5.", choices: ["75", "80", "82", "85", "88"], answer: "85", hint: "17 × 5 = 17 × 10 ÷ 2." }
+      - id: m2
+        title: Une lunette de cuivre
+        tours:
+          axelle:
+            - { id: ch25-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Une femme observait les étoiles. » ?", choices: ["les étoiles", "observait", "Une femme", "une", "femme"], answer: "Une femme", hint: "Qui observe les étoiles, au sommet de la tour ?" }
+            - { id: ch25-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 13 − 6.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "13 − 6 = 7." }
+          maelle:
+            - { id: ch25-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « patiné » dans « une lunette de cuivre patiné » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la lunette de Véra, marquée par le temps." }
+            - { id: ch25-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 376 ÷ 4.", choices: ["86", "88", "90", "92", "94"], answer: "94", hint: "4 × 94 = 376." }
+          rafaelle:
+            - { id: ch25-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Le ciel ne se répète jamais vraiment, et j'aime en garder la mémoire. » : que révèle cette phrase sur Véra ?", choices: ["qu'elle porte une attention fine et durable à ce qu'elle observe chaque nuit", "qu'elle trouve le ciel toujours identique, sans aucun intérêt", "qu'elle n'observe le ciel que de façon occasionnelle", "qu'elle considère l'observation du ciel comme inutile", "qu'elle n'a aucune mémoire de ce qu'elle observe"], answer: "qu'elle porte une attention fine et durable à ce qu'elle observe chaque nuit", hint: "Repense à ce que dit Véra sur le ciel qui ne se répète jamais." }
+            - { id: ch25-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 12² − 80.", choices: ["58", "60", "62", "64", "68"], answer: "64", hint: "144 − 80." }
+      - id: m3
+        title: Rester quelques jours
+        tours:
+          axelle:
+            - { id: ch25-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Véra observe 3 nuits cette semaine, et 2 nuits la semaine suivante. Combien de nuits en tout ?", choices: ["4", "5", "6", "7", "8"], answer: "5", hint: "3 + 2." }
+            - { id: ch25-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi une nuit « claire » est-elle plus propice à l'observation des étoiles qu'une nuit nuageuse ?", choices: ["les nuages bloquent la lumière des étoiles et empêchent de bien les voir", "les nuages n'ont jamais aucun effet sur la visibilité des étoiles", "cela n'a aucune explication particulière", "une nuit nuageuse permet toujours de mieux voir les étoiles", "les étoiles disparaissent complètement par temps clair"], answer: "les nuages bloquent la lumière des étoiles et empêchent de bien les voir", hint: "Pense à l'expression « nuit claire » utilisée par Véra elle-même." }
+          maelle:
+            - { id: ch25-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 48 × 4.", choices: ["182", "186", "188", "190", "192"], answer: "192", hint: "48 × 4 = 50 × 4 − 2 × 4." }
+            - { id: ch25-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi accepter l'hospitalité et l'enseignement d'une personne expérimentée, comme Véra, peut-il enrichir un voyage ?", choices: ["parce que cela permet d'apprendre un savoir rare et précieux, transmis directement par quelqu'un qui le maîtrise", "parce que ce genre d'accueil n'a jamais aucune utilité pour un voyageur", "cela n'a aucun lien avec l'enrichissement d'un voyage", "parce qu'il vaut toujours mieux refuser toute aide extérieure", "parce qu'apprendre auprès de quelqu'un retarde toujours un voyage"], answer: "parce que cela permet d'apprendre un savoir rare et précieux, transmis directement par quelqu'un qui le maîtrise", hint: "Pense à la proposition de Véra d'enseigner aux sœurs la lecture du ciel." }
+          rafaelle:
+            - { id: ch25-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x + 7 = 42.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "5x = 35." }
+            - { id: ch25-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Véra (refermer) sa lunette avec des gestes précis. »", choices: ["a refermé", "refermait", "refermera", "referme", "refermant"], answer: "a refermé", hint: "« Refermer » se conjugue avec avoir au passé composé." }
+      - id: m4
+        title: Premiers regards vers le ciel
+        tours:
+          axelle:
+            - { id: ch25-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 4.", choices: ["28", "30", "31", "32", "34"], answer: "32", hint: "8 × 4 = 8 × 2 × 2." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch25-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 305 − 148.", choices: ["155", "157", "159", "161", "163"], answer: "157", hint: "305 − 150 + 2." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch25-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Las estrellas guían el camino. »", choices: ["Les étoiles guident le chemin.", "Les étoiles éteignent la lumière.", "Les étoiles tombent du ciel.", "Les étoiles comptent les nuits.", "Les étoiles dorment le jour."], answer: "Les étoiles guident le chemin.", hint: "« Guían el camino » = guident le chemin." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu des points lumineux : chaque sœur dessine, du doigt dans l'air, une petite figure imaginaire à partir de points qu'elle invente, pour s'entraîner à l'exercice que pratique Véra chaque nuit."
+    closing:
+      - { who: narrateur, text: "La première nuit tomba doucement sur la tour, et le ciel, déjà, commença à se parsemer d'un nombre incalculable de petites lumières scintillantes." }
+      - { who: vera, text: "Demain, nous choisirons ensemble la meilleure façon d'apprendre. Dormez bien, petites voyageuses, la nuit sera longue." }
+      - { who: rafaelle, text: "On a hâte de commencer, vraiment." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs s'installaient pour la nuit, Véra resta encore un long moment à sa lunette, fidèle à une habitude plus ancienne qu'elle ne saurait dire." }
+    reward: "la découverte de la tour, et de Véra, la guetteuse d'étoiles"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Les noms des étoiles
+    decor: Le sommet de la tour, à la tombée de la nuit, où Véra commence à enseigner aux trois sœurs les noms de quelques étoiles particulièrement brillantes.
+    opening:
+      - { who: narrateur, text: "Le lendemain soir, Véra rassembla les trois sœurs au sommet de la tour, et commença à leur enseigner les noms de quelques étoiles particulièrement brillantes." }
+      - { who: vera, text: "Regardez bien celle-ci, tout en haut : on l'appelle depuis toujours l'Étoile du Berger. Elle apparaît souvent la première, au crépuscule." }
+      - { who: axelle, text: "Et celle-là, juste à côté, un peu plus rouge que les autres ?" }
+      - { who: vera, text: "Une excellente observation, petite Veilleuse. C'est une étoile vieillissante, dont la couleur change avec le temps, comme bien des choses." }
+      - { who: maelle, text: "Comment est-ce que vous avez retenu les noms de toutes ces étoiles, finalement ?" }
+      - { who: vera, text: "Patiemment, petite Cartographe, nuit après nuit, pendant des années. Certaines s'apprennent vite, d'autres demandent bien plus de temps." }
+      - { who: rafaelle, text: "On devrait peut-être commencer, nous aussi, par les plus simples à retenir." }
+      - { who: vera, text: "C'est exactement ce que je m'apprêtais à vous proposer, petite Archiviste." }
+    manches:
+      - id: m1
+        title: L'Étoile du Berger
+        tours:
+          axelle:
+            - { id: ch25-j2-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « brillante » (en parlant d'une étoile) ?", choices: ["terne", "lumineuse", "scintillante", "éclatante", "vive"], answer: "terne", hint: "Le contraire de ce que sont les étoiles les plus visibles." }
+            - { id: ch25-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 6.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "9 + 6 = 9 + 1 + 5." }
+          maelle:
+            - { id: ch25-j2-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi certaines étoiles apparaissent-elles plus rouges que d'autres, comme celle évoquée par Véra ?", choices: ["leur couleur reflète des caractéristiques différentes, comme leur température ou leur âge", "toutes les étoiles ont exactement la même couleur sans exception", "cela n'a aucune explication particulière", "la couleur d'une étoile ne dépend jamais d'aucun facteur", "seules les étoiles jeunes peuvent paraître rouges"], answer: "leur couleur reflète des caractéristiques différentes, comme leur température ou leur âge", hint: "Pense à ce que dit Véra sur l'étoile vieillissante." }
+            - { id: ch25-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 429 ÷ 3.", choices: ["133", "139", "141", "143", "147"], answer: "143", hint: "3 × 143 = 429." }
+          rafaelle:
+            - { id: ch25-j2-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi un savoir patiemment accumulé pendant des années, comme celui de Véra, a-t-il souvent une grande valeur ?", choices: ["parce qu'il repose sur une observation répétée et longuement affinée au fil du temps", "parce qu'un savoir accumulé lentement n'a jamais aucune valeur", "cela n'a aucun lien avec la valeur d'un savoir", "parce que seul un savoir appris rapidement compte vraiment", "parce que l'observation répétée n'apporte jamais rien de nouveau"], answer: "parce qu'il repose sur une observation répétée et longuement affinée au fil du temps", hint: "Repense à la façon dont Véra explique avoir appris les noms des étoiles." }
+            - { id: ch25-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 16 × 5.", choices: ["70", "75", "78", "80", "82"], answer: "80", hint: "16 × 5 = 16 × 10 ÷ 2." }
+      - id: m2
+        title: Retenir les noms
+        tours:
+          axelle:
+            - { id: ch25-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 17 − 9.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "17 − 7 = 10, puis − 1." }
+            - { id: ch25-j2-ax-m2b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Certaines étoiles s'apprennent vite. » ?", choices: ["vite", "s'apprennent", "Certaines étoiles", "certaines", "étoiles"], answer: "Certaines étoiles", hint: "Qu'est-ce qui s'apprend vite, selon Véra ?" }
+          maelle:
+            - { id: ch25-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 37 × 4.", choices: ["138", "142", "144", "146", "148"], answer: "148", hint: "37 × 4 = 40 × 4 − 3 × 4." }
+            - { id: ch25-j2-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « patiemment » dans « patiemment, nuit après nuit » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adverbe", hint: "Il décrit la façon dont Véra a appris les étoiles." }
+          rafaelle:
+            - { id: ch25-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 50.", choices: ["28", "31", "33", "35", "38"], answer: "31", hint: "81 − 50." }
+            - { id: ch25-j2-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « La torre toca el cielo. »", choices: ["La tour touche le ciel.", "La tour tombe en ruine.", "La tour reste cachée.", "La tour brille la nuit.", "La tour s'envole doucement."], answer: "La tour touche le ciel.", hint: "« Toca el cielo » = touche le ciel." }
+      - id: m3
+        title: Commencer par les plus simples
+        tours:
+          axelle:
+            - { id: ch25-j2-ax-m3a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on un groupe d'étoiles qui, vues depuis la Terre, forment une figure reconnaissable ?", choices: ["une constellation", "une galaxie", "une comète", "une nébuleuse", "une planète"], answer: "une constellation", hint: "C'est ce que Véra enseigne aux trois sœurs." }
+            - { id: ch25-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 4.", choices: ["24", "26", "27", "28", "30"], answer: "28", hint: "7 × 4 = 7 × 2 × 2." }
+          maelle:
+            - { id: ch25-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 288 ÷ 4.", choices: ["68", "70", "72", "74", "76"], answer: "72", hint: "4 × 72 = 288." }
+            - { id: ch25-j2-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi est-il souvent plus efficace d'apprendre d'abord les éléments les plus simples ou les plus visibles d'un savoir nouveau ?", choices: ["parce que cela construit une base solide avant d'aborder des éléments plus complexes", "parce qu'il vaut toujours mieux commencer directement par le plus difficile", "cela n'a aucun lien avec l'apprentissage progressif", "parce que l'ordre d'apprentissage n'a jamais aucune importance", "parce que les éléments simples n'ont jamais aucune utilité"], answer: "parce que cela construit une base solide avant d'aborder des éléments plus complexes", hint: "Pense à la suggestion de Rafaelle, de commencer par les étoiles les plus simples à retenir." }
+          rafaelle:
+            - { id: ch25-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 8x − 6 = 42.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "8x = 48." }
+            - { id: ch25-j2-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Certaines s'apprennent vite, d'autres demandent bien plus de temps. » : que révèle cette phrase sur l'apprentissage ?", choices: ["qu'apprendre à reconnaître les étoiles demande un temps variable selon leur difficulté", "que toutes les étoiles s'apprennent exactement à la même vitesse", "qu'il est impossible d'apprendre les noms des étoiles", "que le temps d'apprentissage n'a jamais aucune importance", "que seules les étoiles difficiles méritent d'être apprises"], answer: "qu'apprendre à reconnaître les étoiles demande un temps variable selon leur difficulté", hint: "Relis bien la phrase de Véra, en lien avec l'apprentissage des noms d'étoiles." }
+      - id: m4
+        title: S'exercer à observer
+        tours:
+          axelle:
+            - { id: ch25-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 5.", choices: ["25", "27", "28", "30", "32"], answer: "30", hint: "6 × 5 = 6 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch25-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 330 − 157.", choices: ["170", "172", "173", "175", "177"], answer: "173", hint: "330 − 160 + 3." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch25-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Cada estrella tiene un nombre. »", choices: ["Chaque étoile a un nom.", "Chaque étoile a disparu.", "Chaque étoile change de place.", "Chaque étoile se cache le jour.", "Chaque étoile brille trop fort."], answer: "Chaque étoile a un nom.", hint: "« Tiene un nombre » = a un nom." }
+            - { gen: maths.duree }
+    pause: "Le jeu du nom inventé : chaque sœur choisit une étoile imaginaire et lui donne un nom de son invention, en expliquant brièvement pourquoi ce nom lui convient."
+    closing:
+      - { who: narrateur, text: "La deuxième nuit se referma lentement sur la tour, tandis que les trois sœurs répétaient encore, à voix basse, les noms qu'elles venaient d'apprendre." }
+      - { who: vera, text: "Demain, il faudra choisir comment poursuivre cet apprentissage : méthodiquement, par les légendes, ou par vos propres observations silencieuses." }
+      - { who: axelle, text: "On va bien y réfléchir, c'est promis." }
+      - { who: narrateur, text: "Et tandis que le ciel scintillait doucement au-dessus de la tour, Véra referma sa lunette, satisfaite, visiblement, de ces premières élèves si attentives." }
+    reward: "les premiers noms d'étoiles, appris auprès de Véra"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: Les légendes du ciel
+    decor: Le sommet de la tour, où Véra raconte aux trois sœurs quelques légendes anciennes attachées aux constellations qu'elles ont déjà apprises.
+    opening:
+      - { who: narrateur, text: "Le troisième soir, avant même de reprendre la leçon, Véra proposa aux trois sœurs d'écouter quelques légendes anciennes attachées aux étoiles déjà apprises." }
+      - { who: vera, text: "L'Étoile du Berger, dit-on, veillait autrefois sur un berger solitaire, perdu dans la montagne, pour l'aider à retrouver son chemin chaque nuit." }
+      - { who: maelle, text: "Et l'étoile rouge, celle qui change de couleur avec le temps, elle a aussi une légende ?" }
+      - { who: vera, text: "Bien sûr, petite Cartographe. On raconte qu'elle fut autrefois une guerrière si fatiguée qu'elle s'endormit pour toujours parmi les étoiles." }
+      - { who: rafaelle, text: "Ces légendes, elles sont vraies, ou c'est juste des histoires qu'on raconte pour le plaisir ?" }
+      - { who: vera, text: "Un peu des deux, petite Archiviste. Elles ne disent peut-être pas la vérité exacte, mais elles disent souvent quelque chose de vrai, malgré tout." }
+      - { who: axelle, text: "C'est joli, comme façon de voir les choses." }
+      - { who: vera, text: "Merci, petite Veilleuse. C'est aussi pour ça que je continue, après tant d'années, à les raconter." }
+    manches:
+      - id: m1
+        title: Le berger et son étoile
+        tours:
+          axelle:
+            - { id: ch25-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 5 légendes racontées le premier soir, et 3 de plus le lendemain. Combien de légendes en tout ?", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "5 + 3." }
+            - { id: ch25-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « solitaire » ?", choices: ["accompagné", "isolé", "seul", "perdu", "éloigné"], answer: "accompagné", hint: "Le contraire de ce qu'était le berger de la légende, seul dans la montagne." }
+          maelle:
+            - { id: ch25-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi de nombreuses cultures à travers l'histoire ont-elles associé des légendes aux constellations qu'elles observaient ?", choices: ["parce que raconter des histoires aidait à mieux retenir et transmettre la position des étoiles", "parce que les légendes n'ont jamais aucun lien avec l'observation des étoiles", "cela n'a aucune explication particulière", "parce qu'il est impossible de raconter une histoire à propos d'une étoile", "parce que seules les étoiles récentes ont des légendes"], answer: "parce que raconter des histoires aidait à mieux retenir et transmettre la position des étoiles", hint: "Pense à ce que dit Véra sur l'aide apportée par les légendes pour retenir ce que la mémoire oublie." }
+            - { id: ch25-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 76 + 59.", choices: ["130", "132", "133", "135", "137"], answer: "135", hint: "76 + 60 − 1." }
+          rafaelle:
+            - { id: ch25-j3-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Elles ne disent peut-être pas la vérité exacte, mais elles disent souvent quelque chose de vrai, malgré tout. » : que signifie cette phrase de Véra ?", choices: ["qu'une légende peut exprimer une vérité profonde même sans être factuellement exacte", "qu'une légende est toujours exactement vraie, mot pour mot", "qu'une légende n'a jamais aucune valeur, même symbolique", "qu'il vaut toujours mieux ignorer complètement les légendes", "qu'une légende ne peut jamais rien apprendre à quiconque"], answer: "qu'une légende peut exprimer une vérité profonde même sans être factuellement exacte", hint: "Repense à la réponse de Véra, à la question de Rafaelle sur la véracité des légendes." }
+            - { id: ch25-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13 × 6.", choices: ["74", "76", "78", "80", "82"], answer: "78", hint: "13 × 6 = 13 × 3 × 2." }
+      - id: m2
+        title: La guerrière endormie
+        tours:
+          axelle:
+            - { id: ch25-j3-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Une guerrière s'endormit parmi les étoiles. » ?", choices: ["parmi les étoiles", "s'endormit", "Une guerrière", "une", "guerrière"], answer: "Une guerrière", hint: "Qui s'endort parmi les étoiles, dans la légende ?" }
+            - { id: ch25-j3-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 7.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "9 + 7 = 9 + 9 − 2." }
+          maelle:
+            - { id: ch25-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 364 ÷ 4.", choices: ["86", "88", "90", "91", "93"], answer: "91", hint: "4 × 91 = 364." }
+            - { id: ch25-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « fatiguée » dans « une guerrière si fatiguée » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit l'état de la guerrière, dans la légende de Véra." }
+          rafaelle:
+            - { id: ch25-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 11² − 70.", choices: ["48", "51", "53", "56", "58"], answer: "51", hint: "121 − 70." }
+            - { id: ch25-j3-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « La noche es clara esta vez. »", choices: ["La nuit est claire, cette fois.", "La nuit est sombre toujours.", "La nuit ne finit jamais.", "La nuit fait peur parfois.", "La nuit dure trop longtemps."], answer: "La nuit est claire, cette fois.", hint: "« Es clara esta vez » = est claire, cette fois." }
+      - id: m3
+        title: Entre vérité et légende
+        tours:
+          axelle:
+            - { id: ch25-j3-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 6.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "14 − 6 = 8." }
+            - { id: ch25-j3-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi une légende qui attribue des émotions humaines à une étoile, comme la fatigue de la guerrière, aide-t-elle souvent à la retenir ?", choices: ["parce qu'une histoire porteuse d'émotion reste plus facilement en mémoire qu'un simple fait abstrait", "parce qu'une légende n'a jamais aucun effet sur la mémoire", "cela n'a aucune explication particulière", "parce que les émotions n'ont jamais aucun lien avec la mémorisation", "parce qu'il vaut toujours mieux mémoriser sans aucune histoire"], answer: "parce qu'une histoire porteuse d'émotion reste plus facilement en mémoire qu'un simple fait abstrait", hint: "Pense à ce que dit Véra sur l'utilité des légendes pour la mémoire." }
+          maelle:
+            - { id: ch25-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 39 × 4.", choices: ["148", "152", "154", "156", "158"], answer: "156", hint: "39 × 4 = 40 × 4 − 4." }
+            - { id: ch25-j3-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi une légende ancienne, transmise de génération en génération, garde-t-elle souvent une forme de valeur, même sans être littéralement vraie ?", choices: ["parce qu'elle véhicule des valeurs, des émotions ou des leçons qui restent pertinentes dans le temps", "parce qu'une légende transmise n'a jamais aucune valeur réelle", "cela n'a aucun lien avec la transmission culturelle", "parce qu'il vaut toujours mieux oublier les légendes anciennes", "parce que seules les légendes récentes ont une quelconque valeur"], answer: "parce qu'elle véhicule des valeurs, des émotions ou des leçons qui restent pertinentes dans le temps", hint: "Repense à ce que dit Véra, sur le fait que les légendes disent souvent quelque chose de vrai." }
+          rafaelle:
+            - { id: ch25-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 6x + 9 = 39.", choices: ["4", "5", "6", "7", "8"], answer: "5", hint: "6x = 30." }
+            - { id: ch25-j3-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au futur simple : « Nous (continuer) à écouter les légendes de Véra. »", choices: ["nous continuerons", "nous continuons", "nous continuions", "nous continuâmes", "nous continuerions"], answer: "nous continuerons", hint: "Futur simple de « continuer »." }
+      - id: m4
+        title: Partager les récits
+        tours:
+          axelle:
+            - { id: ch25-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 6.", choices: ["36", "38", "40", "42", "44"], answer: "42", hint: "7 × 6 = 7 × 3 × 2." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch25-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 280 − 136.", choices: ["140", "142", "144", "146", "148"], answer: "144", hint: "280 − 140 + 4." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch25-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Observar requiere paciencia. »", choices: ["Observer demande de la patience.", "Observer est toujours facile.", "Observer n'apprend jamais rien.", "Observer effraie les étoiles.", "Observer prend une minute."], answer: "Observer demande de la patience.", hint: "« Requiere paciencia » = demande de la patience." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu de la légende inventée : chaque sœur invente, en une ou deux phrases, une petite légende à propos d'une étoile ou d'une figure qu'elle a repérée dans le ciel."
+    closing:
+      - { who: narrateur, text: "La troisième nuit se referma doucement, tandis que les trois sœurs, encore pleines des récits de Véra, s'endormirent en pensant à des bergers et des guerrières de lumière." }
+      - { who: vera, text: "Demain, il faudra enfin choisir comment poursuivre : méthodiquement, par les légendes, ou par vos propres observations silencieuses." }
+      - { who: rafaelle, text: "On va vraiment bien réfléchir, cette fois." }
+      - { who: narrateur, text: "Et tandis que le ciel continuait de scintiller au-dessus de la tour, Véra resta un long moment songeuse, comme habitée, elle aussi, par les récits qu'elle venait de raconter." }
+    reward: "les légendes du ciel, racontées par Véra"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Choisir sa façon d'apprendre
+    decor: Le sommet de la tour, dans la fraîcheur du soir qui tombe, où Véra attend la décision des trois sœurs quant à la suite de leur apprentissage.
+    opening:
+      - { who: narrateur, text: "Le quatrième soir, Véra retrouva les trois sœurs au sommet de la tour, sa carte du ciel usée déjà déroulée sur la petite table de pierre." }
+      - { who: vera, text: "Pour continuer votre route de nuit, il vous faudra apprendre à lire le ciel. Voulez-vous que je vous enseigne les grandes constellations, que je vous raconte leurs légendes, ou préférez-vous observer vous-mêmes, en silence ? »" }
+      - { who: axelle, text: "On y a bien réfléchi, Véra. On a une réponse à vous donner, toutes les trois ensemble." }
+      - { who: vera, text: "Je vous écoute, petite Veilleuse. Quelle que soit votre réponse, je l'accueillerai avec plaisir." }
+    manches:
+      - id: m1
+        title: Peser les trois approches
+        tours:
+          axelle:
+            - { id: ch25-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « méthodique » ?", choices: ["désordonné", "organisé", "précis", "rigoureux", "structuré"], answer: "désordonné", hint: "Le contraire de ce qu'est l'apprentissage étoile par étoile, proposé par Maelle." }
+            - { id: ch25-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 7.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "8 + 7 = 8 + 8 − 1." }
+          maelle:
+            - { id: ch25-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi trois façons différentes d'apprendre un même savoir, comme ici la lecture du ciel, peuvent-elles toutes être valables ?", choices: ["parce que chaque personne apprend différemment, selon ce qui lui convient le mieux", "parce qu'il n'existe toujours qu'une seule bonne façon d'apprendre", "cela n'a aucun lien avec la diversité des apprentissages", "parce que seule la méthode la plus stricte est valable", "parce qu'apprendre seul est toujours la seule méthode efficace"], answer: "parce que chaque personne apprend différemment, selon ce qui lui convient le mieux", hint: "Pense aux trois façons proposées par Véra, toutes acceptées avec le même plaisir." }
+            - { id: ch25-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 93 + 58.", choices: ["148", "150", "151", "153", "155"], answer: "151", hint: "93 + 60 − 2." }
+          rafaelle:
+            - { id: ch25-j4-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Quelle que soit votre réponse, je l'accueillerai avec plaisir. » : que révèle cette phrase sur l'attitude de Véra ?", choices: ["qu'elle respecte pleinement le choix des sœurs, sans en privilégier aucun", "qu'elle attend une seule réponse précise de leur part", "qu'elle refusera forcément leur décision si elle ne lui convient pas", "qu'elle n'a aucune considération pour leur choix", "qu'elle préfère toujours décider à leur place"], answer: "qu'elle respecte pleinement le choix des sœurs, sans en privilégier aucun", hint: "Repense à l'attitude de Véra, depuis le début de ce chapitre." }
+            - { id: ch25-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14² − 130.", choices: ["58", "62", "64", "66", "70"], answer: "66", hint: "196 − 130." }
+      - id: m2
+        title: Les préférences de chacune
+        tours:
+          axelle:
+            - { id: ch25-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 16 − 7.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "16 − 6 = 10, puis − 1." }
+            - { id: ch25-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi apprendre seul, par ses propres observations, peut-il parfois renforcer davantage la confiance en soi qu'un enseignement direct ?", choices: ["parce que découvrir quelque chose soi-même donne un sentiment d'accomplissement personnel", "parce qu'apprendre seul n'a jamais aucun effet sur la confiance en soi", "cela n'a aucune explication particulière", "parce qu'un enseignement direct est toujours préférable en tout point", "parce que la confiance en soi n'a jamais aucun lien avec l'apprentissage"], answer: "parce que découvrir quelque chose soi-même donne un sentiment d'accomplissement personnel", hint: "Pense à la proposition C, où Rafaelle choisit d'observer seule, en silence." }
+          maelle:
+            - { id: ch25-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 348 ÷ 4.", choices: ["82", "84", "86", "87", "89"], answer: "87", hint: "4 × 87 = 348." }
+            - { id: ch25-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « usée » dans « une carte du ciel usée par le temps » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit l'état de la carte de Véra." }
+          rafaelle:
+            - { id: ch25-j4-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 7² + 3 × 10.", choices: ["68", "72", "76", "79", "82"], answer: "79", hint: "49 + 30." }
+            - { id: ch25-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Chaque étoile a un nom » en espagnol ?", choices: ["Cada estrella tiene un nombre.", "La torre toca el cielo.", "Las estrellas guían el camino.", "La noche es clara esta vez.", "Observar requiere paciencia."], answer: "Cada estrella tiene un nombre.", hint: "Relis la phrase du jour 2." }
+      - id: m3
+        title: Trancher ensemble
+        tours:
+          axelle:
+            - { id: ch25-j4-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Véra retrouva les trois sœurs au sommet de la tour. » ?", choices: ["au sommet de la tour", "retrouva", "Véra", "les", "trois sœurs"], answer: "Véra", hint: "Qui retrouve les trois sœurs, au sommet de la tour ?" }
+            - { id: ch25-j4-ax-m3b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 12 − 6.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "12 − 6 = 6." }
+          maelle:
+            - { id: ch25-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 26 × 4.", choices: ["98", "100", "102", "104", "106"], answer: "104", hint: "26 × 4 = 25 × 4 + 4." }
+            - { id: ch25-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi exprimer clairement sa décision à une enseignante, comme Véra, peut-il rendre un enseignement plus efficace ?", choices: ["parce que cela permet à l'enseignante d'adapter précisément sa façon de transmettre le savoir", "parce qu'annoncer une décision n'a jamais aucune utilité pour un enseignement", "cela n'a aucun lien avec l'efficacité d'un enseignement", "parce qu'il vaut toujours mieux rester vague face à une enseignante", "parce que la clarté retarde toujours un enseignement"], answer: "parce que cela permet à l'enseignante d'adapter précisément sa façon de transmettre le savoir", hint: "Pense à l'utilité, pour Véra, de connaître la décision des sœurs." }
+          rafaelle:
+            - { id: ch25-j4-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 9x − 4 = 41.", choices: ["4", "5", "6", "7", "8"], answer: "5", hint: "9x = 45." }
+            - { id: ch25-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Je vous écoute, petite Veilleuse. » : quelle est la fonction grammaticale de « vous » dans cette phrase ?", choices: ["complément d'objet direct", "sujet", "attribut du sujet", "complément circonstanciel", "épithète"], answer: "complément d'objet direct", hint: "« Écouter qui ? » répond à la question posée par le verbe." }
+      - id: m4
+        title: Un moment de vérité
+        tours:
+          axelle:
+            - { id: ch25-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 4.", choices: ["32", "34", "35", "36", "38"], answer: "36", hint: "9 × 4 = 9 × 2 × 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch25-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 315 − 149.", choices: ["162", "164", "166", "168", "170"], answer: "166", hint: "315 − 150 + 1." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch25-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 17 × 6.", choices: ["98", "100", "102", "104", "106"], answer: "102", hint: "17 × 6 = 17 × 3 × 2." }
+            - { gen: maths.duree }
+    pause: "Le jeu du vote silencieux : chaque sœur lève une main différente, discrètement, pour désigner son option préférée, avant de révéler son choix à voix haute, toutes ensemble."
+    closing:
+      - { who: narrateur, text: "Les trois sœurs échangèrent un dernier regard sous le ciel étoilé, puis, d'une seule voix, annoncèrent à Véra la façon dont elles souhaitaient poursuivre leur apprentissage." }
+      - { who: vera, text: "Je vous entends, petites voyageuses, et votre choix me convient très bien. Préparons-nous, alors, pour cette dernière nuit ensemble." }
+      - { who: maelle, text: "On a vraiment hâte de voir où tout cela va nous mener." }
+      - { who: narrateur, text: "Et tandis que le ciel scintillait, immense, au-dessus de la tour, Véra déroula une dernière fois sa carte usée, prête à transmettre ce qu'elle savait de mieux." }
+    reward: "la décision prise ensemble, annoncée à Véra"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: La dernière nuit sous les étoiles
+    decor: Le sommet de la tour, sous un ciel exceptionnellement clair, où les trois sœurs vivent leur dernière soirée d'apprentissage auprès de Véra avant de reprendre la route.
+    opening:
+      - { who: narrateur, text: "Le cinquième soir, sous un ciel exceptionnellement clair, les trois sœurs retrouvèrent Véra pour leur dernière soirée d'apprentissage, selon la décision prise la veille." }
+      - { who: vera, text: "Pour continuer votre route de nuit, il vous faudra apprendre à lire le ciel. Voulez-vous que je vous enseigne les grandes constellations, que je vous raconte leurs légendes, ou préférez-vous observer vous-mêmes, en silence ? »" }
+      - { who: nilo, text: "Allez, les filles. Une dernière leçon sous les étoiles, et on reprendra la route dès demain, le regard un peu plus levé vers le ciel." }
+    manches:
+      - id: m1
+        title: Ce que le ciel a appris
+        intro: "Véra interroge chaque sœur sur tout ce que ces quelques nuits passées dans sa tour lui ont appris."
+        tours:
+          axelle:
+            - { id: ch25-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on une personne qui observe et étudie les étoiles et le ciel nocturne ?", choices: ["une astronome", "une jardinière", "une bergère", "une tisserande", "une marchande"], answer: "une astronome", hint: "C'est le métier pratiqué par Véra." }
+            - { id: ch25-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 + 5.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "8 + 5 = 8 + 2 + 3." }
+          maelle:
+            - { id: ch25-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi une tour isolée et élevée est-elle particulièrement bien placée pour observer le ciel nocturne, comme tu l'as appris cette semaine ?", choices: ["elle offre un horizon dégagé et s'éloigne des lumières et obstacles du sol", "une tour élevée empêche toujours de voir le ciel", "cela n'a aucune explication particulière", "l'altitude n'a jamais aucun effet sur l'observation du ciel", "il vaut toujours mieux observer les étoiles depuis une vallée encaissée"], answer: "elle offre un horizon dégagé et s'éloigne des lumières et obstacles du sol", hint: "Repense à ta propre question du premier jour." }
+            - { id: ch25-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 42 × 4.", choices: ["162", "164", "166", "168", "170"], answer: "168", hint: "42 × 4 = 40 × 4 + 2 × 4." }
+          rafaelle:
+            - { id: ch25-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que Véra incarne la valeur de l'observation patiente, à travers son métier d'astronome ?", choices: ["parce qu'elle a bâti un savoir rare en observant le ciel nuit après nuit, pendant des années", "parce que Véra n'a jamais observé le ciel sérieusement", "parce qu'elle refuse toujours de partager ce qu'elle sait", "parce qu'il n'y a aucune leçon à tirer de son parcours", "parce que la patience n'a aucun lien avec son métier"], answer: "parce qu'elle a bâti un savoir rare en observant le ciel nuit après nuit, pendant des années", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de Véra." }
+            - { id: ch25-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 5/9 + 2/9.", choices: ["6/9", "7/9", "8/9", "5/9", "4/9"], answer: "7/9", hint: "5 + 2 = 7, même dénominateur." }
+      - id: m2
+        title: Avant la dernière leçon
+        intro: "Il faut relier tout ce que la semaine a appris sur les étoiles et les constellations, avant la dernière leçon sous le ciel clair."
+        tours:
+          axelle:
+            - { id: ch25-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel nom désigne un groupe d'étoiles formant une figure reconnaissable dans le ciel ?", choices: ["une constellation", "une galaxie", "une comète", "une nébuleuse", "une planète"], answer: "une constellation", hint: "C'est ce que Véra enseigne aux trois sœurs." }
+            - { id: ch25-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 15 − 7.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "15 − 7 = 8." }
+          maelle:
+            - { id: ch25-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi cette halte dans la tour de Véra, et la rencontre avec elle, ont-elles une importance particulière dans le voyage des trois sœurs ?", choices: ["elle n'a aucune importance réelle", "elle leur apprend à lire le ciel, à distinguer savoir et légende, et à choisir leur propre façon d'apprendre", "elle les empêche d'avancer vers le sommet", "elle se trouve très loin des montagnes", "personne n'y vient jamais vraiment"], answer: "elle leur apprend à lire le ciel, à distinguer savoir et légende, et à choisir leur propre façon d'apprendre", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de Véra." }
+            - { id: ch25-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 408 ÷ 6.", choices: ["64", "66", "68", "70", "72"], answer: "68", hint: "6 × 68 = 408." }
+          rafaelle:
+            - { id: ch25-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10² − 55.", choices: ["40", "43", "45", "48", "50"], answer: "45", hint: "100 − 55." }
+            - { id: ch25-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Voulez-vous que je vous enseigne les grandes constellations ? » : quel est le sujet du verbe « vouloir » dans cette phrase ?", choices: ["vous", "je", "les grandes constellations", "que", "vous enseigne"], answer: "vous", hint: "À qui Véra pose-t-elle cette question ?" }
+      - id: m3
+        title: Le Chant des Mille Lumières
+        intro: "Avant de clore cette dernière leçon, Véra et les trois sœurs chantent ensemble, les yeux levés vers le ciel, pour célébrer tout ce qui a été appris sous les étoiles."
+        tours:
+          axelle:
+            - { id: ch25-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, blanche." }
+          maelle:
+            - { id: ch25-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          rafaelle:
+            - { id: ch25-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, blanche." }
+    concert:
+      measures:
+        axelle: { given: [1, 1], missing: 2, prompt: "Noire, noire, blanche" }
+        maelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        rafaelle: { given: [2], missing: 2, prompt: "Blanche, blanche" }
+    pause: "Le dernier regard vers les étoiles : chaque sœur désigne du doigt une étoile ou une figure qu'elle a appris à reconnaître cette semaine, et la nomme fièrement à voix haute."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant des Mille Lumières se répandit sous le ciel immense, et Véra, émue, referma sa carte usée avec un soin particulier, comme pour la première fois." }
+      - { who: vera, text: "Vous avez appris vite, et bien, petites voyageuses. Le ciel, désormais, ne vous sera plus tout à fait étranger." }
+      - { who: rafaelle, text: "Merci pour tout, Véra. On n'oubliera jamais ces nuits passées dans votre tour." }
+      - { who: narrateur, text: "Et tandis que l'aube commençait à poindre timidement à l'horizon, les trois sœurs reprirent la route, le regard un peu plus levé vers le ciel qu'avant leur arrivée." }
+      - { who: axelle, text: "On sait lire les étoiles, maintenant ! Un peu, en tout cas." }
+      - { who: nilo, text: "Un peu, c'est déjà beaucoup, pour des voyageuses qui ne savaient rien du ciel il y a cinq jours à peine." }
+    reward: "la lecture du ciel nocturne, enseignée par Véra"
