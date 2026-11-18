@@ -27,7 +27,7 @@ export function Home() {
     }, LONG_PRESS_MS);
   };
   const pressEnd = () => clearTimeout(timer.current);
-  const label = game.session ? 'Reprendre la séance' : fresh ? "Commencer l'aventure" : 'Séance du jour';
+  const label = game.final ? (game.final.result === 'F5' ? 'Choisir le carrefour' : 'Revoir la fin') : game.session ? 'Reprendre la séance' : fresh ? "Commencer l'aventure" : 'Séance du jour';
   return (
     <main class="ui-home">
       <img class="ui-backdrop" src={chapterImage(game.position.chapter)} alt={`Illustration du chapitre ${game.position.chapter}${ch ? ` : ${ch.title}` : ''}`} />

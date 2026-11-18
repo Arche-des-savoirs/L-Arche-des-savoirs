@@ -1,0 +1,79 @@
+# Les 5 fins du récit (chapitre 30, jour 6 : vote final entre les portes ouvertes).
+# Portes ouvertes par src/engine/counters.ts (openDoors), selon l'état d'Orvane (sauvé /
+# incertain / perdu) et la valeur dominante (Lien / Courage / Mémoire) des trois sœurs.
+# F5 (Orvane perdu + Courage ou Mémoire) est volontairement rare et n'a pas d'épilogue
+# classique : elle ouvre le retour au carrefour (src/engine/game.ts, REVENIR_AU_CARREFOUR),
+# vers un chapitre majeur déjà franchi, au libre choix de la famille.
+
+- id: F1
+  title: La Lumière Partagée
+  opening:
+    - { who: narrateur, text: "Le Veilleur s'écarte en silence. Devant les trois sœurs, Orvane se redresse de toute sa hauteur, et sa lumière argentée s'embrase d'un coup, intense, chaude, comme un second soleil au sommet de la montagne. Le vent lui-même semble retenir son souffle." }
+    - { who: veilleur, text: "Regardez bien, petites voyageuses. Je n'ai pas vu une telle lumière depuis l'origine de mon service." }
+    - { who: axelle, text: "Elle est... elle est partout, maintenant. On dirait que toute la montagne respire avec elle." }
+    - { who: narrateur, text: "Orvane tourne la tête vers l'arche, et au loin, sur le sentier qui serpente jusqu'au sommet, des silhouettes apparaissent : Nilo en tête, puis Plume bondissant devant lui, puis le Chancelier, la Reine de Brume, le Scribe, Thessaly, et tant d'autres croisés en chemin, tous attirés par cette lumière retrouvée." }
+    - { who: nilo, text: "On a senti qu'il se passait quelque chose d'immense, alors on est montés. On ne pouvait pas rater ça." }
+    - { who: maelle, text: "Vous êtes tous venus... pour nous ?" }
+    - { who: veilleur, text: "Pour vous, petite Cartographe. Et pour lui." }
+    - { who: narrateur, text: "Orvane s'avance, immense et doux à la fois, et pose son museau de lumière contre le front de chacune des trois sœurs, l'une après l'autre : Axelle la Veilleuse, Maelle la Cartographe, Rafaelle l'Archiviste. Une marque discrète, à peine visible, comme un reflet d'étoile sous la peau, reste un instant sur leur front avant de s'effacer — invisible à tout autre regard que le leur." }
+    - { who: rafaelle, text: "Je crois qu'il vient de nous dire merci. D'une façon qu'on ne pourra jamais vraiment raconter." }
+    - { who: veilleur, text: "C'est exactement cela, petite Archiviste. Certaines choses ne se racontent pas : elles se vivent, et on les garde, simplement." }
+  closing:
+    - { who: narrateur, text: "Les trois sœurs redescendent la montagne en pleine lumière du jour, entourées de tous ceux qu'elles ont croisés et aidés. Le royaume, en contrebas, semble plus paisible qu'il ne l'a jamais été. Plume, enfin libre de bondir sans retenue, bondit entre leurs pas, sans savoir — pas encore — qu'il vient de retrouver, l'espace d'un instant, l'aîné de toute sa lignée." }
+    - { who: narrateur, text: "Le soir venu, dans la maison familiale, trois lanternes — dorée, blanche, rose — sont posées côte à côte sur le rebord d'une fenêtre, allumées une dernière fois avant que la nuit ne tombe pour de bon sur cette aventure." }
+
+- id: F2
+  title: Le Sursaut du Courage
+  opening:
+    - { who: narrateur, text: "Orvane se redresse, lentement, péniblement, sur ses pattes de lumière. Sa clarté reprend, ferme mais sans éclat de fête : une force tranquille plutôt qu'un embrasement. Le Veilleur observe la scène, les bras croisés, un sourire plus grave que joyeux." }
+    - { who: veilleur, text: "Vous n'avez pas eu besoin de grand monde pour accomplir cela, petites voyageuses. Vous avez eu besoin de vous-mêmes, et cela a suffi." }
+    - { who: rafaelle, text: "On n'a pas toujours cherché à convaincre tout le monde, en chemin. On a surtout avancé, même quand c'était difficile." }
+    - { who: veilleur, text: "Et c'est précisément ce qu'Orvane a ressenti le plus fort : une détermination qui ne faiblit jamais, même seule face à l'épreuve." }
+    - { who: narrateur, text: "Orvane pousse un cri clair, qui roule le long de la montagne et se répercute dans toute la vallée — un signal, pour quiconque l'entend, que la garde du sommet reste assurée." }
+    - { who: axelle, text: "On dirait un signal d'alarme... mais en version « tout va bien », cette fois." }
+    - { who: maelle, text: "Un signal qui dit : la montagne est encore debout, et nous aussi." }
+  closing:
+    - { who: narrateur, text: "Les trois sœurs redescendent fatiguées, les jambes lourdes, sans fanfare ni cortège. Ce n'est pas une fin de liesse collective, mais une fin de fierté intime. Ce soir-là, Rafaelle écrit dans son carnet d'Archiviste, d'une main un peu tremblante d'épuisement : « On n'a pas eu besoin d'être nombreux. On a eu besoin de ne jamais lâcher. »" }
+    - { who: narrateur, text: "Axelle et Maelle lisent la phrase par-dessus son épaule, et aucune des trois n'ajoute rien : certaines victoires se suffisent à elles-mêmes, sans grand discours." }
+
+- id: F3
+  title: La Mémoire Gardienne
+  opening:
+    - { who: narrateur, text: "La lumière d'Orvane se stabilise, non pas dans l'éclat, mais dans la constance — comme une flamme de veilleuse qui ne vacillera plus. Le Veilleur se tourne alors vers une étagère de pierre, au fond de l'espace derrière l'arche, où repose un livre resté fermé depuis des temps immémoriaux." }
+    - { who: veilleur, text: "Ce que vous avez le mieux nourri chez Orvane, petites voyageuses, ce n'est ni la foule des alliances, ni le seul courage brut. C'est la mémoire : celle de chaque nom, chaque visage, chaque leçon apprise en chemin." }
+    - { who: narrateur, text: "Le livre s'ouvre seul entre les mains du Veilleur, et ses pages commencent à s'écrire d'elles-mêmes, retraçant, scène après scène, tout le voyage des trois sœurs depuis le tout premier chapitre." }
+    - { who: rafaelle, text: "C'est... c'est notre histoire. Écrite là, devant nous." }
+    - { who: veilleur, text: "La montagne elle-même en devient la gardienne, à présent, petite Archiviste. Rien de ce que vous avez vécu ne sera jamais tout à fait oublié." }
+    - { who: maelle, text: "Même les petits détails ? Même les répliques absurdes de Nilo sur son renard imaginaire ?" }
+    - { who: veilleur, text: "Même cela, petite Cartographe. Surtout cela, peut-être." }
+  closing:
+    - { who: narrateur, text: "Au moment de repartir, le Veilleur tend le livre vivant à Rafaelle, en cadeau d'adieu." }
+    - { who: veilleur, text: "Garde-le. Et quand viendra le jour où une autre voudra entendre cette histoire, tu sauras exactement où la retrouver." }
+    - { who: narrateur, text: "Ce soir-là, dans sa chambre, Rafaelle range le livre à côté de ses autres carnets d'Archiviste, sur l'étagère la plus en vue — suggérant, sans l'affirmer, que cette histoire sera racontée encore longtemps, à qui voudra bien l'entendre." }
+
+- id: F4
+  title: Le Fil Ténu
+  opening:
+    - { who: narrateur, text: "Orvane se redresse, mais sa lumière reste tremblante, fragile — ni éteinte, ni pleinement rayonnante. Une lueur de sursis plutôt qu'un embrasement. Le Veilleur pose une main sur l'épaule de la plus proche des trois sœurs, sans chercher à enjoliver la vérité." }
+    - { who: veilleur, text: "Les liens que vous avez tissés l'ont empêché de s'éteindre, petites voyageuses. Mais un lien, seul, ne suffit jamais à tout guérir d'un coup. Il faudra du temps. Peut-être beaucoup de temps." }
+    - { who: axelle, text: "Alors ce n'est pas fini ? Même maintenant, tout en haut ?" }
+    - { who: veilleur, text: "Ce qui compte vraiment n'est presque jamais tout à fait fini, petite Veilleuse. C'est justement pour cela que ça vaut la peine d'être gardé." }
+    - { who: narrateur, text: "Orvane incline la tête vers les trois sœurs, une dernière fois, comme pour sceller une promesse silencieuse : celle de tenir, tant que le lien tiendra lui aussi." }
+    - { who: maelle, text: "On reviendra, s'il le faut. On saura où le trouver, maintenant." }
+    - { who: veilleur, text: "Je n'en doute pas un instant, petite Cartographe. Et la montagne, elle, sait attendre." }
+  closing:
+    - { who: narrateur, text: "Les trois sœurs redescendent sous un ciel entre nuit et aube, ni tout à fait sombre, ni tout à fait lumineux — à l'image de ce qu'elles laissent derrière elles. En chemin, Nilo ramasse un petit sablier de poche tombé d'une poche, le retourne pensivement entre ses doigts, et le remet sans un mot dans sa besace." }
+    - { who: narrateur, text: "Quelque part, plus loin dans le temps, un fil reste tendu, patient, en attente d'une main qui voudra bien le reprendre." }
+
+- id: F5
+  title: Le Carrefour Regretté
+  opening:
+    - { who: narrateur, text: "La lumière d'Orvane vacille au bord de l'extinction, réduite à un filet argenté à peine perceptible. Le Veilleur ne gronde pas, ne juge pas. Il s'agenouille simplement devant les trois sœurs, le visage grave mais sans reproche." }
+    - { who: veilleur, text: "Le courage seul, ou la mémoire seule, sans assez de liens tissés en chemin, n'a pas suffi à le retenir pleinement, petites voyageuses. Mais ceci n'est pas un échec que l'on punit. Ce n'est qu'un constat, et un constat se répare." }
+    - { who: rafaelle, text: "On aurait dû faire autrement, quelque part. Mais où ?" }
+    - { who: narrateur, text: "Le Veilleur tend alors la main vers l'arche, qui scintille d'un éclat nouveau, différent de celui d'avant." }
+    - { who: veilleur, text: "Il n'est pas trop tard. Il existe, dans votre voyage, des carrefours que vous avez déjà traversés. Vous pourriez y retourner, et choisir autrement, à l'un d'entre eux." }
+    - { who: axelle, text: "Lequel ?" }
+    - { who: veilleur, text: "Celui que vous choisirez, parmi ceux que vous avez vous-mêmes franchis. C'est à vous de le savoir, pas à moi de le décider." }
+  closing:
+    - { who: narrateur, text: "Il n'y a pas, pour cette fin, de retour triomphal ni de clôture définitive. La scène se referme sur le Veilleur, immobile près de l'arche, désignant la clé qui scintille de nouveau à sa ceinture, et sur la montagne elle-même, patiente, qui attend sans s'impatienter qu'un nouveau passage s'ouvre." }

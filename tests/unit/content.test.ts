@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { CHAPTERS } from '../../src/content/chapters';
+import { FINS } from '../../src/content/fins';
 import { GRADE_OF, resolveTour, type PlayerId } from '../../src/content/picker';
 import { question, type Question } from '../../src/content/schema';
 import { checkAnswer } from '../../src/engine/answers';
@@ -60,6 +61,15 @@ describe.each(CHAPTERS.map((c) => [c.number, c] as const))('chapitre %i (tous le
 describe('enchaînement des chapitres', () => {
   it('les chapitres écrits se suivent sans trou, à partir du 1', () => {
     expect(CHAPTERS.map((c) => c.number)).toEqual(CHAPTERS.map((_, i) => i + 1));
+  });
+});
+
+describe('les 5 fins (jour 6, chapitre 30)', () => {
+  it('les 5 fins F1 à F5 sont toutes écrites, sans doublon', () => {
+    expect(FINS.map((f) => f.id).sort()).toEqual(['F1', 'F2', 'F3', 'F4', 'F5']);
+  });
+  it('chaque fin ne fait parler que des personnages connus', () => {
+    for (const f of FINS) for (const l of [...f.opening, ...f.closing]) expect(KNOWN_SPEAKERS, l.text).toContain(l.who);
   });
 });
 

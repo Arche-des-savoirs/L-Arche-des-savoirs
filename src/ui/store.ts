@@ -2,7 +2,7 @@
 import { computed, signal } from '@preact/signals';
 import { decisionOf } from '../content/decisions';
 import { chapterOf } from '../content/chapters';
-import { createReducer, GameRuleError, type Action } from '../engine/game';
+import { createReducer, GameRuleError, isFinalDay, type Action } from '../engine/game';
 import { placementLevel, updateSkill, type Level } from '../engine/difficulty';
 import { dayPlan, newProgress, skillSignal, type QuestionResult } from '../engine/session';
 import type { Profile } from '../engine/profile';
@@ -11,7 +11,7 @@ import type { Subject } from '../content/schema';
 import { emptySave, loadSave, wipeSave, writeSave, type SaveData } from '../storage/save';
 import { decide } from '../engine/parent';
 
-export type Route = 'chargement' | 'accueil' | 'diagnostic' | 'parent' | 'avatars' | 'seance' | 'a-demain' | 'bientot';
+export type Route = 'chargement' | 'accueil' | 'diagnostic' | 'parent' | 'avatars' | 'seance' | 'a-demain' | 'bientot' | 'fin';
 export const route = signal<Route>('chargement');
 export const save = signal<SaveData>(emptySave());
 export const lastError = signal<string | null>(null);
@@ -70,6 +70,12 @@ export function startOrResume(now = Date.now()) {
     route.value = 'bientot';
     return;
   }
+  // Le jour 6 du chapitre 30 (vote final) une fois tranché : plus de session à démarrer, le
+  // retour au carrefour (Fin 5) ou la relecture de la fin se font depuis l'écran « fin ».
+  if (s.game.final) {
+    route.value = 'fin';
+    return;
+  }
   if (!s.game.session) {
     if (!dispatch({ type: 'DEMARRER_SESSION', now, bypassCalendar: testMode() })) {
       route.value = 'a-demain';
@@ -78,7 +84,18 @@ export function startOrResume(now = Date.now()) {
     const p = save.value.game.position;
     update((x) => ({ ...x, progress: newProgress(p.chapter, p.day) }));
   }
-  route.value = 'seance';
+  route.value = isFinalDay(save.value.game.position) ? 'fin' : 'seance';
+}
+
+/** Clôt la session du vote final (jour 6) sans router vers « à demain » : l'aventure est finie,
+ * ou n'attend plus qu'un retour au carrefour (Fin 5) — géré par l'écran « fin » lui-même. */
+export function finishFinalSession(now = Date.now()) {
+  const before = save.value;
+  if (!dispatch({ type: 'TERMINER_SESSION' })) return;
+  const p = before.progress;
+  const sess = before.game.session;
+  if (p && sess)
+    update((s) => ({ ...s, history: [...s.history, { chapter: p.chapter, day: p.day, startedAt: sess.startedAt, endedAt: now, extra: sess.extra, results: p.results }] }));
 }
 
 export function saveProfiles(profiles: Record<PlayerId, Profile>) {

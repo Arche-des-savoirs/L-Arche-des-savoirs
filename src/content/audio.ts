@@ -1,7 +1,7 @@
 // Voix pré-générées (narrateur + personnages principaux, Google Cloud TTS Chirp3-HD),
 // précachées par le service worker pour une lecture 100 % hors ligne en jeu.
 import manifest from './voiceManifest.json';
-import type { Chapter } from './schema';
+import type { Chapter, Fin } from './schema';
 
 const base = () => import.meta.env.BASE_URL;
 export const manifestKey = (who: string, text: string) => `${who}\u0000${text}`;
@@ -32,4 +32,13 @@ export function extractVoicedLines(chapter: Chapter): Array<{ who: string; text:
     }
   }
   return lines;
+}
+
+/**
+ * Répliques lues à voix haute pour une fin (jour 6 du chapitre 30, voir
+ * src/ui/screens/Fin.tsx) : ouverture et clôture. Doit rester synchronisé avec
+ * scripts/generate-voices.mjs (extractFinLines).
+ */
+export function extractVoicedLinesFin(fin: Fin): Array<{ who: string; text: string }> {
+  return [...fin.opening, ...fin.closing].map((l) => ({ who: l.who, text: l.text }));
 }
