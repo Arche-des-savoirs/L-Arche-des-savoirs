@@ -30,7 +30,8 @@ const SPEAKERS: Record<string, string> = {
   marchand: 'Le Marchand',
   peseur: 'Le Peseur de Brume',
   rouage: 'Rouage',
-  chrono: "Chrono, l'Horloger"
+  chrono: "Chrono, l'Horloger",
+  capitaine: 'Le Capitaine de la Nacelle'
 };
 const speaker = (who: string) => SPEAKERS[who] ?? NAMES[who as PlayerId] ?? who;
 /** Texte réellement lu à voix haute : annonce le personnage avant sa réplique, sauf pour le narrateur (prose, pas une citation). */

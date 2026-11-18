@@ -59,7 +59,8 @@ const VOICES = {
   marchand: 'Schedar',
   peseur: 'Sulafat',
   rouage: 'Zephyr',
-  chrono: 'Kore'
+  chrono: 'Kore',
+  capitaine: 'Schedar'
 };
 
 function readApiKey() {
