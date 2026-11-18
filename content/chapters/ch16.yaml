@@ -1,0 +1,388 @@
+# Chapitre 16 — Le Grenier aux Lettres Oubliées
+# Suite directe du chapitre 15 : la carte vivante mène les sœurs vers un grenier poussiéreux
+# accroché au flanc de la montagne, rempli de lettres jamais envoyées. Aucun nouveau
+# personnage voisé : le grenier est gardé par Pigeon (déjà établi, voix Sadaltager), messager
+# qui n'a jamais pu livrer ces lettres faute de destinataire retrouvé. Décision NON majeure
+# (aucune entrée MAJOR ni ORVANE pour ch16) : effets génériques Lien/Courage/Mémoire.
+
+id: ch16
+number: 16
+act: 2
+title: Le Grenier aux Lettres Oubliées
+introImage: ch16
+scene: grenier-lettres
+
+espagnol:
+  - { es: "Esta carta nunca llegó.", fr: "Cette lettre n'est jamais arrivée." }
+  - { es: "Vamos a encontrar su destino.", fr: "Nous allons trouver son destinataire." }
+  - { es: "El polvo cubre los recuerdos.", fr: "La poussière couvre les souvenirs." }
+  - { es: "Cada palabra cuenta una historia.", fr: "Chaque mot raconte une histoire." }
+  - { es: "Nunca es tarde para leerla.", fr: "Il n'est jamais trop tard pour la lire." }
+
+decision:
+  prompt: "Pigeon dépose devant vous la toute dernière lettre du grenier, jaunie, jamais ouverte, adressée à personne en particulier. « Celle-ci attend depuis plus longtemps que toutes les autres. Qu'en faites-vous ? »"
+  options:
+    A:
+      label: La lire ensemble, à voix haute, toutes les trois
+      scene: "Axelle insiste pour que les trois sœurs ouvrent la lettre ensemble, assises en cercle, et la lisent à tour de rôle, une phrase chacune, jusqu'au bout."
+      line: { who: pigeon, text: "Une lettre lue à trois voix n'est plus tout à fait une lettre oubliée. Elle devient, enfin, un souvenir partagé." }
+      habillage: "Chaque épreuve devient un texte à lire ensemble, phrase après phrase, jusqu'à la toute fin."
+    B:
+      label: La ranger soigneusement, sans la lire
+      scene: "Rafaelle propose de respecter le silence de cette lettre, et de la ranger avec le plus grand soin dans une boîte dédiée, sans jamais l'ouvrir, par respect pour celui ou celle qui ne l'a jamais reçue."
+      line: { who: pigeon, text: "Certains silences méritent d'être gardés tels quels. Je vous remercie de comprendre cela mieux que je ne l'espérais." }
+      habillage: "Les épreuves deviennent des rangements précis, où chaque chose doit trouver sa juste place."
+    C:
+      label: Essayer de deviner, ensemble, à qui elle était destinée
+      scene: "Maelle examine l'écriture, le papier, le sceau à moitié effacé, et propose à ses sœurs de mener l'enquête ensemble pour deviner, à partir de tous les indices, à qui cette lettre aurait pu être adressée."
+      line: { who: pigeon, text: "Personne n'avait pris la peine de chercher, avant vous. Même sans réponse certaine, votre attention vaut, à elle seule, une réponse." }
+      habillage: "Les épreuves deviennent des énigmes où il faut assembler des indices pour reconstituer la vérité."
+
+repliquesAbsurdes:
+  - "Si une lettre attend depuis cent ans, est-ce qu'elle a le droit de se plaindre qu'on est en retard pour la lire ?"
+  - "Mon renard a essayé de manger une enveloppe. Pigeon n'a pas trouvé ça très respectueux envers le courrier."
+  - "Est-ce que Pigeon livre aussi les lettres qu'on n'a jamais écrites, ou juste celles qui existent vraiment ?"
+  - "Si j'écris une lettre à mon renard, est-ce que Pigeon va vraiment essayer de la lui livrer ?"
+  - "On a réveillé un automate la semaine dernière. Un grenier plein de lettres, c'est presque calme, en comparaison."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: Le grenier accroché à la montagne
+    decor: Un grenier de bois incliné, accroché à flanc de montagne par de lourdes chaînes, rempli de malles ouvertes débordant de lettres jaunies, certaines encore scellées, d'autres éparpillées par le vent.
+    opening:
+      - { who: narrateur, text: "La carte vivante mena les trois sœurs jusqu'à un étrange grenier de bois incliné, accroché à la montagne par de lourdes chaînes, dont les fenêtres entrouvertes laissaient échapper des volutes de poussière dorée." }
+      - { who: narrateur, text: "À l'intérieur, des malles entières débordaient de lettres jaunies, certaines encore scellées d'un sceau de cire, d'autres éparpillées sur le sol par le vent qui s'engouffrait entre les planches." }
+      - { who: rafaelle, text: "Toutes ces lettres... Elles n'ont jamais été envoyées ?" }
+      - { who: narrateur, text: "Un battement d'ailes résonna soudain au-dessus d'elles, et un oiseau familier vint se poser sur le rebord d'une malle ouverte." }
+      - { who: pigeon, text: "Jamais, petite Archiviste. C'est bien pour cela que je les garde ici, en attendant de trouver, un jour, le bon destinataire pour chacune." }
+      - { who: axelle, text: "Pigeon ! On ne pensait pas te retrouver si loin, toi aussi !" }
+      - { who: pigeon, text: "Je vais où le courrier m'appelle, petite Veilleuse. Et ce grenier contient le courrier le plus difficile de toute ma carrière : celui que personne n'a jamais pu livrer." }
+      - { who: maelle, text: "Pourquoi personne ne les a jamais livrées, alors ?" }
+      - { who: pigeon, text: "Parce que leurs destinataires ont disparu, ont déménagé sans laisser d'adresse, ou n'ont tout simplement jamais existé que dans l'imagination de celui qui écrivait. C'est le lot de tout messager, parfois." }
+    manches:
+      - id: m1
+        title: Un grenier accroché par des chaînes
+        tours:
+          axelle:
+            - { id: ch16-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on une personne qui porte des lettres et des messages ?", choices: ["un messager", "un marchand", "un cartographe", "un peseur", "un gardien"], answer: "un messager", hint: "C'est le métier de Pigeon." }
+            - { id: ch16-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 5.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "8 + 5 = 8 + 2 + 3." }
+          maelle:
+            - { id: ch16-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi un vieux papier conservé longtemps devient-il souvent jauni ?", choices: ["à cause de la lumière et du temps qui l'oxydent lentement", "parce que le papier est toujours jaune au départ", "parce que la poussière le teint directement", "cela n'a aucune explication connue", "parce que l'encre change la couleur du papier"], answer: "à cause de la lumière et du temps qui l'oxydent lentement", hint: "Pense à l'état des lettres les plus anciennes du grenier." }
+            - { id: ch16-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 68 + 57.", choices: ["120", "123", "125", "128", "130"], answer: "125", hint: "68 + 60 − 3." }
+          rafaelle:
+            - { id: ch16-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi, avant les moyens modernes de communication, une lettre pouvait-elle rester sans réponse pendant des années ?", choices: ["parce que le voyage du courrier était long et incertain", "parce que personne n'écrivait jamais de lettres", "parce que c'était toujours interdit de répondre", "parce que les lettres se perdaient magiquement", "cela n'arrivait jamais autrefois"], answer: "parce que le voyage du courrier était long et incertain", hint: "Pense aux difficultés qu'un messager pouvait rencontrer." }
+            - { id: ch16-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 17 × 6.", choices: ["96", "100", "102", "104", "108"], answer: "102", hint: "17 × 6 = 17 × 3 × 2." }
+      - id: m2
+        title: Pigeon, gardien du grenier
+        tours:
+          axelle:
+            - { id: ch16-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Un battement d'ailes résonna. » ?", choices: ["résonna", "d'ailes", "Un battement d'ailes", "un", "battement"], answer: "Un battement d'ailes", hint: "Qu'est-ce qui résonne ?" }
+            - { id: ch16-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 15 − 7.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "15 − 5 = 10, puis − 2." }
+          maelle:
+            - { id: ch16-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « difficile » dans « le courrier le plus difficile » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le courrier dont parle Pigeon." }
+            - { id: ch16-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 315 ÷ 5.", choices: ["58", "61", "63", "65", "68"], answer: "63", hint: "5 × 63 = 315." }
+          rafaelle:
+            - { id: ch16-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« C'est le lot de tout messager, parfois. » : que signifie l'expression « le lot de » dans cette phrase ?", choices: ["la récompense habituelle", "la part difficile qui revient naturellement à quelqu'un", "un jeu de hasard", "un cadeau surprise", "une punition injuste"], answer: "la part difficile qui revient naturellement à quelqu'un", hint: "Pense au contexte : Pigeon parle des lettres jamais livrées." }
+            - { id: ch16-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 12² − 90.", choices: ["44", "48", "52", "54", "58"], answer: "54", hint: "144 − 90." }
+      - id: m3
+        title: Des malles débordantes
+        tours:
+          axelle:
+            - { id: ch16-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 7 malles de lettres, et 3 de plus arrivent. Combien de malles en tout ?", choices: ["8", "9", "10", "11", "12"], answer: "10", hint: "7 + 3." }
+            - { id: ch16-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi fermait-on autrefois une lettre avec de la cire fondue et un sceau ?", choices: ["pour la fermer et prouver qu'elle n'avait pas été ouverte en chemin", "pour la rendre plus lourde", "pour qu'elle sente bon", "cela n'avait aucune utilité", "pour la décorer uniquement"], answer: "pour la fermer et prouver qu'elle n'avait pas été ouverte en chemin", hint: "Pense à l'utilité d'un sceau de cire sur une enveloppe." }
+          maelle:
+            - { id: ch16-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 49 × 3.", choices: ["141", "144", "145", "147", "150"], answer: "147", hint: "50 × 3 − 3." }
+            - { id: ch16-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi un grenier était-il souvent utilisé, autrefois, pour entreposer de vieux objets et documents ?", choices: ["parce qu'il offrait un espace sec et à l'écart pour les conserver", "parce que c'était toujours interdit ailleurs", "parce que les greniers étaient toujours humides", "cela n'avait aucune raison pratique", "parce que personne n'y montait jamais"], answer: "parce qu'il offrait un espace sec et à l'écart pour les conserver", hint: "Pense à l'utilité d'un espace en hauteur, à l'abri." }
+          rafaelle:
+            - { id: ch16-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 6x + 4 = 40.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "6x = 36." }
+            - { id: ch16-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Le vent (éparpiller) les lettres sur le sol. »", choices: ["a éparpillé", "éparpillait", "éparpillera", "éparpille", "éparpillant"], answer: "a éparpillé", hint: "Passé composé = avoir + participe passé." }
+      - id: m4
+        title: Premiers pas dans le grenier
+        tours:
+          axelle:
+            - { id: ch16-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 3.", choices: ["24", "25", "27", "29", "30"], answer: "27", hint: "9 × 3 = 9 + 9 + 9." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch16-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 225 − 78.", choices: ["140", "144", "147", "149", "152"], answer: "147", hint: "225 − 80 + 2." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch16-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Esta carta nunca llegó. »", choices: ["Cette lettre arrive demain.", "Cette lettre n'est jamais arrivée.", "Cette lettre a disparu.", "Cette lettre est trop lourde.", "Cette lettre est fermée."], answer: "Cette lettre n'est jamais arrivée.", hint: "« Nunca llegó » = n'est jamais arrivée." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu du courrier silencieux : une sœur mime, sans un mot, la façon dont elle imagine qu'on écrivait une lettre autrefois (plume, cire, sceau) ; les deux autres devinent chaque étape mimée."
+    closing:
+      - { who: narrateur, text: "Alors que le soleil commençait à décliner derrière les sommets, Pigeon replia soigneusement ses ailes et se posa sur une vieille malle, observant les trois sœurs avec une attention nouvelle." }
+      - { who: pigeon, text: "Demain, je vous montrerai les lettres les plus anciennes de ce grenier. Peut-être trouverez-vous, parmi elles, celle que je n'ai jamais réussi à livrer moi-même." }
+      - { who: rafaelle, text: "On vous aidera, si on peut. Ça semble important, pour vous." }
+      - { who: pigeon, text: "Plus important que vous ne l'imaginez, petite Archiviste. Un messager qui échoue une fois n'oublie jamais vraiment cet échec." }
+      - { who: narrateur, text: "En quittant le grenier pour la nuit, Maelle remarqua, dans un coin sombre, une pile de lettres particulièrement épaisse, soigneusement attachée par un ruban rouge délavé." }
+    reward: "la découverte du Grenier aux Lettres Oubliées, gardé par Pigeon"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Les lettres les plus anciennes
+    decor: Un coin reculé du grenier où une pile de lettres particulièrement anciennes, attachée par un ruban rouge délavé, repose sur un petit bureau de bois couvert de poussière.
+    opening:
+      - { who: narrateur, text: "Le lendemain, Pigeon guida les trois sœurs vers le coin reculé du grenier, jusqu'au petit bureau de bois où reposait la pile de lettres attachée par le ruban rouge délavé que Maelle avait remarquée la veille." }
+      - { who: pigeon, text: "Celles-ci sont les plus anciennes de tout le grenier. Je les porte avec moi depuis si longtemps que j'en ai presque oublié pourquoi je ne les ai jamais livrées." }
+      - { who: axelle, text: "Vous ne vous souvenez même plus pourquoi ?" }
+      - { who: pigeon, text: "Je me souviens d'avoir cherché, encore et encore, sans jamais trouver. À force, la recherche elle-même est devenue plus familière que la réponse que je cherchais." }
+      - { who: rafaelle, text: "Est-ce qu'on peut lire une de ces lettres, pour essayer de comprendre ?" }
+      - { who: pigeon, text: "Je vous en prie. Peut-être qu'un regard neuf verra ce que mes vieux yeux de messager ont fini par ne plus voir." }
+      - { who: maelle, text: "Celle-ci parle d'un rendez-vous, au sommet d'une montagne, un jour de pleine lune. Mais elle ne dit pas avec qui." }
+      - { who: pigeon, text: "C'est exactement le genre de mystère qui m'a tenu éveillé, nuit après nuit, pendant des années." }
+    manches:
+      - id: m1
+        title: Le ruban rouge délavé
+        tours:
+          axelle:
+            - { id: ch16-j2-ax-m1a, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un ruban rouge peut-il devenir pâle et délavé avec le temps ?", choices: ["la lumière et le temps font pâlir les couleurs", "un ruban change toujours spontanément de couleur", "cela n'a aucune explication", "les rubans rouges deviennent toujours plus foncés", "parce que la poussière le rend plus coloré"], answer: "la lumière et le temps font pâlir les couleurs", hint: "Pense à l'effet du temps sur les couleurs d'un tissu." }
+            - { id: ch16-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 7.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "9 + 7 = 9 + 9 − 2." }
+          maelle:
+            - { id: ch16-j2-ma-m1a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « familière » dans « plus familière que la réponse » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Elle décrit la recherche de Pigeon." }
+            - { id: ch16-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 364 ÷ 7.", choices: ["48", "50", "52", "54", "56"], answer: "52", hint: "7 × 52 = 364." }
+          rafaelle:
+            - { id: ch16-j2-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« La recherche elle-même est devenue plus familière que la réponse que je cherchais. » : que révèle cette phrase sur Pigeon ?", choices: ["qu'il a abandonné toute recherche depuis longtemps", "que chercher est devenu, pour lui, une habitude presque aussi importante que trouver", "qu'il n'a jamais vraiment cherché quoi que ce soit", "qu'il a déjà trouvé la réponse depuis longtemps", "qu'il déteste chercher quoi que ce soit"], answer: "que chercher est devenu, pour lui, une habitude presque aussi importante que trouver", hint: "Relis bien la phrase, en pensant au temps passé à chercher." }
+            - { id: ch16-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13² − 110.", choices: ["49", "53", "57", "59", "61"], answer: "59", hint: "169 − 110." }
+      - id: m2
+        title: Un rendez-vous mystérieux
+        tours:
+          axelle:
+            - { id: ch16-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 13 − 6.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "13 − 6 = 7." }
+            - { id: ch16-j2-ax-m2b, subject: histoire-geo, level: 1, kind: qcm, prompt: "Pourquoi choisissait-on parfois, autrefois, un jour de pleine lune pour fixer un rendez-vous nocturne ?", choices: ["parce que la pleine lune offrait davantage de lumière naturelle la nuit", "parce que la lune n'existait pas avant", "parce que c'était toujours interdit un autre jour", "cela n'avait aucune utilité pratique", "parce que la pleine lune rendait tout invisible"], answer: "parce que la pleine lune offrait davantage de lumière naturelle la nuit", hint: "Pense à l'éclairage disponible la nuit, avant l'électricité." }
+          maelle:
+            - { id: ch16-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 38 × 5.", choices: ["180", "185", "188", "190", "195"], answer: "190", hint: "40 × 5 − 2 × 5." }
+            - { id: ch16-j2-ma-m2b, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi un mystère non résolu peut-il, parfois, occuper l'esprit pendant très longtemps ?", choices: ["parce que l'absence de réponse laisse une question ouverte et non apaisée", "parce que les mystères disparaissent toujours tout seuls", "cela n'a aucun effet sur l'esprit", "parce qu'un mystère se résout toujours en une journée", "parce que l'esprit oublie toujours vite les questions sans réponse"], answer: "parce que l'absence de réponse laisse une question ouverte et non apaisée", hint: "Pense à pourquoi Pigeon reste « éveillé, nuit après nuit »." }
+          rafaelle:
+            - { id: ch16-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10² − 7².", choices: ["41", "45", "49", "51", "55"], answer: "51", hint: "100 − 49." }
+            - { id: ch16-j2-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Vamos a encontrar su destino. »", choices: ["Nous allons oublier son histoire.", "Nous allons trouver son destinataire.", "Nous allons brûler cette lettre.", "Nous allons cacher ce secret.", "Nous allons perdre ce chemin."], answer: "Nous allons trouver son destinataire.", hint: "« Encontrar su destino » = trouver son destinataire." }
+      - id: m3
+        title: Un regard neuf
+        tours:
+          axelle:
+            - { id: ch16-j2-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Maelle lit une vieille lettre. » ?", choices: ["une vieille lettre", "lit", "Maelle", "vieille", "lettre"], answer: "Maelle", hint: "Qui lit la lettre ?" }
+            - { id: ch16-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 4.", choices: ["24", "26", "27", "28", "30"], answer: "28", hint: "7 × 4 = 7 × 2 × 2." }
+          maelle:
+            - { id: ch16-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 441 ÷ 7.", choices: ["57", "61", "63", "65", "67"], answer: "63", hint: "7 × 63 = 441." }
+            - { id: ch16-j2-ma-m3b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « mystérieux » dans « un rendez-vous mystérieux » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le rendez-vous." }
+          rafaelle:
+            - { id: ch16-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 4/9 + 3/9.", choices: ["6/9", "7/9", "8/9", "1", "7/18"], answer: "7/9", hint: "4 + 3 = 7, même dénominateur." }
+            - { id: ch16-j2-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au présent : « Nous (chercher) encore une réponse à ce mystère. »", choices: ["nous cherchons", "nous cherchez", "nous cherchent", "nous cherchions", "nous chercherons"], answer: "nous cherchons", hint: "Nous : -ons." }
+      - id: m4
+        title: Indices dans la poussière
+        tours:
+          axelle:
+            - { id: ch16-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 7.", choices: ["36", "38", "40", "42", "44"], answer: "42", hint: "6 × 7 = 6 × 6 + 6." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch16-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 270 − 95.", choices: ["165", "170", "173", "175", "178"], answer: "175", hint: "270 − 100 + 5." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch16-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El polvo cubre los recuerdos. »", choices: ["La poussière couvre les souvenirs.", "Le vent efface les souvenirs.", "La pluie lave les souvenirs.", "Le temps crée les souvenirs.", "La lumière cache les souvenirs."], answer: "La poussière couvre les souvenirs.", hint: "« El polvo » = la poussière." }
+            - { gen: maths.ranger }
+    pause: "Le jeu du mystère partagé : chaque sœur imagine, à voix haute, qui aurait pu attendre, un soir de pleine lune, au sommet de la montagne, et pourquoi."
+    closing:
+      - { who: narrateur, text: "Pigeon replia délicatement la vieille lettre et la remit à sa place, parmi les autres, avec un soin qui trahissait toute l'affection qu'il portait, depuis tant d'années, à ce mystère non résolu." }
+      - { who: pigeon, text: "Demain, je vous montrerai comment on écrivait, autrefois, une lettre digne de ce nom. Peut-être qu'en apprenant, vous comprendrez mieux ce que je cherche." }
+      - { who: rafaelle, text: "On sera là, Pigeon. Promis." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs regagnaient l'Arche, Nilo s'arrêta un instant devant une lettre tombée au sol, la reniflant avec curiosité, avant de trottiner pour les rattraper." }
+    reward: "la découverte des lettres les plus anciennes du grenier"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: Apprendre à écrire une lettre
+    decor: Un coin de l'atelier aménagé en petit bureau, avec plumes, encriers et papier à lettres, où Pigeon enseigne patiemment l'art presque oublié d'écrire une lettre digne de ce nom.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, Pigeon les conduisit vers un coin du grenier aménagé en petit bureau, où plumes, encriers et papier à lettres les attendaient, soigneusement disposés." }
+      - { who: pigeon, text: "Une bonne lettre commence toujours de la même façon : par celui à qui on l'adresse, et pourquoi on prend la peine de lui écrire, plutôt que de simplement le lui dire." }
+      - { who: maelle, text: "Pourquoi écrire, justement, plutôt que de simplement parler à quelqu'un ?" }
+      - { who: pigeon, text: "Parce qu'une lettre reste, petite Cartographe. On peut la relire, la garder, la retrouver des années plus tard. Une parole, elle, s'envole aussitôt dite." }
+      - { who: axelle, text: "Alors c'est un peu comme votre grenier : plein de paroles qui ont décidé de rester, au lieu de s'envoler ?" }
+      - { who: pigeon, text: "C'est très exactement cela, petite Veilleuse. Vous avez l'art de dire les choses avec une justesse qui me surprend, chaque fois." }
+      - { who: rafaelle, text: "Est-ce qu'on pourrait essayer d'en écrire une, nous aussi ? Juste pour s'entraîner ?" }
+      - { who: pigeon, text: "J'espérais justement vous le proposer. Prenez une plume, chacune, et écrivez à quelqu'un qui compte vraiment pour vous." }
+    manches:
+      - id: m1
+        title: Commencer une lettre
+        tours:
+          axelle:
+            - { id: ch16-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 3 plumes et 5 encriers sur le bureau. Combien d'objets en tout ?", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "3 + 5." }
+            - { id: ch16-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Une bonne lettre commence toujours de la même façon. » ?", choices: ["de la même façon", "commence", "Une bonne lettre", "toujours", "bonne"], answer: "Une bonne lettre", hint: "Qu'est-ce qui commence toujours de la même façon ?" }
+          maelle:
+            - { id: ch16-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi l'écriture d'une lettre a-t-elle longtemps été l'un des seuls moyens de communiquer avec quelqu'un d'éloigné ?", choices: ["parce qu'il n'existait pas encore de téléphone ni d'autres moyens rapides", "parce que c'était toujours interdit de voyager", "parce que personne ne savait parler autrefois", "cela n'a jamais été vrai", "parce que les lettres se livraient instantanément"], answer: "parce qu'il n'existait pas encore de téléphone ni d'autres moyens rapides", hint: "Pense à ce qui existait, ou non, avant les moyens modernes de communication." }
+            - { id: ch16-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 76 + 49.", choices: ["120", "123", "125", "128", "130"], answer: "125", hint: "76 + 50 − 1." }
+          rafaelle:
+            - { id: ch16-j3-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Une lettre reste. Une parole s'envole aussitôt dite. » : quelle différence essentielle ces deux phrases mettent-elles en avant ?", choices: ["la durée et la permanence de l'écrit face à l'oral", "le prix de l'écrit face à l'oral", "la rapidité de l'écrit face à l'oral", "la couleur de l'écrit face à l'oral", "il n'y a aucune différence réelle entre les deux"], answer: "la durée et la permanence de l'écrit face à l'oral", hint: "Relis bien l'explication de Pigeon à Maelle." }
+            - { id: ch16-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 19 × 6.", choices: ["104", "108", "110", "112", "114"], answer: "114", hint: "20 × 6 − 6." }
+      - id: m2
+        title: Pourquoi écrire plutôt que parler
+        tours:
+          axelle:
+            - { id: ch16-j3-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 + 6.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "8 + 6 = 8 + 8 − 2." }
+            - { id: ch16-j3-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi l'encre d'une plume ancienne sèche-t-elle rapidement une fois posée sur le papier ?", choices: ["parce que l'air absorbe peu à peu son eau", "parce que l'encre n'est jamais réellement liquide", "cela n'a aucune explication connue", "parce que le papier repousse toujours l'encre", "parce que l'encre gèle instantanément"], answer: "parce que l'air absorbe peu à peu son eau", hint: "Pense à ce qui fait sécher un liquide étalé en fine couche." }
+          maelle:
+            - { id: ch16-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 504 ÷ 8.", choices: ["58", "61", "63", "65", "68"], answer: "63", hint: "8 × 63 = 504." }
+            - { id: ch16-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « justesse » dans « une justesse qui me surprend » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "nom", hint: "C'est une qualité que possède la remarque d'Axelle." }
+          rafaelle:
+            - { id: ch16-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 5².", choices: ["46", "50", "54", "56", "60"], answer: "56", hint: "81 − 25." }
+            - { id: ch16-j3-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Cada palabra cuenta una historia. »", choices: ["Chaque mot raconte une histoire.", "Chaque mot cache un secret.", "Chaque mot pèse très lourd.", "Chaque mot s'envole vite.", "Chaque mot reste silencieux."], answer: "Chaque mot raconte une histoire.", hint: "« Cuenta una historia » = raconte une histoire." }
+      - id: m3
+        title: Écrire à quelqu'un qui compte
+        tours:
+          axelle:
+            - { id: ch16-j3-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « s'envoler » ?", choices: ["rester", "voler", "monter", "tomber", "courir"], answer: "rester", hint: "Le contraire de ce qui disparaît aussitôt." }
+            - { id: ch16-j3-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 15 − 6.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "15 − 5 = 10, puis − 1." }
+          maelle:
+            - { id: ch16-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 63 × 3.", choices: ["179", "183", "187", "189", "191"], answer: "189", hint: "63 × 3 = 60 × 3 + 3 × 3." }
+            - { id: ch16-j3-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi écrire une lettre à quelqu'un qu'on aime demande-t-il parfois plus de réflexion qu'une simple conversation ?", choices: ["parce qu'on prend le temps de choisir précisément ses mots, sans pouvoir les reprendre aussitôt", "parce que l'écrit n'a jamais aucune importance", "parce qu'on écrit toujours plus vite qu'on ne parle", "cela ne demande jamais de réflexion particulière", "parce que les lettres sont toujours plus courtes que les conversations"], answer: "parce qu'on prend le temps de choisir précisément ses mots, sans pouvoir les reprendre aussitôt", hint: "Pense à la différence entre écrire et parler, évoquée par Pigeon." }
+          rafaelle:
+            - { id: ch16-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 7x − 8 = 41.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "7x = 49." }
+            - { id: ch16-j3-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« J'espérais justement vous le proposer. » : quel est le sujet de cette phrase ?", choices: ["justement", "vous le proposer", "J'", "le", "espérais"], answer: "J'", hint: "Qui espérait proposer cela ?" }
+      - id: m4
+        title: Premiers mots sur le papier
+        tours:
+          axelle:
+            - { id: ch16-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 4.", choices: ["32", "34", "36", "38", "40"], answer: "36", hint: "9 × 4 = 9 × 2 × 2." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch16-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 350 − 184.", choices: ["160", "164", "166", "168", "170"], answer: "166", hint: "350 − 190 + 6." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch16-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Nunca es tarde para leerla. »", choices: ["Il est trop tard pour la lire.", "Il n'est jamais trop tard pour la lire.", "Il faut la relire demain.", "Il ne faut jamais la lire.", "Il est l'heure de la lire."], answer: "Il n'est jamais trop tard pour la lire.", hint: "« Nunca es tarde » = il n'est jamais trop tard." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu de la lettre inventée : chacune commence, à voix haute, une phrase d'une lettre imaginaire adressée à un personnage du voyage, et les deux autres doivent deviner à qui elle s'adresse."
+    closing:
+      - { who: narrateur, text: "À la fin de l'après-midi, trois lettres fraîchement écrites reposaient sur le petit bureau, chacune adressée à quelqu'un de cher aux trois sœurs, loin derrière elles, de l'autre côté du voyage." }
+      - { who: pigeon, text: "Voulez-vous que je les livre pour vous, un jour, si l'occasion se présente ?" }
+      - { who: rafaelle, text: "On y réfléchira, Pigeon. Mais rien que de les avoir écrites, ça fait déjà beaucoup de bien." }
+      - { who: pigeon, text: "C'est exactement ce que je dis depuis toujours à qui veut bien m'écouter. Parfois, l'écriture suffit, même sans la livraison." }
+      - { who: narrateur, text: "En rangeant soigneusement leurs trois lettres dans un coin du grenier, les sœurs sentirent, pour la première fois, qu'elles comprenaient un peu mieux pourquoi Pigeon gardait tant de soin à ce lieu plein de mots jamais envoyés." }
+    reward: "trois lettres écrites de leurs propres mains, à ceux qui comptent pour elles"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: L'histoire de Pigeon
+    decor: Le grenier, baigné d'une lumière d'après-midi tamisée par la poussière en suspension, où Pigeon, perché sur une vieille malle, raconte enfin pourquoi il n'a jamais quitté ce lieu.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, Pigeon les attendait, perché sur la plus vieille malle du grenier, le regard tourné vers la fenêtre entrouverte par laquelle filtrait une lumière tamisée par la poussière en suspension." }
+      - { who: pigeon, text: "Je crois qu'il est temps que je vous raconte pourquoi je n'ai jamais quitté ce grenier, malgré toutes les lettres que j'aurais pu livrer ailleurs, plus facilement." }
+      - { who: maelle, text: "On vous écoute, Pigeon." }
+      - { who: pigeon, text: "J'ai perdu, un jour, la toute première lettre qu'on m'avait confiée. Depuis, je me suis juré de ne plus jamais en perdre une seule — même celles que je ne peux pas livrer." }
+      - { who: axelle, text: "C'est pour ça que vous gardez toutes ces lettres jamais envoyées ! Pour ne plus jamais en perdre aucune !" }
+      - { who: pigeon, text: "Exactement, petite Veilleuse. Je préfère porter un fardeau immense plutôt que de trahir à nouveau la confiance qu'on m'a accordée." }
+      - { who: rafaelle, text: "Mais ce fardeau, justement... est-ce qu'il ne devient pas, à la longue, bien trop lourd à porter seul ?" }
+      - { who: pigeon, text: "Si, petite Archiviste. Terriblement lourd. Et je crois que c'est exactement la question à laquelle il va falloir répondre, demain, ensemble." }
+    manches:
+      - id: m1
+        title: La lettre perdue
+        tours:
+          axelle:
+            - { id: ch16-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « perdre » ?", choices: ["trouver", "garder", "cacher", "oublier", "fermer"], answer: "trouver", hint: "Le contraire de ce qui arrive à la première lettre de Pigeon." }
+            - { id: ch16-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 + 9.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "7 + 9 = 7 + 7 + 2." }
+          maelle:
+            - { id: ch16-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi la confiance accordée à un messager était-elle, autrefois, particulièrement précieuse ?", choices: ["parce qu'une lettre perdue pouvait rompre un lien important, sans possibilité de la renvoyer facilement", "parce que les messagers ne transportaient jamais rien d'important", "parce que perdre une lettre n'avait aucune conséquence", "cela n'avait aucune importance réelle", "parce que toutes les lettres étaient toujours recopiées en double"], answer: "parce qu'une lettre perdue pouvait rompre un lien important, sans possibilité de la renvoyer facilement", hint: "Pense à l'importance qu'accorde Pigeon à ne plus jamais perdre une lettre." }
+            - { id: ch16-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 418 − 265.", choices: ["143", "148", "151", "153", "156"], answer: "153", hint: "418 − 270 + 5." }
+          rafaelle:
+            - { id: ch16-j4-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi quelqu'un pourrait-il, après une seule erreur, continuer à en porter le poids pendant très longtemps ?", choices: ["parce qu'une erreur marquante peut transformer durablement la façon dont on agit ensuite", "parce qu'une erreur ne compte jamais vraiment", "parce que personne ne retient jamais ses erreurs", "cela n'a aucun lien avec le comportement futur", "parce qu'une seule erreur s'efface toujours immédiatement"], answer: "parce qu'une erreur marquante peut transformer durablement la façon dont on agit ensuite", hint: "Repense à ce que Pigeon dit avoir juré, après avoir perdu cette première lettre." }
+            - { id: ch16-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14² − 120.", choices: ["66", "70", "74", "76", "80"], answer: "76", hint: "196 − 120." }
+      - id: m2
+        title: Un fardeau porté seul
+        tours:
+          axelle:
+            - { id: ch16-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 16 − 8.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "16 − 8 = 8." }
+            - { id: ch16-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un poids porté seul, pendant très longtemps, finit-il souvent par devenir épuisant ?", choices: ["parce que personne ne peut porter une charge indéfiniment sans aide ni repos", "parce qu'un poids devient toujours plus léger avec le temps", "cela n'a aucun rapport avec la fatigue", "parce que la fatigue n'existe jamais vraiment", "parce que porter quelque chose seul est toujours plus facile"], answer: "parce que personne ne peut porter une charge indéfiniment sans aide ni repos", hint: "Pense à ce que Rafaelle fait remarquer à Pigeon sur son fardeau." }
+          maelle:
+            - { id: ch16-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 27 × 5.", choices: ["125", "130", "132", "135", "140"], answer: "135", hint: "27 × 5 = 30 × 5 − 3 × 5." }
+            - { id: ch16-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « immense » dans « un fardeau immense » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le fardeau de Pigeon." }
+          rafaelle:
+            - { id: ch16-j4-ra-m2a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 6/8 − 2/8.", choices: ["2/8", "3/8", "4/8", "5/8", "6/8"], answer: "4/8", hint: "6 − 2 = 4, même dénominateur." }
+            - { id: ch16-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Chaque mot raconte une histoire » en espagnol ?", choices: ["Cada palabra cuenta una historia.", "Esta carta nunca llegó.", "Vamos a encontrar su destino.", "El polvo cubre los recuerdos.", "Nunca es tarde para leerla."], answer: "Cada palabra cuenta una historia.", hint: "Relis la phrase du jour 3." }
+      - id: m3
+        title: La question de demain
+        tours:
+          axelle:
+            - { id: ch16-j4-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Pigeon n'a jamais quitté ce grenier. » ?", choices: ["ce grenier", "n'a jamais quitté", "Pigeon", "jamais", "quitté"], answer: "Pigeon", hint: "Qui n'a jamais quitté le grenier ?" }
+            - { id: ch16-j4-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 5.", choices: ["35", "38", "40", "42", "45"], answer: "40", hint: "8 × 5 = 8 × 10 ÷ 2." }
+          maelle:
+            - { id: ch16-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 480 ÷ 6.", choices: ["70", "75", "78", "80", "85"], answer: "80", hint: "6 × 80 = 480." }
+            - { id: ch16-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi partager un fardeau avec d'autres peut-il, parfois, aider à mieux le porter ?", choices: ["parce que la charge se répartit et semble alors moins écrasante", "parce que partager un fardeau le rend toujours plus lourd", "cela n'a jamais aucun effet", "parce que personne ne peut jamais aider quelqu'un d'autre", "parce qu'un fardeau partagé disparaît toujours instantanément"], answer: "parce que la charge se répartit et semble alors moins écrasante", hint: "Repense à ce que suggère Rafaelle à Pigeon." }
+          rafaelle:
+            - { id: ch16-j4-ra-m3a, subject: maths, level: 5, kind: qcm, prompt: "Résous : 9x − 7 = 56.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "9x = 63." }
+            - { id: ch16-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Je crois que c'est exactement la question à laquelle il va falloir répondre, demain, ensemble. » : que suggère cette phrase sur la suite ?", choices: ["que Pigeon va résoudre seul le problème", "que les sœurs devront l'aider à prendre une décision importante", "que rien ne va plus jamais se passer", "que Pigeon va quitter définitivement le grenier dès ce soir", "que la question ne sera jamais résolue"], answer: "que les sœurs devront l'aider à prendre une décision importante", hint: "Relis bien la toute dernière réplique de Pigeon, ce jour-là." }
+      - id: m4
+        title: Se préparer à alléger le fardeau
+        tours:
+          axelle:
+            - { id: ch16-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 6.", choices: ["30", "32", "34", "36", "38"], answer: "36", hint: "6 × 6 = 6 × 5 + 6." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch16-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 320 − 157.", choices: ["155", "160", "163", "165", "168"], answer: "163", hint: "320 − 160 + 3." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch16-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13 × 7.", choices: ["88", "91", "93", "95", "98"], answer: "91", hint: "13 × 7 = 13 × 7." }
+            - { gen: maths.duree }
+    pause: "Le jeu du poids partagé : chaque sœur raconte, en une phrase, un petit souci qu'elle garde pour elle depuis un moment, pour sentir à quel point le dire à voix haute peut déjà l'alléger."
+    closing:
+      - { who: narrateur, text: "Pigeon resta longtemps silencieux après son récit, ses plumes légèrement hérissées, comme s'il venait de se délester d'un poids qu'il portait depuis bien trop longtemps." }
+      - { who: pigeon, text: "Merci de m'avoir écouté. Je crois que je n'avais jamais raconté cette histoire à voix haute, à personne, avant aujourd'hui." }
+      - { who: rafaelle, text: "On est contentes que vous nous l'ayez confiée, Pigeon. Demain, on trouvera ensemble ce qu'il faut faire de la dernière lettre." }
+      - { who: pigeon, text: "J'ai hâte d'y être, pour une fois, plutôt que d'en avoir peur." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs regagnaient l'Arche pour la nuit, le vent se leva doucement entre les planches du grenier, faisant frémir, une à une, toutes les lettres jamais envoyées." }
+    reward: "l'histoire de Pigeon, et son fardeau enfin partagé"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: La dernière lettre
+    decor: Le grenier tout entier, rangé et dépoussiéré par une semaine de travail commun, où Pigeon attend, perché sur le petit bureau, la toute dernière lettre jaunie posée devant lui.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, le grenier tout entier semblait métamorphosé : les malles rangées, les lettres classées avec soin, et Pigeon, perché sur le petit bureau, attendait, la toute dernière lettre jaunie posée devant lui." }
+      - { who: pigeon, text: "Celle-ci attend depuis plus longtemps que toutes les autres. Qu'en faites-vous ?" }
+      - { who: nilo, text: "Allez, les filles. Après tout ce qu'on a appris cette semaine, cette lettre-là mérite une vraie réponse, pas une décision prise à la hâte." }
+    manches:
+      - id: m1
+        title: Ce que le grenier a appris
+        intro: "Pigeon interroge chaque sœur sur tout ce que cette semaine dans le grenier lui a appris."
+        tours:
+          axelle:
+            - { id: ch16-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on une personne qui porte des lettres et des messages ?", choices: ["un messager", "un marchand", "un cartographe", "un peseur", "un gardien"], answer: "un messager", hint: "C'est le métier de Pigeon, depuis le premier jour." }
+            - { id: ch16-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 + 8.", choices: ["15", "16", "17", "18", "19"], answer: "17", hint: "9 + 8 = 9 + 9 − 1." }
+          maelle:
+            - { id: ch16-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi un vieux papier conservé longtemps devient-il souvent jauni, selon ce que tu as appris cette semaine ?", choices: ["à cause de la lumière et du temps qui l'oxydent lentement", "parce que le papier est toujours jaune au départ", "parce que la poussière le teint directement", "cela n'a aucune explication connue", "parce que l'encre change la couleur du papier"], answer: "à cause de la lumière et du temps qui l'oxydent lentement", hint: "Repense à ta propre question du premier jour." }
+            - { id: ch16-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 42 × 4.", choices: ["162", "164", "166", "168", "170"], answer: "168", hint: "42 × 4 = 40 × 4 + 2 × 4." }
+          rafaelle:
+            - { id: ch16-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que l'histoire de Pigeon est autant une histoire de fidélité que de solitude ?", choices: ["parce qu'il est resté fidèle à sa mission de messager tout en portant seul le poids de son erreur passée", "parce que Pigeon n'a jamais rien ressenti", "parce que la solitude et la fidélité n'ont aucun lien dans ce récit", "parce que Pigeon a toujours eu de la compagnie", "parce qu'il n'a jamais eu de mission précise"], answer: "parce qu'il est resté fidèle à sa mission de messager tout en portant seul le poids de son erreur passée", hint: "Repense à l'histoire complète que Pigeon a racontée le quatrième jour." }
+            - { id: ch16-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 5/9 + 2/9.", choices: ["6/9", "7/9", "8/9", "1", "7/18"], answer: "7/9", hint: "5 + 2 = 7, même dénominateur." }
+      - id: m2
+        title: Avant de décider
+        intro: "Il faut relier tout ce que la semaine a appris pour choisir, vraiment, ce qu'il adviendra de la dernière lettre."
+        tours:
+          axelle:
+            - { id: ch16-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux une lettre jamais envoyée, restée en attente très longtemps ?", choices: ["oubliée", "neuve", "pressée", "bavarde", "colorée"], answer: "oubliée", hint: "C'est le mot du titre de ce chapitre." }
+            - { id: ch16-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 17 − 8.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "17 − 7 = 10, puis − 1." }
+          maelle:
+            - { id: ch16-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi ce grenier, accroché à flanc de montagne, a-t-il une importance particulière dans le voyage des trois sœurs ?", choices: ["il n'a aucune importance réelle", "il leur apprend la valeur des mots gardés et le poids d'un fardeau porté seul", "il les empêche d'avancer vers le sommet", "il se trouve très loin des montagnes", "personne n'y passe jamais vraiment"], answer: "il leur apprend la valeur des mots gardés et le poids d'un fardeau porté seul", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de Pigeon." }
+            - { id: ch16-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 522 ÷ 6.", choices: ["82", "85", "87", "89", "92"], answer: "87", hint: "6 × 87 = 522." }
+          rafaelle:
+            - { id: ch16-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 12² − 95.", choices: ["44", "47", "49", "51", "54"], answer: "49", hint: "144 − 95." }
+            - { id: ch16-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Celle-ci attend depuis plus longtemps que toutes les autres. » : quel est le sujet de cette phrase ?", choices: ["depuis plus longtemps", "toutes les autres", "Celle-ci", "attend", "plus"], answer: "Celle-ci", hint: "De quoi parle Pigeon, juste avant cette phrase ?" }
+      - id: m3
+        title: Le Chant du Grenier
+        intro: "Le grenier lui-même semble répondre : les lettres s'animent doucement si les trois sœurs trouvent, ensemble, le bon rythme."
+        tours:
+          axelle:
+            - { id: ch16-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          maelle:
+            - { id: ch16-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, blanche." }
+          rafaelle:
+            - { id: ch16-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : ronde." }
+    concert:
+      measures:
+        axelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        maelle: { given: [2], missing: 2, prompt: "Blanche, blanche" }
+        rafaelle: { given: [], missing: 4, prompt: "Ronde" }
+    pause: "Le dernier regard sur le grenier : chacune choisit, avant de partir, la lettre qu'elle aimerait le plus un jour pouvoir relire, et dit pourquoi à voix haute."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant du Grenier se répandit entre les poutres de bois, et toutes les lettres, d'un seul coup, frémirent doucement, comme pour répondre." }
+      - { who: pigeon, text: "Merci. Pour la lettre, pour l'écoute, et pour avoir allégé, cette semaine, un fardeau que je portais seul depuis bien trop longtemps." }
+      - { who: rafaelle, text: "On repassera vous voir, Pigeon, si notre chemin nous ramène un jour par ici." }
+      - { who: pigeon, text: "Je l'espère de tout cœur. Et d'ici là, je continuerai à garder ce grenier, un peu moins seul qu'avant." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs quittaient le grenier, la carte vivante déjà dépliée entre leurs mains, elles sentirent, derrière elles, Pigeon s'envoler une dernière fois, décrivant un grand cercle au-dessus du grenier avant de replonger se poser, apaisé, parmi ses lettres." }
+      - { who: nilo, text: "Bon. Encore une étape de passée. J'espère que la suite sera un peu moins poussiéreuse, pour changer." }
+      - { who: axelle, text: "On a toujours fini par trouver notre chemin, jusqu'ici. Et cette fois, en plus, on a aidé quelqu'un à trouver un peu de paix." }
+    reward: "la décision prise pour la dernière lettre, et le fardeau de Pigeon allégé"
