@@ -61,7 +61,8 @@ const VOICES = {
   rouage: 'Zephyr',
   chrono: 'Kore',
   capitaine: 'Schedar',
-  vera: 'Pulcherrima'
+  vera: 'Pulcherrima',
+  alambic: 'Zubenelgenubi'
 };
 
 function readApiKey() {

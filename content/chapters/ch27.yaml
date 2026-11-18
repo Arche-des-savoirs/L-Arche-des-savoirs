@@ -1,0 +1,380 @@
+# Chapitre 27 — Dame Alambic et la Serre de Verre
+# Nouveau personnage : Dame Alambic, une alchimiste solitaire qui vit dans une serre de verre
+# accrochée à flanc de montagne, où elle distille de rares essences de fleurs d'altitude.
+# Voix : Zubenelgenubi. Pas d'effet ORVANE ni de drapeau pour ce chapitre (absent de
+# decisions.ts) : décision purement narrative sur la façon de l'aider dans une distillation
+# délicate.
+
+id: ch27
+number: 27
+act: 2
+title: Dame Alambic et la Serre de Verre
+introImage: ch27
+scene: serre-de-verre
+
+espagnol:
+  - { es: "La flor crece en la altura.", fr: "La fleur pousse en altitude." }
+  - { es: "El alambique no miente nunca.", fr: "L'alambic ne ment jamais." }
+  - { es: "Cada gota cuenta mucho.", fr: "Chaque goutte compte beaucoup." }
+  - { es: "La paciencia hace la esencia.", fr: "La patience fait l'essence." }
+  - { es: "El vidrio refleja la luz.", fr: "Le verre reflète la lumière." }
+
+decision:
+  prompt: "Dame Alambic surveille un alambic de cuivre et de verre, d'où s'échappe un filet de vapeur parfumée. « Cette distillation est délicate : trop de chaleur, et l'essence se perd ; pas assez, et elle ne vient jamais. Voulez-vous m'aider à surveiller le feu avec patience, ou préférez-vous que je m'en charge seule, pendant que vous vous reposez ? »"
+  options:
+    A:
+      label: Aider Dame Alambic à surveiller le feu, patiemment
+      scene: "Rafaelle propose d'aider Dame Alambic à surveiller le feu de l'alambic, avec toute la patience nécessaire, sans se laisser distraire par l'attente."
+      line: { who: alambic, text: "Une patience bien placée, petite Archiviste. C'est exactement ce que demande ce genre de distillation, aussi longue soit-elle." }
+      habillage: "Les épreuves prennent la forme d'une surveillance attentive et silencieuse, rythmée par le léger crépitement du feu sous l'alambic."
+    B:
+      label: Laisser Dame Alambic travailler seule, et se reposer
+      scene: "Maelle propose plutôt de laisser Dame Alambic s'occuper seule de sa distillation délicate, pendant que les trois sœurs se reposent un peu, après tant de chemin parcouru."
+      line: { who: alambic, text: "Un repos bien mérité, petite Cartographe. Je veillerai sur mon alambic comme je le fais depuis toujours, seule face au feu." }
+      habillage: "Les épreuves se déroulent dans un moment de repos et de calme, pendant que Dame Alambic travaille de son côté."
+    C:
+      label: Proposer de se relayer pour surveiller le feu à tour de rôle
+      scene: "Axelle suggère un compromis : se relayer, chacune à tour de rôle, pour surveiller le feu de l'alambic avec Dame Alambic, afin que personne ne s'épuise à la tâche."
+      line: { who: alambic, text: "Une idée pleine de bon sens, petite Veilleuse. Ainsi, personne ne se fatigue trop, et la distillation n'en sera pas moins réussie." }
+      habillage: "Les épreuves prennent la forme d'une surveillance partagée et organisée, où chacune prend son tour avec sérieux."
+
+repliquesAbsurdes:
+  - "Si l'alambic ne ment jamais, est-ce qu'il dit parfois des vérités qu'on préférerait ne pas entendre, genre « tu as trop chauffé le feu » ?"
+  - "Mon renard a essayé de laper une goutte d'essence tombée par terre. Résultat : il a éternué trois fois et boudé pendant une heure."
+  - "Est-ce que Dame Alambic pourrait distiller un peu de courage, un jour, pour les moments où on en a vraiment besoin ?"
+  - "Si chaque goutte compte beaucoup, est-ce qu'il existe une goutte qui, à elle seule, compte plus que toutes les autres ?"
+  - "Après un carrousel réparé et des étoiles à moitié apprises, surveiller un petit feu sous un alambic, ça semble presque reposant, en fait."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: La serre accrochée à la montagne
+    decor: Une serre de verre et de fer forgé, accrochée à flanc de montagne, remplie de fleurs rares et d'un alambic de cuivre installé en son centre.
+    opening:
+      - { who: narrateur, text: "Le sentier, après le carrousel de Chrono, grimpa jusqu'à une serre de verre et de fer forgé, accrochée à flanc de montagne, remplie de fleurs aux couleurs inattendues." }
+      - { who: narrateur, text: "Au centre de la serre trônait un alambic de cuivre poli, d'où s'échappait un filet de vapeur parfumée, surveillé par une femme élégante aux mains tachées de pigments colorés." }
+      - { who: maelle, text: "Bonjour ! C'est une serre magnifique. Qu'est-ce que vous cultivez, exactement, avec toutes ces fleurs ?" }
+      - { who: narrateur, text: "La femme leva les yeux de son alambic, un sourire discret aux lèvres, et s'essuya les mains sur son tablier déjà bien marqué par le travail." }
+      - { who: alambic, text: "On m'appelle Dame Alambic, petites voyageuses. Je cultive des fleurs d'altitude, rares et capricieuses, pour en distiller les essences les plus précieuses." }
+      - { who: rafaelle, text: "Distiller, ça veut dire quoi, exactement ? J'ai déjà entendu ce mot, mais jamais bien expliqué." }
+      - { who: alambic, text: "Extraire, goutte après goutte, ce qu'une fleur a de plus pur, petite Archiviste, en la chauffant doucement jusqu'à ce qu'elle livre son parfum." }
+      - { who: axelle, text: "Ça a l'air délicat, comme travail." }
+      - { who: alambic, text: "Extrêmement délicat, petite Veilleuse. C'est justement ce que je m'apprête à faire, en ce moment même." }
+    manches:
+      - id: m1
+        title: Une serre pleine de fleurs
+        tours:
+          axelle:
+            - { id: ch27-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on une construction de verre destinée à faire pousser des plantes à l'abri du froid ?", choices: ["une serre", "une grotte", "une tour", "un pont", "un moulin"], answer: "une serre", hint: "C'est l'endroit où vit Dame Alambic." }
+            - { id: ch27-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 + 8.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "7 + 8 = 7 + 7 + 1." }
+          maelle:
+            - { id: ch27-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi une serre de verre permet-elle de cultiver des fleurs rares même en altitude, où le climat est souvent rude ?", choices: ["le verre retient la chaleur du soleil et protège les plantes du vent et du froid extérieur", "une serre n'a jamais aucun effet sur la croissance des plantes", "cela n'a aucune explication particulière", "le verre empêche toujours la lumière de pénétrer", "les fleurs d'altitude n'ont jamais besoin de protection"], answer: "le verre retient la chaleur du soleil et protège les plantes du vent et du froid extérieur", hint: "Pense à l'utilité de la serre pour cultiver des fleurs rares en montagne." }
+            - { id: ch27-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 64 + 58.", choices: ["118", "120", "122", "124", "126"], answer: "122", hint: "64 + 60 − 2." }
+          rafaelle:
+            - { id: ch27-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi, historiquement, la distillation a-t-elle souvent été considérée comme un savoir-faire précieux et recherché ?", choices: ["parce qu'elle permet d'extraire des substances rares et concentrées, utiles en parfumerie comme en médecine", "parce que la distillation n'a jamais eu aucune utilité", "cela n'a aucune importance historique", "parce qu'il est impossible d'extraire quoi que ce soit d'une fleur", "parce que seules les fleurs communes peuvent être distillées"], answer: "parce qu'elle permet d'extraire des substances rares et concentrées, utiles en parfumerie comme en médecine", hint: "Pense à l'explication de Dame Alambic sur l'extraction du parfum le plus pur d'une fleur." }
+            - { id: ch27-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 17 × 5.", choices: ["75", "80", "82", "85", "88"], answer: "85", hint: "17 × 5 = 17 × 10 ÷ 2." }
+      - id: m2
+        title: Un alambic de cuivre
+        tours:
+          axelle:
+            - { id: ch27-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Un alambic trônait au centre de la serre. » ?", choices: ["au centre de la serre", "trônait", "Un alambic", "un", "alambic"], answer: "Un alambic", hint: "Qu'est-ce qui trône au centre de la serre ?" }
+            - { id: ch27-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 13 − 6.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "13 − 6 = 7." }
+          maelle:
+            - { id: ch27-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « délicat » dans « c'est délicat, comme travail » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la nature du travail de Dame Alambic." }
+            - { id: ch27-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 376 ÷ 4.", choices: ["86", "88", "90", "92", "94"], answer: "94", hint: "4 × 94 = 376." }
+          rafaelle:
+            - { id: ch27-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Extraire, goutte après goutte, ce qu'une fleur a de plus pur. » : que révèle cette phrase sur le travail de Dame Alambic ?", choices: ["qu'il demande une extraction lente et minutieuse, menée avec une grande précision", "qu'il peut se faire en une seule fois, sans aucune précaution", "qu'il ne concerne jamais vraiment les fleurs elles-mêmes", "qu'il s'agit d'un travail rapide et sans aucune difficulté", "qu'il ne nécessite aucune attention particulière"], answer: "qu'il demande une extraction lente et minutieuse, menée avec une grande précision", hint: "Repense à l'explication de Dame Alambic sur la distillation, goutte après goutte." }
+            - { id: ch27-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 12² − 80.", choices: ["58", "60", "62", "64", "68"], answer: "64", hint: "144 − 80." }
+      - id: m3
+        title: Des mains tachées de pigments
+        tours:
+          axelle:
+            - { id: ch27-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Dame Alambic cultive 4 variétés de fleurs roses, et 3 variétés de fleurs bleues. Combien de variétés en tout ?", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "4 + 3." }
+            - { id: ch27-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi les mains de Dame Alambic peuvent-elles être tachées de pigments colorés après son travail ?", choices: ["manipuler des fleurs et des essences colorées laisse souvent des traces sur la peau", "les pigments n'ont jamais aucun effet sur la peau", "cela n'a aucune explication particulière", "un alambic ne produit jamais aucune couleur", "les fleurs d'altitude n'ont jamais de couleur propre"], answer: "manipuler des fleurs et des essences colorées laisse souvent des traces sur la peau", hint: "Pense à la description des mains de Dame Alambic, marquées par son travail." }
+          maelle:
+            - { id: ch27-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 48 × 4.", choices: ["182", "186", "188", "190", "192"], answer: "192", hint: "48 × 4 = 50 × 4 − 2 × 4." }
+            - { id: ch27-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi poser des questions précises à une spécialiste, comme Rafaelle le fait sur la distillation, aide-t-il à mieux comprendre son travail ?", choices: ["parce que cela permet d'obtenir une explication claire et adaptée, plutôt que de rester dans l'incompréhension", "parce que poser des questions n'a jamais aucune utilité pour comprendre un métier", "cela n'a aucun lien avec la compréhension d'un savoir-faire", "parce qu'il vaut toujours mieux deviner sans jamais demander", "parce qu'une spécialiste n'explique jamais rien clairement"], answer: "parce que cela permet d'obtenir une explication claire et adaptée, plutôt que de rester dans l'incompréhension", hint: "Pense à la question de Rafaelle sur le sens du mot « distiller »." }
+          rafaelle:
+            - { id: ch27-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x + 7 = 42.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "5x = 35." }
+            - { id: ch27-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Dame Alambic (essuyer) ses mains sur son tablier. »", choices: ["a essuyé", "essuyait", "essuiera", "essuie", "essuyant"], answer: "a essuyé", hint: "« Essuyer » se conjugue avec avoir au passé composé." }
+      - id: m4
+        title: Premiers pas dans la serre
+        tours:
+          axelle:
+            - { id: ch27-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 4.", choices: ["28", "30", "31", "32", "34"], answer: "32", hint: "8 × 4 = 8 × 2 × 2." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch27-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 305 − 148.", choices: ["155", "157", "159", "161", "163"], answer: "157", hint: "305 − 150 + 2." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch27-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « La flor crece en la altura. »", choices: ["La fleur pousse en altitude.", "La fleur meurt vite.", "La fleur reste cachée.", "La fleur tombe au sol.", "La fleur change de couleur."], answer: "La fleur pousse en altitude.", hint: "« Crece en la altura » = pousse en altitude." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu du parfum imaginaire : chaque sœur ferme les yeux et décrit, en quelques mots, le parfum qu'elle imagine sentir dans la serre, en s'inspirant des fleurs qui l'entourent."
+    closing:
+      - { who: narrateur, text: "Le filet de vapeur continua de s'échapper doucement de l'alambic, tandis que Dame Alambic observait le feu avec une attention qui ne se relâchait jamais vraiment." }
+      - { who: alambic, text: "Demain, nous verrons comment vous pourriez m'aider, si vous le souhaitez, dans cette distillation un peu particulière. Reposez-vous bien, ce soir." }
+      - { who: axelle, text: "On sera prêtes à vous aider, demain matin." }
+      - { who: narrateur, text: "Et tandis que la nuit tombait doucement sur la serre de verre, les fleurs semblaient, elles aussi, se refermer une à une, comme pour se préparer au lendemain." }
+    reward: "la découverte de la serre, et de Dame Alambic"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: La patience du feu
+    decor: La serre de verre, au petit matin, où Dame Alambic enseigne aux trois sœurs les rudiments de la surveillance d'un feu de distillation.
+    opening:
+      - { who: narrateur, text: "Le lendemain matin, Dame Alambic entreprit d'enseigner aux trois sœurs les rudiments de la surveillance d'un feu de distillation, aussi régulier que patient." }
+      - { who: alambic, text: "Regardez bien cette petite flamme, petites voyageuses : elle doit rester constante, ni trop vive, ni trop faible, pendant de longues heures." }
+      - { who: rafaelle, text: "Et si elle devient trop vive, qu'est-ce qui se passe, exactement ?" }
+      - { who: alambic, text: "L'essence se brûle, petite Archiviste, et tout le travail des derniers jours se perd en un instant. C'est pour cela qu'il faut une attention constante." }
+      - { who: maelle, text: "Et si elle devient trop faible, au contraire ?" }
+      - { who: alambic, text: "L'essence ne vient jamais, petite Cartographe. La fleur garde alors son secret, et tout le travail n'aura servi à rien." }
+      - { who: axelle, text: "C'est un équilibre très précis à tenir, alors." }
+      - { who: alambic, text: "Extrêmement précis, petite Veilleuse. C'est justement pour cela que je vous propose, aujourd'hui, de réfléchir ensemble à la meilleure façon de m'aider." }
+    manches:
+      - id: m1
+        title: Une flamme constante
+        tours:
+          axelle:
+            - { id: ch27-j2-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « constante » (en parlant d'une flamme) ?", choices: ["instable", "régulière", "stable", "continue", "égale"], answer: "instable", hint: "Le contraire de ce que doit rester la flamme sous l'alambic." }
+            - { id: ch27-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 6.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "9 + 6 = 9 + 1 + 5." }
+          maelle:
+            - { id: ch27-j2-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi une température trop élevée peut-elle détruire l'essence qu'on cherche à extraire d'une fleur par distillation ?", choices: ["une chaleur excessive peut décomposer les composés fragiles responsables du parfum", "la chaleur n'a jamais aucun effet sur l'essence d'une fleur", "cela n'a aucune explication particulière", "plus il fait chaud, mieux l'essence se conserve toujours", "l'essence d'une fleur résiste toujours à n'importe quelle température"], answer: "une chaleur excessive peut décomposer les composés fragiles responsables du parfum", hint: "Pense à ce que dit Dame Alambic sur l'essence qui se brûle si la flamme est trop vive." }
+            - { id: ch27-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 429 ÷ 3.", choices: ["133", "139", "141", "143", "147"], answer: "143", hint: "3 × 143 = 429." }
+          rafaelle:
+            - { id: ch27-j2-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi un savoir-faire exigeant une attention constante, comme la distillation, demande-t-il souvent plusieurs années d'apprentissage ?", choices: ["parce qu'il faut acquérir, par la pratique répétée, la capacité de juger finement un équilibre délicat", "parce qu'un tel savoir-faire ne demande jamais aucun apprentissage", "cela n'a aucun lien avec la maîtrise d'un geste technique", "parce qu'il suffit toujours d'une seule tentative pour maîtriser une distillation", "parce que l'attention constante n'a jamais aucune utilité dans ce travail"], answer: "parce qu'il faut acquérir, par la pratique répétée, la capacité de juger finement un équilibre délicat", hint: "Pense à l'équilibre précis que doit tenir Dame Alambic, entre trop de chaleur et pas assez." }
+            - { id: ch27-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 16 × 5.", choices: ["70", "75", "78", "80", "82"], answer: "80", hint: "16 × 5 = 16 × 10 ÷ 2." }
+      - id: m2
+        title: Le secret de la fleur
+        tours:
+          axelle:
+            - { id: ch27-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 17 − 9.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "17 − 7 = 10, puis − 1." }
+            - { id: ch27-j2-ax-m2b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « La fleur garde son secret. » ?", choices: ["son secret", "garde", "La fleur", "la", "fleur"], answer: "La fleur", hint: "Qu'est-ce qui garde son secret, si le feu est trop faible ?" }
+          maelle:
+            - { id: ch27-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 37 × 4.", choices: ["138", "142", "144", "146", "148"], answer: "148", hint: "37 × 4 = 40 × 4 − 3 × 4." }
+            - { id: ch27-j2-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « précis » dans « un équilibre très précis » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit l'équilibre que doit tenir Dame Alambic." }
+          rafaelle:
+            - { id: ch27-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 50.", choices: ["28", "31", "33", "35", "38"], answer: "31", hint: "81 − 50." }
+            - { id: ch27-j2-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « El alambique no miente nunca. »", choices: ["L'alambic ne ment jamais.", "L'alambic se casse souvent.", "L'alambic chante parfois.", "L'alambic reste froid toujours.", "L'alambic disparaît la nuit."], answer: "L'alambic ne ment jamais.", hint: "« No miente nunca » = ne ment jamais." }
+      - id: m3
+        title: Réfléchir ensemble
+        tours:
+          axelle:
+            - { id: ch27-j2-ax-m3a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on une personne qui pratique l'art de transformer et d'extraire des substances, comme Dame Alambic ?", choices: ["une alchimiste", "une bergère", "une messagère", "une tisserande", "une marchande"], answer: "une alchimiste", hint: "C'est le métier pratiqué par Dame Alambic." }
+            - { id: ch27-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 4.", choices: ["24", "26", "27", "28", "30"], answer: "28", hint: "7 × 4 = 7 × 2 × 2." }
+          maelle:
+            - { id: ch27-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 288 ÷ 4.", choices: ["68", "70", "72", "74", "76"], answer: "72", hint: "4 × 72 = 288." }
+            - { id: ch27-j2-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi est-il utile, face à une tâche longue et délicate, de réfléchir ensemble à la meilleure façon d'y contribuer ?", choices: ["parce que cela permet de répartir l'effort selon les forces et les besoins de chacun", "parce qu'il vaut toujours mieux qu'une seule personne décide de tout, seule", "cela n'a aucun lien avec l'organisation d'une tâche collective", "parce que réfléchir ensemble retarde toujours inutilement une tâche", "parce qu'une tâche délicate n'a jamais besoin d'organisation"], answer: "parce que cela permet de répartir l'effort selon les forces et les besoins de chacun", hint: "Pense à la proposition de Dame Alambic de réfléchir ensemble à la meilleure façon de l'aider." }
+          rafaelle:
+            - { id: ch27-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 8x − 6 = 42.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "8x = 48." }
+            - { id: ch27-j2-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Tout le travail n'aura servi à rien. » : que révèle cette phrase sur l'enjeu de la distillation ?", choices: ["qu'un déséquilibre du feu peut réduire à néant des jours entiers de travail minutieux", "que le travail de distillation n'a jamais aucune importance réelle", "qu'un feu trop faible n'a jamais aucune conséquence sur le résultat", "que la distillation réussit toujours, quelles que soient les conditions", "que le travail accompli avant ne compte jamais pour le résultat final"], answer: "qu'un déséquilibre du feu peut réduire à néant des jours entiers de travail minutieux", hint: "Repense à ce que dit Dame Alambic sur la fleur qui garde son secret si le feu est trop faible." }
+      - id: m4
+        title: S'exercer à surveiller
+        tours:
+          axelle:
+            - { id: ch27-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 5.", choices: ["25", "27", "28", "30", "32"], answer: "30", hint: "6 × 5 = 6 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch27-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 330 − 157.", choices: ["170", "172", "173", "175", "177"], answer: "173", hint: "330 − 160 + 3." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch27-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Cada gota cuenta mucho. »", choices: ["Chaque goutte compte beaucoup.", "Chaque goutte disparaît vite.", "Chaque goutte brille au soleil.", "Chaque goutte tombe par terre.", "Chaque goutte reste immobile."], answer: "Chaque goutte compte beaucoup.", hint: "« Cuenta mucho » = compte beaucoup." }
+            - { gen: maths.duree }
+    pause: "Le jeu du souffle régulier : chaque sœur essaie de respirer très lentement et régulièrement pendant quelques instants, pour s'entraîner à la constance que demande la surveillance du feu."
+    closing:
+      - { who: narrateur, text: "Le soir venu, les trois sœurs observèrent longuement la petite flamme sous l'alambic, essayant d'imaginer la meilleure façon de contribuer à cette distillation délicate." }
+      - { who: alambic, text: "Demain, il faudra choisir : m'aider à surveiller le feu, vous reposer pendant que je travaille seule, ou vous relayer avec moi. Réfléchissez-y bien, cette nuit." }
+      - { who: rafaelle, text: "On y réfléchira sérieusement, c'est promis." }
+      - { who: narrateur, text: "Et tandis que la nuit tombait sur la serre de verre, la petite flamme continuait de danser doucement sous l'alambic, fidèle, patiente, comme Dame Alambic elle-même." }
+    reward: "la compréhension de la patience du feu, enseignée par Dame Alambic"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: L'histoire d'une distillation ratée
+    decor: La serre de verre, où Dame Alambic raconte aux trois sœurs l'histoire d'une distillation ratée, il y a bien des années, qui l'a rendue particulièrement rigoureuse.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, tandis que la lumière du matin traversait les parois de verre de la serre, Dame Alambic raconta aux trois sœurs une distillation qui avait mal tourné, il y a bien des années." }
+      - { who: alambic, text: "J'étais jeune, impatiente, et j'ai voulu accélérer le feu pour gagner du temps. L'essence tout entière s'est brûlée, en quelques instants à peine." }
+      - { who: maelle, text: "Qu'est-ce que vous avez ressenti, à ce moment-là, en voyant tout ce travail perdu ?" }
+      - { who: alambic, text: "Une immense tristesse, petite Cartographe, et une bonne leçon d'humilité. Depuis ce jour-là, je n'ai jamais plus pris le feu à la légère." }
+      - { who: axelle, text: "C'est pour ça que vous êtes devenue si rigoureuse, aujourd'hui ?" }
+      - { who: alambic, text: "Exactement, petite Veilleuse. Une leçon apprise de cette façon-là, on ne l'oublie jamais vraiment." }
+      - { who: rafaelle, text: "Merci de nous avoir raconté ça. Ça aide à comprendre pourquoi vous insistez tant sur la patience." }
+      - { who: alambic, text: "C'est aussi pour ça que je le raconte, petite Archiviste. Pour que d'autres n'aient pas à vivre la même déception que moi, ce jour-là." }
+    manches:
+      - id: m1
+        title: Une distillation ratée
+        tours:
+          axelle:
+            - { id: ch27-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 6 fleurs utilisées le matin, et 3 de plus l'après-midi. Combien de fleurs en tout ?", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "6 + 3." }
+            - { id: ch27-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « rigoureuse » ?", choices: ["négligente", "précise", "stricte", "attentive", "méticuleuse"], answer: "négligente", hint: "Le contraire de ce qu'est devenue Dame Alambic, après sa mésaventure." }
+          maelle:
+            - { id: ch27-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi une expérience difficile vécue dans sa jeunesse peut-elle influencer durablement le comportement d'un adulte dans son métier ?", choices: ["parce qu'une expérience marquante laisse une empreinte forte sur les décisions futures", "parce qu'une expérience de jeunesse n'a jamais aucune influence sur l'âge adulte", "cela n'a aucune explication particulière", "parce que seules les expériences récentes comptent, jamais les anciennes", "parce qu'un métier n'est jamais influencé par une expérience personnelle"], answer: "parce qu'une expérience marquante laisse une empreinte forte sur les décisions futures", hint: "Pense à l'effet de la distillation ratée sur la rigueur actuelle de Dame Alambic." }
+            - { id: ch27-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 87 + 56.", choices: ["138", "140", "142", "143", "145"], answer: "143", hint: "87 + 60 − 4." }
+          rafaelle:
+            - { id: ch27-j3-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi raconter ses propres erreurs passées à d'autres personnes peut-il avoir une réelle utilité, au-delà du simple récit ?", choices: ["parce que cela permet aux autres d'éviter de répéter la même erreur", "parce que raconter ses erreurs n'a jamais aucune utilité pour les autres", "cela n'a aucun lien avec la transmission d'une expérience", "parce qu'il vaut toujours mieux cacher ses erreurs passées", "parce qu'une erreur personnelle ne concerne jamais que soi-même"], answer: "parce que cela permet aux autres d'éviter de répéter la même erreur", hint: "Repense à ce que dit Dame Alambic sur la raison pour laquelle elle raconte cette histoire." }
+            - { id: ch27-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14 × 6.", choices: ["80", "82", "84", "86", "88"], answer: "84", hint: "14 × 6 = 14 × 3 × 2." }
+      - id: m2
+        title: Une leçon d'humilité
+        tours:
+          axelle:
+            - { id: ch27-j3-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « L'essence s'est brûlée. » ?", choices: ["s'est brûlée", "L'essence", "en quelques instants", "l'", "essence"], answer: "L'essence", hint: "Qu'est-ce qui s'est brûlé, dans le récit de Dame Alambic ?" }
+            - { id: ch27-j3-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 7.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "9 + 7 = 9 + 9 − 2." }
+          maelle:
+            - { id: ch27-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 364 ÷ 4.", choices: ["86", "88", "90", "91", "93"], answer: "91", hint: "4 × 91 = 364." }
+            - { id: ch27-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « immense » dans « une immense tristesse » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la tristesse ressentie par Dame Alambic." }
+          rafaelle:
+            - { id: ch27-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 11² − 70.", choices: ["48", "51", "53", "56", "58"], answer: "51", hint: "121 − 70." }
+            - { id: ch27-j3-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « La paciencia hace la esencia. »", choices: ["La patience fait l'essence.", "La patience fait peur.", "La patience n'existe pas.", "La patience brûle vite.", "La patience dure peu."], answer: "La patience fait l'essence.", hint: "« Hace la esencia » = fait l'essence." }
+      - id: m3
+        title: Transmettre son expérience
+        tours:
+          axelle:
+            - { id: ch27-j3-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 6.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "14 − 6 = 8." }
+            - { id: ch27-j3-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un feu trop vif, accéléré par impatience, peut-il détruire tout le travail accompli sur une distillation ?", choices: ["une montée trop rapide de la chaleur peut décomposer irrémédiablement l'essence recherchée", "un feu accéléré n'a jamais aucun effet sur une distillation", "cela n'a aucune explication particulière", "un feu plus vif accélère toujours une distillation sans aucun risque", "l'impatience n'a jamais aucun lien avec le résultat d'une distillation"], answer: "une montée trop rapide de la chaleur peut décomposer irrémédiablement l'essence recherchée", hint: "Pense au récit de Dame Alambic, sur l'essence brûlée par impatience." }
+          maelle:
+            - { id: ch27-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 46 × 4.", choices: ["178", "182", "184", "186", "190"], answer: "184", hint: "46 × 4 = 50 × 4 − 4 × 4." }
+            - { id: ch27-j3-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi écouter le récit d'une erreur passée, racontée par quelqu'un d'expérimenté, peut-il aider à mieux agir à l'avenir ?", choices: ["parce que cela permet de comprendre concrètement les conséquences possibles d'une mauvaise décision", "parce qu'un tel récit n'a jamais aucune utilité pour agir ensuite", "cela n'a aucun lien avec la prise de décision", "parce que seules les décisions personnelles ont de la valeur", "parce qu'écouter un récit retarde toujours inutilement une action"], answer: "parce que cela permet de comprendre concrètement les conséquences possibles d'une mauvaise décision", hint: "Repense à ce que ressentent les trois sœurs après avoir écouté le récit de Dame Alambic." }
+          rafaelle:
+            - { id: ch27-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 7x − 8 = 34.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "7x = 42." }
+            - { id: ch27-j3-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au futur simple : « Nous (surveiller) le feu avec beaucoup de patience. »", choices: ["nous surveillerons", "nous surveillons", "nous surveillions", "nous surveillâmes", "nous surveillerions"], answer: "nous surveillerons", hint: "Futur simple de « surveiller »." }
+      - id: m4
+        title: Comprendre la rigueur
+        tours:
+          axelle:
+            - { id: ch27-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 5.", choices: ["40", "42", "44", "45", "48"], answer: "45", hint: "9 × 5 = 9 × 10 ÷ 2." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch27-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 295 − 137.", choices: ["150", "154", "156", "158", "160"], answer: "158", hint: "295 − 140 + 3." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch27-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El vidrio refleja la luz. »", choices: ["Le verre reflète la lumière.", "Le verre absorbe le froid.", "Le verre se brise souvent.", "Le verre reste opaque.", "Le verre fond au soleil."], answer: "Le verre reflète la lumière.", hint: "« Refleja la luz » = reflète la lumière." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu du récit transmis : chaque sœur raconte, en une phrase, une petite erreur qu'elle a déjà commise et dont elle a tiré une leçon, pour s'exercer à transmettre une expérience comme Dame Alambic."
+    closing:
+      - { who: narrateur, text: "La soirée se prolongea doucement dans la serre, entre récits et silences, tandis que la petite flamme sous l'alambic continuait de veiller, fidèle, sur le travail en cours." }
+      - { who: alambic, text: "Demain, il faudra enfin vous décider. Prenez cette dernière nuit pour y réfléchir une dernière fois, à la lumière de tout ce qu'on a partagé." }
+      - { who: maelle, text: "On y réfléchira, c'est promis. Merci de nous avoir raconté votre histoire." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs regagnaient leur campement pour la nuit, Nilo observait Dame Alambic s'affairer encore un peu, pensif, comme s'il comprenait, lui aussi, le poids d'une vieille déception jamais tout à fait effacée." }
+    reward: "l'histoire de la distillation ratée, et sa leçon de rigueur"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Se décider ensemble
+    decor: La serre de verre, dans la lumière grise du petit matin, où les trois sœurs retrouvent Dame Alambic pour lui annoncer, enfin, leur décision.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, les trois sœurs retrouvèrent Dame Alambic dans la serre, dans la lumière grise du petit matin, prêtes à lui annoncer leur décision." }
+      - { who: alambic, text: "Cette distillation est délicate : trop de chaleur, et l'essence se perd ; pas assez, et elle ne vient jamais. Voulez-vous m'aider à surveiller le feu, ou préférez-vous que je m'en charge seule ? »" }
+      - { who: rafaelle, text: "On y a bien réfléchi, Dame Alambic. Et on a pris une décision, toutes les trois ensemble." }
+      - { who: alambic, text: "Je vous écoute, petite Archiviste. Quelle qu'elle soit, je l'accueillerai avec plaisir." }
+    manches:
+      - id: m1
+        title: Peser le pour et le contre
+        tours:
+          axelle:
+            - { id: ch27-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « fatiguée » (en parlant d'une personne) ?", choices: ["reposée", "épuisée", "lasse", "harassée", "éreintée"], answer: "reposée", hint: "Le contraire de ce que craint Axelle, à force de surveiller le feu." }
+            - { id: ch27-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 6.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "8 + 6 = 8 + 8 − 2." }
+          maelle:
+            - { id: ch27-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi une décision prise après avoir écouté l'expérience d'une spécialiste est-elle souvent plus solide qu'une décision prise sans aucune information ?", choices: ["parce qu'elle s'appuie sur des connaissances concrètes plutôt que sur une simple impression", "parce qu'une décision collective n'a jamais aucun avantage", "cela n'a aucun lien avec la qualité d'une décision", "parce qu'une décision sans information est toujours meilleure", "parce qu'écouter une spécialiste retarde toujours inutilement une décision"], answer: "parce qu'elle s'appuie sur des connaissances concrètes plutôt que sur une simple impression", hint: "Pense à tout ce que Dame Alambic a enseigné aux sœurs sur le feu, cette semaine." }
+            - { id: ch27-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 92 + 59.", choices: ["146", "148", "150", "151", "153"], answer: "151", hint: "92 + 60 − 1." }
+          rafaelle:
+            - { id: ch27-j4-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Je l'accueillerai avec plaisir. » : que révèle cette phrase sur l'attitude de Dame Alambic ?", choices: ["qu'elle reste ouverte à toute forme d'aide ou de choix, sans en privilégier aucune", "qu'elle refusera forcément leur décision", "qu'elle attend d'elles une seule réponse précise", "qu'elle n'a aucune considération pour leur choix", "qu'elle préfère toujours décider seule, sans en parler"], answer: "qu'elle reste ouverte à toute forme d'aide ou de choix, sans en privilégier aucune", hint: "Repense à l'attitude de Dame Alambic depuis le début de ce chapitre." }
+            - { id: ch27-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13² − 100.", choices: ["59", "63", "66", "69", "73"], answer: "69", hint: "169 − 100." }
+      - id: m2
+        title: Les trois propositions
+        tours:
+          axelle:
+            - { id: ch27-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 15 − 8.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "15 − 5 = 10, puis − 3." }
+            - { id: ch27-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi se relayer à tour de rôle pour surveiller un feu pendant longtemps peut-il être une bonne solution ?", choices: ["cela répartit la fatigue entre plusieurs personnes tout en maintenant une surveillance continue", "se relayer n'a jamais aucun effet sur la fatigue ressentie", "cela n'a aucune explication particulière", "il vaut toujours mieux qu'une seule personne surveille un feu très longtemps, sans relais", "un relais rend toujours une surveillance moins efficace"], answer: "cela répartit la fatigue entre plusieurs personnes tout en maintenant une surveillance continue", hint: "Pense à la proposition d'Axelle, de se relayer pour surveiller le feu." }
+          maelle:
+            - { id: ch27-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 351 ÷ 3.", choices: ["107", "111", "115", "117", "119"], answer: "117", hint: "3 × 117 = 351." }
+            - { id: ch27-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « solide » dans « une décision solide » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit une décision bien réfléchie." }
+          rafaelle:
+            - { id: ch27-j4-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 8² + 2 × 10.", choices: ["74", "78", "82", "84", "88"], answer: "84", hint: "64 + 20." }
+            - { id: ch27-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Chaque goutte compte beaucoup » en espagnol ?", choices: ["Cada gota cuenta mucho.", "La flor crece en la altura.", "El alambique no miente nunca.", "La paciencia hace la esencia.", "El vidrio refleja la luz."], answer: "Cada gota cuenta mucho.", hint: "Relis la phrase du jour 2." }
+      - id: m3
+        title: Annoncer sa décision
+        tours:
+          axelle:
+            - { id: ch27-j4-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Les trois sœurs retrouvèrent Dame Alambic. » ?", choices: ["Dame Alambic", "retrouvèrent", "Les trois sœurs", "trois", "sœurs"], answer: "Les trois sœurs", hint: "Qui retrouve Dame Alambic, dans la serre ?" }
+            - { id: ch27-j4-ax-m3b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 11 − 5.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "11 − 5 = 6." }
+          maelle:
+            - { id: ch27-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 4.", choices: ["108", "112", "114", "116", "120"], answer: "116", hint: "30 × 4 − 4." }
+            - { id: ch27-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi annoncer une décision claire à une spécialiste expérimentée lui permet-il de mieux organiser son travail ?", choices: ["parce qu'elle peut ainsi anticiper et organiser au mieux la distillation selon le choix fait", "parce qu'annoncer une décision n'a jamais aucune utilité pour une spécialiste", "cela n'a aucun lien avec l'organisation d'un travail délicat", "parce qu'il vaut toujours mieux rester dans l'incertitude", "parce que la clarté retarde toujours une décision"], answer: "parce qu'elle peut ainsi anticiper et organiser au mieux la distillation selon le choix fait", hint: "Pense à l'utilité, pour Dame Alambic, de connaître la décision des sœurs à l'avance." }
+          rafaelle:
+            - { id: ch27-j4-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 4x + 11 = 35.", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "4x = 24." }
+            - { id: ch27-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Quelle qu'elle soit, je l'accueillerai avec plaisir. » : quelle est la fonction grammaticale de « l' » dans cette phrase ?", choices: ["complément d'objet direct", "sujet", "attribut du sujet", "complément circonstanciel", "épithète"], answer: "complément d'objet direct", hint: "« Accueillir quoi ? » répond à la question posée par le verbe." }
+      - id: m4
+        title: Un moment de vérité
+        tours:
+          axelle:
+            - { id: ch27-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 5.", choices: ["30", "32", "33", "35", "38"], answer: "35", hint: "7 × 5 = 7 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch27-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 260 − 118.", choices: ["138", "140", "142", "144", "146"], answer: "142", hint: "260 − 120 + 2." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch27-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15 × 6.", choices: ["86", "88", "90", "92", "94"], answer: "90", hint: "15 × 6 = 15 × 3 × 2." }
+            - { gen: maths.duree }
+    pause: "Le jeu du compte à rebours avant la décision : chaque sœur compte, à voix haute, de 5 à 1, avant de prononcer, toutes ensemble, le mot qui résume leur décision commune."
+    closing:
+      - { who: narrateur, text: "Les trois sœurs échangèrent un dernier regard, puis, d'une seule voix, annoncèrent à Dame Alambic la décision qu'elles avaient prise ensemble, après mûre réflexion." }
+      - { who: alambic, text: "Je vous entends, petites voyageuses, et je respecte votre choix. Préparons-nous, alors, pour demain." }
+      - { who: maelle, text: "On espère vraiment que tout se passera bien, Dame Alambic." }
+      - { who: narrateur, text: "Et tandis que la petite flamme continuait de danser sous l'alambic, les trois sœurs se préparèrent, chacune à sa façon, à aider Dame Alambic dans la journée qui les attendait." }
+    reward: "la décision prise ensemble, annoncée à Dame Alambic"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: L'essence précieuse
+    decor: La serre de verre, dans la lumière du matin, où Dame Alambic et les trois sœurs s'apprêtent enfin à achever la distillation, selon la décision prise la veille.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, dans la lumière du matin, Dame Alambic et les trois sœurs s'apprêtèrent enfin à achever la distillation, selon la décision prise la veille." }
+      - { who: alambic, text: "Cette distillation est délicate : trop de chaleur, et l'essence se perd ; pas assez, et elle ne vient jamais. Voulez-vous m'aider à surveiller le feu, ou préférez-vous que je m'en charge seule ? »" }
+      - { who: nilo, text: "Allez, les filles. Une dernière vérification avant de conclure, et on pourra dire qu'on a fait de notre mieux, ici aussi." }
+    manches:
+      - id: m1
+        title: Ce que la serre a appris
+        intro: "Dame Alambic interroge chaque sœur sur tout ce que cette semaine passée dans sa serre lui a appris."
+        tours:
+          axelle:
+            - { id: ch27-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on une personne qui pratique l'art de transformer et d'extraire des substances, comme Dame Alambic ?", choices: ["une alchimiste", "une bergère", "une messagère", "une tisserande", "une marchande"], answer: "une alchimiste", hint: "C'est le métier pratiqué par Dame Alambic." }
+            - { id: ch27-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 + 5.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "8 + 5 = 8 + 2 + 3." }
+          maelle:
+            - { id: ch27-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi une température trop élevée peut-elle détruire l'essence qu'on cherche à extraire d'une fleur, comme tu l'as appris cette semaine ?", choices: ["une chaleur excessive peut décomposer les composés fragiles responsables du parfum", "la chaleur n'a jamais aucun effet sur l'essence d'une fleur", "cela n'a aucune explication particulière", "plus il fait chaud, mieux l'essence se conserve toujours", "l'essence d'une fleur résiste toujours à n'importe quelle température"], answer: "une chaleur excessive peut décomposer les composés fragiles responsables du parfum", hint: "Repense à ta propre question du deuxième jour." }
+            - { id: ch27-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 42 × 4.", choices: ["162", "164", "166", "168", "170"], answer: "168", hint: "42 × 4 = 40 × 4 + 2 × 4." }
+          rafaelle:
+            - { id: ch27-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que Dame Alambic incarne la valeur de la patience rigoureuse, à travers son métier d'alchimiste ?", choices: ["parce qu'elle a tiré de son échec passé une discipline qu'elle applique et partage désormais", "parce que Dame Alambic n'a jamais aucune patience réelle", "parce qu'elle refuse toujours de partager ce qu'elle a vécu", "parce qu'il n'y a aucune leçon à tirer de son parcours", "parce que la patience n'a aucun lien avec son métier"], answer: "parce qu'elle a tiré de son échec passé une discipline qu'elle applique et partage désormais", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de Dame Alambic." }
+            - { id: ch27-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 5/9 + 2/9.", choices: ["6/9", "7/9", "8/9", "5/9", "4/9"], answer: "7/9", hint: "5 + 2 = 7, même dénominateur." }
+      - id: m2
+        title: Avant l'essence finale
+        intro: "Il faut relier tout ce que la semaine a appris sur la distillation et la patience, avant d'achever la distillation."
+        tours:
+          axelle:
+            - { id: ch27-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel verbe désigne l'action d'extraire, goutte après goutte, l'essence pure d'une fleur ?", choices: ["distiller", "cultiver", "arroser", "planter", "tailler"], answer: "distiller", hint: "C'est le travail pratiqué par Dame Alambic." }
+            - { id: ch27-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 15 − 7.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "15 − 7 = 8." }
+          maelle:
+            - { id: ch27-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi cette halte dans la serre de Dame Alambic a-t-elle une importance particulière dans le voyage des trois sœurs ?", choices: ["elle n'a aucune importance réelle", "elle leur apprend la patience, la rigueur, et la valeur du travail partagé face à une tâche délicate", "elle les empêche d'avancer vers le sommet", "elle se trouve très loin des montagnes", "personne n'y vient jamais vraiment"], answer: "elle leur apprend la patience, la rigueur, et la valeur du travail partagé face à une tâche délicate", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de Dame Alambic." }
+            - { id: ch27-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 408 ÷ 6.", choices: ["64", "66", "68", "70", "72"], answer: "68", hint: "6 × 68 = 408." }
+          rafaelle:
+            - { id: ch27-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10² − 55.", choices: ["40", "43", "45", "48", "50"], answer: "45", hint: "100 − 55." }
+            - { id: ch27-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Voulez-vous m'aider à surveiller le feu ? » : quel est le sujet du verbe « vouloir » dans cette phrase ?", choices: ["vous", "je", "le feu", "que", "m'aider"], answer: "vous", hint: "À qui Dame Alambic pose-t-elle cette question ?" }
+      - id: m3
+        title: Le Chant de l'Essence Pure
+        intro: "Avant que la dernière goutte ne tombe, Dame Alambic et les trois sœurs chantent ensemble, à voix basse, pour accompagner, d'un rythme stable, les derniers instants de la distillation."
+        tours:
+          axelle:
+            - { id: ch27-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, blanche." }
+          maelle:
+            - { id: ch27-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          rafaelle:
+            - { id: ch27-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, blanche." }
+    concert:
+      measures:
+        axelle: { given: [1, 1], missing: 2, prompt: "Noire, noire, blanche" }
+        maelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        rafaelle: { given: [2], missing: 2, prompt: "Blanche, blanche" }
+    pause: "Le dernier regard sur l'alambic : chaque sœur observe, en silence, la dernière goutte d'essence se former lentement au bout du tube de cuivre, avant de retenir son souffle un instant."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant de l'Essence Pure se répandit dans la serre, et au même instant, une goutte dorée, parfaite, vint se poser doucement dans le petit flacon de verre tendu par Dame Alambic." }
+      - { who: alambic, text: "Nous y sommes, petites voyageuses. Voici l'essence la plus pure que j'aie distillée depuis bien longtemps." }
+      - { who: rafaelle, text: "On l'a fait ! On a vraiment réussi cette distillation délicate !" }
+      - { who: narrateur, text: "Et tandis que le parfum subtil de la fleur d'altitude se répandait dans toute la serre, Dame Alambic referma précieusement le flacon, les yeux brillants d'une émotion contenue." }
+      - { who: axelle, text: "C'est incroyable de penser que tout ça vient d'une seule petite fleur." }
+      - { who: nilo, text: "Encore une étape de passée, et une goutte précieuse de plus dans nos bagages. Pas mal, pour une semaine passée au milieu des fleurs." }
+    reward: "la distillation réussie, et l'essence précieuse de Dame Alambic"
