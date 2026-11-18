@@ -1,0 +1,398 @@
+# Chapitre 14 — Le Hall des Cartes Vivantes
+# Suite directe du chapitre 13 : avec la boussole dorée, les trois sœurs atteignent les
+# contreforts de la chaîne de montagnes et découvrent, creusé à même la roche, un hall
+# immense où des cartes dessinées à l'encre vivante bougent toutes seules sur les murs.
+# Tiré de l'illustration ch14.webp. Aucun nouveau personnage voisé : le hall appartient
+# au domaine de Dame Cartéa (déjà établie, voix Autonoe), la cartographe qui gardait déjà
+# le Jardin des Cartes au chapitre 10 — continuité naturelle avec sa spécialité.
+# Décision NON majeure (aucune entrée dans MAJOR ni ORVANE de src/content/decisions.ts) :
+# effets génériques Lien/Courage/Mémoire, comme au chapitre 1 et au chapitre 13.
+
+id: ch14
+number: 14
+act: 2
+title: Le Hall des Cartes Vivantes
+introImage: ch14
+scene: hall-cartes-vivantes
+
+espagnol:
+  - { es: "El mapa se mueve solo.", fr: "La carte bouge toute seule." }
+  - { es: "Sigamos el camino correcto.", fr: "Suivons le bon chemin." }
+  - { es: "La tinta brilla en la pared.", fr: "L'encre brille sur le mur." }
+  - { es: "Estamos cerca de la montaña.", fr: "Nous sommes près de la montagne." }
+  - { es: "Confío en mi hermana.", fr: "Je fais confiance à ma sœur." }
+
+decision:
+  prompt: "Dame Cartéa déroule devant vous la dernière carte vierge du hall, celle qu'aucune encre vivante n'a encore remplie, et vous tend une plume. « Cette carte dessinera le chemin que vous choisirez de lui raconter. Que lui racontez-vous ? »"
+  options:
+    A:
+      label: Raconter un chemin fait ensemble, pas à pas
+      scene: "Axelle prend la plume la première et, à voix haute, raconte chaque étape du voyage où les trois sœurs se sont tenues par la main, pendant que l'encre vivante dessine, sur la carte vierge, un chemin qui ondule entre leurs trois silhouettes."
+      line: { who: cartea, text: "Un chemin raconté à trois voix se dessine toujours plus clairement que celui qu'on invente seul. Cette carte-là ne s'effacera jamais." }
+      habillage: "Chaque épreuve devient un chemin à tracer ensemble, où l'on avance main dans la main vers la bonne réponse."
+    B:
+      label: Raconter le moment le plus difficile du voyage
+      scene: "Rafaelle choisit de raconter, sans rien enjoliver, la traversée du détroit de brume et la peur qu'elle a ressentie, et l'encre vivante dessine un chemin étroit, sinueux, qui grimpe malgré tout jusqu'en haut de la carte."
+      line: { who: cartea, text: "Les chemins les plus honnêtes sont souvent les plus escarpés à raconter. Celui-ci tiendra debout plus longtemps qu'un chemin facile." }
+      habillage: "Les épreuves deviennent une montée exigeante, où il faut avancer sans détour vers la bonne réponse."
+    C:
+      label: Raconter tout ce dont on se souvient, dans l'ordre exact
+      scene: "Maelle ferme les yeux et récite, dans l'ordre exact, chaque étape du voyage depuis le tout premier jour, et l'encre vivante trace, avec une précision presque mécanique, une carte entière et détaillée du chemin déjà parcouru."
+      line: { who: cartea, text: "Une mémoire aussi précise mérite une carte tout aussi précise. Voilà ce que votre voyage a déjà dessiné, sans que vous le sachiez." }
+      habillage: "Les épreuves deviennent des énigmes où il faut se souvenir, dans le bon ordre, de ce qui a déjà été appris."
+
+repliquesAbsurdes:
+  - "Si une carte peut se dessiner toute seule, est-ce qu'elle peut aussi se perdre toute seule, juste pour nous embêter ?"
+  - "Mon renard a essayé de mordiller un chemin dessiné à l'encre. Dame Cartéa n'a pas du tout apprécié."
+  - "Est-ce que l'encre vivante dort, la nuit, ou est-ce qu'elle continue à dessiner des chemins pendant qu'on dort nous aussi ?"
+  - "Si je me perds dans le hall, est-ce qu'une carte va se dessiner toute seule pour montrer où je suis perdue ?"
+  - "On a traversé un marché flottant et un fleuve de brume. Un mur qui dessine, c'est presque reposant, en comparaison."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: Le seuil de la montagne
+    decor: Un hall immense creusé à même la roche, à l'entrée de la chaîne de montagnes, dont les murs sont entièrement recouverts de cartes dessinées à l'encre vivante qui bougent lentement, redessinant sans cesse de nouveaux chemins.
+    opening:
+      - { who: narrateur, text: "Guidées par la boussole dorée, les trois sœurs atteignirent enfin les contreforts de la chaîne de montagnes — et découvrirent, creusé à même la roche, un hall immense dont les murs entiers semblaient vivants, couverts de cartes qui bougeaient toutes seules." }
+      - { who: narrateur, text: "Des lignes d'encre scintillante glissaient lentement sur la pierre, dessinant des rivières, des cols, des sommets, puis les effaçant pour en dessiner d'autres, comme si la montagne entière réfléchissait tout haut." }
+      - { who: maelle, text: "Ces cartes... elles bougent vraiment toutes seules ! Comment est-ce possible ?" }
+      - { who: nilo, text: "Après un marché flottant et un fleuve de brume, des murs qui dessinent, honnêtement, ça me semble presque normal maintenant." }
+      - { who: narrateur, text: "Une silhouette familière s'avança depuis le fond du hall, une plume à la main, le sourire aux lèvres." }
+      - { who: cartea, text: "Bienvenue au Hall des Cartes Vivantes, mes voyageuses. Je me demandais justement quand la boussole dorée vous mènerait jusqu'ici." }
+      - { who: axelle, text: "Dame Cartéa ! On ne pensait pas vous retrouver si loin du Jardin des Cartes !" }
+      - { who: cartea, text: "Ce hall est à moi aussi, petite Veilleuse. Toute carte, un jour, finit par me revenir — surtout celles qui mènent vers les montagnes." }
+      - { who: rafaelle, text: "Pourquoi ces cartes bougent-elles sans arrêt, au lieu de rester fixes comme des cartes normales ?" }
+      - { who: cartea, text: "Parce que la montagne change, petite Archiviste, et qu'une carte figée mentirait. Ici, l'encre vivante redessine le chemin chaque fois qu'il devient vrai." }
+    manches:
+      - id: m1
+        title: Premiers pas dans le hall
+        tours:
+          axelle:
+            - { id: ch14-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on une personne qui dessine des cartes ?", choices: ["un cartographe", "un marchand", "un peseur", "un gardien", "un passeur"], answer: "un cartographe", hint: "C'est le métier de Dame Cartéa." }
+            - { id: ch14-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 + 8.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "7 + 8 = 7 + 7 + 1." }
+          maelle:
+            - { id: ch14-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi une carte représentant une montagne doit-elle parfois être mise à jour ?", choices: ["parce que le papier s'use toujours vite", "parce que le relief peut changer (éboulis, neige, nouveaux chemins)", "parce que les montagnes bougent tous les jours", "une carte n'a jamais besoin d'être mise à jour", "parce que l'encre s'évapore seule"], answer: "parce que le relief peut changer (éboulis, neige, nouveaux chemins)", hint: "Pense à ce que dit Dame Cartéa sur une carte qui mentirait." }
+            - { id: ch14-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 76 + 48.", choices: ["118", "120", "122", "124", "126"], answer: "124", hint: "76 + 50 − 2." }
+          rafaelle:
+            - { id: ch14-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi les anciens cartographes laissaient-ils parfois des zones vierges sur leurs cartes ?", choices: ["par paresse uniquement", "parce qu'ils n'avaient pas encore exploré ces régions", "parce que le papier coûtait trop cher", "parce que c'était interdit de tout dessiner", "parce que les montagnes n'existaient pas encore"], answer: "parce qu'ils n'avaient pas encore exploré ces régions", hint: "Repense à la carte déchirée du marché, chapitre précédent." }
+            - { id: ch14-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 19 × 6.", choices: ["104", "108", "110", "114", "118"], answer: "114", hint: "20 × 6 − 6." }
+      - id: m2
+        title: Dame Cartéa retrouvée
+        tours:
+          axelle:
+            - { id: ch14-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Une silhouette familière s'avança. » ?", choices: ["familière", "s'avança", "Une silhouette familière", "une", "silhouette"], answer: "Une silhouette familière", hint: "Qui s'avance ?" }
+            - { id: ch14-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 15 − 6.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "15 − 5 = 10, puis − 1." }
+          maelle:
+            - { id: ch14-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « vivante » dans « encre vivante » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit l'encre." }
+            - { id: ch14-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 360 ÷ 6.", choices: ["50", "54", "58", "60", "64"], answer: "60", hint: "6 × 60 = 360." }
+          rafaelle:
+            - { id: ch14-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Toute carte, un jour, finit par me revenir. » : que révèle cette phrase sur le rôle de Dame Cartéa ?", choices: ["qu'elle vole les cartes des autres", "qu'elle est, d'une certaine façon, liée à toutes les cartes du monde", "qu'elle déteste les cartes", "qu'elle ne dessine jamais rien elle-même", "qu'elle vit très loin des montagnes"], answer: "qu'elle est, d'une certaine façon, liée à toutes les cartes du monde", hint: "Relis bien ce qu'elle répond à Axelle." }
+            - { id: ch14-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13² − 100.", choices: ["59", "63", "65", "69", "73"], answer: "69", hint: "169 − 100." }
+      - id: m3
+        title: Les lignes d'encre qui bougent
+        tours:
+          axelle:
+            - { id: ch14-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 4 murs dans le hall, chacun couvert de 5 cartes. Combien de cartes en tout ?", choices: ["15", "18", "20", "22", "24"], answer: "20", hint: "4 × 5." }
+            - { id: ch14-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi une rivière dessinée sur une carte est-elle souvent en bleu ?", choices: ["pour qu'on la confonde avec une route", "c'est une convention pour représenter l'eau facilement", "parce que le bleu coûte moins cher", "cela n'a aucune raison précise", "parce que l'eau est toujours bleue en réalité"], answer: "c'est une convention pour représenter l'eau facilement", hint: "Pense aux couleurs que l'on voit d'habitude sur une carte." }
+          maelle:
+            - { id: ch14-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 48 × 3.", choices: ["134", "138", "140", "142", "144"], answer: "144", hint: "48 × 3 = 50 × 3 − 2 × 3." }
+            - { id: ch14-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "À quoi servait traditionnellement une boussole associée à une carte ?", choices: ["à décorer uniquement", "à s'orienter et à suivre un chemin sur la carte", "à peser des objets", "à mesurer le temps", "à rien de précis"], answer: "à s'orienter et à suivre un chemin sur la carte", hint: "Pense à l'objet que les sœurs tiennent depuis le chapitre précédent." }
+          rafaelle:
+            - { id: ch14-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 4x + 5 = 33.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "4x = 28." }
+            - { id: ch14-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Les lignes d'encre (glisser) lentement sur la pierre. »", choices: ["ont glissé", "glissaient", "glisseront", "glissent", "glissant"], answer: "ont glissé", hint: "Passé composé = avoir + participe passé." }
+      - id: m4
+        title: Premières observations
+        tours:
+          axelle:
+            - { id: ch14-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 4.", choices: ["32", "34", "36", "38", "40"], answer: "36", hint: "9 × 4 = 9 × 2 × 2." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch14-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 215 − 78.", choices: ["127", "132", "135", "137", "140"], answer: "137", hint: "215 − 80 + 2." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch14-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El mapa se mueve solo. »", choices: ["La carte brille seule.", "La carte bouge toute seule.", "La carte s'efface seule.", "La carte dort seule.", "La carte parle seule."], answer: "La carte bouge toute seule.", hint: "« Se mueve » = bouge." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu de la carte invisible : une sœur trace du doigt, en silence dans les airs, le chemin qu'elle imagine vers le sommet ; les deux autres doivent deviner, à ses gestes, où elle veut mener l'équipe."
+    closing:
+      - { who: narrateur, text: "Alors que la lumière du hall commençait à décliner doucement, Dame Cartéa referma son grand registre de cuir, où elle notait, semblait-il, chaque voyageur qui franchissait ce seuil." }
+      - { who: cartea, text: "Demain, je vous montrerai les cartes les plus anciennes du hall — celles qui ont vu passer les tout premiers voyageurs des montagnes." }
+      - { who: rafaelle, text: "Est-ce qu'on y trouvera, peut-être, des traces d'un voyage comme le nôtre ?" }
+      - { who: cartea, text: "On y trouve toujours quelque chose, petite Archiviste. C'est bien pour cela que je garde ce hall." }
+      - { who: narrateur, text: "En s'éloignant, Maelle se retourna une dernière fois vers le mur le plus proche, où une ligne d'encre dessinait, lentement, un chemin qui ressemblait, déjà, à leur propre route." }
+    reward: "la découverte du Hall des Cartes Vivantes, au seuil des montagnes"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Les cartes les plus anciennes
+    decor: Une alcôve reculée du hall, où les cartes les plus anciennes, jaunies mais toujours vivantes, sont rangées dans de grands tubes de cuivre alignés sur des étagères sculptées à même la roche.
+    opening:
+      - { who: narrateur, text: "Le lendemain, Dame Cartéa les conduisit vers une alcôve reculée du hall, où de grands tubes de cuivre, alignés sur des étagères sculptées à même la roche, renfermaient les cartes les plus anciennes." }
+      - { who: cartea, text: "Celles-ci datent d'avant ma propre mémoire. Elles ont vu passer des voyageurs dont même les noms se sont effacés — mais le chemin, lui, est resté." }
+      - { who: axelle, text: "Comment un chemin peut-il rester, si même les noms des gens qui l'ont pris ont disparu ?" }
+      - { who: cartea, text: "Parce qu'un chemin bien tracé ne dépend pas de qui l'a emprunté le premier, petite Veilleuse. Il appartient à quiconque en a besoin ensuite." }
+      - { who: maelle, text: "Est-ce que ces cartes anciennes montrent déjà le sommet que nous cherchons ?" }
+      - { who: cartea, text: "Elles montrent un sommet, oui. Mais aucune carte, même la plus ancienne, ne montre jamais tout à fait le même sommet que celui qu'on atteint vraiment." }
+      - { who: rafaelle, text: "C'est plutôt rassurant et inquiétant à la fois, dit comme ça." }
+      - { who: cartea, text: "C'est exactement ce qu'est une montagne, petite Archiviste : rassurante et inquiétante, à la fois, jusqu'au bout." }
+    manches:
+      - id: m1
+        title: Les tubes de cuivre
+        tours:
+          axelle:
+            - { id: ch14-j2-ax-m1a, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi range-t-on souvent d'anciennes cartes dans des tubes fermés ?", choices: ["pour les perdre plus facilement", "pour les protéger de l'humidité et de la lumière", "pour qu'elles pèsent plus lourd", "cela n'a aucune utilité", "pour les empêcher de bouger seules"], answer: "pour les protéger de l'humidité et de la lumière", hint: "Pense à ce qui abîme le papier avec le temps." }
+            - { id: ch14-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 6.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "8 + 6 = 8 + 8 − 2." }
+          maelle:
+            - { id: ch14-j2-ma-m1a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « ancien » dans « cartes les plus anciennes » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit les cartes." }
+            - { id: ch14-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 455 ÷ 7.", choices: ["55", "60", "63", "65", "68"], answer: "65", hint: "7 × 65 = 455." }
+          rafaelle:
+            - { id: ch14-j2-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Un chemin bien tracé ne dépend pas de qui l'a emprunté le premier. » : que signifie cette phrase ?", choices: ["que seul le premier voyageur compte", "qu'un chemin utile le reste pour tous ceux qui viennent après", "qu'un chemin disparaît si on l'oublie", "que personne ne doit jamais suivre un chemin déjà tracé", "que les cartes anciennes sont toujours fausses"], answer: "qu'un chemin utile le reste pour tous ceux qui viennent après", hint: "Relis ce que répond Dame Cartéa à Axelle." }
+            - { id: ch14-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 11² − 80.", choices: ["31", "35", "39", "41", "45"], answer: "41", hint: "121 − 80." }
+      - id: m2
+        title: Des voyageurs oubliés
+        tours:
+          axelle:
+            - { id: ch14-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 13 − 7.", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "13 − 7 = 6." }
+            - { id: ch14-j2-ax-m2b, subject: histoire-geo, level: 1, kind: qcm, prompt: "Pourquoi les noms de certains voyageurs d'autrefois se sont-ils perdus avec le temps ?", choices: ["parce qu'on ne les a pas écrits ou transmis", "parce que c'était interdit de les écrire", "parce qu'ils n'ont jamais existé", "parce que les montagnes effacent les noms par magie", "cela n'arrive jamais vraiment"], answer: "parce qu'on ne les a pas écrits ou transmis", hint: "Pense à comment la mémoire se perd, sans archives." }
+          maelle:
+            - { id: ch14-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 67 × 4.", choices: ["258", "262", "264", "266", "268"], answer: "268", hint: "67 × 4 = 70 × 4 − 3 × 4." }
+            - { id: ch14-j2-ma-m2b, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi un sommet vu de loin peut-il sembler différent du sommet réellement atteint ?", choices: ["la montagne change de forme chaque jour", "la perspective et la distance déforment ce qu'on voit", "une montagne n'a jamais de vraie forme", "cela n'a aucun rapport avec la distance", "les sommets sont toujours identiques, vus de n'importe où"], answer: "la perspective et la distance déforment ce qu'on voit", hint: "Repense à ce que dit Dame Cartéa sur le sommet jamais tout à fait pareil." }
+          rafaelle:
+            - { id: ch14-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 8² − 7².", choices: ["13", "15", "17", "19", "21"], answer: "15", hint: "64 − 49." }
+            - { id: ch14-j2-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Sigamos el camino correcto. »", choices: ["Changeons de chemin.", "Suivons le bon chemin.", "Arrêtons le voyage.", "Cherchons un autre chemin.", "Oublions ce chemin."], answer: "Suivons le bon chemin.", hint: "« Camino correcto » = bon chemin." }
+      - id: m3
+        title: Rassurant et inquiétant
+        tours:
+          axelle:
+            - { id: ch14-j2-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Ces cartes ont vu passer des voyageurs. » ?", choices: ["des voyageurs", "ont vu", "Ces cartes", "passer", "vu"], answer: "Ces cartes", hint: "Qui a vu passer des voyageurs ?" }
+            - { id: ch14-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 8.", choices: ["42", "44", "46", "48", "50"], answer: "48", hint: "6 × 8 = 6 × 4 × 2." }
+          maelle:
+            - { id: ch14-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 504 ÷ 8.", choices: ["58", "61", "63", "65", "67"], answer: "63", hint: "8 × 63 = 504." }
+            - { id: ch14-j2-ma-m3b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « rassurante » dans « une montagne rassurante » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la montagne." }
+          rafaelle:
+            - { id: ch14-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 3/8 + 4/8.", choices: ["5/8", "6/8", "7/8", "1", "7/16"], answer: "7/8", hint: "3 + 4 = 7, même dénominateur." }
+            - { id: ch14-j2-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au présent : « Nous (suivre) le chemin tracé par les anciens. »", choices: ["nous suivons", "nous suivez", "nous suivent", "nous suivions", "nous suivrons"], answer: "nous suivons", hint: "Nous : -ons." }
+      - id: m4
+        title: Se repérer dans le temps
+        tours:
+          axelle:
+            - { id: ch14-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 5.", choices: ["30", "32", "33", "35", "38"], answer: "35", hint: "7 × 5 = 7 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch14-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 190 − 66.", choices: ["114", "118", "122", "124", "128"], answer: "124", hint: "190 − 70 + 4." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch14-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « La tinta brilla en la pared. »", choices: ["L'encre brille sur le mur.", "L'encre dort sur le mur.", "L'encre tombe du mur.", "L'encre efface le mur.", "L'encre peint le mur."], answer: "L'encre brille sur le mur.", hint: "« Brilla » = brille, « pared » = mur." }
+            - { gen: maths.ranger }
+    pause: "Le jeu du vieux tube : chaque sœur choisit un tube de cuivre imaginaire et invente, en une phrase, le nom et l'histoire d'un voyageur oublié qui aurait pu l'avoir utilisé autrefois."
+    closing:
+      - { who: narrateur, text: "Dame Cartéa referma délicatement le dernier tube de cuivre, le remettant à sa place exacte sur l'étagère, avec le soin de quelqu'un qui range un trésor bien plus précieux qu'il n'y paraît." }
+      - { who: cartea, text: "Demain, je vous montrerai quelque chose que je ne montre pas à tout le monde : la toute première carte de ce hall, celle que personne n'a jamais complètement déchiffrée." }
+      - { who: maelle, text: "Personne ne l'a jamais déchiffrée ? Même pas vous ?" }
+      - { who: cartea, text: "Même pas moi, petite Cartographe. C'est bien pour cela qu'elle m'intéresse encore, après tout ce temps." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs regagnaient l'Arche pour la nuit, Nilo trottina un instant devant elles, reniflant les murs comme s'il cherchait, lui aussi, un chemin que l'encre n'aurait pas encore dessiné." }
+    reward: "la découverte des cartes les plus anciennes du hall"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: La carte indéchiffrée
+    decor: Une petite salle circulaire au centre du hall, où une unique carte, bien plus ancienne que toutes les autres, couvre entièrement le plafond de lignes d'encre qui ne cessent jamais de se redessiner, sans jamais former de chemin complet.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, Dame Cartéa les mena vers une petite salle circulaire au centre du hall, où une unique carte couvrait entièrement le plafond, ses lignes d'encre se redessinant sans cesse, sans jamais former un chemin complet." }
+      - { who: cartea, text: "La voici. La toute première carte de ce hall. Elle existait déjà quand je suis arrivée ici, il y a bien longtemps, et elle n'a jamais cessé de bouger depuis." }
+      - { who: rafaelle, text: "Pourquoi ne forme-t-elle jamais un chemin complet, alors que toutes les autres cartes du hall y arrivent ?" }
+      - { who: cartea, text: "Parce qu'elle attend, je crois, quelque chose que je n'ai pas encore réussi à lui donner. Une réponse, peut-être, plutôt qu'une question." }
+      - { who: axelle, text: "Et si on essayait, nous ? Peut-être qu'elle attend juste quelqu'un de nouveau." }
+      - { who: cartea, text: "C'est précisément ce que je me disais en vous voyant entrer, petite Veilleuse. Approchez-vous, toutes les trois, et regardez bien." }
+      - { who: narrateur, text: "En s'approchant, les trois sœurs remarquèrent que les lignes d'encre, cette fois, semblaient ralentir légèrement, comme si elles sentaient leur présence." }
+      - { who: maelle, text: "On dirait qu'elle nous observe, autant que nous l'observons." }
+      - { who: cartea, text: "Peut-être bien, petite Cartographe. Les cartes les plus anciennes finissent parfois par devenir un peu plus que du simple papier et de l'encre." }
+    manches:
+      - id: m1
+        title: Une carte au plafond
+        tours:
+          axelle:
+            - { id: ch14-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "La carte compte 9 lignes qui se croisent. Si 3 nouvelles lignes apparaissent, combien y en aura-t-il ?", choices: ["9", "10", "11", "12", "13"], answer: "12", hint: "9 + 3." }
+            - { id: ch14-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Une unique carte couvrait le plafond. » ?", choices: ["le plafond", "couvrait", "Une unique carte", "unique", "carte"], answer: "Une unique carte", hint: "Qui couvre le plafond ?" }
+          maelle:
+            - { id: ch14-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi certains documents très anciens restent-ils parfois longtemps mystérieux ou incompris ?", choices: ["parce qu'on ne cherche jamais à les comprendre", "parce que leur sens ou leur origine s'est perdu avec le temps", "parce qu'ils n'ont jamais eu de sens", "parce que personne ne s'y intéresse jamais", "cela n'arrive jamais en réalité"], answer: "parce que leur sens ou leur origine s'est perdu avec le temps", hint: "Pense à ce que dit Dame Cartéa sur cette carte très ancienne." }
+            - { id: ch14-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 92 + 58.", choices: ["140", "145", "148", "150", "152"], answer: "150", hint: "92 + 60 − 2." }
+          rafaelle:
+            - { id: ch14-j3-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi un historien cherche-t-il parfois des années à comprendre un seul document ancien ?", choices: ["parce qu'il n'a rien d'autre à faire", "parce qu'un document ancien peut révéler des informations rares et précieuses une fois compris", "parce que c'est toujours inutile", "parce que les documents anciens ne contiennent jamais rien d'important", "parce qu'il est payé pour perdre du temps"], answer: "parce qu'un document ancien peut révéler des informations rares et précieuses une fois compris", hint: "Repense à l'intérêt que Dame Cartéa porte à cette carte indéchiffrée." }
+            - { id: ch14-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 17 × 8.", choices: ["126", "130", "134", "136", "140"], answer: "136", hint: "17 × 8 = 17 × 4 × 2." }
+      - id: m2
+        title: Une réponse plutôt qu'une question
+        tours:
+          axelle:
+            - { id: ch14-j3-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 + 9.", choices: ["15", "16", "17", "18", "19"], answer: "17", hint: "8 + 9 = 8 + 8 + 1." }
+            - { id: ch14-j3-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi certaines lignes tracées à l'encre peuvent-elles sembler « bouger », même lentement, à l'œil nu ?", choices: ["cela n'arrive jamais vraiment avec de l'encre ordinaire", "dans ce hall magique, l'encre vivante change réellement de forme", "parce que les yeux fatiguent toujours vite", "parce que le papier se déchire lentement", "parce que la lumière est toujours éteinte"], answer: "dans ce hall magique, l'encre vivante change réellement de forme", hint: "Souviens-toi : ce n'est pas de l'encre ordinaire." }
+          maelle:
+            - { id: ch14-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 324 ÷ 4.", choices: ["76", "78", "80", "81", "84"], answer: "81", hint: "4 × 81 = 324." }
+            - { id: ch14-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « ancienne » dans « bien plus ancienne » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "préposition"], answer: "adjectif", hint: "Il décrit la carte." }
+          rafaelle:
+            - { id: ch14-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 5².", choices: ["46", "50", "54", "56", "60"], answer: "56", hint: "81 − 25." }
+            - { id: ch14-j3-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Estamos cerca de la montaña. »", choices: ["Nous sommes loin de la montagne.", "Nous sommes près de la montagne.", "Nous grimpons la montagne.", "Nous quittons la montagne.", "Nous voyons la montagne."], answer: "Nous sommes près de la montagne.", hint: "« Cerca » = près." }
+      - id: m3
+        title: S'approcher ensemble
+        tours:
+          axelle:
+            - { id: ch14-j3-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Les lignes d'encre semblaient ralentir. » ?", choices: ["ralentir", "semblaient", "Les lignes d'encre", "encre", "lignes"], answer: "Les lignes d'encre", hint: "Qui semble ralentir ?" }
+            - { id: ch14-j3-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 14 − 6.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "14 − 6 = 8." }
+          maelle:
+            - { id: ch14-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 56 × 3.", choices: ["162", "165", "166", "168", "170"], answer: "168", hint: "56 × 3 = 56 × 2 + 56." }
+            - { id: ch14-j3-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi dit-on parfois qu'un lieu très ancien semble « observer » ceux qui l'explorent ?", choices: ["parce que c'est toujours littéralement vrai", "c'est une façon imagée de dire que le lieu garde une présence forte et mystérieuse", "parce que tous les lieux anciens ont des yeux", "cela n'a jamais de sens figuré", "parce que c'est interdit de le dire autrement"], answer: "c'est une façon imagée de dire que le lieu garde une présence forte et mystérieuse", hint: "Repense à ce que ressent Maelle devant la carte." }
+          rafaelle:
+            - { id: ch14-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 6x − 4 = 32.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "6x = 36." }
+            - { id: ch14-j3-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Les cartes les plus anciennes finissent parfois par devenir un peu plus que du simple papier. » : que suggère cette phrase ?", choices: ["que les vieilles cartes sont toujours inutiles", "qu'une chose très ancienne peut acquérir une forme de valeur ou de présence particulière", "que le papier ancien est toujours fragile", "que seules les cartes neuves ont de la valeur", "que cette carte va bientôt disparaître"], answer: "qu'une chose très ancienne peut acquérir une forme de valeur ou de présence particulière", hint: "Relis bien la dernière réplique de Dame Cartéa." }
+      - id: m4
+        title: Observer la carte
+        tours:
+          axelle:
+            - { id: ch14-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 6.", choices: ["30", "32", "34", "36", "38"], answer: "36", hint: "6 × 6 = 6 × 5 + 6." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch14-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 275 − 109.", choices: ["160", "164", "166", "168", "172"], answer: "166", hint: "275 − 110 + 1." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch14-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Confío en mi hermana. »", choices: ["Je fais confiance à ma sœur.", "Je cherche ma sœur.", "Je suis ma sœur.", "J'aide ma sœur.", "J'appelle ma sœur."], answer: "Je fais confiance à ma sœur.", hint: "« Confío en » = je fais confiance à." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu du regard partagé : toutes les trois s'allongent sur le dos, regardent le plafond imaginaire, et décrivent chacune à voix haute, pendant une minute, ce qu'elles « verraient » si elles pouvaient lire la carte indéchiffrée."
+    closing:
+      - { who: narrateur, text: "Longtemps après que les deux autres sœurs se furent éloignées, Rafaelle resta immobile sous la carte indéchiffrée, les yeux levés, comme si elle cherchait encore à y lire quelque chose." }
+      - { who: cartea, text: "Prenez votre temps, petite Archiviste. Cette carte attend depuis bien plus longtemps que vous n'avez vécu. Elle peut attendre encore un peu." }
+      - { who: rafaelle, text: "J'ai l'impression qu'elle essaie de me dire quelque chose, mais que je n'ai pas encore les bons mots pour l'entendre." }
+      - { who: cartea, text: "C'est peut-être exactement cela, le bon chemin pour la comprendre un jour. Venez, maintenant. Demain, une autre journée commencera." }
+      - { who: narrateur, text: "En quittant la salle circulaire, les trois sœurs sentirent, l'espace d'un instant, les lignes d'encre du plafond s'immobiliser complètement derrière elles, avant de reprendre, plus lentement, leur lent mouvement sans fin." }
+    reward: "la découverte de la carte indéchiffrée, et son étrange attention"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Dessiner son propre chemin
+    decor: Un atelier attenant au hall, où des tables de bois usées accueillent des plumes, des pots d'encre ordinaire et quelques feuilles vierges, loin de la magie des murs vivants.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, Dame Cartéa les conduisit vers un petit atelier attenant au hall, où des tables de bois usées accueillaient des plumes, des pots d'encre ordinaire, et quelques feuilles de papier parfaitement vierges." }
+      - { who: cartea, text: "Ici, pas de magie. Juste du papier, de l'encre, et votre propre main. Avant de dessiner un chemin vivant, il faut d'abord savoir dessiner un chemin tout court." }
+      - { who: axelle, text: "Mais nous ne savons pas dessiner des cartes, nous ! On n'a jamais appris !" }
+      - { who: cartea, text: "Personne ne sait, au début, petite Veilleuse. On apprend en traçant une première ligne, même maladroite, puis une deuxième, un peu moins maladroite." }
+      - { who: maelle, text: "Par quoi faut-il commencer, alors, pour dessiner une carte qui ait vraiment un sens ?" }
+      - { who: cartea, text: "Par ce que vous connaissez déjà le mieux. Dessinez le chemin que vous avez parcouru depuis le début de votre voyage, et pas celui que vous imaginez encore devant vous." }
+      - { who: rafaelle, text: "Même si notre dessin n'est pas aussi beau que les cartes vivantes du hall ?" }
+      - { who: cartea, text: "Surtout s'il n'est pas aussi beau, petite Archiviste. Une première carte n'a jamais besoin d'être belle. Elle a seulement besoin d'être honnête." }
+    manches:
+      - id: m1
+        title: Premières lignes
+        tours:
+          axelle:
+            - { id: ch14-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « maladroit » ?", choices: ["habile", "lent", "grand", "clair", "lourd"], answer: "habile", hint: "Le contraire de quelqu'un qui se trompe souvent." }
+            - { id: ch14-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 5.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "9 + 5 = 9 + 1 + 4." }
+          maelle:
+            - { id: ch14-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi les premières cartes dessinées par un débutant sont-elles souvent imprécises ?", choices: ["parce que dessiner une carte précise demande de l'entraînement", "parce que personne ne peut jamais apprendre à dessiner une carte", "parce que les débutants ne regardent jamais le terrain", "parce que les cartes sont toujours fausses au début", "cela n'a aucun lien avec l'entraînement"], answer: "parce que dessiner une carte précise demande de l'entraînement", hint: "Pense à ce que dit Dame Cartéa sur la première ligne maladroite." }
+            - { id: ch14-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 630 − 285.", choices: ["335", "340", "343", "345", "348"], answer: "345", hint: "630 − 290 + 5." }
+          rafaelle:
+            - { id: ch14-j4-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi un cartographe débutant commence-t-il souvent par dessiner un lieu qu'il connaît déjà bien ?", choices: ["parce que c'est toujours obligatoire", "parce qu'il peut vérifier facilement l'exactitude de son propre dessin", "parce que dessiner un lieu inconnu est toujours plus facile", "cela n'a aucune utilité particulière", "parce qu'un lieu connu n'a jamais besoin d'être précis"], answer: "parce qu'il peut vérifier facilement l'exactitude de son propre dessin", hint: "Repense au conseil de Dame Cartéa sur le chemin déjà parcouru." }
+            - { id: ch14-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 12² − 44.", choices: ["96", "100", "104", "108", "112"], answer: "100", hint: "144 − 44." }
+      - id: m2
+        title: Le chemin déjà parcouru
+        tours:
+          axelle:
+            - { id: ch14-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 16 − 7.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "16 − 6 = 10, puis − 1." }
+            - { id: ch14-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi est-il plus facile de dessiner un trajet qu'on a déjà parcouru que d'inventer un trajet inconnu ?", choices: ["ce n'est jamais plus facile", "parce qu'on se souvient des étapes réellement vécues", "parce qu'un trajet connu n'a aucune étape", "parce que la mémoire ne sert jamais à dessiner", "cela dépend uniquement de la chance"], answer: "parce qu'on se souvient des étapes réellement vécues", hint: "Pense à ce que propose Dame Cartéa comme premier exercice." }
+          maelle:
+            - { id: ch14-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 38 × 5.", choices: ["180", "185", "188", "190", "195"], answer: "190", hint: "40 × 5 − 2 × 5." }
+            - { id: ch14-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « honnête » dans « être honnête » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit ce que doit être une première carte." }
+          rafaelle:
+            - { id: ch14-j4-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 7² + 2 × 10.", choices: ["59", "63", "66", "69", "73"], answer: "69", hint: "49 + 20." }
+            - { id: ch14-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Nous sommes près de la montagne » en espagnol ?", choices: ["Estamos cerca de la montaña.", "Sigamos el camino correcto.", "El mapa se mueve solo.", "La tinta brilla en la pared.", "Confío en mi hermana."], answer: "Estamos cerca de la montaña.", hint: "Relis la phrase du jour 3." }
+      - id: m3
+        title: Une carte, même imparfaite
+        tours:
+          axelle:
+            - { id: ch14-j4-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 10 − 3.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "10 − 3 = 7." }
+            - { id: ch14-j4-ax-m3b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Rafaelle dessine son propre chemin. » ?", choices: ["son propre chemin", "dessine", "Rafaelle", "propre", "chemin"], answer: "Rafaelle", hint: "Qui dessine ?" }
+          maelle:
+            - { id: ch14-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 441 ÷ 7.", choices: ["57", "61", "63", "65", "67"], answer: "63", hint: "7 × 63 = 441." }
+            - { id: ch14-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi un travail réalisé avec soin, même imparfait, garde-t-il souvent de la valeur ?", choices: ["parce que l'effort et la sincérité y sont visibles", "un travail imparfait n'a jamais de valeur", "parce que la perfection seule compte toujours", "cela ne dépend que du hasard", "parce que personne ne regarde jamais le résultat"], answer: "parce que l'effort et la sincérité y sont visibles", hint: "Relis la dernière réplique de Dame Cartéa à Rafaelle." }
+          rafaelle:
+            - { id: ch14-j4-ra-m3a, subject: maths, level: 5, kind: qcm, prompt: "Résous : 9x − 6 = 57.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "9x = 63." }
+            - { id: ch14-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Elle a seulement besoin d'être honnête. » : à quoi ce « elle » fait-il référence dans le texte ?", choices: ["à Dame Cartéa", "à une première carte", "à la montagne", "à l'Arche", "à la boussole"], answer: "à une première carte", hint: "Relis la phrase juste avant, sur ce qu'une carte n'a jamais besoin d'être." }
+      - id: m4
+        title: Finir son dessin
+        tours:
+          axelle:
+            - { id: ch14-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 5.", choices: ["35", "38", "40", "42", "45"], answer: "40", hint: "8 × 5 = 8 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch14-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 310 − 124.", choices: ["180", "184", "186", "188", "192"], answer: "186", hint: "310 − 130 + 6." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch14-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 16 × 7.", choices: ["102", "108", "110", "112", "116"], answer: "112", hint: "16 × 7 = 16 × 7." }
+            - { gen: maths.duree }
+    pause: "Le jeu du premier trait : chaque sœur dessine, en trente secondes seulement, le symbole qui représenterait le mieux son voyage jusqu'ici, puis explique son choix aux deux autres."
+    closing:
+      - { who: narrateur, text: "À la fin de l'après-midi, trois feuilles maladroites mais sincères reposaient sur la table de bois usée, chacune racontant, à sa manière, un bout du même voyage." }
+      - { who: cartea, text: "Voilà. Vos toutes premières cartes. Elles ne ressemblent à rien de ce que vous verrez sur ces murs, et c'est très bien ainsi." }
+      - { who: axelle, text: "On peut vraiment les garder ? Même si elles ne sont pas parfaites ?" }
+      - { who: cartea, text: "Surtout parce qu'elles ne sont pas parfaites, petite Veilleuse. Gardez-les. Un jour, vous les comparerez à celles que vous saurez dessiner plus tard." }
+      - { who: narrateur, text: "En roulant soigneusement leurs trois feuilles, les sœurs sentirent, pour la première fois depuis leur arrivée, que le hall tout entier semblait un peu plus familier, un peu moins impressionnant." }
+    reward: "trois premières cartes, dessinées de leurs propres mains"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: La carte vierge
+    decor: La petite salle circulaire au centre du hall, de nouveau, où Dame Cartéa a déroulé sur une table basse une dernière carte, entièrement vierge, n'attendant plus que d'être remplie.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, Dame Cartéa les attendait de nouveau dans la salle circulaire, où elle avait déroulé, sur une table basse, une dernière carte — entièrement vierge, n'attendant plus que d'être remplie." }
+      - { who: cartea, text: "Celle-ci est spéciale. Elle ne se remplit pas toute seule, comme les autres murs du hall. Elle attend qu'on lui raconte quelque chose, avec sincérité, pour commencer à dessiner." }
+      - { who: rafaelle, text: "Et si on ne trouve rien à lui raconter ?" }
+      - { who: cartea, text: "Alors elle restera vierge, petite Archiviste, et ce ne sera pas grave non plus. Mais je ne pense pas que ce soit votre cas, après tout ce que vous avez vécu." }
+      - { who: nilo, text: "Allez, les filles. Après les marchés et les fleuves de brume, raconter une histoire à une carte, ça devrait être la partie la plus facile du voyage." }
+    manches:
+      - id: m1
+        title: Ce que le hall a appris
+        intro: "Dame Cartéa interroge chaque sœur sur tout ce que cette semaine dans le hall lui a appris."
+        tours:
+          axelle:
+            - { id: ch14-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on une personne qui dessine des cartes ?", choices: ["un cartographe", "un marchand", "un peseur", "un gardien", "un passeur"], answer: "un cartographe", hint: "C'est le métier de Dame Cartéa." }
+            - { id: ch14-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 + 7.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "8 + 7 = 8 + 8 − 1." }
+          maelle:
+            - { id: ch14-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi une carte de montagne doit-elle parfois être mise à jour, selon ce que tu as appris cette semaine ?", choices: ["parce que le relief peut changer avec le temps", "parce que le papier s'use toujours vite", "une carte n'a jamais besoin d'être mise à jour", "parce que les montagnes bougent tous les jours", "parce que l'encre s'évapore toute seule"], answer: "parce que le relief peut changer avec le temps", hint: "Repense à ta propre question du premier jour." }
+            - { id: ch14-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 4.", choices: ["108", "112", "114", "116", "120"], answer: "116", hint: "30 × 4 − 4." }
+          rafaelle:
+            - { id: ch14-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire qu'une première carte n'a jamais besoin d'être parfaite, seulement honnête ?", choices: ["parce que la perfection n'a jamais d'importance nulle part", "parce que la sincérité d'un travail compte davantage que son apparence, surtout au début", "parce qu'une carte imparfaite est toujours fausse", "parce que personne ne regarde jamais une première carte", "parce que seules les cartes vivantes comptent vraiment"], answer: "parce que la sincérité d'un travail compte davantage que son apparence, surtout au début", hint: "Repense à ce que t'a dit Dame Cartéa le quatrième jour." }
+            - { id: ch14-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 6/9 − 2/9.", choices: ["3/9", "4/9", "5/9", "6/9", "8/9"], answer: "4/9", hint: "6 − 2 = 4, même dénominateur." }
+      - id: m2
+        title: Avant de choisir
+        intro: "Il faut relier tout ce que la semaine a appris pour choisir, vraiment, ce qu'on racontera à la carte."
+        tours:
+          axelle:
+            - { id: ch14-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux une carte qui reste fidèle à ce qui a vraiment été vécu ?", choices: ["fausse", "honnête", "inutile", "oubliée", "interdite"], answer: "honnête", hint: "C'est le mot que répète Dame Cartéa le quatrième jour." }
+            - { id: ch14-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 17 − 9.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "17 − 7 = 10, puis − 2." }
+          maelle:
+            - { id: ch14-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi ce hall, creusé au seuil même des montagnes, a-t-il une importance particulière pour les voyageurs ?", choices: ["il n'a aucune importance réelle", "c'est le dernier lieu pour se repérer avant d'affronter la montagne", "il empêche tous les voyageurs d'avancer", "il se trouve très loin des montagnes", "personne n'y passe jamais vraiment"], answer: "c'est le dernier lieu pour se repérer avant d'affronter la montagne", hint: "Repense à la position du hall, juste au pied de la chaîne." }
+            - { id: ch14-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 528 ÷ 6.", choices: ["82", "86", "88", "90", "94"], answer: "88", hint: "6 × 88 = 528." }
+          rafaelle:
+            - { id: ch14-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10² − 36.", choices: ["58", "62", "64", "66", "70"], answer: "64", hint: "100 − 36." }
+            - { id: ch14-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Elle attend qu'on lui raconte quelque chose, avec sincérité. » : quel est le sujet de cette phrase ?", choices: ["avec sincérité", "qu'on lui raconte", "Elle", "quelque chose", "raconte"], answer: "Elle", hint: "Qui attend qu'on lui raconte quelque chose ?" }
+      - id: m3
+        title: Le Chant de la Carte
+        intro: "La carte vierge elle-même semble répondre : ses premières lignes n'apparaissent que si les trois sœurs trouvent, ensemble, le bon rythme."
+        tours:
+          axelle:
+            - { id: ch14-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, blanche." }
+          maelle:
+            - { id: ch14-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, noire, noire." }
+          rafaelle:
+            - { id: ch14-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : ronde." }
+    concert:
+      measures:
+        axelle: { given: [1, 1], missing: 2, prompt: "Noire, noire, blanche" }
+        maelle: { given: [2, 1], missing: 1, prompt: "Blanche, noire, noire" }
+        rafaelle: { given: [], missing: 4, prompt: "Ronde" }
+    pause: "Le dernier regard sur les murs : chacune choisit, avant de partir, le chemin dessiné à l'encre vivante qu'elle aimerait le plus revoir un jour, et dit pourquoi à voix haute."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant de la Carte se répandit dans la salle circulaire, et sur la table basse, les premières lignes d'encre commencèrent, lentement, à apparaître sur la carte vierge." }
+      - { who: cartea, text: "Voilà. Elle a entendu ce que vous lui avez raconté, et elle a choisi de vous répondre." }
+      - { who: narrateur, text: "Sous leurs yeux émerveillés, un chemin complet se dessina enfin, reliant le hall tout entier au cœur même de la chaîne de montagnes, là où nulle autre carte, jusque-là, n'avait jamais osé s'aventurer." }
+      - { who: cartea, text: "Prenez-la avec vous. Elle vous montrera la suite, même quand vous penserez être perdues." }
+      - { who: rafaelle, text: "Merci, Dame Cartéa. Pour le hall, pour les cartes anciennes, et pour nous avoir laissées apprendre à notre rythme." }
+      - { who: cartea, text: "Revenez un jour me raconter la suite de ce chemin. Une carte aime toujours savoir comment son histoire continue." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs quittaient le hall, la carte vivante roulée sous le bras, elles sentirent, pour la première fois, la chaîne de montagnes tout entière se dresser devant elles, non plus comme un obstacle, mais comme un chemin déjà à moitié tracé." }
+      - { who: nilo, text: "Bon. La montagne, maintenant, pour de vrai. J'espère qu'elle est aussi bavarde que ce hall, au moins pour nous indiquer où ne pas mettre les pattes." }
+      - { who: axelle, text: "On a notre carte, maintenant. On trouvera notre chemin, comme toujours." }
+    reward: "la carte vivante du hall, prête à guider les sœurs dans la montagne"
