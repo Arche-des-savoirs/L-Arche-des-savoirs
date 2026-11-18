@@ -1,0 +1,387 @@
+# Chapitre 30 — Le Sommet et le Veilleur d'Orvane
+# Chapitre MAJEUR, dernier du récit. Réutilise le Veilleur (voix Iapetus, introduit au
+# chapitre 3, réapparu brièvement au chapitre 9). Révélation finale : le Veilleur est le
+# gardien d'Orvane, l'antique esprit-renard du royaume, dont la vitalité dépend de tout le
+# chemin parcouru par les trois sœurs. Décision MAJEURE reflétant l'effet ORVANE [2, -1, 1]
+# de decisions.ts : A = orvane +2, B = orvane -1, C = orvane +1. Ce chapitre ne couvre que sa
+# première partie (le texte, la révélation, la décision) ; la seconde partie — le vote final
+# entre les portes ouvertes — est gérée par le moteur (src/engine/counters.ts), hors de ce
+# fichier.
+
+id: ch30
+number: 30
+act: 3
+title: Le Sommet et le Veilleur d'Orvane
+introImage: ch30
+scene: sommet-d-orvane
+
+espagnol:
+  - { es: "La cumbre guarda un secreto antiguo.", fr: "Le sommet garde un secret ancien." }
+  - { es: "El zorro vigila desde siempre.", fr: "Le renard veille depuis toujours." }
+  - { es: "Cada vínculo lo mantiene con vida.", fr: "Chaque lien le maintient en vie." }
+  - { es: "El final se escribe juntos.", fr: "La fin s'écrit ensemble." }
+  - { es: "El viaje cambia a quien lo vive.", fr: "Le voyage change celui qui le vit." }
+
+decision:
+  prompt: "Le Veilleur s'écarte en silence, et devant les trois sœurs apparaît enfin Orvane : un immense renard de lumière argentée, aussi ancien que la montagne elle-même, dont l'éclat vacille doucement, comme une flamme fatiguée. « Tout ce que vous avez vécu, dit le Veilleur, a nourri ou affaibli sa lumière. Il reste un dernier geste à faire, avant la toute dernière décision. Que voulez-vous offrir à Orvane, pour ce moment qui compte plus que tous les autres ? »"
+  options:
+    A:
+      label: Offrir tous les liens tissés depuis le début du voyage
+      scene: "Les trois sœurs, d'un même geste, posent la main sur le pelage de lumière d'Orvane, et lui offrent, ensemble, le souvenir de chaque lien tissé depuis le début de leur voyage : Nilo, Plume, Thessaly, et tous ceux qui les ont aidées en chemin."
+      line: { who: veilleur, text: "Un don d'une telle ampleur, petites voyageuses, je n'en avais pas vu depuis bien longtemps. Regardez : sa lumière répond, et s'embrase à nouveau, plus forte qu'avant." }
+      habillage: "Les épreuves prennent la forme d'un rassemblement solennel de tous les souvenirs de lien accumulés depuis le début du récit, offerts d'un seul geste."
+    B:
+      label: Offrir uniquement le courage de continuer, sans détour
+      scene: "Rafaelle, pressée d'en finir avec cette ultime épreuve, préfère offrir à Orvane le simple courage d'avancer, sans s'attarder davantage sur les souvenirs du chemin déjà parcouru."
+      line: { who: veilleur, text: "Un courage sincère, petite Archiviste, mais un peu sec, à lui seul, pour nourrir une lumière aussi ancienne. Elle vacille encore, affaiblie par la hâte." }
+      habillage: "Les épreuves se déroulent dans la rapidité et la détermination brute, sans grand égard pour la mémoire du chemin parcouru."
+    C:
+      label: Offrir le souvenir du tout premier pas du voyage
+      scene: "Maelle choisit d'offrir à Orvane le souvenir précis du tout premier pas de leur voyage, celui où tout a commencé, estimant que ce souvenir fondateur compte plus que tous les autres réunis."
+      line: { who: veilleur, text: "Un choix empreint de sagesse, petite Cartographe. Se souvenir du commencement, c'est souvent la clé pour comprendre tout ce qui a suivi." }
+      habillage: "Les épreuves prennent la forme d'un retour songeur vers le tout premier instant du voyage, raconté avec soin et précision."
+
+repliquesAbsurdes:
+  - "Si le renard veille depuis toujours, est-ce qu'il a quand même le droit de faire un petit somme, de temps en temps, sans que ça compte contre lui ?"
+  - "Mon renard, enfin Plume, a essayé de saluer Orvane d'un coup de queue. Résultat : toute la montagne a semblé trembler un instant, impressionnée."
+  - "Est-ce qu'Orvane connaît Plume depuis longtemps, ou c'est leur toute première rencontre, là, au sommet ?"
+  - "Si chaque lien le maintient en vie, est-ce qu'on peut aussi lui offrir un lien qu'on n'a pas encore créé, juste pour voir si ça marche ?"
+  - "Après trente chapitres de voyage, arriver enfin au sommet pour y trouver un renard géant de lumière, ça paraît presque logique, en fait."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: Le sommet, enfin
+    decor: Le sommet de la montagne, balayé par un vent clair, où un vieil homme familier attend, immobile, devant une arche de pierre ancienne gravée de symboles oubliés.
+    opening:
+      - { who: narrateur, text: "Après la dernière veillée avec Solen, le sentier grimpa une dernière fois, plus abrupt que jamais, jusqu'à déboucher, enfin, sur le sommet de la montagne, balayé par un vent clair et froid." }
+      - { who: narrateur, text: "Là, devant une arche de pierre ancienne, gravée de symboles que nul ne semblait plus savoir lire, un vieil homme en manteau rapiécé attendait, immobile, un trousseau de clés à la ceinture." }
+      - { who: rafaelle, text: "Attendez... Le Veilleur ? Celui de la Tour de Garde, et du Tribunal ? Qu'est-ce que vous faites ici, tout en haut ?" }
+      - { who: narrateur, text: "Le vieil homme se retourna lentement, un sourire empreint d'une gravité nouvelle sur le visage, bien différent de celui qu'elles avaient connu au tout début de leur voyage." }
+      - { who: veilleur, text: "Je vous attendais, petites voyageuses. J'ai gardé bien des clés, au fil de ma longue vie, mais celle qui ouvre cette arche n'a jamais été destinée à mes propres mains." }
+      - { who: maelle, text: "Alors à qui est-elle destinée, cette clé ?" }
+      - { who: veilleur, text: "À vous trois, petite Cartographe. Vous l'avez forgée, sans le savoir, à chaque pas de votre voyage, à chaque décision prise ensemble." }
+      - { who: axelle, text: "C'est un peu mystérieux, comme façon de parler." }
+      - { who: veilleur, text: "Tout deviendra clair, petite Veilleuse, je vous le promets. Mais il nous faudra quelques jours, avant que vous ne soyez tout à fait prêtes." }
+    manches:
+      - id: m1
+        title: Le sommet, enfin atteint
+        tours:
+          axelle:
+            - { id: ch30-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on le point le plus haut d'une montagne ?", choices: ["le sommet", "la vallée", "la plaine", "le gouffre", "la falaise"], answer: "le sommet", hint: "C'est l'endroit que les trois sœurs atteignent enfin, après tant de chapitres." }
+            - { id: ch30-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 + 8.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "7 + 8 = 7 + 7 + 1." }
+          maelle:
+            - { id: ch30-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi le vent est-il souvent plus fort et plus froid au sommet d'une montagne qu'en bas, dans la vallée ?", choices: ["l'altitude expose davantage aux courants d'air, et la température y baisse généralement", "le vent n'a jamais aucun lien avec l'altitude", "cela n'a aucune explication particulière", "il fait toujours plus chaud au sommet qu'en bas", "l'altitude n'a jamais aucun effet sur la température"], answer: "l'altitude expose davantage aux courants d'air, et la température y baisse généralement", hint: "Pense au vent clair et froid qui balaie le sommet, à l'arrivée des trois sœurs." }
+            - { id: ch30-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 64 + 58.", choices: ["118", "120", "122", "124", "126"], answer: "122", hint: "64 + 60 − 2." }
+          rafaelle:
+            - { id: ch30-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi une arche gravée de symboles anciens et illisibles peut-elle signaler l'importance particulière d'un lieu, dans une histoire ou une légende ?", choices: ["des symboles oubliés suggèrent un savoir ou un rituel très ancien, lié à un moment ou un lieu exceptionnel", "des symboles illisibles n'ont jamais aucune signification particulière", "cela n'a aucune importance narrative", "il est toujours impossible qu'une arche porte un sens caché", "seuls les symboles récents ont une quelconque valeur"], answer: "des symboles oubliés suggèrent un savoir ou un rituel très ancien, lié à un moment ou un lieu exceptionnel", hint: "Pense à l'arche de pierre ancienne, gravée de symboles que nul ne semble plus savoir lire." }
+            - { id: ch30-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 17 × 5.", choices: ["75", "80", "82", "85", "88"], answer: "85", hint: "17 × 5 = 17 × 10 ÷ 2." }
+      - id: m2
+        title: Le Veilleur retrouvé
+        tours:
+          axelle:
+            - { id: ch30-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Un vieil homme attendait, immobile. » ?", choices: ["immobile", "attendait", "Un vieil homme", "un", "homme"], answer: "Un vieil homme", hint: "Qui attend, immobile, devant l'arche de pierre ?" }
+            - { id: ch30-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 13 − 6.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "13 − 6 = 7." }
+          maelle:
+            - { id: ch30-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « mystérieux » dans « c'est un peu mystérieux » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la façon de parler du Veilleur, selon Axelle." }
+            - { id: ch30-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 376 ÷ 4.", choices: ["86", "88", "90", "92", "94"], answer: "94", hint: "4 × 94 = 376." }
+          rafaelle:
+            - { id: ch30-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Vous l'avez forgée, sans le savoir, à chaque pas de votre voyage. » : que révèle cette phrase sur la clé mystérieuse ?", choices: ["qu'elle s'est construite progressivement, à travers les choix et les actions des sœurs tout au long du récit", "qu'elle existait déjà, achevée, avant même le début du voyage", "qu'elle n'a aucun lien avec les décisions prises par les sœurs", "qu'elle a été fabriquée uniquement par le Veilleur, seul", "qu'elle n'a jamais existé, et que le Veilleur se trompe"], answer: "qu'elle s'est construite progressivement, à travers les choix et les actions des sœurs tout au long du récit", hint: "Repense à ce que dit le Veilleur sur la clé forgée à chaque pas du voyage." }
+            - { id: ch30-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 12² − 80.", choices: ["58", "60", "62", "64", "68"], answer: "64", hint: "144 − 80." }
+      - id: m3
+        title: Une arche ancienne
+        tours:
+          axelle:
+            - { id: ch30-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Le Veilleur a gardé des clés pendant 50 ans à la Tour, et encore 3 ans depuis leur dernière rencontre au Tribunal. Combien d'années en tout ?", choices: ["51", "52", "53", "54", "55"], answer: "53", hint: "50 + 3." }
+            - { id: ch30-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi une personne qui garde des clés très longtemps, comme le Veilleur, peut-elle finir par en oublier certaines ?", choices: ["avec le temps et le grand nombre de clés, la mémoire peut avoir du mal à toutes les distinguer précisément", "la mémoire d'une personne n'a jamais aucune limite", "cela n'a aucune explication particulière", "il est toujours impossible d'oublier une clé qu'on garde", "le temps n'a jamais aucun effet sur la mémoire d'une personne"], answer: "avec le temps et le grand nombre de clés, la mémoire peut avoir du mal à toutes les distinguer précisément", hint: "Pense à la première rencontre avec le Veilleur, qui avait oublié laquelle de ses clés ouvrait la Tour." }
+          maelle:
+            - { id: ch30-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 48 × 4.", choices: ["182", "186", "188", "190", "192"], answer: "192", hint: "48 × 4 = 50 × 4 − 2 × 4." }
+            - { id: ch30-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi retrouver, à la toute fin d'un long voyage, un personnage rencontré au tout début, comme le Veilleur, peut-il donner un sentiment particulier de cohérence au récit ?", choices: ["cela crée une boucle narrative, montrant que le début et la fin d'une histoire sont souvent liés", "retrouver un personnage du début n'a jamais aucun effet sur un récit", "cela n'a aucun lien avec la construction d'une histoire", "il vaut toujours mieux ne jamais revoir un personnage rencontré au début", "une telle rencontre finale n'apporte jamais rien de particulier au récit"], answer: "cela crée une boucle narrative, montrant que le début et la fin d'une histoire sont souvent liés", hint: "Pense à l'émotion des trois sœurs, de retrouver le Veilleur, tout en haut de la montagne." }
+          rafaelle:
+            - { id: ch30-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x + 7 = 42.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "5x = 35." }
+            - { id: ch30-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Le Veilleur (se retourner) lentement vers les trois sœurs. »", choices: ["s'est retourné", "se retournait", "se retournera", "se retourne", "se retournant"], answer: "s'est retourné", hint: "« Se retourner » se conjugue avec être au passé composé." }
+      - id: m4
+        title: Premiers instants au sommet
+        tours:
+          axelle:
+            - { id: ch30-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 4.", choices: ["28", "30", "31", "32", "34"], answer: "32", hint: "8 × 4 = 8 × 2 × 2." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch30-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 305 − 148.", choices: ["155", "157", "159", "161", "163"], answer: "157", hint: "305 − 150 + 2." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch30-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « La cumbre guarda un secreto antiguo. »", choices: ["Le sommet garde un secret ancien.", "Le sommet change de forme souvent.", "Le sommet reste toujours vide.", "Le sommet disparaît la nuit.", "Le sommet fait peur à tous."], answer: "Le sommet garde un secret ancien.", hint: "« Guarda un secreto antiguo » = garde un secret ancien." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu du souvenir résumé : chaque sœur résume, en une seule phrase, l'étape du voyage qui l'a le plus marquée depuis le tout premier chapitre, pour se préparer à la révélation à venir."
+    closing:
+      - { who: narrateur, text: "Le vent continua de souffler sur le sommet, tandis que le Veilleur observait les trois sœurs avec une tendresse mêlée de gravité, comme s'il mesurait, enfin, tout le chemin qu'elles avaient parcouru." }
+      - { who: veilleur, text: "Demain, je vous raconterai ce que cette arche protège depuis si longtemps. Reposez-vous bien, cette nuit, car la suite demandera tout votre cœur." }
+      - { who: maelle, text: "On sera prêtes, Veilleur. On l'a toujours été, jusqu'ici." }
+      - { who: narrateur, text: "Et tandis que la nuit tombait sur le sommet, les étoiles semblèrent, cette fois, plus proches que jamais, comme si le ciel lui-même se penchait pour assister à ce qui allait suivre." }
+    reward: "l'arrivée au sommet, et les retrouvailles avec le Veilleur"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: L'histoire d'Orvane
+    decor: Le sommet, au petit matin, où le Veilleur raconte enfin aux trois sœurs l'histoire ancienne qu'il gardait depuis le début de leur voyage.
+    opening:
+      - { who: narrateur, text: "Le lendemain matin, le Veilleur rassembla les trois sœurs près de l'arche de pierre, et commença enfin à raconter l'histoire qu'il gardait depuis le début de leur voyage." }
+      - { who: veilleur, text: "Il y a très longtemps, cette montagne et toutes les terres que vous avez traversées étaient veillées par un esprit ancien, un renard de lumière nommé Orvane." }
+      - { who: rafaelle, text: "Un renard de lumière ? Un peu comme Plume, alors ?" }
+      - { who: veilleur, text: "Plume lui-même descend d'Orvane, petite Archiviste, même s'il l'ignore encore tout à fait. Orvane est son aîné, son origine, le premier de tous les renards de ce royaume." }
+      - { who: axelle, text: "Et pourquoi cet esprit a besoin de nous, exactement ?" }
+      - { who: veilleur, text: "Parce que sa lumière, petite Veilleuse, se nourrit des liens, du courage et de la mémoire de ceux qui traversent ces terres. Et ces dernières années, elle s'est beaucoup affaiblie." }
+      - { who: maelle, text: "Alors c'est pour ça que notre voyage a tant d'importance, depuis le début." }
+      - { who: veilleur, text: "Exactement, petite Cartographe. Chacune de vos décisions, depuis le premier chapitre, a nourri ou affaibli la lumière d'Orvane, sans que vous le sachiez." }
+    manches:
+      - id: m1
+        title: Un esprit ancien
+        tours:
+          axelle:
+            - { id: ch30-j2-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « ancien » (en parlant d'un esprit) ?", choices: ["récent", "antique", "vieux", "lointain", "immémorial"], answer: "récent", hint: "Le contraire de ce qu'est Orvane, selon le Veilleur." }
+            - { id: ch30-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 6.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "9 + 6 = 9 + 1 + 5." }
+          maelle:
+            - { id: ch30-j2-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi une lumière symbolique, comme celle d'Orvane, peut-elle représenter la vitalité ou la force d'un être dans un récit ?", choices: ["la lumière est souvent associée à la vie, à l'énergie et à la présence, par opposition à l'obscurité et à la disparition", "la lumière n'a jamais aucun lien symbolique avec la vitalité", "cela n'a aucune explication particulière", "l'obscurité représente toujours la vitalité, jamais la lumière", "un symbole lumineux n'a jamais aucune signification dans un récit"], answer: "la lumière est souvent associée à la vie, à l'énergie et à la présence, par opposition à l'obscurité et à la disparition", hint: "Pense à la lumière d'Orvane, qui s'affaiblit ou se renforce selon les choix des voyageurs." }
+            - { id: ch30-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 455 ÷ 5.", choices: ["81", "85", "88", "91", "94"], answer: "91", hint: "5 × 91 = 455." }
+          rafaelle:
+            - { id: ch30-j2-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi une révélation finale, qui relie tous les personnages rencontrés en chemin (comme Plume et Orvane), donne-t-elle souvent plus de sens à un long récit ?", choices: ["elle montre que les éléments dispersés de l'histoire étaient en réalité connectés depuis le début", "une telle révélation n'a jamais aucun effet sur le sens d'un récit", "cela n'a aucun lien avec la construction narrative", "il vaut toujours mieux que les éléments d'un récit restent séparés", "une révélation finale n'apporte jamais rien de particulier à une histoire"], answer: "elle montre que les éléments dispersés de l'histoire étaient en réalité connectés depuis le début", hint: "Pense au lien révélé entre Plume, le renard-compagnon, et Orvane, son aîné." }
+            - { id: ch30-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 16 × 6.", choices: ["90", "92", "94", "96", "98"], answer: "96", hint: "16 × 6 = 16 × 3 × 2." }
+      - id: m2
+        title: Le lien avec Plume
+        tours:
+          axelle:
+            - { id: ch30-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 16 − 9.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "16 − 6 = 10, puis − 3." }
+            - { id: ch30-j2-ax-m2b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Orvane est son aîné. » ?", choices: ["son aîné", "est", "Orvane", "orvane", "aîné"], answer: "Orvane", hint: "Qui est l'aîné de Plume, selon le Veilleur ?" }
+          maelle:
+            - { id: ch30-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 36 × 4.", choices: ["138", "140", "142", "144", "146"], answer: "144", hint: "36 × 4 = 36 × 2 × 2." }
+            - { id: ch30-j2-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « affaiblie » dans « sa lumière s'est beaucoup affaiblie » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit l'état actuel de la lumière d'Orvane." }
+          rafaelle:
+            - { id: ch30-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 50.", choices: ["28", "31", "33", "35", "38"], answer: "31", hint: "81 − 50." }
+            - { id: ch30-j2-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « El zorro vigila desde siempre. »", choices: ["Le renard veille depuis toujours.", "Le renard dort depuis toujours.", "Le renard a disparu hier.", "Le renard chante chaque soir.", "Le renard se cache toujours."], answer: "Le renard veille depuis toujours.", hint: "« Vigila desde siempre » = veille depuis toujours." }
+      - id: m3
+        title: Nourrir une lumière
+        tours:
+          axelle:
+            - { id: ch30-j2-ax-m3a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on l'ensemble des décisions et des actions qui forment le déroulement d'une aventure ?", choices: ["un voyage", "une pause", "une récompense", "un décor", "une veillée"], answer: "un voyage", hint: "C'est ce que les trois sœurs ont vécu depuis le premier chapitre." }
+            - { id: ch30-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 4.", choices: ["24", "26", "27", "28", "30"], answer: "28", hint: "7 × 4 = 7 × 2 × 2." }
+          maelle:
+            - { id: ch30-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 288 ÷ 4.", choices: ["68", "70", "72", "74", "76"], answer: "72", hint: "4 × 72 = 288." }
+            - { id: ch30-j2-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi apprendre que chacune de ses décisions a eu une conséquence réelle, même invisible, peut-il changer la façon de regarder son propre parcours ?", choices: ["cela donne un sens rétrospectif à chaque choix, même ceux qui semblaient anodins sur le moment", "apprendre cela n'a jamais aucun effet sur la façon de voir son parcours", "cela n'a aucun lien avec la perception d'un voyage", "il vaut toujours mieux ignorer les conséquences de ses propres décisions", "une telle révélation n'apporte jamais rien de particulier à une histoire personnelle"], answer: "cela donne un sens rétrospectif à chaque choix, même ceux qui semblaient anodins sur le moment", hint: "Pense à la réaction de Maelle, en apprenant que chaque décision a nourri ou affaibli la lumière d'Orvane." }
+          rafaelle:
+            - { id: ch30-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 8x − 6 = 42.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "8x = 48." }
+            - { id: ch30-j2-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Chacune de vos décisions a nourri ou affaibli la lumière d'Orvane. » : que révèle cette phrase sur la nature du voyage des sœurs ?", choices: ["que leurs choix successifs ont eu un impact cumulatif et invisible sur un être qu'elles ne connaissaient pas encore", "que leurs décisions n'ont jamais eu aucune conséquence réelle", "qu'Orvane n'a aucun lien avec le voyage des trois sœurs", "que seule la toute dernière décision aura une quelconque importance", "que les décisions passées ne comptent jamais dans un récit"], answer: "que leurs choix successifs ont eu un impact cumulatif et invisible sur un être qu'elles ne connaissaient pas encore", hint: "Relis bien la phrase du Veilleur, sur les décisions qui nourrissent ou affaiblissent la lumière d'Orvane." }
+      - id: m4
+        title: S'exercer à se souvenir
+        tours:
+          axelle:
+            - { id: ch30-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 5.", choices: ["25", "27", "28", "30", "32"], answer: "30", hint: "6 × 5 = 6 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch30-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 330 − 157.", choices: ["170", "172", "173", "175", "177"], answer: "173", hint: "330 − 160 + 3." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch30-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Cada vínculo lo mantiene con vida. »", choices: ["Chaque lien le maintient en vie.", "Chaque lien l'affaiblit toujours.", "Chaque lien disparaît vite.", "Chaque lien fait peur à Orvane.", "Chaque lien reste invisible."], answer: "Chaque lien le maintient en vie.", hint: "« Lo mantiene con vida » = le maintient en vie." }
+            - { gen: maths.duree }
+    pause: "Le jeu de la révélation partagée : chaque sœur raconte, en une phrase, ce qu'elle ressent en apprenant que son propre voyage avait, depuis le début, un sens plus grand qu'elle ne l'imaginait."
+    closing:
+      - { who: narrateur, text: "Le soir venu, les trois sœurs restèrent longuement silencieuses, assises près de l'arche, essayant de mesurer tout ce que cette révélation changeait à leur compréhension du voyage." }
+      - { who: veilleur, text: "Demain, je vous conduirai enfin devant Orvane. Préparez-vous, cette nuit, à voir ce que peu de voyageurs ont eu la chance de contempler." }
+      - { who: axelle, text: "On sera prêtes, Veilleur. Vraiment prêtes, cette fois." }
+      - { who: narrateur, text: "Et tandis que la nuit tombait sur le sommet, une faible lueur argentée sembla percer, l'espace d'un instant, entre les pierres de l'arche ancienne." }
+    reward: "l'histoire d'Orvane, révélée par le Veilleur"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: Ce que chaque chemin a construit
+    decor: Le sommet, où le Veilleur invite les trois sœurs à se remémorer, ensemble, les grandes étapes de leur voyage, avant de franchir l'arche.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, le Veilleur invita les trois sœurs à se remémorer, ensemble, les grandes étapes de leur voyage, avant de franchir enfin l'arche ancienne." }
+      - { who: veilleur, text: "Repensez à tout ce chemin, petites voyageuses : Nilo retrouvé, Plume découvert, tant de personnages rencontrés, aidés, parfois perdus de vue. Tout cela a un poids, devant Orvane." }
+      - { who: maelle, text: "C'est étrange de penser que tout ça compte encore, maintenant, au moment où on arrive enfin au bout." }
+      - { who: veilleur, text: "C'est même maintenant que cela compte le plus, petite Cartographe. La fin d'un voyage révèle toujours ce que le voyage, en vérité, a construit." }
+      - { who: rafaelle, text: "Et si on avait fait de mauvais choix, en chemin, qu'est-ce qui se serait passé pour Orvane ?" }
+      - { who: veilleur, text: "Sa lumière se serait affaiblie davantage, petite Archiviste. Mais rien n'est jamais complètement perdu, tant qu'il reste un dernier geste à faire." }
+      - { who: axelle, text: "C'est plutôt rassurant, dit comme ça." }
+      - { who: veilleur, text: "C'est voulu, petite Veilleuse. L'espoir, lui aussi, fait partie de ce qui maintient Orvane en vie." }
+    manches:
+      - id: m1
+        title: Se remémorer le chemin
+        tours:
+          axelle:
+            - { id: ch30-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 6 personnages rencontrés durant les premiers chapitres, et 3 de plus durant les derniers. Combien de personnages en tout ?", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "6 + 3." }
+            - { id: ch30-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « perdu » (en parlant de vue) ?", choices: ["retrouvé", "oublié", "disparu", "égaré", "effacé"], answer: "retrouvé", hint: "Le contraire de ce qui est arrivé à certains personnages, selon le Veilleur." }
+          maelle:
+            - { id: ch30-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi la fin d'un long voyage révèle-t-elle souvent ce que ce voyage a véritablement construit chez ceux qui l'ont vécu ?", choices: ["parce que le recul permet de mesurer l'ensemble des expériences accumulées et leur effet cumulé", "parce que la fin d'un voyage n'a jamais aucun lien avec ce qu'il a construit", "cela n'a aucune explication particulière", "il est toujours impossible de mesurer l'effet d'un voyage sur une personne", "seul le tout début d'un voyage a une quelconque importance"], answer: "parce que le recul permet de mesurer l'ensemble des expériences accumulées et leur effet cumulé", hint: "Pense à ce que dit le Veilleur sur la fin d'un voyage, qui révèle ce qu'il a construit." }
+            - { id: ch30-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 87 + 56.", choices: ["138", "140", "142", "143", "145"], answer: "143", hint: "87 + 60 − 4." }
+          rafaelle:
+            - { id: ch30-j3-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi l'idée que « rien n'est jamais complètement perdu, tant qu'il reste un dernier geste à faire » peut-elle être une leçon précieuse, au-delà de ce récit ?", choices: ["elle rappelle que l'espoir et l'action restent possibles même après des difficultés ou des erreurs passées", "cette idée n'a jamais aucune valeur, dans aucun contexte", "cela n'a aucun lien avec la notion d'espoir", "il vaut toujours mieux considérer une situation comme définitivement perdue", "une telle leçon n'apporte jamais rien de concret à qui l'entend"], answer: "elle rappelle que l'espoir et l'action restent possibles même après des difficultés ou des erreurs passées", hint: "Repense à ce que dit le Veilleur sur l'espoir, qui fait partie de ce qui maintient Orvane en vie." }
+            - { id: ch30-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14 × 6.", choices: ["80", "82", "84", "86", "88"], answer: "84", hint: "14 × 6 = 14 × 3 × 2." }
+      - id: m2
+        title: Le poids des choix passés
+        tours:
+          axelle:
+            - { id: ch30-j3-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Tout ce chemin a un poids. » ?", choices: ["un poids", "a", "Tout ce chemin", "tout", "chemin"], answer: "Tout ce chemin", hint: "Qu'est-ce qui a un poids, devant Orvane, selon le Veilleur ?" }
+            - { id: ch30-j3-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 7.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "9 + 7 = 9 + 9 − 2." }
+          maelle:
+            - { id: ch30-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 364 ÷ 4.", choices: ["86", "88", "90", "91", "93"], answer: "91", hint: "4 × 91 = 364." }
+            - { id: ch30-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « rassurant » dans « c'est plutôt rassurant » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le sentiment d'Axelle, après les explications du Veilleur." }
+          rafaelle:
+            - { id: ch30-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 11² − 70.", choices: ["48", "51", "53", "56", "58"], answer: "51", hint: "121 − 70." }
+            - { id: ch30-j3-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « El final se escribe juntos. »", choices: ["La fin s'écrit ensemble.", "La fin se cache toujours.", "La fin n'existe jamais.", "La fin se répète souvent.", "La fin fait peur à tous."], answer: "La fin s'écrit ensemble.", hint: "« Se escribe juntos » = s'écrit ensemble." }
+      - id: m3
+        title: L'espoir qui demeure
+        tours:
+          axelle:
+            - { id: ch30-j3-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 6.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "14 − 6 = 8." }
+            - { id: ch30-j3-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un être symbolique comme Orvane, dont la lumière dépend des actions des voyageurs, représente-t-il bien l'idée que les choix ont des conséquences durables ?", choices: ["parce qu'il incarne de façon sensible et visible l'accumulation des effets, souvent invisibles, de chaque décision", "un tel être n'a jamais aucun lien symbolique avec les conséquences des choix", "cela n'a aucune explication particulière", "les choix n'ont jamais aucune conséquence durable, dans aucun récit", "un être symbolique n'apporte jamais rien à la compréhension d'une histoire"], answer: "parce qu'il incarne de façon sensible et visible l'accumulation des effets, souvent invisibles, de chaque décision", hint: "Pense à ce que représente Orvane, dont la lumière reflète tout le chemin parcouru par les trois sœurs." }
+          maelle:
+            - { id: ch30-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 46 × 4.", choices: ["178", "182", "184", "186", "190"], answer: "184", hint: "46 × 4 = 50 × 4 − 4 × 4." }
+            - { id: ch30-j3-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi se remémorer ensemble les étapes d'un voyage, juste avant un moment décisif, peut-il aider à mieux affronter ce moment ?", choices: ["parce que cela rassemble la force et la confiance accumulées tout au long du chemin parcouru", "se remémorer un voyage n'a jamais aucune utilité avant un moment décisif", "cela n'a aucun lien avec la préparation d'un moment important", "il vaut toujours mieux oublier complètement le chemin parcouru", "un tel rappel n'apporte jamais rien de concret avant une épreuve"], answer: "parce que cela rassemble la force et la confiance accumulées tout au long du chemin parcouru", hint: "Pense à l'objectif du Veilleur, en invitant les sœurs à se remémorer leur voyage avant de franchir l'arche." }
+          rafaelle:
+            - { id: ch30-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 7x − 8 = 34.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "7x = 42." }
+            - { id: ch30-j3-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au futur simple : « Nous (franchir) cette arche, ensemble, toutes les trois. »", choices: ["nous franchirons", "nous franchissons", "nous franchissions", "nous franchîmes", "nous franchirions"], answer: "nous franchirons", hint: "Futur simple de « franchir »." }
+      - id: m4
+        title: Comprendre le dernier geste
+        tours:
+          axelle:
+            - { id: ch30-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 5.", choices: ["40", "42", "44", "45", "48"], answer: "45", hint: "9 × 5 = 9 × 10 ÷ 2." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch30-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 295 − 137.", choices: ["150", "154", "156", "158", "160"], answer: "158", hint: "295 − 140 + 3." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch30-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El viaje cambia a quien lo vive. »", choices: ["Le voyage change celui qui le vit.", "Le voyage reste toujours pareil.", "Le voyage n'apprend jamais rien.", "Le voyage effraie tout le monde.", "Le voyage prend une minute."], answer: "Le voyage change celui qui le vit.", hint: "« Cambia a quien lo vive » = change celui qui le vit." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu du souvenir partagé : chaque sœur raconte, en une phrase, le moment du voyage dont elle est le plus fière, pour se préparer, le cœur léger, à franchir l'arche le lendemain."
+    closing:
+      - { who: narrateur, text: "La soirée se prolongea doucement sur le sommet, entre souvenirs et silences, tandis que la faible lueur argentée, derrière l'arche, semblait répondre, par instants, aux récits des trois sœurs." }
+      - { who: veilleur, text: "Demain, enfin, vous franchirez cette arche, et vous verrez Orvane de vos propres yeux. Prenez cette dernière nuit pour vous y préparer, le cœur aussi léger que possible." }
+      - { who: rafaelle, text: "On y réfléchira, c'est promis. Merci de nous avoir préparées à ça." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs s'installaient pour la nuit, Nilo observait le Veilleur rester encore un long moment près de l'arche, pensif, comme s'il mesurait, lui aussi, le poids de ce qui allait enfin se révéler." }
+    reward: "le souvenir rassemblé de tout le voyage parcouru"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Devant Orvane
+    decor: Juste derrière l'arche de pierre, un espace baigné d'une lumière argentée et vacillante, où Orvane, l'antique renard de lumière, attend enfin les trois sœurs.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, le Veilleur conduisit enfin les trois sœurs à travers l'arche de pierre, jusqu'à un espace baigné d'une lumière argentée et vacillante." }
+      - { who: narrateur, text: "Là, au centre, se tenait Orvane : un immense renard de lumière, aussi ancien que la montagne elle-même, dont l'éclat tremblait doucement, comme une flamme fatiguée par un trop long hiver." }
+      - { who: axelle, text: "Il est... magnifique. Et un peu fragile, en même temps, non ?" }
+      - { who: veilleur, text: "Exactement cela, petite Veilleuse. Sa lumière reflète tout ce que votre voyage a nourri, ou laissé s'affaiblir, sans que vous le sachiez jusqu'ici." }
+      - { who: maelle, text: "Et il reste quelque chose à faire, pour l'aider vraiment, maintenant qu'on est là ?" }
+      - { who: veilleur, text: "Un dernier geste, petite Cartographe, avant la décision la plus importante de tout votre voyage. C'est ce que nous préparerons, dans les jours qui viennent." }
+      - { who: rafaelle, text: "On est prêtes à faire ce qu'il faut, pour lui." }
+      - { who: veilleur, text: "J'en suis certain, petite Archiviste. Vous l'avez prouvé, chapitre après chapitre, depuis le tout début." }
+    manches:
+      - id: m1
+        title: Le renard de lumière
+        tours:
+          axelle:
+            - { id: ch30-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « vacillante » (en parlant d'une lumière) ?", choices: ["stable", "tremblante", "fragile", "faible", "incertaine"], answer: "stable", hint: "Le contraire de ce qu'est la lumière d'Orvane, en ce moment." }
+            - { id: ch30-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 6.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "8 + 6 = 8 + 8 − 2." }
+          maelle:
+            - { id: ch30-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi une décision finale, prise après avoir compris tout l'enjeu d'une situation, est-elle souvent plus réfléchie qu'une décision prise sans aucune information ?", choices: ["parce qu'elle s'appuie sur une compréhension complète de ce qui est en jeu, plutôt que sur une simple impulsion", "parce qu'une décision finale n'a jamais aucun avantage particulier", "cela n'a aucun lien avec la qualité d'une décision", "parce qu'une décision sans information est toujours meilleure", "parce que comprendre une situation retarde toujours inutilement une décision"], answer: "parce qu'elle s'appuie sur une compréhension complète de ce qui est en jeu, plutôt que sur une simple impulsion", hint: "Pense à tout ce que le Veilleur a expliqué aux sœurs sur Orvane, avant cette rencontre." }
+            - { id: ch30-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 92 + 59.", choices: ["146", "148", "150", "151", "153"], answer: "151", hint: "92 + 60 − 1." }
+          rafaelle:
+            - { id: ch30-j4-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Vous l'avez prouvé, chapitre après chapitre, depuis le tout début. » : que révèle cette phrase sur le regard du Veilleur envers les trois sœurs ?", choices: ["qu'il reconnaît en elles une constance et une valeur démontrées tout au long du récit", "qu'il doute profondément de leur capacité à agir correctement", "qu'il n'a jamais observé leur comportement durant le voyage", "qu'il considère leur voyage comme sans aucune valeur", "qu'il préfère ignorer tout ce qu'elles ont accompli jusqu'ici"], answer: "qu'il reconnaît en elles une constance et une valeur démontrées tout au long du récit", hint: "Repense à la confiance exprimée par le Veilleur envers les trois sœurs, à la fin de cette scène." }
+            - { id: ch30-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13² − 100.", choices: ["59", "63", "66", "69", "73"], answer: "69", hint: "169 − 100." }
+      - id: m2
+        title: Fragile et magnifique
+        tours:
+          axelle:
+            - { id: ch30-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 15 − 8.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "15 − 5 = 10, puis − 3." }
+            - { id: ch30-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi une flamme qui vacille, comme celle d'Orvane, est-elle souvent utilisée comme image pour représenter une vie fragile ou menacée ?", choices: ["une flamme instable évoque visuellement le risque de s'éteindre, comme une vie en danger", "une flamme vacillante n'a jamais aucun lien symbolique avec la fragilité", "cela n'a aucune explication particulière", "une flamme stable représente toujours mieux la fragilité qu'une flamme vacillante", "une image de flamme n'apporte jamais rien à la compréhension d'un récit"], answer: "une flamme instable évoque visuellement le risque de s'éteindre, comme une vie en danger", hint: "Pense à la lumière d'Orvane, comparée à une flamme fatiguée par un trop long hiver." }
+          maelle:
+            - { id: ch30-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 351 ÷ 3.", choices: ["107", "111", "115", "117", "119"], answer: "117", hint: "3 × 117 = 351." }
+            - { id: ch30-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « certaine » dans « j'en suis certaine » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la confiance exprimée par le Veilleur." }
+          rafaelle:
+            - { id: ch30-j4-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 8² + 2 × 10.", choices: ["74", "78", "82", "84", "88"], answer: "84", hint: "64 + 20." }
+            - { id: ch30-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Le sommet garde un secret ancien » en espagnol ?", choices: ["La cumbre guarda un secreto antiguo.", "El zorro vigila desde siempre.", "Cada vínculo lo mantiene con vida.", "El final se escribe juntos.", "El viaje cambia a quien lo vive."], answer: "La cumbre guarda un secreto antiguo.", hint: "Relis la phrase du jour 1." }
+      - id: m3
+        title: Se préparer au dernier geste
+        tours:
+          axelle:
+            - { id: ch30-j4-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Le Veilleur conduisit les trois sœurs. » ?", choices: ["les trois sœurs", "conduisit", "Le Veilleur", "le", "Veilleur"], answer: "Le Veilleur", hint: "Qui conduit les trois sœurs à travers l'arche ?" }
+            - { id: ch30-j4-ax-m3b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 11 − 5.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "11 − 5 = 6." }
+          maelle:
+            - { id: ch30-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 4.", choices: ["108", "112", "114", "116", "120"], answer: "116", hint: "30 × 4 − 4." }
+            - { id: ch30-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi prendre le temps de se préparer, ensemble, avant un moment décisif, comme le dernier geste envers Orvane, peut-il en améliorer l'issue ?", choices: ["parce que cela permet d'aborder le moment avec plus de clarté, de calme et de détermination", "se préparer avant un moment décisif n'a jamais aucune utilité", "cela n'a aucun lien avec la réussite d'un moment important", "il vaut toujours mieux agir sans aucune préparation", "une préparation collective n'apporte jamais rien à un moment décisif"], answer: "parce que cela permet d'aborder le moment avec plus de clarté, de calme et de détermination", hint: "Pense à l'objectif du Veilleur, en annonçant qu'il faudra préparer ce dernier geste, dans les jours qui viennent." }
+          rafaelle:
+            - { id: ch30-j4-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 4x + 11 = 35.", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "4x = 24." }
+            - { id: ch30-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Il est magnifique, et un peu fragile, en même temps. » : quelle figure de style relie ici « magnifique » et « fragile » ?", choices: ["une opposition", "une comparaison", "une énumération", "une répétition", "une personnification"], answer: "une opposition", hint: "Les deux qualités semblent contraires, et pourtant coexistent chez Orvane." }
+      - id: m4
+        title: Un moment suspendu
+        tours:
+          axelle:
+            - { id: ch30-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 5.", choices: ["30", "32", "33", "35", "38"], answer: "35", hint: "7 × 5 = 7 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch30-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 260 − 118.", choices: ["138", "140", "142", "144", "146"], answer: "142", hint: "260 − 120 + 2." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch30-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15 × 6.", choices: ["86", "88", "90", "92", "94"], answer: "90", hint: "15 × 6 = 15 × 3 × 2." }
+            - { gen: maths.duree }
+    pause: "Le jeu du souffle partagé face à Orvane : chaque sœur, en silence, pose une main sur son cœur et respire profondément, pour se préparer, avec calme, au dernier geste qui approche."
+    closing:
+      - { who: narrateur, text: "Le soir venu, les trois sœurs restèrent un long moment face à Orvane, dont la lumière continuait de vaciller doucement, comme en attente de ce qui allait se jouer." }
+      - { who: veilleur, text: "Demain, il faudra enfin choisir : quel dernier geste offrir à Orvane, pour ce moment qui compte plus que tous les autres. Réfléchissez-y bien, cette nuit." }
+      - { who: axelle, text: "On y réfléchira sérieusement, c'est promis." }
+      - { who: narrateur, text: "Et tandis que la nuit tombait sur le sommet, la lumière d'Orvane continua de trembler doucement dans l'obscurité, fragile, patiente, comme suspendue entre deux souffles." }
+    reward: "la rencontre avec Orvane, l'antique renard de lumière"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: Le dernier geste
+    decor: Devant Orvane, dans la lumière argentée et vacillante de l'esprit ancien, où les trois sœurs s'apprêtent enfin à offrir leur dernier geste, selon la décision prise la veille.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, devant Orvane, dont la lumière argentée vacillait toujours doucement, les trois sœurs s'apprêtèrent enfin à offrir leur dernier geste, selon la décision prise la veille." }
+      - { who: veilleur, text: "Tout ce que vous avez vécu a nourri ou affaibli sa lumière. Il reste un dernier geste à faire. Que voulez-vous offrir à Orvane, pour ce moment qui compte plus que tous les autres ? »" }
+      - { who: nilo, text: "Allez, les filles. Après tout ce chemin, c'est le moment. Je crois en vous, comme toujours." }
+    manches:
+      - id: m1
+        title: Ce que le voyage entier a appris
+        intro: "Le Veilleur interroge chaque sœur sur tout ce que ce long voyage, depuis le tout premier chapitre, lui a appris."
+        tours:
+          axelle:
+            - { id: ch30-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on le point le plus haut d'une montagne ?", choices: ["le sommet", "la vallée", "la plaine", "le gouffre", "la falaise"], answer: "le sommet", hint: "C'est l'endroit où les trois sœurs se trouvent enfin." }
+            - { id: ch30-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 + 5.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "8 + 5 = 8 + 2 + 3." }
+          maelle:
+            - { id: ch30-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi une lumière symbolique, comme celle d'Orvane, peut-elle représenter la vitalité d'un être, comme tu l'as appris cette semaine ?", choices: ["la lumière est souvent associée à la vie, à l'énergie et à la présence, par opposition à l'obscurité et à la disparition", "la lumière n'a jamais aucun lien symbolique avec la vitalité", "cela n'a aucune explication particulière", "l'obscurité représente toujours la vitalité, jamais la lumière", "un symbole lumineux n'a jamais aucune signification dans un récit"], answer: "la lumière est souvent associée à la vie, à l'énergie et à la présence, par opposition à l'obscurité et à la disparition", hint: "Repense à ta propre question du deuxième jour." }
+            - { id: ch30-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 42 × 4.", choices: ["162", "164", "166", "168", "170"], answer: "168", hint: "42 × 4 = 40 × 4 + 2 × 4." }
+          rafaelle:
+            - { id: ch30-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que le Veilleur incarne la valeur de la constance, à travers tout ce récit, du tout premier chapitre jusqu'à ce sommet ?", choices: ["parce qu'il a gardé fidèlement, année après année, le secret et la responsabilité qui lui avaient été confiés", "parce que le Veilleur n'a jamais rien gardé de précieux", "parce qu'il refuse toujours de partager ce qu'il sait", "parce qu'il n'y a aucune leçon à tirer de son parcours", "parce que la constance n'a aucun lien avec son rôle dans le récit"], answer: "parce qu'il a gardé fidèlement, année après année, le secret et la responsabilité qui lui avaient été confiés", hint: "Repense à tout ce que les sœurs ont appris, depuis le tout début, sur le rôle du Veilleur." }
+            - { id: ch30-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 6/7 − 2/7.", choices: ["2/7", "3/7", "4/7", "5/7", "6/7"], answer: "4/7", hint: "6 − 2 = 4, même dénominateur." }
+      - id: m2
+        title: Avant le dernier geste
+        intro: "Il faut relier tout ce que le voyage entier a appris sur Orvane et sur elles-mêmes, avant d'offrir le dernier geste."
+        tours:
+          axelle:
+            - { id: ch30-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel nom désigne un esprit très ancien, lié à un lieu ou à un territoire, comme Orvane l'est pour cette montagne ?", choices: ["un esprit gardien", "un marchand", "un architecte", "un messager", "un berger"], answer: "un esprit gardien", hint: "C'est ce que représente Orvane pour toutes les terres traversées." }
+            - { id: ch30-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 15 − 7.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "15 − 7 = 8." }
+          maelle:
+            - { id: ch30-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi ce dernier chapitre, devant Orvane, a-t-il une importance toute particulière dans le voyage des trois sœurs ?", choices: ["il n'a aucune importance réelle", "il révèle le sens profond de tout le voyage, et leur offre la décision la plus importante de leur parcours", "il les empêche d'avancer vers le sommet", "il se trouve très loin des montagnes", "personne n'y vient jamais vraiment"], answer: "il révèle le sens profond de tout le voyage, et leur offre la décision la plus importante de leur parcours", hint: "Repense à tout ce que les sœurs ont vécu, depuis le début de ce chapitre, auprès du Veilleur et d'Orvane." }
+            - { id: ch30-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 408 ÷ 6.", choices: ["64", "66", "68", "70", "72"], answer: "68", hint: "6 × 68 = 408." }
+          rafaelle:
+            - { id: ch30-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10² − 55.", choices: ["40", "43", "45", "48", "50"], answer: "45", hint: "100 − 55." }
+            - { id: ch30-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Que voulez-vous offrir à Orvane ? » : à qui le Veilleur adresse-t-il cette question ?", choices: ["aux trois sœurs", "à lui-même", "à Nilo", "au narrateur", "à personne en particulier"], answer: "aux trois sœurs", hint: "Relis le début du cinquième jour." }
+      - id: m3
+        title: Le Chant du Dernier Geste
+        intro: "Devant Orvane, le Veilleur et les trois sœurs chantent ensemble, à voix basse mais avec tout leur cœur, pour accompagner le dernier geste de ce long voyage."
+        tours:
+          axelle:
+            - { id: ch30-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, blanche." }
+          maelle:
+            - { id: ch30-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          rafaelle:
+            - { id: ch30-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, blanche." }
+    concert:
+      measures:
+        axelle: { given: [1, 1], missing: 2, prompt: "Noire, noire, blanche" }
+        maelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        rafaelle: { given: [2], missing: 2, prompt: "Blanche, blanche" }
+    pause: "Le dernier regard partagé : avant la toute dernière note, chaque sœur se tourne vers ses deux sœurs, et toutes trois se tiennent la main, en silence, face à Orvane."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant du Dernier Geste se répandit sur le sommet tout entier, et devant les trois sœurs, la lumière d'Orvane répondit, vibrante, à ce qu'elles venaient d'offrir." }
+      - { who: veilleur, text: "Voilà, petites voyageuses. Le dernier geste est fait. Il ne reste plus, désormais, qu'une seule décision à prendre : celle qui ouvrira, pour vous, la suite de cette histoire." }
+      - { who: rafaelle, text: "On est prêtes, Veilleur. On a toujours été prêtes, en fait, depuis le tout premier chapitre." }
+      - { who: narrateur, text: "Et tandis que la lumière d'Orvane continuait de vibrer doucement, devant les trois sœurs réunies, l'arche ancienne, derrière elles, sembla elle aussi frémir, comme si plusieurs chemins, à la fois, s'ouvraient enfin devant elles." }
+      - { who: axelle, text: "Quelle que soit la suite, on y va ensemble, toutes les trois." }
+      - { who: nilo, text: "Ensemble, comme depuis le tout premier jour. Et maintenant, petites voyageuses : à vous de choisir la porte qui vous attend." }
+    reward: "le dernier geste offert à Orvane, et la décision finale à venir"
