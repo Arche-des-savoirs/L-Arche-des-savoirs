@@ -82,7 +82,9 @@ async function autoStep(page: Page, voteIndex: { n: number }, captures: Set<stri
   }
   if (await page.locator('.ui-choice').first().isVisible()) {
     if (!captures.has('qcm')) captures.add('qcm'), await cap(page, 'question-qcm');
-    return page.locator('.ui-choice').first().click();
+    // Au 2e essai, le choix déjà tenté est désactivé et barré (voir Inputs.tsx) :
+    // on prend le premier choix encore cliquable, pas forcément le premier du DOM.
+    return page.locator('.ui-choice:not([disabled])').first().click();
   }
   if (await page.locator('textarea.ui-input').isVisible()) return btn("J'ai répondu").click();
   if (await page.locator('input.ui-input').isVisible()) {
@@ -139,27 +141,24 @@ test('première séance : avatars, ouverture, tours, aides, placement, pause, à
   // Axelle, marche 1 : 396, 397, …, 399 → 398, avec l'indice de la Gardienne.
   await page.getByRole('button', { name: /Indice/ }).click();
   await expect(page.getByText(/Gardienne de l'indice, souffle/)).toBeVisible();
-  for (const k of ['3', '9', '8']) await page.locator('.ui-key', { hasText: new RegExp(`^${k}$`) }).click();
-  await page.locator('.ui-key-ok').click();
+  await page.getByRole('button', { name: '398', exact: true }).click();
   await expect(page.getByText(/Bravo, Axelle/)).toBeVisible();
   await page.getByRole('button', { name: 'Continuer' }).click();
 
-  // Marche 2 (ordre) puis deux erreurs : l'échelle s'arrête et donne la marche de départ.
+  // Marche 2 (ordre) puis deux erreurs (QCM) : l'échelle s'arrête et donne la marche de départ.
   await expect(page.getByText('Marche 2 sur 5')).toBeVisible();
   for (const v of ['53', '305', '350', '503', '530']) await page.getByRole('button', { name: v, exact: true }).click();
   await cap(page, 'question-ordre');
   await page.locator('.ui-order .ui-btn-main').click();
   await page.getByRole('button', { name: 'Continuer' }).click();
-  for (let essai = 0; essai < 2; essai++) {
-    await page.locator('.ui-key', { hasText: /^1$/ }).click();
-    await page.locator('.ui-key-ok').click();
-  }
+  // 247 + 135 = 382 : deux choix faux d'affilée (le 1er reste visible, barré, au 2e essai).
+  await page.getByRole('button', { name: '372', exact: true }).click();
+  await page.getByRole('button', { name: '383', exact: true }).click();
   await expect(page.getByText('La réponse était : 382')).toBeVisible();
   await page.getByRole('button', { name: 'Continuer' }).click();
-  await page.locator('.ui-key', { hasText: /^1$/ }).click();
-  await page.locator('.ui-key-ok').click();
-  await page.locator('.ui-key', { hasText: /^1$/ }).click();
-  await page.locator('.ui-key-ok').click();
+  // 4 caisses de 12 livres = 48 : deux choix faux d'affilée, 2e échec → arrêt du placement.
+  await page.getByRole('button', { name: '36', exact: true }).click();
+  await page.getByRole('button', { name: '44', exact: true }).click();
   await page.getByRole('button', { name: 'Continuer' }).click();
   await expect(page.getByText(/Axelle commence à la marche 2 sur 5/)).toBeVisible();
   await cap(page, 'placement');
