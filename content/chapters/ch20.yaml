@@ -1,0 +1,384 @@
+# Chapitre 20 — La Bibliothèque sans Fin
+# Chapitre MAJEUR (decisions.ts : MAJOR = {9, 12, 20, 22, 30}). Effet ORVANE [2, 0, 1] :
+# option A = orvane +2, B = orvane +0 (neutre), C = orvane +1. Réutilise le Scribe (déjà
+# établi, voix Rasalgethi) dans une immense bibliothèque sans fin, où se trouve consigné
+# tout ce qui a été écrit sur le lien entre les voyageurs et Orvane. Décision à forte
+# portée narrative (chapitre majeur), sans introduction de personnage ni de flag nouveau.
+
+id: ch20
+number: 20
+act: 2
+title: La Bibliothèque sans Fin
+introImage: ch20
+scene: bibliotheque-sans-fin
+
+espagnol:
+  - { es: "La biblioteca no tiene fin.", fr: "La bibliothèque n'a pas de fin." }
+  - { es: "Cada libro guarda un secreto.", fr: "Chaque livre garde un secret." }
+  - { es: "El escriba conoce todas las historias.", fr: "Le scribe connaît toutes les histoires." }
+  - { es: "Elegir con cuidado es sabio.", fr: "Choisir avec soin est sage." }
+  - { es: "El pasado ilumina el futuro.", fr: "Le passé éclaire l'avenir." }
+
+decision:
+  prompt: "Le Scribe pose sur la table un immense livre relié de cuir sombre, intitulé « Ce qui lie les voyageurs à Orvane ». « Ce livre se complète à chaque génération. Aujourd'hui, c'est à vous d'écrire la page qui vous concerne. Que voulez-vous y inscrire ? »"
+  options:
+    A:
+      label: "Inscrire la promesse de revenir, un jour, auprès d'Orvane"
+      scene: "Axelle prend la plume que lui tend le Scribe et inscrit, d'une main ferme, une promesse solennelle de revenir un jour auprès d'Orvane, quoi qu'il arrive."
+      line: { who: scribe, text: "Une promesse écrite dans ce livre engage plus profondément qu'une promesse murmurée dans le vent. Orvane la sentira, j'en suis certain." }
+      habillage: "Les épreuves prennent la tournure d'un engagement solennel envers un lien ancien, renforcé par l'écrit."
+    B:
+      label: "Inscrire simplement la date de ce passage, sans promesse"
+      scene: "Rafaelle, plus prudente, préfère n'inscrire que la date exacte de leur passage dans la bibliothèque, sans y ajouter de promesse qu'elle ne serait pas sûre de pouvoir tenir."
+      line: { who: scribe, text: "Une date, sobrement inscrite, a aussi sa valeur, petite Archiviste. Elle dit : « nous sommes passées ici », sans rien promettre de plus que la vérité." }
+      habillage: "Les épreuves deviennent des constats précis à consigner, sans engagement au-delà de ce qui est réellement su."
+    C:
+      label: "Inscrire ce que ce voyage leur a appris sur Orvane"
+      scene: "Maelle choisit d'inscrire, avec soin, tout ce que ce voyage leur a appris jusqu'ici sur Orvane, sans promesse ni simple date, mais un véritable témoignage."
+      line: { who: scribe, text: "Un témoignage sincère, petite Cartographe, voilà qui enrichit vraiment ce livre. Les pages suivantes s'en nourriront, je n'en doute pas." }
+      habillage: "Les épreuves prennent la forme de témoignages à rédiger avec attention, fidèles à ce qui a réellement été vécu."
+
+repliquesAbsurdes:
+  - "Si la bibliothèque n'a pas de fin, est-ce que quelqu'un a déjà essayé de la ranger entièrement, juste pour voir ?"
+  - "Mon renard a essayé de lire un livre. Il a surtout mangé un coin de page, et ça n'a rien résolu."
+  - "Est-ce qu'il existe un livre, dans cette bibliothèque, qui parle uniquement des livres qui parlent des autres livres ?"
+  - "Si chaque livre garde un secret, est-ce que la bibliothèque entière, c'est juste un immense coffre-fort en papier ?"
+  - "Après un village entier et une reine de brume, une bibliothèque sans fin, ça semble presque calme, en fait."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: Une bibliothèque sans fin
+    decor: Une immense bibliothèque aux rayonnages s'élevant à perte de vue, éclairée par des lanternes suspendues, où des escaliers mobiles permettent d'atteindre les étagères les plus hautes.
+    opening:
+      - { who: narrateur, text: "Le chemin, après le village suspendu, déboucha sur une porte de pierre gravée, qui s'ouvrit sur une immense bibliothèque aux rayonnages s'élevant à perte de vue." }
+      - { who: narrateur, text: "Des escaliers mobiles glissaient le long des étagères, et des lanternes flottaient doucement entre les rayons, éclairant des milliers, voire des millions de livres." }
+      - { who: rafaelle, text: "C'est... c'est immense. Je n'ai jamais vu autant de livres au même endroit !" }
+      - { who: narrateur, text: "Une silhouette familière descendit l'un des escaliers mobiles avec une agilité surprenante : le Scribe, qu'elles avaient déjà croisé, les accueillit d'un sourire chaleureux." }
+      - { who: scribe, text: "Bienvenue dans la Bibliothèque sans Fin, petites voyageuses. Ici sont consignées toutes les histoires qui méritent de ne jamais être oubliées." }
+      - { who: axelle, text: "Vraiment toutes les histoires ? Même les plus petites, les plus anciennes ?" }
+      - { who: scribe, text: "Toutes, petite Veilleuse. Et aujourd'hui, j'ai quelque chose d'important à vous montrer, qui vous concerne directement, vous et Orvane." }
+      - { who: maelle, text: "Qu'est-ce que c'est, exactement ?" }
+      - { who: scribe, text: "Patience, petite Cartographe. Laissez-moi d'abord vous faire visiter ces lieux, avant d'en arriver à ce qui compte vraiment." }
+    manches:
+      - id: m1
+        title: Des rayonnages à perte de vue
+        tours:
+          axelle:
+            - { id: ch20-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on un lieu où sont rangés et conservés de nombreux livres ?", choices: ["une bibliothèque", "une boulangerie", "une écurie", "un marché", "un atelier"], answer: "une bibliothèque", hint: "C'est le mot du titre de ce chapitre." }
+            - { id: ch20-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 + 9.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "7 + 9 = 7 + 7 + 2." }
+          maelle:
+            - { id: ch20-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi les grandes bibliothèques utilisent-elles parfois des escaliers mobiles ou des échelles coulissantes ?", choices: ["pour atteindre facilement les étagères les plus hautes sans les démonter", "parce que les escaliers mobiles n'ont aucune utilité réelle", "parce que les livres ne peuvent jamais être rangés en hauteur", "cela n'a aucune explication particulière", "parce que les bibliothèques n'ont jamais d'étagères hautes"], answer: "pour atteindre facilement les étagères les plus hautes sans les démonter", hint: "Pense à l'utilité des escaliers mobiles décrits dans la bibliothèque." }
+            - { id: ch20-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 94 + 68.", choices: ["158", "160", "162", "164", "166"], answer: "162", hint: "94 + 70 − 2." }
+          rafaelle:
+            - { id: ch20-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi les bibliothèques ont-elles, historiquement, joué un rôle essentiel dans la conservation du savoir humain ?", choices: ["parce qu'elles permettent de rassembler et de préserver des écrits qui, sinon, risqueraient de se perdre", "parce que les bibliothèques n'ont jamais conservé aucun savoir", "cela n'a aucune importance pour la transmission du savoir", "parce que les livres se conservent toujours seuls, sans bibliothèque", "parce que le savoir n'a jamais eu besoin d'être écrit"], answer: "parce qu'elles permettent de rassembler et de préserver des écrits qui, sinon, risqueraient de se perdre", hint: "Pense à ce que représente la Bibliothèque sans Fin pour le Scribe." }
+            - { id: ch20-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 19 × 5.", choices: ["90", "92", "93", "95", "98"], answer: "95", hint: "19 × 5 = 20 × 5 − 5." }
+      - id: m2
+        title: Toutes les histoires
+        tours:
+          axelle:
+            - { id: ch20-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Des lanternes flottaient doucement. » ?", choices: ["doucement", "flottaient", "Des lanternes", "des", "lanternes"], answer: "Des lanternes", hint: "Qu'est-ce qui flotte entre les rayons ?" }
+            - { id: ch20-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 13 − 5.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "13 − 3 = 10, puis − 2." }
+          maelle:
+            - { id: ch20-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « chaleureux » dans « un sourire chaleureux » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le sourire du Scribe." }
+            - { id: ch20-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 480 ÷ 6.", choices: ["70", "76", "78", "80", "82"], answer: "80", hint: "6 × 80 = 480." }
+          rafaelle:
+            - { id: ch20-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Toutes les histoires qui méritent de ne jamais être oubliées. » : que révèle cette phrase sur le rôle du Scribe ?", choices: ["qu'il se voit comme un gardien de la mémoire collective", "qu'il déteste écrire des histoires", "qu'il oublie volontairement certaines histoires", "qu'il ne garde que les histoires les plus récentes", "qu'il refuse de conserver quoi que ce soit"], answer: "qu'il se voit comme un gardien de la mémoire collective", hint: "Repense à ce que dit le Scribe sur la Bibliothèque sans Fin." }
+            - { id: ch20-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13² − 90.", choices: ["69", "73", "76", "79", "82"], answer: "79", hint: "169 − 90." }
+      - id: m3
+        title: Une visite guidée
+        tours:
+          axelle:
+            - { id: ch20-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 5 rayonnages d'un côté de la salle, et 6 de l'autre. Combien de rayonnages en tout ?", choices: ["9", "10", "11", "12", "13"], answer: "11", hint: "5 + 6." }
+            - { id: ch20-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi certaines bibliothèques protègent-elles leurs livres anciens de la lumière directe du soleil ?", choices: ["la lumière du soleil peut abîmer et décolorer les pages anciennes", "la lumière n'a jamais aucun effet sur le papier", "les livres anciens n'existent jamais vraiment", "cela n'a aucune explication particulière", "la lumière rend toujours les livres plus solides"], answer: "la lumière du soleil peut abîmer et décolorer les pages anciennes", hint: "Pense à pourquoi la bibliothèque est éclairée par des lanternes plutôt que par le soleil." }
+          maelle:
+            - { id: ch20-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 56 × 4.", choices: ["212", "216", "220", "222", "224"], answer: "224", hint: "56 × 4 = 56 × 2 × 2." }
+            - { id: ch20-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi un bibliothécaire ou un scribe se montre-t-il souvent attentif et bienveillant envers les visiteurs curieux ?", choices: ["parce que la curiosité pour les livres et les histoires est une qualité qu'il valorise particulièrement", "parce qu'un scribe n'apprécie jamais les visiteurs", "cela n'a aucun lien avec le métier de scribe", "parce que la curiosité est toujours mal vue dans une bibliothèque", "parce que les visiteurs ne sont jamais les bienvenus"], answer: "parce que la curiosité pour les livres et les histoires est une qualité qu'il valorise particulièrement", hint: "Pense à l'accueil que réserve le Scribe aux trois sœurs." }
+          rafaelle:
+            - { id: ch20-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 6x + 5 = 41.", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "6x = 36." }
+            - { id: ch20-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Le Scribe (descendre) l'escalier avec agilité. »", choices: ["est descendu", "descendait", "descendra", "descend", "descendant"], answer: "est descendu", hint: "« Descendre » se conjugue avec être au passé composé." }
+      - id: m4
+        title: Premiers rayons explorés
+        tours:
+          axelle:
+            - { id: ch20-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 3.", choices: ["21", "22", "24", "26", "28"], answer: "24", hint: "8 × 3 = 8 + 8 + 8." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch20-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 310 − 145.", choices: ["155", "160", "163", "165", "168"], answer: "165", hint: "310 − 150 + 5." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch20-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « La biblioteca no tiene fin. »", choices: ["La bibliothèque est fermée.", "La bibliothèque n'a pas de fin.", "La bibliothèque est petite.", "La bibliothèque brûle.", "La bibliothèque est vide."], answer: "La bibliothèque n'a pas de fin.", hint: "« No tiene fin » = n'a pas de fin." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu du titre inventé : chaque sœur invente, à voix haute, le titre d'un livre imaginaire qui pourrait se trouver dans cette bibliothèque sans fin, et les deux autres devinent de quoi il pourrait parler."
+    closing:
+      - { who: narrateur, text: "La visite se termina devant une porte discrète, gardée par deux statues de pierre représentant des lecteurs penchés sur leurs livres, immobiles depuis des siècles." }
+      - { who: scribe, text: "Derrière cette porte se trouve ce que je voulais vous montrer. Mais demain suffira. Reposez-vous cette nuit, vous en aurez besoin." }
+      - { who: rafaelle, text: "On a hâte de voir ce qui se cache derrière cette porte !" }
+      - { who: narrateur, text: "Et tandis que les trois sœurs s'installaient pour la nuit dans une alcôve tranquille de la bibliothèque, le silence des rayonnages semblait, lui aussi, retenir son souffle." }
+    reward: "la découverte de la Bibliothèque sans Fin et de son gardien, le Scribe"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Le livre qui les attendait
+    decor: Une petite salle ronde, derrière la porte gardée, où un unique livre relié de cuir sombre repose sur un pupitre, au centre de la pièce, baigné dans une lumière douce.
+    opening:
+      - { who: narrateur, text: "Le lendemain, le Scribe ouvrit enfin la porte gardée, révélant une petite salle ronde où un unique livre reposait sur un pupitre, baigné dans une lumière douce." }
+      - { who: scribe, text: "Voici le livre que je voulais vous montrer. Il s'intitule « Ce qui lie les voyageurs à Orvane », et il se complète à chaque génération." }
+      - { who: maelle, text: "Vous voulez dire que d'autres voyageurs, avant nous, ont déjà écrit dans ce livre ?" }
+      - { who: scribe, text: "Exactement, petite Cartographe. Chacun y a laissé une trace, selon ce que son propre voyage lui a appris sur Orvane." }
+      - { who: axelle, text: "Et nous aussi, on va pouvoir y écrire quelque chose ?" }
+      - { who: scribe, text: "C'est même pour cela que je vous ai conduites jusqu'ici, petite Veilleuse. Demain, ce sera à vous d'écrire votre page." }
+      - { who: rafaelle, text: "C'est... c'est une grande responsabilité, en fait." }
+      - { who: scribe, text: "Toute vérité importante en est une, petite Archiviste. Mais ne vous inquiétez pas : il n'y a pas de mauvaise façon d'être sincère." }
+    manches:
+      - id: m1
+        title: Un livre qui se complète
+        tours:
+          axelle:
+            - { id: ch20-j2-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « sincère » ?", choices: ["hypocrite", "honnête", "vrai", "fidèle", "franc"], answer: "hypocrite", hint: "Le contraire de quelqu'un qui dit vraiment ce qu'il pense." }
+            - { id: ch20-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 5.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "9 + 5 = 9 + 9 − 4." }
+          maelle:
+            - { id: ch20-j2-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi un livre transmis de génération en génération peut-il contenir des écritures de styles très différents ?", choices: ["parce que chaque génération y écrit avec ses propres mots et sa propre façon de s'exprimer", "parce qu'un tel livre n'a jamais plusieurs auteurs", "cela n'a aucune explication particulière", "parce que le style d'écriture ne change jamais dans le temps", "parce que seule la première génération a le droit d'écrire"], answer: "parce que chaque génération y écrit avec ses propres mots et sa propre façon de s'exprimer", hint: "Pense à ce que représente le livre « Ce qui lie les voyageurs à Orvane »." }
+            - { id: ch20-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 325 ÷ 5.", choices: ["55", "60", "63", "65", "68"], answer: "65", hint: "5 × 65 = 325." }
+          rafaelle:
+            - { id: ch20-j2-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi un registre transmis sur plusieurs générations constitue-t-il une source précieuse pour comprendre l'évolution d'une relation ou d'une tradition ?", choices: ["parce qu'il permet de voir comment cette relation a été vécue et comprise différemment au fil du temps", "parce qu'un tel registre n'a jamais aucune valeur historique", "cela n'a aucun lien avec l'évolution d'une tradition", "parce que seule la dernière génération compte vraiment", "parce que les traditions ne changent jamais au fil du temps"], answer: "parce qu'il permet de voir comment cette relation a été vécue et comprise différemment au fil du temps", hint: "Repense à ce que représente ce livre pour comprendre le lien avec Orvane au fil des générations." }
+            - { id: ch20-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 17 × 6.", choices: ["96", "98", "100", "102", "104"], answer: "102", hint: "17 × 6 = 17 × 3 × 2." }
+      - id: m2
+        title: Une grande responsabilité
+        tours:
+          axelle:
+            - { id: ch20-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 15 − 7.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "15 − 5 = 10, puis − 2." }
+            - { id: ch20-j2-ax-m2b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Ce livre se complète à chaque génération. » ?", choices: ["à chaque génération", "se complète", "Ce livre", "chaque", "génération"], answer: "Ce livre", hint: "Qu'est-ce qui se complète à chaque génération ?" }
+          maelle:
+            - { id: ch20-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 37 × 4.", choices: ["140", "144", "146", "148", "150"], answer: "148", hint: "37 × 4 = 40 × 4 − 3 × 4." }
+            - { id: ch20-j2-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « importante » dans « une vérité importante » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Elle décrit la vérité mentionnée par le Scribe." }
+          rafaelle:
+            - { id: ch20-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10² − 44.", choices: ["52", "54", "56", "58", "60"], answer: "56", hint: "100 − 44." }
+            - { id: ch20-j2-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Il n'y a pas de mauvaise façon d'être sincère. » : que signifie cette phrase ?", choices: ["que la sincérité, quelle que soit sa forme, est toujours légitime et acceptée", "qu'il existe toujours une seule bonne façon d'écrire dans ce livre", "que la sincérité n'a aucune valeur dans ce livre", "qu'il faut toujours cacher ce que l'on pense vraiment", "que seule une façon précise de s'exprimer est autorisée"], answer: "que la sincérité, quelle que soit sa forme, est toujours légitime et acceptée", hint: "Repense à ce que dit le Scribe pour rassurer Rafaelle." }
+      - id: m3
+        title: Les voyageurs d'avant elles
+        tours:
+          axelle:
+            - { id: ch20-j2-ax-m3a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on l'ensemble des personnes qui ont vécu avant nous, dans une même famille ou une même lignée ?", choices: ["les ancêtres", "les voisins", "les étrangers", "les inconnus", "les successeurs"], answer: "les ancêtres", hint: "Ce sont les générations précédentes." }
+            - { id: ch20-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 7.", choices: ["36", "38", "40", "42", "44"], answer: "42", hint: "6 × 7 = 6 × 6 + 6." }
+          maelle:
+            - { id: ch20-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 441 ÷ 7.", choices: ["57", "59", "61", "63", "65"], answer: "63", hint: "7 × 63 = 441." }
+            - { id: ch20-j2-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi savoir que d'autres ont vécu une expérience avant nous peut-il rassurer face à une décision importante ?", choices: ["parce que cela montre que l'on n'est pas seul face à ce type de choix", "parce que cela n'a jamais aucun effet rassurant", "cela n'a aucun lien avec une décision importante", "parce que seules les décisions inédites comptent vraiment", "parce que savoir qu'on a été précédé rend toujours plus anxieux"], answer: "parce que cela montre que l'on n'est pas seul face à ce type de choix", hint: "Pense à ce que ressent Rafaelle en apprenant que d'autres ont déjà écrit dans ce livre." }
+          rafaelle:
+            - { id: ch20-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 9x − 7 = 56.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "9x = 63." }
+            - { id: ch20-j2-ra-m3b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Cada libro guarda un secreto. »", choices: ["Chaque livre garde un secret.", "Chaque livre est lourd.", "Chaque livre est vieux.", "Chaque livre est perdu.", "Chaque livre est neuf."], answer: "Chaque livre garde un secret.", hint: "« Guarda un secreto » = garde un secret." }
+      - id: m4
+        title: Se préparer à écrire
+        tours:
+          axelle:
+            - { id: ch20-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 4.", choices: ["32", "34", "35", "36", "38"], answer: "36", hint: "9 × 4 = 9 × 2 × 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch20-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 295 − 138.", choices: ["150", "154", "157", "159", "161"], answer: "157", hint: "295 − 140 + 2." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch20-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El escriba conoce todas las historias. »", choices: ["Le scribe connaît toutes les histoires.", "Le scribe écrit vite.", "Le scribe dort beaucoup.", "Le scribe voyage souvent.", "Le scribe chante fort."], answer: "Le scribe connaît toutes les histoires.", hint: "« Conoce todas las historias » = connaît toutes les histoires." }
+            - { gen: maths.ranger }
+    pause: "Le jeu du brouillon oral : chaque sœur dit, à voix haute, une phrase qu'elle pourrait écrire dans le livre, avant d'en choisir la version définitive le lendemain."
+    closing:
+      - { who: narrateur, text: "Le Scribe referma délicatement la petite salle ronde, laissant le livre reposer sur son pupitre pour la nuit, dans l'attente de la page du lendemain." }
+      - { who: scribe, text: "Dormez bien, petites voyageuses. Demain, ce sera votre tour d'écrire, et ce que vous choisirez d'inscrire restera là pour longtemps." }
+      - { who: maelle, text: "On y réfléchira sérieusement, cette nuit encore." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs s'installaient pour la nuit, Nilo tournait en rond, visiblement songeur, comme s'il pesait, lui aussi, la responsabilité de ce qui allait être écrit." }
+    reward: "la découverte du livre « Ce qui lie les voyageurs à Orvane »"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: Les pages d'avant
+    decor: La petite salle ronde, où le Scribe feuillette avec précaution quelques-unes des plus anciennes pages du livre, montrant aux trois sœurs ce que d'autres voyageurs y ont écrit.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, le Scribe feuilleta avec précaution quelques-unes des plus anciennes pages du livre, pour montrer aux trois sœurs ce que d'autres voyageurs y avaient écrit, bien avant elles." }
+      - { who: scribe, text: "Regardez celle-ci : un voyageur, il y a bien longtemps, a simplement écrit qu'Orvane lui avait appris la patience. Rien de plus, rien de moins." }
+      - { who: rafaelle, text: "Et celle-là, plus récente, semble beaucoup plus longue. Qu'est-ce qu'elle raconte ?" }
+      - { who: scribe, text: "Celle-là raconte, en détail, comment Orvane a aidé ce voyageur à retrouver le courage qu'il croyait avoir perdu pour toujours." }
+      - { who: axelle, text: "Il n'y a donc pas qu'une seule bonne façon d'écrire dans ce livre ?" }
+      - { who: scribe, text: "Il n'y en a jamais eu, petite Veilleuse. Chacun écrit selon ce qu'il a vraiment vécu, et chaque page reste, à sa façon, précieuse." }
+      - { who: maelle, text: "C'est beau, en fait. Comme si chaque voyageur laissait un petit morceau de lui-même dans ce livre." }
+      - { who: scribe, text: "C'est exactement cela, petite Cartographe. Et demain, ce sera votre tour de laisser le vôtre." }
+    manches:
+      - id: m1
+        title: Des pages anciennes
+        tours:
+          axelle:
+            - { id: ch20-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 4 pages anciennes montrées le matin, et 3 de plus montrées l'après-midi. Combien de pages en tout ?", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "4 + 3." }
+            - { id: ch20-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire d'« ancienne » ?", choices: ["récente", "précieuse", "longue", "courte", "fragile"], answer: "récente", hint: "Le contraire de ce que sont les plus vieilles pages du livre." }
+          maelle:
+            - { id: ch20-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi comparer plusieurs témoignages écrits à différentes époques aide-t-il à mieux comprendre une relation qui dure longtemps ?", choices: ["parce que chaque témoignage apporte un éclairage différent sur cette relation", "parce qu'un seul témoignage suffit toujours à tout comprendre", "cela n'a aucun lien avec la compréhension d'une relation", "parce que les témoignages anciens n'ont jamais aucune valeur", "parce que comparer des témoignages n'apporte jamais rien de nouveau"], answer: "parce que chaque témoignage apporte un éclairage différent sur cette relation", hint: "Pense à la diversité des pages montrées par le Scribe." }
+            - { id: ch20-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 87 + 56.", choices: ["138", "140", "142", "143", "145"], answer: "143", hint: "87 + 60 − 4." }
+          rafaelle:
+            - { id: ch20-j3-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi la diversité des styles d'écriture dans un registre collectif, comme ce livre, en fait-elle une richesse plutôt qu'une faiblesse ?", choices: ["parce qu'elle reflète la diversité réelle des expériences et des personnalités des auteurs", "parce qu'un registre collectif doit toujours avoir un style unique", "cela n'a aucun lien avec la richesse d'un document", "parce que la diversité des styles rend toujours un document moins fiable", "parce que seuls les styles identiques ont une vraie valeur"], answer: "parce qu'elle reflète la diversité réelle des expériences et des personnalités des auteurs", hint: "Repense à ce que dit le Scribe sur le fait qu'il n'y a jamais eu une seule bonne façon d'écrire." }
+            - { id: ch20-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 16 × 6.", choices: ["90", "92", "94", "96", "98"], answer: "96", hint: "16 × 6 = 16 × 3 × 2." }
+      - id: m2
+        title: Patience, courage, mémoire
+        tours:
+          axelle:
+            - { id: ch20-j3-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quelle est la nature du mot « précieuse » dans « reste précieuse » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit chaque page du livre." }
+            - { id: ch20-j3-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 9.", choices: ["15", "16", "17", "18", "19"], answer: "17", hint: "8 + 9 = 8 + 8 + 1." }
+          maelle:
+            - { id: ch20-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 392 ÷ 7.", choices: ["52", "54", "56", "58", "60"], answer: "56", hint: "7 × 56 = 392." }
+            - { id: ch20-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « vraiment » dans « ce qu'il a vraiment vécu » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adverbe", hint: "Il modifie le verbe « a vécu »." }
+          rafaelle:
+            - { id: ch20-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 12² − 100.", choices: ["36", "40", "42", "44", "48"], answer: "44", hint: "144 − 100." }
+            - { id: ch20-j3-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Chacun écrit selon ce qu'il a vraiment vécu. » : que signifie cette phrase ?", choices: ["que l'écriture d'un témoignage doit refléter une expérience réellement vécue", "que chacun doit toujours inventer ce qu'il écrit", "qu'il est interdit d'écrire quoi que ce soit dans ce livre", "que seule l'imagination compte dans ce livre", "qu'il faut toujours copier ce que les autres ont déjà écrit"], answer: "que l'écriture d'un témoignage doit refléter une expérience réellement vécue", hint: "Relis bien la phrase du Scribe, en lien avec la sincérité évoquée plus tôt." }
+      - id: m3
+        title: Un morceau de soi
+        tours:
+          axelle:
+            - { id: ch20-j3-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 6.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "14 − 6 = 8." }
+            - { id: ch20-j3-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi certains livres anciens doivent-ils être feuilletés avec beaucoup de précaution ?", choices: ["leurs pages fragilisées par le temps peuvent facilement se déchirer ou s'abîmer", "les vieux livres ne s'abîment jamais", "cela n'a aucune explication particulière", "les pages anciennes sont toujours plus solides que les récentes", "les livres anciens n'ont jamais besoin d'être manipulés avec soin"], answer: "leurs pages fragilisées par le temps peuvent facilement se déchirer ou s'abîmer", hint: "Pense à la précaution du Scribe en feuilletant les anciennes pages." }
+          maelle:
+            - { id: ch20-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 46 × 4.", choices: ["178", "182", "184", "186", "190"], answer: "184", hint: "46 × 4 = 50 × 4 − 4 × 4." }
+            - { id: ch20-j3-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi écrire dans un registre partagé par plusieurs générations peut-il créer un sentiment de continuité et d'appartenance ?", choices: ["parce que cela relie chaque auteur à ceux qui ont écrit avant et après lui", "parce qu'un tel registre n'a jamais créé aucun sentiment particulier", "cela n'a aucun lien avec le sentiment d'appartenance", "parce que seule la première page compte vraiment dans un tel registre", "parce que le sentiment de continuité n'existe jamais dans l'écriture"], answer: "parce que cela relie chaque auteur à ceux qui ont écrit avant et après lui", hint: "Repense à ce que dit Maelle sur « un petit morceau de soi » laissé dans le livre." }
+          rafaelle:
+            - { id: ch20-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x − 6 = 29.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "5x = 35." }
+            - { id: ch20-j3-ra-m3b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Elegir con cuidado es sabio. »", choices: ["Choisir avec soin est sage.", "Choisir vite est inutile.", "Choisir seul fait peur.", "Choisir deux fois est permis.", "Choisir sans réfléchir est rapide."], answer: "Choisir avec soin est sage.", hint: "« Con cuidado » = avec soin." }
+      - id: m4
+        title: Se sentir prêtes
+        tours:
+          axelle:
+            - { id: ch20-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 6.", choices: ["40", "42", "44", "46", "48"], answer: "42", hint: "7 × 6 = 7 × 3 × 2." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch20-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 330 − 172.", choices: ["154", "156", "158", "160", "162"], answer: "158", hint: "330 − 180 + 8." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch20-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El pasado ilumina el futuro. »", choices: ["Le passé éclaire l'avenir.", "Le passé efface l'avenir.", "Le passé copie l'avenir.", "Le passé ignore l'avenir.", "Le passé retarde l'avenir."], answer: "Le passé éclaire l'avenir.", hint: "« Ilumina » = éclaire." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu de la page imaginée : chaque sœur imagine, à voix haute, ce qu'un tout premier voyageur aurait pu écrire dans ce livre, il y a très longtemps, avant même que personne ne se souvienne de son nom."
+    closing:
+      - { who: narrateur, text: "Le Scribe referma délicatement le livre, laissant les pages anciennes reposer, tandis que les trois sœurs restaient silencieuses, encore marquées par ce qu'elles venaient de lire." }
+      - { who: scribe, text: "Demain, ce sera votre tour. Prenez cette dernière nuit pour choisir, avec soin, ce que vous souhaitez vraiment inscrire." }
+      - { who: axelle, text: "On y réfléchira, c'est promis. On veut que ça compte vraiment." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs regagnaient leur alcôve pour la nuit, chacune, en silence, commença déjà à composer, dans sa tête, les mots qu'elle choisirait le lendemain." }
+    reward: "la lecture de pages anciennes, écrites par d'autres voyageurs avant elles"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Choisir ses mots
+    decor: La petite salle ronde, où les trois sœurs, installées autour du pupitre, discutent longuement de ce qu'elles souhaitent véritablement inscrire dans le livre.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, les trois sœurs s'installèrent autour du pupitre, encore vide de leur propre page, pour discuter longuement de ce qu'elles souhaitaient véritablement y inscrire." }
+      - { who: axelle, text: "Moi, je pense qu'on devrait promettre de revenir. Comme une vraie promesse, gravée pour toujours." }
+      - { who: rafaelle, text: "Moi, je préfère rester prudente. On ne sait pas encore ce qui nous attend. Une simple date me semble plus honnête." }
+      - { who: maelle, text: "Et moi, je crois qu'on devrait plutôt raconter ce qu'on a vraiment appris sur Orvane, depuis le début de ce voyage." }
+      - { who: narrateur, text: "Le Scribe, qui observait la discussion depuis un coin de la salle, s'approcha doucement, un sourire bienveillant aux lèvres." }
+      - { who: scribe, text: "Trois idées très différentes, et c'est exactement ce qui rend ce livre si vivant. Il n'y a pas de mauvaise réponse, seulement la vôtre." }
+      - { who: rafaelle, text: "Comment choisir, alors, entre trois idées qu'on aime toutes autant ?" }
+      - { who: scribe, text: "En écoutant, justement, laquelle vous semble la plus fidèle à ce que vous ressentez vraiment, petite Archiviste. Le reste suivra naturellement." }
+    manches:
+      - id: m1
+        title: Trois idées, un seul livre
+        tours:
+          axelle:
+            - { id: ch20-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « prudente » ?", choices: ["imprudente", "sage", "calme", "attentive", "réfléchie"], answer: "imprudente", hint: "Le contraire de quelqu'un qui réfléchit avant d'agir." }
+            - { id: ch20-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 6 + 8.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "6 + 8 = 6 + 6 + 2." }
+          maelle:
+            - { id: ch20-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi trois personnes face à une même décision peuvent-elles aboutir à trois choix différents, tout aussi valables ?", choices: ["parce que chacune ressent et interprète la situation selon sa propre sensibilité", "parce qu'une seule personne a toujours raison dans un groupe", "cela n'a jamais aucune explication particulière", "parce que les décisions personnelles n'ont jamais de valeur", "parce qu'il n'existe toujours qu'une seule bonne décision possible"], answer: "parce que chacune ressent et interprète la situation selon sa propre sensibilité", hint: "Pense aux trois propositions différentes des sœurs." }
+            - { id: ch20-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 620 − 275.", choices: ["335", "340", "343", "345", "348"], answer: "345", hint: "620 − 280 + 5." }
+          rafaelle:
+            - { id: ch20-j4-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« En écoutant laquelle vous semble la plus fidèle à ce que vous ressentez vraiment. » : quel conseil le Scribe donne-t-il ici ?", choices: ["de choisir en fonction de sa sincérité intérieure plutôt que d'une règle extérieure", "de choisir toujours l'idée la plus simple à écrire", "de laisser quelqu'un d'autre décider pour elles", "de ne jamais faire confiance à ses propres sentiments", "de choisir uniquement en fonction de ce que les autres pensent"], answer: "de choisir en fonction de sa sincérité intérieure plutôt que d'une règle extérieure", hint: "Relis bien le conseil donné à Rafaelle." }
+            - { id: ch20-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14² − 130.", choices: ["56", "60", "64", "66", "70"], answer: "66", hint: "196 − 130." }
+      - id: m2
+        title: Promettre, constater, témoigner
+        tours:
+          axelle:
+            - { id: ch20-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 17 − 8.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "17 − 7 = 10, puis − 1." }
+            - { id: ch20-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi une promesse écrite peut-elle sembler plus engageante qu'une promesse simplement dite à voix haute ?", choices: ["parce que l'écrit laisse une trace durable, difficile à oublier ou à renier", "parce qu'une promesse écrite n'engage jamais réellement", "cela n'a aucune explication particulière", "parce qu'une promesse orale est toujours plus forte qu'une promesse écrite", "parce que l'écrit disparaît toujours plus vite que la parole"], answer: "parce que l'écrit laisse une trace durable, difficile à oublier ou à renier", hint: "Pense à ce que propose Axelle, et à ce qu'en dit le Scribe." }
+          maelle:
+            - { id: ch20-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 5.", choices: ["135", "140", "142", "145", "148"], answer: "145", hint: "30 × 5 − 5." }
+            - { id: ch20-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « vivant » dans « ce qui rend ce livre si vivant » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le livre, selon le Scribe." }
+          rafaelle:
+            - { id: ch20-j4-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 7² + 3 × 10.", choices: ["69", "73", "76", "79", "82"], answer: "79", hint: "49 + 30." }
+            - { id: ch20-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Chaque livre garde un secret » en espagnol ?", choices: ["Cada libro guarda un secreto.", "El pasado ilumina el futuro.", "Elegir con cuidado es sabio.", "El escriba conoce todas las historias.", "La biblioteca no tiene fin."], answer: "Cada libro guarda un secreto.", hint: "Relis la phrase du jour 2." }
+      - id: m3
+        title: Écouter son propre ressenti
+        tours:
+          axelle:
+            - { id: ch20-j4-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Le Scribe s'approcha doucement. » ?", choices: ["doucement", "s'approcha", "Le Scribe", "le", "scribe"], answer: "Le Scribe", hint: "Qui s'approche doucement du pupitre ?" }
+            - { id: ch20-j4-ax-m3b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 10 − 4.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "10 − 4 = 6." }
+          maelle:
+            - { id: ch20-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 405 ÷ 5.", choices: ["75", "78", "80", "81", "85"], answer: "81", hint: "5 × 81 = 405." }
+            - { id: ch20-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi le fait d'écouter ses propres sentiments avant de prendre une décision importante est-il souvent recommandé ?", choices: ["parce que cela permet de faire un choix réellement fidèle à soi-même", "parce qu'écouter ses sentiments n'a jamais aucune utilité", "cela n'a aucun lien avec une décision importante", "parce qu'il vaut toujours mieux ignorer ce que l'on ressent", "parce que seules les règles extérieures comptent dans une décision"], answer: "parce que cela permet de faire un choix réellement fidèle à soi-même", hint: "Repense au conseil donné par le Scribe à Rafaelle." }
+          rafaelle:
+            - { id: ch20-j4-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 8x − 9 = 39.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "8x = 48." }
+            - { id: ch20-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au présent : « Nous (choisir) nos mots avec soin. »", choices: ["nous choisissons", "nous choisissez", "nous choisissent", "nous choisissions", "nous choisirons"], answer: "nous choisissons", hint: "Nous : -ssons." }
+      - id: m4
+        title: Presque prêtes
+        tours:
+          axelle:
+            - { id: ch20-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 5.", choices: ["35", "38", "40", "42", "44"], answer: "40", hint: "8 × 5 = 8 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch20-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 280 − 134.", choices: ["142", "144", "146", "148", "150"], answer: "146", hint: "280 − 140 + 6." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch20-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13 × 7.", choices: ["88", "90", "91", "93", "95"], answer: "91", hint: "13 × 7 = 13 × 7." }
+            - { gen: maths.duree }
+    pause: "Le jeu de la lecture à voix haute : chaque sœur lit, à voix haute, le brouillon qu'elle a imaginé la veille, et les deux autres disent, chacune, ce qui leur plaît le plus dans ce qu'elles entendent."
+    closing:
+      - { who: narrateur, text: "La nuit tomba sur la Bibliothèque sans Fin, et les trois sœurs, enfin apaisées, sentirent chacune leur choix se préciser clairement dans leur esprit." }
+      - { who: scribe, text: "Je sens que vous êtes presque prêtes. Demain, le livre vous attendra, ouvert sur une page toute blanche, juste pour vous." }
+      - { who: rafaelle, text: "On sera prêtes, demain matin. Promis." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs s'endormaient dans leur alcôve, le silence de la bibliothèque semblait, cette nuit-là, plus apaisant que jamais, comme pour veiller sur leurs derniers doutes." }
+    reward: "des mots choisis avec soin, prêts à être inscrits dans le livre"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: La page qui leur appartient
+    decor: La petite salle ronde, baignée par la lumière douce du matin, où le livre repose ouvert sur le pupitre, sur une page toute blanche attendant d'être écrite.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, le Scribe les attendait déjà devant le pupitre, où le livre reposait ouvert sur une page toute blanche, attendant d'être écrite." }
+      - { who: scribe, text: "Ce livre se complète à chaque génération. Aujourd'hui, c'est à vous d'écrire la page qui vous concerne. Que voulez-vous y inscrire ?" }
+      - { who: nilo, text: "Allez, les filles. Peu importe ce que vous choisirez d'écrire, ce sera, de toute façon, la vérité de ce voyage." }
+    manches:
+      - id: m1
+        title: Ce que la bibliothèque a appris
+        intro: "Le Scribe interroge chaque sœur sur tout ce que cette semaine passée dans la Bibliothèque sans Fin lui a appris."
+        tours:
+          axelle:
+            - { id: ch20-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on un lieu où sont rangés et conservés de nombreux livres ?", choices: ["une bibliothèque", "une boulangerie", "une écurie", "un marché", "un atelier"], answer: "une bibliothèque", hint: "C'est le mot du titre de ce chapitre." }
+            - { id: ch20-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 + 7.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "9 + 7 = 9 + 9 − 2." }
+          maelle:
+            - { id: ch20-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi les grandes bibliothèques utilisent-elles parfois des escaliers mobiles, comme tu l'as appris cette semaine ?", choices: ["pour atteindre facilement les étagères les plus hautes sans les démonter", "parce que les escaliers mobiles n'ont aucune utilité réelle", "parce que les livres ne peuvent jamais être rangés en hauteur", "cela n'a aucune explication particulière", "parce que les bibliothèques n'ont jamais d'étagères hautes"], answer: "pour atteindre facilement les étagères les plus hautes sans les démonter", hint: "Repense à ta propre question du premier jour." }
+            - { id: ch20-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 34 × 4.", choices: ["130", "132", "134", "136", "138"], answer: "136", hint: "34 × 4 = 35 × 4 − 4." }
+          rafaelle:
+            - { id: ch20-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que le livre « Ce qui lie les voyageurs à Orvane » illustre la valeur de la transmission entre générations ?", choices: ["parce qu'il rassemble, au fil du temps, les témoignages sincères de nombreux voyageurs successifs", "parce que ce livre n'a jamais été écrit par personne", "parce que seule la dernière page de ce livre a de l'importance", "parce qu'il n'y a aucune leçon à tirer de ce livre", "parce que la transmission entre générations n'a jamais existé dans ce livre"], answer: "parce qu'il rassemble, au fil du temps, les témoignages sincères de nombreux voyageurs successifs", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès du Scribe." }
+            - { id: ch20-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 7/8 − 3/8.", choices: ["2/8", "3/8", "4/8", "5/8", "6/8"], answer: "4/8", hint: "7 − 3 = 4, même dénominateur." }
+      - id: m2
+        title: Avant d'écrire
+        intro: "Il faut relier tout ce que la semaine à la bibliothèque a appris pour choisir, vraiment, ce qu'inscrire sur la page blanche."
+        tours:
+          axelle:
+            - { id: ch20-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux une parole ou un écrit qui dit vraiment ce que l'on pense ?", choices: ["sincère", "mensonger", "vague", "confus", "distrait"], answer: "sincère", hint: "C'est la qualité que le Scribe valorise le plus dans ce livre." }
+            - { id: ch20-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 16 − 9.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "16 − 6 = 10, puis − 3." }
+          maelle:
+            - { id: ch20-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi cette Bibliothèque sans Fin, et le livre qu'elle protège, ont-ils une importance particulière dans le voyage des trois sœurs ?", choices: ["elle n'a aucune importance réelle", "elle leur apprend la valeur de la sincérité et la force du lien avec Orvane", "elle les empêche d'avancer vers le sommet", "elle se trouve très loin des montagnes", "personne n'y vient jamais vraiment"], answer: "elle leur apprend la valeur de la sincérité et la force du lien avec Orvane", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès du Scribe." }
+            - { id: ch20-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 480 ÷ 8.", choices: ["55", "58", "60", "62", "65"], answer: "60", hint: "8 × 60 = 480." }
+          rafaelle:
+            - { id: ch20-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 50.", choices: ["25", "28", "31", "33", "35"], answer: "31", hint: "81 − 50." }
+            - { id: ch20-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Que voulez-vous y inscrire ? » : quel est le sujet de cette phrase ?", choices: ["y", "inscrire", "voulez-vous", "vous", "que"], answer: "vous", hint: "À qui le Scribe pose-t-il cette question ?" }
+      - id: m3
+        title: Le Chant de la Page Blanche
+        intro: "Avant d'écrire, les trois sœurs chantent une dernière fois ensemble, comme pour sceller, par la musique, ce qu'elles vont inscrire dans le livre."
+        tours:
+          axelle:
+            - { id: ch20-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          maelle:
+            - { id: ch20-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, noire, noire." }
+          rafaelle:
+            - { id: ch20-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : ronde." }
+    concert:
+      measures:
+        axelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        maelle: { given: [2, 1], missing: 1, prompt: "Blanche, noire, noire" }
+        rafaelle: { given: [], missing: 4, prompt: "Ronde" }
+    pause: "Le dernier regard sur la page : avant qu'elle ne soit refermée, chacune relit, en silence, ce qui vient d'être inscrit, et dit en un mot ce qu'elle en ressent."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant de la Page Blanche se répandit dans l'air silencieux de la bibliothèque, et le Scribe, avec une lenteur presque solennelle, referma le grand livre." }
+      - { who: scribe, text: "Votre page restera là, désormais, aux côtés de toutes les autres. Et un jour, peut-être, d'autres voyageurs la liront, comme vous avez lu celles d'avant vous." }
+      - { who: rafaelle, text: "Merci, Scribe. Pour cette bibliothèque, pour ce livre, et pour nous avoir laissé le temps de bien choisir." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs quittaient la petite salle ronde, le Scribe les raccompagna jusqu'à la grande porte de pierre, par laquelle le chemin continuait de grimper vers les sommets." }
+      - { who: nilo, text: "Encore une étape de passée, et une trace de nous, pour longtemps, dans ce drôle de livre. Pas mal, pour une semaine de bibliothèque." }
+      - { who: axelle, text: "On a toujours fini par trouver les bons mots, jusqu'ici. Et cette fois, en plus, ils resteront écrits pour toujours." }
+    reward: "la page écrite dans le livre « Ce qui lie les voyageurs à Orvane »"
