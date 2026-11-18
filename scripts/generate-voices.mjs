@@ -52,6 +52,7 @@ const VOICES = {
   pigeon: 'Sadaltager',
   fil: 'Algenib',
   cartea: 'Autonoe',
+  albin: 'Umbriel',
   axelle: 'Aoede',
   maelle: 'Leda',
   rafaelle: 'Erinome'
