@@ -1,0 +1,378 @@
+# Chapitre 26 — Le Carrousel du Temps Suspendu
+# Réutilise Chrono (voix Kore, déjà introduit au chapitre 21). Pas d'effet ORVANE ni de
+# drapeau pour ce chapitre (absent de decisions.ts) : décision purement narrative sur la
+# façon de réparer un grand carrousel astronomique qui marque le passage des saisons.
+
+id: ch26
+number: 26
+act: 2
+title: Le Carrousel du Temps Suspendu
+introImage: ch26
+scene: carrousel-du-temps
+
+espagnol:
+  - { es: "El carrusel marca las estaciones.", fr: "Le carrousel marque les saisons." }
+  - { es: "Una pieza falta en el engranaje.", fr: "Une pièce manque dans l'engrenage." }
+  - { es: "El tiempo no se repara solo.", fr: "Le temps ne se répare pas seul." }
+  - { es: "Cada estación tiene su lugar.", fr: "Chaque saison a sa place." }
+  - { es: "Reparar pide manos pacientes.", fr: "Réparer demande des mains patientes." }
+
+decision:
+  prompt: "Chrono s'agenouille devant un immense carrousel de bronze, orné de quatre figures représentant les saisons, dont l'une est figée, bloquée par un engrenage rouillé. « Je peux réparer cette pièce rapidement, de façon provisoire, pour qu'elle reparte tout de suite, ou prendre le temps de la reconstruire entièrement, à l'identique, pour qu'elle dure encore des siècles. Que préférez-vous ? »"
+  options:
+    A:
+      label: Prendre le temps de tout reconstruire à l'identique
+      scene: "Maelle encourage Chrono à prendre tout le temps nécessaire pour reconstruire la pièce manquante à l'identique, afin que le carrousel dure encore longtemps après leur passage."
+      line: { who: chrono, text: "Un choix qui respecte le travail bien fait, petite Cartographe. Cela prendra plus de jours, mais le résultat en vaudra la peine." }
+      habillage: "Les épreuves prennent la forme d'un travail minutieux et prolongé, pièce par pièce, pour une réparation durable."
+    B:
+      label: Réparer rapidement, de façon provisoire
+      scene: "Rafaelle, pressée de continuer la route, convainc Chrono de réparer la pièce rapidement, de façon provisoire, pour repartir sans trop de retard."
+      line: { who: chrono, text: "Une réparation rapide tiendra quelques années, petite Archiviste, mais il faudra qu'un autre horloger reprenne ce travail, un jour." }
+      habillage: "Les épreuves se déroulent dans la rapidité et l'efficacité immédiate, au prix d'une solution moins durable."
+    C:
+      label: Proposer d'aider Chrono à partager le travail entre réparation durable et rapidité
+      scene: "Axelle propose un compromis : aider Chrono à réparer solidement la pièce la plus visible du carrousel, tout en acceptant une réparation plus rapide pour les éléments moins essentiels."
+      line: { who: chrono, text: "Un compromis sensé, petite Veilleuse. Ni trop lent, ni trop hâtif. C'est souvent la meilleure voie, en matière d'horlogerie comme ailleurs." }
+      habillage: "Les épreuves prennent la forme d'un travail équilibré, mêlant minutie sur l'essentiel et rapidité sur le reste."
+
+repliquesAbsurdes:
+  - "Si le carrousel marque les saisons, est-ce qu'il se trompe parfois et annonce l'hiver en plein été, juste pour rire ?"
+  - "Mon renard a essayé de pousser la figure de l'automne pour la faire avancer plus vite. Résultat : il s'est juste retrouvé couvert de feuilles de bronze imaginaires."
+  - "Est-ce qu'on peut demander au carrousel de sauter directement à la saison des vacances, ou ce n'est pas comme ça que ça marche ?"
+  - "Si le temps ne se répare pas seul, est-ce qu'il demande au moins poliment de l'aide, ou il attend juste qu'on s'en occupe ?"
+  - "Après une nacelle au-dessus d'un gouffre et une tour pleine d'étoiles, réparer un carrousel géant, ça commence presque à devenir une habitude, en fait."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: Le carrousel figé
+    decor: Une place circulaire pavée de pierre claire, au centre de laquelle trône un immense carrousel de bronze orné de quatre figures représentant les saisons, dont l'une est figée.
+    opening:
+      - { who: narrateur, text: "Le sentier, après la tour de Véra, déboucha sur une place circulaire pavée de pierre claire, au centre de laquelle trônait un immense carrousel de bronze." }
+      - { who: narrateur, text: "Quatre figures sculptées, représentant les saisons, étaient censées tourner lentement autour d'un axe central, mais l'une d'elles restait étrangement figée, bloquée dans son mouvement." }
+      - { who: rafaelle, text: "Attendez, est-ce que ce n'est pas... Chrono ? Qu'est-ce qu'il fait ici, si loin de son horloge-mère ?" }
+      - { who: narrateur, text: "L'horloger, agenouillé devant le mécanisme, leva la tête en entendant son nom, et un sourire se dessina sur son visage marqué par les années." }
+      - { who: chrono, text: "Petite Archiviste ! Quelle joie de vous retrouver. Depuis notre dernière rencontre, je voyage de mécanisme en mécanisme, pour réparer ce qui en a besoin." }
+      - { who: axelle, text: "Et ce carrousel, là, qu'est-ce qu'il a exactement ?" }
+      - { who: chrono, text: "Une pièce manque dans son engrenage, petite Veilleuse. Depuis, la figure de l'automne reste bloquée, et les saisons ne tournent plus correctement." }
+      - { who: maelle, text: "Et vous savez comment la réparer ?" }
+      - { who: chrono, text: "Je crois bien, petite Cartographe. Mais il faudra d'abord décider ensemble de la meilleure façon de procéder." }
+    manches:
+      - id: m1
+        title: Un carrousel de bronze
+        tours:
+          axelle:
+            - { id: ch26-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Combien de saisons y a-t-il en une année ?", choices: ["deux", "trois", "quatre", "cinq", "six"], answer: "quatre", hint: "C'est le nombre de figures sculptées sur le carrousel." }
+            - { id: ch26-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 7.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "8 + 7 = 8 + 8 − 1." }
+          maelle:
+            - { id: ch26-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi un engrenage rouillé peut-il bloquer complètement le mouvement d'un mécanisme, comme celui du carrousel ?", choices: ["la rouille crée des frottements qui empêchent les pièces de glisser correctement entre elles", "la rouille n'a jamais aucun effet sur un mécanisme", "cela n'a aucune explication particulière", "un engrenage rouillé fonctionne toujours mieux qu'un engrenage neuf", "le mouvement d'un mécanisme ne dépend jamais de ses engrenages"], answer: "la rouille crée des frottements qui empêchent les pièces de glisser correctement entre elles", hint: "Pense à la pièce manquante et rouillée qui bloque la figure de l'automne." }
+            - { id: ch26-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 66 + 57.", choices: ["118", "120", "122", "123", "125"], answer: "123", hint: "66 + 60 − 3." }
+          rafaelle:
+            - { id: ch26-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi des carrousels ou mécanismes astronomiques marquant les saisons ont-ils souvent été construits dans l'histoire ?", choices: ["pour aider les communautés à suivre le passage du temps et à organiser leurs activités selon les saisons", "parce que ces mécanismes n'ont jamais eu aucune utilité", "cela n'a aucune importance historique", "parce qu'un tel mécanisme est toujours purement décoratif", "parce que les saisons n'ont jamais eu besoin d'être suivies"], answer: "pour aider les communautés à suivre le passage du temps et à organiser leurs activités selon les saisons", hint: "Pense à l'utilité du carrousel pour marquer le passage des saisons." }
+            - { id: ch26-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 19 × 5.", choices: ["85", "90", "92", "95", "98"], answer: "95", hint: "19 × 5 = 20 × 5 − 5." }
+      - id: m2
+        title: Retrouver Chrono
+        tours:
+          axelle:
+            - { id: ch26-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « L'horloger leva la tête. » ?", choices: ["la tête", "leva", "L'horloger", "l'", "horloger"], answer: "L'horloger", hint: "Qui lève la tête en entendant son nom ?" }
+            - { id: ch26-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 6.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "14 − 6 = 8." }
+          maelle:
+            - { id: ch26-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « marqué » dans « un visage marqué par les années » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le visage de Chrono, après tant d'années." }
+            - { id: ch26-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 357 ÷ 3.", choices: ["109", "115", "117", "119", "121"], answer: "119", hint: "3 × 119 = 357." }
+          rafaelle:
+            - { id: ch26-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Je voyage de mécanisme en mécanisme, pour réparer ce qui en a besoin. » : que révèle cette phrase sur la vie actuelle de Chrono ?", choices: ["qu'il a trouvé une nouvelle vocation en parcourant le monde pour réparer des mécanismes", "qu'il est resté enfermé dans son horloge-mère depuis leur dernière rencontre", "qu'il a abandonné définitivement tout travail d'horlogerie", "qu'il ne répare plus jamais rien depuis cette rencontre", "qu'il refuse désormais de voyager où que ce soit"], answer: "qu'il a trouvé une nouvelle vocation en parcourant le monde pour réparer des mécanismes", hint: "Repense à ce que dit Chrono sur sa vie depuis la dernière rencontre avec les sœurs." }
+            - { id: ch26-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14² − 100.", choices: ["86", "90", "92", "94", "96"], answer: "96", hint: "196 − 100." }
+      - id: m3
+        title: Une décision à prendre ensemble
+        tours:
+          axelle:
+            - { id: ch26-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 4 figures sur le carrousel, et une seule est bloquée. Combien de figures tournent encore normalement ?", choices: ["2", "3", "4", "5", "6"], answer: "3", hint: "4 − 1." }
+            - { id: ch26-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi une seule pièce manquante peut-elle bloquer tout un mécanisme complexe comme un carrousel astronomique ?", choices: ["les pièces d'un mécanisme sont souvent interdépendantes, et l'une bloquée peut arrêter tout l'ensemble", "une pièce manquante n'a jamais aucun effet sur le reste du mécanisme", "cela n'a aucune explication particulière", "un mécanisme fonctionne toujours mieux avec une pièce en moins", "seules les pièces les plus grandes ont une réelle importance"], answer: "les pièces d'un mécanisme sont souvent interdépendantes, et l'une bloquée peut arrêter tout l'ensemble", hint: "Pense à la figure de l'automne, bloquée à cause d'une seule pièce manquante." }
+          maelle:
+            - { id: ch26-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 48 × 4.", choices: ["182", "186", "188", "190", "192"], answer: "192", hint: "48 × 4 = 50 × 4 − 2 × 4." }
+            - { id: ch26-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi est-il souvent utile, face à un choix technique important, de consulter plusieurs personnes avant de décider ?", choices: ["parce que chacun peut apporter un point de vue différent, utile pour une décision équilibrée", "parce qu'il vaut toujours mieux décider seul, sans consulter personne", "cela n'a aucun lien avec la qualité d'une décision", "parce que consulter plusieurs personnes retarde toujours inutilement une décision", "parce qu'un choix technique n'a jamais besoin d'être partagé"], answer: "parce que chacun peut apporter un point de vue différent, utile pour une décision équilibrée", hint: "Pense à la proposition de Chrono de décider ensemble de la meilleure façon de procéder." }
+          rafaelle:
+            - { id: ch26-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 7x + 4 = 39.", choices: ["4", "5", "6", "7", "8"], answer: "5", hint: "7x = 35." }
+            - { id: ch26-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Chrono (lever) la tête en entendant son nom. »", choices: ["a levé", "levait", "lèvera", "lève", "levant"], answer: "a levé", hint: "« Lever » se conjugue avec avoir au passé composé." }
+      - id: m4
+        title: Observer le mécanisme
+        tours:
+          axelle:
+            - { id: ch26-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 4.", choices: ["24", "26", "27", "28", "30"], answer: "28", hint: "7 × 4 = 7 × 2 × 2." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch26-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 310 − 148.", choices: ["158", "160", "162", "164", "166"], answer: "162", hint: "310 − 150 + 2." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch26-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El carrusel marca las estaciones. »", choices: ["Le carrousel marque les saisons.", "Le carrousel reste immobile.", "Le carrousel tombe en morceaux.", "Le carrousel brille le soir.", "Le carrousel change de couleur."], answer: "Le carrousel marque les saisons.", hint: "« Marca las estaciones » = marque les saisons." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu des quatre saisons : chaque sœur mime, tour à tour, une saison différente par un geste simple, pendant que les autres devinent laquelle elle représente."
+    closing:
+      - { who: narrateur, text: "Le soir tomba sur la place circulaire, et les trois figures mobiles du carrousel continuèrent de tourner lentement, tandis que celle de l'automne restait immobile, comme suspendue hors du temps." }
+      - { who: chrono, text: "Demain, nous choisirons ensemble la meilleure façon de la réparer. Reposez-vous bien, la décision mérite d'être prise avec l'esprit clair." }
+      - { who: maelle, text: "On y réfléchira sérieusement, c'est promis." }
+      - { who: narrateur, text: "Et tandis que la nuit enveloppait la place, le léger grincement de la figure bloquée résonnait encore, par intermittence, comme un rappel discret du travail qui attendait." }
+    reward: "la découverte du carrousel figé, et la joie de retrouver Chrono"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Comprendre l'engrenage
+    decor: La place circulaire, au petit matin, où Chrono explique aux trois sœurs le fonctionnement précis de l'engrenage qui bloque la figure de l'automne.
+    opening:
+      - { who: narrateur, text: "Le lendemain matin, Chrono entreprit d'expliquer aux trois sœurs le fonctionnement précis de l'engrenage qui bloquait la figure de l'automne." }
+      - { who: chrono, text: "Regardez bien cette petite roue dentée, ici : c'est elle qui transmet le mouvement à la figure. Sans la pièce manquante, elle tourne dans le vide." }
+      - { who: rafaelle, text: "Et cette pièce manquante, elle ressemble à quoi, exactement ?" }
+      - { who: chrono, text: "À une petite dent de bronze, petite Archiviste, usée par des décennies de mouvement. On peut la refaire à l'identique, ou en poser une plus simple, plus rapide à tailler." }
+      - { who: axelle, text: "Et la différence entre les deux, concrètement, ce serait quoi ?" }
+      - { who: chrono, text: "La durée, surtout, petite Veilleuse. Une pièce fidèle à l'originale durera des décennies ; une pièce simplifiée tiendra sans doute moins longtemps." }
+      - { who: maelle, text: "C'est un peu comme choisir entre une réparation rapide et une réparation qui dure, alors." }
+      - { who: chrono, text: "Exactement, petite Cartographe. Et c'est justement la décision qu'il nous faudra prendre, tous ensemble." }
+    manches:
+      - id: m1
+        title: La roue dentée
+        tours:
+          axelle:
+            - { id: ch26-j2-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « manquante » (en parlant d'une pièce) ?", choices: ["présente", "absente", "cassée", "usée", "rouillée"], answer: "présente", hint: "Le contraire de ce qu'est la pièce du carrousel, actuellement absente." }
+            - { id: ch26-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 6.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "9 + 6 = 9 + 1 + 5." }
+          maelle:
+            - { id: ch26-j2-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi une petite pièce usée, comme une dent de bronze, peut-elle empêcher tout un mécanisme de fonctionner correctement ?", choices: ["chaque pièce d'un mécanisme joue un rôle précis, et son absence ou son usure rompt la transmission du mouvement", "une pièce usée n'a jamais aucun effet sur un mécanisme", "cela n'a aucune explication particulière", "un mécanisme fonctionne toujours mieux avec des pièces usées", "la taille d'une pièce n'a jamais aucune importance dans un mécanisme"], answer: "chaque pièce d'un mécanisme joue un rôle précis, et son absence ou son usure rompt la transmission du mouvement", hint: "Pense à l'explication de Chrono sur la roue dentée qui tourne dans le vide." }
+            - { id: ch26-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 455 ÷ 5.", choices: ["81", "85", "88", "91", "94"], answer: "91", hint: "5 × 91 = 455." }
+          rafaelle:
+            - { id: ch26-j2-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi un artisan peut-il parfois choisir de fabriquer une pièce de remplacement à l'identique de l'originale, plutôt qu'une version simplifiée ?", choices: ["parce qu'une pièce fidèle à l'originale respecte le fonctionnement et la durabilité prévus par le mécanisme", "parce qu'une pièce simplifiée est toujours meilleure qu'une pièce fidèle", "cela n'a aucun lien avec la durabilité d'un mécanisme", "parce qu'il vaut toujours mieux ignorer la conception originale", "parce qu'une pièce fidèle n'a jamais aucun avantage"], answer: "parce qu'une pièce fidèle à l'originale respecte le fonctionnement et la durabilité prévus par le mécanisme", hint: "Pense à la différence expliquée par Chrono entre une pièce fidèle et une pièce simplifiée." }
+            - { id: ch26-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 16 × 6.", choices: ["90", "92", "94", "96", "98"], answer: "96", hint: "16 × 6 = 16 × 3 × 2." }
+      - id: m2
+        title: Rapide ou durable
+        tours:
+          axelle:
+            - { id: ch26-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 16 − 9.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "16 − 6 = 10, puis − 3." }
+            - { id: ch26-j2-ax-m2b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Une pièce fidèle durera des décennies. » ?", choices: ["des décennies", "durera", "Une pièce fidèle", "une", "pièce"], answer: "Une pièce fidèle", hint: "Qu'est-ce qui durera des décennies, selon Chrono ?" }
+          maelle:
+            - { id: ch26-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 36 × 4.", choices: ["138", "140", "142", "144", "146"], answer: "144", hint: "36 × 4 = 36 × 2 × 2." }
+            - { id: ch26-j2-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « simplifiée » dans « une pièce simplifiée » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit une pièce plus rapide à tailler." }
+          rafaelle:
+            - { id: ch26-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 11² − 90.", choices: ["28", "31", "33", "35", "38"], answer: "31", hint: "121 − 90." }
+            - { id: ch26-j2-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Una pieza falta en el engranaje. »", choices: ["Une pièce manque dans l'engrenage.", "Une pièce brille dans l'engrenage.", "Une pièce casse l'engrenage.", "Une pièce tombe de l'engrenage.", "Une pièce répare l'engrenage."], answer: "Une pièce manque dans l'engrenage.", hint: "« Falta en el engranaje » = manque dans l'engrenage." }
+      - id: m3
+        title: Un choix à partager
+        tours:
+          axelle:
+            - { id: ch26-j2-ax-m3a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on une personne qui fabrique ou répare des objets avec un savoir-faire manuel précis ?", choices: ["une artisane", "une marchande", "une bergère", "une astronome", "une messagère"], answer: "une artisane", hint: "C'est le métier que pratique Chrono, l'horloger." }
+            - { id: ch26-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 4.", choices: ["28", "30", "32", "34", "36"], answer: "32", hint: "8 × 4 = 8 × 2 × 2." }
+          maelle:
+            - { id: ch26-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 275 ÷ 5.", choices: ["50", "52", "55", "58", "60"], answer: "55", hint: "5 × 55 = 275." }
+            - { id: ch26-j2-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi comparer une réparation rapide et une réparation durable est-il souvent utile avant de choisir une solution technique ?", choices: ["parce que cela permet de mesurer les avantages et les limites de chaque option avant de décider", "parce que comparer deux solutions n'a jamais aucune utilité", "cela n'a aucun lien avec la prise de décision technique", "parce qu'il vaut toujours mieux choisir la solution la plus rapide, sans réflexion", "parce qu'une réparation durable est toujours inutile à envisager"], answer: "parce que cela permet de mesurer les avantages et les limites de chaque option avant de décider", hint: "Pense à l'explication de Maelle, qui compare les deux options à une réparation rapide ou durable." }
+          rafaelle:
+            - { id: ch26-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 9x − 6 = 39.", choices: ["4", "5", "6", "7", "8"], answer: "5", hint: "9x = 45." }
+            - { id: ch26-j2-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Et c'est justement la décision qu'il nous faudra prendre, tous ensemble. » : que révèle cette phrase sur l'attitude de Chrono ?", choices: ["qu'il considère cette décision comme collective, et non comme la sienne seule", "qu'il préfère toujours décider seul, sans consulter personne", "qu'il refuse que les sœurs participent à cette décision", "qu'il n'a aucune considération pour l'avis des sœurs", "qu'il a déjà pris sa décision, sans en informer personne"], answer: "qu'il considère cette décision comme collective, et non comme la sienne seule", hint: "Repense à l'attitude de Chrono depuis le début de ce chapitre." }
+      - id: m4
+        title: S'exercer à observer le mécanisme
+        tours:
+          axelle:
+            - { id: ch26-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 6.", choices: ["30", "32", "34", "36", "38"], answer: "36", hint: "6 × 6 = 6 × 3 × 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch26-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 320 − 157.", choices: ["160", "161", "163", "165", "167"], answer: "163", hint: "320 − 160 + 3." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch26-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El tiempo no se repara solo. »", choices: ["Le temps ne se répare pas seul.", "Le temps se répare tout seul.", "Le temps n'existe pas vraiment.", "Le temps avance trop vite.", "Le temps s'arrête parfois."], answer: "Le temps ne se répare pas seul.", hint: "« No se repara solo » = ne se répare pas seul." }
+            - { gen: maths.ranger }
+    pause: "Le jeu de l'engrenage humain : les trois sœurs se tiennent par la main en cercle et tournent lentement ensemble, en essayant de garder un rythme parfaitement régulier, comme un mécanisme bien huilé."
+    closing:
+      - { who: narrateur, text: "Le soir venu, les trois sœurs observèrent longuement le mécanisme du carrousel, essayant d'imaginer la meilleure façon de rendre à la figure de l'automne son mouvement perdu." }
+      - { who: chrono, text: "Demain, il faudra choisir : reconstruire à l'identique, réparer rapidement, ou partager le travail entre les deux approches. Réfléchissez-y bien, cette nuit." }
+      - { who: rafaelle, text: "On y réfléchira sérieusement, c'est promis." }
+      - { who: narrateur, text: "Et tandis que la nuit tombait sur la place circulaire, les trois figures mobiles continuèrent de tourner, indifférentes au sort de leur sœur immobile, comme si le temps, pour elles, ne s'était jamais arrêté." }
+    reward: "la compréhension du mécanisme, expliquée par Chrono"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: L'histoire d'un vieux mécanisme
+    decor: La place circulaire, où Chrono raconte aux trois sœurs l'histoire ancienne du carrousel, construit par un horloger disparu depuis longtemps.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, tandis que la lumière du matin baignait la place circulaire, Chrono raconta aux trois sœurs l'histoire ancienne du carrousel, construit par un horloger disparu depuis longtemps." }
+      - { who: chrono, text: "Cet horloger, dit-on, a passé toute sa vie à construire ce mécanisme, pièce par pièce, pour que les saisons ne soient jamais oubliées par ceux qui vivaient ici." }
+      - { who: axelle, text: "Et qu'est-ce qui lui est arrivé, à cet horloger ? Pourquoi il n'est plus là, pour s'en occuper ?" }
+      - { who: chrono, text: "Le temps a fait son œuvre, petite Veilleuse, comme il le fait pour nous tous. Mais son carrousel, lui, a continué de tourner, bien après son départ." }
+      - { who: maelle, text: "C'est un peu triste, et beau en même temps, non ?" }
+      - { who: chrono, text: "Exactement, petite Cartographe. C'est pour ça que je tiens particulièrement à bien réparer ce mécanisme-là, par respect pour son travail." }
+      - { who: rafaelle, text: "Alors peut-être qu'on devrait vraiment prendre soin de bien choisir, pour continuer cet héritage." }
+      - { who: chrono, text: "C'est tout à fait mon avis, petite Archiviste." }
+    manches:
+      - id: m1
+        title: L'horloger disparu
+        tours:
+          axelle:
+            - { id: ch26-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 6 pièces anciennes retrouvées, et 3 pièces manquantes. Combien de pièces en tout, à l'origine ?", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "6 + 3." }
+            - { id: ch26-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « oubliées » (en parlant des saisons) ?", choices: ["rappelées", "disparues", "effacées", "perdues", "ignorées"], answer: "rappelées", hint: "Le contraire de ce que l'horloger voulait éviter, pour les saisons." }
+          maelle:
+            - { id: ch26-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi un objet ou un mécanisme construit par quelqu'un disparu depuis longtemps peut-il garder une grande valeur pour une communauté ?", choices: ["parce qu'il porte la mémoire du travail et de l'intention de celui qui l'a créé", "parce qu'un tel objet n'a jamais aucune valeur une fois son créateur disparu", "cela n'a aucune explication particulière", "parce que seuls les objets récents ont une quelconque valeur", "parce que la disparition d'un créateur efface toujours la valeur de son œuvre"], answer: "parce qu'il porte la mémoire du travail et de l'intention de celui qui l'a créé", hint: "Pense à ce que représente le carrousel, pour la mémoire de l'horloger disparu." }
+            - { id: ch26-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 87 + 56.", choices: ["138", "140", "142", "143", "145"], answer: "143", hint: "87 + 60 − 4." }
+          rafaelle:
+            - { id: ch26-j3-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi réparer soigneusement l'œuvre d'un artisan disparu peut-il être vu comme une forme de respect envers son travail ?", choices: ["parce que cela honore l'effort et l'intention initiale de la personne qui a créé cette œuvre", "parce que réparer une œuvre ancienne n'a jamais aucun lien avec le respect", "cela n'a aucune importance historique", "parce qu'il vaut toujours mieux laisser une œuvre ancienne se dégrader", "parce qu'un artisan disparu ne mérite jamais d'être honoré"], answer: "parce que cela honore l'effort et l'intention initiale de la personne qui a créé cette œuvre", hint: "Repense à ce que dit Chrono sur son souhait de bien réparer, par respect pour le travail de l'horloger disparu." }
+            - { id: ch26-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14 × 6.", choices: ["80", "82", "84", "86", "88"], answer: "84", hint: "14 × 6 = 14 × 3 × 2." }
+      - id: m2
+        title: Un héritage à continuer
+        tours:
+          axelle:
+            - { id: ch26-j3-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Le carrousel a continué de tourner. » ?", choices: ["de tourner", "a continué", "Le carrousel", "le", "carrousel"], answer: "Le carrousel", hint: "Qu'est-ce qui a continué de tourner, après le départ de l'horloger ?" }
+            - { id: ch26-j3-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 + 9.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "7 + 9 = 7 + 7 + 2." }
+          maelle:
+            - { id: ch26-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 312 ÷ 4.", choices: ["72", "76", "78", "80", "82"], answer: "78", hint: "4 × 78 = 312." }
+            - { id: ch26-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « triste » dans « c'est un peu triste » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le sentiment exprimé par Maelle face à l'histoire de l'horloger." }
+          rafaelle:
+            - { id: ch26-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10² − 36.", choices: ["58", "61", "64", "66", "70"], answer: "64", hint: "100 − 36." }
+            - { id: ch26-j3-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« C'est un peu triste, et beau en même temps. » : que révèle cette phrase sur la perception de Maelle ?", choices: ["qu'elle perçoit à la fois la mélancolie et la beauté d'un héritage qui perdure après son créateur", "qu'elle trouve l'histoire de l'horloger entièrement joyeuse", "qu'elle ne ressent absolument rien face à cette histoire", "qu'elle trouve cette histoire uniquement effrayante", "qu'elle considère cette histoire comme sans aucun intérêt"], answer: "qu'elle perçoit à la fois la mélancolie et la beauté d'un héritage qui perdure après son créateur", hint: "Relis bien la phrase de Maelle, et la réponse de Chrono qui suit." }
+      - id: m3
+        title: Choisir avec soin
+        tours:
+          axelle:
+            - { id: ch26-j3-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 12 − 5.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "12 − 5 = 7." }
+            - { id: ch26-j3-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un mécanisme conçu pour durer très longtemps, comme le carrousel, nécessite-t-il un entretien régulier malgré sa qualité initiale ?", choices: ["même les matériaux les plus solides s'usent progressivement avec le temps et l'usage", "un mécanisme bien conçu n'a jamais besoin d'entretien", "cela n'a aucune explication particulière", "l'entretien n'a jamais aucun effet sur la durée de vie d'un mécanisme", "un mécanisme ancien fonctionne toujours mieux sans aucun entretien"], answer: "même les matériaux les plus solides s'usent progressivement avec le temps et l'usage", hint: "Pense à la raison pour laquelle le carrousel, malgré sa qualité, a fini par se bloquer." }
+          maelle:
+            - { id: ch26-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 46 × 4.", choices: ["178", "182", "184", "186", "190"], answer: "184", hint: "46 × 4 = 50 × 4 − 4 × 4." }
+            - { id: ch26-j3-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi écouter l'histoire d'un objet ancien, comme le carrousel, peut-il aider à mieux décider de la façon de le réparer ?", choices: ["parce que comprendre l'intention initiale du créateur peut orienter le choix vers une réparation plus respectueuse de l'œuvre", "parce qu'un tel récit n'a jamais aucune utilité pour décider", "cela n'a aucun lien avec la prise de décision", "parce que seules les décisions techniques comptent, jamais l'histoire", "parce qu'écouter un récit retarde toujours inutilement une décision"], answer: "parce que comprendre l'intention initiale du créateur peut orienter le choix vers une réparation plus respectueuse de l'œuvre", hint: "Repense à ce que ressent Rafaelle après avoir écouté l'histoire du carrousel." }
+          rafaelle:
+            - { id: ch26-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 6x − 3 = 39.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "6x = 42." }
+            - { id: ch26-j3-ra-m3b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Cada estación tiene su lugar. »", choices: ["Chaque saison a sa place.", "Chaque saison disparaît vite.", "Chaque saison se ressemble.", "Chaque saison fait peur.", "Chaque saison dure peu."], answer: "Chaque saison a sa place.", hint: "« Tiene su lugar » = a sa place." }
+      - id: m4
+        title: Comprendre l'héritage
+        tours:
+          axelle:
+            - { id: ch26-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 5.", choices: ["40", "42", "44", "45", "48"], answer: "45", hint: "9 × 5 = 9 × 10 ÷ 2." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch26-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 295 − 137.", choices: ["150", "154", "156", "158", "160"], answer: "158", hint: "295 − 140 + 3." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch26-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Reparar pide manos pacientes. »", choices: ["Réparer demande des mains patientes.", "Réparer est toujours impossible.", "Réparer ne demande rien du tout.", "Réparer effraie les artisans.", "Réparer prend une minute."], answer: "Réparer demande des mains patientes.", hint: "« Pide manos pacientes » = demande des mains patientes." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu du récit transmis : chaque sœur raconte, en une phrase, ce qu'elle aimerait qu'on dise d'elle, plus tard, à propos de quelque chose qu'elle aurait construit ou réparé avec soin."
+    closing:
+      - { who: narrateur, text: "La soirée se prolongea doucement sur la place circulaire, entre récits et silences, tandis que le mécanisme bloqué semblait, lui aussi, attendre patiemment sa délivrance." }
+      - { who: chrono, text: "Demain, il faudra enfin vous décider. Prenez cette dernière nuit pour y réfléchir une dernière fois, à la lumière de ce qu'on vient de partager." }
+      - { who: axelle, text: "On y réfléchira, c'est promis. Merci de nous avoir raconté cette histoire." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs regagnaient leur campement pour la nuit, Nilo observait Chrono s'affairer encore un peu, pensif, comme s'il comprenait, lui aussi, le poids d'un héritage à honorer." }
+    reward: "l'histoire du vieil horloger, et de son carrousel inachevé"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Se décider ensemble
+    decor: La place circulaire, dans la lumière du petit matin, où les trois sœurs retrouvent Chrono pour lui annoncer, enfin, leur décision.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, les trois sœurs retrouvèrent Chrono au pied du carrousel, dans la lumière du petit matin, prêtes à lui annoncer leur décision." }
+      - { who: chrono, text: "Je peux réparer cette pièce rapidement, de façon provisoire, pour qu'elle reparte tout de suite, ou prendre le temps de la reconstruire entièrement, à l'identique. Que préférez-vous ? »" }
+      - { who: axelle, text: "On y a bien réfléchi, Chrono. Et on a pris une décision, toutes les trois ensemble." }
+      - { who: chrono, text: "Je vous écoute, petite Veilleuse. Quelle qu'elle soit, je ferai de mon mieux pour la mener à bien." }
+    manches:
+      - id: m1
+        title: Peser le pour et le contre
+        tours:
+          axelle:
+            - { id: ch26-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « provisoire » ?", choices: ["durable", "temporaire", "rapide", "simple", "fragile"], answer: "durable", hint: "Le contraire de ce qu'est une réparation rapide, selon Chrono." }
+            - { id: ch26-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 6.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "8 + 6 = 8 + 8 − 2." }
+          maelle:
+            - { id: ch26-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi une décision prise après avoir écouté l'histoire et les explications d'un spécialiste est-elle souvent plus solide ?", choices: ["parce qu'elle s'appuie sur des connaissances concrètes plutôt que sur une simple impression", "parce qu'une décision collective n'a jamais aucun avantage", "cela n'a aucun lien avec la qualité d'une décision", "parce qu'une décision sans information est toujours meilleure", "parce qu'écouter un spécialiste retarde toujours inutilement une décision"], answer: "parce qu'elle s'appuie sur des connaissances concrètes plutôt que sur une simple impression", hint: "Pense à tout ce que Chrono a enseigné aux sœurs sur le mécanisme, cette semaine." }
+            - { id: ch26-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 92 + 59.", choices: ["146", "148", "150", "151", "153"], answer: "151", hint: "92 + 60 − 1." }
+          rafaelle:
+            - { id: ch26-j4-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Je ferai de mon mieux pour la mener à bien. » : que révèle cette phrase sur l'attitude de Chrono ?", choices: ["qu'il reste engagé dans son travail, quelle que soit la décision des sœurs", "qu'il refusera forcément leur décision", "qu'il attend d'elles une seule réponse précise", "qu'il n'a aucune considération pour leur choix", "qu'il préfère décider lui-même à leur place"], answer: "qu'il reste engagé dans son travail, quelle que soit la décision des sœurs", hint: "Repense à l'attitude de Chrono depuis le début de ce chapitre." }
+            - { id: ch26-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13² − 100.", choices: ["59", "63", "66", "69", "73"], answer: "69", hint: "169 − 100." }
+      - id: m2
+        title: Les trois propositions
+        tours:
+          axelle:
+            - { id: ch26-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 15 − 8.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "15 − 5 = 10, puis − 3." }
+            - { id: ch26-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi partager le travail entre réparation durable sur l'essentiel et rapidité sur le reste peut-il être une approche efficace ?", choices: ["cela permet de concentrer l'effort le plus soigné là où il compte le plus, sans tout ralentir", "partager le travail de cette façon n'a jamais aucun effet sur l'efficacité", "cela n'a aucune explication particulière", "il vaut toujours mieux appliquer la même méthode à toutes les pièces, sans distinction", "un compromis technique n'a jamais aucun avantage réel"], answer: "cela permet de concentrer l'effort le plus soigné là où il compte le plus, sans tout ralentir", hint: "Pense à la proposition d'Axelle, pour partager le travail entre durabilité et rapidité." }
+          maelle:
+            - { id: ch26-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 351 ÷ 3.", choices: ["107", "111", "115", "117", "119"], answer: "117", hint: "3 × 117 = 351." }
+            - { id: ch26-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « solide » dans « une décision solide » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit une décision bien réfléchie." }
+          rafaelle:
+            - { id: ch26-j4-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 8² + 2 × 10.", choices: ["74", "78", "82", "84", "88"], answer: "84", hint: "64 + 20." }
+            - { id: ch26-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Le carrousel marque les saisons » en espagnol ?", choices: ["El carrusel marca las estaciones.", "Una pieza falta en el engranaje.", "El tiempo no se repara solo.", "Cada estación tiene su lugar.", "Reparar pide manos pacientes."], answer: "El carrusel marca las estaciones.", hint: "Relis la phrase du jour 1." }
+      - id: m3
+        title: Annoncer sa décision
+        tours:
+          axelle:
+            - { id: ch26-j4-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Les trois sœurs retrouvèrent Chrono. » ?", choices: ["Chrono", "retrouvèrent", "Les trois sœurs", "trois", "sœurs"], answer: "Les trois sœurs", hint: "Qui retrouve Chrono, au pied du carrousel ?" }
+            - { id: ch26-j4-ax-m3b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 11 − 5.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "11 − 5 = 6." }
+          maelle:
+            - { id: ch26-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 4.", choices: ["108", "112", "114", "116", "120"], answer: "116", hint: "30 × 4 − 4." }
+            - { id: ch26-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi annoncer une décision claire à un artisan expérimenté lui permet-il de mieux organiser son travail ?", choices: ["parce qu'il peut ainsi anticiper et préparer précisément les outils et le temps nécessaires selon le choix fait", "parce qu'annoncer une décision n'a jamais aucune utilité pour un artisan", "cela n'a aucun lien avec l'organisation d'un travail technique", "parce qu'il vaut toujours mieux rester dans l'incertitude", "parce que la clarté retarde toujours une décision"], answer: "parce qu'il peut ainsi anticiper et préparer précisément les outils et le temps nécessaires selon le choix fait", hint: "Pense à l'utilité, pour Chrono, de connaître la décision des sœurs à l'avance." }
+          rafaelle:
+            - { id: ch26-j4-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 4x + 11 = 35.", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "4x = 24." }
+            - { id: ch26-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au futur simple : « Nous (réparer) ce carrousel, ensemble, toutes les trois. »", choices: ["nous réparerons", "nous réparons", "nous réparions", "nous réparâmes", "nous réparerions"], answer: "nous réparerons", hint: "Futur simple de « réparer »." }
+      - id: m4
+        title: Un moment de vérité
+        tours:
+          axelle:
+            - { id: ch26-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 5.", choices: ["30", "32", "33", "35", "38"], answer: "35", hint: "7 × 5 = 7 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch26-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 260 − 118.", choices: ["138", "140", "142", "144", "146"], answer: "142", hint: "260 − 120 + 2." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch26-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15 × 6.", choices: ["86", "88", "90", "92", "94"], answer: "90", hint: "15 × 6 = 15 × 3 × 2." }
+            - { gen: maths.duree }
+    pause: "Le jeu du compte à rebours avant la réparation : chaque sœur compte, à voix haute, de 5 à 1, avant de prononcer, toutes ensemble, le mot qui résume leur décision commune."
+    closing:
+      - { who: narrateur, text: "Les trois sœurs échangèrent un dernier regard, puis, d'une seule voix, annoncèrent à Chrono la décision qu'elles avaient prise ensemble, après mûre réflexion." }
+      - { who: chrono, text: "Je vous entends, petites voyageuses, et je respecte votre choix. Préparons-nous, alors, pour demain." }
+      - { who: maelle, text: "On espère vraiment que la figure de l'automne retrouvera son mouvement." }
+      - { who: narrateur, text: "Et tandis que le soir tombait sur la place circulaire, les trois sœurs se préparèrent, chacune à sa façon, à aider Chrono dans la réparation qui les attendait." }
+    reward: "la décision prise ensemble, annoncée à Chrono"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: La figure de l'automne
+    decor: La place circulaire, dans la lumière du matin, où Chrono et les trois sœurs s'apprêtent enfin à réparer le carrousel, selon la décision prise la veille.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, dans la lumière du matin, Chrono et les trois sœurs s'apprêtèrent enfin à réparer le carrousel, selon la décision prise la veille." }
+      - { who: chrono, text: "Je peux réparer cette pièce rapidement, de façon provisoire, pour qu'elle reparte tout de suite, ou prendre le temps de la reconstruire entièrement, à l'identique. Que préférez-vous ? »" }
+      - { who: nilo, text: "Allez, les filles. Une dernière vérification avant de se lancer, et on pourra dire qu'on a fait de notre mieux, ici aussi." }
+    manches:
+      - id: m1
+        title: Ce que le carrousel a appris
+        intro: "Chrono interroge chaque sœur sur tout ce que cette semaine passée près du carrousel lui a appris."
+        tours:
+          axelle:
+            - { id: ch26-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Combien de saisons y a-t-il en une année ?", choices: ["deux", "trois", "quatre", "cinq", "six"], answer: "quatre", hint: "C'est le nombre de figures sculptées sur le carrousel." }
+            - { id: ch26-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 + 4.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "9 + 4 = 9 + 1 + 3." }
+          maelle:
+            - { id: ch26-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi une petite pièce usée peut-elle bloquer tout un mécanisme complexe, comme tu l'as appris cette semaine ?", choices: ["chaque pièce d'un mécanisme joue un rôle précis, et son absence ou son usure rompt la transmission du mouvement", "une pièce usée n'a jamais aucun effet sur un mécanisme", "cela n'a aucune explication particulière", "un mécanisme fonctionne toujours mieux avec des pièces usées", "la taille d'une pièce n'a jamais aucune importance dans un mécanisme"], answer: "chaque pièce d'un mécanisme joue un rôle précis, et son absence ou son usure rompt la transmission du mouvement", hint: "Repense à ta propre question du deuxième jour." }
+            - { id: ch26-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 44 × 4.", choices: ["168", "172", "174", "176", "178"], answer: "176", hint: "44 × 4 = 45 × 4 − 4." }
+          rafaelle:
+            - { id: ch26-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que Chrono incarne la valeur du respect du travail d'autrui, à travers sa façon de réparer le carrousel ?", choices: ["parce qu'il cherche à honorer l'intention et le savoir-faire de l'horloger disparu, et non à les ignorer", "parce que Chrono n'a jamais aucun respect pour le travail des autres", "parce qu'il refuse toujours de réparer quoi que ce soit avec soin", "parce qu'il n'y a aucune leçon à tirer de son approche", "parce que le respect du travail d'autrui n'a aucun lien avec son métier"], answer: "parce qu'il cherche à honorer l'intention et le savoir-faire de l'horloger disparu, et non à les ignorer", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de Chrono." }
+            - { id: ch26-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 6/7 − 2/7.", choices: ["2/7", "3/7", "4/7", "5/7", "6/7"], answer: "4/7", hint: "6 − 2 = 4, même dénominateur." }
+      - id: m2
+        title: Avant la réparation finale
+        intro: "Il faut relier tout ce que la semaine a appris sur le mécanisme et les saisons, avant de réparer enfin la figure de l'automne."
+        tours:
+          axelle:
+            - { id: ch26-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux une réparation faite pour durer très longtemps ?", choices: ["durable", "provisoire", "fragile", "rapide", "temporaire"], answer: "durable", hint: "C'est la qualité recherchée par Maelle, pour la réparation du carrousel." }
+            - { id: ch26-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 16 − 8.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "16 − 8 = 8." }
+          maelle:
+            - { id: ch26-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi cette halte près du carrousel, et la rencontre à nouveau avec Chrono, ont-elles une importance particulière dans le voyage des trois sœurs ?", choices: ["elle n'a aucune importance réelle", "elle leur apprend à respecter un héritage, à comprendre un mécanisme, et à choisir entre rapidité et durabilité", "elle les empêche d'avancer vers le sommet", "elle se trouve très loin des montagnes", "personne n'y vient jamais vraiment"], answer: "elle leur apprend à respecter un héritage, à comprendre un mécanisme, et à choisir entre rapidité et durabilité", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de Chrono." }
+            - { id: ch26-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 432 ÷ 6.", choices: ["68", "70", "72", "74", "76"], answer: "72", hint: "6 × 72 = 432." }
+          rafaelle:
+            - { id: ch26-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 45.", choices: ["30", "33", "36", "38", "41"], answer: "36", hint: "81 − 45." }
+            - { id: ch26-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Que préférez-vous ? » : quel est le sujet de cette phrase ?", choices: ["vous", "préférez", "que", "il", "nous"], answer: "vous", hint: "À qui Chrono pose-t-il cette question ?" }
+      - id: m3
+        title: Le Chant des Saisons Retrouvées
+        intro: "Avant de remettre enfin la figure de l'automne en mouvement, Chrono et les trois sœurs chantent ensemble, pour accompagner, d'un rythme régulier, la réparation du carrousel."
+        tours:
+          axelle:
+            - { id: ch26-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, blanche." }
+          maelle:
+            - { id: ch26-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          rafaelle:
+            - { id: ch26-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, blanche." }
+    concert:
+      measures:
+        axelle: { given: [1, 1], missing: 2, prompt: "Noire, noire, blanche" }
+        maelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        rafaelle: { given: [2], missing: 2, prompt: "Blanche, blanche" }
+    pause: "Le dernier tour du carrousel : chaque sœur observe, en silence, la figure de l'automne s'apprêter à reprendre son mouvement, et retient son souffle un instant avant que tout ne reparte."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant des Saisons Retrouvées se répandit sur la place circulaire, et dans un grincement doux, la figure de l'automne, enfin, se remit à tourner avec ses sœurs de bronze." }
+      - { who: chrono, text: "Nous y sommes, petites voyageuses. Le carrousel tourne de nouveau, tout entier, comme il aurait toujours dû le faire." }
+      - { who: rafaelle, text: "On l'a fait ! On a vraiment réparé le carrousel du vieil horloger !" }
+      - { who: narrateur, text: "Et tandis que les quatre saisons reprenaient ensemble leur ronde éternelle, le soleil se mit à jouer sur le bronze patiné, comme pour célébrer, à sa façon, ce temps retrouvé." }
+      - { who: axelle, text: "C'est beau de voir les quatre tourner ensemble, enfin, sans que l'une reste bloquée." }
+      - { who: nilo, text: "Encore une étape de passée, et un mécanisme de plus remis en marche. Pas mal, pour une semaine passée au milieu des saisons." }
+    reward: "la réparation du carrousel, et les retrouvailles avec Chrono"
