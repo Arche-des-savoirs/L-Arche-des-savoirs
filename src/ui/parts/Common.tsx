@@ -24,6 +24,8 @@ const SPEAKERS: Record<string, string> = {
   reine: 'La Reine Sans Ombre'
 };
 const speaker = (who: string) => SPEAKERS[who] ?? NAMES[who as PlayerId] ?? who;
+/** Texte réellement lu à voix haute : annonce le personnage avant sa réplique, sauf pour le narrateur (prose, pas une citation). */
+const spoken = (line: Line) => (line.who === 'narrateur' ? line.text : `${speaker(line.who)} dit : ${line.text}`);
 
 export function Card({ title, children, wide }: { title?: string; children: ComponentChildren; wide?: boolean }) {
   return (
@@ -90,7 +92,7 @@ export function Dialogue({ lines, onDone, doneLabel = 'Continuer' }: { lines: Li
   const voiceOn = autoRead();
   const line = lines[i]!;
   useEffect(() => {
-    if (voiceOn) say(line.text);
+    if (voiceOn) say(spoken(line));
     return stopSpeaking;
   }, [i, voiceOn]);
   const last = i >= lines.length - 1;
@@ -105,7 +107,7 @@ export function Dialogue({ lines, onDone, doneLabel = 'Continuer' }: { lines: Li
         {line.text}
       </p>
       <div class="ui-row">
-        <button class="ui-btn" onClick={() => say(line.text)}>
+        <button class="ui-btn" onClick={() => say(spoken(line))}>
           🔊 Réécouter
         </button>
         <button class="ui-btn ui-btn-small" aria-pressed={!voiceOn} onClick={() => (voiceOn ? (stopSpeaking(), setAutoRead(false)) : setAutoRead(true))}>
