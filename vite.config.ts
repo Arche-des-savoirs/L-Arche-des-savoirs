@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitest/config';
 import preact from '@preact/preset-vite';
 import { VitePWA } from 'vite-plugin-pwa';
-import { yamlPlugin } from './scripts/vite-yaml';
+import { yamlPlugin } from './scripts/vite-yaml.ts';
 
 // Publié sur https://arche-des-savoirs.github.io/L-Arche-des-savoirs/
 const base = '/L-Arche-des-savoirs/';
@@ -9,6 +9,11 @@ const base = '/L-Arche-des-savoirs/';
 export default defineConfig({
   base,
   define: { __APP_VERSION__: JSON.stringify(process.env.npm_package_version ?? '0.0.0') },
+  build: {
+    // Le contenu des chapitres (texte + schéma Zod) doit être chargé d'un bloc pour jouer
+    // hors ligne : le découper en chunks n'apporterait rien, seul le mode parent est isolé.
+    chunkSizeWarningLimit: 1024
+  },
   plugins: [
     yamlPlugin(),
     preact(),
@@ -44,6 +49,8 @@ export default defineConfig({
   ],
   test: {
     environment: 'jsdom',
-    include: ['tests/unit/**/*.test.ts']
+    include: ['tests/unit/**/*.test.ts'],
+    // jsdom recréé par fichier coûte cher ; vmThreads le partage par worker en gardant l'isolation par fichier.
+    pool: 'vmThreads'
   }
 });
