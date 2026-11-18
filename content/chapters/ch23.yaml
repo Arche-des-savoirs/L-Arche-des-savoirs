@@ -1,0 +1,379 @@
+# Chapitre 23 — Le Sentier que Nilo Reconnaît
+# Pas de nouveau personnage : réutilise Dame Cartéa (déjà établie, voix Autonoe), venue mettre
+# à jour la carte vivante, et met Nilo en avant, qui reconnaît ce sentier pour l'avoir déjà
+# parcouru il y a longtemps. Aucun effet ORVANE ni MAJOR ni flag pour ce chapitre (absent de
+# decisions.ts) : décision générique, purement narrative.
+
+id: ch23
+number: 23
+act: 2
+title: Le Sentier que Nilo Reconnaît
+introImage: ch23
+scene: sentier-nilo
+
+espagnol:
+  - { es: "Este camino me resulta familiar.", fr: "Ce chemin me semble familier." }
+  - { es: "Los recuerdos vuelven despacio.", fr: "Les souvenirs reviennent lentement." }
+  - { es: "El mapa se actualiza solo.", fr: "La carte se met à jour seule." }
+  - { es: "Un viejo amigo nunca se olvida.", fr: "Un vieil ami ne s'oublie jamais." }
+  - { es: "Seguir las huellas del pasado.", fr: "Suivre les traces du passé." }
+
+decision:
+  prompt: "Nilo s'arrête net devant une bifurcation du sentier, le poil hérissé, visiblement troublé par un souvenir qui remonte. « Je... je crois que je suis déjà passé par ici. Il y a très longtemps. » Dame Cartéa, consultée, propose trois façons d'aborder ce souvenir."
+  options:
+    A:
+      label: "Laisser Nilo raconter ce souvenir à son rythme, sans le presser"
+      scene: "Axelle s'assoit calmement près de Nilo et attend, sans un mot de trop, qu'il retrouve, à son propre rythme, les contours de ce souvenir ancien."
+      line: { who: cartea, text: "Une mémoire qu'on ne presse pas revient souvent plus claire qu'une mémoire qu'on arrache, petite Veilleuse. Bien vu." }
+      habillage: "Les épreuves prennent la forme d'une attente patiente, où l'on laisse le temps faire son œuvre, sans précipiter personne."
+    B:
+      label: "Consulter immédiatement la carte vivante pour vérifier ce souvenir"
+      scene: "Rafaelle préfère vérifier tout de suite, sur la carte vivante de Dame Cartéa, si le souvenir de Nilo correspond réellement à un lieu déjà répertorié."
+      line: { who: cartea, text: "La vérification a du bon, petite Archiviste, mais prenez garde : un souvenir n'est pas toujours exactement ce qu'en dit une carte." }
+      habillage: "Les épreuves prennent la forme de vérifications rapides et précises, en croisant les souvenirs avec les faits établis."
+    C:
+      label: "Demander à Nilo de montrer le chemin, en suivant son instinct"
+      scene: "Maelle propose simplement de suivre Nilo, en lui laissant guider le groupe par son seul instinct, pour voir où ce souvenir ancien les conduira."
+      line: { who: cartea, text: "Suivre l'instinct d'un vieux compagnon, voilà une méthode qui a fait ses preuves bien avant l'invention des cartes, petite Cartographe." }
+      habillage: "Les épreuves prennent la forme de petits défis d'orientation, à résoudre en se laissant guider par l'instinct plutôt que par des règles fixes."
+
+repliquesAbsurdes:
+  - "Si Nilo reconnaît ce sentier, est-ce qu'il se souvient aussi où il avait caché son dernier os, il y a longtemps ?"
+  - "Dame Cartéa a proposé de vérifier sur la carte. Résultat : la carte a changé trois fois avant qu'on ait fini de la regarder."
+  - "Est-ce qu'un souvenir de renard, ça ressemble à un souvenir d'humain, ou c'est juste beaucoup d'odeurs rangées dans l'ordre ?"
+  - "Si on suit l'instinct de Nilo, est-ce qu'on risque de finir devant un buisson qui sent particulièrement bon, plutôt qu'au sommet ?"
+  - "Après une horloge-mère sous la mer, un vieux souvenir de renard, ça semble presque un repos, en fait."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: Nilo s'arrête net
+    decor: Un sentier de montagne sinueux, bordé de rochers moussus, où une bifurcation inattendue fait soudain hésiter tout le groupe, Nilo en tête.
+    opening:
+      - { who: narrateur, text: "Au sortir de la caverne de l'Horloge-Mère, le chemin reprit son ascension le long d'un sentier sinueux, bordé de rochers moussus, jusqu'à une bifurcation inattendue." }
+      - { who: narrateur, text: "Nilo, qui trottait joyeusement en tête du groupe depuis le matin, s'arrêta net, le poil hérissé, les oreilles soudain tendues vers un souvenir que lui seul semblait percevoir." }
+      - { who: nilo, text: "Je... je crois que je suis déjà passé par ici. Il y a très longtemps." }
+      - { who: rafaelle, text: "Vraiment ? Tu te souviens de quelque chose de précis ?" }
+      - { who: nilo, text: "Pas encore, petite Archiviste. C'est plutôt une sensation, comme une odeur familière qu'on n'arrive pas tout à fait à nommer." }
+      - { who: narrateur, text: "Une voix chaleureuse résonna derrière eux : Dame Cartéa, la cartographe du Hall des Cartes Vivantes, s'approchait, sa carte roulée sous le bras." }
+      - { who: cartea, text: "Un souvenir ancien qui refait surface, voilà qui mérite qu'on s'y arrête. Voulez-vous que je vous aide à y voir plus clair ?" }
+      - { who: axelle, text: "Vous pensez pouvoir aider Nilo à se souvenir, avec votre carte ?" }
+      - { who: cartea, text: "Peut-être, petite Veilleuse. Mais parfois, une carte n'est d'aucune aide face à la mémoire d'un vieux compagnon de route." }
+    manches:
+      - id: m1
+        title: Un souvenir qui remonte
+        tours:
+          axelle:
+            - { id: ch23-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on l'endroit où un chemin se divise en deux directions différentes ?", choices: ["une bifurcation", "un sommet", "un tunnel", "un pont", "une vallée"], answer: "une bifurcation", hint: "C'est le mot utilisé pour décrire le lieu où Nilo s'arrête." }
+            - { id: ch23-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 5.", choices: ["12", "13", "14", "15", "16"], answer: "13", hint: "8 + 5 = 8 + 8 − 3." }
+          maelle:
+            - { id: ch23-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi l'odorat est-il, chez de nombreux mammifères comme le renard, particulièrement lié à la mémoire des lieux ?", choices: ["parce que certaines zones du cerveau associent directement les odeurs aux souvenirs", "parce que l'odorat n'a jamais aucun lien avec la mémoire", "cela n'a aucune explication connue", "parce que seuls les humains se souviennent des odeurs", "parce que les odeurs s'effacent toujours immédiatement de la mémoire"], answer: "parce que certaines zones du cerveau associent directement les odeurs aux souvenirs", hint: "Pense à ce que ressent Nilo, comme une odeur familière." }
+            - { id: ch23-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 94 + 68.", choices: ["158", "160", "162", "164", "166"], answer: "162", hint: "94 + 70 − 2." }
+          rafaelle:
+            - { id: ch23-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi un souvenir qui revient progressivement, par sensations successives, est-il souvent plus fiable qu'un souvenir forcé ou inventé sur le moment ?", choices: ["parce qu'il émerge naturellement de l'expérience réellement vécue, sans être déformé par la pression", "parce qu'un souvenir forcé est toujours plus fiable qu'un souvenir naturel", "cela n'a aucune importance pour la fiabilité d'un souvenir", "parce qu'aucun souvenir n'est jamais fiable, quelle que soit la façon dont il revient", "parce qu'un souvenir progressif n'a jamais aucune valeur particulière"], answer: "parce qu'il émerge naturellement de l'expérience réellement vécue, sans être déformé par la pression", hint: "Pense à la façon dont le souvenir de Nilo remonte, petit à petit." }
+            - { id: ch23-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 19 × 5.", choices: ["90", "92", "93", "95", "98"], answer: "95", hint: "19 × 5 = 20 × 5 − 5." }
+      - id: m2
+        title: Dame Cartéa revient
+        tours:
+          axelle:
+            - { id: ch23-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Nilo s'arrêta net. » ?", choices: ["net", "s'arrêta", "Nilo", "nilo", "arrêta"], answer: "Nilo", hint: "Qui s'arrête net devant la bifurcation ?" }
+            - { id: ch23-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 13 − 5.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "13 − 3 = 10, puis − 2." }
+          maelle:
+            - { id: ch23-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « chaleureuse » dans « une voix chaleureuse » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Elle décrit la voix de Dame Cartéa." }
+            - { id: ch23-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 480 ÷ 6.", choices: ["70", "76", "78", "80", "82"], answer: "80", hint: "6 × 80 = 480." }
+          rafaelle:
+            - { id: ch23-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Une carte n'est d'aucune aide face à la mémoire d'un vieux compagnon de route. » : que révèle cette phrase sur la vision de Dame Cartéa ?", choices: ["qu'elle reconnaît les limites de son propre outil face à une mémoire vécue", "qu'elle pense que sa carte résout toujours tous les problèmes", "qu'elle n'a aucune confiance en la mémoire de Nilo", "qu'elle refuse d'aider les sœurs dans cette situation", "qu'elle considère sa carte comme totalement inutile en général"], answer: "qu'elle reconnaît les limites de son propre outil face à une mémoire vécue", hint: "Repense à ce que dit Dame Cartéa sur sa propre carte, face au souvenir de Nilo." }
+            - { id: ch23-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13² − 90.", choices: ["69", "73", "76", "79", "82"], answer: "79", hint: "169 − 90." }
+      - id: m3
+        title: Une sensation sans nom
+        tours:
+          axelle:
+            - { id: ch23-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 5 rochers moussus d'un côté du sentier, et 4 de l'autre. Combien de rochers en tout ?", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "5 + 4." }
+            - { id: ch23-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi la mousse recouvre-t-elle souvent les rochers dans les zones humides et ombragées de montagne ?", choices: ["la mousse a besoin d'humidité et de peu de lumière directe pour se développer", "la mousse ne pousse jamais sur les rochers", "cela n'a aucune explication particulière", "la mousse a besoin de beaucoup de soleil direct pour pousser", "les rochers repoussent toujours naturellement la mousse"], answer: "la mousse a besoin d'humidité et de peu de lumière directe pour se développer", hint: "Pense aux conditions qui favorisent la mousse sur les rochers du sentier." }
+          maelle:
+            - { id: ch23-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 56 × 4.", choices: ["212", "216", "220", "222", "224"], answer: "224", hint: "56 × 4 = 56 × 2 × 2." }
+            - { id: ch23-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi certains animaux, comme les renards, gardent-ils en mémoire des trajets parcourus il y a très longtemps ?", choices: ["parce que la mémoire des lieux aide à retrouver des ressources ou des chemins sûrs", "parce que les animaux n'ont jamais aucune mémoire des lieux", "cela n'a aucune utilité pour la survie d'un animal", "parce que seule la mémoire humaine retient des lieux", "parce que les animaux oublient toujours immédiatement leurs trajets"], answer: "parce que la mémoire des lieux aide à retrouver des ressources ou des chemins sûrs", hint: "Pense à l'utilité, pour un renard comme Nilo, de se souvenir d'un sentier." }
+          rafaelle:
+            - { id: ch23-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 6x + 5 = 41.", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "6x = 36." }
+            - { id: ch23-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Nilo (trotter) joyeusement en tête du groupe. »", choices: ["a trotté", "trottait", "trottera", "trotte", "trottant"], answer: "a trotté", hint: "Passé composé = avoir + participe passé." }
+      - id: m4
+        title: Premières hypothèses
+        tours:
+          axelle:
+            - { id: ch23-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 3.", choices: ["21", "22", "24", "26", "28"], answer: "24", hint: "8 × 3 = 8 + 8 + 8." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch23-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 310 − 145.", choices: ["155", "160", "163", "165", "168"], answer: "165", hint: "310 − 150 + 5." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch23-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Este camino me resulta familiar. »", choices: ["Ce chemin me paraît très long.", "Ce chemin me semble familier.", "Ce chemin me semble dangereux.", "Ce chemin me semble étroit.", "Ce chemin me semble désert."], answer: "Ce chemin me semble familier.", hint: "« Me resulta familiar » = me semble familier." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu de la sensation sans nom : chaque sœur décrit, sans utiliser de mots précis, une sensation qu'elle a déjà ressentie sans jamais réussir à bien l'expliquer, pour que les deux autres essaient de deviner de quoi il s'agit."
+    closing:
+      - { who: narrateur, text: "Le soir tomba doucement sur la bifurcation, et Nilo, toujours troublé, resta un long moment immobile, le regard perdu vers l'un des deux chemins possibles." }
+      - { who: cartea, text: "Demain, nous verrons plus clairement comment aborder ce souvenir. Reposez-vous bien cette nuit, Nilo compris." }
+      - { who: maelle, text: "On sera là pour toi, Nilo, quoi qu'il arrive." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs s'installaient pour la nuit, Nilo continuait de fixer la bifurcation, comme si, quelque part dans sa mémoire, un autre lui-même, plus jeune, l'attendait encore." }
+    reward: "la découverte d'un souvenir ancien de Nilo, et le retour de Dame Cartéa"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Trois façons d'aborder un souvenir
+    decor: La bifurcation du sentier, au petit matin, où Dame Cartéa propose aux trois sœurs trois façons différentes d'aider Nilo à retrouver son souvenir.
+    opening:
+      - { who: narrateur, text: "Le lendemain matin, Dame Cartéa retrouva les trois sœurs à la bifurcation, sa carte vivante déroulée sur un rocher plat, prête à les conseiller." }
+      - { who: cartea, text: "Je... je crois que je suis déjà passé par ici. Il y a très longtemps. Voilà ce que Nilo nous a confié. Comment voulez-vous l'aider, maintenant, à y voir plus clair ?" }
+      - { who: axelle, text: "On pourrait simplement le laisser raconter ce qu'il se souvient, sans le presser." }
+      - { who: rafaelle, text: "Ou alors vérifier directement sur la carte, pour confirmer si ce souvenir correspond bien à un lieu connu." }
+      - { who: maelle, text: "Ou encore le laisser nous guider lui-même, en suivant simplement son instinct, sans poser trop de questions." }
+      - { who: cartea, text: "Trois approches bien différentes, et toutes légitimes, petites voyageuses. À vous de choisir celle qui vous semble la plus juste." }
+    manches:
+      - id: m1
+        title: Trois approches différentes
+        tours:
+          axelle:
+            - { id: ch23-j2-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « légitime » ?", choices: ["injustifiée", "raisonnable", "sage", "valable", "fondée"], answer: "injustifiée", hint: "Le contraire d'une approche qui a de bonnes raisons d'être choisie." }
+            - { id: ch23-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 5.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "9 + 5 = 9 + 9 − 4." }
+          maelle:
+            - { id: ch23-j2-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi plusieurs méthodes différentes peuvent-elles toutes être valables pour résoudre une même situation ?", choices: ["parce que chacune met l'accent sur un aspect différent du problème, sans qu'aucune ne soit forcément meilleure", "parce qu'une seule méthode est toujours la bonne, sans exception", "cela n'a aucun lien avec la résolution d'une situation", "parce que toutes les méthodes se valent toujours exactement de la même façon", "parce que comparer plusieurs méthodes n'a jamais aucune utilité"], answer: "parce que chacune met l'accent sur un aspect différent du problème, sans qu'aucune ne soit forcément meilleure", hint: "Pense aux trois approches proposées par les sœurs pour aider Nilo." }
+            - { id: ch23-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 325 ÷ 5.", choices: ["55", "60", "63", "65", "68"], answer: "65", hint: "5 × 65 = 325." }
+          rafaelle:
+            - { id: ch23-j2-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« À vous de choisir celle qui vous semble la plus juste. » : que révèle cette phrase sur la pédagogie de Dame Cartéa ?", choices: ["qu'elle laisse les sœurs développer leur propre jugement plutôt que de décider pour elles", "qu'elle refuse toujours de donner son avis sur quoi que ce soit", "qu'elle impose systématiquement sa propre méthode", "qu'elle n'a aucune considération pour l'avis des sœurs", "qu'elle considère que toutes les décisions se valent exactement"], answer: "qu'elle laisse les sœurs développer leur propre jugement plutôt que de décider pour elles", hint: "Repense à l'attitude de Dame Cartéa depuis son retour dans ce chapitre." }
+            - { id: ch23-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 17 × 6.", choices: ["96", "98", "100", "102", "104"], answer: "102", hint: "17 × 6 = 17 × 3 × 2." }
+      - id: m2
+        title: Patience, vérification, instinct
+        tours:
+          axelle:
+            - { id: ch23-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 15 − 7.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "15 − 5 = 10, puis − 2." }
+            - { id: ch23-j2-ax-m2b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Dame Cartéa propose trois façons d'aborder ce souvenir. » ?", choices: ["trois façons", "propose", "Dame Cartéa", "ce souvenir", "d'aborder"], answer: "Dame Cartéa", hint: "Qui propose les trois façons d'aborder le souvenir de Nilo ?" }
+          maelle:
+            - { id: ch23-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 37 × 4.", choices: ["140", "144", "146", "148", "150"], answer: "148", hint: "37 × 4 = 40 × 4 − 3 × 4." }
+            - { id: ch23-j2-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « vivante » dans « sa carte vivante » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Elle décrit la carte de Dame Cartéa." }
+          rafaelle:
+            - { id: ch23-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10² − 44.", choices: ["52", "54", "56", "58", "60"], answer: "56", hint: "100 − 44." }
+            - { id: ch23-j2-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Los recuerdos vuelven despacio. »", choices: ["Les souvenirs reviennent lentement.", "Les souvenirs disparaissent vite.", "Les souvenirs se mélangent toujours.", "Les souvenirs restent cachés.", "Les souvenirs reviennent en chantant."], answer: "Les souvenirs reviennent lentement.", hint: "« Vuelven despacio » = reviennent lentement." }
+      - id: m3
+        title: Choisir ensemble
+        tours:
+          axelle:
+            - { id: ch23-j2-ax-m3a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on la capacité à attendre calmement sans forcer les choses ?", choices: ["la patience", "la hâte", "l'impatience", "la précipitation", "l'urgence"], answer: "la patience", hint: "C'est la qualité derrière l'une des trois approches proposées." }
+            - { id: ch23-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 7.", choices: ["36", "38", "40", "42", "44"], answer: "42", hint: "6 × 7 = 6 × 6 + 6." }
+          maelle:
+            - { id: ch23-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 441 ÷ 7.", choices: ["57", "59", "61", "63", "65"], answer: "63", hint: "7 × 63 = 441." }
+            - { id: ch23-j2-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi écouter d'abord les différents points de vue, avant de décider ensemble, renforce-t-il souvent la qualité d'un choix collectif ?", choices: ["parce que cela permet de tenir compte de plusieurs perspectives avant de s'engager", "parce qu'écouter différents points de vue n'a jamais aucune utilité", "cela n'a aucun lien avec la qualité d'une décision collective", "parce qu'il vaut toujours mieux décider seul, sans consulter personne", "parce que les points de vue différents ne font jamais que ralentir une décision"], answer: "parce que cela permet de tenir compte de plusieurs perspectives avant de s'engager", hint: "Pense à la façon dont les trois sœurs discutent ensemble des trois approches possibles." }
+          rafaelle:
+            - { id: ch23-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 9x − 7 = 56.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "9x = 63." }
+            - { id: ch23-j2-ra-m3b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « El mapa se actualiza solo. »", choices: ["La carte se met à jour seule.", "La carte se déchire facilement.", "La carte se perd souvent.", "La carte reste toujours vide.", "La carte brûle au soleil."], answer: "La carte se met à jour seule.", hint: "« Se actualiza solo » = se met à jour seule." }
+      - id: m4
+        title: Se préparer à décider
+        tours:
+          axelle:
+            - { id: ch23-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 4.", choices: ["32", "34", "35", "36", "38"], answer: "36", hint: "9 × 4 = 9 × 2 × 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch23-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 295 − 138.", choices: ["150", "154", "157", "159", "161"], answer: "157", hint: "295 − 140 + 2." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch23-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Un viejo amigo nunca se olvida. »", choices: ["Un vieil ami ne s'oublie jamais.", "Un vieil ami part sans prévenir.", "Un vieil ami se fâche souvent.", "Un vieil ami arrive toujours en retard.", "Un vieil ami change souvent d'avis."], answer: "Un vieil ami ne s'oublie jamais.", hint: "« Nunca se olvida » = ne s'oublie jamais." }
+            - { gen: maths.ranger }
+    pause: "Le jeu de l'instinct testé : chaque sœur ferme les yeux et pointe, sans réfléchir, la direction qui lui semble, instinctivement, la bonne, avant de comparer ses choix avec ceux de ses sœurs."
+    closing:
+      - { who: narrateur, text: "Dame Cartéa referma délicatement sa carte, laissant les trois sœurs discuter entre elles, pendant que Nilo, un peu à l'écart, continuait de fixer la bifurcation en silence." }
+      - { who: cartea, text: "Prenez cette nuit pour décider. Demain, il faudra choisir une méthode, et s'y tenir, quoi qu'il advienne." }
+      - { who: rafaelle, text: "On y réfléchira sérieusement, c'est promis." }
+      - { who: narrateur, text: "Et tandis que la nuit tombait sur le sentier, Nilo vint se coucher, pour une fois, tout près des trois sœurs, comme s'il cherchait, lui aussi, un peu de réconfort face à ce souvenir incertain." }
+    reward: "trois façons différentes d'aborder le souvenir de Nilo"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: Les premiers indices
+    decor: Le sentier au-delà de la bifurcation, où de petits indices familiers (une pierre taillée, une vieille marque gravée) commencent à apparaître sous les pas du groupe.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, en avançant prudemment au-delà de la bifurcation, de petits indices familiers commencèrent à apparaître : une pierre taillée, une vieille marque gravée sur un tronc." }
+      - { who: nilo, text: "Cette pierre... je crois que je l'ai déjà vue. Il y avait quelqu'un, ici, avec moi, il y a très longtemps." }
+      - { who: maelle, text: "Quelqu'un ? Tu te souviens de qui c'était ?" }
+      - { who: nilo, text: "Pas encore clairement, petite Cartographe. Mais je sens que ce souvenir est bon. Pas triste. Juste... ancien." }
+      - { who: cartea, text: "Les bons souvenirs reviennent souvent ainsi, par petits fragments, avant de se recomposer entièrement." }
+      - { who: axelle, text: "C'est rassurant, en tout cas, que ce ne soit pas un mauvais souvenir." }
+      - { who: nilo, text: "Oui, petite Veilleuse. Je crois même que ce souvenir va me faire du bien, une fois qu'il sera complet." }
+    manches:
+      - id: m1
+        title: Des indices familiers
+        tours:
+          axelle:
+            - { id: ch23-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 3 marques gravées sur un tronc, et 2 sur un autre. Combien de marques en tout ?", choices: ["4", "5", "6", "7", "8"], answer: "5", hint: "3 + 2." }
+            - { id: ch23-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire d'« ancien » ?", choices: ["récent", "familier", "gravé", "taillé", "oublié"], answer: "récent", hint: "Le contraire de ce que ressent Nilo pour ce souvenir." }
+          maelle:
+            - { id: ch23-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi certaines personnes ou certains voyageurs gravaient-ils autrefois des marques sur les arbres ou les rochers le long d'un chemin ?", choices: ["pour baliser le chemin ou laisser une trace reconnaissable de leur passage", "parce que graver des marques n'avait jamais aucune utilité", "cela n'avait aucune explication particulière", "parce que c'était toujours interdit de marquer un chemin", "parce que les arbres effaçaient toujours ces marques immédiatement"], answer: "pour baliser le chemin ou laisser une trace reconnaissable de leur passage", hint: "Pense à l'utilité d'une marque gravée pour retrouver son chemin plus tard." }
+            - { id: ch23-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 87 + 56.", choices: ["138", "140", "142", "143", "145"], answer: "143", hint: "87 + 60 − 4." }
+          rafaelle:
+            - { id: ch23-j3-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi un souvenir qui revient progressivement, fragment après fragment, permet-il souvent de mieux distinguer les bons souvenirs des mauvais ?", choices: ["parce que chaque petit fragment retrouvé apporte une émotion propre, avant même que le souvenir soit complet", "parce qu'un souvenir fragmenté n'a jamais aucune émotion associée", "cela n'a aucun lien avec la nature émotionnelle d'un souvenir", "parce que seuls les souvenirs complets ont une tonalité émotionnelle", "parce qu'un fragment de souvenir ne révèle jamais s'il est bon ou mauvais"], answer: "parce que chaque petit fragment retrouvé apporte une émotion propre, avant même que le souvenir soit complet", hint: "Repense à ce que ressent Nilo, même avant d'avoir retrouvé tout son souvenir." }
+            - { id: ch23-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 16 × 6.", choices: ["90", "92", "94", "96", "98"], answer: "96", hint: "16 × 6 = 16 × 3 × 2." }
+      - id: m2
+        title: Un bon souvenir
+        tours:
+          axelle:
+            - { id: ch23-j3-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quelle est la nature du mot « rassurant » dans « c'est rassurant » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit ce que ressent Axelle à propos du souvenir de Nilo." }
+            - { id: ch23-j3-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 9.", choices: ["15", "16", "17", "18", "19"], answer: "17", hint: "8 + 9 = 8 + 8 + 1." }
+          maelle:
+            - { id: ch23-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 392 ÷ 7.", choices: ["52", "54", "56", "58", "60"], answer: "56", hint: "7 × 56 = 392." }
+            - { id: ch23-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « complet » dans « une fois qu'il sera complet » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le souvenir de Nilo, une fois pleinement reconstitué." }
+          rafaelle:
+            - { id: ch23-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 12² − 100.", choices: ["36", "40", "42", "44", "48"], answer: "44", hint: "144 − 100." }
+            - { id: ch23-j3-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Les bons souvenirs reviennent souvent ainsi, par petits fragments. » : que signifie cette phrase ?", choices: ["que la mémoire d'un événement heureux se reconstruit souvent progressivement, morceau par morceau", "que seuls les mauvais souvenirs reviennent par fragments", "qu'un bon souvenir revient toujours instantanément et entièrement", "que les souvenirs n'ont jamais de fragments distincts", "que les bons souvenirs s'oublient toujours plus vite que les mauvais"], answer: "que la mémoire d'un événement heureux se reconstruit souvent progressivement, morceau par morceau", hint: "Relis bien la phrase de Dame Cartéa, juste après la remarque de Nilo." }
+      - id: m3
+        title: Une présence oubliée
+        tours:
+          axelle:
+            - { id: ch23-j3-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 6.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "14 − 6 = 8." }
+            - { id: ch23-j3-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi certaines pierres taillées, trouvées le long d'un sentier, peuvent-elles témoigner d'une présence humaine ou animale ancienne ?", choices: ["parce qu'une forme régulière et travaillée indique rarement un hasard naturel", "parce que les pierres taillées n'ont jamais aucun lien avec une présence ancienne", "cela n'a aucune explication particulière", "parce qu'une pierre taillée se forme toujours naturellement, sans aucune intervention", "parce que toutes les pierres sont naturellement identiques, sans distinction"], answer: "parce qu'une forme régulière et travaillée indique rarement un hasard naturel", hint: "Pense à ce que révèle la pierre taillée reconnue par Nilo." }
+          maelle:
+            - { id: ch23-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 46 × 4.", choices: ["178", "182", "184", "186", "190"], answer: "184", hint: "46 × 4 = 50 × 4 − 4 × 4." }
+            - { id: ch23-j3-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi le fait de savoir qu'on n'était pas seul, autrefois, en un lieu donné, peut-il changer la façon dont on perçoit ce lieu aujourd'hui ?", choices: ["parce que cela enrichit le lieu d'une histoire partagée, au-delà de sa seule apparence", "parce que savoir qu'on n'était pas seul n'a jamais aucun effet sur la perception d'un lieu", "cela n'a aucun lien avec la perception d'un lieu", "parce qu'un lieu reste toujours perçu exactement de la même façon, quoi qu'on en sache", "parce que seule l'apparence d'un lieu compte, jamais son histoire"], answer: "parce que cela enrichit le lieu d'une histoire partagée, au-delà de sa seule apparence", hint: "Repense à ce que ressent Nilo en se souvenant qu'il n'était pas seul ici, autrefois." }
+          rafaelle:
+            - { id: ch23-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x − 6 = 29.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "5x = 35." }
+            - { id: ch23-j3-ra-m3b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Seguir las huellas del pasado. »", choices: ["Suivre les traces du passé.", "Oublier les traces du passé.", "Effacer les traces du passé.", "Fuir les traces du passé.", "Cacher les traces du passé."], answer: "Suivre les traces du passé.", hint: "« Seguir las huellas » = suivre les traces." }
+      - id: m4
+        title: Reconstituer le puzzle
+        tours:
+          axelle:
+            - { id: ch23-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 6.", choices: ["40", "42", "44", "46", "48"], answer: "42", hint: "7 × 6 = 7 × 3 × 2." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch23-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 330 − 172.", choices: ["154", "156", "158", "160", "162"], answer: "158", hint: "330 − 180 + 8." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch23-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Les souvenirs reviennent lentement » en espagnol ?", choices: ["Los recuerdos vuelven despacio.", "Este camino me resulta familiar.", "El mapa se actualiza solo.", "Un viejo amigo nunca se olvida.", "Seguir las huellas del pasado."], answer: "Los recuerdos vuelven despacio.", hint: "Relis la phrase du jour 1." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu du fragment de souvenir : chaque sœur raconte un tout petit fragment d'un souvenir d'enfance, sans le terminer, et les deux autres essaient d'imaginer comment il pourrait se poursuivre."
+    closing:
+      - { who: narrateur, text: "Le soir venu, Nilo semblait plus léger, presque joyeux, comme si chaque indice retrouvé allégeait un peu le poids de ce vieux souvenir incomplet." }
+      - { who: cartea, text: "Demain, je crois que nous approcherons enfin du cœur de ce souvenir. Soyez attentives, cela pourrait être un moment important." }
+      - { who: maelle, text: "On sera attentives, c'est promis. On a hâte de savoir ce que Nilo va se rappeler." }
+      - { who: narrateur, text: "Et tandis que la nuit tombait sur le sentier, Nilo s'endormit, pour la première fois depuis longtemps, avec un petit sourire discret au coin des babines." }
+    reward: "les premiers fragments retrouvés du souvenir de Nilo"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Le souvenir complet
+    decor: Une petite clairière au bord du sentier, où Nilo, enfin, retrouve la totalité de son vieux souvenir, sous le regard attentif des trois sœurs et de Dame Cartéa.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, en atteignant une petite clairière au bord du sentier, Nilo s'arrêta de nouveau, mais cette fois, son regard s'éclaira d'un coup, comme traversé par une évidence." }
+      - { who: nilo, text: "Je me souviens, maintenant ! J'étais tout jeune, à peine plus grand qu'un renardeau, et un vieux voyageur, ici même, m'avait offert un morceau de pain, alors que j'avais très faim." }
+      - { who: rafaelle, text: "C'est un très beau souvenir, Nilo. On comprend pourquoi tu voulais t'en souvenir complètement." }
+      - { who: nilo, text: "C'est ce voyageur, je crois, qui m'a donné confiance en les humains, petite Archiviste. Avant lui, je m'en méfiais plutôt." }
+      - { who: cartea, text: "Un geste simple, offert au bon moment, peut parfois changer durablement le cours d'une vie entière, même celle d'un petit renard affamé." }
+      - { who: axelle, text: "Est-ce que tu sais ce qui est arrivé à ce voyageur, par la suite ?" }
+      - { who: nilo, text: "Non, petite Veilleuse. Mais j'espère, où qu'il soit aujourd'hui, qu'il sait l'effet que son petit geste a eu sur moi." }
+    manches:
+      - id: m1
+        title: Un geste simple et marquant
+        tours:
+          axelle:
+            - { id: ch23-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « se méfier » ?", choices: ["faire confiance", "douter", "craindre", "hésiter", "redouter"], answer: "faire confiance", hint: "Le contraire de ce que Nilo ressentait envers les humains, avant ce souvenir." }
+            - { id: ch23-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 6 + 8.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "6 + 8 = 6 + 6 + 2." }
+          maelle:
+            - { id: ch23-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi un geste de générosité envers un animal affamé ou en détresse peut-il avoir des conséquences durables ?", choices: ["parce qu'il peut transformer durablement la relation de cet animal avec les humains", "parce qu'un geste de générosité n'a jamais aucune conséquence durable", "cela n'a aucun lien avec le comportement futur d'un animal", "parce que seuls les gestes répétés ont un effet, jamais un geste unique", "parce qu'un animal oublie toujours immédiatement un geste de générosité"], answer: "parce qu'il peut transformer durablement la relation de cet animal avec les humains", hint: "Pense à l'effet du morceau de pain offert à Nilo, jeune renardeau." }
+            - { id: ch23-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 620 − 275.", choices: ["335", "340", "343", "345", "348"], answer: "345", hint: "620 − 280 + 5." }
+          rafaelle:
+            - { id: ch23-j4-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Un geste simple, offert au bon moment, peut parfois changer durablement le cours d'une vie entière. » : que révèle cette phrase sur la vision de Dame Cartéa ?", choices: ["qu'elle valorise l'impact profond que peuvent avoir de petites actions généreuses", "qu'elle pense que seuls les grands gestes comptent vraiment", "qu'elle considère que rien ne change jamais le cours d'une vie", "qu'elle n'accorde aucune importance à la générosité", "qu'elle pense que les souvenirs d'enfance n'ont aucune valeur"], answer: "qu'elle valorise l'impact profond que peuvent avoir de petites actions généreuses", hint: "Relis bien la phrase complète de Dame Cartéa." }
+            - { id: ch23-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14² − 130.", choices: ["56", "60", "64", "66", "70"], answer: "66", hint: "196 − 130." }
+      - id: m2
+        title: La confiance retrouvée
+        tours:
+          axelle:
+            - { id: ch23-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 17 − 8.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "17 − 7 = 10, puis − 1." }
+            - { id: ch23-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un jeune animal affamé peut-il, après un acte de bienveillance, développer plus facilement de la confiance envers l'espèce qui l'a aidé ?", choices: ["parce qu'une expérience positive marquante, surtout jeune, influence durablement le comportement futur", "parce que la confiance ne dépend jamais des expériences vécues", "cela n'a aucune explication particulière", "parce qu'un jeune animal oublie toujours instantanément ce genre d'expérience", "parce que la faim empêche toujours de ressentir de la confiance"], answer: "parce qu'une expérience positive marquante, surtout jeune, influence durablement le comportement futur", hint: "Pense à l'effet du souvenir sur la confiance de Nilo envers les humains." }
+          maelle:
+            - { id: ch23-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 5.", choices: ["135", "140", "142", "145", "148"], answer: "145", hint: "30 × 5 − 5." }
+            - { id: ch23-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « affamé » dans « un petit renard affamé » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit l'état du jeune Nilo, dans son souvenir." }
+          rafaelle:
+            - { id: ch23-j4-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 7² + 3 × 10.", choices: ["69", "73", "76", "79", "82"], answer: "79", hint: "49 + 30." }
+            - { id: ch23-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Ce chemin me semble familier » en espagnol ?", choices: ["Este camino me resulta familiar.", "El mapa se actualiza solo.", "Un viejo amigo nunca se olvida.", "Seguir las huellas del pasado.", "Los recuerdos vuelven despacio."], answer: "Este camino me resulta familiar.", hint: "Relis la phrase du jour 1." }
+      - id: m3
+        title: Le voyageur oublié
+        tours:
+          axelle:
+            - { id: ch23-j4-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Un vieux voyageur m'avait offert un morceau de pain. » ?", choices: ["un morceau de pain", "m'avait offert", "Un vieux voyageur", "vieux", "voyageur"], answer: "Un vieux voyageur", hint: "Qui avait offert le morceau de pain à Nilo ?" }
+            - { id: ch23-j4-ax-m3b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 10 − 4.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "10 − 4 = 6." }
+          maelle:
+            - { id: ch23-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 405 ÷ 5.", choices: ["75", "78", "80", "81", "85"], answer: "81", hint: "5 × 81 = 405." }
+            - { id: ch23-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi espérer qu'une personne connaisse l'effet positif de son geste, même longtemps après, peut-il être important pour celui qui en a bénéficié ?", choices: ["parce que cela donne du sens et de la reconnaissance à un geste qui a compté dans sa vie", "parce qu'espérer cela n'a jamais aucune importance", "cela n'a aucun lien avec la reconnaissance envers un bienfaiteur", "parce que seul le bienfaiteur doit se souvenir de son geste, jamais le bénéficiaire", "parce qu'un geste ancien perd toujours toute valeur avec le temps"], answer: "parce que cela donne du sens et de la reconnaissance à un geste qui a compté dans sa vie", hint: "Repense à ce qu'espère Nilo, à propos du voyageur qui l'a aidé autrefois." }
+          rafaelle:
+            - { id: ch23-j4-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 8x − 9 = 39.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "8x = 48." }
+            - { id: ch23-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue à l'imparfait : « Je (se méfier) des humains, avant ce jour-là. »", choices: ["je me méfiais", "je me méfie", "je me méfierai", "je me suis méfié", "je me méfiant"], answer: "je me méfiais", hint: "Imparfait de « se méfier »." }
+      - id: m4
+        title: Un souvenir partagé
+        tours:
+          axelle:
+            - { id: ch23-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 5.", choices: ["35", "38", "40", "42", "44"], answer: "40", hint: "8 × 5 = 8 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch23-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 280 − 134.", choices: ["142", "144", "146", "148", "150"], answer: "146", hint: "280 − 140 + 6." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch23-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13 × 7.", choices: ["88", "90", "91", "93", "95"], answer: "91", hint: "13 × 7 = 13 × 7." }
+            - { gen: maths.duree }
+    pause: "Le jeu de la gratitude silencieuse : chaque sœur pense, en silence, à une personne qui lui a offert, un jour, un petit geste de gentillesse qu'elle n'a jamais oublié, puis le raconte brièvement aux deux autres."
+    closing:
+      - { who: narrateur, text: "La petite clairière, baignée par la lumière douce du soir, sembla retenir, un instant, tout le poids léger et heureux du souvenir enfin retrouvé par Nilo." }
+      - { who: cartea, text: "Un beau souvenir mérite d'être célébré. Demain, avant de reprendre la route, nous lui rendrons, à notre façon, un petit hommage." }
+      - { who: rafaelle, text: "C'est une très belle idée. On sera là, avec plaisir." }
+      - { who: narrateur, text: "Et tandis que la nuit tombait doucement sur la clairière, Nilo, enfin apaisé, s'endormit profondément, comme libéré d'un poids qu'il portait sans le savoir depuis très longtemps." }
+    reward: "le souvenir complet de Nilo, et la confiance retrouvée"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: Un hommage au vieux voyageur
+    decor: La petite clairière, baignée par la lumière du matin, où Dame Cartéa et les trois sœurs préparent, avec Nilo, un petit hommage au voyageur oublié.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, dans la petite clairière baignée par la lumière du matin, Dame Cartéa et les trois sœurs se préparèrent à rendre, avec Nilo, un petit hommage au voyageur oublié." }
+      - { who: nilo, text: "Je... je crois que je suis déjà passé par ici. Il y a très longtemps. Et maintenant, je sais enfin pourquoi ce souvenir comptait tant pour moi." }
+      - { who: narrateur, text: "Nilo s'assit au centre de la clairière, bien droit, prêt à célébrer, à sa manière, ce souvenir retrouvé." }
+    manches:
+      - id: m1
+        title: Ce que le souvenir a appris
+        intro: "Dame Cartéa interroge chaque sœur sur tout ce que cette semaine, consacrée au souvenir de Nilo, lui a appris."
+        tours:
+          axelle:
+            - { id: ch23-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on l'endroit où un chemin se divise en deux directions différentes ?", choices: ["une bifurcation", "un sommet", "un tunnel", "un pont", "une vallée"], answer: "une bifurcation", hint: "C'est le mot du premier jour." }
+            - { id: ch23-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 + 4.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "9 + 4 = 9 + 1 + 3." }
+          maelle:
+            - { id: ch23-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi l'odorat est-il, chez de nombreux mammifères comme le renard, particulièrement lié à la mémoire des lieux, comme tu l'as appris cette semaine ?", choices: ["parce que certaines zones du cerveau associent directement les odeurs aux souvenirs", "parce que l'odorat n'a jamais aucun lien avec la mémoire", "cela n'a aucune explication connue", "parce que seuls les humains se souviennent des odeurs", "parce que les odeurs s'effacent toujours immédiatement de la mémoire"], answer: "parce que certaines zones du cerveau associent directement les odeurs aux souvenirs", hint: "Repense à ta propre question du premier jour." }
+            - { id: ch23-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 44 × 4.", choices: ["168", "172", "174", "176", "178"], answer: "176", hint: "44 × 4 = 45 × 4 − 4." }
+          rafaelle:
+            - { id: ch23-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que le souvenir de Nilo illustre la valeur durable d'un petit geste de générosité ?", choices: ["parce qu'il a influencé, pendant toute sa vie, la confiance de Nilo envers les humains", "parce que ce souvenir n'a jamais eu aucun effet sur Nilo", "parce qu'un geste de générosité n'a jamais de conséquence durable", "parce qu'il n'y a aucune leçon à tirer de ce souvenir", "parce que la générosité n'a aucun lien avec la confiance"], answer: "parce qu'il a influencé, pendant toute sa vie, la confiance de Nilo envers les humains", hint: "Repense à tout ce que les sœurs ont appris cette semaine, sur le souvenir de Nilo." }
+            - { id: ch23-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 5/6 − 2/6.", choices: ["1/6", "2/6", "3/6", "4/6", "5/6"], answer: "3/6", hint: "5 − 2 = 3, même dénominateur." }
+      - id: m2
+        title: Avant l'hommage
+        intro: "Il faut relier tout ce que la semaine a appris sur la mémoire et la gratitude, avant de rendre hommage au vieux voyageur."
+        tours:
+          axelle:
+            - { id: ch23-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux une personne capable d'attendre, sans forcer les choses, qu'un souvenir revienne naturellement ?", choices: ["patiente", "impatiente", "distraite", "pressée", "agitée"], answer: "patiente", hint: "C'est la qualité valorisée par Dame Cartéa pour aborder un souvenir." }
+            - { id: ch23-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 16 − 9.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "16 − 6 = 10, puis − 3." }
+          maelle:
+            - { id: ch23-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi ce souvenir retrouvé de Nilo a-t-il une importance particulière dans le voyage des trois sœurs ?", choices: ["il n'a aucune importance réelle", "il leur apprend la valeur durable d'un petit geste de générosité et le poids de la mémoire", "il les empêche d'avancer vers le sommet", "il se trouve très loin des montagnes", "personne n'y vient jamais vraiment"], answer: "il leur apprend la valeur durable d'un petit geste de générosité et le poids de la mémoire", hint: "Repense à tout ce que les sœurs ont appris cette semaine, grâce au souvenir de Nilo." }
+            - { id: ch23-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 480 ÷ 8.", choices: ["55", "58", "60", "62", "65"], answer: "60", hint: "8 × 60 = 480." }
+          rafaelle:
+            - { id: ch23-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 50.", choices: ["25", "28", "31", "33", "35"], answer: "31", hint: "81 − 50." }
+            - { id: ch23-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Je crois que je suis déjà passé par ici. » : quel est le sujet de cette phrase ?", choices: ["ici", "déjà", "je", "passé", "par"], answer: "je", hint: "Qui est déjà passé par ce sentier, selon Nilo ?" }
+      - id: m3
+        title: Le Chant du Vieux Voyageur
+        intro: "En hommage au geste oublié qui a tant marqué Nilo, les trois sœurs chantent ensemble, avec Dame Cartéa, un petit chant improvisé."
+        tours:
+          axelle:
+            - { id: ch23-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, blanche." }
+          maelle:
+            - { id: ch23-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          rafaelle:
+            - { id: ch23-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, blanche." }
+    concert:
+      measures:
+        axelle: { given: [1, 1], missing: 2, prompt: "Noire, noire, blanche" }
+        maelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        rafaelle: { given: [2], missing: 2, prompt: "Blanche, blanche" }
+    pause: "Le dernier merci silencieux : chaque sœur ferme les yeux et adresse, en pensée, un merci à une personne qui lui a offert, un jour, un petit geste de gentillesse, comme en écho au souvenir de Nilo."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant du Vieux Voyageur se répandit dans la clairière, et Nilo, les yeux brillants, se redressa fièrement, comme libéré d'un poids léger qu'il portait depuis très longtemps." }
+      - { who: cartea, text: "Un beau souvenir, célébré comme il se doit, ne s'efface jamais complètement. Portez-vous bien, et merci de m'avoir laissé en être témoin." }
+      - { who: rafaelle, text: "Merci à vous, Dame Cartéa. Et merci à toi, Nilo, de nous avoir laissées partager ça avec toi." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs reprenaient le chemin vers les sommets, Nilo trottait de nouveau en tête du groupe, le pas plus léger que jamais, un vieux souvenir enfin apaisé dans son cœur." }
+      - { who: axelle, text: "Je suis vraiment contente qu'on ait pu t'aider à te souvenir, Nilo." }
+      - { who: nilo, text: "Moi aussi, petite Veilleuse. Et maintenant, je me sens encore plus prêt à continuer ce voyage avec vous trois." }
+    reward: "le souvenir pleinement apaisé de Nilo, et son pas retrouvé"
