@@ -1,0 +1,379 @@
+# Chapitre 24 — Le Capitaine de la Nacelle des Cimes
+# Personnage mineur : un capitaine de nacelle suspendue (montgolfière d'osier et de corde),
+# qui fait traverser un gouffre immense aux voyageurs. Voix partagée avec le Marchand
+# (Schedar), comme prévu dans la feuille de route. Effet ORVANE [1, -1, 0] (decisions.ts) :
+# A = orvane +1, B = orvane -1, C = orvane +0 (neutre).
+
+id: ch24
+number: 24
+act: 2
+title: Le Capitaine de la Nacelle des Cimes
+introImage: ch24
+scene: nacelle-des-cimes
+
+espagnol:
+  - { es: "El abismo es muy profundo.", fr: "Le gouffre est très profond." }
+  - { es: "La barquilla vuela con el viento.", fr: "La nacelle vole avec le vent." }
+  - { es: "El capitán conoce cada ráfaga.", fr: "Le capitaine connaît chaque rafale." }
+  - { es: "Confiar en el viento no es fácil.", fr: "Faire confiance au vent n'est pas facile." }
+  - { es: "El cielo cambia de humor.", fr: "Le ciel change d'humeur." }
+
+decision:
+  prompt: "Le capitaine, les mains fermement posées sur les cordages de sa nacelle, observe un ciel menaçant. « Le vent forcit, et le gouffre ne pardonne pas les erreurs. Voulez-vous attendre que le ciel se calme, ou préférez-vous traverser tout de suite, au risque d'un vol plus agité ? »"
+  options:
+    A:
+      label: Attendre patiemment que le vent se calme
+      scene: "Axelle convainc ses sœurs d'attendre, aussi longtemps que nécessaire, que le vent se calme complètement avant d'embarquer dans la nacelle du capitaine."
+      line: { who: capitaine, text: "Une patience bien placée, petite Veilleuse. Le gouffre sera toujours là demain ; mieux vaut l'affronter dans de bonnes conditions." }
+      habillage: "Les épreuves prennent la forme d'une attente calme et observatrice, où l'on apprend à lire le ciel avant d'agir."
+    B:
+      label: Traverser immédiatement, malgré le vent
+      scene: "Rafaelle, pressée d'avancer, convainc le capitaine de traverser tout de suite, malgré les rafales, pour ne pas perdre davantage de temps précieux."
+      line: { who: capitaine, text: "Je vous préviens, petite Archiviste : ce vol sera agité, et je ne garantis rien de confortable. Mais puisque vous insistez, accrochez-vous bien." }
+      habillage: "Les épreuves se déroulent dans la précipitation et l'agitation, avec une bonne dose d'inconfort à surmonter."
+    C:
+      label: Proposer d'aider le capitaine à stabiliser la nacelle avant de partir
+      scene: "Maelle suggère un compromis : aider le capitaine à renforcer les cordages et à stabiliser la nacelle, pour pouvoir traverser plus tôt, sans attendre que le vent tombe complètement."
+      line: { who: capitaine, text: "Une nacelle bien stabilisée change beaucoup de choses, petite Cartographe. Ce ne sera pas un vol de tout repos, mais il sera plus sûr que prévu." }
+      habillage: "Les épreuves prennent la forme de préparations techniques précises, à mener avec soin avant de s'élancer dans le vide."
+
+repliquesAbsurdes:
+  - "Si le ciel change d'humeur, est-ce qu'il a aussi des jours où il préfère rester au lit sous les nuages ?"
+  - "Mon renard a essayé de sauter dans la nacelle en marche. Résultat : il a fait trois tours sur lui-même avant d'atterrir, vexé."
+  - "Est-ce qu'on peut demander au vent de souffler juste un peu plus fort pour accélérer le trajet, ou c'est hors de sa compétence ?"
+  - "Si le gouffre ne pardonne pas les erreurs, est-ce qu'il accepte au moins les excuses, après coup ?"
+  - "Après une horloge-mère et un souvenir de renard, une nacelle suspendue au-dessus du vide, ça semble presque un jeu d'enfant, en fait."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: Le gouffre sans fond
+    decor: Le bord d'un gouffre immense, dont le fond se perd dans une brume épaisse, traversé par une unique nacelle d'osier et de corde, amarrée à un poteau de bois sculpté.
+    opening:
+      - { who: narrateur, text: "Le sentier, après la clairière de Nilo, s'acheva brusquement au bord d'un gouffre immense, dont le fond se perdait dans une brume épaisse, impossible à sonder du regard." }
+      - { who: narrateur, text: "Une unique nacelle d'osier et de corde, amarrée à un poteau de bois sculpté, se balançait doucement au-dessus du vide, sous la garde d'un homme robuste au visage buriné." }
+      - { who: rafaelle, text: "Comment est-ce qu'on est censées traverser ça ? Il n'y a pas de pont !" }
+      - { who: narrateur, text: "L'homme, qui n'était autre que le capitaine de la nacelle, s'avança vers elles avec un sourire franc, habitué, visiblement, à ce genre de question." }
+      - { who: capitaine, text: "Pas de pont, en effet, petites voyageuses, mais une nacelle fiable, suspendue à des câbles solidement ancrés de l'autre côté du gouffre." }
+      - { who: axelle, text: "Vous traversez ce gouffre souvent, comme ça, suspendu dans le vide ?" }
+      - { who: capitaine, text: "Tous les jours, petite Veilleuse, depuis plus d'années que je ne saurais en compter. Le vent est mon seul véritable adversaire, ici." }
+      - { who: maelle, text: "Et aujourd'hui, le vent semble particulièrement fort." }
+      - { who: capitaine, text: "En effet, petite Cartographe. C'est bien pour cela qu'il va falloir réfléchir, ensemble, à la meilleure façon de procéder." }
+    manches:
+      - id: m1
+        title: Un gouffre sans fond
+        tours:
+          axelle:
+            - { id: ch24-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on une fosse très profonde et très large, creusée dans le sol ou la montagne ?", choices: ["un gouffre", "une colline", "une plaine", "un marais", "une dune"], answer: "un gouffre", hint: "C'est le mot utilisé dans le titre de ce chapitre." }
+            - { id: ch24-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 + 8.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "7 + 8 = 7 + 7 + 1." }
+          maelle:
+            - { id: ch24-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi le vent souffle-t-il souvent plus fort au-dessus d'un gouffre ou d'une vallée encaissée qu'en plaine ouverte ?", choices: ["le relief accélère et canalise l'air qui s'engouffre entre les parois", "le vent souffle toujours plus faiblement dans les gouffres", "cela n'a aucune explication particulière", "un gouffre bloque toujours complètement le vent", "le vent ne change jamais selon le relief"], answer: "le relief accélère et canalise l'air qui s'engouffre entre les parois", hint: "Pense à l'effet du relief sur la force du vent au-dessus du gouffre." }
+            - { id: ch24-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 68 + 57.", choices: ["118", "122", "123", "125", "128"], answer: "125", hint: "68 + 60 − 3." }
+          rafaelle:
+            - { id: ch24-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi, historiquement, des systèmes de nacelles ou de téléphériques ont-ils souvent été construits pour franchir des gouffres ou des vallées profondes ?", choices: ["parce qu'ils permettent de relier deux points difficiles d'accès sans avoir à construire un pont au sol", "parce que ces systèmes n'ont jamais eu aucune utilité", "cela n'a aucune importance historique", "parce qu'un pont est toujours plus simple à construire qu'une nacelle", "parce que les gouffres n'ont jamais nécessité de solution de franchissement"], answer: "parce qu'ils permettent de relier deux points difficiles d'accès sans avoir à construire un pont au sol", hint: "Pense à l'utilité de la nacelle du capitaine pour franchir le gouffre." }
+            - { id: ch24-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 18 × 5.", choices: ["80", "85", "88", "90", "92"], answer: "90", hint: "18 × 5 = 18 × 10 ÷ 2." }
+      - id: m2
+        title: Un capitaine expérimenté
+        tours:
+          axelle:
+            - { id: ch24-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Une nacelle se balançait au-dessus du vide. » ?", choices: ["au-dessus du vide", "se balançait", "Une nacelle", "une", "vide"], answer: "Une nacelle", hint: "Qu'est-ce qui se balance au-dessus du gouffre ?" }
+            - { id: ch24-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 7.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "14 − 7 = 7." }
+          maelle:
+            - { id: ch24-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « buriné » dans « un visage buriné » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le visage du capitaine, marqué par le temps." }
+            - { id: ch24-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 336 ÷ 4.", choices: ["78", "80", "82", "84", "86"], answer: "84", hint: "4 × 84 = 336." }
+          rafaelle:
+            - { id: ch24-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Le vent est mon seul véritable adversaire, ici. » : que révèle cette phrase sur l'expérience du capitaine ?", choices: ["qu'il maîtrise son métier au point de ne craindre que les éléments naturels imprévisibles", "qu'il a peur de tout ce qui l'entoure, sans exception", "qu'il n'a jamais traversé ce gouffre auparavant", "qu'il considère son métier comme totalement sans danger", "qu'il ne fait jamais confiance à sa propre nacelle"], answer: "qu'il maîtrise son métier au point de ne craindre que les éléments naturels imprévisibles", hint: "Repense à ce que dit le capitaine sur son expérience et son seul véritable adversaire." }
+            - { id: ch24-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13² − 90.", choices: ["69", "73", "76", "79", "82"], answer: "79", hint: "169 − 90." }
+      - id: m3
+        title: Le vent se lève
+        tours:
+          axelle:
+            - { id: ch24-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 4 câbles d'un côté de la nacelle, et 3 de l'autre. Combien de câbles en tout ?", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "4 + 3." }
+            - { id: ch24-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi une structure suspendue, comme une nacelle, doit-elle être particulièrement solide face au vent ?", choices: ["le vent exerce une force qui peut faire osciller ou déstabiliser une structure en l'air", "le vent n'a jamais aucun effet sur une structure suspendue", "cela n'a aucune explication particulière", "le vent rend toujours une structure suspendue plus stable", "une nacelle n'a jamais besoin d'être solide"], answer: "le vent exerce une force qui peut faire osciller ou déstabiliser une structure en l'air", hint: "Pense à l'inquiétude du capitaine devant le vent qui forcit." }
+          maelle:
+            - { id: ch24-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 47 × 4.", choices: ["178", "182", "186", "188", "190"], answer: "188", hint: "47 × 4 = 50 × 4 − 3 × 4." }
+            - { id: ch24-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi un voyageur impatient peut-il parfois mal évaluer les risques d'une traversée difficile ?", choices: ["parce que l'envie d'avancer vite peut faire minimiser les dangers réels de la situation", "parce que l'impatience n'a jamais aucun effet sur l'évaluation d'un risque", "cela n'a aucun lien avec la prise de décision en situation périlleuse", "parce qu'un voyageur impatient évalue toujours mieux les risques", "parce que l'impatience n'existe jamais face à un danger"], answer: "parce que l'envie d'avancer vite peut faire minimiser les dangers réels de la situation", hint: "Pense à l'impatience de Rafaelle devant le gouffre et le vent qui forcit." }
+          rafaelle:
+            - { id: ch24-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 6x + 3 = 45.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "6x = 42." }
+            - { id: ch24-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Le capitaine (s'avancer) vers les trois sœurs. »", choices: ["s'est avancé", "s'avançait", "s'avancera", "s'avance", "s'avançant"], answer: "s'est avancé", hint: "« S'avancer » se conjugue avec être au passé composé." }
+      - id: m4
+        title: Observer le ciel
+        tours:
+          axelle:
+            - { id: ch24-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 4.", choices: ["24", "26", "27", "28", "30"], answer: "28", hint: "7 × 4 = 7 × 2 × 2." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch24-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 320 − 156.", choices: ["160", "162", "164", "166", "168"], answer: "164", hint: "320 − 160 + 4." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch24-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El abismo es muy profundo. »", choices: ["Le gouffre est très profond.", "Le gouffre est très étroit.", "Le gouffre est très calme.", "Le gouffre est très sombre.", "Le gouffre est très petit."], answer: "Le gouffre est très profond.", hint: "« Muy profundo » = très profond." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu de la direction du vent : chaque sœur lève une main et essaie de deviner, à son toucher, d'où vient le vent le plus fort, pour s'entraîner à l'observation du capitaine."
+    closing:
+      - { who: narrateur, text: "Le vent siffla un instant entre les câbles de la nacelle, et le capitaine, le regard levé vers le ciel, fronça les sourcils, visiblement préoccupé par ce qu'il y lisait." }
+      - { who: capitaine, text: "Demain, nous verrons plus clairement comment procéder. Reposez-vous bien cette nuit, le ciel ne nous dira peut-être rien de nouveau avant l'aube." }
+      - { who: axelle, text: "On sera prêtes à décider, demain matin." }
+      - { who: narrateur, text: "Et tandis que la nuit tombait sur le bord du gouffre, la nacelle continuait de se balancer doucement, comme pour rappeler, sans relâche, l'ampleur du vide qu'il faudrait bientôt franchir." }
+    reward: "la découverte du gouffre, de la nacelle et de son capitaine"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Lire le vent
+    decor: Le bord du gouffre, au petit matin, où le capitaine enseigne aux trois sœurs les rudiments de la lecture du vent, à travers de petits signes dans le ciel et sur les câbles.
+    opening:
+      - { who: narrateur, text: "Le lendemain matin, le capitaine entreprit d'enseigner aux trois sœurs les rudiments de la lecture du vent, à travers de petits signes dans le ciel et sur les câbles de la nacelle." }
+      - { who: capitaine, text: "Regardez bien les nuages, petites voyageuses : s'ils filent vite et bas, le vent, en général, ne tardera pas à forcir encore davantage." }
+      - { who: maelle, text: "Et les câbles, là, qui vibrent légèrement : ça veut dire quoi, exactement ?" }
+      - { who: capitaine, text: "Que le vent souffle déjà assez fort pour les faire chanter, petite Cartographe. Un bon capitaine apprend à écouter cette musique-là." }
+      - { who: rafaelle, text: "Combien de temps, en général, faut-il attendre pour qu'un vent comme celui-là se calme ?" }
+      - { who: capitaine, text: "Cela varie beaucoup, petite Archiviste. Parfois une heure, parfois un jour entier. C'est bien pour cela qu'il faut rester patient, et observer." }
+      - { who: axelle, text: "Et si on décidait d'attendre, vous resteriez avec nous, tout ce temps ?" }
+      - { who: capitaine, text: "Bien sûr, petite Veilleuse. Un bon capitaine n'abandonne jamais ses passagers, quelle que soit la décision qu'ils prennent." }
+    manches:
+      - id: m1
+        title: Lire les nuages
+        tours:
+          axelle:
+            - { id: ch24-j2-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « forcir » (en parlant du vent) ?", choices: ["faiblir", "souffler", "siffler", "tourner", "monter"], answer: "faiblir", hint: "Le contraire de ce que fait un vent qui devient plus fort." }
+            - { id: ch24-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 5.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "9 + 5 = 9 + 9 − 4." }
+          maelle:
+            - { id: ch24-j2-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi la vitesse et l'altitude des nuages peuvent-elles donner des indices sur l'évolution prochaine du vent ?", choices: ["parce que le mouvement des nuages reflète directement les courants d'air en altitude", "parce que les nuages ne bougent jamais en fonction du vent", "cela n'a aucune explication particulière", "parce que la vitesse des nuages n'a jamais aucun lien avec le vent", "parce que seule la couleur des nuages compte, jamais leur vitesse"], answer: "parce que le mouvement des nuages reflète directement les courants d'air en altitude", hint: "Pense à ce que dit le capitaine sur les nuages qui filent vite et bas." }
+            - { id: ch24-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 455 ÷ 7.", choices: ["55", "60", "63", "65", "68"], answer: "65", hint: "7 × 65 = 455." }
+          rafaelle:
+            - { id: ch24-j2-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi un savoir-faire transmis par l'observation répétée, comme celui du capitaine, est-il souvent aussi précieux qu'un savoir théorique ?", choices: ["parce qu'il s'appuie sur une expérience concrète et longuement éprouvée du terrain", "parce qu'un savoir issu de l'observation n'a jamais aucune valeur", "cela n'a aucun lien avec la fiabilité d'un savoir-faire", "parce que seul un savoir théorique peut être considéré comme fiable", "parce que l'expérience de terrain n'apporte jamais rien de précis"], answer: "parce qu'il s'appuie sur une expérience concrète et longuement éprouvée du terrain", hint: "Pense à la façon dont le capitaine a appris à lire le vent, au fil des années." }
+            - { id: ch24-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 16 × 6.", choices: ["90", "92", "94", "96", "98"], answer: "96", hint: "16 × 6 = 16 × 3 × 2." }
+      - id: m2
+        title: La musique des câbles
+        tours:
+          axelle:
+            - { id: ch24-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 16 − 9.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "16 − 6 = 10, puis − 3." }
+            - { id: ch24-j2-ax-m2b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Les câbles vibrent légèrement. » ?", choices: ["légèrement", "vibrent", "Les câbles", "les", "câbles"], answer: "Les câbles", hint: "Qu'est-ce qui vibre légèrement sous l'effet du vent ?" }
+          maelle:
+            - { id: ch24-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 36 × 4.", choices: ["138", "140", "142", "144", "146"], answer: "144", hint: "36 × 4 = 36 × 2 × 2." }
+            - { id: ch24-j2-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « patient » dans « rester patient » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit l'attitude recommandée par le capitaine." }
+          rafaelle:
+            - { id: ch24-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 11² − 90.", choices: ["28", "31", "33", "35", "38"], answer: "31", hint: "121 − 90." }
+            - { id: ch24-j2-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « La barquilla vuela con el viento. »", choices: ["La nacelle vole avec le vent.", "La nacelle reste immobile toujours.", "La nacelle tombe dans le vide.", "La nacelle brille au soleil.", "La nacelle se casse facilement."], answer: "La nacelle vole avec le vent.", hint: "« Vuela con el viento » = vole avec le vent." }
+      - id: m3
+        title: Un capitaine fidèle
+        tours:
+          axelle:
+            - { id: ch24-j2-ax-m3a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on la qualité de quelqu'un qui reste présent et fiable, quoi qu'il arrive ?", choices: ["la fidélité", "l'impatience", "la distraction", "la négligence", "l'indifférence"], answer: "la fidélité", hint: "C'est la qualité que montre le capitaine envers ses passagers." }
+            - { id: ch24-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 4.", choices: ["28", "30", "32", "34", "36"], answer: "32", hint: "8 × 4 = 8 × 2 × 2." }
+          maelle:
+            - { id: ch24-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 275 ÷ 5.", choices: ["50", "52", "55", "58", "60"], answer: "55", hint: "5 × 55 = 275." }
+            - { id: ch24-j2-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi un guide ou un capitaine qui reste présent, quelle que soit la décision de ses passagers, inspire-t-il davantage confiance ?", choices: ["parce que cette fidélité montre qu'il place leur sécurité avant sa propre convenance", "parce qu'un guide fidèle n'inspire jamais confiance", "cela n'a aucun lien avec la confiance envers un guide", "parce qu'un guide devrait toujours imposer sa propre décision", "parce que la fidélité d'un guide n'a jamais aucune importance"], answer: "parce que cette fidélité montre qu'il place leur sécurité avant sa propre convenance", hint: "Pense à ce que dit le capitaine sur le fait de ne jamais abandonner ses passagers." }
+          rafaelle:
+            - { id: ch24-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 9x − 5 = 40.", choices: ["4", "5", "6", "7", "8"], answer: "5", hint: "9x = 45." }
+            - { id: ch24-j2-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Un bon capitaine n'abandonne jamais ses passagers. » : que révèle cette phrase sur les valeurs du capitaine ?", choices: ["qu'il place la loyauté et la sécurité de ses passagers au cœur de son métier", "qu'il abandonne régulièrement ses passagers en cas de difficulté", "qu'il ne se préoccupe jamais du confort de ses passagers", "qu'il considère son métier comme sans aucune responsabilité", "qu'il préfère toujours voyager seul, sans personne à bord"], answer: "qu'il place la loyauté et la sécurité de ses passagers au cœur de son métier", hint: "Repense à ce que dit le capitaine à Axelle, sur le fait de rester avec eux." }
+      - id: m4
+        title: S'exercer à observer
+        tours:
+          axelle:
+            - { id: ch24-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 6.", choices: ["30", "32", "34", "36", "38"], answer: "36", hint: "6 × 6 = 6 × 3 × 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch24-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 310 − 148.", choices: ["158", "160", "162", "164", "166"], answer: "162", hint: "310 − 150 + 2." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch24-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El capitán conoce cada ráfaga. »", choices: ["Le capitaine connaît chaque rafale.", "Le capitaine ignore le vent.", "Le capitaine craint chaque rafale.", "Le capitaine compte les nuages.", "Le capitaine dort pendant le vent."], answer: "Le capitaine connaît chaque rafale.", hint: "« Conoce cada ráfaga » = connaît chaque rafale." }
+            - { gen: maths.ranger }
+    pause: "Le jeu de l'oreille au vent : chaque sœur ferme les yeux un instant et décrit, à voix haute, le bruit du vent qu'elle imagine, fort ou faible, pour s'entraîner à l'écoute du capitaine."
+    closing:
+      - { who: narrateur, text: "Le soir venu, les trois sœurs observèrent longuement le ciel, essayant d'appliquer tout ce que le capitaine venait de leur enseigner sur la lecture du vent." }
+      - { who: capitaine, text: "Demain, il faudra choisir : attendre encore, traverser malgré le vent, ou renforcer la nacelle avant de partir. Réfléchissez-y bien, cette nuit." }
+      - { who: rafaelle, text: "On y réfléchira sérieusement, c'est promis." }
+      - { who: narrateur, text: "Et tandis que la nuit tombait sur le bord du gouffre, le vent continuait de siffler entre les câbles, comme pour rappeler, sans relâche, qu'il restait maître du moment." }
+    reward: "les rudiments de la lecture du vent, enseignés par le capitaine"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: L'histoire d'une traversée manquée
+    decor: Le bord du gouffre, où le capitaine raconte aux trois sœurs une ancienne traversée manquée, qui l'a rendu particulièrement prudent face au vent.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, tandis que le vent soufflait toujours en rafales irrégulières, le capitaine raconta aux trois sœurs une ancienne traversée qui avait mal tourné, il y a bien des années." }
+      - { who: capitaine, text: "J'étais jeune, impatient, et j'ai voulu traverser malgré un vent bien trop fort. La nacelle a failli se renverser, à mi-chemin, au-dessus du gouffre." }
+      - { who: rafaelle, text: "Qu'est-ce qui s'est passé, finalement ? Comment vous en êtes-vous sorti ?" }
+      - { who: capitaine, text: "De la chance, surtout, petite Archiviste, et quelques prières improvisées. Depuis ce jour-là, je n'ai jamais plus pris le vent à la légère." }
+      - { who: axelle, text: "C'est pour ça que vous êtes devenu si prudent, aujourd'hui ?" }
+      - { who: capitaine, text: "Exactement, petite Veilleuse. Une leçon apprise de cette façon-là, on ne l'oublie jamais vraiment." }
+      - { who: maelle, text: "Merci de nous avoir raconté ça. Ça aide à comprendre pourquoi vous insistez tant sur la prudence." }
+      - { who: capitaine, text: "C'est aussi pour ça que je le raconte, petite Cartographe. Pour que d'autres n'aient pas à vivre la même peur que moi, ce jour-là." }
+    manches:
+      - id: m1
+        title: Une traversée manquée
+        tours:
+          axelle:
+            - { id: ch24-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 6 rafales comptées le matin, et 3 de plus l'après-midi. Combien de rafales en tout ?", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "6 + 3." }
+            - { id: ch24-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « prudent » ?", choices: ["imprudent", "réfléchi", "calme", "attentif", "sage"], answer: "imprudent", hint: "Le contraire de ce qu'était le capitaine, jeune et impatient." }
+          maelle:
+            - { id: ch24-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi une expérience difficile vécue dans sa jeunesse peut-elle influencer durablement le comportement d'un adulte dans son métier ?", choices: ["parce qu'une expérience marquante laisse une empreinte forte sur les décisions futures", "parce qu'une expérience de jeunesse n'a jamais aucune influence sur l'âge adulte", "cela n'a aucune explication particulière", "parce que seules les expériences récentes comptent, jamais les anciennes", "parce qu'un métier n'est jamais influencé par une expérience personnelle"], answer: "parce qu'une expérience marquante laisse une empreinte forte sur les décisions futures", hint: "Pense à l'effet de la traversée manquée sur la prudence actuelle du capitaine." }
+            - { id: ch24-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 87 + 56.", choices: ["138", "140", "142", "143", "145"], answer: "143", hint: "87 + 60 − 4." }
+          rafaelle:
+            - { id: ch24-j3-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi raconter ses propres erreurs passées à d'autres personnes peut-il avoir une réelle utilité, au-delà du simple récit ?", choices: ["parce que cela permet aux autres d'éviter de répéter la même erreur", "parce que raconter ses erreurs n'a jamais aucune utilité pour les autres", "cela n'a aucun lien avec la transmission d'une expérience", "parce qu'il vaut toujours mieux cacher ses erreurs passées", "parce qu'une erreur personnelle ne concerne jamais que soi-même"], answer: "parce que cela permet aux autres d'éviter de répéter la même erreur", hint: "Repense à ce que dit le capitaine sur la raison pour laquelle il raconte cette histoire." }
+            - { id: ch24-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14 × 6.", choices: ["80", "82", "84", "86", "88"], answer: "84", hint: "14 × 6 = 14 × 3 × 2." }
+      - id: m2
+        title: Une leçon apprise à jamais
+        tours:
+          axelle:
+            - { id: ch24-j3-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « La nacelle a failli se renverser. » ?", choices: ["se renverser", "a failli", "La nacelle", "la", "nacelle"], answer: "La nacelle", hint: "Qu'est-ce qui a failli se renverser, dans le récit du capitaine ?" }
+            - { id: ch24-j3-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 + 9.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "7 + 9 = 7 + 7 + 2." }
+          maelle:
+            - { id: ch24-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 312 ÷ 4.", choices: ["72", "76", "78", "80", "82"], answer: "78", hint: "4 × 78 = 312." }
+            - { id: ch24-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « improvisées » dans « quelques prières improvisées » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit les prières du jeune capitaine, dans son récit." }
+          rafaelle:
+            - { id: ch24-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10² − 36.", choices: ["58", "61", "64", "66", "70"], answer: "64", hint: "100 − 36." }
+            - { id: ch24-j3-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Une leçon apprise de cette façon-là, on ne l'oublie jamais vraiment. » : que signifie cette phrase ?", choices: ["qu'une expérience vécue dans la peur ou le danger marque durablement la mémoire", "qu'une leçon apprise se perd toujours au bout de quelques années", "que seules les leçons théoriques restent vraiment en mémoire", "qu'on oublie toujours une leçon apprise dans la difficulté", "que les leçons de ce type n'ont jamais aucune valeur durable"], answer: "qu'une expérience vécue dans la peur ou le danger marque durablement la mémoire", hint: "Relis bien la phrase du capitaine, en lien avec son propre souvenir." }
+      - id: m3
+        title: Transmettre son expérience
+        tours:
+          axelle:
+            - { id: ch24-j3-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 12 − 5.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "12 − 5 = 7." }
+            - { id: ch24-j3-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un vent capable de renverser une nacelle légère représente-t-il un danger réel pour ceux qui la traversent ?", choices: ["parce qu'une structure légère suspendue en hauteur résiste moins bien aux fortes bourrasques", "parce qu'une nacelle légère n'a jamais besoin de résister au vent", "cela n'a aucune explication particulière", "parce qu'un vent fort n'a jamais aucun effet sur une nacelle", "parce qu'une nacelle lourde serait toujours plus dangereuse qu'une nacelle légère"], answer: "parce qu'une structure légère suspendue en hauteur résiste moins bien aux fortes bourrasques", hint: "Pense au danger évoqué par le capitaine dans son récit de jeunesse." }
+          maelle:
+            - { id: ch24-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 46 × 4.", choices: ["178", "182", "184", "186", "190"], answer: "184", hint: "46 × 4 = 50 × 4 − 4 × 4." }
+            - { id: ch24-j3-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi écouter le récit d'une erreur passée, racontée par quelqu'un d'expérimenté, peut-il aider des voyageurs à mieux décider ?", choices: ["parce que cela leur permet de comprendre concrètement les conséquences possibles d'une mauvaise décision", "parce qu'un tel récit n'a jamais aucune utilité pour décider", "cela n'a aucun lien avec la prise de décision", "parce que seules les décisions des voyageurs eux-mêmes ont de la valeur", "parce qu'écouter un récit retarde toujours inutilement une décision"], answer: "parce que cela leur permet de comprendre concrètement les conséquences possibles d'une mauvaise décision", hint: "Repense à ce que ressentent les trois sœurs après avoir écouté le récit du capitaine." }
+          rafaelle:
+            - { id: ch24-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 7x − 8 = 34.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "7x = 42." }
+            - { id: ch24-j3-ra-m3b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Confiar en el viento no es fácil. »", choices: ["Faire confiance au vent n'est pas facile.", "Le vent ne souffle jamais fort.", "Le vent est toujours agréable.", "Faire confiance au vent est inutile.", "Le vent change de nom chaque jour."], answer: "Faire confiance au vent n'est pas facile.", hint: "« No es fácil » = n'est pas facile." }
+      - id: m4
+        title: Comprendre la prudence
+        tours:
+          axelle:
+            - { id: ch24-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 5.", choices: ["40", "42", "44", "45", "48"], answer: "45", hint: "9 × 5 = 9 × 10 ÷ 2." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch24-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 295 − 137.", choices: ["150", "154", "156", "158", "160"], answer: "158", hint: "295 − 140 + 3." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch24-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El cielo cambia de humor. »", choices: ["Le ciel change d'humeur.", "Le ciel reste toujours calme.", "Le ciel ne change jamais.", "Le ciel disparaît souvent.", "Le ciel se repose la nuit."], answer: "Le ciel change d'humeur.", hint: "« Cambia de humor » = change d'humeur." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu du récit transmis : chaque sœur raconte, en une phrase, une petite erreur qu'elle a déjà commise et dont elle a tiré une leçon, pour s'exercer à transmettre une expérience comme le capitaine."
+    closing:
+      - { who: narrateur, text: "La soirée se prolongea doucement au bord du gouffre, entre récits et silences, tandis que le vent, enfin, semblait un peu moins menaçant qu'au matin." }
+      - { who: capitaine, text: "Demain, il faudra enfin vous décider. Prenez cette dernière nuit pour y réfléchir une dernière fois, à la lumière de tout ce qu'on a partagé." }
+      - { who: maelle, text: "On y réfléchira, c'est promis. Merci de nous avoir raconté votre histoire." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs regagnaient leur campement pour la nuit, Nilo observait le capitaine s'éloigner vers la nacelle, pensif, comme s'il comprenait, lui aussi, le poids d'une vieille peur jamais tout à fait effacée." }
+    reward: "l'histoire de la traversée manquée du capitaine, et sa leçon de prudence"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Se décider face au vent
+    decor: Le bord du gouffre, dans la lumière grise du petit matin, où les trois sœurs retrouvent le capitaine pour lui annoncer, enfin, leur décision.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, les trois sœurs retrouvèrent le capitaine au bord du gouffre, dans la lumière grise du petit matin, prêtes à lui annoncer leur décision." }
+      - { who: capitaine, text: "Le vent forcit, et le gouffre ne pardonne pas les erreurs. Voulez-vous attendre que le ciel se calme, ou préférez-vous traverser tout de suite, au risque d'un vol plus agité ?" }
+      - { who: rafaelle, text: "On y a bien réfléchi, capitaine. Et on a pris une décision, toutes les trois ensemble." }
+      - { who: capitaine, text: "Je vous écoute, petite Archiviste. Quelle qu'elle soit, je ferai de mon mieux pour vous accompagner en toute sécurité." }
+    manches:
+      - id: m1
+        title: Peser le pour et le contre
+        tours:
+          axelle:
+            - { id: ch24-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « agité » (en parlant d'un vol) ?", choices: ["calme", "mouvementé", "secoué", "bruyant", "turbulent"], answer: "calme", hint: "Le contraire de ce que serait un vol trop rapide, malgré le vent." }
+            - { id: ch24-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 6.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "8 + 6 = 8 + 8 − 2." }
+          maelle:
+            - { id: ch24-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi une décision prise après avoir écouté l'expérience d'un spécialiste est-elle souvent plus solide qu'une décision prise sans aucune information ?", choices: ["parce qu'elle s'appuie sur des connaissances concrètes plutôt que sur une simple impression", "parce qu'une décision collective n'a jamais aucun avantage", "cela n'a aucun lien avec la qualité d'une décision", "parce qu'une décision sans information est toujours meilleure", "parce qu'écouter un spécialiste retarde toujours inutilement une décision"], answer: "parce qu'elle s'appuie sur des connaissances concrètes plutôt que sur une simple impression", hint: "Pense à tout ce que le capitaine a enseigné aux sœurs sur le vent, cette semaine." }
+            - { id: ch24-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 92 + 59.", choices: ["146", "148", "150", "151", "153"], answer: "151", hint: "92 + 60 − 1." }
+          rafaelle:
+            - { id: ch24-j4-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Je ferai de mon mieux pour vous accompagner en toute sécurité. » : que révèle cette phrase sur l'attitude du capitaine ?", choices: ["qu'il reste engagé envers la sécurité des sœurs, quelle que soit leur décision", "qu'il refusera forcément leur décision", "qu'il attend d'elles une seule réponse précise", "qu'il n'a aucune considération pour leur choix", "qu'il préfère décider lui-même à leur place"], answer: "qu'il reste engagé envers la sécurité des sœurs, quelle que soit leur décision", hint: "Repense à l'attitude du capitaine depuis le début de ce chapitre." }
+            - { id: ch24-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13² − 100.", choices: ["59", "63", "66", "69", "73"], answer: "69", hint: "169 − 100." }
+      - id: m2
+        title: Les trois propositions
+        tours:
+          axelle:
+            - { id: ch24-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 15 − 8.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "15 − 5 = 10, puis − 3." }
+            - { id: ch24-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi renforcer les cordages d'une nacelle avant une traversée difficile peut-elle réduire le risque d'accident ?", choices: ["des cordages plus solides résistent mieux aux secousses provoquées par le vent", "renforcer des cordages n'a jamais aucun effet sur la sécurité", "cela n'a aucune explication particulière", "des cordages renforcés rendent toujours une nacelle plus lourde et plus dangereuse", "la solidité des cordages n'a jamais aucun lien avec le vent"], answer: "des cordages plus solides résistent mieux aux secousses provoquées par le vent", hint: "Pense à la proposition de Maelle, pour stabiliser la nacelle avant de partir." }
+          maelle:
+            - { id: ch24-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 351 ÷ 3.", choices: ["107", "111", "115", "117", "119"], answer: "117", hint: "3 × 117 = 351." }
+            - { id: ch24-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « solide » dans « une décision solide » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit une décision bien réfléchie." }
+          rafaelle:
+            - { id: ch24-j4-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 8² + 2 × 10.", choices: ["74", "78", "82", "84", "88"], answer: "84", hint: "64 + 20." }
+            - { id: ch24-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Le gouffre est très profond » en espagnol ?", choices: ["El abismo es muy profundo.", "La barquilla vuela con el viento.", "El capitán conoce cada ráfaga.", "Confiar en el viento no es fácil.", "El cielo cambia de humor."], answer: "El abismo es muy profundo.", hint: "Relis la phrase du jour 1." }
+      - id: m3
+        title: Annoncer sa décision
+        tours:
+          axelle:
+            - { id: ch24-j4-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Les trois sœurs retrouvèrent le capitaine. » ?", choices: ["le capitaine", "retrouvèrent", "Les trois sœurs", "trois", "sœurs"], answer: "Les trois sœurs", hint: "Qui retrouve le capitaine au bord du gouffre ?" }
+            - { id: ch24-j4-ax-m3b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 11 − 5.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "11 − 5 = 6." }
+          maelle:
+            - { id: ch24-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 4.", choices: ["108", "112", "114", "116", "120"], answer: "116", hint: "30 × 4 − 4." }
+            - { id: ch24-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi annoncer une décision claire, même risquée, à un capitaine expérimenté lui permet-il de mieux se préparer ?", choices: ["parce qu'il peut ainsi anticiper et organiser au mieux la traversée selon le choix fait", "parce qu'annoncer une décision n'a jamais aucune utilité pour un capitaine", "cela n'a aucun lien avec la préparation d'une traversée", "parce qu'il vaut toujours mieux rester dans l'incertitude", "parce que la clarté retarde toujours une décision"], answer: "parce qu'il peut ainsi anticiper et organiser au mieux la traversée selon le choix fait", hint: "Pense à l'utilité, pour le capitaine, de connaître la décision des sœurs à l'avance." }
+          rafaelle:
+            - { id: ch24-j4-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 4x + 11 = 35.", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "4x = 24." }
+            - { id: ch24-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au futur simple : « Nous (traverser) ce gouffre, ensemble, toutes les trois. »", choices: ["nous traverserons", "nous traversons", "nous traversions", "nous traversâmes", "nous traversions"], answer: "nous traverserons", hint: "Futur simple de « traverser »." }
+      - id: m4
+        title: Un moment de vérité
+        tours:
+          axelle:
+            - { id: ch24-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 5.", choices: ["30", "32", "33", "35", "38"], answer: "35", hint: "7 × 5 = 7 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch24-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 260 − 118.", choices: ["138", "140", "142", "144", "146"], answer: "142", hint: "260 − 120 + 2." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch24-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15 × 6.", choices: ["86", "88", "90", "92", "94"], answer: "90", hint: "15 × 6 = 15 × 3 × 2." }
+            - { gen: maths.duree }
+    pause: "Le jeu du compte à rebours avant le départ : chaque sœur compte, à voix haute, de 5 à 1, avant de prononcer, toutes ensemble, le mot qui résume leur décision commune face au vent."
+    closing:
+      - { who: narrateur, text: "Les trois sœurs échangèrent un dernier regard, puis, d'une seule voix, annoncèrent au capitaine la décision qu'elles avaient prise ensemble, après mûre réflexion." }
+      - { who: capitaine, text: "Je vous entends, petites voyageuses, et je respecte votre choix. Préparons-nous, alors, pour demain." }
+      - { who: maelle, text: "On espère vraiment que tout se passera bien, capitaine." }
+      - { who: narrateur, text: "Et tandis que le vent continuait de souffler par rafales irrégulières, les trois sœurs se préparèrent, chacune à sa façon, à affronter la traversée qui les attendait." }
+    reward: "la décision prise ensemble, annoncée au capitaine"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: La traversée du gouffre
+    decor: Le bord du gouffre, dans la lumière du matin, où la nacelle, enfin prête, attend que les trois sœurs embarquent pour la grande traversée.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, dans la lumière du matin, la nacelle, enfin prête selon la décision prise la veille, attendait que les trois sœurs embarquent pour la grande traversée du gouffre." }
+      - { who: capitaine, text: "Le vent forcit, et le gouffre ne pardonne pas les erreurs. Voulez-vous attendre que le ciel se calme, ou préférez-vous traverser tout de suite, au risque d'un vol plus agité ?" }
+      - { who: nilo, text: "Allez, les filles. Une dernière vérification avant de s'élancer, et on pourra dire qu'on a fait de notre mieux, ici aussi." }
+    manches:
+      - id: m1
+        title: Ce que le gouffre a appris
+        intro: "Le capitaine interroge chaque sœur sur tout ce que cette semaine passée au bord du gouffre lui a appris."
+        tours:
+          axelle:
+            - { id: ch24-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on une fosse très profonde et très large, creusée dans le sol ou la montagne ?", choices: ["un gouffre", "une colline", "une plaine", "un marais", "une dune"], answer: "un gouffre", hint: "C'est le mot du titre de ce chapitre." }
+            - { id: ch24-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 + 4.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "9 + 4 = 9 + 1 + 3." }
+          maelle:
+            - { id: ch24-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi le vent souffle-t-il souvent plus fort au-dessus d'un gouffre, comme tu l'as appris cette semaine ?", choices: ["le relief accélère et canalise l'air qui s'engouffre entre les parois", "le vent souffle toujours plus faiblement dans les gouffres", "cela n'a aucune explication particulière", "un gouffre bloque toujours complètement le vent", "le vent ne change jamais selon le relief"], answer: "le relief accélère et canalise l'air qui s'engouffre entre les parois", hint: "Repense à ta propre question du premier jour." }
+            - { id: ch24-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 44 × 4.", choices: ["168", "172", "174", "176", "178"], answer: "176", hint: "44 × 4 = 45 × 4 − 4." }
+          rafaelle:
+            - { id: ch24-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que le capitaine incarne la valeur de l'expérience transmise, à travers son récit de jeunesse ?", choices: ["parce qu'il a tiré de son erreur passée une prudence qu'il partage désormais avec d'autres", "parce que le capitaine n'a jamais aucune expérience réelle du gouffre", "parce qu'il refuse toujours de partager ce qu'il a vécu", "parce qu'il n'y a aucune leçon à tirer de son récit", "parce que l'expérience n'a aucun lien avec la prudence"], answer: "parce qu'il a tiré de son erreur passée une prudence qu'il partage désormais avec d'autres", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès du capitaine." }
+            - { id: ch24-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 6/7 − 2/7.", choices: ["2/7", "3/7", "4/7", "5/7", "6/7"], answer: "4/7", hint: "6 − 2 = 4, même dénominateur." }
+      - id: m2
+        title: Avant de s'élancer
+        intro: "Il faut relier tout ce que la semaine a appris sur le vent et la prudence, avant de s'élancer dans la nacelle."
+        tours:
+          axelle:
+            - { id: ch24-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux une personne qui attend calmement les bonnes conditions avant d'agir ?", choices: ["patiente", "impatiente", "distraite", "pressée", "agitée"], answer: "patiente", hint: "C'est la qualité valorisée par le capitaine face au vent." }
+            - { id: ch24-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 16 − 8.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "16 − 8 = 8." }
+          maelle:
+            - { id: ch24-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi cette traversée du gouffre, et la rencontre avec le capitaine, ont-elles une importance particulière dans le voyage des trois sœurs ?", choices: ["elle n'a aucune importance réelle", "elle leur apprend la prudence, la lecture du risque et la valeur de l'expérience transmise", "elle les empêche d'avancer vers le sommet", "elle se trouve très loin des montagnes", "personne n'y vient jamais vraiment"], answer: "elle leur apprend la prudence, la lecture du risque et la valeur de l'expérience transmise", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès du capitaine." }
+            - { id: ch24-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 432 ÷ 6.", choices: ["68", "70", "72", "74", "76"], answer: "72", hint: "6 × 72 = 432." }
+          rafaelle:
+            - { id: ch24-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 45.", choices: ["30", "33", "36", "38", "41"], answer: "36", hint: "81 − 45." }
+            - { id: ch24-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Voulez-vous attendre que le ciel se calme ? » : quel est le sujet de cette phrase ?", choices: ["le ciel", "voulez-vous", "attendre", "vous", "que"], answer: "vous", hint: "À qui le capitaine pose-t-il cette question ?" }
+      - id: m3
+        title: Le Chant du Grand Vide
+        intro: "Avant de s'élancer dans la nacelle, le capitaine et les trois sœurs chantent ensemble, pour accompagner, d'un rythme stable, la traversée du gouffre."
+        tours:
+          axelle:
+            - { id: ch24-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, blanche." }
+          maelle:
+            - { id: ch24-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          rafaelle:
+            - { id: ch24-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, blanche." }
+    concert:
+      measures:
+        axelle: { given: [1, 1], missing: 2, prompt: "Noire, noire, blanche" }
+        maelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        rafaelle: { given: [2], missing: 2, prompt: "Blanche, blanche" }
+    pause: "Le dernier regard vers l'autre rive : chaque sœur, juste avant d'embarquer, désigne du doigt un point précis de l'autre côté du gouffre, qu'elle se promet de retrouver une fois la traversée terminée."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant du Grand Vide se répandit au-dessus du gouffre, et la nacelle, enfin, s'élança doucement dans les airs, portée par le capitaine et le vent." }
+      - { who: capitaine, text: "Nous y sommes, petites voyageuses. Accrochez-vous bien, et faites confiance à la nacelle, autant qu'à vous-mêmes." }
+      - { who: rafaelle, text: "On vous fait confiance, capitaine. On a appris, cette semaine, à bien lire le ciel, grâce à vous." }
+      - { who: narrateur, text: "Et tandis que la nacelle glissait au-dessus du gouffre sans fond, le vent, comme apaisé par tant de prudence méritée, sembla faiblir juste assez pour rendre la traversée plus douce que prévu." }
+      - { who: axelle, text: "On l'a fait ! On a vraiment traversé ce gouffre immense !" }
+      - { who: nilo, text: "Encore une étape de passée, et un vide de plus derrière nous. Pas mal, pour une semaine au bord du vertige." }
+    reward: "la traversée réussie du gouffre, et la confiance du capitaine"

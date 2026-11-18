@@ -21,7 +21,7 @@ function selfCheck(q: Question) {
   for (const alt of q.accept ?? []) expect(checkAnswer(q, alt), `${q.id} accepte « ${alt} »`).toBe('juste');
 }
 
-const KNOWN_SPEAKERS = ['narrateur', 'thessaly', 'plume', 'gardien', 'nilo', 'mouf', 'epouvantail', 'veilleur', 'habitant', 'passeur', 'pigeon', 'fil', 'reine', 'scribe', 'devoreuse', 'trame', 'cartea', 'albin', 'marchand', 'peseur', 'rouage', 'chrono', 'axelle', 'maelle', 'rafaelle'];
+const KNOWN_SPEAKERS = ['narrateur', 'thessaly', 'plume', 'gardien', 'nilo', 'mouf', 'epouvantail', 'veilleur', 'habitant', 'passeur', 'pigeon', 'fil', 'reine', 'scribe', 'devoreuse', 'trame', 'cartea', 'albin', 'marchand', 'peseur', 'rouage', 'chrono', 'capitaine', 'axelle', 'maelle', 'rafaelle'];
 
 describe.each(CHAPTERS.map((c) => [c.number, c] as const))('chapitre %i (tous les chapitres écrits)', (_n, ch) => {
   it('a 5 jours, 3 à 4 manches par jour et un tour par fille dans chaque manche', () => {
