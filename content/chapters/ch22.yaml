@@ -1,0 +1,382 @@
+# Chapitre 22 — Le Cœur de l'Horloge-Mère
+# Chapitre MAJEUR (decisions.ts : MAJOR = {9, 12, 20, 22, 30}). Réutilise Chrono (déjà
+# établi, voix Kore). Pas d'effet ORVANE pour ce chapitre (absent de ORVANE), mais des
+# flags critiques : addFlags(22,'A',[CHRONO_DEBOUT,SABLIER_DE_POCHE]) et pareil pour 'C' ;
+# l'option B ne pose aucun flag (le Sablier de Poche est confié à Chrono, donc perdu, et
+# Chrono reste affaibli). Introduction du Sablier de Poche, un objet magique découvert
+# dans une caverne sous la mer intérieure, où bat l'Horloge-Mère, mécanisme originel dont
+# dépendent toutes les autres horloges.
+
+id: ch22
+number: 22
+act: 2
+title: Le Cœur de l'Horloge-Mère
+introImage: ch22
+scene: coeur-horloge-mere
+
+espagnol:
+  - { es: "El corazón del mecanismo late despacio.", fr: "Le cœur du mécanisme bat lentement." }
+  - { es: "Un pequeño reloj de arena puede salvar mucho.", fr: "Un petit sablier peut sauver beaucoup." }
+  - { es: "Chrono necesita ayuda urgente.", fr: "Chrono a besoin d'aide urgente." }
+  - { es: "Cada segundo cuenta ahora.", fr: "Chaque seconde compte maintenant." }
+  - { es: "La sabiduría vale más que el sacrificio inútil.", fr: "La sagesse vaut plus que le sacrifice inutile." }
+
+decision:
+  prompt: "Dans la caverne tremblante, l'Horloge-Mère se fissure de toutes parts, et Chrono, épuisé, s'effondre devant son mécanisme. Un minuscule Sablier de Poche, trouvé niché entre deux rouages, semble être la clé. « Que faisons-nous de ce sablier ? » demande Rafaelle, le cœur battant."
+  options:
+    A:
+      label: "Utiliser le Sablier pour relancer l'Horloge-Mère, puis le reprendre"
+      scene: "Axelle verse, avec une précision extrême, le sable du Sablier de Poche dans le mécanisme fissuré de l'Horloge-Mère, juste assez pour la relancer, avant de récupérer le sablier intact."
+      line: { who: chrono, text: "Juste assez, et pas une seconde de trop. Vous avez fait preuve d'une maîtrise que je n'espérais même plus, petite Veilleuse." }
+      habillage: "Les épreuves prennent la forme de gestes d'une extrême précision, où chaque geste compte, sans rien gaspiller."
+    B:
+      label: "Confier directement le Sablier de Poche à Chrono"
+      scene: "Rafaelle, pressée par l'urgence, tend directement le Sablier de Poche à Chrono, pour qu'il s'en serve lui-même, sans chercher davantage de précision dans le geste."
+      line: { who: chrono, text: "Ce sablier... il faudra que je le garde, désormais, pour stabiliser ce qui reste de l'Horloge-Mère. Ce n'est pas la solution que j'aurais choisie, mais elle me permettra de tenir, tant bien que mal." }
+      habillage: "Les épreuves se résolvent dans l'urgence, avec les moyens disponibles, sans chercher la solution la plus élégante."
+    C:
+      label: "Laisser Maelle calculer, avec soin, la bonne quantité de sable nécessaire"
+      scene: "Maelle prend le temps, malgré l'urgence, de calculer précisément la quantité de sable nécessaire pour stabiliser l'Horloge-Mère sans épuiser totalement le Sablier de Poche."
+      line: { who: chrono, text: "Un calcul juste, au bon moment, voilà exactement ce qu'il fallait, petite Cartographe. L'Horloge-Mère et moi-même vous devons beaucoup." }
+      habillage: "Les épreuves prennent la forme de calculs précis à effectuer rapidement, sans se laisser déborder par l'urgence."
+
+repliquesAbsurdes:
+  - "Si l'Horloge-Mère a un cœur, est-ce qu'elle a aussi des petits-enfants horloges, quelque part dans la montagne ?"
+  - "Mon renard a essayé de lécher le Sablier de Poche. Résultat : plus rien de grave, mais beaucoup de sable sur le museau."
+  - "Est-ce qu'on peut demander au Sablier de Poche de ralentir juste la fin des vacances, tant qu'on y est ?"
+  - "Si chaque seconde compte maintenant, est-ce qu'on doit aussi compter les secondes où on compte les secondes ?"
+  - "Après une mer entière d'horloges, un cœur mécanique géant sous terre, ça semble presque logique, à ce stade du voyage."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: Un tremblement sous la mer
+    decor: Une caverne immense sous la mer intérieure, traversée de vibrations sourdes, où un gigantesque mécanisme d'engrenages dorés, l'Horloge-Mère, occupe tout l'espace central.
+    opening:
+      - { who: narrateur, text: "Alors que les trois sœurs reprenaient le chemin après avoir quitté Chrono, un tremblement sourd parcourut soudain le sol, les faisant toutes trois trébucher." }
+      - { who: narrateur, text: "Chrono apparut, hors d'haleine, surgissant d'une faille rocheuse. « L'Horloge-Mère ! Elle se fissure ! Suivez-moi, vite ! »" }
+      - { who: narrateur, text: "Les sœurs le suivirent jusqu'à une caverne immense, creusée sous la mer intérieure, où un gigantesque mécanisme d'engrenages dorés occupait tout l'espace central, parcouru de craquelures lumineuses." }
+      - { who: rafaelle, text: "C'est... c'est elle qui règle toutes les autres horloges, n'est-ce pas ? L'Horloge-Mère ?" }
+      - { who: chrono, text: "Exactement, petite Archiviste. Si elle cède complètement, c'est tout le temps de cette montagne qui s'arrêtera, ou pire, qui s'emballera sans contrôle." }
+      - { who: axelle, text: "Comment est-ce qu'on peut vous aider, pour de vrai, cette fois ?" }
+      - { who: chrono, text: "Je ne sais pas encore, petite Veilleuse. Mais il va falloir trouver vite, car ces craquelures s'élargissent à chaque battement de son cœur mécanique." }
+      - { who: maelle, text: "Son cœur mécanique ? Elle a vraiment un cœur, cette horloge ?" }
+      - { who: chrono, text: "D'une certaine façon, oui, petite Cartographe. Et ce cœur, en ce moment précis, bat bien trop lentement pour rester en vie." }
+    manches:
+      - id: m1
+        title: Un mécanisme gigantesque
+        tours:
+          axelle:
+            - { id: ch22-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on une petite fente ou une fissure qui apparaît à la surface d'un objet abîmé ?", choices: ["une craquelure", "une peinture", "une couture", "une ombre", "une poussière"], answer: "une craquelure", hint: "C'est le mot utilisé pour décrire les fentes de l'Horloge-Mère." }
+            - { id: ch22-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 + 6.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "7 + 6 = 7 + 7 − 1." }
+          maelle:
+            - { id: ch22-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi un mécanisme central très sollicité peut-il s'user ou se fissurer plus vite que les mécanismes qui en dépendent ?", choices: ["parce qu'il supporte, en permanence, la charge de tout le système qu'il régule", "parce qu'un mécanisme central n'a jamais aucune charge particulière", "cela n'a aucune explication particulière", "parce que les mécanismes centraux sont toujours les plus solides, sans exception", "parce qu'un mécanisme central ne sert jamais à réguler autre chose"], answer: "parce qu'il supporte, en permanence, la charge de tout le système qu'il régule", hint: "Pense à ce que représente l'Horloge-Mère pour toutes les autres horloges de la mer." }
+            - { id: ch22-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 86 + 57.", choices: ["138", "141", "143", "145", "148"], answer: "143", hint: "86 + 60 − 3." }
+          rafaelle:
+            - { id: ch22-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi, historiquement, la défaillance d'un système central (une horloge de ville, un barrage, un pont) a-t-elle souvent des conséquences bien plus larges que celle d'un élément isolé ?", choices: ["parce que de nombreux autres éléments dépendent directement de son bon fonctionnement", "parce qu'un système central n'a jamais aucune conséquence sur le reste", "cela n'a aucune importance historique", "parce que seuls les éléments isolés ont une réelle importance", "parce qu'un système central ne concerne jamais que lui-même"], answer: "parce que de nombreux autres éléments dépendent directement de son bon fonctionnement", hint: "Pense à ce que dit Chrono sur les conséquences d'une défaillance totale de l'Horloge-Mère." }
+            - { id: ch22-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 17 × 6.", choices: ["96", "100", "102", "104", "108"], answer: "102", hint: "17 × 6 = 17 × 3 × 2." }
+      - id: m2
+        title: Un cœur mécanique
+        tours:
+          axelle:
+            - { id: ch22-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Un tremblement sourd parcourut le sol. » ?", choices: ["le sol", "parcourut", "Un tremblement sourd", "sourd", "un"], answer: "Un tremblement sourd", hint: "Qu'est-ce qui parcourt le sol de la caverne ?" }
+            - { id: ch22-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 13 − 6.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "13 − 6 = 7." }
+          maelle:
+            - { id: ch22-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « gigantesque » dans « un mécanisme gigantesque » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit l'Horloge-Mère." }
+            - { id: ch22-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 392 ÷ 7.", choices: ["52", "54", "56", "58", "60"], answer: "56", hint: "7 × 56 = 392." }
+          rafaelle:
+            - { id: ch22-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Ce cœur, en ce moment précis, bat bien trop lentement pour rester en vie. » : que révèle cette métaphore sur l'état de l'Horloge-Mère ?", choices: ["qu'elle est présentée comme un être vivant dont la survie est menacée", "qu'elle n'a jamais eu aucun lien avec la notion de vie", "qu'elle fonctionne parfaitement normalement", "qu'elle n'a jamais eu de rythme particulier", "que son état n'a aucune importance pour Chrono"], answer: "qu'elle est présentée comme un être vivant dont la survie est menacée", hint: "Repense à la façon dont Chrono parle de l'Horloge-Mère, comme s'il s'agissait d'un être vivant." }
+            - { id: ch22-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13² − 100.", choices: ["59", "63", "65", "69", "73"], answer: "69", hint: "169 − 100." }
+      - id: m3
+        title: L'urgence s'installe
+        tours:
+          axelle:
+            - { id: ch22-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 6 craquelures d'un côté de l'Horloge-Mère, et 3 de plus apparaissent. Combien de craquelures en tout ?", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "6 + 3." }
+            - { id: ch22-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi une fissure qui s'élargit sans être réparée peut-elle devenir de plus en plus dangereuse avec le temps ?", choices: ["la pression ou l'usure continue d'agir et aggrave progressivement les dégâts", "une fissure ne s'aggrave jamais avec le temps", "cela n'a aucune explication particulière", "une fissure se répare toujours seule, sans intervention", "une fissure n'a jamais aucun effet sur un mécanisme"], answer: "la pression ou l'usure continue d'agir et aggrave progressivement les dégâts", hint: "Pense à ce que dit Chrono sur les craquelures qui s'élargissent." }
+          maelle:
+            - { id: ch22-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 48 × 4.", choices: ["182", "186", "188", "190", "192"], answer: "192", hint: "48 × 4 = 50 × 4 − 2 × 4." }
+            - { id: ch22-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi, face à une situation d'urgence, est-il important de rester calme malgré la pression du temps ?", choices: ["parce que la panique peut conduire à des erreurs qui aggravent la situation", "parce que rester calme n'a jamais aucun effet en situation d'urgence", "cela n'a aucun lien avec la gestion d'une urgence", "parce qu'il vaut toujours mieux agir sans réfléchir du tout", "parce que la panique résout toujours plus vite un problème"], answer: "parce que la panique peut conduire à des erreurs qui aggravent la situation", hint: "Pense à l'attitude que vont devoir adopter les sœurs devant l'urgence de l'Horloge-Mère." }
+          rafaelle:
+            - { id: ch22-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x + 4 = 39.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "5x = 35." }
+            - { id: ch22-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Chrono (surgir) d'une faille rocheuse. »", choices: ["a surgi", "surgissait", "surgira", "surgit", "surgissant"], answer: "a surgi", hint: "Passé composé = avoir + participe passé." }
+      - id: m4
+        title: Explorer la caverne
+        tours:
+          axelle:
+            - { id: ch22-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 3.", choices: ["24", "25", "27", "29", "30"], answer: "27", hint: "9 × 3 = 9 + 9 + 9." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch22-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 235 − 88.", choices: ["140", "144", "147", "149", "152"], answer: "147", hint: "235 − 90 + 2." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch22-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El corazón del mecanismo late despacio. »", choices: ["Le cœur du mécanisme s'est arrêté.", "Le cœur du mécanisme bat lentement.", "Le cœur du mécanisme brille fort.", "Le cœur du mécanisme a disparu.", "Le cœur du mécanisme tourne vite."], answer: "Le cœur du mécanisme bat lentement.", hint: "« Late despacio » = bat lentement." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu de l'écoute attentive : chaque sœur colle son oreille contre un objet proche (un mur, une table, un livre) et décrit le bruit le plus discret qu'elle parvient à entendre, comme pour s'entraîner à écouter le cœur de l'Horloge-Mère."
+    closing:
+      - { who: narrateur, text: "Chrono, épuisé par sa course, s'adossa contre un rocher, le souffle court, tandis que les craquelures de l'Horloge-Mère continuaient de s'étendre lentement sous leurs yeux." }
+      - { who: chrono, text: "Il nous reste une nuit, tout au plus, avant que la situation ne devienne vraiment critique. Reposez-vous, petites voyageuses. Demain, nous chercherons une solution." }
+      - { who: rafaelle, text: "On sera prêtes, Chrono. On ne vous laissera pas seul face à ça." }
+      - { who: narrateur, text: "Et tandis que la nuit s'installait dans la caverne, le battement sourd et irrégulier de l'Horloge-Mère continuait de résonner, comme un pouls fragile qu'il fallait, à tout prix, stabiliser." }
+    reward: "la découverte de l'Horloge-Mère et de son état critique"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Une faille entre les rouages
+    decor: Le pied de l'Horloge-Mère, où les trois sœurs, aidées de Chrono, explorent les engrenages à la recherche d'une cause précise au dérèglement du mécanisme.
+    opening:
+      - { who: narrateur, text: "Le lendemain, Chrono et les trois sœurs explorèrent le pied de l'Horloge-Mère, cherchant, parmi les engrenages immenses, la cause précise de son dérèglement." }
+      - { who: maelle, text: "Regardez, là ! Il y a quelque chose qui brille, niché tout au fond, entre deux rouages !" }
+      - { who: narrateur, text: "Rafaelle se glissa prudemment entre les engrenages et en ressortit avec un minuscule sablier, à peine plus grand que sa paume, dont le sable scintillait d'une lumière douce." }
+      - { who: chrono, text: "Un Sablier de Poche... Je n'en avais jamais vu de mes propres yeux, mais j'en avais entendu parler, dans de très vieux récits." }
+      - { who: axelle, text: "À quoi sert-il, exactement ?" }
+      - { who: chrono, text: "Il contient, dit-on, un temps très pur, capable de relancer un mécanisme en détresse, s'il est utilisé avec la plus grande précision, petite Veilleuse." }
+      - { who: rafaelle, text: "Et si on ne l'utilise pas avec assez de précision ?" }
+      - { who: chrono, text: "Alors le sable se perd, et avec lui, toute chance de réparer correctement l'Horloge-Mère. Il faudra être prudentes, petite Archiviste." }
+    manches:
+      - id: m1
+        title: Un objet rare
+        tours:
+          axelle:
+            - { id: ch22-j2-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on un petit instrument rempli de sable qui s'écoule pour mesurer le temps ?", choices: ["un sablier", "une horloge murale", "une boussole", "une lanterne", "un cadran solaire"], answer: "un sablier", hint: "C'est le mot du titre de l'objet trouvé." }
+            - { id: ch22-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 5.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "9 + 5 = 9 + 9 − 4." }
+          maelle:
+            - { id: ch22-j2-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi un sablier mesure-t-il le temps de façon régulière, quelle que soit la quantité de sable restante ?", choices: ["le sable s'écoule toujours au même débit par le même petit passage étroit", "le sable s'écoule toujours plus vite à la fin", "un sablier ne mesure jamais le temps de façon régulière", "cela n'a aucune explication particulière", "le sable s'écoule toujours plus lentement au début"], answer: "le sable s'écoule toujours au même débit par le même petit passage étroit", hint: "Pense au principe de fonctionnement d'un sablier classique." }
+            - { id: ch22-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 315 ÷ 5.", choices: ["58", "61", "63", "65", "68"], answer: "63", hint: "5 × 63 = 315." }
+          rafaelle:
+            - { id: ch22-j2-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi un objet rare et mal connu, comme ce Sablier de Poche, nécessite-t-il une utilisation particulièrement prudente ?", choices: ["parce que son fonctionnement précis et ses limites ne sont pas totalement maîtrisés", "parce qu'un objet rare n'a jamais besoin d'être utilisé avec prudence", "cela n'a aucune raison particulière", "parce que seuls les objets courants méritent de la prudence", "parce qu'un objet mal connu est toujours sans danger"], answer: "parce que son fonctionnement précis et ses limites ne sont pas totalement maîtrisés", hint: "Repense à ce que dit Chrono sur sa propre méconnaissance du Sablier de Poche." }
+            - { id: ch22-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 19 × 5.", choices: ["90", "92", "93", "95", "98"], answer: "95", hint: "19 × 5 = 20 × 5 − 5." }
+      - id: m2
+        title: Un temps très pur
+        tours:
+          axelle:
+            - { id: ch22-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 16 − 7.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "16 − 6 = 10, puis − 1." }
+            - { id: ch22-j2-ax-m2b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Rafaelle se glissa prudemment entre les engrenages. » ?", choices: ["entre les engrenages", "se glissa", "Rafaelle", "prudemment", "les engrenages"], answer: "Rafaelle", hint: "Qui se glisse entre les engrenages ?" }
+          maelle:
+            - { id: ch22-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 38 × 5.", choices: ["180", "185", "188", "190", "195"], answer: "190", hint: "40 × 5 − 2 × 5." }
+            - { id: ch22-j2-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « minuscule » dans « un minuscule sablier » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la taille du sablier trouvé par Rafaelle." }
+          rafaelle:
+            - { id: ch22-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 7² + 2 × 10.", choices: ["59", "63", "66", "69", "73"], answer: "69", hint: "49 + 20." }
+            - { id: ch22-j2-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Un pequeño reloj de arena puede salvar mucho. »", choices: ["Un petit sablier peut sauver beaucoup.", "Un petit sablier se casse facilement.", "Un petit sablier ne sert à rien.", "Un petit sablier coûte très cher.", "Un petit sablier est très lourd."], answer: "Un petit sablier peut sauver beaucoup.", hint: "« Puede salvar mucho » = peut sauver beaucoup." }
+      - id: m3
+        title: Le risque de se tromper
+        tours:
+          axelle:
+            - { id: ch22-j2-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « prudente » ?", choices: ["imprudente", "attentive", "soigneuse", "calme", "réfléchie"], answer: "imprudente", hint: "Le contraire de quelqu'un qui agit avec précaution." }
+            - { id: ch22-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 3.", choices: ["21", "22", "24", "26", "28"], answer: "24", hint: "8 × 3 = 8 + 8 + 8." }
+          maelle:
+            - { id: ch22-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 405 ÷ 5.", choices: ["75", "78", "80", "81", "85"], answer: "81", hint: "5 × 81 = 405." }
+            - { id: ch22-j2-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi, face à une ressource rare et non renouvelable, vaut-il souvent mieux agir avec méthode plutôt que dans la précipitation ?", choices: ["parce qu'une mauvaise utilisation pourrait gaspiller définitivement cette ressource précieuse", "parce qu'une ressource rare se renouvelle toujours facilement", "cela n'a aucun lien avec la gestion d'une ressource rare", "parce que la précipitation permet toujours de mieux utiliser une ressource", "parce qu'une ressource rare n'a jamais besoin d'être préservée"], answer: "parce qu'une mauvaise utilisation pourrait gaspiller définitivement cette ressource précieuse", hint: "Repense à ce que dit Chrono sur le risque de perdre le sable du Sablier de Poche." }
+          rafaelle:
+            - { id: ch22-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 6x − 5 = 31.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "6x = 36." }
+            - { id: ch22-j2-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Le sable se perd, et avec lui, toute chance de réparer correctement l'Horloge-Mère. » : que signifie cette phrase ?", choices: ["qu'une erreur dans l'utilisation du sablier aurait des conséquences irréversibles sur la réparation", "que le sable se régénère toujours tout seul", "que l'Horloge-Mère n'a besoin d'aucune réparation", "que le sablier n'a aucun lien avec l'Horloge-Mère", "qu'il existe toujours une seconde chance, quoi qu'il arrive"], answer: "qu'une erreur dans l'utilisation du sablier aurait des conséquences irréversibles sur la réparation", hint: "Relis bien la phrase de Chrono, en lien avec la prudence nécessaire." }
+      - id: m4
+        title: Peser les options
+        tours:
+          axelle:
+            - { id: ch22-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 9.", choices: ["48", "50", "52", "54", "56"], answer: "54", hint: "6 × 9 = 6 × 10 − 6." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch22-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 310 − 156.", choices: ["150", "154", "156", "158", "160"], answer: "154", hint: "310 − 160 + 4." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch22-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Chrono necesita ayuda urgente. »", choices: ["Chrono a besoin d'aide urgente.", "Chrono se repose enfin.", "Chrono n'a besoin de rien.", "Chrono aide tout le monde.", "Chrono ignore l'urgence."], answer: "Chrono a besoin d'aide urgente.", hint: "« Necesita ayuda urgente » = a besoin d'aide urgente." }
+            - { gen: maths.ranger }
+    pause: "Le jeu du geste précis : chaque sœur essaie de verser, aussi précisément que possible, une petite quantité d'eau ou de sable imaginaire d'une main à l'autre, sans en perdre une goutte, pour s'entraîner à la précision du lendemain."
+    closing:
+      - { who: narrateur, text: "Chrono enveloppa précautionneusement le Sablier de Poche dans un linge doux, le posant au centre d'un petit cercle de pierres, comme pour le protéger jusqu'au lendemain." }
+      - { who: chrono, text: "Demain, il faudra décider, ensemble, de la meilleure façon de l'utiliser. L'Horloge-Mère ne tiendra plus très longtemps, hélas." }
+      - { who: maelle, text: "On y réfléchira sérieusement, cette nuit encore." }
+      - { who: narrateur, text: "Et tandis que la caverne s'assombrissait pour la nuit, le battement irrégulier de l'Horloge-Mère semblait, plus que jamais, résonner comme un appel à l'aide silencieux." }
+    reward: "la découverte du Sablier de Poche, niché entre les rouages"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: Apprendre à mesurer
+    decor: Le pied de l'Horloge-Mère, où Chrono enseigne aux trois sœurs les rudiments délicats du calcul nécessaire pour utiliser correctement le Sablier de Poche.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, Chrono entreprit d'enseigner aux trois sœurs les rudiments délicats du calcul nécessaire pour utiliser correctement le Sablier de Poche." }
+      - { who: chrono, text: "Il faut calculer, avec précision, la quantité exacte de sable nécessaire pour stabiliser l'Horloge-Mère, sans en gaspiller la moindre pincée." }
+      - { who: maelle, text: "Comment est-ce qu'on peut savoir, exactement, quelle quantité est nécessaire ?" }
+      - { who: chrono, text: "En observant le rythme des craquelures, petite Cartographe, et en mesurant précisément l'écart entre leur battement actuel et leur battement normal." }
+      - { who: rafaelle, text: "Et si on se trompe dans le calcul, même d'un tout petit peu ?" }
+      - { who: chrono, text: "Le risque existe, petite Archiviste, c'est vrai. Mais un calcul juste, mené avec sérieux, est souvent bien plus sûr qu'un geste précipité." }
+      - { who: axelle, text: "On va s'entraîner, alors, avant d'essayer pour de vrai sur l'Horloge-Mère ?" }
+      - { who: chrono, text: "Exactement, petite Veilleuse. Mieux vaut s'entraîner longuement que risquer de tout perdre en un seul geste malheureux." }
+    manches:
+      - id: m1
+        title: Mesurer avec précision
+        tours:
+          axelle:
+            - { id: ch22-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 5 grains de sable comptés dans une petite poignée, et 3 dans une autre. Combien de grains en tout ?", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "5 + 3." }
+            - { id: ch22-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « précipité » ?", choices: ["réfléchi", "rapide", "pressé", "hâtif", "urgent"], answer: "réfléchi", hint: "Le contraire d'un geste fait sans prendre le temps de réfléchir." }
+          maelle:
+            - { id: ch22-j3-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi mesurer un écart précis, comme un rythme anormal, nécessite-t-il de comparer avec une valeur de référence normale ?", choices: ["parce que c'est uniquement la différence entre les deux qui révèle l'ampleur du problème", "parce qu'une mesure n'a jamais besoin de référence", "cela n'a aucune explication particulière", "parce que la valeur normale n'a jamais aucune utilité", "parce que l'écart ne se mesure jamais par comparaison"], answer: "parce que c'est uniquement la différence entre les deux qui révèle l'ampleur du problème", hint: "Pense à la méthode de calcul expliquée par Chrono." }
+            - { id: ch22-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 480 ÷ 6.", choices: ["70", "75", "78", "80", "85"], answer: "80", hint: "6 × 80 = 480." }
+          rafaelle:
+            - { id: ch22-j3-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi un calcul rigoureux, même effectué sous pression, offre-t-il souvent plus de garanties qu'une estimation rapide et approximative ?", choices: ["parce qu'il réduit le risque d'erreur en s'appuyant sur des données vérifiées plutôt que sur l'intuition", "parce qu'un calcul rigoureux n'a jamais aucune utilité sous pression", "cela n'a aucun lien avec la fiabilité d'une décision", "parce qu'une estimation rapide est toujours plus fiable qu'un calcul", "parce que la rigueur n'a jamais d'importance en situation d'urgence"], answer: "parce qu'il réduit le risque d'erreur en s'appuyant sur des données vérifiées plutôt que sur l'intuition", hint: "Repense à ce que dit Chrono sur le calcul juste, plus sûr qu'un geste précipité." }
+            - { id: ch22-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 16 × 6.", choices: ["90", "92", "94", "96", "98"], answer: "96", hint: "16 × 6 = 16 × 3 × 2." }
+      - id: m2
+        title: S'entraîner avant d'agir
+        tours:
+          axelle:
+            - { id: ch22-j3-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 12 − 5.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "12 − 5 = 7." }
+            - { id: ch22-j3-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi s'entraîner sur un modèle ou une simulation avant d'agir sur un objet rare et fragile est-il une bonne pratique ?", choices: ["cela permet de corriger ses erreurs sans risquer d'endommager l'objet véritable", "s'entraîner n'a jamais aucune utilité avant une action importante", "cela n'a aucune explication particulière", "il vaut toujours mieux agir directement sans aucun entraînement", "un entraînement rend toujours une action plus risquée"], answer: "cela permet de corriger ses erreurs sans risquer d'endommager l'objet véritable", hint: "Pense à ce que propose Chrono avant d'utiliser le vrai Sablier de Poche." }
+          maelle:
+            - { id: ch22-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 504 ÷ 7.", choices: ["68", "70", "72", "74", "76"], answer: "72", hint: "7 × 72 = 504." }
+            - { id: ch22-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « délicats » dans « les rudiments délicats du calcul » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit les rudiments du calcul enseignés par Chrono." }
+          rafaelle:
+            - { id: ch22-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 8² − 3².", choices: ["46", "50", "52", "55", "58"], answer: "55", hint: "64 − 9." }
+            - { id: ch22-j3-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Cada segundo cuenta ahora. »", choices: ["Chaque seconde compte maintenant.", "Chaque seconde passe lentement.", "Chaque seconde est oubliée.", "Chaque seconde revient en arrière.", "Chaque seconde se répète."], answer: "Chaque seconde compte maintenant.", hint: "« Cuenta ahora » = compte maintenant." }
+      - id: m3
+        title: La confiance qui grandit
+        tours:
+          axelle:
+            - { id: ch22-j3-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Chrono enseigne les rudiments du calcul. » ?", choices: ["les rudiments du calcul", "enseigne", "Chrono", "du calcul", "les rudiments"], answer: "Chrono", hint: "Qui enseigne les rudiments du calcul aux sœurs ?" }
+            - { id: ch22-j3-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 4.", choices: ["24", "26", "27", "28", "30"], answer: "28", hint: "7 × 4 = 7 × 2 × 2." }
+          maelle:
+            - { id: ch22-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 5.", choices: ["135", "140", "142", "145", "148"], answer: "145", hint: "30 × 5 − 5." }
+            - { id: ch22-j3-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi la confiance en ses propres capacités augmente-t-elle souvent après un entraînement sérieux et répété ?", choices: ["parce que la répétition permet de mieux maîtriser un geste ou un calcul, ce qui réduit l'incertitude", "parce que la confiance n'a jamais de lien avec l'entraînement", "cela n'a aucune explication particulière", "parce qu'un seul essai suffit toujours à être parfaitement sûr de soi", "parce que s'entraîner rend toujours plus incertain"], answer: "parce que la répétition permet de mieux maîtriser un geste ou un calcul, ce qui réduit l'incertitude", hint: "Pense à l'évolution de la confiance des sœurs au fil de leur entraînement." }
+          rafaelle:
+            - { id: ch22-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 7x − 4 = 38.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "7x = 42." }
+            - { id: ch22-j3-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au présent : « Nous (calculer) l'écart avec soin. »", choices: ["nous calculons", "nous calculez", "nous calculent", "nous calculions", "nous calculerons"], answer: "nous calculons", hint: "Nous : -ons." }
+      - id: m4
+        title: Presque prêtes à agir
+        tours:
+          axelle:
+            - { id: ch22-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 4.", choices: ["28", "30", "32", "34", "36"], answer: "32", hint: "8 × 4 = 8 × 2 × 2." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch22-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 285 − 119.", choices: ["160", "164", "166", "168", "170"], answer: "166", hint: "285 − 120 + 1." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch22-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « La sabiduría vale más que el sacrificio inútil. »", choices: ["La sagesse vaut plus que le sacrifice inutile.", "La sagesse n'a aucune valeur.", "Le sacrifice est toujours nécessaire.", "La sagesse se perd avec le temps.", "Le sacrifice vaut plus que tout."], answer: "La sagesse vaut plus que le sacrifice inutile.", hint: "« Vale más que » = vaut plus que." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu du calcul à voix haute : chaque sœur propose, à voix haute, un petit calcul qu'elle pourrait utiliser pour mesurer un écart précis, et les deux autres vérifient si le résultat semble juste."
+    closing:
+      - { who: narrateur, text: "Chrono observa les trois sœurs s'entraîner, encore et encore, jusqu'à ce que leurs gestes et leurs calculs deviennent, peu à peu, presque naturels." }
+      - { who: chrono, text: "Je crois que vous êtes prêtes, ou presque. Demain, il faudra faire le choix final, et agir, pour de vrai, sur l'Horloge-Mère." }
+      - { who: axelle, text: "On sera prêtes, Chrono. On a fait tout ce qu'on pouvait pour ça." }
+      - { who: narrateur, text: "Et tandis que la nuit retombait sur la caverne, le battement de l'Horloge-Mère sembla, pour la première fois depuis leur arrivée, légèrement plus régulier, comme porté par un espoir nouveau." }
+    reward: "la maîtrise, enfin acquise, du calcul nécessaire pour utiliser le Sablier"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: L'heure du choix approche
+    decor: Le pied de l'Horloge-Mère, dans une tension grandissante, où Chrono et les trois sœurs discutent une dernière fois de la méthode à employer avant d'agir.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, la tension monta encore d'un cran dans la caverne, tandis que Chrono et les trois sœurs discutaient une dernière fois de la méthode à employer." }
+      - { who: chrono, text: "Dans la caverne tremblante, l'Horloge-Mère se fissure de toutes parts, et je m'effondre, épuisé, devant son mécanisme. Ce sablier semble être la clé. Que faisons-nous de ce sablier ?" }
+      - { who: rafaelle, text: "On a trois façons possibles de procéder, et chacune a ses risques. Il va falloir choisir avec soin, cette fois plus que jamais." }
+      - { who: chrono, text: "Je vous fais confiance, petites voyageuses. Quelle que soit votre décision, je sais qu'elle sera réfléchie." }
+    manches:
+      - id: m1
+        title: Trois méthodes possibles
+        tours:
+          axelle:
+            - { id: ch22-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « réfléchie » dans ce contexte ?", choices: ["irréfléchie", "sage", "calme", "posée", "mesurée"], answer: "irréfléchie", hint: "Le contraire d'une décision prise avec soin." }
+            - { id: ch22-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 7.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "8 + 7 = 8 + 8 − 1." }
+          maelle:
+            - { id: ch22-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi, devant une décision importante, est-il utile de comparer plusieurs méthodes possibles avant d'en choisir une seule ?", choices: ["parce que cela permet de peser les avantages et les risques de chacune", "parce que comparer plusieurs méthodes n'a jamais aucune utilité", "cela n'a aucun lien avec une décision importante", "parce qu'il vaut toujours mieux choisir la première méthode venue", "parce qu'une seule méthode existe toujours, sans alternative"], answer: "parce que cela permet de peser les avantages et les risques de chacune", hint: "Pense aux trois façons possibles d'utiliser le Sablier de Poche." }
+            - { id: ch22-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 92 + 58.", choices: ["140", "145", "148", "150", "152"], answer: "150", hint: "92 + 60 − 2." }
+          rafaelle:
+            - { id: ch22-j4-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Je vous fais confiance, petites voyageuses. » : que révèle cette phrase sur l'attitude de Chrono face au choix des sœurs ?", choices: ["qu'il leur laisse une réelle responsabilité, malgré la gravité de la situation", "qu'il ne croit pas du tout en leurs capacités", "qu'il préfère décider lui-même, sans les écouter", "qu'il n'a plus aucune confiance envers qui que ce soit", "qu'il refuse catégoriquement toute aide de leur part"], answer: "qu'il leur laisse une réelle responsabilité, malgré la gravité de la situation", hint: "Repense à l'attitude de Chrono depuis le début de ce chapitre." }
+            - { id: ch22-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 12² − 44.", choices: ["96", "100", "104", "108", "112"], answer: "100", hint: "144 − 44." }
+      - id: m2
+        title: Peser les risques
+        tours:
+          axelle:
+            - { id: ch22-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 16 − 7.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "16 − 6 = 10, puis − 1." }
+            - { id: ch22-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi, dans une situation critique, est-il parfois préférable de privilégier une méthode un peu plus lente mais plus sûre, plutôt qu'une méthode rapide mais risquée ?", choices: ["parce qu'une erreur en situation critique peut avoir des conséquences bien plus graves qu'un délai supplémentaire", "parce qu'une méthode plus sûre n'est jamais préférable", "cela n'a aucun lien avec la gestion d'une situation critique", "parce qu'il vaut toujours mieux agir le plus vite possible, quel qu'en soit le risque", "parce que la rapidité élimine toujours tout risque d'erreur"], answer: "parce qu'une erreur en situation critique peut avoir des conséquences bien plus graves qu'un délai supplémentaire", hint: "Pense aux trois méthodes envisagées pour utiliser le Sablier de Poche." }
+          maelle:
+            - { id: ch22-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 38 × 5.", choices: ["180", "185", "188", "190", "195"], answer: "190", hint: "40 × 5 − 2 × 5." }
+            - { id: ch22-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « grandissante » dans « une tension grandissante » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la tension ressentie dans la caverne." }
+          rafaelle:
+            - { id: ch22-j4-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 7² + 2 × 10.", choices: ["59", "63", "66", "69", "73"], answer: "69", hint: "49 + 20." }
+            - { id: ch22-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Chaque seconde compte maintenant » en espagnol ?", choices: ["Cada segundo cuenta ahora.", "Chrono necesita ayuda urgente.", "Un pequeño reloj de arena puede salvar mucho.", "El corazón del mecanismo late despacio.", "La sabiduría vale más que el sacrificio inútil."], answer: "Cada segundo cuenta ahora.", hint: "Relis la phrase du jour 3." }
+      - id: m3
+        title: Se préparer à agir
+        tours:
+          axelle:
+            - { id: ch22-j4-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « La tension monta encore d'un cran. » ?", choices: ["d'un cran", "monta", "La tension", "encore", "la"], answer: "La tension", hint: "Qu'est-ce qui monte encore d'un cran dans la caverne ?" }
+            - { id: ch22-j4-ax-m3b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 10 − 3.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "10 − 3 = 7." }
+          maelle:
+            - { id: ch22-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 441 ÷ 7.", choices: ["57", "61", "63", "65", "67"], answer: "63", hint: "7 × 63 = 441." }
+            - { id: ch22-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi un dernier moment de préparation, juste avant une action décisive, aide-t-il souvent à agir avec plus d'assurance ?", choices: ["parce qu'il permet de vérifier une dernière fois que tout est compris et maîtrisé", "parce qu'un dernier moment de préparation n'a jamais aucune utilité", "cela n'a aucun lien avec l'assurance au moment d'agir", "parce qu'il vaut toujours mieux agir sans aucune préparation", "parce que l'assurance n'a jamais de lien avec la préparation"], answer: "parce qu'il permet de vérifier une dernière fois que tout est compris et maîtrisé", hint: "Pense à l'importance de ce dernier jour de préparation avant d'agir sur l'Horloge-Mère." }
+          rafaelle:
+            - { id: ch22-j4-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 9x − 6 = 57.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "9x = 63." }
+            - { id: ch22-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au futur simple : « Nous (agir) demain, ensemble, sur l'Horloge-Mère. »", choices: ["nous agirons", "nous agissons", "nous agissions", "nous agîmes", "nous agissions"], answer: "nous agirons", hint: "Futur simple d'« agir »." }
+      - id: m4
+        title: Un dernier moment de calme
+        tours:
+          axelle:
+            - { id: ch22-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 4.", choices: ["28", "30", "32", "34", "36"], answer: "32", hint: "8 × 4 = 8 × 2 × 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch22-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 285 − 119.", choices: ["160", "164", "166", "168", "170"], answer: "166", hint: "285 − 120 + 1." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch22-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15 × 7.", choices: ["98", "100", "103", "105", "108"], answer: "105", hint: "15 × 7 = 15 × 7." }
+            - { gen: maths.duree }
+    pause: "Le jeu de la respiration lente : chaque sœur inspire profondément, puis expire lentement en comptant jusqu'à cinq, pour s'exercer au calme nécessaire avant d'agir sur l'Horloge-Mère."
+    closing:
+      - { who: narrateur, text: "Le soir tomba sur la caverne, et les trois sœurs, enfin apaisées par leur préparation, sentirent leur décision se préciser clairement entre elles." }
+      - { who: chrono, text: "Demain sera le grand jour. Reposez-vous bien cette dernière nuit, il vous faudra toute votre concentration." }
+      - { who: rafaelle, text: "On sera prêtes, Chrono. On a fait tout ce qu'on pouvait pour ça." }
+      - { who: narrateur, text: "Et tandis que la caverne s'assombrissait, le battement de l'Horloge-Mère continuait, fragile mais encore présent, comme pour attendre, patiemment, le lendemain décisif." }
+    reward: "une décision enfin mûrie, à la veille du geste décisif"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: Le geste décisif
+    decor: Le cœur de la caverne, où l'Horloge-Mère, fissurée de toutes parts, attend, dans un silence tendu, que les trois sœurs agissent enfin.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, dans la caverne tremblante, l'Horloge-Mère se fissurait de toutes parts, et Chrono, épuisé, s'effondra devant son mécanisme." }
+      - { who: chrono, text: "Que faisons-nous de ce sablier ?" }
+      - { who: nilo, text: "Allez, les filles. C'est le moment. Quoi que vous choisissiez, faites-le avec tout ce qu'on a appris cette semaine." }
+    manches:
+      - id: m1
+        title: Ce que la caverne a appris
+        intro: "Chrono interroge chaque sœur sur tout ce que cette semaine passée au pied de l'Horloge-Mère lui a appris."
+        tours:
+          axelle:
+            - { id: ch22-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on une petite fente ou une fissure qui apparaît à la surface d'un objet abîmé ?", choices: ["une craquelure", "une peinture", "une couture", "une ombre", "une poussière"], answer: "une craquelure", hint: "C'est le mot du premier jour." }
+            - { id: ch22-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 + 6.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "9 + 6 = 9 + 9 − 3." }
+          maelle:
+            - { id: ch22-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi un sablier mesure-t-il le temps de façon régulière, comme tu l'as appris cette semaine ?", choices: ["le sable s'écoule toujours au même débit par le même petit passage étroit", "le sable s'écoule toujours plus vite à la fin", "un sablier ne mesure jamais le temps de façon régulière", "cela n'a aucune explication particulière", "le sable s'écoule toujours plus lentement au début"], answer: "le sable s'écoule toujours au même débit par le même petit passage étroit", hint: "Repense à ta propre question du deuxième jour." }
+            - { id: ch22-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 34 × 4.", choices: ["130", "132", "134", "136", "138"], answer: "136", hint: "34 × 4 = 35 × 4 − 4." }
+          rafaelle:
+            - { id: ch22-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que cette semaine a appris aux trois sœurs la valeur d'une méthode réfléchie face à l'urgence ?", choices: ["parce qu'elle leur a montré qu'un calcul juste peut être plus sûr qu'un geste précipité", "parce que l'urgence n'a jamais exigé aucune méthode particulière", "parce que seule la rapidité compte dans une situation critique", "parce qu'il n'y a aucune leçon à tirer de cette semaine", "parce que la réflexion n'a jamais aucun lien avec l'urgence"], answer: "parce qu'elle leur a montré qu'un calcul juste peut être plus sûr qu'un geste précipité", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de Chrono." }
+            - { id: ch22-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 6/7 − 2/7.", choices: ["2/7", "3/7", "4/7", "5/7", "6/7"], answer: "4/7", hint: "6 − 2 = 4, même dénominateur." }
+      - id: m2
+        title: Avant d'agir
+        intro: "Il faut relier tout ce que la semaine a appris pour choisir, vraiment, ce qu'il faut faire du Sablier de Poche."
+        tours:
+          axelle:
+            - { id: ch22-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux un geste fait avec une extrême exactitude, sans la moindre erreur ?", choices: ["précis", "approximatif", "négligent", "distrait", "brouillon"], answer: "précis", hint: "C'est la qualité nécessaire pour utiliser le Sablier de Poche." }
+            - { id: ch22-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 14 − 6.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "14 − 6 = 8." }
+          maelle:
+            - { id: ch22-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi cette crise de l'Horloge-Mère a-t-elle une importance particulière dans le voyage des trois sœurs ?", choices: ["elle n'a aucune importance réelle", "elle leur apprend la précision, la méthode et la valeur d'une décision mûrement réfléchie", "elle les empêche d'avancer vers le sommet", "elle se trouve très loin des montagnes", "personne n'y vient jamais vraiment"], answer: "elle leur apprend la précision, la méthode et la valeur d'une décision mûrement réfléchie", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de Chrono." }
+            - { id: ch22-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 480 ÷ 6.", choices: ["70", "75", "78", "80", "85"], answer: "80", hint: "6 × 80 = 480." }
+          rafaelle:
+            - { id: ch22-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10² − 36.", choices: ["58", "62", "64", "66", "70"], answer: "64", hint: "100 − 36." }
+            - { id: ch22-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Que faisons-nous de ce sablier ? » : quel est le sujet de cette phrase ?", choices: ["ce sablier", "nous", "faisons", "de", "que"], answer: "nous", hint: "Qui se pose cette question, ensemble ?" }
+      - id: m3
+        title: Le Chant du Cœur Mécanique
+        intro: "Au moment décisif, les trois sœurs chantent ensemble, pour accompagner, d'un rythme stable, le geste qui va décider du sort de l'Horloge-Mère."
+        tours:
+          axelle:
+            - { id: ch22-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          maelle:
+            - { id: ch22-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, noire, noire." }
+          rafaelle:
+            - { id: ch22-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : ronde." }
+    concert:
+      measures:
+        axelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        maelle: { given: [2, 1], missing: 1, prompt: "Blanche, noire, noire" }
+        rafaelle: { given: [], missing: 4, prompt: "Ronde" }
+    pause: "Le dernier battement compté : chaque sœur, en silence, compte les battements du cœur mécanique de l'Horloge-Mère, jusqu'à ce qu'il retrouve, enfin, un rythme régulier."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant du Cœur Mécanique se répandit dans la caverne, et l'Horloge-Mère, dans un dernier grand soubresaut, sembla retrouver, peu à peu, un battement plus stable." }
+      - { who: chrono, text: "Elle tient bon. Elle tient bon ! Je n'aurais jamais cru possible de la voir se stabiliser ainsi, petites voyageuses." }
+      - { who: rafaelle, text: "On a fait de notre mieux, Chrono. Pour vous, et pour elle." }
+      - { who: narrateur, text: "Et tandis que le calme revenait progressivement dans la caverne, les craquelures de l'Horloge-Mère, l'une après l'autre, cessèrent enfin de s'étendre." }
+      - { who: axelle, text: "On l'a fait. On a vraiment réussi à la stabiliser." }
+      - { who: nilo, text: "Encore une étape de passée, et un cœur mécanique qui bat de nouveau correctement. Pas mal, pour une semaine sous terre." }
+    reward: "l'Horloge-Mère stabilisée, et la gratitude profonde de Chrono"
