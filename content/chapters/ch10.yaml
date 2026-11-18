@@ -1,0 +1,410 @@
+# Chapitre 10 — Les Terres Sans Nom
+# Ouverture de l'Acte II. Nilo a terminé la Carte Vivante à la fin du chapitre 9 ; les apprenties
+# la portent au Hall des Cartes entrevu à la fin du chapitre 1. Nouvelle Gardienne : Dame Cartéa,
+# qui refuse de nommer tout lieu qu'on ne connaît pas vraiment. Thème : repères et lecture de cartes.
+# Rédigé directement en YAML (pas de doc intermédiaire), canon établi tiré de la mémoire du projet.
+
+id: ch10
+number: 10
+act: 2
+title: Les Terres Sans Nom
+introImage: ch10
+scene: terres-sans-nom
+
+espagnol:
+  - { es: "¿Dónde estamos?", fr: "Où sommes-nous ?" }
+  - { es: "El mapa no tiene nombre.", fr: "La carte n'a pas de nom." }
+  - { es: "Busco el norte.", fr: "Je cherche le nord." }
+  - { es: "Una isla nueva.", fr: "Une île nouvelle." }
+  - { es: "El viaje continúa.", fr: "Le voyage continue." }
+
+# Décision du Conseil de la Salle des Cartes (début du jour 5). A = Lien, B = Courage, C = Mémoire.
+# Effets sur les compteurs : src/content/decisions.ts (aucun effet Orvane particulier pour ce chapitre).
+decision:
+  prompt: "Dame Cartéa refuse de nommer la terre tant que les apprenties n'auront pas prouvé qu'elles la connaissent vraiment. Comment convaincre la Gardienne des Cartes ?"
+  options:
+    A:
+      label: Écouter la terre
+      scene: "Les trois sœurs posent la main sur la carte, ferment les yeux, et décrivent tout ce qu'elles ont ressenti en chemin : le sel de l'air, le silence inhabituel, la chaleur étrange d'une colline. Sous leurs doigts, l'encre frémit, presque reconnaissante."
+      line: { who: cartea, text: "Vous ne m'avez rien récité. Vous m'avez dit ce que vous avez senti. C'est la première condition." }
+      habillage: "Chaque épreuve devient une question posée à voix basse, comme si la carte elle-même écoutait la réponse avant de la juger."
+    B:
+      label: Explorer sans attendre
+      scene: "Rafaelle attrape déjà sa cape : pourquoi discuter d'une terre qu'on peut simplement aller voir ? Axelle et Maelle la suivent vers la passerelle qui descend de l'Arche, sous le regard surpris de Dame Cartéa."
+      line: { who: cartea, text: "Personne n'avait encore osé partir avant que j'aie fini de parler. Voilà qui est… intéressant." }
+      habillage: "Les épreuves deviennent une course contre le temps, comme si le sol pouvait se dérober sous des pas trop hésitants."
+    C:
+      label: Recouper les indices
+      scene: "Maelle étale sur la table tout ce qu'elles ont recueilli depuis le début de la semaine : la tache d'encre, la légende incomplète, les compas qui ne s'accordent pas. Elle les relie d'un doigt, méthodique, jusqu'à ce qu'un motif apparaisse."
+      line: { who: cartea, text: "Vous avez fait ce qu'aucune apprentie n'avait fait avant vous : vous avez pris mes indices au sérieux, un par un." }
+      habillage: "Les épreuves deviennent des énigmes à résoudre en recoupant plusieurs indices avant de répondre."
+
+repliquesAbsurdes:
+  - "Madame Cartéa, si je me perds, c'est de la géographie ou un accident ?"
+  - "Mon renard a avalé une boussole une fois. Depuis, il tourne en rond avant de s'asseoir."
+  - "On a déjà survécu à un tribunal et à un puits sans fond. Une carte, ça peut pas être pire, si ?"
+  - "Est-ce que le Nord a aussi un Sud, ou c'est juste pour faire sérieux ?"
+  - "Si cette terre n'a pas de nom, on peut l'appeler Maelle-Land, non ? Juste pour voir."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: La Tache d'Encre
+    decor: La Salle des Cartes, tout en haut de l'Arche — une tour ronde tapissée de parchemins, où un astrolabe doré tourne lentement au plafond comme un ciel miniature.
+    opening:
+      - { who: narrateur, text: "Il était une fois une carte qui n'était jamais tout à fait finie — et qui, pour la première fois depuis que l'Arche voguait, venait pourtant de l'être. Nilo grimpa les marches de la tour quatre à quatre, la Carte Vivante serrée contre lui comme un trésor trop grand pour ses bras." }
+      - { who: nilo, text: "Elle est complète ! Enfin, je crois. Elle a arrêté de me mordre les doigts, en tout cas, ce qui est plutôt bon signe." }
+      - { who: narrateur, text: "La tour où il grimpait, personne ne l'avait revisitée depuis le premier soir, quand la Porte des Trois Lueurs s'était ouverte sur un plafond-carte qui palpitait comme un ciel vivant. On l'appelait le Hall des Cartes, et son silence avait quelque chose de respectueux, presque religieux." }
+      - { who: narrateur, text: "Au centre de la tour trônait une table immense, couverte d'une carte géante du monde de l'Arche : des îles, des fleuves, des forêts, chacun avec son nom tracé à l'encre dorée. Nilo y déroula la Carte Vivante tout entière, et pour la première fois, elle se déplia sans s'arrêter — bien au-delà des bords connus." }
+      - { who: narrateur, text: "Dans son élan, Nilo renversa un vieil encrier posé en équilibre sur une pile de livres. Une grosse tache noire s'écrasa sur la carte, exactement là où elle continuait de se dérouler — et au lieu de tacher le papier, l'encre se mit à briller doucement, comme un point de lumière sous l'eau." }
+      - { who: maelle, text: "Nilo ! Tu as renversé de l'encre sur la carte la plus importante du monde !" }
+      - { who: nilo, text: "Techniquement, je n'ai rien renversé du tout. L'encrier s'est jeté tout seul. Je suis juste… à côté, au mauvais moment. Comme toujours." }
+      - { who: narrateur, text: "Mais Rafaelle, penchée sur la tache lumineuse, remarqua quelque chose d'étrange : partout ailleurs sur la carte, un petit nom était écrit à l'encre dorée au-dessus de chaque terre. Là, au cœur de la tache, rien. Pas une lettre. Comme si cette terre-là attendait encore d'en recevoir un." }
+      - { who: rafaelle, text: "Elle n'a pas de nom. Toutes les autres terres en ont un, même les toutes petites îles. Celle-là, non." }
+      - { who: axelle, text: "Peut-être qu'elle vient d'apparaître. Ou alors… que personne n'a encore eu le droit de la nommer." }
+      - { who: plume, text: "Je sens quelque chose de très vieux là-dedans. Vieux et patient. Comme une porte qui attend depuis très, très longtemps qu'on frappe correctement." }
+    manches:
+      - id: m1
+        title: Lire une carte
+        intro: "Avant d'aller plus loin, il faut savoir lire ce qu'on a sous les yeux."
+        tours:
+          axelle:
+            - { id: ch10-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Sur une carte, quelle direction indique généralement le haut de la page ?", choices: ["le sud", "l'est", "le nord", "l'ouest", "le centre"], answer: "le nord", hint: "La plupart des cartes sont dessinées « nord en haut »." }
+            - { id: ch10-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 6 + 9.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "6 + 10 = 16, puis enlève 1." }
+          maelle:
+            - { id: ch10-j1-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment s'appelle le symbole, en bas d'une carte, qui explique ce que représente chaque dessin ?", choices: ["la boussole", "la légende", "l'échelle", "le titre", "le cadre"], answer: "la légende", hint: "C'est elle qui « raconte » les symboles." }
+            - { id: ch10-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 72 × 3.", choices: ["206", "210", "216", "218", "226"], answer: "216", hint: "70 × 3 = 210, puis 2 × 3 = 6." }
+          rafaelle:
+            - { id: ch10-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Sur une carte à l'échelle 1/100 000, 1 cm sur la carte représente quelle distance réelle ?", choices: ["100 m", "1 km", "10 km", "100 km", "1 m"], answer: "1 km", hint: "1 cm × 100 000 = 100 000 cm = 1 000 m." }
+            - { id: ch10-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 1 250 ÷ 25.", choices: ["45", "48", "50", "52", "55"], answer: "50", hint: "25 × 50 = 1 250." }
+      - id: m2
+        title: La tache d'encre
+        tours:
+          axelle:
+            - { id: ch10-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de la phrase « L'encre brille doucement. » ?", choices: ["brille", "doucement", "L'encre", "la carte", "encre"], answer: "L'encre", hint: "Qui fait l'action de briller ?" }
+            - { id: ch10-j1-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 15 − 8.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "15 − 10 = 5, puis + 2." }
+          maelle:
+            - { id: ch10-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « lumineuse » dans « une tache lumineuse » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la tache." }
+            - { id: ch10-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 540 ÷ 6.", choices: ["80", "85", "90", "95", "100"], answer: "90", hint: "6 × 90 = 540." }
+          rafaelle:
+            - { id: ch10-j1-ra-m2a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi une tache d'encre renversée s'étale-t-elle en rond sur du papier ?", choices: ["le papier repousse l'encre", "l'encre liquide se répand dans toutes les directions par capillarité", "l'encre devient plus légère", "le papier chauffe", "l'encre rétrécit"], answer: "l'encre liquide se répand dans toutes les directions par capillarité", hint: "Pense à une éponge qui absorbe l'eau de partout à la fois." }
+            - { id: ch10-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 3/4 − 1/4.", choices: ["1/4", "1/2", "2/4", "1/8", "4/4"], answer: "1/2", hint: "3/4 − 1/4 = 2/4, qui se simplifie." }
+      - id: m3
+        title: Un nom manquant
+        intro: "Sur toute la carte, chaque terre porte un nom. Sauf une."
+        tours:
+          axelle:
+            - { id: ch10-j1-ax-m3a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on une grande étendue de terre entourée d'eau de tous les côtés ?", choices: ["une île", "une montagne", "un fleuve", "une forêt", "un désert"], answer: "une île", hint: "Pense à un morceau de terre tout seul dans la mer." }
+            - { id: ch10-j1-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 4 × 7.", choices: ["24", "26", "28", "30", "32"], answer: "28", hint: "4 × 7 = 4 × 5 + 4 × 2." }
+          maelle:
+            - { id: ch10-j1-ma-m3a, subject: sciences, level: 2, kind: qcm, prompt: "Qu'est-ce qu'un continent ?", choices: ["une très grande étendue de terre", "une petite île", "un cours d'eau", "une chaîne de montagnes seulement", "un type de roche"], answer: "une très grande étendue de terre", hint: "Pense à l'Europe, l'Afrique, l'Asie…" }
+            - { id: ch10-j1-ma-m3b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 6,5 + 2,8.", choices: ["8,3", "9,1", "9,3", "9,2", "8,9"], answer: "9,3", hint: "65 + 28 = 93." }
+          rafaelle:
+            - { id: ch10-j1-ra-m3a, subject: francais, level: 3, kind: qcm, prompt: "Dans « une terre qui attend encore d'en recevoir un », quelle est la nature du mot « qui » ?", choices: ["pronom relatif", "adverbe", "conjonction", "préposition", "nom"], answer: "pronom relatif", hint: "Il relie la proposition à « une terre »." }
+            - { id: ch10-j1-ra-m3b, subject: maths, level: 4, kind: qcm, prompt: "Résous : 2x − 3 = 11.", choices: ["4", "5", "6", "7", "8"], answer: "7", hint: "2x = 14." }
+      - id: m4
+        title: Le silence de la tour
+        tours:
+          axelle:
+            - { id: ch10-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 3.", choices: ["24", "26", "27", "28", "30"], answer: "27", hint: "9 × 3 = 9 + 9 + 9." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch10-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 63 ÷ 7.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "7 × 9 = 63." }
+            - { gen: maths.comparer }
+          rafaelle:
+            - { id: ch10-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « ¿Dónde estamos? »", choices: ["Qui êtes-vous ?", "Où sommes-nous ?", "Quand partons-nous ?", "Que faisons-nous ?", "Comment allez-vous ?"], answer: "Où sommes-nous ?", hint: "Regarde la phrase du jour." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu de la carte au trésor : une sœur décrit un chemin (« trois pas à gauche, deux en avant »), les deux autres doivent le suivre les yeux fermés sans se cogner !"
+    closing:
+      - { who: narrateur, text: "Nilo tenta d'éponger la tache avec sa manche, ce qui ne fit qu'empirer les choses : l'encre, loin de s'effacer, se mit à dessiner, toute seule, de fines lignes dorées qui couraient vers les bords de la tache, comme des racines de lumière." }
+      - { who: nilo, text: "Je n'ai rien fait ! Enfin si, j'ai fait quelque chose, mais certainement pas ça." }
+      - { who: narrateur, text: "Au loin, dans l'ombre d'une étagère de la tour, une forme discrète observait la scène depuis un moment déjà — une silhouette en robe grise semée de petites étoiles, immobile, comme si elle attendait de voir ce que les trois sœurs feraient de cette terre sans nom avant de se montrer." }
+      - { who: maelle, text: "Il y a quelqu'un là-bas. Près des étagères du fond." }
+      - { who: narrateur, text: "La silhouette ne bougea pas, mais une voix, calme et posée, traversa la tour sans qu'on sache vraiment d'où elle venait." }
+      - { who: cartea, text: "On ne nomme pas ce qu'on n'a pas encore compris. Revenez demain avec des yeux qui savent lire, et nous verrons si cette terre mérite enfin un nom." }
+      - { who: axelle, text: "C'était qui, ça ?" }
+      - { who: plume, text: "Je ne sais pas. Mais pour la première fois depuis qu'on est là, j'ai eu l'impression que l'Arche elle-même retenait son souffle." }
+    reward: "l'accès au Hall des Cartes et le premier contact avec sa Gardienne"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Boussoles Sans Nord
+    decor: Une véranda circulaire accolée au Hall des Cartes, pleine d'instruments anciens — boussoles, sextants, cadrans solaires — tous légèrement différents les uns des autres.
+    opening:
+      - { who: narrateur, text: "Le lendemain, les trois sœurs trouvèrent, à l'entrée de la tour, une petite véranda qu'elles n'avaient jamais remarquée : une pièce ronde pleine d'instruments de navigation suspendus, qui tintaient doucement les uns contre les autres au moindre courant d'air." }
+      - { who: narrateur, text: "Nilo s'empara aussitôt d'une boussole dorée posée sur un coussin de velours, et son aiguille se mit à tourner, encore et encore, incapable de se fixer sur une direction." }
+      - { who: nilo, text: "Elle est cassée. Ou alors… elle est en train de réfléchir très fort à une question difficile." }
+      - { who: narrateur, text: "Maelle prit la même boussole des mains de Nilo. L'aiguille, cette fois, s'arrêta net — mais pas du tout dans la même direction que lorsque Nilo la tenait. Intriguée, elle la tendit à Axelle, puis à Rafaelle : chaque fois, l'aiguille pointait ailleurs." }
+      - { who: maelle, text: "Elle ne pointe pas vers le même nord selon qui la tient. C'est… ce n'est pas possible, une boussole." }
+      - { who: narrateur, text: "Sur une étagère voisine, un petit mot était épinglé, écrit d'une main soignée et un peu ancienne : « Ici, chacun a son propre nord. La question n'est pas de le trouver pareil que sa voisine, mais de savoir pourquoi le sien pointe là où il pointe. »" }
+      - { who: rafaelle, text: "Mon nord à moi pointe vers la bibliothèque, je crois. Ou vers quelque chose qui ressemble à un livre, en tout cas." }
+      - { who: plume, text: "Le mien pointerait sûrement vers le goûter. Je ne suis pas sûr que ce soit très héroïque comme nord, mais c'est honnête." }
+    manches:
+      - id: m1
+        title: Chaque nord est le sien
+        tours:
+          axelle:
+            - { id: ch10-j2-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Combien de points cardinaux principaux existe-t-il ?", choices: ["deux", "trois", "quatre", "cinq", "six"], answer: "quatre", hint: "Nord, sud, est, ouest." }
+            - { id: ch10-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 8.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "8 + 8 = double de 8." }
+          maelle:
+            - { id: ch10-j2-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Si tu fais face au nord, quelle direction as-tu derrière toi ?", choices: ["l'est", "l'ouest", "le sud", "le nord aussi", "aucune"], answer: "le sud", hint: "Le sud est toujours l'opposé du nord." }
+            - { id: ch10-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 84 − 37.", choices: ["45", "46", "47", "48", "49"], answer: "47", hint: "84 − 40 = 44, puis + 3." }
+          rafaelle:
+            - { id: ch10-j2-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Quels sont les quatre points cardinaux intermédiaires (entre les principaux) ?", choices: ["nord-est, nord-ouest, sud-est, sud-ouest", "nord, sud, est, ouest", "haut, bas, droite, gauche", "amont, aval, rive droite, rive gauche", "zénith, nadir, est, ouest"], answer: "nord-est, nord-ouest, sud-est, sud-ouest", hint: "Ils se placent entre deux points cardinaux principaux." }
+            - { id: ch10-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule (−8) + 5.", choices: ["−13", "−3", "3", "13", "−5"], answer: "−3", hint: "Recule de 8, avance de 5." }
+      - id: m2
+        title: Le vent des cadrans
+        tours:
+          axelle:
+            - { id: ch10-j2-ax-m2a, subject: sciences, level: 1, kind: qcm, prompt: "Quel objet simple montre toujours la même direction grâce à un aimant ?", choices: ["une horloge", "une boussole", "un thermomètre", "une règle", "une balance"], answer: "une boussole", hint: "C'est l'objet de ce jour." }
+            - { id: ch10-j2-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Combien de minutes dans une demi-heure ?", choices: ["20", "25", "30", "40", "45"], answer: "30", hint: "Une heure = 60 minutes." }
+          maelle:
+            - { id: ch10-j2-ma-m2a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi l'aiguille d'une boussole pointe-t-elle toujours vers le nord magnétique ?", choices: ["elle est très légère", "elle réagit au champ magnétique de la Terre", "le vent la pousse", "elle est collée", "elle suit le soleil"], answer: "elle réagit au champ magnétique de la Terre", hint: "La Terre entière agit comme un immense aimant." }
+            - { id: ch10-j2-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 9 × 12.", choices: ["98", "100", "106", "108", "118"], answer: "108", hint: "9 × 12 = 9 × 10 + 9 × 2." }
+          rafaelle:
+            - { id: ch10-j2-ra-m2a, subject: sciences, level: 4, kind: qcm, prompt: "Le nord magnétique indiqué par une boussole correspond-il exactement au nord géographique (le pôle Nord) ?", choices: ["oui, toujours exactement", "non, il y a un léger écart, la déclinaison magnétique", "non, c'est totalement aléatoire", "oui, mais seulement en hiver", "cela dépend de l'heure"], answer: "non, il y a un léger écart, la déclinaison magnétique", hint: "Les deux pôles ne sont pas exactement au même endroit." }
+            - { id: ch10-j2-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 7² − 4².", choices: ["17", "27", "33", "49", "13"], answer: "33", hint: "49 − 16." }
+      - id: m3
+        title: Le petit mot épinglé
+        tours:
+          axelle:
+            - { id: ch10-j2-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Dans « Chacun a son propre nord », quel est le sujet ?", choices: ["nord", "propre", "a", "Chacun", "son"], answer: "Chacun", hint: "Qui « a » un nord ?" }
+            - { id: ch10-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 13 − 5.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "13 − 3 = 10, puis − 2." }
+          maelle:
+            - { id: ch10-j2-ma-m3a, subject: francais, level: 3, kind: qcm, prompt: "« Chacun a son propre nord. » : à quel temps est conjugué le verbe « avoir » ici ?", choices: ["présent", "imparfait", "futur", "passé composé", "conditionnel"], answer: "présent", hint: "« A », pas « avait » ni « aura »." }
+            - { id: ch10-j2-ma-m3b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 4,5 × 2.", choices: ["8", "8,5", "9", "9,5", "10"], answer: "9", hint: "4,5 + 4,5." }
+          rafaelle:
+            - { id: ch10-j2-ra-m3a, subject: francais, level: 4, kind: qcm, prompt: "« La question n'est pas de le trouver pareil que sa voisine » : quelle figure de style rapproche discrètement une boussole et une personne ?", choices: ["une comparaison", "une personnification", "une métaphore filée", "une hyperbole", "une allitération"], answer: "une personnification", hint: "On prête à la boussole un comportement presque humain, une « voisine »." }
+            - { id: ch10-j2-ra-m3b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 5/8 + 1/8.", choices: ["6/16", "3/4", "6/8", "1/2", "7/8"], answer: "3/4", hint: "5/8 + 1/8 = 6/8, qui se simplifie." }
+      - id: m4
+        title: Chacun son chemin
+        tours:
+          axelle:
+            - { id: ch10-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 4.", choices: ["21", "24", "26", "28", "32"], answer: "28", hint: "7 × 4 = 7 + 7 + 7 + 7." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch10-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 125 ÷ 5.", choices: ["20", "22", "24", "25", "26"], answer: "25", hint: "5 × 25 = 125." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch10-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Busco el norte. »", choices: ["Je trouve le nord.", "Je cherche le nord.", "Je perds le nord.", "Je montre le nord.", "Je suis le nord."], answer: "Je cherche le nord.", hint: "« Busco » = je cherche." }
+            - { gen: maths.conversion }
+    pause: "Boussole humaine : une sœur ferme les yeux et tourne sur elle-même, les deux autres la guident juste avec « un peu à gauche » ou « un peu à droite » jusqu'à une cible !"
+    closing:
+      - { who: narrateur, text: "À la tombée du jour, alors que les trois sœurs reposaient les instruments un à un, la même voix calme traversa de nouveau la véranda, sans qu'on puisse dire précisément d'où elle sortait." }
+      - { who: cartea, text: "Vous commencez à comprendre qu'une direction n'a de sens que si l'on sait d'où l'on part. C'est un bon début. Mais une carte n'est pas qu'une affaire de directions." }
+      - { who: nilo, text: "On ne vous voit toujours pas, vous savez. C'est un peu déstabilisant, pour quelqu'un qui passe son temps à dessiner des choses visibles." }
+      - { who: narrateur, text: "Un petit rire, bref et sec comme un trait de plume, répondit à Nilo depuis l'ombre des étagères — puis plus rien, sinon le tintement discret des instruments qui se calmaient les uns après les autres." }
+      - { who: maelle, text: "Elle se moque de nous. Je trouve ça plutôt bon signe, en fait. Les gens qui n'aiment personne ne se moquent de rien." }
+      - { who: rafaelle, text: "Demain, on devra sûrement comprendre ce que « pas qu'une affaire de directions » veut dire." }
+      - { who: axelle, text: "En tout cas, mon nord à moi, aujourd'hui, pointait vers vous deux. Ça, j'en suis sûre." }
+    reward: "une petite boussole dorée, fidèle à qui la porte"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: La Légende Blanche
+    decor: Une alcôve du Hall des Cartes où sont rangés, sur un pupitre incliné, de très vieux atlas et un grand livre ouvert sur une page intitulée « Légende ».
+    opening:
+      - { who: narrateur, text: "Le troisième matin, Nilo trouva, posé en évidence sur un pupitre, un très vieux livre ouvert sur une page qui portait un seul mot en haut : « Légende ». En dessous, une longue colonne de petits symboles — une montagne, une rivière, un pont, une tour — chacun accompagné de son explication." }
+      - { who: narrateur, text: "Tous les symboles avaient leur ligne d'explication, bien nette, bien lisible. Sauf un, tout en bas de la page : un simple cercle doré, pâle comme une lune de jour, à côté duquel la ligne était restée vide — blanche, comme si personne n'avait encore trouvé les mots pour la remplir." }
+      - { who: nilo, text: "Ce symbole-là, je l'ai déjà vu. C'est exactement celui qui marque la terre sans nom, sur la grande carte. Le même petit cercle doré." }
+      - { who: maelle, text: "Alors c'est ça, le vrai problème. Ce n'est pas juste que la terre n'a pas de nom. C'est que personne ne sait encore ce qu'elle *est*." }
+      - { who: narrateur, text: "Rafaelle posa un doigt délicat sur la ligne vide, et sentit, sous le papier, une légère chaleur — comme si le livre lui-même attendait, patiemment, que quelqu'un prenne la peine de chercher une réponse plutôt que de l'inventer." }
+      - { who: rafaelle, text: "On ne peut pas juste écrire n'importe quoi dedans. Ce serait tricher. Et je crois que ce livre le saurait." }
+      - { who: plume, text: "C'est étrange, comme sensation. D'habitude, les mystères me font peur. Celui-là me donne plutôt envie de rester un peu plus longtemps." }
+      - { who: axelle, text: "Alors cherchons. Vraiment. Pas pour remplir une ligne vide, mais pour savoir." }
+    manches:
+      - id: m1
+        title: Les symboles de la légende
+        tours:
+          axelle:
+            - { id: ch10-j3-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Sur une carte, quel symbole représente le plus souvent un cours d'eau ?", choices: ["un triangle", "une ligne bleue", "un carré rouge", "un point noir", "une étoile"], answer: "une ligne bleue", hint: "Le bleu, c'est la couleur de l'eau." }
+            - { id: ch10-j3-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 10 + 7.", choices: ["15", "16", "17", "18", "19"], answer: "17", hint: "10 + 7 = 17." }
+          maelle:
+            - { id: ch10-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Quel symbole de carte représente le plus souvent une montagne ?", choices: ["une ligne droite", "un triangle", "un rond plein", "une croix", "un carré"], answer: "un triangle", hint: "Pense au profil pointu d'une montagne." }
+            - { id: ch10-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 320 + 180.", choices: ["480", "490", "500", "510", "520"], answer: "500", hint: "320 + 180 = 320 + 200 − 20." }
+          rafaelle:
+            - { id: ch10-j3-ra-m1a, subject: francais, level: 3, kind: qcm, prompt: "Quel adjectif décrit le mieux une ligne qu'on a laissée sans l'écrire ?", choices: ["pleine", "vide", "colorée", "longue", "ancienne"], answer: "vide", hint: "C'est le contraire de « remplie »." }
+            - { id: ch10-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15 % de 80.", choices: ["8", "10", "12", "14", "16"], answer: "12", hint: "10 % de 80 = 8, ajoute la moitié de 8." }
+      - id: m2
+        title: Un cercle sans ligne
+        tours:
+          axelle:
+            - { id: ch10-j3-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « vide » ?", choices: ["plein", "doux", "petit", "triste", "lent"], answer: "plein", hint: "C'est l'opposé exact." }
+            - { id: ch10-j3-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 18 − 9.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "18 est le double de 9." }
+          maelle:
+            - { id: ch10-j3-ma-m2a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi un vieux livre peut-il sembler légèrement chaud au toucher, dans une pièce ensoleillée ?", choices: ["il fabrique sa propre chaleur", "il absorbe la chaleur de la lumière du soleil", "le papier est toujours chaud", "c'est une illusion totale", "il contient de l'électricité"], answer: "il absorbe la chaleur de la lumière du soleil", hint: "Les objets sombres ou exposés au soleil chauffent un peu." }
+            - { id: ch10-j3-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 7,4 − 2,6.", choices: ["4,6", "4,8", "5,0", "4,4", "5,2"], answer: "4,8", hint: "74 − 26 = 48." }
+          rafaelle:
+            - { id: ch10-j3-ra-m2a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Un cartographe qui ne connaît pas encore un territoire laisse parfois une zone vide sur ses cartes. Comment appelait-on autrefois cette zone inconnue ?", choices: ["une oasis", "une terra incognita", "un méridien", "un delta", "une péninsule"], answer: "une terra incognita", hint: "C'est du latin pour « terre inconnue »." }
+            - { id: ch10-j3-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Résous : 4x = 36.", choices: ["7", "8", "9", "10", "12"], answer: "9", hint: "36 ÷ 4." }
+      - id: m3
+        title: Chercher, pas inventer
+        tours:
+          axelle:
+            - { id: ch10-j3-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 20 − 12.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "20 − 10 = 10, puis − 2." }
+            - { id: ch10-j3-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Quel sens utilise-t-on pour sentir la chaleur d'un livre au toucher ?", choices: ["la vue", "l'ouïe", "le toucher", "le goût", "l'odorat"], answer: "le toucher", hint: "C'est la peau qui ressent." }
+          maelle:
+            - { id: ch10-j3-ma-m3a, subject: francais, level: 2, kind: qcm, prompt: "Conjugue au présent : « Nous (chercher) la vérité. »", choices: ["nous cherchons", "nous cherchez", "nous cherchent", "nous cherchais", "nous chercherons"], answer: "nous cherchons", hint: "Nous : -ons." }
+            - { id: ch10-j3-ma-m3b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 16 × 4.", choices: ["56", "60", "62", "64", "68"], answer: "64", hint: "16 × 4 = 16 × 2 × 2." }
+          rafaelle:
+            - { id: ch10-j3-ra-m3a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi les explorateurs d'autrefois tenaient-ils un carnet de bord précis pendant leurs voyages ?", choices: ["pour s'occuper", "pour noter fidèlement ce qu'ils découvraient, afin de pouvoir le partager", "parce que c'était obligatoire par la loi partout", "pour écrire des poèmes", "pour calculer le prix du voyage"], answer: "pour noter fidèlement ce qu'ils découvraient, afin de pouvoir le partager", hint: "Pense à ce que fait Maelle avec les indices." }
+            - { id: ch10-j3-ra-m3b, subject: maths, level: 5, kind: qcm, prompt: "Calcule 2³ + 3².", choices: ["14", "15", "16", "17", "18"], answer: "17", hint: "2³ = 8 et 3² = 9." }
+      - id: m4
+        title: La page qui attend
+        tours:
+          axelle:
+            - { id: ch10-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 5 × 8.", choices: ["35", "38", "40", "42", "45"], answer: "40", hint: "5 × 8 = 5 × 10 − 5 × 2." }
+            - { gen: maths.ranger }
+          maelle:
+            - { id: ch10-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 27 + 48.", choices: ["65", "70", "72", "75", "78"], answer: "75", hint: "27 + 50 − 2." }
+            - { gen: maths.arrondi }
+          rafaelle:
+            - { id: ch10-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Una isla nueva. »", choices: ["Une vieille île.", "Une île nouvelle.", "Une grande île.", "Pas d'île.", "Une petite carte."], answer: "Une île nouvelle.", hint: "« Nueva » = nouvelle." }
+            - { gen: maths.multiplication }
+    pause: "Dessine ta propre légende : chaque sœur invente un symbole secret (un rond, une croix, une étoile…) et les deux autres doivent deviner ce qu'il représente !"
+    closing:
+      - { who: narrateur, text: "La journée s'acheva sans qu'aucune ligne n'ait été ajoutée à la légende — mais Nilo avait recopié soigneusement, sur un petit carnet, tout ce que les trois sœurs avaient remarqué de la terre sans nom depuis trois jours : un parfum de sel, un silence inhabituel, une chaleur sous les doigts." }
+      - { who: narrateur, text: "Alors que le soir tombait sur le Hall des Cartes, la silhouette en robe grise s'approcha enfin, d'un pas, puis de deux, sans jamais tout à fait sortir de la pénombre." }
+      - { who: cartea, text: "Vous auriez pu inventer un nom aujourd'hui. Beaucoup l'auraient fait, juste pour remplir la ligne. Vous avez préféré chercher. C'est rare, et c'est précieux." }
+      - { who: rafaelle, text: "On ne voulait pas tricher avec un livre qui nous faisait confiance." }
+      - { who: narrateur, text: "Un silence suivit, différent des précédents — plus doux, presque chaleureux, comme une porte qu'on entrouvre un peu plus qu'avant de la refermer." }
+      - { who: cartea, text: "Demain, je crois, il sera temps que nous nous présentions correctement. Dormez bien, petites apprenties. La Salle des Cartes a mis longtemps à vous attendre." }
+      - { who: nilo, text: "Vous avez entendu ? « Nous nous présentions ». Ça veut dire qu'on va enfin la voir, non ?" }
+    reward: "le carnet des indices de Nilo, et la promesse d'une rencontre"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Dame Cartéa
+    decor: Le cœur du Hall des Cartes, où un immense globe doré flotte au-dessus d'un socle, tournant lentement sur lui-même sans que rien ne le pousse.
+    opening:
+      - { who: narrateur, text: "Le quatrième matin, quand les trois sœurs entrèrent dans le Hall des Cartes, le grand astrolabe du plafond s'était tu, et au centre de la pièce flottait, désormais, un globe doré immense, qui tournait lentement sur lui-même sans le moindre bruit, sans le moindre fil pour le soutenir." }
+      - { who: narrateur, text: "Devant ce globe se tenait enfin, bien visible, une femme grande et droite, vêtue d'une longue robe grise semée de minuscules étoiles cousues, qui ressemblaient de près à des points de repère sur une carte. Elle tenait, à la main, une plume fine et un compas doré." }
+      - { who: cartea, text: "Bonjour, apprenties. Je suis Dame Cartéa. Je garde cette salle depuis plus longtemps que n'importe quelle carte ne saurait le dire, et je n'avais plus eu de visite depuis bien trop d'années." }
+      - { who: axelle, text: "Pourquoi vous cachiez-vous, alors ? On aurait pu venir vous voir bien avant." }
+      - { who: cartea, text: "Je ne me cachais pas, petite Veilleuse. J'observais. On n'ouvre pas sa porte à n'importe qui, dans cette salle. Une carte mal lue peut perdre un voyageur bien plus sûrement qu'aucun monstre." }
+      - { who: narrateur, text: "D'un geste léger de son compas, Dame Cartéa fit ralentir le globe, qui s'arrêta tout doucement sur une zone que les trois sœurs reconnurent aussitôt : la tache d'encre dorée, la terre sans nom, bien plus grande vue ainsi, sur ce globe, que sur la carte à plat." }
+      - { who: cartea, text: "Voici ce que je garde vraiment : non pas des lieux, mais le droit de les nommer. Un nom, donné trop vite, peut enfermer une terre dans une idée fausse pour des siècles. Je ne le donne jamais sans être sûre." }
+      - { who: maelle, text: "Alors comment on fait, pour que vous soyez sûre ?" }
+      - { who: cartea, text: "Vous me montrez ce que vous avez vraiment appris, pas ce que vous avez récité. Demain, je vous écouterai. Et selon ce que vous m'apporterez, cette terre recevra peut-être enfin son nom." }
+      - { who: plume, text: "Ça tombe bien. On n'a jamais été très douées pour réciter. On est plutôt du genre à comprendre en se cognant dedans." }
+    manches:
+      - id: m1
+        title: Le globe qui tourne
+        tours:
+          axelle:
+            - { id: ch10-j4-ax-m1a, subject: sciences, level: 1, kind: qcm, prompt: "Quelle forme a, à peu près, la Terre ?", choices: ["un carré", "une sphère", "un triangle", "un cube", "une pyramide"], answer: "une sphère", hint: "Comme une grande boule." }
+            - { id: ch10-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 11 + 6.", choices: ["15", "16", "17", "18", "19"], answer: "17", hint: "11 + 6 = 17." }
+          maelle:
+            - { id: ch10-j4-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi fait-il jour sur une moitié de la Terre et nuit sur l'autre, au même moment ?", choices: ["le soleil se déplace très vite", "la Terre tourne sur elle-même, et seule une moitié reçoit la lumière", "la nuit tombe sur toute la Terre en même temps", "il n'y a jamais nuit partout en même temps de toute façon", "les nuages cachent le soleil la nuit"], answer: "la Terre tourne sur elle-même, et seule une moitié reçoit la lumière", hint: "Pense au globe qui tourne devant les trois sœurs." }
+            - { id: ch10-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 240 ÷ 8.", choices: ["25", "28", "30", "32", "35"], answer: "30", hint: "8 × 30 = 240." }
+          rafaelle:
+            - { id: ch10-j4-ra-m1a, subject: sciences, level: 4, kind: qcm, prompt: "Combien de temps met, en moyenne, la Terre pour faire un tour complet sur elle-même ?", choices: ["une heure", "un jour (24 h)", "une semaine", "un mois", "une année"], answer: "un jour (24 h)", hint: "C'est exactement la durée d'une journée." }
+            - { id: ch10-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 9² − 40.", choices: ["31", "39", "41", "45", "49"], answer: "41", hint: "9² = 81, puis 81 − 40." }
+      - id: m2
+        title: Le droit de nommer
+        tours:
+          axelle:
+            - { id: ch10-j4-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de la phrase « Dame Cartéa garde la salle. » ?", choices: ["garde", "la salle", "Dame Cartéa", "salle", "la"], answer: "Dame Cartéa", hint: "Qui fait l'action de garder ?" }
+            - { id: ch10-j4-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 16 − 7.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "16 − 6 = 10, puis − 1." }
+          maelle:
+            - { id: ch10-j4-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « vraiment » dans « ce que vous avez vraiment appris » ?", choices: ["nom", "adjectif", "adverbe", "verbe", "pronom"], answer: "adverbe", hint: "Il modifie le verbe « appris »." }
+            - { id: ch10-j4-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 8,1 + 1,9.", choices: ["9,0", "9,8", "10,0", "10,2", "9,9"], answer: "10,0", hint: "81 + 19 = 100." }
+          rafaelle:
+            - { id: ch10-j4-ra-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi, historiquement, nommer un lieu nouvellement découvert était-il un acte important ?", choices: ["cela ne changeait rien du tout", "le nom choisi influençait la façon dont les gens voyaient et racontaient ce lieu ensuite", "c'était juste une formalité administrative", "seuls les rois avaient le droit de parler des lieux", "le nom devait toujours rimer"], answer: "le nom choisi influençait la façon dont les gens voyaient et racontaient ce lieu ensuite", hint: "Pense à ce que dit Dame Cartéa sur « enfermer une terre dans une idée fausse »." }
+            - { id: ch10-j4-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 5/6 − 1/3.", choices: ["4/3", "1/2", "4/6", "1/6", "2/3"], answer: "1/2", hint: "1/3 = 2/6, donc 5/6 − 2/6." }
+      - id: m3
+        title: Montrer, pas réciter
+        tours:
+          axelle:
+            - { id: ch10-j4-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 + 5.", choices: ["17", "18", "19", "20", "21"], answer: "19", hint: "14 + 5 = 19." }
+            - { id: ch10-j4-ax-m3b, subject: histoire-geo, level: 1, kind: qcm, prompt: "Quelle couleur représente le plus souvent la mer sur une carte ?", choices: ["le rouge", "le vert", "le bleu", "le jaune", "le noir"], answer: "le bleu", hint: "La couleur de l'eau." }
+          maelle:
+            - { id: ch10-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 19 × 5.", choices: ["85", "90", "95", "100", "105"], answer: "95", hint: "20 × 5 = 100, puis − 5." }
+            - { id: ch10-j4-ma-m3b, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi un globe terrestre tourne-t-il généralement autour d'un axe incliné, comme sur le socle de Dame Cartéa ?", choices: ["pour faire plus joli", "pour représenter l'inclinaison réelle de l'axe de la Terre", "parce que c'est plus facile à fabriquer", "pour montrer l'équateur plus grand", "par hasard uniquement"], answer: "pour représenter l'inclinaison réelle de l'axe de la Terre", hint: "Les globes copient l'inclinaison réelle de notre planète." }
+          rafaelle:
+            - { id: ch10-j4-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : x ÷ 6 = 9.", choices: ["48", "50", "52", "54", "56"], answer: "54", hint: "9 × 6 = 54." }
+            - { id: ch10-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Une carte mal lue peut perdre un voyageur bien plus sûrement qu'aucun monstre. » : quel est le complément du verbe « perdre » ?", choices: ["une carte", "mal lue", "un voyageur", "bien plus sûrement", "aucun monstre"], answer: "un voyageur", hint: "Qui est-ce que la carte peut perdre ?" }
+      - id: m4
+        title: Se préparer pour demain
+        tours:
+          axelle:
+            - { id: ch10-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 5.", choices: ["25", "28", "30", "32", "35"], answer: "30", hint: "6 × 5 = 6 + 6 + 6 + 6 + 6." }
+            - { gen: maths.duree }
+          maelle:
+            - { id: ch10-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 310 − 165.", choices: ["135", "140", "145", "150", "155"], answer: "145", hint: "310 − 165 = 310 − 170 + 5." }
+            - { gen: maths.conversion }
+          rafaelle:
+            - { id: ch10-j4-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El viaje continúa. »", choices: ["Le voyage s'arrête.", "Le voyage commence.", "Le voyage continue.", "Le voyage est fini.", "Le voyage attend."], answer: "Le voyage continue.", hint: "« Continúa » ressemble à « continue »." }
+            - { gen: maths.arrondi }
+    pause: "Le globe vivant : une sœur ferme les yeux et doit deviner, juste en touchant un vieux globe ou une carte, où se trouve un relief (montagne, mer, plaine) que les deux autres lui décrivent sans le nommer."
+    closing:
+      - { who: narrateur, text: "Le soir venu, Dame Cartéa referma son compas d'un geste précis, et pour la première fois, un petit sourire — discret, presque timide — traversa son visage habituellement si posé." }
+      - { who: cartea, text: "Je vous observe depuis trois jours, et je commence à comprendre pourquoi cette terre s'est ouverte précisément pour vous. Demain, le Conseil de la Salle des Cartes décidera comment vous me prouverez ce que vous savez." }
+      - { who: rafaelle, text: "Vous avez l'air presque contente, Dame Cartéa." }
+      - { who: cartea, text: "Presque, en effet. Il y a très longtemps qu'une carte n'avait pas eu une si bonne raison de se compléter." }
+      - { who: narrateur, text: "Alors que les trois sœurs quittaient la tour, Nilo jeta un dernier regard au globe doré, qui continuait de tourner lentement dans la pénombre, et crut y voir, l'espace d'un instant, une toute petite lueur clignoter exactement là où la terre n'avait toujours pas de nom." }
+      - { who: nilo, text: "Demain, je crois qu'on va enfin savoir ce qu'il y a vraiment là-bas." }
+    reward: "la confiance naissante de Dame Cartéa"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: Le Nom des Terres
+    decor: La Salle des Cartes au grand complet, le globe doré immobile, la grande carte étalée, l'astrolabe silencieux comme pour mieux écouter.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, la Salle des Cartes semblait avoir retenu son souffle depuis l'aube. Dame Cartéa attendait déjà au centre de la pièce, debout devant la grande carte où brillait toujours, patiente, la tache dorée sans nom." }
+      - { who: cartea, text: "Voici donc le moment. Cette terre attend un nom depuis plus longtemps que vous ne l'imaginez. Avant que je vous laisse le lui donner, montrez-moi comment vous comptez mériter ce droit." }
+      - { who: nilo, text: "Vous nous avez observées pendant trois jours. Vous devez déjà avoir une petite idée de ce qu'on va choisir, non ?" }
+      - { who: cartea, text: "J'ai une idée, en effet. Mais une Gardienne des Cartes sait aussi qu'une idée n'est jamais tout à fait une certitude, tant qu'on ne l'a pas vue se dessiner en vrai." }
+      - { who: plume, text: "Alors dessinons-la. Pour de vrai, cette fois." }
+    manches:
+      - id: m1
+        title: L'épreuve de Dame Cartéa
+        intro: "La Gardienne interroge chaque sœur sur tout ce qu'elle a appris cette semaine, de la tache d'encre au globe doré."
+        tours:
+          axelle:
+            - { id: ch10-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Sur une carte, que représente généralement une ligne bleue fine qui serpente ?", choices: ["une route", "une rivière", "une frontière", "un chemin de fer", "une montagne"], answer: "une rivière", hint: "Le bleu, encore, pour l'eau." }
+            - { id: ch10-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 12 + 9.", choices: ["19", "20", "21", "22", "23"], answer: "21", hint: "12 + 10 = 22, puis − 1." }
+          maelle:
+            - { id: ch10-j5-ma-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Quelle direction regarde-t-on quand on « fait face au couchant » (au soleil qui se couche) ?", choices: ["le nord", "le sud", "l'est", "l'ouest", "le zénith"], answer: "l'ouest", hint: "Le soleil se couche à l'ouest." }
+            - { id: ch10-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 17 × 6.", choices: ["92", "96", "100", "102", "108"], answer: "102", hint: "17 × 6 = 17 × 5 + 17." }
+          rafaelle:
+            - { id: ch10-j5-ra-m1a, subject: sciences, level: 4, kind: qcm, prompt: "Pourquoi deux boussoles tenues par deux personnes différentes, au même endroit, pointent-elles en réalité vers le même nord magnétique ?", choices: ["ce n'est pas vrai, elles pointent toujours différemment", "le champ magnétique terrestre est le même partout autour d'elles, quelle que soit la personne", "cela dépend de l'humeur de la personne", "les boussoles communiquent entre elles", "seule la boussole la plus récente fonctionne bien"], answer: "le champ magnétique terrestre est le même partout autour d'elles, quelle que soit la personne", hint: "Le magnétisme de la Terre ne connaît pas les personnes — contrairement à la magie de cette salle." }
+            - { id: ch10-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 2/5 × 10.", choices: ["2", "3", "4", "5", "6"], answer: "4", hint: "10 ÷ 5 = 2, puis × 2." }
+      - id: m2
+        title: Les indices rassemblés
+        intro: "Il faut relier ce qui a été appris à ce qui a été ressenti, pour que Dame Cartéa soit enfin certaine."
+        tours:
+          axelle:
+            - { id: ch10-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux une terre qu'on connaît très bien ?", choices: ["inconnue", "familière", "lointaine", "vide", "invisible"], answer: "familière", hint: "C'est le contraire d'inconnue." }
+            - { id: ch10-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 20 − 14.", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "20 − 10 = 10, puis − 4." }
+          maelle:
+            - { id: ch10-j5-ma-m2a, subject: sciences, level: 3, kind: qcm, prompt: "Si une tache d'encre forme spontanément des lignes dorées qui courent toutes seules, est-ce un phénomène naturel ordinaire ?", choices: ["oui, c'est tout à fait ordinaire", "non, c'est un phénomène magique propre à l'Arche", "oui, toutes les encres font ça", "cela arrive seulement la nuit", "cela arrive seulement avec de l'encre bleue"], answer: "non, c'est un phénomène magique propre à l'Arche", hint: "L'encre ordinaire ne dessine pas toute seule." }
+            - { id: ch10-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 450 ÷ 9.", choices: ["45", "48", "50", "52", "54"], answer: "50", hint: "9 × 50 = 450." }
+          rafaelle:
+            - { id: ch10-j5-ra-m2a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi un cartographe prudent préfère-t-il souvent recouper plusieurs sources avant de nommer un lieu nouveau ?", choices: ["pour perdre du temps", "pour éviter de se fier à une seule impression, parfois trompeuse", "parce que la loi l'exige dans tous les cas", "pour impressionner les autres explorateurs", "parce qu'un seul témoin ne sait jamais lire une carte"], answer: "pour éviter de se fier à une seule impression, parfois trompeuse", hint: "C'est exactement ce que fait Maelle avec son carnet d'indices." }
+            - { id: ch10-j5-ra-m2b, subject: maths, level: 5, kind: qcm, prompt: "Calcule 3² + 4² (indice : c'est un nombre que tu reconnaîtras peut-être).", choices: ["24", "25", "26", "49", "12"], answer: "25", hint: "9 + 16." }
+      - id: m3
+        title: Le Chant de l'Astrolabe
+        intro: "L'astrolabe du plafond se remet à tourner : il ne chante que si les trois sœurs trouvent, ensemble, le bon rythme."
+        tours:
+          axelle:
+            - { id: ch10-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          maelle:
+            - { id: ch10-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, blanche." }
+          rafaelle:
+            - { id: ch10-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : ronde." }
+    concert:
+      measures:
+        axelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        maelle: { given: [2], missing: 2, prompt: "Blanche, blanche" }
+        rafaelle: { given: [], missing: 4, prompt: "Ronde" }
+    pause: "Le cercle des noms : chacune propose à voix haute un nom possible pour la terre, sans se juger — juste pour voir lesquels sonnent juste, avant le vrai choix."
+    closing:
+      - { who: narrateur, text: "La dernière note de l'astrolabe s'éteignit dans un long bourdonnement doré, et le globe, au centre de la salle, se remit à tourner doucement — pour la première fois, dans le même sens exact que les boussoles des trois sœurs, enfin accordées." }
+      - { who: narrateur, text: "Dame Cartéa s'approcha de la grande carte, son compas à la main, et attendit, silencieuse, que les trois sœurs prononcent le nom qu'elles avaient choisi ensemble pour la terre sans nom." }
+      - { who: narrateur, text: "Dès que le nom fut dit à voix haute, l'encre dorée frémit une dernière fois, puis se figea en de belles lettres fines, bien nettes, exactement comme celles de toutes les autres terres de la carte." }
+      - { who: cartea, text: "C'est fait. Et c'est un bon nom — un nom qui tient compte de ce que vous avez vraiment vu, pas seulement de ce que vous espériez trouver. C'est la seule sorte de nom qui dure." }
+      - { who: nilo, text: "Ma Carte Vivante est officiellement complète, ET elle a un ami de plus dessus. Journée parfaite." }
+      - { who: narrateur, text: "Dame Cartéa roula soigneusement un petit fragment de la carte, celui qui représentait justement la terre fraîchement nommée, et le tendit aux trois sœurs." }
+      - { who: cartea, text: "Gardez ceci. Une terre qu'on a nommée avec soin mérite qu'on continue à veiller sur elle. Et je soupçonne que votre chemin n'en restera pas là." }
+      - { who: axelle, text: "Vous voulez dire qu'on va devoir y aller vraiment, pas juste la regarder sur une carte ?" }
+      - { who: cartea, text: "J'en suis presque certaine, petite Veilleuse. Les meilleures cartes, de toute façon, ne servent jamais qu'à rester chez soi." }
+      - { who: maelle, text: "Alors on repart. Encore. Je ne sais pas pourquoi, mais je ne suis même plus fatiguée en le disant." }
+      - { who: narrateur, text: "Et tandis que la nuit tombait sur le Hall des Cartes, le globe doré continuait de tourner, lentement, inlassablement — et quelque part, bien au-delà de la terre fraîchement nommée, une toute petite étoile nouvelle se mit, elle aussi, à scintiller sur la grande carte, comme un appel discret pour la suite du chemin." }
+    reward: "un fragment de carte de la terre nommée, et le compas d'apprentie offert par Dame Cartéa"
