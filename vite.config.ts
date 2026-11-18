@@ -34,7 +34,9 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,webp,json,woff2}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,webp,json,woff2,ogg}'],
+        // Les voix pré-générées (Chirp3-HD) sont nombreuses et parfois > le seuil par défaut (2 Mo) ; 5 Mo couvre large.
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         navigateFallback: `${base}index.html`,
         cleanupOutdatedCaches: true
       }
