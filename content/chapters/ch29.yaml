@@ -1,0 +1,379 @@
+# Chapitre 29 — Le Barde Solen et la Dernière Veillée
+# Nouveau personnage : Solen, un barde itinérant rencontré au sommet de l'escalier de
+# l'architecte, qui propose aux trois sœurs une dernière veillée de chants avant l'ultime
+# ascension. Voix : Achernar. Pas d'effet ORVANE ni de drapeau pour ce chapitre (absent de
+# decisions.ts) : décision purement narrative sur le choix du chant à apprendre ensemble.
+
+id: ch29
+number: 29
+act: 2
+title: Le Barde Solen et la Dernière Veillée
+introImage: ch29
+scene: veillee-du-sommet
+
+espagnol:
+  - { es: "El canto une a los viajeros.", fr: "Le chant unit les voyageurs." }
+  - { es: "La última noche se acerca.", fr: "La dernière nuit approche." }
+  - { es: "Cada canción cuenta una historia.", fr: "Chaque chanson raconte une histoire." }
+  - { es: "La cima ya no está lejos.", fr: "Le sommet n'est plus loin." }
+  - { es: "Cantar juntos da valor.", fr: "Chanter ensemble donne du courage." }
+
+decision:
+  prompt: "Solen accorde doucement son instrument, assis au bord du dernier palier de l'escalier, le sommet déjà visible au loin. « Pour cette dernière veillée avant l'ascension finale, je peux vous apprendre un chant de courage, pour affronter sans peur ce qui vous attend, un chant de mémoire, pour vous souvenir de tout ce chemin parcouru, ou un chant tout simplement joyeux, pour profiter de cette dernière soirée tranquille. Lequel choisissez-vous ? »"
+  options:
+    A:
+      label: Apprendre un chant de courage, pour l'ascension finale
+      scene: "Rafaelle demande à Solen de leur apprendre un chant de courage, pour affronter sans peur l'ascension finale qui les attend, quelle qu'en soit la difficulté."
+      line: { who: solen, text: "Un choix qui vous servira bien, petite Archiviste. Le courage, en chanson, se partage et se multiplie, bien plus facilement qu'on ne le croit." }
+      habillage: "Les épreuves prennent la forme d'un apprentissage vibrant et énergique, porté par des mélodies qui donnent envie d'avancer sans crainte."
+    B:
+      label: Apprendre un chant de mémoire, pour se souvenir du chemin parcouru
+      scene: "Maelle préfère que Solen leur apprenne un chant de mémoire, pour garder le souvenir de tout le chemin parcouru depuis le début de leur voyage."
+      line: { who: solen, text: "Un choix empreint de sagesse, petite Cartographe. Se souvenir de son chemin, c'est souvent la meilleure façon d'avancer vers la suite." }
+      habillage: "Les épreuves prennent la forme d'un apprentissage nostalgique et tendre, où chaque mélodie rappelle une étape déjà traversée."
+    C:
+      label: Apprendre un chant joyeux, pour profiter de la soirée
+      scene: "Axelle choisit plutôt un chant tout simplement joyeux, pour profiter pleinement de cette dernière soirée tranquille avant l'ascension finale."
+      line: { who: solen, text: "Une sage décision aussi, petite Veilleuse. La joie, avant un grand moment, vaut parfois mieux que toutes les préparations sérieuses du monde." }
+      habillage: "Les épreuves prennent la forme d'un apprentissage léger et enjoué, plein de rires et de refrains entraînants."
+
+repliquesAbsurdes:
+  - "Si chaque chanson raconte une histoire, est-ce que Solen connaît une chanson qui raconte juste l'histoire d'un bâillement, pour les soirs fatigués ?"
+  - "Mon renard a essayé de chanter avec Solen. Résultat : un seul « yip » suraigu, et toute la veillée a éclaté de rire."
+  - "Est-ce qu'on peut demander à Solen de composer, sur place, une chanson juste sur nous trois, pour l'emporter avec nous jusqu'au sommet ?"
+  - "Si chanter ensemble donne du courage, est-ce que chanter tout seul, dans son coin, donne au moins un peu de confiance, ou rien du tout ?"
+  - "Après un escalier taillé dans la roche et une distillation réussie, une veillée à chanter autour d'un feu, ça semble presque un cadeau, en fait."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: Le barde du dernier palier
+    decor: Le dernier palier de l'escalier de l'architecte, où un feu de camp crépite doucement, et où un homme accorde un instrument de bois et de cordes, le sommet visible au loin.
+    opening:
+      - { who: narrateur, text: "Le sentier, après l'escalier achevé, menait désormais à un large palier rocheux, où un feu de camp crépitait doucement sous un ciel déjà strié des premières couleurs du soir." }
+      - { who: narrateur, text: "Près du feu, un homme au manteau usé par les voyages accordait patiemment un instrument de bois et de cordes, le regard tourné vers le sommet, encore lointain mais désormais bien visible." }
+      - { who: rafaelle, text: "Bonsoir ! On ne s'attendait pas à trouver quelqu'un ici, si près du sommet." }
+      - { who: narrateur, text: "L'homme leva les yeux, un sourire chaleureux aux lèvres, et posa son instrument sur ses genoux avec une délicatesse évidente." }
+      - { who: solen, text: "On m'appelle Solen, petites voyageuses. Je suis barde, et je parcours ces chemins depuis des années, en quête de chants à apprendre et à partager." }
+      - { who: axelle, text: "Et vous restez souvent longtemps au même endroit, comme ça ?" }
+      - { who: solen, text: "Jamais bien longtemps, petite Veilleuse. Mais ce soir, j'avais justement envie d'une veillée, et votre arrivée tombe à merveille." }
+      - { who: maelle, text: "Une veillée, ça veut dire qu'on va chanter ensemble, alors ?" }
+      - { who: solen, text: "Exactement, petite Cartographe. Reste à savoir quel chant vous ferait le plus plaisir d'apprendre, ce soir." }
+    manches:
+      - id: m1
+        title: Un palier au bord du ciel
+        tours:
+          axelle:
+            - { id: ch29-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on une personne qui compose et chante des histoires en voyageant, accompagnée d'un instrument ?", choices: ["un barde", "un marchand", "un architecte", "un messager", "un berger"], answer: "un barde", hint: "C'est le métier de Solen, rencontré sur le dernier palier." }
+            - { id: ch29-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 + 8.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "7 + 8 = 7 + 7 + 1." }
+          maelle:
+            - { id: ch29-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi un feu de camp est-il souvent allumé lors d'une veillée en montagne, même en dehors de son utilité pour la chaleur ?", choices: ["il crée une lumière et une atmosphère propices au rassemblement et au partage", "un feu de camp n'a jamais aucun effet sur l'ambiance d'une soirée", "cela n'a aucune explication particulière", "un feu de camp empêche toujours les gens de se rassembler", "la lumière du feu n'a jamais aucune utilité lors d'une veillée"], answer: "il crée une lumière et une atmosphère propices au rassemblement et au partage", hint: "Pense à l'ambiance du feu de camp, autour duquel Solen propose sa veillée." }
+            - { id: ch29-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 64 + 58.", choices: ["118", "120", "122", "124", "126"], answer: "122", hint: "64 + 60 − 2." }
+          rafaelle:
+            - { id: ch29-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi, historiquement, les bardes et conteurs itinérants ont-ils joué un rôle important dans la transmission des histoires et des chants ?", choices: ["parce qu'ils voyageaient de lieu en lieu, partageant et faisant circuler les récits et mélodies entre communautés", "parce que les bardes n'ont jamais eu aucun rôle dans la transmission des histoires", "cela n'a aucune importance historique", "parce qu'il est toujours impossible de transmettre un chant sans l'écrire", "parce que seuls les écrits ont permis de transmettre des histoires"], answer: "parce qu'ils voyageaient de lieu en lieu, partageant et faisant circuler les récits et mélodies entre communautés", hint: "Pense au rôle de Solen, qui parcourt les chemins en quête de chants à apprendre et à partager." }
+            - { id: ch29-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 17 × 5.", choices: ["75", "80", "82", "85", "88"], answer: "85", hint: "17 × 5 = 17 × 10 ÷ 2." }
+      - id: m2
+        title: Un instrument de bois et de cordes
+        tours:
+          axelle:
+            - { id: ch29-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Un homme accordait son instrument. » ?", choices: ["son instrument", "accordait", "Un homme", "un", "homme"], answer: "Un homme", hint: "Qui accorde son instrument, près du feu de camp ?" }
+            - { id: ch29-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 13 − 6.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "13 − 6 = 7." }
+          maelle:
+            - { id: ch29-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « chaleureux » dans « un sourire chaleureux » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le sourire de Solen, à l'arrivée des sœurs." }
+            - { id: ch29-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 376 ÷ 4.", choices: ["86", "88", "90", "92", "94"], answer: "94", hint: "4 × 94 = 376." }
+          rafaelle:
+            - { id: ch29-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Je parcours ces chemins depuis des années, en quête de chants à apprendre et à partager. » : que révèle cette phrase sur Solen ?", choices: ["qu'il consacre sa vie à collecter et transmettre des chants au fil de ses voyages", "qu'il reste toujours au même endroit, sans jamais voyager", "qu'il refuse systématiquement d'apprendre de nouveaux chants", "qu'il ne partage jamais ce qu'il connaît avec personne", "qu'il considère les chants comme sans aucune importance"], answer: "qu'il consacre sa vie à collecter et transmettre des chants au fil de ses voyages", hint: "Repense à ce que dit Solen sur sa vie de barde itinérant." }
+            - { id: ch29-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 12² − 80.", choices: ["58", "60", "62", "64", "68"], answer: "64", hint: "144 − 80." }
+      - id: m3
+        title: Une veillée bienvenue
+        tours:
+          axelle:
+            - { id: ch29-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Solen connaît 4 chants de courage, et 3 chants de mémoire. Combien de chants en tout, parmi ces deux catégories ?", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "4 + 3." }
+            - { id: ch29-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi chanter ensemble, en groupe, procure-t-il souvent un sentiment de réconfort ou de cohésion particulier ?", choices: ["partager un rythme et une mélodie communs crée un lien immédiat entre les personnes présentes", "chanter ensemble n'a jamais aucun effet sur un groupe", "cela n'a aucune explication particulière", "chanter seul procure toujours plus de réconfort que chanter en groupe", "le chant n'a jamais aucun lien avec la cohésion d'un groupe"], answer: "partager un rythme et une mélodie communs crée un lien immédiat entre les personnes présentes", hint: "Pense à ce que propose Solen avec cette veillée, autour du feu de camp." }
+          maelle:
+            - { id: ch29-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 48 × 4.", choices: ["182", "186", "188", "190", "192"], answer: "192", hint: "48 × 4 = 50 × 4 − 2 × 4." }
+            - { id: ch29-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi une rencontre inattendue, comme celle avec Solen, peut-elle enrichir un voyage de façon particulière ?", choices: ["parce qu'elle apporte un moment de partage et de découverte qui n'était pas prévu au départ", "parce qu'une rencontre inattendue n'a jamais aucune valeur pour un voyage", "cela n'a aucun lien avec l'enrichissement d'un voyage", "parce qu'il vaut toujours mieux éviter toute rencontre imprévue", "parce qu'une veillée improvisée n'apporte jamais rien de particulier"], answer: "parce qu'elle apporte un moment de partage et de découverte qui n'était pas prévu au départ", hint: "Pense à la joie des trois sœurs de rencontrer Solen, juste avant l'ascension finale." }
+          rafaelle:
+            - { id: ch29-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x + 7 = 42.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "5x = 35." }
+            - { id: ch29-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Solen (poser) son instrument sur ses genoux. »", choices: ["a posé", "posait", "posera", "pose", "posant"], answer: "a posé", hint: "« Poser » se conjugue avec avoir au passé composé." }
+      - id: m4
+        title: Premiers accords
+        tours:
+          axelle:
+            - { id: ch29-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 4.", choices: ["28", "30", "31", "32", "34"], answer: "32", hint: "8 × 4 = 8 × 2 × 2." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch29-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 305 − 148.", choices: ["155", "157", "159", "161", "163"], answer: "157", hint: "305 − 150 + 2." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch29-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El canto une a los viajeros. »", choices: ["Le chant unit les voyageurs.", "Le chant fatigue les voyageurs.", "Le chant perd les voyageurs.", "Le chant effraie les voyageurs.", "Le chant endort les voyageurs."], answer: "Le chant unit les voyageurs.", hint: "« Une a los viajeros » = unit les voyageurs." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu de l'accord improvisé : chaque sœur fredonne, tour à tour, une courte mélodie de son invention, pendant que les autres essaient de deviner l'humeur qu'elle voulait exprimer."
+    closing:
+      - { who: narrateur, text: "Le feu de camp continua de crépiter doucement, tandis que Solen rangeait son instrument pour la nuit, satisfait, visiblement, de cette rencontre inattendue." }
+      - { who: solen, text: "Demain, nous choisirons ensemble le chant de cette veillée. Reposez-vous bien, la décision mérite d'être prise avec l'esprit léger." }
+      - { who: axelle, text: "On sera prêtes à décider, demain matin." }
+      - { who: narrateur, text: "Et tandis que la nuit tombait doucement sur le palier rocheux, le sommet, au loin, semblait veiller sur eux tous, silencieux et patient." }
+    reward: "la découverte du barde Solen, et de sa veillée promise"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Les trois sortes de chants
+    decor: Le palier rocheux, au petit matin, où Solen explique aux trois sœurs les trois sortes de chants qu'il pourrait leur apprendre avant l'ascension finale.
+    opening:
+      - { who: narrateur, text: "Le lendemain matin, Solen entreprit d'expliquer aux trois sœurs les trois sortes de chants qu'il pourrait leur apprendre avant l'ascension finale." }
+      - { who: solen, text: "Il y a d'abord les chants de courage, petites voyageuses, qui donnent de la force avant une épreuve difficile, comme celle qui vous attend bientôt." }
+      - { who: rafaelle, text: "Et les chants de mémoire, vous disiez, ils servent à quoi, exactement ?" }
+      - { who: solen, text: "À se souvenir, petite Archiviste. Ils racontent un chemin déjà parcouru, pour qu'on n'en oublie jamais les étapes les plus marquantes." }
+      - { who: maelle, text: "Et les chants joyeux, alors, c'est juste pour le plaisir, sans but particulier ?" }
+      - { who: solen, text: "Exactement, petite Cartographe. Parfois, la joie simple vaut mieux que toute préparation sérieuse, avant un grand moment." }
+      - { who: axelle, text: "C'est difficile de choisir entre les trois, en fait." }
+      - { who: solen, text: "C'est précisément pour ça que je vous laisse le temps d'y réfléchir, petite Veilleuse." }
+    manches:
+      - id: m1
+        title: Le chant de courage
+        tours:
+          axelle:
+            - { id: ch29-j2-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « courage » ?", choices: ["peur", "bravoure", "vaillance", "audace", "force"], answer: "peur", hint: "Le contraire de ce qu'apporte un chant de courage, selon Solen." }
+            - { id: ch29-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 6.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "9 + 6 = 9 + 1 + 5." }
+          maelle:
+            - { id: ch29-j2-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi chanter avant une épreuve difficile peut-il réellement aider à affronter cette épreuve avec plus de confiance ?", choices: ["le chant mobilise l'énergie et le moral, ce qui peut renforcer la détermination face à une difficulté", "chanter n'a jamais aucun effet sur l'état d'esprit d'une personne", "cela n'a aucune explication particulière", "chanter avant une épreuve affaiblit toujours la détermination", "l'état d'esprit n'a jamais aucun lien avec la réussite d'une épreuve"], answer: "le chant mobilise l'énergie et le moral, ce qui peut renforcer la détermination face à une difficulté", hint: "Pense à ce que dit Solen sur le courage qui se partage et se multiplie en chanson." }
+            - { id: ch29-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 455 ÷ 5.", choices: ["81", "85", "88", "91", "94"], answer: "91", hint: "5 × 91 = 455." }
+          rafaelle:
+            - { id: ch29-j2-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi les chants de mémoire, qui racontent un chemin parcouru, ont-ils souvent une grande valeur pour une communauté ou un groupe de voyageurs ?", choices: ["parce qu'ils permettent de transmettre et de ne jamais oublier les étapes importantes d'une histoire commune", "parce qu'un chant de mémoire n'a jamais aucune valeur réelle", "cela n'a aucun lien avec la transmission d'une histoire commune", "parce qu'il vaut toujours mieux oublier le chemin déjà parcouru", "parce que seuls les chants de courage ont une quelconque utilité"], answer: "parce qu'ils permettent de transmettre et de ne jamais oublier les étapes importantes d'une histoire commune", hint: "Pense à l'explication de Solen sur les chants de mémoire, qui racontent un chemin déjà parcouru." }
+            - { id: ch29-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 16 × 6.", choices: ["90", "92", "94", "96", "98"], answer: "96", hint: "16 × 6 = 16 × 3 × 2." }
+      - id: m2
+        title: Le chant de mémoire
+        tours:
+          axelle:
+            - { id: ch29-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 16 − 9.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "16 − 6 = 10, puis − 3." }
+            - { id: ch29-j2-ax-m2b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Les chants de mémoire racontent un chemin. » ?", choices: ["un chemin", "racontent", "Les chants de mémoire", "les", "chants"], answer: "Les chants de mémoire", hint: "Qu'est-ce qui raconte un chemin déjà parcouru, selon Solen ?" }
+          maelle:
+            - { id: ch29-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 36 × 4.", choices: ["138", "140", "142", "144", "146"], answer: "144", hint: "36 × 4 = 36 × 2 × 2." }
+            - { id: ch29-j2-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « joyeux » dans « un chant joyeux » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le troisième type de chant proposé par Solen." }
+          rafaelle:
+            - { id: ch29-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 50.", choices: ["28", "31", "33", "35", "38"], answer: "31", hint: "81 − 50." }
+            - { id: ch29-j2-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Cada canción cuenta una historia. »", choices: ["Chaque chanson raconte une histoire.", "Chaque chanson disparaît vite.", "Chaque chanson fait peur.", "Chaque chanson dure peu.", "Chaque chanson se répète toujours."], answer: "Chaque chanson raconte une histoire.", hint: "« Cuenta una historia » = raconte une histoire." }
+      - id: m3
+        title: Le chant joyeux
+        tours:
+          axelle:
+            - { id: ch29-j2-ax-m3a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on une soirée passée à discuter, chanter ou raconter des histoires autour d'un feu ?", choices: ["une veillée", "une distillation", "une architecture", "une cartographie", "une astronomie"], answer: "une veillée", hint: "C'est ce que propose Solen aux trois sœurs." }
+            - { id: ch29-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 4.", choices: ["24", "26", "27", "28", "30"], answer: "28", hint: "7 × 4 = 7 × 2 × 2." }
+          maelle:
+            - { id: ch29-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 288 ÷ 4.", choices: ["68", "70", "72", "74", "76"], answer: "72", hint: "4 × 72 = 288." }
+            - { id: ch29-j2-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi un moment de joie simple, avant un grand événement, peut-il être aussi utile qu'une préparation sérieuse ?", choices: ["parce qu'il permet de relâcher la tension et d'aborder l'événement avec un esprit plus léger", "parce qu'un moment de joie n'a jamais aucune utilité avant un grand événement", "cela n'a aucun lien avec la préparation d'un événement important", "parce qu'il vaut toujours mieux rester sérieux en toute circonstance", "parce que la légèreté n'a jamais aucun effet positif sur l'état d'esprit"], answer: "parce qu'il permet de relâcher la tension et d'aborder l'événement avec un esprit plus léger", hint: "Pense à ce que dit Solen sur la joie simple, qui vaut parfois mieux que toute préparation sérieuse." }
+          rafaelle:
+            - { id: ch29-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 8x − 6 = 42.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "8x = 48." }
+            - { id: ch29-j2-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« C'est difficile de choisir entre les trois, en fait. » : que révèle cette phrase sur le ressenti d'Axelle ?", choices: ["qu'elle trouve les trois options également intéressantes, ce qui rend le choix complexe", "qu'elle n'a aucun intérêt pour les chants proposés par Solen", "qu'elle a déjà fait son choix sans aucune hésitation", "qu'elle considère toutes les options comme sans aucune valeur", "qu'elle préfère ne jamais apprendre aucun chant"], answer: "qu'elle trouve les trois options également intéressantes, ce qui rend le choix complexe", hint: "Relis bien la phrase d'Axelle, et la réponse de Solen qui suit." }
+      - id: m4
+        title: S'exercer à écouter
+        tours:
+          axelle:
+            - { id: ch29-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 5.", choices: ["25", "27", "28", "30", "32"], answer: "30", hint: "6 × 5 = 6 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch29-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 330 − 157.", choices: ["170", "172", "173", "175", "177"], answer: "173", hint: "330 − 160 + 3." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch29-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « La última noche se acerca. »", choices: ["La dernière nuit approche.", "La dernière nuit s'éloigne.", "La dernière nuit disparaît.", "La dernière nuit fait peur.", "La dernière nuit dure peu."], answer: "La dernière nuit approche.", hint: "« Se acerca » = approche." }
+            - { gen: maths.duree }
+    pause: "Le jeu du refrain partagé : chaque sœur invente une courte phrase rythmée qui pourrait servir de refrain à une chanson, et les deux autres la répètent en chœur, pour s'entraîner à chanter ensemble."
+    closing:
+      - { who: narrateur, text: "Le soir venu, les trois sœurs observèrent longuement le sommet au loin, essayant d'imaginer quel chant leur ferait le plus de bien pour cette dernière veillée." }
+      - { who: solen, text: "Demain, il faudra choisir : un chant de courage, un chant de mémoire, ou un chant joyeux. Réfléchissez-y bien, cette nuit." }
+      - { who: rafaelle, text: "On y réfléchira sérieusement, c'est promis." }
+      - { who: narrateur, text: "Et tandis que la nuit tombait sur le palier rocheux, Solen accordait encore une fois son instrument, comme pour se préparer, lui aussi, à cette dernière veillée partagée." }
+    reward: "la découverte des trois sortes de chants, expliquées par Solen"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: L'histoire d'un chant oublié
+    decor: Le palier rocheux, où Solen raconte aux trois sœurs l'histoire d'un chant qu'il a failli oublier à jamais, il y a bien des années.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, tandis que la lumière du matin baignait le palier rocheux, Solen raconta aux trois sœurs l'histoire d'un chant qu'il avait failli oublier à jamais, il y a bien des années." }
+      - { who: solen, text: "C'était un chant de mémoire, justement, appris d'une vieille conteuse rencontrée une seule fois. Je l'ai presque perdu, faute de l'avoir chanté assez souvent." }
+      - { who: maelle, text: "Et comment vous avez réussi à vous en souvenir, finalement ?" }
+      - { who: solen, text: "Par chance, petite Cartographe, et beaucoup de patience. Il m'a fallu des années pour en retrouver chaque mot, chaque note, une à une." }
+      - { who: axelle, text: "C'est pour ça que vous insistez tant sur l'importance de se souvenir, aujourd'hui ?" }
+      - { who: solen, text: "Exactement, petite Veilleuse. Une leçon apprise de cette façon-là, on ne l'oublie jamais vraiment, justement parce qu'elle parlait d'oubli." }
+      - { who: rafaelle, text: "Merci de nous avoir raconté ça. Ça aide à comprendre pourquoi un chant de mémoire a autant de valeur." }
+      - { who: solen, text: "C'est aussi pour ça que je le raconte, petite Archiviste. Pour que d'autres comprennent la fragilité de ce qu'on croit toujours pouvoir retrouver." }
+    manches:
+      - id: m1
+        title: Un chant presque perdu
+        tours:
+          axelle:
+            - { id: ch29-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 6 mots retrouvés la première année, et 3 mots retrouvés l'année suivante. Combien de mots en tout ?", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "6 + 3." }
+            - { id: ch29-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « oublié » ?", choices: ["retrouvé", "perdu", "effacé", "disparu", "égaré"], answer: "retrouvé", hint: "Le contraire de ce qu'était le chant de Solen, avant qu'il ne le reconstitue." }
+          maelle:
+            - { id: ch29-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi un chant ou une histoire transmise oralement, sans être écrite, peut-elle facilement se perdre avec le temps ?", choices: ["sans trace écrite, la mémoire humaine reste la seule garante de sa conservation, et elle peut faiblir", "un chant transmis oralement ne se perd jamais, quelles que soient les circonstances", "cela n'a aucune explication particulière", "l'écrit n'a jamais aucun avantage sur la transmission orale", "un chant se conserve toujours parfaitement sans aucun effort"], answer: "sans trace écrite, la mémoire humaine reste la seule garante de sa conservation, et elle peut faiblir", hint: "Pense au risque qu'a connu Solen, de perdre ce chant appris d'une vieille conteuse." }
+            - { id: ch29-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 87 + 56.", choices: ["138", "140", "142", "143", "145"], answer: "143", hint: "87 + 60 − 4." }
+          rafaelle:
+            - { id: ch29-j3-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi raconter ses propres difficultés passées à d'autres personnes peut-il avoir une réelle utilité, au-delà du simple récit ?", choices: ["parce que cela permet aux autres de mieux comprendre la valeur de ce qui est facilement oublié", "parce que raconter ses difficultés n'a jamais aucune utilité pour les autres", "cela n'a aucun lien avec la transmission d'une expérience", "parce qu'il vaut toujours mieux cacher ses difficultés passées", "parce qu'une difficulté personnelle ne concerne jamais que soi-même"], answer: "parce que cela permet aux autres de mieux comprendre la valeur de ce qui est facilement oublié", hint: "Repense à ce que dit Solen sur la raison pour laquelle il raconte cette histoire." }
+            - { id: ch29-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14 × 6.", choices: ["80", "82", "84", "86", "88"], answer: "84", hint: "14 × 6 = 14 × 3 × 2." }
+      - id: m2
+        title: Reconstituer, mot par mot
+        tours:
+          axelle:
+            - { id: ch29-j3-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Un chant s'est presque perdu. » ?", choices: ["presque", "s'est perdu", "Un chant", "un", "chant"], answer: "Un chant", hint: "Qu'est-ce qui s'est presque perdu, dans le récit de Solen ?" }
+            - { id: ch29-j3-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 7.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "9 + 7 = 9 + 9 − 2." }
+          maelle:
+            - { id: ch29-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 364 ÷ 4.", choices: ["86", "88", "90", "91", "93"], answer: "91", hint: "4 × 91 = 364." }
+            - { id: ch29-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « fragilité » dans « la fragilité de ce qu'on croit toujours pouvoir retrouver » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "nom", hint: "C'est l'idée centrale de la leçon de Solen, sur ce qu'on risque de perdre." }
+          rafaelle:
+            - { id: ch29-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 11² − 70.", choices: ["48", "51", "53", "56", "58"], answer: "51", hint: "121 − 70." }
+            - { id: ch29-j3-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « La cima ya no está lejos. »", choices: ["Le sommet n'est plus loin.", "Le sommet reste invisible.", "Le sommet disparaît souvent.", "Le sommet fait peur toujours.", "Le sommet dure longtemps."], answer: "Le sommet n'est plus loin.", hint: "« Ya no está lejos » = n'est plus loin." }
+      - id: m3
+        title: La valeur de se souvenir
+        tours:
+          axelle:
+            - { id: ch29-j3-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 6.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "14 − 6 = 8." }
+            - { id: ch29-j3-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi répéter régulièrement un chant ou une information aide-t-il à ne pas l'oublier, à l'inverse de ce qui est arrivé à Solen ?", choices: ["la répétition renforce la trace laissée dans la mémoire, rendant le souvenir plus durable", "répéter une information n'a jamais aucun effet sur la mémoire", "cela n'a aucune explication particulière", "la mémoire fonctionne toujours mieux sans aucune répétition", "un souvenir se renforce toujours tout seul, sans aucun effort"], answer: "la répétition renforce la trace laissée dans la mémoire, rendant le souvenir plus durable", hint: "Pense au risque qu'a connu Solen, en ne chantant pas assez souvent ce chant de mémoire." }
+          maelle:
+            - { id: ch29-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 46 × 4.", choices: ["178", "182", "184", "186", "190"], answer: "184", hint: "46 × 4 = 50 × 4 − 4 × 4." }
+            - { id: ch29-j3-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi écouter le récit d'une difficulté passée, racontée par quelqu'un d'expérimenté, peut-il aider à mieux agir à l'avenir ?", choices: ["parce que cela permet de comprendre concrètement l'importance de préserver ce qui pourrait se perdre", "parce qu'un tel récit n'a jamais aucune utilité pour agir ensuite", "cela n'a aucun lien avec la prise de décision", "parce que seules les décisions personnelles ont de la valeur", "parce qu'écouter un récit retarde toujours inutilement une action"], answer: "parce que cela permet de comprendre concrètement l'importance de préserver ce qui pourrait se perdre", hint: "Repense à ce que ressentent les trois sœurs après avoir écouté le récit de Solen." }
+          rafaelle:
+            - { id: ch29-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 7x − 8 = 34.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "7x = 42." }
+            - { id: ch29-j3-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au futur simple : « Nous (chanter) ce chant, ensemble, toutes les trois. »", choices: ["nous chanterons", "nous chantons", "nous chantions", "nous chantâmes", "nous chanterions"], answer: "nous chanterons", hint: "Futur simple de « chanter »." }
+      - id: m4
+        title: Comprendre la mémoire
+        tours:
+          axelle:
+            - { id: ch29-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 5.", choices: ["40", "42", "44", "45", "48"], answer: "45", hint: "9 × 5 = 9 × 10 ÷ 2." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch29-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 295 − 137.", choices: ["150", "154", "156", "158", "160"], answer: "158", hint: "295 − 140 + 3." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch29-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Cantar juntos da valor. »", choices: ["Chanter ensemble donne du courage.", "Chanter ensemble effraie toujours.", "Chanter ensemble n'apprend rien.", "Chanter ensemble prend une minute.", "Chanter ensemble reste inutile."], answer: "Chanter ensemble donne du courage.", hint: "« Da valor » = donne du courage." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu du récit transmis : chaque sœur raconte, en une phrase, un petit souvenir qu'elle tient particulièrement à ne jamais oublier, pour s'exercer à l'importance de la mémoire, comme Solen."
+    closing:
+      - { who: narrateur, text: "La soirée se prolongea doucement sur le palier rocheux, entre récits et silences, tandis que le feu de camp éclairait doucement les visages attentifs des trois sœurs." }
+      - { who: solen, text: "Demain, il faudra enfin vous décider. Prenez cette dernière nuit pour y réfléchir une dernière fois, à la lumière de tout ce qu'on a partagé." }
+      - { who: maelle, text: "On y réfléchira, c'est promis. Merci de nous avoir raconté votre histoire." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs regagnaient leur campement pour la nuit, Nilo observait Solen gratter encore quelques notes, pensif, comme s'il comprenait, lui aussi, le poids d'un souvenir presque perdu." }
+    reward: "l'histoire du chant presque oublié, et sa leçon de mémoire"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Se décider ensemble
+    decor: Le palier rocheux, dans la lumière grise du petit matin, où les trois sœurs retrouvent Solen pour lui annoncer, enfin, leur décision.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, les trois sœurs retrouvèrent Solen sur le palier rocheux, dans la lumière grise du petit matin, prêtes à lui annoncer leur décision." }
+      - { who: solen, text: "Pour cette dernière veillée avant l'ascension finale, je peux vous apprendre un chant de courage, un chant de mémoire, ou un chant joyeux. Lequel choisissez-vous ? »" }
+      - { who: rafaelle, text: "On y a bien réfléchi, Solen. Et on a pris une décision, toutes les trois ensemble." }
+      - { who: solen, text: "Je vous écoute, petite Archiviste. Quelle qu'elle soit, je l'accueillerai avec plaisir." }
+    manches:
+      - id: m1
+        title: Peser le pour et le contre
+        tours:
+          axelle:
+            - { id: ch29-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « nostalgique » (en parlant d'un chant) ?", choices: ["joyeux", "mélancolique", "triste", "tendre", "songeur"], answer: "joyeux", hint: "Le contraire de ce qu'est un chant de mémoire, selon la description du chapitre." }
+            - { id: ch29-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 6.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "8 + 6 = 8 + 8 − 2." }
+          maelle:
+            - { id: ch29-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi une décision prise après avoir écouté l'expérience d'un spécialiste est-elle souvent plus solide qu'une décision prise sans aucune information ?", choices: ["parce qu'elle s'appuie sur des connaissances concrètes plutôt que sur une simple impression", "parce qu'une décision collective n'a jamais aucun avantage", "cela n'a aucun lien avec la qualité d'une décision", "parce qu'une décision sans information est toujours meilleure", "parce qu'écouter un spécialiste retarde toujours inutilement une décision"], answer: "parce qu'elle s'appuie sur des connaissances concrètes plutôt que sur une simple impression", hint: "Pense à tout ce que Solen a enseigné aux sœurs sur les trois sortes de chants, cette semaine." }
+            - { id: ch29-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 92 + 59.", choices: ["146", "148", "150", "151", "153"], answer: "151", hint: "92 + 60 − 1." }
+          rafaelle:
+            - { id: ch29-j4-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Je l'accueillerai avec plaisir. » : que révèle cette phrase sur l'attitude de Solen ?", choices: ["qu'il reste ouvert à tout choix des sœurs, sans en privilégier aucun", "qu'il refusera forcément leur décision", "qu'il attend d'elles une seule réponse précise", "qu'il n'a aucune considération pour leur choix", "qu'il préfère toujours décider seul, à leur place"], answer: "qu'il reste ouvert à tout choix des sœurs, sans en privilégier aucun", hint: "Repense à l'attitude de Solen depuis le début de ce chapitre." }
+            - { id: ch29-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13² − 100.", choices: ["59", "63", "66", "69", "73"], answer: "69", hint: "169 − 100." }
+      - id: m2
+        title: Les trois propositions
+        tours:
+          axelle:
+            - { id: ch29-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 15 − 8.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "15 − 5 = 10, puis − 3." }
+            - { id: ch29-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi le choix d'un chant, parmi plusieurs possibles, dépend-il souvent de ce dont on a le plus besoin à un moment donné ?", choices: ["chaque type de chant répond à un besoin différent : courage, souvenir ou légèreté", "le choix d'un chant n'a jamais aucun lien avec un besoin particulier", "cela n'a aucune explication particulière", "il existe toujours un seul chant adapté à toutes les situations", "les besoins d'un groupe n'ont jamais aucune influence sur un choix de chant"], answer: "chaque type de chant répond à un besoin différent : courage, souvenir ou légèreté", hint: "Pense aux trois types de chants proposés par Solen, chacun répondant à un besoin différent." }
+          maelle:
+            - { id: ch29-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 351 ÷ 3.", choices: ["107", "111", "115", "117", "119"], answer: "117", hint: "3 × 117 = 351." }
+            - { id: ch29-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « solide » dans « une décision solide » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit une décision bien réfléchie." }
+          rafaelle:
+            - { id: ch29-j4-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 8² + 2 × 10.", choices: ["74", "78", "82", "84", "88"], answer: "84", hint: "64 + 20." }
+            - { id: ch29-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Le chant unit les voyageurs » en espagnol ?", choices: ["El canto une a los viajeros.", "La última noche se acerca.", "Cada canción cuenta una historia.", "La cima ya no está lejos.", "Cantar juntos da valor."], answer: "El canto une a los viajeros.", hint: "Relis la phrase du jour 1." }
+      - id: m3
+        title: Annoncer sa décision
+        tours:
+          axelle:
+            - { id: ch29-j4-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Les trois sœurs retrouvèrent Solen. » ?", choices: ["Solen", "retrouvèrent", "Les trois sœurs", "trois", "sœurs"], answer: "Les trois sœurs", hint: "Qui retrouve Solen, sur le palier rocheux ?" }
+            - { id: ch29-j4-ax-m3b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 11 − 5.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "11 − 5 = 6." }
+          maelle:
+            - { id: ch29-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 4.", choices: ["108", "112", "114", "116", "120"], answer: "116", hint: "30 × 4 − 4." }
+            - { id: ch29-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi annoncer une décision claire à un barde lui permet-il de mieux préparer la veillée qui suit ?", choices: ["parce qu'il peut ainsi choisir précisément les mots et les mélodies adaptés au chant demandé", "parce qu'annoncer une décision n'a jamais aucune utilité pour un barde", "cela n'a aucun lien avec la préparation d'une veillée", "parce qu'il vaut toujours mieux rester dans l'incertitude", "parce que la clarté retarde toujours une décision"], answer: "parce qu'il peut ainsi choisir précisément les mots et les mélodies adaptés au chant demandé", hint: "Pense à l'utilité, pour Solen, de connaître la décision des sœurs à l'avance." }
+          rafaelle:
+            - { id: ch29-j4-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 4x + 11 = 35.", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "4x = 24." }
+            - { id: ch29-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Lequel choisissez-vous ? » : quelle est la nature du mot « lequel » dans cette phrase ?", choices: ["pronom interrogatif", "nom", "adjectif", "adverbe", "verbe"], answer: "pronom interrogatif", hint: "Il reprend l'idée des trois chants proposés, pour poser la question du choix." }
+      - id: m4
+        title: Un moment de vérité
+        tours:
+          axelle:
+            - { id: ch29-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 5.", choices: ["30", "32", "33", "35", "38"], answer: "35", hint: "7 × 5 = 7 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch29-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 260 − 118.", choices: ["138", "140", "142", "144", "146"], answer: "142", hint: "260 − 120 + 2." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch29-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15 × 6.", choices: ["86", "88", "90", "92", "94"], answer: "90", hint: "15 × 6 = 15 × 3 × 2." }
+            - { gen: maths.duree }
+    pause: "Le jeu du compte à rebours avant le chant : chaque sœur compte, à voix haute, de 5 à 1, avant de prononcer, toutes ensemble, le mot qui résume leur décision commune."
+    closing:
+      - { who: narrateur, text: "Les trois sœurs échangèrent un dernier regard, puis, d'une seule voix, annoncèrent à Solen la décision qu'elles avaient prise ensemble, après mûre réflexion." }
+      - { who: solen, text: "Je vous entends, petites voyageuses, et votre choix me convient très bien. Préparons-nous, alors, pour cette dernière veillée." }
+      - { who: maelle, text: "On a vraiment hâte de chanter avec vous, ce soir." }
+      - { who: narrateur, text: "Et tandis que le soir tombait sur le palier rocheux, Solen accorda une dernière fois son instrument, prêt à transmettre ce qu'il savait de mieux." }
+    reward: "la décision prise ensemble, annoncée à Solen"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: La dernière veillée
+    decor: Le palier rocheux, sous un ciel étoilé, où les trois sœurs vivent leur dernière soirée avec Solen avant l'ascension finale vers le sommet.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, sous un ciel étoilé, les trois sœurs retrouvèrent Solen pour leur dernière veillée avant l'ascension finale, selon la décision prise la veille." }
+      - { who: solen, text: "Pour cette dernière veillée avant l'ascension finale, je peux vous apprendre un chant de courage, un chant de mémoire, ou un chant joyeux. Lequel choisissez-vous ? »" }
+      - { who: nilo, text: "Allez, les filles. Une dernière veillée sous les étoiles, et on reprendra la route dès demain, prêtes pour ce qui nous attend." }
+    manches:
+      - id: m1
+        title: Ce que la veillée a appris
+        intro: "Solen interroge chaque sœur sur tout ce que ces quelques jours passés en sa compagnie lui ont appris."
+        tours:
+          axelle:
+            - { id: ch29-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on une personne qui compose et chante des histoires en voyageant, accompagnée d'un instrument ?", choices: ["un barde", "un marchand", "un architecte", "un messager", "un berger"], answer: "un barde", hint: "C'est le métier de Solen." }
+            - { id: ch29-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 + 5.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "8 + 5 = 8 + 2 + 3." }
+          maelle:
+            - { id: ch29-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi chanter ensemble, en groupe, procure-t-il souvent un sentiment de réconfort ou de cohésion particulier, comme tu l'as appris cette semaine ?", choices: ["partager un rythme et une mélodie communs crée un lien immédiat entre les personnes présentes", "chanter ensemble n'a jamais aucun effet sur un groupe", "cela n'a aucune explication particulière", "chanter seul procure toujours plus de réconfort que chanter en groupe", "le chant n'a jamais aucun lien avec la cohésion d'un groupe"], answer: "partager un rythme et une mélodie communs crée un lien immédiat entre les personnes présentes", hint: "Repense à ta propre question du premier jour." }
+            - { id: ch29-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 42 × 4.", choices: ["162", "164", "166", "168", "170"], answer: "168", hint: "42 × 4 = 40 × 4 + 2 × 4." }
+          rafaelle:
+            - { id: ch29-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que Solen incarne la valeur de la transmission, à travers son métier de barde ?", choices: ["parce qu'il a consacré sa vie à recueillir et partager des chants, malgré le risque de les perdre", "parce que Solen n'a jamais transmis aucun chant à personne", "parce qu'il refuse toujours de partager ce qu'il sait", "parce qu'il n'y a aucune leçon à tirer de son parcours", "parce que la transmission n'a aucun lien avec son métier"], answer: "parce qu'il a consacré sa vie à recueillir et partager des chants, malgré le risque de les perdre", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de Solen." }
+            - { id: ch29-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 5/9 + 2/9.", choices: ["6/9", "7/9", "8/9", "5/9", "4/9"], answer: "7/9", hint: "5 + 2 = 7, même dénominateur." }
+      - id: m2
+        title: Avant la dernière veillée
+        intro: "Il faut relier tout ce que la semaine a appris sur les chants et leur transmission, avant la dernière veillée sous les étoiles."
+        tours:
+          axelle:
+            - { id: ch29-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel nom désigne une soirée passée à discuter, chanter ou raconter des histoires autour d'un feu ?", choices: ["une veillée", "une distillation", "une architecture", "une cartographie", "une astronomie"], answer: "une veillée", hint: "C'est ce que propose Solen aux trois sœurs." }
+            - { id: ch29-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 15 − 7.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "15 − 7 = 8." }
+          maelle:
+            - { id: ch29-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi cette dernière veillée avec Solen a-t-elle une importance particulière dans le voyage des trois sœurs ?", choices: ["elle n'a aucune importance réelle", "elle leur offre un moment de choix, de partage et de préparation avant l'ascension finale vers le sommet", "elle les empêche d'avancer vers le sommet", "elle se trouve très loin des montagnes", "personne n'y vient jamais vraiment"], answer: "elle leur offre un moment de choix, de partage et de préparation avant l'ascension finale vers le sommet", hint: "Repense à tout ce que les sœurs ont vécu cette semaine, auprès de Solen." }
+            - { id: ch29-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 408 ÷ 6.", choices: ["64", "66", "68", "70", "72"], answer: "68", hint: "6 × 68 = 408." }
+          rafaelle:
+            - { id: ch29-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10² − 55.", choices: ["40", "43", "45", "48", "50"], answer: "45", hint: "100 − 55." }
+            - { id: ch29-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Lequel choisissez-vous ? » : à qui Solen adresse-t-il cette question ?", choices: ["aux trois sœurs", "à lui-même", "à Nilo", "au narrateur", "à personne en particulier"], answer: "aux trois sœurs", hint: "Relis le début du cinquième jour." }
+      - id: m3
+        title: Le Chant de la Dernière Veillée
+        intro: "Solen et les trois sœurs chantent enfin ensemble, sous les étoiles, le chant choisi la veille, pour clore cette dernière soirée avant l'ascension finale."
+        tours:
+          axelle:
+            - { id: ch29-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, blanche." }
+          maelle:
+            - { id: ch29-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          rafaelle:
+            - { id: ch29-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, blanche." }
+    concert:
+      measures:
+        axelle: { given: [1, 1], missing: 2, prompt: "Noire, noire, blanche" }
+        maelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        rafaelle: { given: [2], missing: 2, prompt: "Blanche, blanche" }
+    pause: "Le dernier regard vers le sommet : chaque sœur, juste après la dernière note, lève les yeux vers le sommet désormais tout proche, et respire profondément, prête pour le lendemain."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant de la Dernière Veillée se répandit sur le palier rocheux, et s'éleva doucement vers le ciel étoilé, comme pour rejoindre le sommet lui-même." }
+      - { who: solen, text: "Voilà, petites voyageuses. Vous emporterez ce chant avec vous, demain, pour l'ascension finale. Il vous servira bien, j'en suis certain." }
+      - { who: rafaelle, text: "Merci pour tout, Solen. On n'oubliera jamais cette veillée sous les étoiles." }
+      - { who: narrateur, text: "Et tandis que l'aube approchait doucement, les trois sœurs s'installèrent pour une dernière nuit de repos, le cœur empli du chant tout juste appris, et le regard déjà tourné vers le sommet." }
+      - { who: axelle, text: "Demain, on y sera enfin. Ça paraît presque irréel, après tout ce chemin." }
+      - { who: nilo, text: "Irréel, mais bien réel, pourtant. Encore une étape de passée, et l'ascension finale qui nous attend, dès demain." }
+    reward: "la dernière veillée avec Solen, et le chant emporté vers le sommet"
