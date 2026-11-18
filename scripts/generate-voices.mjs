@@ -62,7 +62,8 @@ const VOICES = {
   chrono: 'Kore',
   capitaine: 'Schedar',
   vera: 'Pulcherrima',
-  alambic: 'Zubenelgenubi'
+  alambic: 'Zubenelgenubi',
+  architecte: 'Rasalgethi'
 };
 
 function readApiKey() {
