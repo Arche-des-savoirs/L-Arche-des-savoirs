@@ -63,7 +63,8 @@ const VOICES = {
   capitaine: 'Schedar',
   vera: 'Pulcherrima',
   alambic: 'Zubenelgenubi',
-  architecte: 'Rasalgethi'
+  architecte: 'Rasalgethi',
+  solen: 'Achernar'
 };
 
 function readApiKey() {
