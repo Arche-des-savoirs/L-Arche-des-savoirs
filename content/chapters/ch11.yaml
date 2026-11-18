@@ -1,0 +1,401 @@
+# Chapitre 11 — Les Jardins de l'Aube
+# Suite directe du chapitre 10 : l'Arche appareille vers la terre fraîchement nommée par Dame
+# Cartéa — l'Aube — et y découvre des jardins en terrasses, silencieux, dont les fleurs ne
+# s'ouvrent plus. Nouveau personnage discret : Albin, l'Écho du Jardin (voix sans corps, née du
+# cercle rituel visible sur l'illustration officielle ch11.webp — une apprentie à l'écoute du sol).
+# Rédigé directement en YAML, canon établi tiré de la mémoire du projet (« fais au mieux »).
+
+id: ch11
+number: 11
+act: 2
+title: Les Jardins de l'Aube
+introImage: ch11
+scene: jardins-aube
+
+espagnol:
+  - { es: "El jardín canta.", fr: "Le jardin chante." }
+  - { es: "Escucho la tierra.", fr: "J'écoute la terre." }
+  - { es: "Las flores florecen.", fr: "Les fleurs fleurissent." }
+  - { es: "El agua cae.", fr: "L'eau tombe." }
+  - { es: "Todo vuelve a crecer.", fr: "Tout recommence à pousser." }
+
+# Décision du Conseil des Jardins (début du jour 5). A = Lien, B = Courage, C = Mémoire.
+decision:
+  prompt: "Albin s'est tu depuis si longtemps qu'il doute de pouvoir encore chanter. Comment l'aider à retrouver sa voix ?"
+  options:
+    A:
+      label: Écouter la terre
+      scene: "Les trois sœurs s'allongent toutes les trois autour du cercle rituel, l'oreille contre le sol, et restent longtemps silencieuses, à ne rien faire d'autre qu'écouter battre le jardin sous elles."
+      line: { who: albin, text: "Personne n'avait pris le temps de m'écouter sans rien attendre en retour. Je crois que ça suffit à me redonner un peu de voix." }
+      habillage: "Chaque épreuve devient un moment où l'on s'arrête d'agir pour simplement observer et ressentir avant de répondre."
+    B:
+      label: Faire refleurir sans attendre
+      scene: "Rafaelle attrape l'arrosoir doré abandonné près du cercle et se met en route le long des terrasses, sans attendre l'accord de qui que ce soit, réveillant une à une les fleurs de brume sur son passage."
+      line: { who: albin, text: "Personne n'avait osé arroser avant de me demander la permission. C'est audacieux. C'est même, je crois, exactement ce qu'il me fallait." }
+      habillage: "Les épreuves deviennent une course le long des terrasses, comme si chaque fleur rouverte donnait un peu plus d'élan."
+    C:
+      label: Recouper les saisons
+      scene: "Maelle compare, dans son carnet, les dates de floraison notées sur chaque terrasse, et comprend que les fleurs de brume ne s'ouvrent que lorsque l'aube et le crépuscule se touchent presque — un instant précis qu'elle calcule, terrasse par terrasse."
+      line: { who: albin, text: "Vous avez pris la peine de comprendre mon rythme plutôt que de m'en imposer un autre. Personne n'avait fait cela avant vous." }
+      habillage: "Les épreuves deviennent des énigmes de calcul et de déduction à recouper avant d'agir."
+
+repliquesAbsurdes:
+  - "Si les fleurs dorment, est-ce qu'il faut leur souhaiter bonne nuit avant de repartir ?"
+  - "Mon renard a essayé de manger une fleur de brume. Elle a éternué. La fleur, pas le renard."
+  - "On a déjà parlé à une carte vivante. Un jardin qui chante, c'est presque reposant, en fait."
+  - "Si j'arrose assez fort, est-ce que je peux faire pousser un deuxième petit-déjeuner ?"
+  - "Dame Cartéa nous a donné un compas. Est-ce qu'il indique aussi la direction du goûter ?"
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: Les Jardins Muets
+    decor: Les terrasses de l'Aube — un escalier de jardins suspendus taillés dans de vieilles ruines, où des cascades tombent en silence entre des rangées de fleurs fermées.
+    opening:
+      - { who: narrateur, text: "Il était une fois une terre si récemment nommée qu'elle semblait encore retenir son souffle. L'Arche se posa en douceur au pied de terrasses de pierre ancienne, sculptées à flanc de colline, où des cascades glissaient sans un bruit entre des rangées de fleurs blanches, toutes closes." }
+      - { who: narrateur, text: "Nilo bondit le premier sur la première terrasse, un arrosoir doré trouvé près de la coque de l'Arche, serré contre lui, bien décidé à être utile avant même d'avoir compris à quoi." }
+      - { who: nilo, text: "Un jardin entier, rien que pour nous ! Enfin, pour l'instant il a surtout l'air de bouder, mais je suis sûr qu'on peut arranger ça." }
+      - { who: narrateur, text: "Rafaelle grimpa les marches quatre à quatre, dépassant Nilo, et s'arrêta net devant la première rangée de fleurs : des pétales blancs, repliés sur eux-mêmes comme des mains jointes, pas un seul ouvert sur toute la terrasse." }
+      - { who: rafaelle, text: "Elles sont toutes fermées. Pas une seule ouverte, même à moitié. Un jardin, normalement, ça a au moins une fleur qui fait sa maligne." }
+      - { who: narrateur, text: "Maelle s'agenouilla près d'une cascade et remarqua que l'eau, elle non plus, ne faisait aucun bruit en tombant — comme si le son lui-même avait oublié comment se répandre dans ces jardins." }
+      - { who: maelle, text: "Même l'eau est silencieuse. Ça ne devrait pas être possible. L'eau qui tombe, normalement, ça fait du bruit, même tout doucement." }
+      - { who: axelle, text: "C'est comme si le jardin dormait. Mais un sommeil triste, pas un sommeil reposant." }
+      - { who: plume, text: "Je sens un peu de peine, ici. Pas de danger. Juste... de la fatigue, très ancienne, qui attend qu'on s'en occupe." }
+    manches:
+      - id: m1
+        title: Un jardin qui dort
+        intro: "Avant de réveiller un jardin, il faut comprendre de quoi il a besoin."
+        tours:
+          axelle:
+            - { id: ch11-j1-ax-m1a, subject: sciences, level: 1, kind: qcm, prompt: "De quoi une plante a-t-elle besoin pour grandir, en plus de la terre ?", choices: ["de musique", "d'eau et de lumière", "de neige", "de sable sec", "de froid constant"], answer: "d'eau et de lumière", hint: "Pense à ce qu'on donne à une plante de pot." }
+            - { id: ch11-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 + 6.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "7 + 6 = 7 + 7 − 1." }
+          maelle:
+            - { id: ch11-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Comment s'appelle le phénomène par lequel une fleur s'ouvre le matin et se referme le soir ?", choices: ["la photosynthèse", "la nyctinastie (le mouvement jour/nuit des fleurs)", "la pollinisation", "la germination", "l'évaporation"], answer: "la nyctinastie (le mouvement jour/nuit des fleurs)", hint: "C'est un mouvement lié à la lumière du jour." }
+            - { id: ch11-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 68 + 57.", choices: ["115", "120", "122", "125", "130"], answer: "125", hint: "68 + 60 − 3." }
+          rafaelle:
+            - { id: ch11-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Comment appelle-t-on des jardins construits en paliers successifs à flanc de colline, comme ceux de l'Aube ?", choices: ["des jardins suspendus ou en terrasses", "des jardins clos", "des vergers", "des jardins potagers", "des jardins flottants"], answer: "des jardins suspendus ou en terrasses", hint: "Pense à la forme en escalier du relief." }
+            - { id: ch11-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 144 ÷ 12.", choices: ["10", "11", "12", "13", "14"], answer: "12", hint: "12 × 12 = 144." }
+      - id: m2
+        title: Le silence de l'eau
+        tours:
+          axelle:
+            - { id: ch11-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « silencieux » ?", choices: ["calme", "doux", "bruyant", "petit", "lent"], answer: "bruyant", hint: "C'est l'opposé du silence." }
+            - { id: ch11-j1-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 16 − 9.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "16 − 10 = 6, puis + 1." }
+          maelle:
+            - { id: ch11-j1-ma-m2a, subject: sciences, level: 2, kind: qcm, prompt: "D'où vient, à l'origine, l'eau qui tombe en cascade sur une colline ?", choices: ["elle sort directement de la roche", "des pluies et des sources en amont, qui descendent par gravité", "elle est toujours salée", "elle vient uniquement de la mer", "elle est créée par les plantes"], answer: "des pluies et des sources en amont, qui descendent par gravité", hint: "Pense au cycle de l'eau, et à ce qui coule toujours vers le bas." }
+            - { id: ch11-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 9 × 11.", choices: ["88", "90", "99", "100", "108"], answer: "99", hint: "9 × 11 = 9 × 10 + 9." }
+          rafaelle:
+            - { id: ch11-j1-ra-m2a, subject: francais, level: 3, kind: qcm, prompt: "« Comme si le son lui-même avait oublié comment se répandre » : quelle figure de style prête à l'eau un comportement humain ?", choices: ["une comparaison", "une personnification", "une hyperbole", "une allitération", "une énumération"], answer: "une personnification", hint: "On prête à l'eau le pouvoir d'« oublier », comme une personne." }
+            - { id: ch11-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 7/10 − 3/10.", choices: ["4/10", "4/20", "2/5", "1/2", "10/10"], answer: "4/10", hint: "7 − 3 = 4, sur le même dénominateur." }
+      - id: m3
+        title: Les fleurs closes
+        tours:
+          axelle:
+            - { id: ch11-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 10 + 8.", choices: ["16", "17", "18", "19", "20"], answer: "18", hint: "10 + 8 = 18." }
+            - { id: ch11-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Quelle couleur sont la plupart des fleurs décrites dans les jardins de l'Aube ?", choices: ["rouges", "blanches", "noires", "bleues", "vertes"], answer: "blanches", hint: "Relis la description du jardin au début du jour." }
+          maelle:
+            - { id: ch11-j1-ma-m3a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « closes » dans « des fleurs blanches, toutes closes » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "préposition"], answer: "adjectif", hint: "Il décrit l'état des fleurs." }
+            - { id: ch11-j1-ma-m3b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 420 ÷ 7.", choices: ["50", "55", "58", "60", "62"], answer: "60", hint: "7 × 60 = 420." }
+          rafaelle:
+            - { id: ch11-j1-ra-m3a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi construisait-on historiquement des jardins en terrasses sur des collines, plutôt que de cultiver directement la pente ?", choices: ["pour faire plus joli uniquement", "pour retenir la terre et l'eau et éviter qu'elles ne dévalent la pente", "parce que c'était une tradition sans raison pratique", "pour cacher les cultures aux voisins", "parce que les plantes poussent plus vite en hauteur"], answer: "pour retenir la terre et l'eau et éviter qu'elles ne dévalent la pente", hint: "Pense à ce qui se passerait si la terre et l'eau glissaient tout droit vers le bas." }
+            - { id: ch11-j1-ra-m3b, subject: maths, level: 4, kind: qcm, prompt: "Résous : 3x + 2 = 20.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "3x = 18." }
+      - id: m4
+        title: Premiers pas sur les terrasses
+        tours:
+          axelle:
+            - { id: ch11-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 4.", choices: ["20", "22", "24", "26", "28"], answer: "24", hint: "6 × 4 = 6 + 6 + 6 + 6." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch11-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 93 − 48.", choices: ["43", "44", "45", "46", "47"], answer: "45", hint: "93 − 50 + 2." }
+            - { gen: maths.comparer }
+          rafaelle:
+            - { id: ch11-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El jardín canta. »", choices: ["Le jardin dort.", "Le jardin chante.", "Le jardin pleure.", "Le jardin pousse.", "Le jardin tombe."], answer: "Le jardin chante.", hint: "« Canta » ressemble à « chante »." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu de l'arrosoir silencieux : une sœur mime « arroser » une plante imaginaire sans faire aucun bruit, les deux autres doivent deviner quelle fleur elle arrose rien qu'à ses gestes !"
+    closing:
+      - { who: narrateur, text: "Au centre de la terrasse la plus haute, Maelle découvrit un grand cercle tracé à même la pierre, entouré de symboles presque effacés par le temps — et en son centre, une légère chaleur montait du sol, comme un souffle très lent." }
+      - { who: maelle, text: "Il y a quelque chose, ici. Pas dangereux. Juste... endormi, très profondément." }
+      - { who: narrateur, text: "Rafaelle s'agenouilla la première, posa l'oreille contre la pierre tiède, et resta un long moment immobile, pendant que ses sœurs retenaient leur souffle autour d'elle." }
+      - { who: rafaelle, text: "J'entends quelque chose. Très loin. Comme une voix qui a oublié comment parler fort." }
+      - { who: narrateur, text: "Un murmure, à peine audible, traversa alors la terrasse entière — pas vraiment une voix, plutôt l'écho d'une voix, comme si elle venait de très loin en dessous du sol." }
+      - { who: albin, text: "...quelqu'un... écoute ?" }
+      - { who: axelle, text: "Oui ! On est là. On t'écoute." }
+      - { who: narrateur, text: "Le murmure se tut aussitôt, comme effrayé par sa propre audace, et les fleurs de la terrasse restèrent closes — mais, pour la première fois, une légère chaleur semblait monter d'elles aussi, comme une respiration qui reprenait, timide." }
+    reward: "la découverte du cercle rituel, et un premier murmure"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: L'Écho Endormi
+    decor: Le cercle rituel de la terrasse haute, où une légère brume dorée s'élève doucement du sol à mesure que le jour avance.
+    opening:
+      - { who: narrateur, text: "Le lendemain, les trois sœurs retournèrent directement au cercle rituel, bien avant le réveil des cascades. Une fine brume dorée s'en élevait déjà, comme une respiration patiente qui attendait leur retour." }
+      - { who: narrateur, text: "Nilo, qui n'avait pas tenu en place de la nuit, avait déjà arrosé trois terrasses entières avant le petit-déjeuner — sans grand résultat, sinon des bottes trempées et un renard extrêmement fier de lui." }
+      - { who: nilo, text: "Techniquement, rien n'a fleuri. Mais tout est très, très hydraté. C'est un début." }
+      - { who: narrateur, text: "Maelle s'agenouilla de nouveau près du cercle, et cette fois, le murmure revint plus vite, un peu plus clair, comme une voix qui retrouvait, phrase après phrase, le chemin des mots." }
+      - { who: albin, text: "Vous êtes revenues. Je ne pensais pas que... que quelqu'un reviendrait un deuxième jour." }
+      - { who: maelle, text: "On ne part jamais après une seule journée. C'est une règle, chez nous." }
+      - { who: narrateur, text: "La voix hésita un instant, comme intimidée par cette réponse si simple, puis reprit, un peu plus assurée." }
+      - { who: albin, text: "Je m'appelle Albin. Enfin... je crois. Il y a si longtemps que personne ne m'a appelé par mon nom que je ne suis plus tout à fait sûr de le porter correctement." }
+      - { who: plume, text: "Moi, des fois, j'oublie même le nom des jours de la semaine. Ça ne veut rien dire du tout sur qui on est." }
+    manches:
+      - id: m1
+        title: Une voix sans corps
+        tours:
+          axelle:
+            - { id: ch11-j2-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de la phrase « Albin murmure doucement. » ?", choices: ["murmure", "doucement", "Albin", "la voix", "le jardin"], answer: "Albin", hint: "Qui fait l'action de murmurer ?" }
+            - { id: ch11-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 7.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "9 + 7 = 9 + 1 + 6." }
+          maelle:
+            - { id: ch11-j2-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi une brume peut-elle apparaître au-dessus du sol tôt le matin ?", choices: ["le sol fabrique de la fumée", "l'air frais du matin refroidit la vapeur d'eau qui se condense", "c'est toujours de la magie", "le sol chauffe trop fort", "il n'y a jamais de brume le matin"], answer: "l'air frais du matin refroidit la vapeur d'eau qui se condense", hint: "Pense à la buée qui se forme sur une fenêtre froide." }
+            - { id: ch11-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 13 × 7.", choices: ["81", "88", "91", "93", "98"], answer: "91", hint: "13 × 7 = 13 × 5 + 13 × 2." }
+          rafaelle:
+            - { id: ch11-j2-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Une voix qui retrouvait, phrase après phrase, le chemin des mots » : que suggère cette image sur l'état d'Albin ?", choices: ["qu'il ne parle pas la même langue", "qu'il reprend confiance et mémoire petit à petit", "qu'il récite un texte appris par cœur", "qu'il ment délibérément", "qu'il est en colère"], answer: "qu'il reprend confiance et mémoire petit à petit", hint: "Pense à ce que signifie « retrouver un chemin » peu à peu." }
+            - { id: ch11-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 6² − 5².", choices: ["9", "10", "11", "12", "13"], answer: "11", hint: "36 − 25." }
+      - id: m2
+        title: Le nom qu'on porte
+        tours:
+          axelle:
+            - { id: ch11-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 6.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "14 − 4 = 10, puis − 2." }
+            - { id: ch11-j2-ax-m2b, subject: francais, level: 1, kind: qcm, prompt: "Quel petit mot utilise-t-on pour se présenter : « Je m'... Albin » ?", choices: ["appelle", "nomme pas", "parle", "trouve", "vois"], answer: "appelle", hint: "« Je m'appelle… »" }
+          maelle:
+            - { id: ch11-j2-ma-m2a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi certaines cascades sont-elles presque silencieuses alors que d'autres grondent fort ?", choices: ["cela dépend uniquement de la couleur de l'eau", "le bruit dépend de la hauteur de chute et de la force du courant", "les cascades silencieuses sont toujours plus grandes", "aucune cascade ne fait jamais de bruit", "cela dépend du jour de la semaine"], answer: "le bruit dépend de la hauteur de chute et de la force du courant", hint: "Pense à une petite chute d'eau comparée à une grande chute." }
+            - { id: ch11-j2-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 6,2 + 3,9.", choices: ["9,1", "9,9", "10,0", "10,1", "10,2"], answer: "10,1", hint: "62 + 39 = 101." }
+          rafaelle:
+            - { id: ch11-j2-ra-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi, dans de nombreuses cultures, donner un nom à quelqu'un ou à quelque chose est-il considéré comme un acte important ?", choices: ["cela ne change rien", "le nom participe à l'identité et à la mémoire de la chose ou de la personne nommée", "c'est juste une formalité sans conséquence", "seuls les rois ont le droit de porter un nom", "un nom doit toujours rimer"], answer: "le nom participe à l'identité et à la mémoire de la chose ou de la personne nommée", hint: "Repense à ce que disait Dame Cartéa sur le fait de nommer une terre." }
+            - { id: ch11-j2-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 5/6 − 1/2.", choices: ["1/3", "1/6", "2/6", "4/6", "1/2"], answer: "1/3", hint: "1/2 = 3/6, donc 5/6 − 3/6 = 2/6." }
+      - id: m3
+        title: La brume dorée
+        tours:
+          axelle:
+            - { id: ch11-j2-ax-m3a, subject: sciences, level: 1, kind: qcm, prompt: "À quel moment de la journée voit-on le plus souvent de la brume matinale ?", choices: ["en plein midi", "tôt le matin", "en pleine nuit noire", "jamais", "seulement en été"], answer: "tôt le matin", hint: "C'est dans le nom : brume « matinale »." }
+            - { id: ch11-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 6.", choices: ["36", "38", "40", "42", "44"], answer: "42", hint: "7 × 6 = 7 × 5 + 7." }
+          maelle:
+            - { id: ch11-j2-ma-m3a, subject: francais, level: 2, kind: qcm, prompt: "Conjugue au présent : « Je (écouter) attentivement. »", choices: ["j'écoute", "j'écoutais", "j'écouterai", "j'écoutai", "j'écoutasse"], answer: "j'écoute", hint: "Je : -e à la fin du verbe." }
+            - { id: ch11-j2-ma-m3b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 360 ÷ 9.", choices: ["36", "38", "40", "42", "45"], answer: "40", hint: "9 × 40 = 360." }
+          rafaelle:
+            - { id: ch11-j2-ra-m3a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 4³ − 3³.", choices: ["27", "31", "37", "39", "41"], answer: "37", hint: "64 − 27." }
+            - { id: ch11-j2-ra-m3b, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi un lieu longtemps laissé sans visiteur peut-il, au fil du temps, sembler « oublier » son propre nom ou son histoire ?", choices: ["parce que la pierre s'efface toute seule", "parce que ce sont les mémoires et les récits des visiteurs qui gardent vivante l'histoire d'un lieu", "parce que les lieux ont une volonté propre indépendante des gens", "ce n'est jamais le cas", "parce que les plantes mangent les souvenirs"], answer: "parce que ce sont les mémoires et les récits des visiteurs qui gardent vivante l'histoire d'un lieu", hint: "Pense à ce qui arrive à un lieu que plus personne ne raconte." }
+      - id: m4
+        title: Reprendre des forces
+        tours:
+          axelle:
+            - { id: ch11-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 3.", choices: ["21", "22", "24", "26", "28"], answer: "24", hint: "8 × 3 = 8 + 8 + 8." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch11-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 205 − 88.", choices: ["115", "117", "119", "121", "123"], answer: "117", hint: "205 − 90 + 2." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch11-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Escucho la tierra. »", choices: ["Je vois la terre.", "J'écoute la terre.", "Je touche la terre.", "Je cherche la terre.", "Je quitte la terre."], answer: "J'écoute la terre.", hint: "« Escucho » = j'écoute." }
+            - { gen: maths.conversion }
+    pause: "Le murmure en chaîne : une sœur chuchote un mot très doucement à l'oreille de la suivante, qui le transmet à la dernière — le mot arrive-t-il intact ?"
+    closing:
+      - { who: narrateur, text: "À la tombée du jour, la brume dorée se fit plus dense autour du cercle, et la voix d'Albin, encore fragile, se fit entendre une dernière fois avant que le silence ne retombe sur les terrasses." }
+      - { who: albin, text: "Merci d'avoir écouté un nom que je n'étais même plus sûr de mériter. Revenez demain. Je crois que je commence à me souvenir d'un peu plus que mon nom." }
+      - { who: rafaelle, text: "On reviendra. Promis." }
+      - { who: narrateur, text: "Alors que les trois sœurs redescendaient vers l'Arche, Axelle se retourna une dernière fois vers la terrasse haute, et crut voir, l'espace d'un battement de cœur, un seul pétale s'entrouvrir légèrement dans la pénombre." }
+      - { who: axelle, text: "Vous avez vu ? Une fleur a bougé. Juste une toute petite. Mais elle a bougé." }
+    reward: "le nom d'Albin, et le premier pétale entrouvert"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: Les Pétales Qui Comptent
+    decor: Les terrasses intermédiaires, où quelques fleurs commencent timidement à s'entrouvrir, une par une, dans un ordre que personne ne comprend encore.
+    opening:
+      - { who: narrateur, text: "Le troisième matin, les trois sœurs découvrirent que plusieurs fleurs, sur plusieurs terrasses différentes, s'étaient entrouvertes pendant la nuit — mais pas n'importe lesquelles, et pas n'importe où. Un motif semblait s'en dégager, sans qu'on sache encore lequel." }
+      - { who: narrateur, text: "Maelle sortit aussitôt son carnet et commença à noter, terrasse par terrasse, le nombre exact de fleurs ouvertes : deux sur la première, trois sur la seconde, cinq sur la troisième — des nombres qui semblaient suivre une logique précise." }
+      - { who: maelle, text: "Ce n'est pas du hasard. Il y a un ordre là-dedans. Je le sens, mais je n'ai pas encore trouvé lequel." }
+      - { who: albin, text: "Les fleurs comptent les jours depuis qu'on m'a écouté. Chaque jour où quelqu'un revient, un peu plus s'ouvrent. C'est ainsi que ce jardin a toujours mesuré la confiance." }
+      - { who: rafaelle, text: "Alors plus on revient, plus le jardin se réveille. C'est presque un calcul, en fait." }
+      - { who: narrateur, text: "Nilo, qui avait entrepris de compter les pétales un par un en les touchant du bout du museau, éternua si fort qu'il faillit refermer d'un coup trois fleurs à peine ouvertes." }
+      - { who: nilo, text: "Pardon ! Je ne voulais pas vous recompter à l'envers. C'est le pollen. Ou l'émotion. Les deux, peut-être." }
+      - { who: plume, text: "En tout cas, ce jardin a une mémoire bien à lui. Pas écrite sur du papier, mais écrite en fleurs." }
+    manches:
+      - id: m1
+        title: Compter les fleurs
+        tours:
+          axelle:
+            - { id: ch11-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Sur la première terrasse, 2 fleurs sont ouvertes, sur la seconde 3, sur la troisième 5. Combien de fleurs ouvertes en tout sur les trois terrasses ?", choices: ["8", "9", "10", "11", "12"], answer: "10", hint: "2 + 3 + 5." }
+            - { id: ch11-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le pluriel de « une fleur » ?", choices: ["une fleurs", "des fleur", "des fleurs", "les fleure", "une fleures"], answer: "des fleurs", hint: "On ajoute un -s au nom, et « une » devient « des »." }
+          maelle:
+            - { id: ch11-j3-ma-m1a, subject: maths, level: 3, kind: qcm, prompt: "Si le nombre de fleurs ouvertes suit la suite 2, 3, 5, 8… (chaque nombre est la somme des deux précédents), combien de fleurs s'ouvriront sur la cinquième terrasse ?", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "5 + 8 = 13." }
+            - { id: ch11-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 17 × 4.", choices: ["58", "62", "66", "68", "72"], answer: "68", hint: "17 × 4 = 17 × 2 × 2." }
+          rafaelle:
+            - { id: ch11-j3-ra-m1a, subject: maths, level: 4, kind: qcm, prompt: "Si chaque terrasse compte deux fois plus de fleurs que la précédente (3, 6, 12, 24…), combien de fleurs sur la cinquième terrasse ?", choices: ["36", "42", "46", "48", "52"], answer: "48", hint: "24 × 2 = 48." }
+            - { id: ch11-j3-ra-m1b, subject: francais, level: 4, kind: qcm, prompt: "Quelle est la nature grammaticale du mot « précises » dans « des logiques précises » ?", choices: ["nom", "adjectif", "adverbe", "verbe", "pronom"], answer: "adjectif", hint: "Il qualifie le nom « logiques »." }
+      - id: m2
+        title: Le motif des terrasses
+        tours:
+          axelle:
+            - { id: ch11-j3-ax-m2a, subject: sciences, level: 1, kind: qcm, prompt: "Qu'est-ce qu'un pétale ?", choices: ["une racine de la plante", "une des pièces colorées qui forment la fleur", "une feuille verte", "une graine", "une épine"], answer: "une des pièces colorées qui forment la fleur", hint: "Pense à ce qui entoure le cœur d'une fleur." }
+            - { id: ch11-j3-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 20 − 13.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "20 − 10 = 10, puis − 3." }
+          maelle:
+            - { id: ch11-j3-ma-m2a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi relève-t-on régulièrement le niveau de l'eau ou le nombre de plantes dans un jardin, au fil des jours ?", choices: ["pour s'occuper sans raison", "pour suivre une évolution dans le temps et comprendre ce qui change", "parce que c'est amusant uniquement", "cela ne sert jamais à rien", "pour impressionner les visiteurs"], answer: "pour suivre une évolution dans le temps et comprendre ce qui change", hint: "Pense à ce que fait Maelle avec son carnet." }
+            - { id: ch11-j3-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 8,4 − 3,7.", choices: ["4,3", "4,5", "4,7", "4,9", "5,1"], answer: "4,7", hint: "84 − 37 = 47." }
+          rafaelle:
+            - { id: ch11-j3-ra-m2a, subject: sciences, level: 4, kind: qcm, prompt: "Pourquoi certaines fleurs s'ouvrent-elles progressivement sur plusieurs jours plutôt que d'un seul coup ?", choices: ["elles économisent ainsi leur énergie, bourgeon après bourgeon", "cela n'a aucune raison biologique", "toutes les fleurs s'ouvrent toujours en une seule fois", "c'est purement aléatoire", "elles attendent la pleine lune uniquement"], answer: "elles économisent ainsi leur énergie, bourgeon après bourgeon", hint: "Pense à l'effort que représente l'ouverture de chaque pétale." }
+            - { id: ch11-j3-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 25 % de 160.", choices: ["30", "35", "40", "45", "50"], answer: "40", hint: "25 % = un quart." }
+      - id: m3
+        title: La mémoire en fleurs
+        tours:
+          axelle:
+            - { id: ch11-j3-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 4.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "9 + 4 = 9 + 1 + 3." }
+            - { id: ch11-j3-ax-m3b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Les pétales comptent les jours. » ?", choices: ["comptent", "les jours", "Les pétales", "jours", "les"], answer: "Les pétales", hint: "Qui fait l'action de compter ?" }
+          maelle:
+            - { id: ch11-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 540 ÷ 9.", choices: ["55", "58", "60", "62", "65"], answer: "60", hint: "9 × 60 = 540." }
+            - { id: ch11-j3-ma-m3b, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi un jardin laissé longtemps sans visiteur peut-il sembler « se refermer » ou pousser moins bien ?", choices: ["sans entretien (eau, soin, attention), les plantes peuvent dépérir", "cela n'a aucun lien avec l'entretien", "les plantes poussent toujours mieux seules", "le manque de visiteurs n'a aucun effet", "les plantes préfèrent toujours l'obscurité totale"], answer: "sans entretien (eau, soin, attention), les plantes peuvent dépérir", hint: "Pense à une plante d'intérieur qu'on oublierait d'arroser." }
+          rafaelle:
+            - { id: ch11-j3-ra-m3a, subject: maths, level: 5, kind: qcm, prompt: "Dans la suite 2, 3, 5, 8, 13…, quel est le septième terme ?", choices: ["21", "28", "34", "42", "55"], answer: "34", hint: "Après 13, le terme suivant est 21, puis 34." }
+            - { id: ch11-j3-ra-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi les jardins en terrasses permettent-ils souvent de cultiver même sur des pentes très raides ?", choices: ["parce que les plantes y poussent plus vite naturellement", "parce que chaque palier crée une surface plane où la terre et l'eau restent en place", "parce que la pluie n'y tombe jamais", "parce que le sol y est toujours plus riche ailleurs", "cela ne change rien à la pente"], answer: "parce que chaque palier crée une surface plane où la terre et l'eau restent en place", hint: "Repense à la fonction des terrasses expliquée le premier jour." }
+      - id: m4
+        title: Un pétale de plus
+        tours:
+          axelle:
+            - { id: ch11-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 5 × 6.", choices: ["25", "28", "30", "32", "35"], answer: "30", hint: "5 × 6 = 5 × 5 + 5." }
+            - { gen: maths.ranger }
+          maelle:
+            - { id: ch11-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 48 + 76.", choices: ["114", "118", "120", "122", "124"], answer: "124", hint: "48 + 80 − 4." }
+            - { gen: maths.arrondi }
+          rafaelle:
+            - { id: ch11-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Las flores florecen. »", choices: ["Les fleurs se ferment.", "Les fleurs fleurissent.", "Les fleurs tombent.", "Les fleurs dorment.", "Les fleurs chantent."], answer: "Les fleurs fleurissent.", hint: "« Florecen » ressemble à « fleurissent »." }
+            - { gen: maths.multiplication }
+    pause: "Compte les pétales : une sœur ferme les yeux, une autre lui place délicatement un certain nombre de petits objets dans la main (cailloux, feuilles) qu'elle doit deviner au toucher !"
+    closing:
+      - { who: narrateur, text: "Au coucher du soleil, Maelle referma son carnet, désormais couvert de petites suites de nombres, de croquis de terrasses et de flèches reliant les unes aux autres — la carte, patiente, d'une mémoire en train de refleurir." }
+      - { who: albin, text: "Vous avez pris mes nombres au sérieux. Personne ne l'avait fait depuis si longtemps que j'avais presque oublié qu'ils voulaient dire quelque chose." }
+      - { who: maelle, text: "Les nombres racontent toujours quelque chose, si on prend le temps de les écouter aussi." }
+      - { who: narrateur, text: "En contrebas, Axelle et Rafaelle comptèrent ensemble les fleurs désormais ouvertes sur l'ensemble des terrasses : plus de la moitié du jardin, à présent, respirait doucement dans la lumière du soir." }
+      - { who: rafaelle, text: "À ce rythme, dans deux jours, il n'y aura peut-être plus une seule fleur fermée." }
+      - { who: albin, text: "Ou peut-être qu'il en restera toujours une ou deux, pour le plaisir de vous revoir les rouvrir demain." }
+    reward: "le carnet des suites fleuries de Maelle"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: La Voix Qui Se Souvient
+    decor: Le centre du jardin, où toutes les terrasses convergent vers un petit bassin rond, bordé de fleurs presque toutes ouvertes à présent.
+    opening:
+      - { who: narrateur, text: "Le quatrième matin, les trois sœurs trouvèrent le chemin des terrasses entièrement fleuri, jusqu'à un petit bassin rond niché au cœur du jardin, dont l'eau, parfaitement calme, reflétait le ciel sans une seule ride." }
+      - { who: narrateur, text: "Au-dessus du bassin, la brume dorée se rassembla lentement, se fit plus dense, presque une silhouette — pas tout à fait un corps, mais plus seulement une voix non plus. Albin se montrait, autant qu'il le pouvait encore, pour la première fois." }
+      - { who: albin, text: "Je me souviens, maintenant, d'un peu plus que mon nom. Je me souviens d'un temps où ces terrasses résonnaient de voix, de pas, de rires — avant que tout le monde, peu à peu, ait cessé de venir." }
+      - { who: axelle, text: "Pourquoi est-ce qu'ils ont arrêté de venir ?" }
+      - { who: albin, text: "Je ne sais plus très bien. Peut-être qu'ils ont simplement trouvé d'autres chemins à explorer, et qu'aucun d'eux n'a pensé à revenir dire au revoir. Les jardins, contrairement aux gens, ne savent pas partir." }
+      - { who: narrateur, text: "Rafaelle s'approcha du bassin et y vit, dans le reflet parfaitement calme de l'eau, non pas son propre visage, mais l'image furtive d'un jardin immense, débordant de fleurs, de lanternes allumées et de silhouettes riant entre les terrasses." }
+      - { who: rafaelle, text: "C'était comme ça, avant ? Tout ce monde, toutes ces lumières ?" }
+      - { who: albin, text: "C'était comme ça. Et je crois, petite Voix de l'équipe, que ça pourrait le redevenir, un peu, si quelqu'un acceptait de rester assez longtemps pour s'en souvenir avec moi." }
+      - { who: maelle, text: "On reste. On est douées pour ça, en fait, rester." }
+    manches:
+      - id: m1
+        title: Le reflet du bassin
+        tours:
+          axelle:
+            - { id: ch11-j4-ax-m1a, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi une eau parfaitement calme peut-elle refléter le ciel comme un miroir ?", choices: ["parce qu'elle est toujours bleue", "parce que sa surface plane renvoie la lumière de façon régulière", "parce qu'elle est très profonde uniquement", "parce qu'elle est froide", "cela n'arrive jamais vraiment"], answer: "parce que sa surface plane renvoie la lumière de façon régulière", hint: "Pense à un miroir bien plat, sans aucune ride." }
+            - { id: ch11-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 13 + 8.", choices: ["19", "20", "21", "22", "23"], answer: "21", hint: "13 + 8 = 13 + 7 + 1." }
+          maelle:
+            - { id: ch11-j4-ma-m1a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « furtive » dans « l'image furtive d'un jardin » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il qualifie le nom « image »." }
+            - { id: ch11-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 3.", choices: ["79", "83", "85", "87", "89"], answer: "87", hint: "30 × 3 − 3." }
+          rafaelle:
+            - { id: ch11-j4-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi, dans beaucoup de récits et de traditions, un lieu abandonné par ses habitants finit-il par être considéré comme « oublié » même s'il existe toujours physiquement ?", choices: ["parce que ses pierres disparaissent toutes seules", "parce que c'est la présence et la mémoire des gens qui font vivre un lieu dans le temps", "parce qu'un lieu sans habitant cesse d'exister", "ce n'est jamais le cas en réalité", "parce que les cartes l'effacent automatiquement"], answer: "parce que c'est la présence et la mémoire des gens qui font vivre un lieu dans le temps", hint: "Repense à ce que dit Albin sur le fait de « partir sans dire au revoir »." }
+            - { id: ch11-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 2/3 + 1/6.", choices: ["3/9", "5/6", "1/2", "3/6", "4/6"], answer: "5/6", hint: "2/3 = 4/6, donc 4/6 + 1/6." }
+      - id: m2
+        title: Les voix d'autrefois
+        tours:
+          axelle:
+            - { id: ch11-j4-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « se souvenir » ?", choices: ["oublier", "chanter", "rester", "grandir", "écouter"], answer: "oublier", hint: "C'est l'opposé exact de se rappeler." }
+            - { id: ch11-j4-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 17 − 8.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "17 − 7 = 10, puis − 1." }
+          maelle:
+            - { id: ch11-j4-ma-m2a, subject: sciences, level: 3, kind: qcm, prompt: "Comment un jardin laissé à l'abandon peut-il, au fil des années, retrouver naturellement un peu de vie si on recommence à s'en occuper ?", choices: ["cela n'est jamais possible", "en arrosant, en taillant et en apportant à nouveau de la lumière et des soins réguliers", "uniquement en attendant sans rien faire", "en coupant toutes les plantes existantes", "en le recouvrant complètement de pierre"], answer: "en arrosant, en taillant et en apportant à nouveau de la lumière et des soins réguliers", hint: "Pense à ce que fait concrètement un jardinier." }
+            - { id: ch11-j4-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 630 ÷ 7.", choices: ["80", "85", "88", "90", "92"], answer: "90", hint: "7 × 90 = 630." }
+          rafaelle:
+            - { id: ch11-j4-ra-m2a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x − 4 = 26.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "5x = 30." }
+            - { id: ch11-j4-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Les jardins, contrairement aux gens, ne savent pas partir. » : quelle relation logique exprime « contrairement à » ?", choices: ["une cause", "une conséquence", "une comparaison par opposition", "un but", "une condition"], answer: "une comparaison par opposition", hint: "On oppose deux éléments : les jardins et les gens." }
+      - id: m3
+        title: Rester, pour de vrai
+        tours:
+          axelle:
+            - { id: ch11-j4-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 12 + 7.", choices: ["17", "18", "19", "20", "21"], answer: "19", hint: "12 + 7 = 19." }
+            - { id: ch11-j4-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Quel sens utilise-t-on surtout pour écouter un murmure très doux ?", choices: ["la vue", "l'ouïe", "le toucher", "le goût", "l'odorat"], answer: "l'ouïe", hint: "C'est le sens qui permet d'entendre." }
+          maelle:
+            - { id: ch11-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 7,7 + 2,6.", choices: ["9,9", "10,1", "10,3", "10,5", "10,7"], answer: "10,3", hint: "77 + 26 = 103." }
+            - { id: ch11-j4-ma-m3b, subject: francais, level: 2, kind: qcm, prompt: "Conjugue au présent : « Nous (rester) auprès de toi. »", choices: ["nous restons", "nous restez", "nous restent", "nous restions", "nous resterons"], answer: "nous restons", hint: "Nous : -ons." }
+          rafaelle:
+            - { id: ch11-j4-ra-m3a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 5² + 12² (indice : c'est un résultat que tu reconnaîtras peut-être).", choices: ["144", "169", "174", "189", "121"], answer: "169", hint: "25 + 144." }
+            - { id: ch11-j4-ra-m3b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « El agua cae. »", choices: ["L'eau monte.", "L'eau tombe.", "L'eau chante.", "L'eau dort.", "L'eau brille."], answer: "L'eau tombe.", hint: "« Cae » ressemble à « tombe » (chute)." }
+      - id: m4
+        title: Se préparer pour demain
+        tours:
+          axelle:
+            - { id: ch11-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 5.", choices: ["35", "40", "42", "45", "48"], answer: "45", hint: "9 × 5 = 10 × 5 − 5." }
+            - { gen: maths.duree }
+          maelle:
+            - { id: ch11-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 260 − 175.", choices: ["75", "80", "85", "90", "95"], answer: "85", hint: "260 − 180 + 5." }
+            - { gen: maths.conversion }
+          rafaelle:
+            - { id: ch11-j4-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Todo vuelve a crecer. »", choices: ["Rien ne pousse plus.", "Tout recommence à pousser.", "Tout est fini.", "Rien ne change jamais.", "Tout disparaît lentement."], answer: "Tout recommence à pousser.", hint: "« Vuelve a crecer » = recommence à pousser." }
+            - { gen: maths.arrondi }
+    pause: "Le reflet raconté : penchées (sans se pencher vraiment) au-dessus d'un bol d'eau calme, les sœurs inventent à tour de rôle ce qu'elles « voient » dans le reflet, le plus étonnant possible !"
+    closing:
+      - { who: narrateur, text: "Le soir venu, la silhouette dorée d'Albin se fit plus nette encore au-dessus du bassin, presque assez précise pour qu'on devine, dans la brume, l'esquisse d'un sourire." }
+      - { who: albin, text: "Demain, je crois, le jardin tout entier sera réveillé. Mais il me reste une dernière chose à vous demander, avant de pouvoir vraiment chanter de nouveau." }
+      - { who: rafaelle, text: "On vous écoute. Encore et encore, s'il le faut." }
+      - { who: albin, text: "C'est exactement ça, la dernière chose : continuer de le faire, même demain, même après que tout aura refleuri. Pas par obligation. Par choix." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs redescendaient vers l'Arche, le bassin, derrière elles, se mit à onduler très légèrement, comme s'il riait tout bas, pour la première fois depuis très longtemps." }
+    reward: "la confiance presque entière d'Albin"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: Le Chant du Jardin
+    decor: Le jardin tout entier, désormais couvert de fleurs ouvertes, les cascades murmurant doucement, le cercle rituel baigné de lumière dorée.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, le jardin de l'Aube n'avait plus rien d'un lieu endormi : chaque terrasse débordait de fleurs ouvertes, les cascades chantaient de nouveau leur chute, et la brume dorée, au centre, avait presque entièrement pris la forme d'une silhouette patiente." }
+      - { who: albin, text: "Vous avez tenu votre promesse, jour après jour. Il ne reste qu'une dernière chose à accomplir avant que je retrouve entièrement ma voix : montrez-moi, une dernière fois, ce que cette semaine vous a vraiment appris." }
+      - { who: nilo, text: "On a appris à arroser sans tout inonder, principalement. Et à compter des fleurs sans éternuer dessus. Progrès modestes mais réels." }
+      - { who: albin, text: "C'est un bon début. Voyons la suite." }
+      - { who: plume, text: "Allons-y. Ce jardin mérite bien qu'on finisse ce qu'on a commencé." }
+    manches:
+      - id: m1
+        title: L'épreuve d'Albin
+        intro: "Albin interroge chaque sœur sur tout ce que le jardin lui a appris cette semaine."
+        tours:
+          axelle:
+            - { id: ch11-j5-ax-m1a, subject: sciences, level: 2, kind: qcm, prompt: "De quoi une plante a-t-elle besoin, en plus de l'eau et de la lumière, pour bien pousser ?", choices: ["de musique forte", "d'une bonne terre nourrissante", "de neige constante", "d'obscurité totale", "de sable sec uniquement"], answer: "d'une bonne terre nourrissante", hint: "Pense à ce qu'on met dans un pot avant d'y planter une fleur." }
+            - { id: ch11-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 11 + 9.", choices: ["18", "19", "20", "21", "22"], answer: "20", hint: "11 + 9 = 20." }
+          maelle:
+            - { id: ch11-j5-ma-m1a, subject: maths, level: 3, kind: qcm, prompt: "Si une terrasse comptait 2 fleurs ouvertes le premier jour et que ce nombre double chaque jour, combien de fleurs seront ouvertes au cinquième jour ?", choices: ["16", "24", "32", "40", "48"], answer: "32", hint: "2, 4, 8, 16, 32." }
+            - { id: ch11-j5-ma-m1b, subject: francais, level: 3, kind: qcm, prompt: "Quel est le contraire de « se refermer » ?", choices: ["s'ouvrir", "s'endormir", "tomber", "pousser", "fleurir"], answer: "s'ouvrir", hint: "C'est l'opposé exact du mouvement de fermeture." }
+          rafaelle:
+            - { id: ch11-j5-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi un lieu longtemps délaissé a-t-il besoin, pour revivre, non pas d'une seule visite mais de visites régulières et répétées ?", choices: ["une seule visite suffit toujours largement", "parce que la confiance et la mémoire d'un lieu se reconstruisent progressivement, pas d'un coup", "les lieux n'ont aucune mémoire", "ce n'est jamais vrai", "une visite régulière abîme toujours le lieu"], answer: "parce que la confiance et la mémoire d'un lieu se reconstruisent progressivement, pas d'un coup", hint: "Repense à ce qu'Albin a dit sur le fait de continuer « par choix »." }
+            - { id: ch11-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 3/5 × 10.", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "10 ÷ 5 = 2, puis × 3." }
+      - id: m2
+        title: Ce que le jardin a retenu
+        intro: "Il faut relier les indices rassemblés toute la semaine pour qu'Albin retrouve pleinement sa voix."
+        tours:
+          axelle:
+            - { id: ch11-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux un jardin plein de fleurs ouvertes et de cascades bruyantes ?", choices: ["silencieux", "vivant", "vide", "endormi", "fermé"], answer: "vivant", hint: "C'est le contraire de « muet » ou « endormi »." }
+            - { id: ch11-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 18 − 9.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "18 est le double de 9." }
+          maelle:
+            - { id: ch11-j5-ma-m2a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi l'attention régulière qu'on porte à un jardin (même sans rien y changer physiquement) peut-elle sembler l'aider à « revivre » ?", choices: ["l'attention seule n'a jamais aucun effet concret", "parce qu'elle s'accompagne en général de soins réels : eau, lumière, entretien suivis dans le temps", "parce que les plantes entendent les pensées", "parce que cela fait toujours plus joli de le croire", "parce que les fleurs comptent les visiteurs par magie uniquement"], answer: "parce qu'elle s'accompagne en général de soins réels : eau, lumière, entretien suivis dans le temps", hint: "L'attention, dans cette histoire, va toujours avec des gestes concrets : arroser, revenir, écouter." }
+            - { id: ch11-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 490 ÷ 7.", choices: ["60", "65", "68", "70", "72"], answer: "70", hint: "7 × 70 = 490." }
+          rafaelle:
+            - { id: ch11-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 6² + 8² (indice : tu as peut-être déjà croisé ce couple de nombres).", choices: ["64", "81", "100", "121", "144"], answer: "100", hint: "36 + 64." }
+            - { id: ch11-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Les jardins, contrairement aux gens, ne savent pas partir. » : quel est le sujet de cette phrase ?", choices: ["contrairement", "les gens", "Les jardins", "partir", "savent"], answer: "Les jardins", hint: "De qui parle-t-on avant tout dans cette phrase ?" }
+      - id: m3
+        title: Le Chant du Jardin
+        intro: "Le bassin se met à vibrer doucement : il ne chantera que si les trois sœurs trouvent, ensemble, le bon rythme."
+        tours:
+          axelle:
+            - { id: ch11-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          maelle:
+            - { id: ch11-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, blanche." }
+          rafaelle:
+            - { id: ch11-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : ronde." }
+    concert:
+      measures:
+        axelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        maelle: { given: [2], missing: 2, prompt: "Blanche, blanche" }
+        rafaelle: { given: [], missing: 4, prompt: "Ronde" }
+    pause: "Le cercle des promesses : chacune dit à voix haute une chose simple qu'elle promet de ne pas oublier à propos du jardin, avant de repartir."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant du Jardin se répandit sur toutes les terrasses à la fois, et, pour la première fois depuis très longtemps, chaque fleur de l'Aube s'ouvrit d'un seul mouvement, comme un immense souffle retenu enfin relâché." }
+      - { who: narrateur, text: "Au-dessus du bassin, la silhouette dorée d'Albin se fit presque entièrement nette, et sa voix, cette fois, résonna sans trembler, portée par le chant des cascades toutes proches." }
+      - { who: albin, text: "Je me souviens de tout, maintenant. Et je me souviens surtout que trois apprenties sont venues, cinq jours de suite, sans jamais rien me demander en retour. C'est le plus beau cadeau qu'on m'ait fait depuis très longtemps." }
+      - { who: nilo, text: "Techniquement, on a aussi pas mal arrosé. Mais oui, surtout ça." }
+      - { who: narrateur, text: "Albin se pencha — autant qu'une silhouette de brume dorée peut se pencher — et déposa dans la main de Maelle une petite graine lumineuse, chaude comme un tison, qui palpitait doucement comme un cœur minuscule." }
+      - { who: albin, text: "Gardez cette graine. Plantez-la où vous le jugerez juste, un jour. Elle portera, où qu'elle pousse, un peu de la mémoire de ce jardin — et un peu de la vôtre, désormais mêlée à la sienne." }
+      - { who: axelle, text: "On reviendra vous voir. Pas parce qu'il le faut. Parce qu'on en a envie." }
+      - { who: albin, text: "Je sais. C'est exactement pour ça que je vous fais confiance." }
+      - { who: narrateur, text: "Et tandis que l'Arche reprenait lentement son envol au-dessus des terrasses désormais chantantes, Rafaelle remarqua, loin à l'horizon, une ligne de montagnes qu'aucune carte, même la Carte Vivante, n'avait encore jamais tracée — comme une invitation silencieuse à continuer le chemin." }
+    reward: "la graine lumineuse de mémoire, offerte par Albin"
