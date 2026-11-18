@@ -276,7 +276,7 @@ days:
       - { who: albin, text: "Je ne sais plus très bien. Peut-être qu'ils ont simplement trouvé d'autres chemins à explorer, et qu'aucun d'eux n'a pensé à revenir dire au revoir. Les jardins, contrairement aux gens, ne savent pas partir." }
       - { who: narrateur, text: "Rafaelle s'approcha du bassin et y vit, dans le reflet parfaitement calme de l'eau, non pas son propre visage, mais l'image furtive d'un jardin immense, débordant de fleurs, de lanternes allumées et de silhouettes riant entre les terrasses." }
       - { who: rafaelle, text: "C'était comme ça, avant ? Tout ce monde, toutes ces lumières ?" }
-      - { who: albin, text: "C'était comme ça. Et je crois, petite Voix de l'équipe, que ça pourrait le redevenir, un peu, si quelqu'un acceptait de rester assez longtemps pour s'en souvenir avec moi." }
+      - { who: albin, text: "C'était comme ça. Et je crois, petite Archiviste, que ça pourrait le redevenir, un peu, si quelqu'un acceptait de rester assez longtemps pour s'en souvenir avec moi." }
       - { who: maelle, text: "On reste. On est douées pour ça, en fait, rester." }
     manches:
       - id: m1
