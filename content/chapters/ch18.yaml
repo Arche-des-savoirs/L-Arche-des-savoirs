@@ -1,0 +1,385 @@
+# Chapitre 18 — La Reine de Brume des Cimes
+# Suite directe du chapitre 17 : la carte vivante mène les sœurs toujours plus haut, jusqu'à
+# un plateau suspendu dans les nuages où règne une immense silhouette de brume, la Reine
+# (déjà établie, voix Callirrhoe). Décision avec effet ORVANE : src/content/decisions.ts
+# attribue [2, -1, 1] aux options A/B/C (orvane +2 en A, -1 en B, +1 en C). Le texte reflète
+# cet écart : A renforce fortement le lien avec Orvane, B l'abîme, C le renforce légèrement.
+
+id: ch18
+number: 18
+act: 2
+title: La Reine de Brume des Cimes
+introImage: ch18
+scene: reine-brume-cimes
+
+espagnol:
+  - { es: "La reina flota sobre las nubes.", fr: "La reine flotte au-dessus des nuages." }
+  - { es: "El respeto abre muchas puertas.", fr: "Le respect ouvre bien des portes." }
+  - { es: "La niebla guarda la cima.", fr: "La brume garde le sommet." }
+  - { es: "Hablemos con humildad.", fr: "Parlons avec humilité." }
+  - { es: "Su silencio dice mucho.", fr: "Son silence en dit long." }
+
+decision:
+  prompt: "La Reine de Brume incline lentement sa tête immense vers les trois sœurs. « On me demande rarement la permission avant de traverser mon royaume. Vous, pourtant, vous l'avez fait. Comment comptez-vous honorer ce passage ? »"
+  options:
+    A:
+      label: S'incliner ensemble, en silence, devant elle
+      scene: "Axelle entraîne ses sœurs dans une révérence lente et sincère, les trois têtes baissées, sans un mot, devant l'immense silhouette de brume qui domine le plateau."
+      line: { who: reine, text: "Peu de voyageurs savent encore s'incliner sans qu'on le leur impose. Ce respect-là, je ne l'oublierai pas." }
+      habillage: "Chaque épreuve devient un moment de calme partagé, où le silence et l'attention comptent plus que la précipitation."
+    B:
+      label: Lui offrir un présent, en échange du passage
+      scene: "Rafaelle, pragmatique, tend à la Reine un petit objet du voyage, espérant qu'un échange concret suffira à garantir leur passage sans plus de cérémonie."
+      line: { who: reine, text: "Un présent n'est pas un hommage, petite voyageuse. Vous avez confondu ma brume avec un marché. Ce n'en est pas un." }
+      habillage: "Les épreuves deviennent des négociations rapides, où il faut conclure vite, quitte à perdre un peu en profondeur."
+    C:
+      label: Lui raconter, avec honnêteté, pourquoi elles sont là
+      scene: "Maelle s'avance et raconte, sans rien cacher, toute l'histoire du voyage et la raison pour laquelle les trois sœurs traversent ce royaume de brume."
+      line: { who: reine, text: "Une histoire racontée sans artifice vaut, à mes yeux, bien plus qu'une offrande choisie à la hâte. Je vous écoute, petite Cartographe." }
+      habillage: "Les épreuves deviennent des récits à raconter avec clarté, où la vérité compte plus que l'effet recherché."
+
+repliquesAbsurdes:
+  - "Si la Reine flotte au-dessus des nuages, est-ce qu'elle a déjà eu le vertige, au moins une fois dans sa vie ?"
+  - "Mon renard a essayé de s'incliner devant la Reine. Il a surtout glissé sur le plateau mouillé par la brume."
+  - "Est-ce qu'on peut serrer la main d'une reine faite de brume, ou est-ce qu'on finit juste la main toute mouillée ?"
+  - "Si je parle trop fort devant la Reine, est-ce que ma voix va se perdre dans son immense silence, ou juste l'agacer ?"
+  - "On a déjà vu des tableaux vivants et une galerie entière tissée de lumière. Une reine de brume, à ce stade, ça semble presque logique."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: Le plateau suspendu
+    decor: Un plateau rocheux suspendu au-dessus d'une mer de nuages, battu par un vent doux, où une immense silhouette de brume se dresse, immobile, dominant tout le paysage environnant.
+    opening:
+      - { who: narrateur, text: "La carte vivante mena les trois sœurs toujours plus haut, jusqu'à un plateau rocheux suspendu au-dessus d'une véritable mer de nuages, où le vent soufflait doucement entre les pierres." }
+      - { who: narrateur, text: "Au centre du plateau se dressait une silhouette immense, faite tout entière de brume argentée, immobile, dominant le paysage comme une montagne vivante." }
+      - { who: rafaelle, text: "C'est... c'est une personne, ça, ou un nuage particulièrement grand ?" }
+      - { who: nilo, text: "À ce stade du voyage, je dirais que c'est probablement les deux à la fois, et je ne suis même plus surpris." }
+      - { who: narrateur, text: "La silhouette tourna lentement la tête vers elles, et deux yeux d'un bleu profond s'ouvrirent au cœur de la brume." }
+      - { who: reine, text: "Bienvenue sur mon plateau, petites voyageuses. On me demande rarement la permission avant de traverser mon royaume." }
+      - { who: axelle, text: "On ne voulait pas vous déranger ! On cherchait juste notre chemin vers le sommet." }
+      - { who: reine, text: "Vous ne me dérangez pas, petite Veilleuse. Au contraire : rares sont ceux qui s'arrêtent pour me regarder vraiment." }
+      - { who: maelle, text: "Vous régnez sur toute cette brume, au-dessus des nuages ?" }
+      - { who: reine, text: "Je veille sur elle, plutôt que je ne règne, petite Cartographe. Une distinction importante, que peu de voyageurs prennent la peine de faire." }
+    manches:
+      - id: m1
+        title: Une silhouette immense
+        tours:
+          axelle:
+            - { id: ch18-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on un épais nuage qui touche le sol ou le sommet d'une montagne ?", choices: ["la brume", "la pluie", "la neige", "la grêle", "le vent"], answer: "la brume", hint: "C'est le mot utilisé dans le titre du chapitre." }
+            - { id: ch18-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 7.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "8 + 7 = 8 + 8 − 1." }
+          maelle:
+            - { id: ch18-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi trouve-t-on souvent une mer de nuages en dessous d'un sommet élevé ?", choices: ["l'air chaud et humide se condense en altitude, formant des nuages bas", "il n'y a jamais de nuages en montagne", "les nuages montent toujours plus haut que les sommets", "cela n'a aucune explication connue", "parce que les montagnes attirent la pluie uniquement"], answer: "l'air chaud et humide se condense en altitude, formant des nuages bas", hint: "Pense à ce que les sœurs observent depuis le plateau." }
+            - { id: ch18-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 86 + 57.", choices: ["138", "141", "143", "145", "148"], answer: "143", hint: "86 + 60 − 3." }
+          rafaelle:
+            - { id: ch18-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi les très hauts sommets étaient-ils souvent associés, dans d'anciens récits, à des figures mystérieuses ou royales ?", choices: ["parce que leur altitude et leur isolement en faisaient des lieux à part, difficiles d'accès", "parce que personne n'a jamais gravi de montagne", "parce que les sommets n'ont jamais inspiré aucun récit", "cela n'a aucune raison particulière", "parce que les montagnes étaient toujours interdites"], answer: "parce que leur altitude et leur isolement en faisaient des lieux à part, difficiles d'accès", hint: "Pense à l'impression que fait la Reine, perchée si haut." }
+            - { id: ch18-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 17 × 6.", choices: ["96", "100", "102", "104", "108"], answer: "102", hint: "17 × 6 = 17 × 3 × 2." }
+      - id: m2
+        title: Veiller plutôt que régner
+        tours:
+          axelle:
+            - { id: ch18-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Deux yeux d'un bleu profond s'ouvrirent. » ?", choices: ["d'un bleu profond", "s'ouvrirent", "Deux yeux", "bleu", "profond"], answer: "Deux yeux", hint: "Qu'est-ce qui s'ouvre dans la brume ?" }
+            - { id: ch18-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 13 − 6.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "13 − 6 = 7." }
+          maelle:
+            - { id: ch18-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « importante » dans « une distinction importante » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la distinction entre régner et veiller." }
+            - { id: ch18-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 392 ÷ 7.", choices: ["52", "54", "56", "58", "60"], answer: "56", hint: "7 × 56 = 392." }
+          rafaelle:
+            - { id: ch18-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Je veille sur elle, plutôt que je ne règne. » : que révèle cette phrase sur la façon dont la Reine conçoit son rôle ?", choices: ["qu'elle se voit comme une protectrice plutôt que comme une souveraine autoritaire", "qu'elle n'a aucune responsabilité sur la brume", "qu'elle déteste la brume qui l'entoure", "qu'elle préfère commander sans jamais protéger", "qu'elle ignore totalement ce qui se passe sur son plateau"], answer: "qu'elle se voit comme une protectrice plutôt que comme une souveraine autoritaire", hint: "Relis bien sa réponse à Maelle." }
+            - { id: ch18-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13² − 100.", choices: ["59", "63", "65", "69", "73"], answer: "69", hint: "169 − 100." }
+      - id: m3
+        title: Le vent du plateau
+        tours:
+          axelle:
+            - { id: ch18-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 6 pierres sur le plateau, et 3 de plus apparaissent dans la brume. Combien de pierres en tout ?", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "6 + 3." }
+            - { id: ch18-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi fait-il souvent plus froid et plus venteux en haute altitude qu'en plaine ?", choices: ["l'air y est plus fin et retient moins bien la chaleur", "il fait toujours plus chaud en altitude", "le vent n'existe jamais en montagne", "cela n'a aucune explication connue", "parce que les nuages réchauffent toujours l'air"], answer: "l'air y est plus fin et retient moins bien la chaleur", hint: "Pense à la température en haute montagne, loin au-dessus des nuages." }
+          maelle:
+            - { id: ch18-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 46 × 4.", choices: ["178", "182", "184", "186", "190"], answer: "184", hint: "46 × 4 = 50 × 4 − 4 × 4." }
+            - { id: ch18-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi certains lieux naturels impressionnants inspiraient-ils, autrefois, un profond respect chez les voyageurs ?", choices: ["leur grandeur et leur mystère rappelaient la petitesse des humains face à la nature", "parce que ces lieux n'existaient pas vraiment", "parce que c'était toujours interdit d'y aller", "cela n'a jamais inspiré aucun respect", "parce que les lieux impressionnants étaient toujours dangereux"], answer: "leur grandeur et leur mystère rappelaient la petitesse des humains face à la nature", hint: "Pense à l'effet que produit la Reine sur les trois sœurs." }
+          rafaelle:
+            - { id: ch18-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x + 4 = 39.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "5x = 35." }
+            - { id: ch18-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Le vent (souffler) doucement entre les pierres. »", choices: ["a soufflé", "soufflait", "soufflera", "souffle", "soufflant"], answer: "a soufflé", hint: "Passé composé = avoir + participe passé." }
+      - id: m4
+        title: Premières impressions
+        tours:
+          axelle:
+            - { id: ch18-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 3.", choices: ["24", "25", "27", "29", "30"], answer: "27", hint: "9 × 3 = 9 + 9 + 9." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch18-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 235 − 88.", choices: ["140", "144", "147", "149", "152"], answer: "147", hint: "235 − 90 + 2." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch18-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « La reina flota sobre las nubes. »", choices: ["La reine marche sur les nuages.", "La reine flotte au-dessus des nuages.", "La reine dort dans les nuages.", "La reine tombe des nuages.", "La reine cache les nuages."], answer: "La reine flotte au-dessus des nuages.", hint: "« Flota sobre » = flotte au-dessus." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu de la révérence : chaque sœur invente une façon différente de saluer respectueusement une reine imaginaire, sans se moquer, puis les deux autres votent pour la révérence la plus sincère."
+    closing:
+      - { who: narrateur, text: "Le vent se calmait doucement sur le plateau, et la Reine de Brume, toujours immobile, observait les trois sœurs avec une patience qui semblait n'avoir aucune limite." }
+      - { who: reine, text: "Demain, je vous montrerai ce que l'on voit, depuis ce plateau, quand la brume se dissipe un instant. Peu de voyageurs ont eu ce privilège avant vous." }
+      - { who: rafaelle, text: "On sera là, avec grand plaisir." }
+      - { who: narrateur, text: "En s'éloignant pour la nuit, Axelle se retourna une dernière fois vers la silhouette immense, et crut voir, l'espace d'un instant, un sourire se dessiner au cœur de la brume." }
+    reward: "la découverte de la Reine de Brume et de son plateau suspendu"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Ce que révèle la brume
+    decor: Le même plateau, à l'aube, où la brume se dissipe lentement sous les premiers rayons du soleil, révélant un panorama vertigineux sur toute la chaîne de montagnes environnante.
+    opening:
+      - { who: narrateur, text: "Le lendemain, à l'aube, la Reine les attendait déjà, et sous les premiers rayons du soleil, la brume qui l'entourait commença à se dissiper lentement, révélant un panorama vertigineux sur toute la chaîne de montagnes." }
+      - { who: reine, text: "Regardez bien, petites voyageuses. Ce spectacle ne dure jamais longtemps, et peu de voyageurs ont la patience de l'attendre." }
+      - { who: maelle, text: "On voit tout le chemin qu'on a parcouru depuis le hall des cartes ! C'est incroyable !" }
+      - { who: reine, text: "Et un peu de ce qu'il vous reste à parcourir, aussi, si vous regardez plus loin encore, vers les sommets les plus hauts." }
+      - { who: axelle, text: "Ça paraît tellement loin, d'ici !" }
+      - { who: reine, text: "Tout paraît loin, vu d'en haut, petite Veilleuse. C'est pourtant bien plus proche qu'il n'y paraît, une fois qu'on avance, un pas après l'autre." }
+      - { who: rafaelle, text: "Pourquoi la brume se dissipe-t-elle si rarement, alors, si la vue est aussi belle une fois dégagée ?" }
+      - { who: reine, text: "Parce qu'une beauté trop facilement offerte perd, souvent, un peu de sa valeur. La brume protège ce panorama autant qu'elle le cache." }
+    manches:
+      - id: m1
+        title: La brume qui se dissipe
+        tours:
+          axelle:
+            - { id: ch18-j2-ax-m1a, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi la brume se dissipe-t-elle souvent au lever du soleil ?", choices: ["la chaleur du soleil réchauffe l'air et évapore les gouttelettes d'eau", "la brume disparaît toujours au hasard", "le soleil n'a aucun effet sur la brume", "cela n'a aucune explication connue", "la brume se transforme toujours en pluie le matin"], answer: "la chaleur du soleil réchauffe l'air et évapore les gouttelettes d'eau", hint: "Pense à l'effet des premiers rayons du soleil sur la brume." }
+            - { id: ch18-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 4.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "9 + 4 = 9 + 1 + 3." }
+          maelle:
+            - { id: ch18-j2-ma-m1a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « vertigineux » dans « un panorama vertigineux » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le panorama observé depuis le plateau." }
+            - { id: ch18-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 315 ÷ 5.", choices: ["58", "61", "63", "65", "68"], answer: "63", hint: "5 × 63 = 315." }
+          rafaelle:
+            - { id: ch18-j2-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Une beauté trop facilement offerte perd, souvent, un peu de sa valeur. » : que signifie cette phrase ?", choices: ["qu'une chose rare ou méritée prend souvent plus de valeur qu'une chose immédiate", "qu'il ne faut jamais rien montrer de beau à personne", "que la beauté n'a jamais aucune valeur", "que seule la brume a de la valeur sur ce plateau", "que la rareté n'a aucun lien avec la valeur"], answer: "qu'une chose rare ou méritée prend souvent plus de valeur qu'une chose immédiate", hint: "Relis bien ce que dit la Reine sur la brume qui protège le panorama." }
+            - { id: ch18-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14² − 130.", choices: ["56", "60", "64", "66", "70"], answer: "66", hint: "196 − 130." }
+      - id: m2
+        title: Tout le chemin parcouru
+        tours:
+          axelle:
+            - { id: ch18-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 7.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "14 − 7 = 7." }
+            - { id: ch18-j2-ax-m2b, subject: histoire-geo, level: 1, kind: qcm, prompt: "Pourquoi regarder, depuis un point élevé, le chemin déjà parcouru peut-il être rassurant pour un voyageur ?", choices: ["cela permet de mesurer concrètement les progrès réalisés", "parce que cela n'a jamais aucun effet", "parce que regarder en arrière fait toujours peur", "parce que le chemin parcouru n'a aucune importance", "cela n'a aucun rapport avec le voyage"], answer: "cela permet de mesurer concrètement les progrès réalisés", hint: "Pense à ce que ressent Maelle en voyant tout le chemin parcouru." }
+          maelle:
+            - { id: ch18-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 4.", choices: ["108", "112", "114", "116", "120"], answer: "116", hint: "30 × 4 − 4." }
+            - { id: ch18-j2-ma-m2b, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi une distance semble-t-elle souvent plus grande vue de loin que lorsqu'on la parcourt réellement, pas à pas ?", choices: ["parce qu'on ne perçoit pas, de loin, les étapes intermédiaires qui rapprochent progressivement du but", "parce que les distances changent réellement selon qui les regarde", "cela n'a aucune explication particulière", "parce qu'une distance vue de loin est toujours fausse", "parce que marcher rallonge toujours le chemin"], answer: "parce qu'on ne perçoit pas, de loin, les étapes intermédiaires qui rapprochent progressivement du but", hint: "Repense à ce que dit la Reine sur ce qui paraît loin, vu d'en haut." }
+          rafaelle:
+            - { id: ch18-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 7².", choices: ["28", "30", "32", "34", "36"], answer: "32", hint: "81 − 49." }
+            - { id: ch18-j2-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « El respeto abre muchas puertas. »", choices: ["Le respect ouvre bien des portes.", "Le respect ferme toutes les portes.", "Le respect cache les portes.", "Le respect brise les portes.", "Le respect peint les portes."], answer: "Le respect ouvre bien des portes.", hint: "« Abre muchas puertas » = ouvre bien des portes." }
+      - id: m3
+        title: Une beauté protégée
+        tours:
+          axelle:
+            - { id: ch18-j2-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « La brume protège ce panorama. » ?", choices: ["ce panorama", "protège", "La brume", "panorama", "ce"], answer: "La brume", hint: "Qu'est-ce qui protège le panorama ?" }
+            - { id: ch18-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 3.", choices: ["21", "22", "24", "26", "28"], answer: "24", hint: "8 × 3 = 8 + 8 + 8." }
+          maelle:
+            - { id: ch18-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 405 ÷ 5.", choices: ["75", "78", "80", "81", "85"], answer: "81", hint: "5 × 81 = 405." }
+            - { id: ch18-j2-ma-m3b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « rarement » dans « se dissipe si rarement » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adverbe", hint: "Il modifie le verbe « se dissipe »." }
+          rafaelle:
+            - { id: ch18-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 7/9 − 4/9.", choices: ["2/9", "3/9", "4/9", "5/9", "6/9"], answer: "3/9", hint: "7 − 4 = 3, même dénominateur." }
+            - { id: ch18-j2-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au présent : « Nous (attendre) patiemment que la brume se dissipe. »", choices: ["nous attendons", "nous attendez", "nous attendent", "nous attendions", "nous attendrons"], answer: "nous attendons", hint: "Nous : -ons." }
+      - id: m4
+        title: Contempler le panorama
+        tours:
+          axelle:
+            - { id: ch18-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 5.", choices: ["30", "32", "33", "35", "38"], answer: "35", hint: "7 × 5 = 7 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch18-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 190 − 66.", choices: ["114", "118", "122", "124", "128"], answer: "124", hint: "190 − 70 + 4." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch18-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « La niebla guarda la cima. »", choices: ["La brume garde le sommet.", "Le vent efface le sommet.", "Le soleil chauffe le sommet.", "La pluie lave le sommet.", "La nuit cache le sommet."], answer: "La brume garde le sommet.", hint: "« Guarda la cima » = garde le sommet." }
+            - { gen: maths.ranger }
+    pause: "Le jeu du panorama imaginé : chaque sœur ferme les yeux et décrit, à voix haute, ce qu'elle imagine voir tout en haut du prochain sommet, avant de rouvrir les yeux."
+    closing:
+      - { who: narrateur, text: "La brume se referma lentement autour de la Reine, comme un rideau tiré sur le spectacle qu'elle venait d'offrir, et le plateau retrouva son calme silencieux habituel." }
+      - { who: reine, text: "Demain, je vous demanderai quelque chose d'important. Réfléchissez, cette nuit, à la façon dont vous souhaitez honorer ce passage par mon royaume." }
+      - { who: maelle, text: "On y réfléchira sérieusement, c'est promis." }
+      - { who: narrateur, text: "En regagnant l'Arche pour la nuit, les trois sœurs restèrent longtemps silencieuses, encore marquées par la beauté fugace du panorama qu'elles venaient de contempler." }
+    reward: "la vue du panorama, rarement offerte par la Reine de Brume"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: Les voyageurs d'autrefois
+    decor: Un recoin du plateau où quelques pierres levées, usées par le temps, portent encore les traces à peine lisibles de noms et de symboles gravés par d'anciens voyageurs.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, la Reine les conduisit vers un recoin du plateau où quelques pierres levées, usées par le temps, portaient encore les traces à peine lisibles de noms et de symboles gravés." }
+      - { who: reine, text: "Voici ce qui reste de certains voyageurs venus avant vous. Tous n'ont pas su m'honorer comme il se devait, et certains l'ont payé d'un détour bien plus long que nécessaire." }
+      - { who: rafaelle, text: "Que leur est-il arrivé, à ceux qui ne vous ont pas honorée correctement ?" }
+      - { who: reine, text: "Rien de dramatique, petite Archiviste, rassurez-vous. Simplement, ma brume s'épaissit pour eux, et leur chemin s'allonge, le temps qu'ils comprennent ce qu'ils ont négligé." }
+      - { who: axelle, text: "Et ceux qui vous ont bien honorée, eux, qu'est-ce qui leur est arrivé ?" }
+      - { who: reine, text: "Leur chemin s'est trouvé, souvent, un peu plus clair, un peu plus court. La brume n'a jamais besoin d'être un obstacle, pour qui sait la traverser avec respect." }
+      - { who: maelle, text: "Ces pierres-là, tout au bord, semblent plus récentes que les autres. Qui les a gravées ?" }
+      - { who: reine, text: "Des voyageurs venus il n'y a pas si longtemps, petite Cartographe. Peut-être croiserez-vous leur chemin, un jour, plus haut dans la montagne." }
+    manches:
+      - id: m1
+        title: Des pierres gravées
+        tours:
+          axelle:
+            - { id: ch18-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 4 pierres levées d'un côté du plateau, et 3 de l'autre. Combien de pierres en tout ?", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "4 + 3." }
+            - { id: ch18-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Quelques pierres levées portaient des traces. » ?", choices: ["des traces", "portaient", "Quelques pierres levées", "levées", "quelques"], answer: "Quelques pierres levées", hint: "Qu'est-ce qui porte des traces ?" }
+          maelle:
+            - { id: ch18-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi gravait-on parfois, autrefois, son nom ou un symbole sur une pierre, lors d'un passage important ?", choices: ["pour laisser une trace durable de son passage", "parce que c'était toujours interdit ailleurs", "parce que la pierre s'effaçait toujours seule", "cela n'avait aucune utilité", "parce que graver était le seul loisir possible"], answer: "pour laisser une trace durable de son passage", hint: "Pense à ce que représentent ces pierres gravées pour les anciens voyageurs." }
+            - { id: ch18-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 92 + 58.", choices: ["140", "145", "148", "150", "152"], answer: "150", hint: "92 + 60 − 2." }
+          rafaelle:
+            - { id: ch18-j3-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi une conséquence symbolique, comme une brume qui s'épaissit, peut-elle être plus efficace qu'une punition sévère ?", choices: ["parce qu'elle invite à comprendre et à corriger, plutôt qu'à simplement punir", "parce qu'une conséquence symbolique n'a jamais aucun effet", "parce qu'une punition sévère est toujours préférable", "cela n'a aucun lien avec l'apprentissage", "parce que la brume ne change jamais rien au chemin"], answer: "parce qu'elle invite à comprendre et à corriger, plutôt qu'à simplement punir", hint: "Repense à ce que dit la Reine sur les voyageurs qui ne l'ont pas honorée." }
+            - { id: ch18-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 16 × 6.", choices: ["90", "92", "94", "96", "98"], answer: "96", hint: "16 × 6 = 16 × 3 × 2." }
+      - id: m2
+        title: Un chemin qui s'allonge ou se raccourcit
+        tours:
+          axelle:
+            - { id: ch18-j3-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 + 6.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "7 + 6 = 7 + 7 − 1." }
+            - { id: ch18-j3-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi une brume très épaisse peut-elle rendre un chemin de montagne plus long à parcourir ?", choices: ["elle réduit la visibilité et oblige à avancer plus prudemment, voire à faire des détours", "elle n'a jamais aucun effet sur la marche", "la brume rend toujours le chemin plus court", "cela n'a aucune explication particulière", "une brume épaisse accélère toujours la marche"], answer: "elle réduit la visibilité et oblige à avancer plus prudemment, voire à faire des détours", hint: "Pense à l'effet d'une brume épaisse sur la visibilité d'un chemin." }
+          maelle:
+            - { id: ch18-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 324 ÷ 4.", choices: ["76", "78", "80", "81", "84"], answer: "81", hint: "4 × 81 = 324." }
+            - { id: ch18-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « récentes » dans « plus récentes que les autres » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit certaines pierres du plateau." }
+          rafaelle:
+            - { id: ch18-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 5².", choices: ["46", "50", "54", "56", "60"], answer: "56", hint: "81 − 25." }
+            - { id: ch18-j3-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Hablemos con humildad. »", choices: ["Parlons avec humilité.", "Taisons-nous un moment.", "Crions très fort.", "Chantons ensemble.", "Partons tout de suite."], answer: "Parlons avec humilité.", hint: "« Con humildad » = avec humilité." }
+      - id: m3
+        title: Des voyageurs à venir
+        tours:
+          axelle:
+            - { id: ch18-j3-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire d'« ancien » ?", choices: ["récent", "lointain", "usé", "gravé", "lisible"], answer: "récent", hint: "Le contraire de ce que sont les pierres les plus vieilles." }
+            - { id: ch18-j3-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 16 − 9.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "16 − 6 = 10, puis − 3." }
+          maelle:
+            - { id: ch18-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 57 × 4.", choices: ["218", "222", "224", "226", "228"], answer: "228", hint: "57 × 4 = 60 × 4 − 3 × 4." }
+            - { id: ch18-j3-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi peut-on dire qu'un lieu de passage, comme ce plateau, relie des voyageurs qui ne se rencontreront peut-être jamais ?", choices: ["parce qu'ils empruntent tous, à des moments différents, le même chemin et les mêmes épreuves", "parce que tous les voyageurs se rencontrent toujours", "cela n'a aucun lien entre les voyageurs", "parce qu'un lieu de passage n'a jamais aucune importance", "parce que les voyageurs n'empruntent jamais le même chemin"], answer: "parce qu'ils empruntent tous, à des moments différents, le même chemin et les mêmes épreuves", hint: "Repense à ce que dit la Reine sur les voyageurs récents que les sœurs pourraient croiser." }
+          rafaelle:
+            - { id: ch18-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 6x − 5 = 31.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "6x = 36." }
+            - { id: ch18-j3-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« La brume n'a jamais besoin d'être un obstacle, pour qui sait la traverser avec respect. » : que signifie cette phrase ?", choices: ["que la brume est toujours un danger, quoi qu'on fasse", "qu'une difficulté peut devenir surmontable si on l'aborde avec la bonne attitude", "que la brume n'existe pas vraiment", "qu'il ne faut jamais respecter quoi que ce soit", "que seule la force permet de traverser la brume"], answer: "qu'une difficulté peut devenir surmontable si on l'aborde avec la bonne attitude", hint: "Relis bien la phrase, en lien avec le respect évoqué par la Reine." }
+      - id: m4
+        title: Honorer le passage
+        tours:
+          axelle:
+            - { id: ch18-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 9.", choices: ["48", "50", "52", "54", "56"], answer: "54", hint: "6 × 9 = 6 × 10 − 6." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch18-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 310 − 156.", choices: ["150", "154", "156", "158", "160"], answer: "154", hint: "310 − 160 + 4." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch18-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Su silencio dice mucho. »", choices: ["Son silence en dit long.", "Son silence est vide.", "Son silence fait peur.", "Son silence est bref.", "Son silence est joyeux."], answer: "Son silence en dit long.", hint: "« Dice mucho » = en dit long." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu des traces laissées : chaque sœur imagine, à voix haute, le symbole ou le mot qu'elle graverait sur une pierre de ce plateau, si elle pouvait y laisser une trace de son passage."
+    closing:
+      - { who: narrateur, text: "La Reine observa longuement les trois sœurs tandis qu'elles s'éloignaient des pierres gravées, un léger frémissement parcourant sa silhouette de brume, comme une forme de satisfaction silencieuse." }
+      - { who: reine, text: "Demain, il faudra répondre à ma question. Prenez cette dernière nuit pour être certaines de votre choix." }
+      - { who: rafaelle, text: "On y réfléchira sérieusement, cette nuit encore." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs regagnaient l'Arche, Nilo s'arrêta un instant devant l'une des pierres les plus anciennes, la reniflant longuement avant de les rattraper, pensif." }
+    reward: "l'histoire des voyageurs d'autrefois, gravée dans la pierre"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Se préparer à répondre
+    decor: Le plateau, dans la lumière dorée du crépuscule, où les trois sœurs discutent longuement, à l'écart de la Reine, pour décider ensemble de la meilleure façon d'honorer leur passage.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, les trois sœurs s'installèrent à l'écart, dans la lumière dorée du crépuscule, pour discuter longuement de la meilleure façon d'honorer leur passage par le royaume de la Reine." }
+      - { who: axelle, text: "Je pense qu'on devrait juste lui montrer qu'on la respecte vraiment, sans se compliquer la vie." }
+      - { who: rafaelle, text: "Ou alors, on pourrait lui offrir quelque chose de concret, pour que ce soit plus clair, plus sûr." }
+      - { who: maelle, text: "Et si on lui racontait, simplement, pourquoi on est là ? Elle a dit qu'elle appréciait l'honnêteté." }
+      - { who: narrateur, text: "La Reine, qui observait la scène de loin sans intervenir, s'approcha doucement, sa silhouette de brume flottant au-dessus des pierres." }
+      - { who: reine, text: "Je vous entends discuter depuis un moment déjà. Ce débat, en lui-même, me plaît davantage que n'importe quelle réponse que vous pourriez me donner précipitamment." }
+      - { who: axelle, text: "Pourquoi ça, exactement ?" }
+      - { who: reine, text: "Parce qu'il prouve que vous prenez ce passage au sérieux, petite Veilleuse. C'est déjà, en soi, une forme d'hommage que bien peu savent rendre." }
+    manches:
+      - id: m1
+        title: Trois avis différents
+        tours:
+          axelle:
+            - { id: ch18-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « précipitamment » ?", choices: ["calmement", "rapidement", "fortement", "silencieusement", "lentement"], answer: "calmement", hint: "Le contraire de ce qui est fait trop vite, sans réflexion." }
+            - { id: ch18-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 6.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "8 + 6 = 8 + 8 − 2." }
+          maelle:
+            - { id: ch18-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi discuter de plusieurs idées différentes avant de décider peut-il aboutir à une meilleure décision finale ?", choices: ["parce que cela permet de considérer plusieurs points de vue avant de choisir", "parce qu'une seule idée suffit toujours", "cela n'a jamais aucun effet sur une décision", "parce que discuter retarde toujours inutilement une décision", "parce qu'il ne faut jamais écouter l'avis des autres"], answer: "parce que cela permet de considérer plusieurs points de vue avant de choisir", hint: "Pense à ce qui plaît à la Reine dans le débat des trois sœurs." }
+            - { id: ch18-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 630 − 285.", choices: ["335", "340", "343", "345", "348"], answer: "345", hint: "630 − 290 + 5." }
+          rafaelle:
+            - { id: ch18-j4-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi le simple fait de prendre une décision au sérieux peut-il, parfois, compter davantage que la décision elle-même ?", choices: ["parce que l'attention et la réflexion accordées reflètent le respect porté à la situation", "parce que la décision elle-même n'a jamais aucune importance", "parce que prendre son temps retarde toujours inutilement les choses", "cela n'a aucun lien avec le respect", "parce qu'une décision rapide est toujours préférable"], answer: "parce que l'attention et la réflexion accordées reflètent le respect porté à la situation", hint: "Repense à ce que dit la Reine sur le débat des trois sœurs." }
+            - { id: ch18-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 12² − 44.", choices: ["96", "100", "104", "108", "112"], answer: "100", hint: "144 − 44." }
+      - id: m2
+        title: Honnêteté ou offrande
+        tours:
+          axelle:
+            - { id: ch18-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 16 − 7.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "16 − 6 = 10, puis − 1." }
+            - { id: ch18-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi une parole sincère peut-elle, parfois, avoir plus de valeur qu'un objet offert ?", choices: ["parce qu'elle engage réellement la personne qui la prononce", "parce qu'une parole sincère n'a jamais aucune valeur", "parce qu'un objet vaut toujours plus qu'une parole", "cela n'a aucun lien avec la sincérité", "parce qu'une parole disparaît toujours instantanément"], answer: "parce qu'elle engage réellement la personne qui la prononce", hint: "Pense à ce que la Reine semble valoriser le plus, depuis le début du chapitre." }
+          maelle:
+            - { id: ch18-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 38 × 5.", choices: ["180", "185", "188", "190", "195"], answer: "190", hint: "40 × 5 − 2 × 5." }
+            - { id: ch18-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « sérieux » dans « au sérieux » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "nom", hint: "C'est la façon dont les sœurs prennent ce passage." }
+          rafaelle:
+            - { id: ch18-j4-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 7² + 2 × 10.", choices: ["59", "63", "66", "69", "73"], answer: "69", hint: "49 + 20." }
+            - { id: ch18-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Parlons avec humilité » en espagnol ?", choices: ["Hablemos con humildad.", "Su silencio dice mucho.", "La niebla guarda la cima.", "La reina flota sobre las nubes.", "El respeto abre muchas puertas."], answer: "Hablemos con humildad.", hint: "Relis la phrase du jour 3." }
+      - id: m3
+        title: Le respect comme hommage
+        tours:
+          axelle:
+            - { id: ch18-j4-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 10 − 3.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "10 − 3 = 7." }
+            - { id: ch18-j4-ax-m3b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « La Reine s'approcha doucement. » ?", choices: ["doucement", "s'approcha", "La Reine", "la", "reine"], answer: "La Reine", hint: "Qui s'approche doucement ?" }
+          maelle:
+            - { id: ch18-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 441 ÷ 7.", choices: ["57", "61", "63", "65", "67"], answer: "63", hint: "7 × 63 = 441." }
+            - { id: ch18-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi certains gestes simples, comme une révérence, peuvent-ils tenir lieu d'hommage véritable ?", choices: ["parce qu'ils expriment, sans mot, un respect sincère envers quelqu'un ou quelque chose", "parce qu'un geste simple n'a jamais aucune signification", "parce que seuls les objets précieux comptent comme hommage", "cela n'a aucun rapport avec le respect", "parce qu'une révérence est toujours une moquerie"], answer: "parce qu'ils expriment, sans mot, un respect sincère envers quelqu'un ou quelque chose", hint: "Pense aux trois options envisagées par les sœurs pour honorer leur passage." }
+          rafaelle:
+            - { id: ch18-j4-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 9x − 6 = 57.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "9x = 63." }
+            - { id: ch18-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« C'est déjà, en soi, une forme d'hommage que bien peu savent rendre. » : à quoi « une forme d'hommage » fait-elle référence dans le texte ?", choices: ["au fait de prendre la décision au sérieux", "à un cadeau matériel précis", "à une chanson précise", "à la brume elle-même", "à la montagne tout entière"], answer: "au fait de prendre la décision au sérieux", hint: "Relis bien la phrase complète de la Reine, juste avant." }
+      - id: m4
+        title: Se mettre d'accord
+        tours:
+          axelle:
+            - { id: ch18-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 4.", choices: ["28", "30", "32", "34", "36"], answer: "32", hint: "8 × 4 = 8 × 2 × 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch18-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 285 − 119.", choices: ["160", "164", "166", "168", "170"], answer: "166", hint: "285 − 120 + 1." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch18-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15 × 7.", choices: ["98", "100", "103", "105", "108"], answer: "105", hint: "15 × 7 = 15 × 7." }
+            - { gen: maths.duree }
+    pause: "Le jeu du vote silencieux : chaque sœur lève, sans un mot, un, deux ou trois doigts pour indiquer laquelle des trois idées discutées lui semble la plus juste, puis elles comparent leurs choix."
+    closing:
+      - { who: narrateur, text: "La nuit tomba doucement sur le plateau, et les trois sœurs, toujours plongées dans leur réflexion, sentirent peu à peu leur décision se dessiner plus clairement entre elles." }
+      - { who: reine, text: "Je sens, à travers ma brume, que vous approchez d'une réponse. Prenez cette dernière nuit pour en être tout à fait certaines." }
+      - { who: rafaelle, text: "On le sera, demain matin. Promis." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs regagnaient l'Arche pour la nuit, la brume du plateau sembla, l'espace d'un instant, s'épaissir légèrement autour d'elles, comme pour les envelopper d'une attention particulière." }
+    reward: "une réflexion commune presque achevée, à la veille de la décision"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: L'hommage à la Reine
+    decor: Le plateau suspendu, baigné par la première lumière du matin, où la Reine attend, immobile, que les trois sœurs viennent enfin répondre à sa question.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, la Reine les attendait, immobile au centre du plateau, baigné par la première lumière du matin, sa silhouette de brume plus calme que jamais." }
+      - { who: reine, text: "On me demande rarement la permission avant de traverser mon royaume. Vous, pourtant, vous l'avez fait. Comment comptez-vous honorer ce passage ?" }
+      - { who: nilo, text: "Allez, les filles. Après tout ce qu'on a appris cette semaine, cette réponse-là, elle sera la bonne, quelle qu'elle soit." }
+    manches:
+      - id: m1
+        title: Ce que le plateau a appris
+        intro: "La Reine interroge chaque sœur sur tout ce que cette semaine sur son plateau lui a appris."
+        tours:
+          axelle:
+            - { id: ch18-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on un épais nuage qui touche le sol ou le sommet d'une montagne ?", choices: ["la brume", "la pluie", "la neige", "la grêle", "le vent"], answer: "la brume", hint: "C'est le mot du titre de ce chapitre." }
+            - { id: ch18-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 + 6.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "9 + 6 = 9 + 9 − 3." }
+          maelle:
+            - { id: ch18-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi la brume se dissipe-t-elle souvent au lever du soleil, selon ce que tu as appris cette semaine ?", choices: ["la chaleur du soleil réchauffe l'air et évapore les gouttelettes d'eau", "la brume disparaît toujours au hasard", "le soleil n'a aucun effet sur la brume", "cela n'a aucune explication connue", "la brume se transforme toujours en pluie le matin"], answer: "la chaleur du soleil réchauffe l'air et évapore les gouttelettes d'eau", hint: "Repense à ta propre question du deuxième jour." }
+            - { id: ch18-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 34 × 4.", choices: ["130", "132", "134", "136", "138"], answer: "136", hint: "34 × 4 = 35 × 4 − 4." }
+          rafaelle:
+            - { id: ch18-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que la Reine valorise davantage l'attitude des voyageurs que leurs offrandes ?", choices: ["parce qu'elle insiste surtout sur le respect, l'honnêteté et le sérieux de leur démarche", "parce que la Reine n'accepte jamais aucun voyageur", "parce que seules les offrandes matérielles comptent pour elle", "parce qu'elle n'a aucune préférence particulière", "parce qu'elle refuse systématiquement toute visite"], answer: "parce qu'elle insiste surtout sur le respect, l'honnêteté et le sérieux de leur démarche", hint: "Repense à ses réactions tout au long de la semaine." }
+            - { id: ch18-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 6/7 − 2/7.", choices: ["2/7", "3/7", "4/7", "5/7", "6/7"], answer: "4/7", hint: "6 − 2 = 4, même dénominateur." }
+      - id: m2
+        title: Avant de répondre
+        intro: "Il faut relier tout ce que la semaine a appris pour choisir, vraiment, comment honorer ce passage."
+        tours:
+          axelle:
+            - { id: ch18-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux une attitude faite de respect et de retenue, sans arrogance ?", choices: ["humble", "bruyante", "pressée", "indifférente", "distraite"], answer: "humble", hint: "C'est l'esprit du mot espagnol « humildad » vu le troisième jour." }
+            - { id: ch18-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 17 − 9.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "17 − 7 = 10, puis − 2." }
+          maelle:
+            - { id: ch18-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi ce plateau suspendu, gardé par la Reine de Brume, a-t-il une importance particulière dans le voyage des trois sœurs ?", choices: ["il n'a aucune importance réelle", "il leur apprend le respect, la patience et la valeur d'un passage mérité", "il les empêche d'avancer vers le sommet", "il se trouve très loin des montagnes", "personne n'y passe jamais vraiment"], answer: "il leur apprend le respect, la patience et la valeur d'un passage mérité", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de la Reine." }
+            - { id: ch18-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 480 ÷ 6.", choices: ["70", "75", "78", "80", "85"], answer: "80", hint: "6 × 80 = 480." }
+          rafaelle:
+            - { id: ch18-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10² − 36.", choices: ["58", "62", "64", "66", "70"], answer: "64", hint: "100 − 36." }
+            - { id: ch18-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Comment comptez-vous honorer ce passage ? » : quel est le sujet de cette phrase ?", choices: ["ce passage", "comptez-vous", "honorer", "comment", "vous"], answer: "vous", hint: "À qui la Reine pose-t-elle cette question ?" }
+      - id: m3
+        title: Le Chant du Plateau
+        intro: "Le plateau lui-même semble répondre : la brume de la Reine ne se calme vraiment que si les trois sœurs trouvent, ensemble, le bon rythme."
+        tours:
+          axelle:
+            - { id: ch18-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          maelle:
+            - { id: ch18-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, noire, noire." }
+          rafaelle:
+            - { id: ch18-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : ronde." }
+    concert:
+      measures:
+        axelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        maelle: { given: [2, 1], missing: 1, prompt: "Blanche, noire, noire" }
+        rafaelle: { given: [], missing: 4, prompt: "Ronde" }
+    pause: "Le dernier regard sur le plateau : chacune choisit, avant de partir, le moment de la semaine qui l'a le plus marquée auprès de la Reine, et dit pourquoi à voix haute."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant du Plateau se répandit dans l'air limpide du matin, et la Reine de Brume, d'un seul mouvement lent, inclina sa tête immense vers les trois sœurs." }
+      - { who: reine, text: "Votre réponse m'honore bien plus que vous ne l'imaginez. Allez, maintenant, continuez votre chemin l'esprit tranquille." }
+      - { who: rafaelle, text: "Merci, Votre Majesté de Brume. Pour le plateau, pour le panorama, et pour nous avoir appris à prendre le temps de bien faire." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs quittaient le plateau, la brume de la Reine se dissipa doucement devant elles, ouvrant un chemin clair et net vers les sommets qui les attendaient encore." }
+      - { who: nilo, text: "Bon. Encore une étape de passée, et un chemin dégagé pour la suite. Je ne vais pas m'en plaindre, pour une fois." }
+      - { who: axelle, text: "On a toujours fini par trouver notre chemin, jusqu'ici. Et cette fois, en plus, on l'a trouvé un peu plus clair que d'habitude." }
+    reward: "le chemin dégagé par la Reine de Brume, et son respect gagné"
