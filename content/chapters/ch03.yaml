@@ -66,49 +66,49 @@ days:
         intro: "Pour entrer, il faut se repérer dans les ruelles sans portes."
         tours:
           axelle:
-            - { id: ch03-j1-ax-m1a, subject: maths, level: 2, kind: qcm, prompt: "La maison est à gauche de l'église. L'église est donc à… ?", choices: ["droite de la maison", "gauche de la maison", "dans la maison"], answer: "droite de la maison", hint: "Si tu échanges les deux, la gauche devient la droite." }
-            - { id: ch03-j1-ax-m1b, subject: maths, level: 3, kind: qcm, prompt: "Sur un plan, la fontaine est en haut à droite. Où la cherches-tu ?", choices: ["dans le coin en haut à droite", "dans le coin en bas à gauche", "au milieu"], answer: "dans le coin en haut à droite", hint: "Haut et droite : regarde le coin." }
+            - { id: ch03-j1-ax-m1a, subject: maths, level: 2, kind: qcm, prompt: "La maison est à gauche de l'église. L'église est donc à… ?", choices: ["gauche de la maison", "droite de la maison", "dans la maison", "au-dessus de la maison", "loin de la maison"], answer: "droite de la maison", hint: "Si tu échanges les deux, la gauche devient la droite." }
+            - { id: ch03-j1-ax-m1b, subject: maths, level: 3, kind: qcm, prompt: "Sur un plan, la fontaine est en haut à droite. Où la cherches-tu ?", choices: ["dans le coin en bas à gauche", "dans le coin en haut à gauche", "dans le coin en haut à droite", "dans le coin en bas à droite", "au milieu"], answer: "dans le coin en haut à droite", hint: "Haut et droite : regarde le coin." }
           maelle:
-            - { id: ch03-j1-ma-m1a, subject: maths, level: 2, kind: nombre, prompt: "Sur le plan, 1 cm représente 10 m. Combien de mètres représentent 4 cm ?", answer: 40, hint: "4 fois 10 m." }
-            - { id: ch03-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Deux rues qui se coupent à angle droit sont…", choices: ["perpendiculaires", "parallèles", "courbes"], answer: "perpendiculaires", hint: "Elles forment un coin d'équerre." }
+            - { id: ch03-j1-ma-m1a, subject: maths, level: 2, kind: qcm, prompt: "Sur le plan, 1 cm représente 10 m. Combien de mètres représentent 4 cm ?", choices: ["14", "40", "4", "400", "44"], answer: "40", hint: "4 fois 10 m." }
+            - { id: ch03-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Deux rues qui se coupent à angle droit sont…", choices: ["parallèles", "obliques", "perpendiculaires", "superposées", "courbes"], answer: "perpendiculaires", hint: "Elles forment un coin d'équerre." }
           rafaelle:
-            - { id: ch03-j1-ra-m1a, subject: maths, level: 2, kind: nombre, prompt: "Sur un quadrillage, la tour est au point (3 ; 5). Quelle est son abscisse ?", answer: 3, hint: "L'abscisse est le premier nombre, celui de l'axe horizontal." }
-            - { id: ch03-j1-ra-m1b, subject: maths, level: 2, kind: nombre, prompt: "Échelle 1/1000 : 5 cm sur la carte représentent combien de mètres ?", answer: 50, hint: "5 cm × 1 000 = 5 000 cm." }
+            - { id: ch03-j1-ra-m1a, subject: maths, level: 2, kind: qcm, prompt: "Sur un quadrillage, la tour est au point (3 ; 5). Quelle est son abscisse ?", choices: ["5", "8", "3", "2", "35"], answer: "3", hint: "L'abscisse est le premier nombre, celui de l'axe horizontal." }
+            - { id: ch03-j1-ra-m1b, subject: maths, level: 2, kind: qcm, prompt: "Échelle 1/1000 : 5 cm sur la carte représentent combien de mètres ?", choices: ["50", "5 000", "500", "5", "0,5"], answer: "50", hint: "5 cm × 1 000 = 5 000 cm." }
       - id: m2
         title: Les nombres des remparts
         tours:
           axelle:
-            - { id: ch03-j1-ax-m2a, subject: maths, level: 1, kind: nombre, prompt: "Quel nombre vient juste avant 40 ?", answer: 39, hint: "Recule d'un pas." }
-            - { id: ch03-j1-ax-m2b, subject: maths, level: 1, kind: nombre, prompt: "Calcule 9 + 6.", answer: 15, hint: "9 + 1 = 10, puis encore 5." }
+            - { id: ch03-j1-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Quel nombre vient juste avant 40 ?", choices: ["41", "39", "38", "30", "4"], answer: "39", hint: "Recule d'un pas." }
+            - { id: ch03-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 6.", choices: ["16", "14", "15", "3", "13"], answer: "15", hint: "9 + 1 = 10, puis encore 5." }
           maelle:
-            - { id: ch03-j1-ma-m2a, subject: maths, level: 1, kind: nombre, prompt: "Calcule 7 × 6.", answer: 42, hint: "6 × 7 = 42." }
-            - { id: ch03-j1-ma-m2b, subject: maths, level: 1, kind: nombre, prompt: "Écris en chiffres : 5 000 + 300 + 7.", answer: 5307, hint: "Pas de dizaines : mets un zéro." }
+            - { id: ch03-j1-ma-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 × 6.", choices: ["36", "42", "13", "48", "49"], answer: "42", hint: "6 × 7 = 42." }
+            - { id: ch03-j1-ma-m2b, subject: maths, level: 1, kind: qcm, prompt: "Écris en chiffres : 5 000 + 300 + 7.", choices: ["5 370", "5 307", "537", "5 037", "5 300"], answer: "5 307", hint: "Pas de dizaines : mets un zéro." }
           rafaelle:
-            - { id: ch03-j1-ra-m2a, subject: maths, level: 1, kind: nombre, prompt: "Calcule 18 × 5.", answer: 90, hint: "18 × 10 ÷ 2." }
-            - { id: ch03-j1-ra-m2b, subject: maths, level: 1, kind: nombre, prompt: "Calcule 4,5 + 3,8.", answer: 8.3, hint: "Aligne les virgules." }
+            - { id: ch03-j1-ra-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 18 × 5.", choices: ["95", "90", "13", "85", "23"], answer: "90", hint: "18 × 10 ÷ 2." }
+            - { id: ch03-j1-ra-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 4,5 + 3,8.", choices: ["7,3", "8,3", "9,3", "12,3", "8,13"], answer: "8,3", hint: "Aligne les virgules." }
       - id: m3
         title: Les mots de la ville
         tours:
           axelle:
-            - { id: ch03-j1-ax-m3a, subject: francais, level: 1, kind: court, prompt: "Quelle est la première lettre de « Thessaly » ?", answer: "T", hint: "C'est une majuscule." }
-            - { id: ch03-j1-ax-m3b, subject: francais, level: 2, kind: court, prompt: "« thessaly marche » : quel mot doit prendre une majuscule ?", answer: "Thessaly", hint: "C'est un prénom." }
+            - { id: ch03-j1-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quelle est la première lettre de « Thessaly » ?", choices: ["H", "T", "t", "S", "Y"], answer: "T", hint: "C'est une majuscule." }
+            - { id: ch03-j1-ax-m3b, subject: francais, level: 2, kind: qcm, prompt: "« thessaly marche » : quel mot doit prendre une majuscule ?", choices: ["marche", "Thessaly", "thessaly", "La", "Marche"], answer: "Thessaly", hint: "C'est un prénom." }
           maelle:
-            - { id: ch03-j1-ma-m3a, subject: francais, level: 1, kind: qcm, prompt: "« La vieille ville » : quelle est la nature de « vieille » ?", choices: ["adjectif", "nom", "verbe"], answer: "adjectif", hint: "Il dit comment est la ville." }
-            - { id: ch03-j1-ma-m3b, subject: francais, level: 3, kind: court, prompt: "Accorde : « Les maisons (ancien) ».", answer: "anciennes", accept: ["les maisons anciennes"], hint: "Maisons : féminin pluriel." }
+            - { id: ch03-j1-ma-m3a, subject: francais, level: 1, kind: qcm, prompt: "« La vieille ville » : quelle est la nature de « vieille » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il dit comment est la ville." }
+            - { id: ch03-j1-ma-m3b, subject: francais, level: 3, kind: qcm, prompt: "Accorde : « Les maisons (ancien) ».", choices: ["ancien", "anciennes", "anciens", "ancienne", "anciennent"], answer: "anciennes", hint: "Maisons : féminin pluriel." }
           rafaelle:
-            - { id: ch03-j1-ra-m3a, subject: francais, level: 1, kind: qcm, prompt: "« Thessaly chante doucement. » Quelle est la nature de « doucement » ?", choices: ["adverbe", "adjectif", "nom"], answer: "adverbe", hint: "Il dit comment elle chante, et il ne s'accorde pas." }
+            - { id: ch03-j1-ra-m3a, subject: francais, level: 1, kind: qcm, prompt: "« Thessaly chante doucement. » Quelle est la nature de « doucement » ?", choices: ["adjectif", "nom", "adverbe", "verbe", "pronom"], answer: "adverbe", hint: "Il dit comment elle chante, et il ne s'accorde pas." }
             - { id: ch03-j1-ra-m3b, subject: francais, level: 2, kind: libre, validation: soeurs, prompt: "Raconte en deux phrases ce que tu vois en entrant dans la ville sans portes." }
       - id: m4
         title: Le Défi des remparts
         tours:
           axelle:
-            - { id: ch03-j1-ax-m4a, subject: maths, level: 2, kind: nombre, prompt: "Compte de 5 en 5 : 0, 5, 10, …, 20. Quel nombre manque ?", answer: 15, hint: "10 + 5." }
+            - { id: ch03-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Compte de 5 en 5 : 0, 5, 10, …, 20. Quel nombre manque ?", choices: ["10", "15", "18", "25", "12"], answer: "15", hint: "10 + 5." }
             - { gen: maths.comparer }
           maelle:
-            - { id: ch03-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Compare : 7 108 … 7 180", choices: ["<", ">", "="], answer: "<", hint: "Regarde le chiffre des dizaines." }
+            - { id: ch03-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Compare : 7 108 … 7 180", choices: [">", "≤", "<", "≥", "="], answer: "<", hint: "Regarde le chiffre des dizaines." }
             - { gen: maths.ranger }
           rafaelle:
-            - { id: ch03-j1-ra-m4a, subject: espagnol, level: 2, kind: court, prompt: "Traduis : « la ciudad ».", answer: "la ville", accept: ["ville"], hint: "Regarde la phrase du jour." }
+            - { id: ch03-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « la ciudad ».", choices: ["la maison", "la ville", "la rue", "la mer", "la nuit"], answer: "la ville", hint: "Regarde la phrase du jour." }
             - { gen: maths.arrondi }
     pause: "Les remparts sont hauts : marchez sur la pointe des pieds comme des gardes, puis accroupissez-vous comme des espions, trois fois !"
     closing:
@@ -138,50 +138,50 @@ days:
         title: Les pièces et les billets
         tours:
           axelle:
-            - { id: ch03-j2-ax-m1a, subject: maths, level: 1, kind: nombre, prompt: "Une pomme coûte 2 €, une poire coûte 3 €. Combien faut-il payer pour les deux ?", answer: 5, hint: "2 + 3." }
-            - { id: ch03-j2-ax-m1b, subject: maths, level: 2, kind: nombre, prompt: "Combien y a-t-il de centimes dans 1 euro ?", answer: 100, hint: "C'est un nombre rond à trois chiffres." }
+            - { id: ch03-j2-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Une pomme coûte 2 €, une poire coûte 3 €. Combien faut-il payer pour les deux ?", choices: ["1 €", "5 €", "6 €", "23 €", "4 €"], answer: "5 €", hint: "2 + 3." }
+            - { id: ch03-j2-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Combien y a-t-il de centimes dans 1 euro ?", choices: ["10", "100", "1 000", "20", "50"], answer: "100", hint: "C'est un nombre rond à trois chiffres." }
           maelle:
-            - { id: ch03-j2-ma-m1a, subject: maths, level: 2, kind: nombre, prompt: "Un fromage coûte 4,50 € et un pain 1,20 €. Combien coûtent-ils ensemble ?", answer: 5.7, hint: "4,50 + 1,20, aligne les virgules." }
-            - { id: ch03-j2-ma-m1b, subject: maths, level: 3, kind: nombre, prompt: "Tu paies 6,35 € avec un billet de 10 €. Combien le marchand te rend-il ?", answer: 3.65, hint: "Complète de 6,35 à 7, puis de 7 à 10." }
+            - { id: ch03-j2-ma-m1a, subject: maths, level: 2, kind: qcm, prompt: "Un fromage coûte 4,50 € et un pain 1,20 €. Combien coûtent-ils ensemble ?", choices: ["5,60 €", "6,70 €", "5,70 €", "4,70 €", "3,30 €"], answer: "5,70 €", hint: "4,50 + 1,20, aligne les virgules." }
+            - { id: ch03-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Tu paies 6,35 € avec un billet de 10 €. Combien le marchand te rend-il ?", choices: ["3,75 €", "4,65 €", "3,65 €", "3,35 €", "4,35 €"], answer: "3,65 €", hint: "Complète de 6,35 à 7, puis de 7 à 10." }
           rafaelle:
-            - { id: ch03-j2-ra-m1a, subject: maths, level: 3, kind: nombre, prompt: "Une cape coûte 40 €. Elle est soldée à −25 %. Quel est son nouveau prix, en euros ?", answer: 30, hint: "25 % de 40 = 10." }
-            - { id: ch03-j2-ra-m1b, subject: maths, level: 3, kind: nombre, prompt: "Calcule 20 % de 150.", answer: 30, hint: "10 % = 15, donc 20 % = …" }
+            - { id: ch03-j2-ra-m1a, subject: maths, level: 3, kind: qcm, prompt: "Une cape coûte 40 €. Elle est soldée à −25 %. Quel est son nouveau prix, en euros ?", choices: ["10 €", "35 €", "30 €", "25 €", "15 €"], answer: "30 €", hint: "25 % de 40 = 10." }
+            - { id: ch03-j2-ra-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 20 % de 150.", choices: ["15", "20", "30", "50", "75"], answer: "30", hint: "10 % = 15, donc 20 % = …" }
       - id: m2
         title: Les comptes du marchand
         tours:
           axelle:
-            - { id: ch03-j2-ax-m2a, subject: maths, level: 2, kind: nombre, prompt: "Tu as 10 €. Tu achètes un pain à 4 €. Combien te reste-t-il ?", answer: 6, hint: "10 − 4." }
-            - { id: ch03-j2-ax-m2b, subject: maths, level: 2, kind: nombre, prompt: "Calcule 25 + 30.", answer: 55, hint: "25 + 30 : ajoute 3 dizaines." }
+            - { id: ch03-j2-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Tu as 10 €. Tu achètes un pain à 4 €. Combien te reste-t-il ?", choices: ["14 €", "6 €", "4 €", "40 €", "16 €"], answer: "6 €", hint: "10 − 4." }
+            - { id: ch03-j2-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 25 + 30.", choices: ["45", "55", "65", "50", "35"], answer: "55", hint: "25 + 30 : ajoute 3 dizaines." }
           maelle:
-            - { id: ch03-j2-ma-m2a, subject: maths, level: 3, kind: nombre, prompt: "3 pots de miel à 2,40 € chacun : combien en tout ?", answer: 7.2, hint: "2,40 × 3." }
-            - { id: ch03-j2-ma-m2b, subject: maths, level: 3, kind: nombre, prompt: "Pose et calcule : 56 × 4.", answer: 224, hint: "50 × 4 = 200, plus 6 × 4." }
+            - { id: ch03-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "3 pots de miel à 2,40 € chacun : combien en tout ?", choices: ["6,20 €", "9,60 €", "7,20 €", "5,40 €", "2,40 €"], answer: "7,20 €", hint: "2,40 × 3." }
+            - { id: ch03-j2-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Pose et calcule : 56 × 4.", choices: ["214", "224", "264", "60", "220"], answer: "224", hint: "50 × 4 = 200, plus 6 × 4." }
           rafaelle:
-            - { id: ch03-j2-ra-m2a, subject: maths, level: 3, kind: nombre, prompt: "Calcule 6,3 × 0,5.", answer: 3.15, hint: "Multiplier par 0,5, c'est prendre la moitié." }
-            - { id: ch03-j2-ra-m2b, subject: maths, level: 4, kind: nombre, prompt: "Un prix passe de 40 € à 50 €. De combien de pour cent a-t-il augmenté ?", answer: 25, hint: "L'augmentation est de 10 €. Combien de % de 40 ?" }
+            - { id: ch03-j2-ra-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 6,3 × 0,5.", choices: ["3,8", "12,6", "3,15", "6,8", "0,315"], answer: "3,15", hint: "Multiplier par 0,5, c'est prendre la moitié." }
+            - { id: ch03-j2-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Un prix passe de 40 € à 50 €. De combien de pour cent a-t-il augmenté ?", choices: ["10 %", "20 %", "25 %", "50 %", "125 %"], answer: "25 %", hint: "L'augmentation est de 10 €. Combien de % de 40 ?" }
       - id: m3
         title: Le tarif étranger
         intro: "Un marchand venu de loin affiche ses prix en espagnol."
         tours:
           axelle:
-            - { id: ch03-j2-ax-m3a, subject: maths, level: 2, kind: nombre, prompt: "3 pièces de 2 € : combien d'euros en tout ?", answer: 6, hint: "2 + 2 + 2." }
+            - { id: ch03-j2-ax-m3a, subject: maths, level: 2, kind: qcm, prompt: "3 pièces de 2 € : combien d'euros en tout ?", choices: ["5 €", "23 €", "6 €", "9 €", "8 €"], answer: "6 €", hint: "2 + 2 + 2." }
             - { gen: maths.addition }
           maelle:
-            - { id: ch03-j2-ma-m3a, subject: maths, level: 3, kind: nombre, prompt: "Le marchand te rend 1,50 € sur un billet de 5 €. Combien coûtait ton achat ?", answer: 3.5, hint: "5 − 1,50." }
+            - { id: ch03-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Le marchand te rend 1,50 € sur un billet de 5 €. Combien coûtait ton achat ?", choices: ["6,50 €", "3,50 €", "4,50 €", "1,50 €", "3,00 €"], answer: "3,50 €", hint: "5 − 1,50." }
             - { gen: maths.multiplication }
           rafaelle:
-            - { id: ch03-j2-ra-m3a, subject: espagnol, level: 2, kind: nombre, prompt: "L'étiquette dit : « Manzanas : 2 euros el kilo ». Combien coûtent 3 kilos, en euros ?", answer: 6, read: "Manzanas: 2 euros el kilo.", hint: "El kilo = le kilo. 3 fois 2 €." }
-            - { id: ch03-j2-ra-m3b, subject: espagnol, level: 2, kind: qcm, prompt: "« ¿Cuánto cuesta? » veut dire…", choices: ["Combien ça coûte ?", "Où est-ce ?", "Quelle heure est-il ?"], answer: "Combien ça coûte ?", hint: "Regarde la phrase du jour." }
+            - { id: ch03-j2-ra-m3a, subject: espagnol, level: 2, kind: qcm, prompt: "L'étiquette dit : « Manzanas : 2 euros el kilo ». Combien coûtent 3 kilos, en euros ?", choices: ["2 €", "5 €", "9 €", "6 €", "23 €"], answer: "6 €", read: "Manzanas: 2 euros el kilo.", hint: "El kilo = le kilo. 3 fois 2 €." }
+            - { id: ch03-j2-ra-m3b, subject: espagnol, level: 2, kind: qcm, prompt: "« ¿Cuánto cuesta? » veut dire…", choices: ["Où est-ce ?", "Comment ça va ?", "Combien ça coûte ?", "Quel est ton nom ?", "Quelle heure est-il ?"], answer: "Combien ça coûte ?", hint: "Regarde la phrase du jour." }
       - id: m4
         title: Le Défi du marché
         tours:
           axelle:
-            - { id: ch03-j2-ax-m4a, subject: maths, level: 3, kind: nombre, prompt: "Pose et calcule : 48 + 36.", answer: 84, hint: "8 + 6 = 14 : on écrit 4 et on retient 1." }
-            - { id: ch03-j2-ax-m4b, subject: maths, level: 3, kind: nombre, prompt: "Pose et calcule : 63 − 28.", answer: 35, hint: "3 − 8, impossible : on emprunte une dizaine." }
+            - { id: ch03-j2-ax-m4a, subject: maths, level: 3, kind: qcm, prompt: "Pose et calcule : 48 + 36.", choices: ["74", "84", "94", "12", "78"], answer: "84", hint: "8 + 6 = 14 : on écrit 4 et on retient 1." }
+            - { id: ch03-j2-ax-m4b, subject: maths, level: 3, kind: qcm, prompt: "Pose et calcule : 63 − 28.", choices: ["45", "35", "91", "25", "38"], answer: "35", hint: "3 − 8, impossible : on emprunte une dizaine." }
           maelle:
-            - { id: ch03-j2-ma-m4a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 12,5 + 3,75.", answer: 16.25, hint: "Écris 12,50 pour aligner les virgules." }
+            - { id: ch03-j2-ma-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 12,5 + 3,75.", choices: ["15,25", "16,25", "12,875", "20,00", "8,75"], answer: "16,25", hint: "Écris 12,50 pour aligner les virgules." }
             - { gen: maths.fraction-de }
           rafaelle:
-            - { id: ch03-j2-ra-m4a, subject: maths, level: 2, kind: nombre, prompt: "Pour 2 plans, on dessine 3 rues. Combien de rues pour 6 plans ?", answer: 9, hint: "6 plans, c'est 3 fois 2 plans." }
+            - { id: ch03-j2-ra-m4a, subject: maths, level: 2, kind: qcm, prompt: "Pour 2 plans, on dessine 3 rues. Combien de rues pour 6 plans ?", choices: ["6", "18", "9", "12", "15"], answer: "9", hint: "6 plans, c'est 3 fois 2 plans." }
             - { gen: maths.fraction-de }
     pause: "Le marché s'anime : faites semblant de porter un panier très lourd, d'un bout à l'autre de la pièce, puis un panier tout léger !"
     closing:
@@ -211,50 +211,50 @@ days:
         title: L'ordre des registres
         tours:
           axelle:
-            - { id: ch03-j3-ax-m1a, subject: francais, level: 1, kind: court, prompt: "Quelle lettre vient juste après M dans l'alphabet ?", answer: "N", hint: "M, puis… comme dans Nilo." }
+            - { id: ch03-j3-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quelle lettre vient juste après M dans l'alphabet ?", choices: ["L", "N", "O", "P", "Z"], answer: "N", hint: "M, puis… comme dans Nilo." }
             - { id: ch03-j3-ax-m1b, subject: francais, level: 2, kind: ordre, prompt: "Range ces mots dans l'ordre alphabétique.", choices: ["lune", "arbre", "feu"], answer: ["arbre", "feu", "lune"], hint: "Regarde la première lettre de chaque mot." }
           maelle:
             - { id: ch03-j3-ma-m1a, subject: francais, level: 1, kind: ordre, prompt: "Range ces mots dans l'ordre alphabétique.", choices: ["cloche", "balcon", "avenue"], answer: ["avenue", "balcon", "cloche"], hint: "A, B, C…" }
-            - { id: ch03-j3-ma-m1b, subject: francais, level: 3, kind: qcm, prompt: "Choisis : « (Son / Sont) nom est effacé. »", choices: ["Son", "Sont"], answer: "Son", hint: "Remplace par « son nom à lui » : c'est un possessif." }
+            - { id: ch03-j3-ma-m1b, subject: francais, level: 3, kind: qcm, prompt: "Choisis : « (Son / Sont) nom est effacé. »", choices: ["Sont", "Se sont", "Son", "Ce sont", "C'est"], answer: "Son", hint: "Remplace par « son nom à lui » : c'est un possessif." }
           rafaelle:
-            - { id: ch03-j3-ra-m1a, subject: francais, level: 3, kind: qcm, prompt: "« Plume cherche un nom. » Quelle est la nature et la fonction de « un nom » ?", choices: ["groupe nominal COD", "verbe sujet", "adjectif COI"], answer: "groupe nominal COD", hint: "Plume cherche quoi ?" }
-            - { id: ch03-j3-ra-m1b, subject: francais, level: 3, kind: nombre, prompt: "« Thessaly appelle et la ville répond. » Combien de propositions dans cette phrase ?", answer: 2, hint: "Compte les verbes conjugués." }
+            - { id: ch03-j3-ra-m1a, subject: francais, level: 3, kind: qcm, prompt: "« Plume cherche un nom. » Quelle est la nature et la fonction de « un nom » ?", choices: ["verbe sujet", "groupe nominal sujet", "groupe nominal COD", "groupe nominal COI", "adjectif COI"], answer: "groupe nominal COD", hint: "Plume cherche quoi ?" }
+            - { id: ch03-j3-ra-m1b, subject: francais, level: 3, kind: qcm, prompt: "« Thessaly appelle et la ville répond. » Combien de propositions dans cette phrase ?", choices: ["1", "2", "3", "4", "0"], answer: "2", hint: "Compte les verbes conjugués." }
       - id: m2
         title: Les familles de noms
         tours:
           axelle:
-            - { id: ch03-j3-ax-m2a, subject: francais, level: 3, kind: court, prompt: "Écris un mot de la famille de « chant ».", answer: "chanter", accept: ["chanteur", "chanson", "chanteuse", "chantier"], hint: "Qu'est-ce qu'on fait avec un chant ?" }
-            - { id: ch03-j3-ax-m2b, subject: francais, level: 2, kind: nombre, prompt: "« brouillard » : combien de syllabes ?", answer: 2, hint: "Tape dans tes mains : brouil – lard." }
+            - { id: ch03-j3-ax-m2a, subject: francais, level: 3, kind: qcm, prompt: "Écris un mot de la famille de « chant ».", choices: ["changer", "chantilly", "chanter", "champion", "chaud"], answer: "chanter", hint: "Qu'est-ce qu'on fait avec un chant ?" }
+            - { id: ch03-j3-ax-m2b, subject: francais, level: 2, kind: qcm, prompt: "« brouillard » : combien de syllabes ?", choices: ["1", "2", "3", "4", "5"], answer: "2", hint: "Tape dans tes mains : brouil – lard." }
           maelle:
-            - { id: ch03-j3-ma-m2a, subject: francais, level: 2, kind: court, prompt: "Écris un mot de la famille de « terre ».", answer: "terrain", accept: ["terrasse", "enterrer", "terrien", "territoire", "terrestre", "atterrir", "souterrain"], hint: "Un terrain de foot, par exemple." }
-            - { id: ch03-j3-ma-m2b, subject: francais, level: 2, kind: court, prompt: "« chanteur » : quel est le suffixe ?", answer: "-eur", accept: ["eur"], hint: "C'est la fin ajoutée au radical « chant »." }
+            - { id: ch03-j3-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Écris un mot de la famille de « terre ».", choices: ["mer", "terrain", "verre", "pierre", "serre"], answer: "terrain", hint: "Un terrain de foot, par exemple." }
+            - { id: ch03-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "« chanteur » : quel est le suffixe ?", choices: ["-oir", "-eur", "-age", "-ette", "-ion"], answer: "-eur", hint: "C'est la fin ajoutée au radical « chant »." }
           rafaelle:
-            - { id: ch03-j3-ra-m2a, subject: francais, level: 2, kind: court, prompt: "Écris un mot de la famille de « nom ».", answer: "nommer", accept: ["nominal", "renom", "surnom", "prénom", "renommée", "nomination", "pronom"], hint: "Le verbe qui veut dire « donner un nom »." }
-            - { id: ch03-j3-ra-m2b, subject: francais, level: 2, kind: qcm, prompt: "« héliotrope » : que signifie la racine grecque hélio- ?", choices: ["soleil", "eau", "terre"], answer: "soleil", hint: "L'hélium a été découvert en observant le Soleil." }
+            - { id: ch03-j3-ra-m2a, subject: francais, level: 2, kind: qcm, prompt: "Écris un mot de la famille de « nom ».", choices: ["non", "nommer", "nord", "notre", "numéro"], answer: "nommer", hint: "Le verbe qui veut dire « donner un nom »." }
+            - { id: ch03-j3-ra-m2b, subject: francais, level: 2, kind: qcm, prompt: "« héliotrope » : que signifie la racine grecque hélio- ?", choices: ["eau", "lune", "soleil", "feu", "terre"], answer: "soleil", hint: "L'hélium a été découvert en observant le Soleil." }
       - id: m3
         title: Les noms à rendre
         tours:
           axelle:
-            - { id: ch03-j3-ax-m3a, subject: francais, level: 3, kind: qcm, prompt: "« une lanterne » : masculin ou féminin ?", choices: ["masculin", "féminin"], answer: "féminin", hint: "On dit « une »." }
-            - { id: ch03-j3-ax-m3b, subject: francais, level: 3, kind: court, prompt: "Copie sans faute : « La ville est grise. »", answer: "La ville est grise.", hint: "N'oublie pas la majuscule et le point." }
+            - { id: ch03-j3-ax-m3a, subject: francais, level: 3, kind: qcm, prompt: "« une lanterne » : masculin ou féminin ?", choices: ["masculin", "neutre", "féminin", "les deux", "pluriel"], answer: "féminin", hint: "On dit « une »." }
+            - { id: ch03-j3-ax-m3b, subject: francais, level: 3, kind: qcm, prompt: "Copie sans faute : « La ville est grise. »", choices: ["La ville est grises.", "la ville est grise.", "La ville est grise.", "La ville est grise", "La villle est grise."], answer: "La ville est grise.", hint: "N'oublie pas la majuscule et le point." }
           maelle:
-            - { id: ch03-j3-ma-m3a, subject: francais, level: 2, kind: qcm, prompt: "« refaire » : que veut dire le préfixe re- ?", choices: ["à nouveau", "pas du tout", "très peu"], answer: "à nouveau", hint: "Refaire, c'est faire… encore une fois." }
-            - { id: ch03-j3-ma-m3b, subject: francais, level: 3, kind: court, prompt: "« Les habitants chantent. » Quel est le sujet de « chantent » ?", answer: "Les habitants", hint: "Qui est-ce qui chante ?" }
+            - { id: ch03-j3-ma-m3a, subject: francais, level: 2, kind: qcm, prompt: "« refaire » : que veut dire le préfixe re- ?", choices: ["à nouveau", "pas du tout", "très peu", "très fort", "deux fois"], answer: "à nouveau", hint: "Refaire, c'est faire… encore une fois." }
+            - { id: ch03-j3-ma-m3b, subject: francais, level: 3, kind: qcm, prompt: "« Les habitants chantent. » Quel est le sujet de « chantent » ?", choices: ["chantent", "Les habitants", "habitants", "Les", "La ville"], answer: "Les habitants", hint: "Qui est-ce qui chante ?" }
           rafaelle:
-            - { id: ch03-j3-ra-m3a, subject: francais, level: 3, kind: court, prompt: "Accorde : « Elles se sont (trouvé) ».", answer: "trouvées", accept: ["elles se sont trouvées"], hint: "Verbe pronominal : accord avec « elles »." }
-            - { id: ch03-j3-ra-m3b, subject: francais, level: 2, kind: court, prompt: "Mets au passé composé : « Elles (retrouver) ».", answer: "elles ont retrouvé", accept: ["ont retrouvé"], hint: "Avoir + participe passé." }
+            - { id: ch03-j3-ra-m3a, subject: francais, level: 3, kind: qcm, prompt: "Accorde : « Elles se sont (trouvé) ».", choices: ["trouvé", "trouvées", "trouvés", "trouvée", "trouvent"], answer: "trouvées", hint: "Verbe pronominal : accord avec « elles »." }
+            - { id: ch03-j3-ra-m3b, subject: francais, level: 2, kind: qcm, prompt: "Mets au passé composé : « Elles (retrouver) ».", choices: ["elles a retrouvé", "elles ont retrouvé", "elles ont retrouvée", "elles sont retrouvé", "elles avaient retrouvé"], answer: "elles ont retrouvé", hint: "Avoir + participe passé." }
       - id: m4
         title: Le Défi des registres
         tours:
           axelle:
-            - { id: ch03-j3-ax-m4a, subject: francais, level: 3, kind: qcm, prompt: "« La porte s'ouvre. » Quel mot est le verbe ?", choices: ["porte", "ouvre", "la"], answer: "ouvre", hint: "C'est l'action." }
-            - { id: ch03-j3-ax-m4b, subject: francais, level: 4, kind: court, prompt: "Un journal, des… ?", answer: "journaux", hint: "Comme un cheval, des chevaux." }
+            - { id: ch03-j3-ax-m4a, subject: francais, level: 3, kind: qcm, prompt: "« La porte s'ouvre. » Quel mot est le verbe ?", choices: ["porte", "ouvre", "la", "s'", "la porte"], answer: "ouvre", hint: "C'est l'action." }
+            - { id: ch03-j3-ax-m4b, subject: francais, level: 4, kind: qcm, prompt: "Un journal, des… ?", choices: ["journals", "journaux", "journaus", "journax", "journeaux"], answer: "journaux", hint: "Comme un cheval, des chevaux." }
           maelle:
-            - { id: ch03-j3-ma-m4a, subject: francais, level: 4, kind: court, prompt: "« Plume lit un nom. » Quel est le COD ?", answer: "un nom", hint: "Plume lit quoi ?" }
-            - { id: ch03-j3-ma-m4b, subject: francais, level: 4, kind: court, prompt: "Accorde : « Les noms sont (effacer) ».", answer: "effacés", accept: ["les noms sont effacés"], hint: "Avec être, le participe s'accorde avec le sujet." }
+            - { id: ch03-j3-ma-m4a, subject: francais, level: 4, kind: qcm, prompt: "« Plume lit un nom. » Quel est le COD ?", choices: ["Plume", "lit", "un nom", "nom", "un"], answer: "un nom", hint: "Plume lit quoi ?" }
+            - { id: ch03-j3-ma-m4b, subject: francais, level: 4, kind: qcm, prompt: "Accorde : « Les noms sont (effacer) ».", choices: ["effacé", "effacés", "effacée", "effacées", "effaçés"], answer: "effacés", hint: "Avec être, le participe s'accorde avec le sujet." }
           rafaelle:
-            - { id: ch03-j3-ra-m4a, subject: espagnol, level: 3, kind: court, prompt: "Traduis : « ¿Dónde está la plaza? »", answer: "Où est la place ?", accept: ["ou est la place"], hint: "Dónde = où." }
-            - { id: ch03-j3-ra-m4b, subject: espagnol, level: 4, kind: court, prompt: "Traduis : « Ayer busqué el nombre ».", answer: "Hier, j'ai cherché le nom", accept: ["hier j'ai cherché le nom"], hint: "Ayer = hier. Buscar = chercher." }
+            - { id: ch03-j3-ra-m4a, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « ¿Dónde está la plaza? »", choices: ["Quand est la place ?", "Où est la place ?", "Où est la maison ?", "Comment est la place ?", "Où est la rue ?"], answer: "Où est la place ?", hint: "Dónde = où." }
+            - { id: ch03-j3-ra-m4b, subject: espagnol, level: 4, kind: qcm, prompt: "Traduis : « Ayer busqué el nombre ».", choices: ["Demain, je chercherai le nom", "Hier, j'ai cherché le nom", "Hier, j'ai trouvé le nom", "Hier, je cherche le nom", "Aujourd'hui, j'ai cherché le nom"], answer: "Hier, j'ai cherché le nom", hint: "Ayer = hier. Buscar = chercher." }
     pause: "Appelez-vous ! Chacune dit son prénom en le chantant, de plus en plus fort, puis tout doucement."
     closing:
       - { who: narrateur, text: "Les registres se remplissent de lettres, page après page. Par les fenêtres ouvertes, on entend les habitants s'appeler par leur nom pour la première fois depuis des années." }
@@ -285,48 +285,48 @@ days:
           axelle:
             - { gen: maths.suite, count: 2 }
           maelle:
-            - { id: ch03-j4-ma-m1a, subject: maths, level: 3, kind: court, prompt: "Thessaly part à 8 h 40 et marche 1 h 25. À quelle heure arrive-t-elle ?", answer: "10 h 05", accept: ["10h05", "10:05"], clock: "8:40", hint: "8 h 40 + 1 h = 9 h 40. Puis + 25 min." }
+            - { id: ch03-j4-ma-m1a, subject: maths, level: 3, kind: qcm, prompt: "Thessaly part à 8 h 40 et marche 1 h 25. À quelle heure arrive-t-elle ?", choices: ["9 h 40", "9 h 65", "10 h 05", "10 h 15", "11 h 05"], answer: "10 h 05", clock: "8:40", hint: "8 h 40 + 1 h = 9 h 40. Puis + 25 min." }
             - { gen: maths.suite }
           rafaelle:
-            - { id: ch03-j4-ra-m1a, subject: maths, level: 2, kind: court, prompt: "Calcule 3/8 + 1/8.", answer: "1/2", accept: ["4/8"], hint: "4/8, c'est aussi…" }
+            - { id: ch03-j4-ra-m1a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 3/8 + 1/8.", choices: ["1/4", "1/2", "3/4", "1/8", "2/3"], answer: "1/2", hint: "4/8, c'est aussi…" }
             - { gen: maths.suite }
       - id: m2
         title: Les villes d'autrefois
         tours:
           axelle:
-            - { id: ch03-j4-ax-m2a, subject: maths, level: 3, kind: nombre, prompt: "7 dizaines et 3 unités : quel nombre ?", answer: 73, hint: "7 dizaines = 70." }
-            - { id: ch03-j4-ax-m2b, subject: maths, level: 3, kind: nombre, prompt: "Quelle est la moitié de 30 ?", answer: 15, hint: "La moitié de 3 dizaines." }
+            - { id: ch03-j4-ax-m2a, subject: maths, level: 3, kind: qcm, prompt: "7 dizaines et 3 unités : quel nombre ?", choices: ["37", "73", "70", "703", "10"], answer: "73", hint: "7 dizaines = 70." }
+            - { id: ch03-j4-ax-m2b, subject: maths, level: 3, kind: qcm, prompt: "Quelle est la moitié de 30 ?", choices: ["60", "15", "10", "20", "25"], answer: "15", hint: "La moitié de 3 dizaines." }
           maelle:
-            - { id: ch03-j4-ma-m2a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Au Moyen Âge, comment les villes se protégeaient-elles ?", choices: ["avec des remparts", "avec des barrières en papier", "avec des fusées"], answer: "avec des remparts", hint: "Comme la ville d'aujourd'hui !" }
-            - { id: ch03-j4-ma-m2b, subject: maths, level: 2, kind: court, prompt: "De 9 h 15 à 10 h 05 : combien de temps s'est écoulé ?", answer: "50 min", accept: ["50 minutes", "50"], clock: "9:15", hint: "De 9 h 15 à 10 h : 45 min. Puis 5 de plus." }
+            - { id: ch03-j4-ma-m2a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Au Moyen Âge, comment les villes se protégeaient-elles ?", choices: ["avec des barrières en papier", "avec des murs de bois", "avec des remparts", "avec des tranchées", "avec des fusées"], answer: "avec des remparts", hint: "Comme la ville d'aujourd'hui !" }
+            - { id: ch03-j4-ma-m2b, subject: maths, level: 2, kind: qcm, prompt: "De 9 h 15 à 10 h 05 : combien de temps s'est écoulé ?", choices: ["45 min", "50 min", "55 min", "40 min", "1 h 05"], answer: "50 min", clock: "9:15", hint: "De 9 h 15 à 10 h : 45 min. Puis 5 de plus." }
           rafaelle:
-            - { id: ch03-j4-ra-m2a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Dans une cité grecque antique, où se réunissaient les citoyens ?", choices: ["sur l'agora", "dans un château fort", "dans une usine"], answer: "sur l'agora", hint: "C'était la grande place publique." }
-            - { id: ch03-j4-ra-m2b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Quelle était la capitale de l'Empire romain ?", choices: ["Rome", "Athènes", "Paris"], answer: "Rome", hint: "Elle a donné son nom à l'empire." }
+            - { id: ch03-j4-ra-m2a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Dans une cité grecque antique, où se réunissaient les citoyens ?", choices: ["dans un château fort", "sur le forum", "sur l'agora", "dans une bibliothèque", "dans une usine"], answer: "sur l'agora", hint: "C'était la grande place publique." }
+            - { id: ch03-j4-ra-m2b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Quelle était la capitale de l'Empire romain ?", choices: ["Athènes", "Alexandrie", "Rome", "Carthage", "Paris"], answer: "Rome", hint: "Elle a donné son nom à l'empire." }
       - id: m3
         title: Le poème du guet
         tours:
           axelle:
             - { id: ch03-j4-ax-m3a, subject: francais, level: 2, kind: libre, validation: soeurs, prompt: "Récite à voix haute le poème du guet, sans regarder.", read: "Brume, brume, va-t'en, la lanterne brille au vent." }
-            - { id: ch03-j4-ax-m3b, subject: maths, level: 4, kind: nombre, prompt: "Calcule 3 × 8.", answer: 24, hint: "8 + 8 + 8." }
+            - { id: ch03-j4-ax-m3b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 3 × 8.", choices: ["11", "24", "21", "32", "28"], answer: "24", hint: "8 + 8 + 8." }
           maelle:
-            - { id: ch03-j4-ma-m3a, subject: maths, level: 3, kind: court, prompt: "La grande aiguille est sur 3, la petite entre 7 et 8. Quelle heure est-il ?", answer: "7 h 15", accept: ["7h15", "7:15", "19 h 15", "19h15"], clock: "7:15", hint: "Grande aiguille sur 3 : un quart d'heure." }
-            - { id: ch03-j4-ma-m3b, subject: maths, level: 3, kind: qcm, prompt: "Quelle est la plus grande fraction ?", choices: ["1/3", "1/2"], answer: "1/2", hint: "Une moitié de gâteau, ou un tiers ?" }
+            - { id: ch03-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "La grande aiguille est sur 3, la petite entre 7 et 8. Quelle heure est-il ?", choices: ["7 h 45", "7 h 15", "8 h 15", "7 h 03", "3 h 07"], answer: "7 h 15", clock: "7:15", hint: "Grande aiguille sur 3 : un quart d'heure." }
+            - { id: ch03-j4-ma-m3b, subject: maths, level: 3, kind: qcm, prompt: "Quelle est la plus grande fraction ?", choices: ["1/4", "1/3", "1/2", "1/5", "1/6"], answer: "1/2", hint: "Une moitié de gâteau, ou un tiers ?" }
           rafaelle:
-            - { id: ch03-j4-ra-m3a, subject: maths, level: 3, kind: nombre, prompt: "Combien d'axes de symétrie a un carré ?", answer: 4, hint: "Deux médianes et deux diagonales." }
-            - { id: ch03-j4-ra-m3b, subject: maths, level: 3, kind: nombre, prompt: "Deux angles complémentaires : combien de degrés font-ils ensemble ?", answer: 90, hint: "Ils forment un angle droit." }
+            - { id: ch03-j4-ra-m3a, subject: maths, level: 3, kind: qcm, prompt: "Combien d'axes de symétrie a un carré ?", choices: ["2", "4", "1", "8", "0"], answer: "4", hint: "Deux médianes et deux diagonales." }
+            - { id: ch03-j4-ra-m3b, subject: maths, level: 3, kind: qcm, prompt: "Deux angles complémentaires : combien de degrés font-ils ensemble ?", choices: ["180°", "90°", "45°", "360°", "60°"], answer: "90°", hint: "Ils forment un angle droit." }
       - id: m4
         title: Le dernier verrou
         intro: "Les trois apprenties travaillent ensemble sur le dernier verrou de la Tour. Thessaly tient la lanterne."
         tours:
           axelle:
-            - { id: ch03-j4-ax-m4a, subject: maths, level: 4, kind: nombre, prompt: "3 centaines et 7 dizaines : quel nombre ?", answer: 370, hint: "300 + 70." }
-            - { id: ch03-j4-ax-m4b, subject: maths, level: 4, kind: qcm, prompt: "Quel est le chemin le plus court ?", choices: ["9 pas", "12 pas"], answer: "9 pas", hint: "Le plus petit nombre de pas." }
+            - { id: ch03-j4-ax-m4a, subject: maths, level: 4, kind: qcm, prompt: "3 centaines et 7 dizaines : quel nombre ?", choices: ["730", "370", "307", "37", "3070"], answer: "370", hint: "300 + 70." }
+            - { id: ch03-j4-ax-m4b, subject: maths, level: 4, kind: qcm, prompt: "Quel est le chemin le plus court ?", choices: ["12 pas", "10 pas", "9 pas", "15 pas", "20 pas"], answer: "9 pas", hint: "Le plus petit nombre de pas." }
           maelle:
-            - { id: ch03-j4-ma-m4a, subject: maths, level: 4, kind: court, prompt: "Calcule 3 h 50 + 2 h 25.", answer: "6 h 15", accept: ["6h15", "6:15"], hint: "50 min + 25 min = 75 min = 1 h 15." }
-            - { id: ch03-j4-ma-m4b, subject: maths, level: 4, kind: nombre, prompt: "Combien de côtés a un hexagone ?", answer: 6, hint: "Hexa veut dire six." }
+            - { id: ch03-j4-ma-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 3 h 50 + 2 h 25.", choices: ["5 h 75", "6 h 15", "5 h 15", "6 h 75", "7 h 15"], answer: "6 h 15", hint: "50 min + 25 min = 75 min = 1 h 15." }
+            - { id: ch03-j4-ma-m4b, subject: maths, level: 4, kind: qcm, prompt: "Combien de côtés a un hexagone ?", choices: ["5", "6", "8", "4", "7"], answer: "6", hint: "Hexa veut dire six." }
           rafaelle:
-            - { id: ch03-j4-ra-m4a, subject: maths, level: 4, kind: nombre, prompt: "Calcule (−2) × (−3).", answer: 6, hint: "Moins par moins donne plus." }
-            - { id: ch03-j4-ra-m4b, subject: maths, level: 4, kind: court, prompt: "Calcule 3/4 ÷ 3.", answer: "1/4", hint: "Partager trois quarts en 3, c'est un quart chacun." }
+            - { id: ch03-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule (−2) × (−3).", choices: ["-6", "6", "5", "-5", "1"], answer: "6", hint: "Moins par moins donne plus." }
+            - { id: ch03-j4-ra-m4b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 3/4 ÷ 3.", choices: ["3/4", "1/4", "9/4", "1/12", "1/3"], answer: "1/4", hint: "Partager trois quarts en 3, c'est un quart chacun." }
     pause: "Pause des gardes : tenez-vous droites comme des statues pendant 10 secondes, sans rire… si vous y arrivez !"
     closing:
       - { who: narrateur, text: "Le dernier verrou cède avec un grand « clong » de bronze. La porte de la Tour s'ouvre. Mais au même instant, la vague de brouillard touche le port, monte le long du rocher, et éteint toutes les lanternes d'un seul souffle." }
@@ -354,27 +354,27 @@ days:
         intro: "Chaque nom retrouvé est une note. Axelle lit les initiales, Maelle trie par famille, Rafaelle trouve le sens."
         tours:
           axelle:
-            - { id: ch03-j5-ax-m1a, subject: francais, level: 5, kind: court, prompt: "« Les noms sont gardés. » Quel est le sujet ?", answer: "Les noms", hint: "Qu'est-ce qui est gardé ?" }
-            - { id: ch03-j5-ax-m1b, subject: francais, level: 4, kind: qcm, prompt: "Choisis : « Il (est / et) grand. »", choices: ["est", "et"], answer: "est", hint: "Remplace par « était » : ça marche ? Alors c'est le verbe." }
+            - { id: ch03-j5-ax-m1a, subject: francais, level: 5, kind: qcm, prompt: "« Les noms sont gardés. » Quel est le sujet ?", choices: ["sont gardés", "Les noms", "gardés", "noms", "Thessaly"], answer: "Les noms", hint: "Qu'est-ce qui est gardé ?" }
+            - { id: ch03-j5-ax-m1b, subject: francais, level: 4, kind: qcm, prompt: "Choisis : « Il (est / et) grand. »", choices: ["et", "es", "est", "ait", "été"], answer: "est", hint: "Remplace par « était » : ça marche ? Alors c'est le verbe." }
           maelle:
-            - { id: ch03-j5-ma-m1a, subject: francais, level: 4, kind: court, prompt: "Conjugue à l'imparfait : « Nous (chercher) ».", answer: "nous cherchions", accept: ["cherchions"], hint: "À l'imparfait, nous se termine par -ions." }
-            - { id: ch03-j5-ma-m1b, subject: maths, level: 2, kind: nombre, prompt: "Arrondis 3 478 à la centaine.", answer: 3500, hint: "Regarde le chiffre des dizaines : 7." }
+            - { id: ch03-j5-ma-m1a, subject: francais, level: 4, kind: qcm, prompt: "Conjugue à l'imparfait : « Nous (chercher) ».", choices: ["nous cherchons", "nous cherchions", "nous chercherons", "nous cherchâmes", "nous cherchiont"], answer: "nous cherchions", hint: "À l'imparfait, nous se termine par -ions." }
+            - { id: ch03-j5-ma-m1b, subject: maths, level: 2, kind: qcm, prompt: "Arrondis 3 478 à la centaine.", choices: ["3 400", "3 500", "3 470", "3 000", "3 580"], answer: "3 500", hint: "Regarde le chiffre des dizaines : 7." }
           rafaelle:
-            - { id: ch03-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Je sais que le nom reviendra. » Quelle est la fonction de la subordonnée ?", choices: ["COD", "sujet", "complément de lieu"], answer: "COD", hint: "Je sais quoi ?" }
-            - { id: ch03-j5-ra-m1b, subject: maths, level: 3, kind: qcm, prompt: "Quelle est la formule du périmètre d'un rectangle de longueur L et de largeur l ?", choices: ["2 × (L + l)", "L × l", "L + l"], answer: "2 × (L + l)", hint: "Deux longueurs et deux largeurs." }
+            - { id: ch03-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Je sais que le nom reviendra. » Quelle est la fonction de la subordonnée ?", choices: ["sujet", "complément de temps", "COD", "attribut du sujet", "complément de lieu"], answer: "COD", hint: "Je sais quoi ?" }
+            - { id: ch03-j5-ra-m1b, subject: maths, level: 3, kind: qcm, prompt: "Quelle est la formule du périmètre d'un rectangle de longueur L et de largeur l ?", choices: ["L × l", "2 × L × l", "2 × (L + l)", "4 × (L + l)", "L + l"], answer: "2 × (L + l)", hint: "Deux longueurs et deux largeurs." }
       - id: m2
         title: Le défi de la nuit
         intro: "Pour que la canne montre le chemin, chaque apprentie relève un défi de la classe supérieure."
         tours:
           axelle:
-            - { id: ch03-j5-ax-m2a, subject: maths, level: 5, kind: nombre, prompt: "Calcule 120 ÷ 4.", answer: 30, hint: "12 ÷ 4 = 3." }
-            - { id: ch03-j5-ax-m2b, subject: maths, level: 5, kind: nombre, prompt: "Arrondis 478 à la dizaine.", answer: 480, hint: "Le chiffre des unités est 8 : on monte." }
+            - { id: ch03-j5-ax-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 120 ÷ 4.", choices: ["40", "30", "20", "300", "34"], answer: "30", hint: "12 ÷ 4 = 3." }
+            - { id: ch03-j5-ax-m2b, subject: maths, level: 5, kind: qcm, prompt: "Arrondis 478 à la dizaine.", choices: ["470", "480", "500", "400", "48"], answer: "480", hint: "Le chiffre des unités est 8 : on monte." }
           maelle:
-            - { id: ch03-j5-ma-m2a, subject: maths, level: 5, kind: nombre, prompt: "5 rues comptent 20 maisons. Combien de maisons pour 8 rues ?", answer: 32, hint: "Une rue = 4 maisons." }
-            - { id: ch03-j5-ma-m2b, subject: maths, level: 5, kind: nombre, prompt: "Calcule 3,6 ÷ 4.", answer: 0.9, hint: "36 ÷ 4 = 9, puis place la virgule." }
+            - { id: ch03-j5-ma-m2a, subject: maths, level: 5, kind: qcm, prompt: "5 rues comptent 20 maisons. Combien de maisons pour 8 rues ?", choices: ["35", "32", "40", "28", "24"], answer: "32", hint: "Une rue = 4 maisons." }
+            - { id: ch03-j5-ma-m2b, subject: maths, level: 5, kind: qcm, prompt: "Calcule 3,6 ÷ 4.", choices: ["0,8", "0,9", "1,2", "9", "0,09"], answer: "0,9", hint: "36 ÷ 4 = 9, puis place la virgule." }
           rafaelle:
-            - { id: ch03-j5-ra-m2a, subject: maths, level: 5, kind: court, prompt: "Développe 3(x + 2).", answer: "3x + 6", accept: ["3x+6", "3 × x + 6"], hint: "3 multiplie x et aussi 2." }
-            - { id: ch03-j5-ra-m2b, subject: maths, level: 5, kind: nombre, prompt: "Calcule 5².", answer: 25, hint: "5 × 5." }
+            - { id: ch03-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Développe 3(x + 2).", choices: ["3x + 2", "3x + 6", "x + 6", "3x + 5", "5x + 6"], answer: "3x + 6", hint: "3 multiplie x et aussi 2." }
+            - { id: ch03-j5-ra-m2b, subject: maths, level: 5, kind: qcm, prompt: "Calcule 5².", choices: ["10", "25", "20", "15", "50"], answer: "25", hint: "5 × 5." }
       - id: m3
         title: Le chant de la ville
         intro: "Les trois apprenties chantent ensemble les noms retrouvés. La ville répond."

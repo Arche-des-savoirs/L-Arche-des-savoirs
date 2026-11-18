@@ -66,50 +66,50 @@ days:
         intro: "Les Oublions laissent tomber des graines en courant. Comptez-les et rangez-les."
         tours:
           axelle:
-            - { id: ch02-j1-ax-m1a, subject: maths, level: 1, kind: nombre, prompt: "8 gerbes partagées en 2 tas égaux : combien dans chaque tas ?", answer: 4, hint: "Partage 8 en deux parts pareilles." }
+            - { id: ch02-j1-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "8 gerbes partagées en 2 tas égaux : combien dans chaque tas ?", choices: ["6", "4", "16", "2", "5"], answer: "4", hint: "Partage 8 en deux parts pareilles." }
             - { gen: maths.comparer }
           maelle:
-            - { id: ch02-j1-ma-m1a, subject: maths, level: 1, kind: nombre, prompt: "Dans la fraction 3/5, quel est le dénominateur ?", answer: 5, hint: "C'est le nombre du bas." }
+            - { id: ch02-j1-ma-m1a, subject: maths, level: 1, kind: qcm, prompt: "Dans la fraction 3/5, quel est le dénominateur ?", choices: ["3", "8", "5", "2", "15"], answer: "5", hint: "C'est le nombre du bas." }
             - { gen: maths.comparer }
           rafaelle:
-            - { id: ch02-j1-ra-m1a, subject: maths, level: 1, kind: court, prompt: "Simplifie la fraction 6/8.", answer: "3/4", hint: "Divise le haut et le bas par 2." }
+            - { id: ch02-j1-ra-m1a, subject: maths, level: 1, kind: qcm, prompt: "Simplifie la fraction 6/8.", choices: ["6/8", "2/4", "3/4", "4/3", "3/8"], answer: "3/4", hint: "Divise le haut et le bas par 2." }
             - { gen: maths.ranger }
       - id: m2
         title: Le calcul des sillons
         tours:
           axelle:
-            - { id: ch02-j1-ax-m2a, subject: maths, level: 1, kind: nombre, prompt: "Calcule 7 + 8.", answer: 15, hint: "7 + 3 = 10, puis encore 5." }
-            - { id: ch02-j1-ax-m2b, subject: maths, level: 1, kind: nombre, prompt: "Calcule 20 − 6.", answer: 14, hint: "Recule de 6 depuis 20." }
+            - { id: ch02-j1-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 + 8.", choices: ["14", "17", "15", "13", "16"], answer: "15", hint: "7 + 3 = 10, puis encore 5." }
+            - { id: ch02-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 20 − 6.", choices: ["26", "13", "14", "15", "8"], answer: "14", hint: "Recule de 6 depuis 20." }
           maelle:
-            - { id: ch02-j1-ma-m2a, subject: maths, level: 1, kind: nombre, prompt: "Calcule 8 × 7.", answer: 56, hint: "8 × 7, c'est 7 × 8 : 56." }
-            - { id: ch02-j1-ma-m2b, subject: maths, level: 1, kind: nombre, prompt: "Calcule 72 ÷ 9.", answer: 8, hint: "Combien de fois 9 dans 72 ?" }
+            - { id: ch02-j1-ma-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 × 7.", choices: ["54", "64", "56", "48", "49"], answer: "56", hint: "8 × 7, c'est 7 × 8 : 56." }
+            - { id: ch02-j1-ma-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 72 ÷ 9.", choices: ["9", "7", "8", "6", "63"], answer: "8", hint: "Combien de fois 9 dans 72 ?" }
           rafaelle:
-            - { id: ch02-j1-ra-m2a, subject: maths, level: 1, kind: nombre, prompt: "Calcule 84 ÷ 7.", answer: 12, hint: "7 × 12 = 84." }
-            - { id: ch02-j1-ra-m2b, subject: maths, level: 1, kind: nombre, prompt: "Calcule 2,5 × 4.", answer: 10, hint: "Deux fois 2,5 font 5." }
+            - { id: ch02-j1-ra-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 84 ÷ 7.", choices: ["11", "12", "13", "14", "7"], answer: "12", hint: "7 × 12 = 84." }
+            - { id: ch02-j1-ra-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 2,5 × 4.", choices: ["8", "20", "10", "12", "9"], answer: "10", hint: "Deux fois 2,5 font 5." }
       - id: m3
         title: L'étiquette du grenier
         intro: "Une vieille étiquette pend à la porte du grenier. Il faut la lire."
         tours:
           axelle:
-            - { id: ch02-j1-ax-m3a, subject: francais, level: 1, kind: court, prompt: "Lis : « Nilo a pris du blé. » Qui a pris du blé ?", answer: "Nilo", read: "Nilo a pris du blé.", hint: "Cherche le nom au début de la phrase." }
-            - { id: ch02-j1-ax-m3b, subject: francais, level: 2, kind: court, prompt: "« un champ » : quelle lettre écrit-on à la fin, sans la prononcer ?", answer: "p", hint: "On l'écrit mais on ne la prononce pas." }
+            - { id: ch02-j1-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Lis : « Nilo a pris du blé. » Qui a pris du blé ?", choices: ["Plume", "Mouf", "Nilo", "Thessaly", "Axelle"], answer: "Nilo", read: "Nilo a pris du blé.", hint: "Cherche le nom au début de la phrase." }
+            - { id: ch02-j1-ax-m3b, subject: francais, level: 2, kind: qcm, prompt: "« un champ » : quelle lettre écrit-on à la fin, sans la prononcer ?", choices: ["s", "t", "p", "d", "e"], answer: "p", hint: "On l'écrit mais on ne la prononce pas." }
           maelle:
-            - { id: ch02-j1-ma-m3a, subject: francais, level: 1, kind: court, prompt: "Complète les accords : « Les champ… sont grand… » (écris les deux mots).", answer: "champs grands", accept: ["les champs sont grands"], hint: "Les : c'est pluriel. Ajoute un s." }
-            - { id: ch02-j1-ma-m3b, subject: francais, level: 2, kind: court, prompt: "Conjugue au présent : « Ils (récolter) ».", answer: "ils récoltent", accept: ["récoltent"], hint: "Avec ils, la fin est -ent." }
+            - { id: ch02-j1-ma-m3a, subject: francais, level: 1, kind: qcm, prompt: "Complète les accords : « Les champ… sont grand… » (écris les deux mots).", choices: ["champs grand", "champ grands", "champs grands", "champs grandes", "champ grand"], answer: "champs grands", hint: "Les : c'est pluriel. Ajoute un s." }
+            - { id: ch02-j1-ma-m3b, subject: francais, level: 2, kind: qcm, prompt: "Conjugue au présent : « Ils (récolter) ».", choices: ["ils récoltes", "ils récolte", "ils récoltent", "ils récoltons", "ils récoltaient"], answer: "ils récoltent", hint: "Avec ils, la fin est -ent." }
           rafaelle:
-            - { id: ch02-j1-ra-m3a, subject: francais, level: 1, kind: court, prompt: "Accorde : « Les champs (couvert) de brume ».", answer: "couverts", accept: ["les champs couverts de brume"], hint: "Le participe s'accorde avec « les champs » : masculin pluriel." }
-            - { id: ch02-j1-ra-m3b, subject: espagnol, level: 2, kind: court, prompt: "Traduis : « el trigo ».", answer: "le blé", accept: ["blé"], hint: "C'est ce qui pousse dans le champ et donne la farine." }
+            - { id: ch02-j1-ra-m3a, subject: francais, level: 1, kind: qcm, prompt: "Accorde : « Les champs (couvert) de brume ».", choices: ["couvert", "couverte", "couverts", "couvertes", "couvrant"], answer: "couverts", hint: "Le participe s'accorde avec « les champs » : masculin pluriel." }
+            - { id: ch02-j1-ra-m3b, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « el trigo ».", choices: ["le pain", "la farine", "le blé", "le maïs", "l'orge"], answer: "le blé", hint: "C'est ce qui pousse dans le champ et donne la farine." }
       - id: m4
         title: Le cycle de la graine
         tours:
           axelle:
-            - { id: ch02-j1-ax-m4a, subject: sciences, level: 2, kind: qcm, prompt: "De quoi une graine a-t-elle besoin pour germer ?", choices: ["D'eau et de chaleur", "De sable et de nuit", "De sel et de vent"], answer: "D'eau et de chaleur", hint: "Pense à ce qu'on donne à une plante pour qu'elle pousse." }
+            - { id: ch02-j1-ax-m4a, subject: sciences, level: 2, kind: qcm, prompt: "De quoi une graine a-t-elle besoin pour germer ?", choices: ["D'eau et de chaleur", "De sable et de nuit", "De sel et de vent", "De lumière seulement", "De musique et de patience"], answer: "D'eau et de chaleur", hint: "Pense à ce qu'on donne à une plante pour qu'elle pousse." }
             - { gen: maths.suite }
           maelle:
             - { id: ch02-j1-ma-m4a, subject: sciences, level: 3, kind: ordre, prompt: "Remets dans l'ordre le cycle d'une plante.", choices: ["fleur", "graine", "germination"], answer: ["graine", "germination", "fleur"], hint: "Tout commence par une petite graine." }
-            - { id: ch02-j1-ma-m4b, subject: sciences, level: 2, kind: qcm, prompt: "Quel organe de la plante absorbe l'eau ?", choices: ["la racine", "la fleur", "la feuille"], answer: "la racine", hint: "Il est caché sous la terre." }
+            - { id: ch02-j1-ma-m4b, subject: sciences, level: 2, kind: qcm, prompt: "Quel organe de la plante absorbe l'eau ?", choices: ["la racine", "la fleur", "la feuille", "la tige", "le fruit"], answer: "la racine", hint: "Il est caché sous la terre." }
           rafaelle:
-            - { id: ch02-j1-ra-m4a, subject: sciences, level: 3, kind: qcm, prompt: "Que produit une plante grâce à la lumière ?", choices: ["De la matière et du dioxygène", "Du sable", "De l'eau salée"], answer: "De la matière et du dioxygène", hint: "C'est la photosynthèse : elle fabrique sa nourriture et rejette ce que nous respirons." }
+            - { id: ch02-j1-ra-m4a, subject: sciences, level: 3, kind: qcm, prompt: "Que produit une plante grâce à la lumière ?", choices: ["De la matière et du dioxygène", "Du sable", "De l'eau salée", "De la fumée", "Du sucre uniquement"], answer: "De la matière et du dioxygène", hint: "C'est la photosynthèse : elle fabrique sa nourriture et rejette ce que nous respirons." }
             - { gen: maths.arrondi }
     pause: "Les Oublions s'enfuient ! Courez sur place comme eux pendant 10 secondes, puis figez-vous comme un épouvantail."
     closing:
@@ -138,50 +138,50 @@ days:
         title: Doubles et moitiés
         tours:
           axelle:
-            - { id: ch02-j2-ax-m1a, subject: maths, level: 2, kind: nombre, prompt: "Quelle est la moitié de 12 gerbes ?", answer: 6, hint: "Partage 12 en deux tas égaux." }
-            - { id: ch02-j2-ax-m1b, subject: maths, level: 2, kind: nombre, prompt: "Quel est le quart de 8 ?", answer: 2, hint: "Le quart, c'est la moitié de la moitié." }
+            - { id: ch02-j2-ax-m1a, subject: maths, level: 2, kind: qcm, prompt: "Quelle est la moitié de 12 gerbes ?", choices: ["24", "4", "6", "8", "3"], answer: "6", hint: "Partage 12 en deux tas égaux." }
+            - { id: ch02-j2-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Quel est le quart de 8 ?", choices: ["4", "2", "16", "1", "3"], answer: "2", hint: "Le quart, c'est la moitié de la moitié." }
           maelle:
-            - { id: ch02-j2-ma-m1a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 1/4 de 36.", answer: 9, hint: "Divise 36 par 4." }
-            - { id: ch02-j2-ma-m1b, subject: maths, level: 2, kind: court, prompt: "Une gerbe est coupée en 8 parts. 3/4 de la gerbe, c'est combien de huitièmes ? (écris la fraction)", answer: "6/8", hint: "1/4 = 2/8." }
+            - { id: ch02-j2-ma-m1a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 1/4 de 36.", choices: ["4", "18", "9", "12", "6"], answer: "9", hint: "Divise 36 par 4." }
+            - { id: ch02-j2-ma-m1b, subject: maths, level: 2, kind: qcm, prompt: "Une gerbe est coupée en 8 parts. 3/4 de la gerbe, c'est combien de huitièmes ? (écris la fraction)", choices: ["3/8", "4/8", "6/8", "5/8", "7/8"], answer: "6/8", hint: "1/4 = 2/8." }
           rafaelle:
-            - { id: ch02-j2-ra-m1a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 2/5 de 60.", answer: 24, hint: "1/5 de 60 = 12." }
-            - { id: ch02-j2-ra-m1b, subject: maths, level: 2, kind: court, prompt: "Calcule 3/4 + 1/8.", answer: "7/8", hint: "3/4 = 6/8." }
+            - { id: ch02-j2-ra-m1a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 2/5 de 60.", choices: ["12", "24", "30", "20", "36"], answer: "24", hint: "1/5 de 60 = 12." }
+            - { id: ch02-j2-ra-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 3/4 + 1/8.", choices: ["4/8", "4/12", "7/8", "8/12", "6/8"], answer: "7/8", hint: "3/4 = 6/8." }
       - id: m2
         title: Les sacs de grain
         tours:
           axelle:
-            - { id: ch02-j2-ax-m2a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 46 + 28.", answer: 74, hint: "6 + 8 = 14 : on écrit 4 et on retient 1." }
-            - { id: ch02-j2-ax-m2b, subject: maths, level: 2, kind: nombre, prompt: "Calcule 72 − 30.", answer: 42, hint: "Enlève 3 dizaines." }
+            - { id: ch02-j2-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 46 + 28.", choices: ["64", "84", "74", "73", "75"], answer: "74", hint: "6 + 8 = 14 : on écrit 4 et on retient 1." }
+            - { id: ch02-j2-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 72 − 30.", choices: ["102", "32", "42", "43", "41"], answer: "42", hint: "Enlève 3 dizaines." }
           maelle:
-            - { id: ch02-j2-ma-m2a, subject: maths, level: 2, kind: nombre, prompt: "Pose et calcule : 45 × 8.", answer: 360, hint: "40 × 8 = 320, plus 5 × 8." }
-            - { id: ch02-j2-ma-m2b, subject: maths, level: 2, kind: nombre, prompt: "Calcule 168 ÷ 4.", answer: 42, hint: "160 ÷ 4 = 40, il reste 8 ÷ 4." }
+            - { id: ch02-j2-ma-m2a, subject: maths, level: 2, kind: qcm, prompt: "Pose et calcule : 45 × 8.", choices: ["320", "400", "360", "350", "368"], answer: "360", hint: "40 × 8 = 320, plus 5 × 8." }
+            - { id: ch02-j2-ma-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 168 ÷ 4.", choices: ["40", "42", "44", "41", "43"], answer: "42", hint: "160 ÷ 4 = 40, il reste 8 ÷ 4." }
           rafaelle:
-            - { id: ch02-j2-ra-m2a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 7,2 ÷ 3.", answer: 2.4, hint: "72 ÷ 3 = 24, puis place la virgule." }
-            - { id: ch02-j2-ra-m2b, subject: maths, level: 2, kind: nombre, prompt: "3 sacs contiennent 18 gerbes. Combien de gerbes dans 7 sacs ?", answer: 42, hint: "Un sac contient 6 gerbes." }
+            - { id: ch02-j2-ra-m2a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7,2 ÷ 3.", choices: ["24", "2,2", "2,4", "2,6", "3,4"], answer: "2,4", hint: "72 ÷ 3 = 24, puis place la virgule." }
+            - { id: ch02-j2-ra-m2b, subject: maths, level: 2, kind: qcm, prompt: "3 sacs contiennent 18 gerbes. Combien de gerbes dans 7 sacs ?", choices: ["35", "49", "42", "36", "48"], answer: "42", hint: "Un sac contient 6 gerbes." }
       - id: m3
         title: Ce dont la plante a besoin
         intro: "Plume a planté trois graines : une à l'ombre, une sans eau, une au soleil avec de l'eau. Laquelle pousse ?"
         tours:
           axelle:
-            - { id: ch02-j2-ax-m3a, subject: sciences, level: 2, kind: qcm, prompt: "Quelle graine de Plume va pousser ?", choices: ["Celle sans eau", "Celle au soleil avec de l'eau", "Celle dans le noir sans eau"], answer: "Celle au soleil avec de l'eau", hint: "Elle a besoin de deux choses à la fois." }
+            - { id: ch02-j2-ax-m3a, subject: sciences, level: 2, kind: qcm, prompt: "Quelle graine de Plume va pousser ?", choices: ["Celle sans eau", "Celle au soleil avec de l'eau", "Celle dans le noir sans eau", "Celle à l'ombre avec de l'eau", "Celle au soleil sans eau"], answer: "Celle au soleil avec de l'eau", hint: "Elle a besoin de deux choses à la fois." }
             - { gen: maths.multiplication }
           maelle:
-            - { id: ch02-j2-ma-m3a, subject: sciences, level: 3, kind: qcm, prompt: "Pour savoir si la lumière est utile, on compare deux pots. Que doit-on changer entre les deux ?", choices: ["Seulement la lumière", "La lumière et l'eau", "Tout"], answer: "Seulement la lumière", hint: "Une expérience juste ne change qu'une chose à la fois." }
+            - { id: ch02-j2-ma-m3a, subject: sciences, level: 3, kind: qcm, prompt: "Pour savoir si la lumière est utile, on compare deux pots. Que doit-on changer entre les deux ?", choices: ["Seulement la lumière", "La lumière et l'eau", "Tout", "Seulement l'eau", "Rien"], answer: "Seulement la lumière", hint: "Une expérience juste ne change qu'une chose à la fois." }
             - { gen: maths.multiplication }
           rafaelle:
             - { id: ch02-j2-ra-m3a, subject: sciences, level: 3, kind: ordre, prompt: "Range cette chaîne alimentaire, de celui qui est mangé à celui qui mange.", choices: ["renard", "blé", "mulot"], answer: ["blé", "mulot", "renard"], hint: "Tout commence par une plante." }
-            - { id: ch02-j2-ra-m3b, subject: maths, level: 2, kind: nombre, prompt: "Calcule 10 % de 350.", answer: 35, hint: "10 %, c'est diviser par 10." }
+            - { id: ch02-j2-ra-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 10 % de 350.", choices: ["3,5", "45", "35", "350", "25"], answer: "35", hint: "10 %, c'est diviser par 10." }
       - id: m4
         title: Le Défi des épis
         tours:
           axelle:
-            - { id: ch02-j2-ax-m4a, subject: maths, level: 3, kind: nombre, prompt: "3 sacs de 6 gerbes : combien de gerbes en tout ?", answer: 18, hint: "6 + 6 + 6." }
+            - { id: ch02-j2-ax-m4a, subject: maths, level: 3, kind: qcm, prompt: "3 sacs de 6 gerbes : combien de gerbes en tout ?", choices: ["9", "24", "18", "21", "15"], answer: "18", hint: "6 + 6 + 6." }
             - { gen: maths.fraction-de }
           maelle:
-            - { id: ch02-j2-ma-m4a, subject: maths, level: 3, kind: nombre, prompt: "5 sacs de 28 gerbes : combien de gerbes en tout ?", answer: 140, hint: "28 × 5 = 28 × 10 ÷ 2." }
+            - { id: ch02-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "5 sacs de 28 gerbes : combien de gerbes en tout ?", choices: ["130", "112", "140", "150", "145"], answer: "140", hint: "28 × 5 = 28 × 10 ÷ 2." }
             - { gen: maths.fraction-de }
           rafaelle:
-            - { id: ch02-j2-ra-m4a, subject: francais, level: 3, kind: qcm, prompt: "« La gerbe est volée par Nilo. » La phrase est à quelle voix ?", choices: ["active", "passive"], answer: "passive", hint: "Le sujet subit l'action." }
+            - { id: ch02-j2-ra-m4a, subject: francais, level: 3, kind: qcm, prompt: "« La gerbe est volée par Nilo. » La phrase est à quelle voix ?", choices: ["active", "passive", "interrogative", "impérative", "exclamative"], answer: "passive", hint: "Le sujet subit l'action." }
             - { gen: maths.fraction-de }
     pause: "Le vent passe sur le blé : balancez-vous de gauche à droite comme des épis, trois fois, puis tournez sur vous-mêmes !"
     closing:
@@ -210,49 +210,49 @@ days:
         title: Les pommes tombées
         tours:
           axelle:
-            - { id: ch02-j3-ax-m1a, subject: maths, level: 2, kind: nombre, prompt: "Calcule 5 × 3.", answer: 15, hint: "5 + 5 + 5." }
-            - { id: ch02-j3-ax-m1b, subject: maths, level: 3, kind: nombre, prompt: "Pose et calcule : 91 − 47.", answer: 44, hint: "1 − 7, impossible : on emprunte une dizaine." }
+            - { id: ch02-j3-ax-m1a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 5 × 3.", choices: ["8", "20", "15", "10", "16"], answer: "15", hint: "5 + 5 + 5." }
+            - { id: ch02-j3-ax-m1b, subject: maths, level: 3, kind: qcm, prompt: "Pose et calcule : 91 − 47.", choices: ["54", "34", "44", "43", "45"], answer: "44", hint: "1 − 7, impossible : on emprunte une dizaine." }
           maelle:
-            - { id: ch02-j3-ma-m1a, subject: maths, level: 3, kind: court, prompt: "Calcule 2/7 + 3/7.", answer: "5/7", hint: "Même dénominateur : on ajoute seulement le haut." }
-            - { id: ch02-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Quelle est la plus grande fraction ?", choices: ["3/4", "2/3"], answer: "3/4", hint: "3/4 = 9/12 et 2/3 = 8/12." }
+            - { id: ch02-j3-ma-m1a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 2/7 + 3/7.", choices: ["5/14", "6/7", "5/7", "1/7", "5/49"], answer: "5/7", hint: "Même dénominateur : on ajoute seulement le haut." }
+            - { id: ch02-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Quelle est la plus grande fraction ?", choices: ["3/4", "2/3", "1/2", "5/6", "3/5"], answer: "3/4", hint: "3/4 = 9/12 et 2/3 = 8/12." }
           rafaelle:
-            - { id: ch02-j3-ra-m1a, subject: maths, level: 3, kind: court, prompt: "Calcule 1/2 × 1/3.", answer: "1/6", hint: "On multiplie les hauts entre eux, et les bas entre eux." }
-            - { id: ch02-j3-ra-m1b, subject: maths, level: 3, kind: nombre, prompt: "Calcule 25 % de 240.", answer: 60, hint: "25 %, c'est le quart." }
+            - { id: ch02-j3-ra-m1a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 1/2 × 1/3.", choices: ["2/3", "1/5", "1/6", "3/6", "1/3"], answer: "1/6", hint: "On multiplie les hauts entre eux, et les bas entre eux." }
+            - { id: ch02-j3-ra-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 25 % de 240.", choices: ["24", "120", "60", "80", "48"], answer: "60", hint: "25 %, c'est le quart." }
       - id: m2
         title: Le calendrier du verger
         tours:
           axelle:
             - { id: ch02-j3-ax-m2a, subject: sciences, level: 2, kind: ordre, prompt: "Range les saisons dans l'ordre, en commençant par le printemps.", choices: ["hiver", "été", "automne", "printemps"], answer: ["printemps", "été", "automne", "hiver"], hint: "Après le printemps vient la saison la plus chaude." }
-            - { id: ch02-j3-ax-m2b, subject: sciences, level: 2, kind: qcm, prompt: "En quelle saison les pommiers sont-ils en fleurs ?", choices: ["au printemps", "en hiver", "en automne"], answer: "au printemps", hint: "C'est la saison où la nature se réveille." }
+            - { id: ch02-j3-ax-m2b, subject: sciences, level: 2, kind: qcm, prompt: "En quelle saison les pommiers sont-ils en fleurs ?", choices: ["au printemps", "en hiver", "en automne", "en été", "jamais"], answer: "au printemps", hint: "C'est la saison où la nature se réveille." }
           maelle:
-            - { id: ch02-j3-ma-m2a, subject: maths, level: 2, kind: nombre, prompt: "3/4 d'heure, c'est combien de minutes ?", answer: 45, hint: "Un quart d'heure = 15 minutes." }
-            - { id: ch02-j3-ma-m2b, subject: maths, level: 3, kind: court, prompt: "La cueillette dure de 8 h 30 à 11 h 10. Combien de temps dure-t-elle ?", answer: "2 h 40", accept: ["2h40", "2:40", "160 min"], clock: "8:30", hint: "De 8 h 30 à 10 h 30 : 2 h. Puis jusqu'à 11 h 10." }
+            - { id: ch02-j3-ma-m2a, subject: maths, level: 2, kind: qcm, prompt: "3/4 d'heure, c'est combien de minutes ?", choices: ["30", "75", "45", "40", "50"], answer: "45", hint: "Un quart d'heure = 15 minutes." }
+            - { id: ch02-j3-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "La cueillette dure de 8 h 30 à 11 h 10. Combien de temps dure-t-elle ?", choices: ["2 h 20", "3 h 20", "2 h 40", "2 h 50", "1 h 40"], answer: "2 h 40", clock: "8:30", hint: "De 8 h 30 à 10 h 30 : 2 h. Puis jusqu'à 11 h 10." }
           rafaelle:
-            - { id: ch02-j3-ra-m2a, subject: maths, level: 3, kind: nombre, prompt: "5 paniers de pommes coûtent 35 pièces. Combien coûtent 8 paniers ?", answer: 56, hint: "Un panier coûte 7 pièces." }
-            - { id: ch02-j3-ra-m2b, subject: maths, level: 3, kind: nombre, prompt: "Pour la compote : 6 pommes pour 4 personnes. Combien de pommes pour 10 personnes ?", answer: 15, hint: "Pour 2 personnes : 3 pommes." }
+            - { id: ch02-j3-ra-m2a, subject: maths, level: 3, kind: qcm, prompt: "5 paniers de pommes coûtent 35 pièces. Combien coûtent 8 paniers ?", choices: ["48", "64", "56", "49", "63"], answer: "56", hint: "Un panier coûte 7 pièces." }
+            - { id: ch02-j3-ra-m2b, subject: maths, level: 3, kind: qcm, prompt: "Pour la compote : 6 pommes pour 4 personnes. Combien de pommes pour 10 personnes ?", choices: ["12", "20", "15", "14", "16"], answer: "15", hint: "Pour 2 personnes : 3 pommes." }
       - id: m3
         title: Les mots du verger
         tours:
           axelle:
-            - { id: ch02-j3-ax-m3a, subject: francais, level: 3, kind: court, prompt: "Complète les accords : « Les gerb… sont lourd… » (écris les deux mots).", answer: "gerbes lourdes", accept: ["les gerbes sont lourdes"], hint: "C'est pluriel, et « gerbe » est féminin." }
-            - { id: ch02-j3-ax-m3b, subject: francais, level: 3, kind: court, prompt: "« Il récolte » : quel est l'infinitif du verbe ?", answer: "récolter", hint: "L'infinitif se termine souvent par -er." }
+            - { id: ch02-j3-ax-m3a, subject: francais, level: 3, kind: qcm, prompt: "Complète les accords : « Les gerb… sont lourd… » (écris les deux mots).", choices: ["gerbe lourde", "gerbes lourde", "gerbes lourdes", "gerbe lourdes", "gerbes lourd"], answer: "gerbes lourdes", hint: "C'est pluriel, et « gerbe » est féminin." }
+            - { id: ch02-j3-ax-m3b, subject: francais, level: 3, kind: qcm, prompt: "« Il récolte » : quel est l'infinitif du verbe ?", choices: ["récolté", "récoltant", "récolter", "récolt", "récolterai"], answer: "récolter", hint: "L'infinitif se termine souvent par -er." }
           maelle:
-            - { id: ch02-j3-ma-m3a, subject: francais, level: 3, kind: court, prompt: "« Nilo vole une gerbe. » Quel est le COD ?", answer: "une gerbe", hint: "Nilo vole quoi ?" }
-            - { id: ch02-j3-ma-m3b, subject: francais, level: 3, kind: court, prompt: "Conjugue à l'imparfait : « Nilo (courir) ».", answer: "Nilo courait", accept: ["courait"], hint: "À l'imparfait, il/elle se termine par -ait." }
+            - { id: ch02-j3-ma-m3a, subject: francais, level: 3, kind: qcm, prompt: "« Nilo vole une gerbe. » Quel est le COD ?", choices: ["Nilo", "vole", "une gerbe", "à la gerbe", "la paille"], answer: "une gerbe", hint: "Nilo vole quoi ?" }
+            - { id: ch02-j3-ma-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue à l'imparfait : « Nilo (courir) ».", choices: ["Nilo courrait", "Nilo couru", "Nilo courait", "Nilo court", "Nilo courra"], answer: "Nilo courait", hint: "À l'imparfait, il/elle se termine par -ait." }
           rafaelle:
-            - { id: ch02-j3-ra-m3a, subject: espagnol, level: 3, kind: court, prompt: "Traduis : « Nosotras cosechamos el trigo ».", answer: "nous récoltons le blé", hint: "Cosechar = récolter." }
-            - { id: ch02-j3-ra-m3b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « la pomme » en espagnol ?", choices: ["la manzana", "la naranja", "la pera"], answer: "la manzana", hint: "Regarde la phrase du jour." }
+            - { id: ch02-j3-ra-m3a, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Nosotras cosechamos el trigo ».", choices: ["vous récoltez le blé", "elles récoltent le blé", "nous récoltons le blé", "nous semons le blé", "nous récoltons le pain"], answer: "nous récoltons le blé", hint: "Cosechar = récolter." }
+            - { id: ch02-j3-ra-m3b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « la pomme » en espagnol ?", choices: ["la manzana", "la naranja", "la pera", "el limón", "la uva"], answer: "la manzana", hint: "Regarde la phrase du jour." }
       - id: m4
         title: Le Défi des pommiers
         tours:
           axelle:
-            - { id: ch02-j3-ax-m4a, subject: maths, level: 3, kind: nombre, prompt: "Calcule 4 × 5.", answer: 20, hint: "Compte de 5 en 5, quatre fois." }
+            - { id: ch02-j3-ax-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 4 × 5.", choices: ["9", "25", "20", "15", "24"], answer: "20", hint: "Compte de 5 en 5, quatre fois." }
             - { gen: maths.addition }
           maelle:
-            - { id: ch02-j3-ma-m4a, subject: maths, level: 3, kind: nombre, prompt: "Écris 3/10 en nombre décimal.", answer: 0.3, hint: "3 dixièmes." }
+            - { id: ch02-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Écris 3/10 en nombre décimal.", choices: ["3,0", "0,03", "0,3", "0,13", "3,3"], answer: "0,3", hint: "3 dixièmes." }
             - { gen: maths.duree }
           rafaelle:
-            - { id: ch02-j3-ra-m4a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi protéger les abeilles du verger ?", choices: ["Elles transportent le pollen et aident les fruits à se former", "Elles font peur aux Oublions", "Elles mangent les pommes pourries"], answer: "Elles transportent le pollen et aident les fruits à se former", hint: "Sans pollinisation, pas de fruits." }
+            - { id: ch02-j3-ra-m4a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi protéger les abeilles du verger ?", choices: ["Elles transportent le pollen et aident les fruits à se former", "Elles font peur aux Oublions", "Elles mangent les pommes pourries", "Elles fabriquent la pluie", "Elles gardent le moulin"], answer: "Elles transportent le pollen et aident les fruits à se former", hint: "Sans pollinisation, pas de fruits." }
             - { gen: maths.multiplication }
     pause: "Cueillette géante : tendez les bras le plus haut possible pour attraper une pomme imaginaire, cinq fois de suite !"
     closing:
@@ -283,51 +283,51 @@ days:
         title: Les tables du meunier
         tours:
           axelle:
-            - { id: ch02-j4-ax-m1a, subject: maths, level: 3, kind: nombre, prompt: "Calcule 12 ÷ 3.", answer: 4, hint: "Partage 12 en 3 tas égaux." }
+            - { id: ch02-j4-ax-m1a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 12 ÷ 3.", choices: ["3", "6", "4", "9", "15"], answer: "4", hint: "Partage 12 en 3 tas égaux." }
             - { gen: maths.multiplication, count: 2 }
           maelle:
-            - { id: ch02-j4-ma-m1a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 7,5 × 4.", answer: 30, hint: "7 × 4 = 28 et 0,5 × 4 = 2." }
+            - { id: ch02-j4-ma-m1a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 7,5 × 4.", choices: ["28", "32", "30", "24", "29"], answer: "30", hint: "7 × 4 = 28 et 0,5 × 4 = 2." }
             - { gen: maths.multiplication }
           rafaelle:
-            - { id: ch02-j4-ra-m1a, subject: maths, level: 3, kind: nombre, prompt: "Un sac de farine pèse n kilos. Combien pèsent 4 sacs ? Si n = 5, écris le résultat.", answer: 20, hint: "4 sacs = 4 × n." }
-            - { id: ch02-j4-ra-m1b, subject: maths, level: 3, kind: court, prompt: "Si une gerbe vaut n, combien valent 4 gerbes ? (écris l'expression)", answer: "4n", accept: ["4 × n", "4 x n", "4*n", "n × 4"], hint: "On écrit 4 × n, ou plus court : 4n." }
+            - { id: ch02-j4-ra-m1a, subject: maths, level: 3, kind: qcm, prompt: "Un sac de farine pèse n kilos. Combien pèsent 4 sacs ? Si n = 5, écris le résultat.", choices: ["9", "45", "20", "15", "25"], answer: "20", hint: "4 sacs = 4 × n." }
+            - { id: ch02-j4-ra-m1b, subject: maths, level: 3, kind: qcm, prompt: "Si une gerbe vaut n, combien valent 4 gerbes ? (écris l'expression)", choices: ["n+4", "n4", "4n", "4/n", "n²"], answer: "4n", hint: "On écrit 4 × n, ou plus court : 4n." }
       - id: m2
         title: La roue et le levier
         tours:
           axelle:
-            - { id: ch02-j4-ax-m2a, subject: sciences, level: 2, kind: qcm, prompt: "Qu'est-ce qui fait tourner les ailes du moulin ?", choices: ["le vent", "la pluie", "la lune"], answer: "le vent", hint: "On ne le voit pas, mais il pousse fort." }
-            - { id: ch02-j4-ax-m2b, subject: maths, level: 3, kind: nombre, prompt: "1 m, c'est combien de centimètres ?", answer: 100, hint: "Ta règle mesure souvent 30 cm. Un mètre, c'est bien plus." }
+            - { id: ch02-j4-ax-m2a, subject: sciences, level: 2, kind: qcm, prompt: "Qu'est-ce qui fait tourner les ailes du moulin ?", choices: ["le vent", "la pluie", "la lune", "le soleil", "les oiseaux"], answer: "le vent", hint: "On ne le voit pas, mais il pousse fort." }
+            - { id: ch02-j4-ax-m2b, subject: maths, level: 3, kind: qcm, prompt: "1 m, c'est combien de centimètres ?", choices: ["10", "1 000", "100", "12", "50"], answer: "100", hint: "Ta règle mesure souvent 30 cm. Un mètre, c'est bien plus." }
           maelle:
-            - { id: ch02-j4-ma-m2a, subject: maths, level: 4, kind: nombre, prompt: "Le champ du moulin est un rectangle de 6 m sur 4 m. Quelle est son aire, en m² ?", answer: 24, hint: "Aire = longueur × largeur." }
-            - { id: ch02-j4-ma-m2b, subject: maths, level: 3, kind: nombre, prompt: "Ce même champ de 6 m sur 4 m : quel est son périmètre, en mètres ?", answer: 20, hint: "6 + 4 + 6 + 4." }
+            - { id: ch02-j4-ma-m2a, subject: maths, level: 4, kind: qcm, prompt: "Le champ du moulin est un rectangle de 6 m sur 4 m. Quelle est son aire, en m² ?", choices: ["20", "48", "24", "10", "12"], answer: "24", hint: "Aire = longueur × largeur." }
+            - { id: ch02-j4-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Ce même champ de 6 m sur 4 m : quel est son périmètre, en mètres ?", choices: ["24", "10", "20", "40", "18"], answer: "20", hint: "6 + 4 + 6 + 4." }
           rafaelle:
-            - { id: ch02-j4-ra-m2a, subject: maths, level: 3, kind: nombre, prompt: "Aire d'un triangle de base 8 m et de hauteur 5 m, en m² ?", answer: 20, hint: "Base × hauteur ÷ 2." }
+            - { id: ch02-j4-ra-m2a, subject: maths, level: 3, kind: qcm, prompt: "Aire d'un triangle de base 8 m et de hauteur 5 m, en m² ?", choices: ["40", "13", "20", "35", "24"], answer: "20", hint: "Base × hauteur ÷ 2." }
             - { gen: maths.conversion }
       - id: m3
         title: La vie au village
         tours:
           axelle:
-            - { id: ch02-j4-ax-m3a, subject: francais, level: 4, kind: court, prompt: "Mets au passé composé : « Elles récoltent. »", answer: "elles ont récolté", accept: ["ont récolté"], hint: "Avoir + participe passé." }
-            - { id: ch02-j4-ax-m3b, subject: francais, level: 4, kind: court, prompt: "Un cheval, des… ?", answer: "chevaux", hint: "Les mots en -al font souvent -aux." }
+            - { id: ch02-j4-ax-m3a, subject: francais, level: 4, kind: qcm, prompt: "Mets au passé composé : « Elles récoltent. »", choices: ["elles ont récolter", "elles avaient récolté", "elles ont récolté", "elles sont récoltées", "elles récoltaient"], answer: "elles ont récolté", hint: "Avoir + participe passé." }
+            - { id: ch02-j4-ax-m3b, subject: francais, level: 4, kind: qcm, prompt: "Un cheval, des… ?", choices: ["chevals", "chevaus", "chevaux", "chevalx", "chevales"], answer: "chevaux", hint: "Les mots en -al font souvent -aux." }
           maelle:
-            - { id: ch02-j4-ma-m3a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Dans un village rural, que trouve-t-on surtout autour des maisons ?", choices: ["des champs et des fermes", "des gratte-ciel", "des usines géantes"], answer: "des champs et des fermes", hint: "Rural, c'est la campagne." }
-            - { id: ch02-j4-ma-m3b, subject: francais, level: 4, kind: court, prompt: "Conjugue au futur : « Elle (planter) ».", answer: "elle plantera", accept: ["plantera"], hint: "Infinitif + a : planter-a." }
+            - { id: ch02-j4-ma-m3a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Dans un village rural, que trouve-t-on surtout autour des maisons ?", choices: ["des champs et des fermes", "des gratte-ciel", "des usines géantes", "des ports de pêche", "des tours de bureaux"], answer: "des champs et des fermes", hint: "Rural, c'est la campagne." }
+            - { id: ch02-j4-ma-m3b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au futur : « Elle (planter) ».", choices: ["elle plante", "elle plantait", "elle plantera", "elle a planté", "elle planterait"], answer: "elle plantera", hint: "Infinitif + a : planter-a." }
           rafaelle:
-            - { id: ch02-j4-ra-m3a, subject: sciences, level: 3, kind: qcm, prompt: "La farine du moulin sert surtout à apporter à notre corps…", choices: ["de l'énergie (glucides)", "du calcium", "de la vitamine C"], answer: "de l'énergie (glucides)", hint: "Pain, pâtes : de quoi courir toute la journée." }
-            - { id: ch02-j4-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "« Nilo parle à Plume. » Quelle est la fonction de « à Plume » ?", choices: ["COD", "COI", "sujet"], answer: "COI", hint: "Il parle à qui ? Avec une préposition : complément indirect." }
+            - { id: ch02-j4-ra-m3a, subject: sciences, level: 3, kind: qcm, prompt: "La farine du moulin sert surtout à apporter à notre corps…", choices: ["de l'énergie (glucides)", "du calcium", "de la vitamine C", "des protéines", "du fer"], answer: "de l'énergie (glucides)", hint: "Pain, pâtes : de quoi courir toute la journée." }
+            - { id: ch02-j4-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "« Nilo parle à Plume. » Quelle est la fonction de « à Plume » ?", choices: ["COD", "COI", "sujet", "attribut", "complément circonstanciel"], answer: "COI", hint: "Il parle à qui ? Avec une préposition : complément indirect." }
       - id: m4
         title: Le Défi de l'Épouvantail
         intro: "L'Épouvantail tremble. À chaque bonne réponse, une aile du moulin bouge un peu."
         tours:
           axelle:
-            - { id: ch02-j4-ax-m4a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 6 × 8.", answer: 48, hint: "6 × 4 = 24, puis le double." }
-            - { id: ch02-j4-ax-m4b, subject: maths, level: 4, kind: nombre, prompt: "2 kg, c'est combien de grammes ?", answer: 2000, hint: "1 kg = 1 000 g." }
+            - { id: ch02-j4-ax-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 6 × 8.", choices: ["14", "42", "48", "56", "46"], answer: "48", hint: "6 × 4 = 24, puis le double." }
+            - { id: ch02-j4-ax-m4b, subject: maths, level: 4, kind: qcm, prompt: "2 kg, c'est combien de grammes ?", choices: ["200", "20 000", "2 000", "1 000", "2 002"], answer: "2 000", hint: "1 kg = 1 000 g." }
           maelle:
-            - { id: ch02-j4-ma-m4a, subject: maths, level: 4, kind: nombre, prompt: "Calcule 12,6 − 4,85.", answer: 7.75, hint: "Écris 12,60 pour aligner les virgules." }
-            - { id: ch02-j4-ma-m4b, subject: francais, level: 4, kind: qcm, prompt: "Choisis : « Nilo range (ces / ses) gerbes, celles qui lui appartiennent. »", choices: ["ces", "ses"], answer: "ses", hint: "Ce sont les siennes : possessif." }
+            - { id: ch02-j4-ma-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 12,6 − 4,85.", choices: ["8,25", "7,85", "7,75", "8,15", "7,65"], answer: "7,75", hint: "Écris 12,60 pour aligner les virgules." }
+            - { id: ch02-j4-ma-m4b, subject: francais, level: 4, kind: qcm, prompt: "Choisis : « Nilo range (ces / ses) gerbes, celles qui lui appartiennent. »", choices: ["ces", "ses", "ton", "leur", "mes"], answer: "ses", hint: "Ce sont les siennes : possessif." }
           rafaelle:
-            - { id: ch02-j4-ra-m4a, subject: maths, level: 4, kind: nombre, prompt: "Augmente 80 de 10 %.", answer: 88, hint: "10 % de 80 = 8." }
-            - { id: ch02-j4-ra-m4b, subject: maths, level: 4, kind: nombre, prompt: "Calcule −5 − 3.", answer: -8, hint: "Tu descends encore de 3 sous zéro." }
+            - { id: ch02-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Augmente 80 de 10 %.", choices: ["90", "8", "88", "81", "78"], answer: "88", hint: "10 % de 80 = 8." }
+            - { id: ch02-j4-ra-m4b, subject: maths, level: 4, kind: qcm, prompt: "Calcule −5 − 3.", choices: ["−2", "2", "−8", "8", "−15"], answer: "−8", hint: "Tu descends encore de 3 sous zéro." }
     pause: "Faites tourner vos bras comme les ailes du moulin : dix tours en avant, dix tours en arrière !"
     closing:
       - { who: narrateur, text: "Les ailes du moulin frémissent, puis se mettent à tourner, d'abord lentement, puis de plus en plus vite. À l'intérieur, la meule chante en écrasant le grain, et une farine blanche et lumineuse s'envole par la fenêtre." }
@@ -354,27 +354,27 @@ days:
         intro: "La gerbe retrouvée se partage en morceaux de musique."
         tours:
           axelle:
-            - { id: ch02-j5-ax-m1a, subject: maths, level: 3, kind: court, prompt: "Combien font 1/2 + 1/2 ?", answer: "1", accept: ["1 entier", "2/2", "un entier"], hint: "Deux moitiés font une gerbe entière." }
-            - { id: ch02-j5-ax-m1b, subject: maths, level: 4, kind: nombre, prompt: "Calcule 1/3 de 12.", answer: 4, hint: "Partage 12 en 3 parts égales." }
+            - { id: ch02-j5-ax-m1a, subject: maths, level: 3, kind: qcm, prompt: "Combien font 1/2 + 1/2 ?", choices: ["2/4", "2", "1", "0", "1/4"], answer: "1", hint: "Deux moitiés font une gerbe entière." }
+            - { id: ch02-j5-ax-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 1/3 de 12.", choices: ["3", "6", "4", "36", "8"], answer: "4", hint: "Partage 12 en 3 parts égales." }
           maelle:
-            - { id: ch02-j5-ma-m1a, subject: maths, level: 4, kind: court, prompt: "Calcule 5/6 − 1/6.", answer: "4/6", accept: ["2/3"], hint: "Même dénominateur : on soustrait seulement le haut." }
-            - { id: ch02-j5-ma-m1b, subject: maths, level: 4, kind: nombre, prompt: "4 gerbes valent 10 pièces. Combien valent 12 gerbes ?", answer: 30, hint: "12, c'est 3 fois 4." }
+            - { id: ch02-j5-ma-m1a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 5/6 − 1/6.", choices: ["6/6", "4/12", "4/6", "1/6", "3/6"], answer: "4/6", hint: "Même dénominateur : on soustrait seulement le haut." }
+            - { id: ch02-j5-ma-m1b, subject: maths, level: 4, kind: qcm, prompt: "4 gerbes valent 10 pièces. Combien valent 12 gerbes ?", choices: ["24", "40", "30", "20", "36"], answer: "30", hint: "12, c'est 3 fois 4." }
           rafaelle:
-            - { id: ch02-j5-ra-m1a, subject: maths, level: 4, kind: nombre, prompt: "Trouve x : 3x = 21.", answer: 7, hint: "Quel nombre multiplié par 3 donne 21 ?" }
-            - { id: ch02-j5-ra-m1b, subject: maths, level: 4, kind: nombre, prompt: "12 km en 3 h : quelle est la vitesse, en km/h ?", answer: 4, hint: "Distance ÷ durée." }
+            - { id: ch02-j5-ra-m1a, subject: maths, level: 4, kind: qcm, prompt: "Trouve x : 3x = 21.", choices: ["18", "63", "7", "24", "8"], answer: "7", hint: "Quel nombre multiplié par 3 donne 21 ?" }
+            - { id: ch02-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "12 km en 3 h : quelle est la vitesse, en km/h ?", choices: ["36", "9", "4", "15", "3"], answer: "4", hint: "Distance ÷ durée." }
       - id: m2
         title: Le défi de la Récolte
         intro: "La Guitare réclame une dernière épreuve, au niveau supérieur."
         tours:
           axelle:
-            - { id: ch02-j5-ax-m2a, subject: maths, level: 5, kind: nombre, prompt: "Calcule 3/4 de 16.", answer: 12, hint: "1/4 de 16 = 4, puis 3 fois." }
-            - { id: ch02-j5-ax-m2b, subject: musique, level: 3, kind: nombre, prompt: "Une noire dure 1 temps, une blanche 2 temps. Combien de temps durent 2 blanches ?", answer: 4, hint: "2 + 2." }
+            - { id: ch02-j5-ax-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 3/4 de 16.", choices: ["4", "8", "12", "20", "10"], answer: "12", hint: "1/4 de 16 = 4, puis 3 fois." }
+            - { id: ch02-j5-ax-m2b, subject: musique, level: 3, kind: qcm, prompt: "Une noire dure 1 temps, une blanche 2 temps. Combien de temps durent 2 blanches ?", choices: ["2", "3", "4", "6", "8"], answer: "4", hint: "2 + 2." }
           maelle:
-            - { id: ch02-j5-ma-m2a, subject: maths, level: 5, kind: nombre, prompt: "Calcule 50 % de 90.", answer: 45, hint: "50 %, c'est la moitié." }
-            - { id: ch02-j5-ma-m2b, subject: maths, level: 5, kind: nombre, prompt: "Complète : 2/5 = ?/100.", answer: 40, hint: "Multiplie le haut et le bas par 20." }
+            - { id: ch02-j5-ma-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 50 % de 90.", choices: ["9", "40", "45", "50", "80"], answer: "45", hint: "50 %, c'est la moitié." }
+            - { id: ch02-j5-ma-m2b, subject: maths, level: 5, kind: qcm, prompt: "Complète : 2/5 = ?/100.", choices: ["5", "20", "40", "50", "25"], answer: "40", hint: "Multiplie le haut et le bas par 20." }
           rafaelle:
-            - { id: ch02-j5-ra-m2a, subject: maths, level: 5, kind: nombre, prompt: "Résous 2x + 3 = 11.", answer: 4, hint: "Enlève 3 des deux côtés, puis divise par 2." }
-            - { id: ch02-j5-ra-m2b, subject: maths, level: 5, kind: nombre, prompt: "Quelle est la moyenne de 4, 6 et 8 ?", answer: 6, hint: "Additionne, puis divise par 3." }
+            - { id: ch02-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Résous 2x + 3 = 11.", choices: ["8", "14", "4", "5", "3"], answer: "4", hint: "Enlève 3 des deux côtés, puis divise par 2." }
+            - { id: ch02-j5-ra-m2b, subject: maths, level: 5, kind: qcm, prompt: "Quelle est la moyenne de 4, 6 et 8 ?", choices: ["18", "9", "6", "8", "4"], answer: "6", hint: "Additionne, puis divise par 3." }
       - id: m3
         title: Le Concert
         intro: "Le métronome bat 4 temps. Chaque apprentie tape sa mesure, puis toutes ensemble."
