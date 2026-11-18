@@ -1,0 +1,409 @@
+# Chapitre 13 — Le Marché des Mille Lanternes
+# Suite directe du chapitre 12 : après la traversée du détroit de brume, les trois sœurs
+# débarquent sur une rive silencieuse puis découvrent, un peu plus loin, un marché nocturne
+# entier construit sur des pontons flottants, au seuil même de la chaîne de montagnes —
+# dernier lieu de repos et d'échange avant l'ascension. Deux nouveaux personnages, tirés
+# directement de l'illustration ch13.webp (un marchand au turban vendant bijoux, boussole
+# et fruits ; une petite créature de brume qui soupèse un galet) : 'marchand' (voix Schedar)
+# et 'peseur' (voix Sulafat), présenté comme un fragment de la brume du Passeur Sans Rives
+# resté accroché aux capes des sœurs pendant la traversée — continuité directe avec ch12.
+# Décision NON majeure (aucune entrée dans MAJOR ni ORVANE de src/content/decisions.ts) :
+# effets génériques Lien/Courage/Mémoire, comme au chapitre 1. Rédigé directement en YAML,
+# canon établi tiré de la mémoire du projet (« fais au mieux »).
+
+id: ch13
+number: 13
+act: 2
+title: Le Marché des Mille Lanternes
+introImage: ch13
+scene: marche-lanternes
+
+espagnol:
+  - { es: "El mercado brilla de noche.", fr: "Le marché brille la nuit." }
+  - { es: "¿Cuánto cuesta esto?", fr: "Combien ça coûte ?" }
+  - { es: "Es un intercambio justo.", fr: "C'est un échange juste." }
+  - { es: "Las linternas iluminan el camino.", fr: "Les lanternes éclairent le chemin." }
+  - { es: "Gracias por tu ayuda.", fr: "Merci pour ton aide." }
+
+# Décision du Conseil du marché (jour 5). A = Lien, B = Courage, C = Mémoire. Pas d'effet
+# spécial défini dans src/content/decisions.ts pour ce chapitre (non majeur, pas d'Orvane) :
+# seul le texte change, comme pour la décision générique du chapitre 1.
+decision:
+  prompt: "Le marchand étale les trois objets devant vous — la boussole dorée, la carte déchirée, la lanterne qui ne s'éteint jamais — et attend, le Peseur flottant juste au-dessus. Que lui offrez-vous, en échange de celui dont vous aurez besoin pour les montagnes ?"
+  options:
+    A:
+      label: Offrir une chanson à tout le marché
+      scene: "Axelle entraîne Maelle et Rafaelle au centre du marché, et toutes les trois chantent ensemble, devant les marchands rassemblés, un air inventé sur place qui raconte leur traversée de la brume."
+      line: { who: marchand, text: "Une chanson qui fait sourire tout un marché vaut, à elle seule, plus que n'importe quelle pièce que j'aurais pu demander." }
+      habillage: "Chaque épreuve devient un moment partagé où l'on cherche à faire plaisir, ensemble, à ceux qui nous entourent."
+    B:
+      label: Décharger une barque avant l'aube
+      scene: "Rafaelle propose ses bras et ceux de ses sœurs pour décharger, avant le lever du jour, toute une barque de marchandises lourdes amarrée au bout du ponton, sans se plaindre une seule fois."
+      line: { who: marchand, text: "Peu de voyageuses proposent leurs bras avant même qu'on le leur demande. C'est payé, et bien payé, petite Archiviste." }
+      habillage: "Les épreuves deviennent une suite d'efforts rapides, à enchaîner sans faiblir jusqu'à l'aube."
+    C:
+      label: Raconter une histoire vraie du voyage
+      scene: "Maelle s'assoit sur une caisse renversée et raconte, en détail et sans en omettre un mot, l'histoire du Passeur Sans Rives, pour que le marchand puisse à son tour la raconter aux prochains voyageurs."
+      line: { who: marchand, text: "Une histoire vraie, bien racontée, voyagera plus loin que n'importe quel objet. Je la garderai précieusement, et je la raconterai à mon tour." }
+      habillage: "Les épreuves deviennent des énigmes où il faut se souvenir précisément de ce qui a été vécu, dans le bon ordre."
+
+repliquesAbsurdes:
+  - "Si le Peseur ne pèse jamais le poids, est-ce que je peux lui demander combien pèse un nuage, pour voir s'il triche un peu ?"
+  - "Mon renard a essayé de payer la boussole avec une noisette. Le marchand a dit que ce n'était pas tout à fait suffisant, mais qu'il appréciait l'effort."
+  - "On a déjà traversé un fleuve de brume. Un marché avec mille lanternes, ça devrait être presque des vacances."
+  - "Si je chante faux devant tout le marché, est-ce que ça compte quand même comme un paiement, ou juste comme une punition pour tout le monde ?"
+  - "Est-ce que la lanterne qui ne s'éteint jamais s'ennuie, la nuit, pendant que toutes les autres se reposent ?"
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: Le Marché aux Mille Lanternes
+    decor: Un dédale de pontons de bois reliés entre eux, couverts de centaines de lanternes de papier aux couleurs vives, des étals croulant sous les épices, les bijoux et les instruments anciens, la musique et les rires des marchands résonnant au-dessus de l'eau calme.
+    opening:
+      - { who: narrateur, text: "Après la rive silencieuse où le Passeur les avait laissées, L'Arche avança encore un peu dans la nuit — et déboucha soudain sur un spectacle que personne n'attendait : un marché tout entier construit sur l'eau, des centaines de lanternes de papier accrochées d'un ponton à l'autre, jetant sur les vagues une lumière rose et dorée." }
+      - { who: narrateur, text: "Le silence et la brume du détroit semblaient appartenir à un autre monde : ici, on criait, on marchandait, on riait, et une odeur d'épices et de fruits mûrs flottait au-dessus de l'eau comme une promesse." }
+      - { who: axelle, text: "Regardez toutes ces lanternes ! On dirait que quelqu'un a accroché toutes les étoiles du ciel juste au-dessus de l'eau !" }
+      - { who: nilo, text: "Et moi qui pensais qu'on avait fini de traverser des endroits bizarres pour la soirée. Ce marché n'était clairement pas sur la carte." }
+      - { who: narrateur, text: "Un homme les accueillit en premier, surgissant d'entre deux étals couverts de colliers et de petites boîtes dorées, le sourire aussi large que son turban était haut." }
+      - { who: marchand, text: "Bienvenue, bienvenue, jeunes voyageuses ! Peu de monde s'aventure jusqu'ici, au seuil même des montagnes. Vous tombez bien : la nuit est jeune, et mon étal plus encore." }
+      - { who: rafaelle, text: "On ne pensait pas trouver un marché ici. On croyait que la prochaine étape, c'était directement la montagne." }
+      - { who: marchand, text: "La montagne attendra une nuit de plus, petite voyageuse. Personne ne grimpe l'estomac vide ni les mains vides. Ici, on répare ce qui manque, avant de partir." }
+      - { who: maelle, text: "Tout ce marché est construit sur des pontons flottants. Comment est-ce qu'il ne coule jamais, avec tout ce poids dessus ?" }
+      - { who: marchand, text: "Ah, petite Cartographe — vous avez l'œil. Demandez donc au Peseur, un peu plus loin. Lui seul sait vraiment ce que ce marché peut porter, et ce qu'il ne peut pas." }
+    manches:
+      - id: m1
+        title: Premiers pas sur les pontons
+        tours:
+          axelle:
+            - { id: ch13-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on un lieu où l'on achète et vend toutes sortes de marchandises ?", choices: ["un marché", "un désert", "une forêt", "un sommet", "une rivière"], answer: "un marché", hint: "C'est le mot utilisé dans le récit de ce soir." }
+            - { id: ch13-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 6 + 7.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "6 + 7 = 6 + 6 + 1." }
+          maelle:
+            - { id: ch13-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi un ponton de bois flotte-t-il sur l'eau sans couler, même chargé d'étals ?", choices: ["le bois est toujours magique", "le bois est moins dense que l'eau, et des flotteurs répartissent le poids", "le bois devient plus léger la nuit", "l'eau pousse toujours tout vers le haut sans raison", "cela ne dépend d'aucune règle physique"], answer: "le bois est moins dense que l'eau, et des flotteurs répartissent le poids", hint: "Pense à ce que demande Maelle au marchand." }
+            - { id: ch13-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 84 + 57.", choices: ["131", "136", "139", "141", "145"], answer: "141", hint: "84 + 60 − 3." }
+          rafaelle:
+            - { id: ch13-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi les marchés nocturnes se développaient-ils souvent près des points de passage obligés, comme un détroit ou un col ?", choices: ["cela n'a jamais aucune utilité", "les voyageurs qui passaient par là avaient besoin de se ravitailler et d'échanger", "les marchands détestaient la lumière du jour", "ces lieux étaient toujours interdits de commerce", "parce que les montagnes empêchaient tout commerce"], answer: "les voyageurs qui passaient par là avaient besoin de se ravitailler et d'échanger", hint: "Repense à ce que dit le marchand sur la montagne qui attend." }
+            - { id: ch13-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 23 × 7.", choices: ["147", "154", "158", "161", "168"], answer: "161", hint: "23 × 7 = 20 × 7 + 3 × 7." }
+      - id: m2
+        title: Le marchand au turban
+        tours:
+          axelle:
+            - { id: ch13-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de la phrase « Un homme les accueillit en premier. » ?", choices: ["les", "en premier", "Un homme", "accueillit", "premier"], answer: "Un homme", hint: "Qui fait l'action d'accueillir ?" }
+            - { id: ch13-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 5.", choices: ["6", "7", "8", "9", "10"], answer: "9", hint: "14 − 4 = 10, puis − 1." }
+          maelle:
+            - { id: ch13-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « large » dans « le sourire aussi large que son turban » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le sourire du marchand." }
+            - { id: ch13-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 504 ÷ 7.", choices: ["62", "68", "70", "72", "76"], answer: "72", hint: "7 × 72 = 504." }
+          rafaelle:
+            - { id: ch13-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Personne ne grimpe l'estomac vide ni les mains vides. » : que suggère cette phrase sur la philosophie du marchand ?", choices: ["qu'il refuse tout voyageur affamé", "qu'il croit qu'on doit se préparer avant une épreuve difficile", "qu'il n'aime pas les montagnes", "qu'il ne pense qu'à l'argent", "qu'il déteste les voyageurs"], answer: "qu'il croit qu'on doit se préparer avant une épreuve difficile", hint: "Pense à ce qu'il propose juste après cette phrase." }
+            - { id: ch13-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 9² − 40.", choices: ["31", "35", "39", "41", "45"], answer: "41", hint: "81 − 40." }
+      - id: m3
+        title: Les lanternes de papier
+        tours:
+          axelle:
+            - { id: ch13-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 5 pontons, chacun porte 6 lanternes. Combien de lanternes en tout ?", choices: ["24", "26", "28", "30", "32"], answer: "30", hint: "5 × 6." }
+            - { id: ch13-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi utilise-t-on du papier fin et une petite flamme pour fabriquer une lanterne de papier ?", choices: ["pour qu'elle pèse très lourd", "pour que la lumière traverse le papier et illumine joliment la nuit", "pour qu'elle ne brûle jamais", "pour qu'elle flotte toute seule sur l'eau", "cela n'a aucune raison particulière"], answer: "pour que la lumière traverse le papier et illumine joliment la nuit", hint: "Pense à l'effet recherché la nuit." }
+          maelle:
+            - { id: ch13-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 37 × 4.", choices: ["138", "142", "144", "148", "152"], answer: "148", hint: "37 × 4 = 40 × 4 − 3 × 4." }
+            - { id: ch13-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Avant l'électricité, comment éclairait-on souvent les marchés et les fêtes nocturnes ?", choices: ["avec des lanternes et des bougies", "avec des ordinateurs", "avec des lampes électriques modernes", "on ne sortait jamais la nuit", "avec des miroirs uniquement"], answer: "avec des lanternes et des bougies", hint: "Pense à ce qui éclaire le marché ce soir." }
+          rafaelle:
+            - { id: ch13-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x + 3 = 38.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "5x = 35." }
+            - { id: ch13-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Une odeur d'épices (flotter) au-dessus de l'eau. »", choices: ["a flotté", "flottait", "flottera", "flotte", "flottant"], answer: "a flotté", hint: "Passé composé = avoir + participe passé." }
+      - id: m4
+        title: Premiers échanges
+        tours:
+          axelle:
+            - { id: ch13-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 6.", choices: ["42", "44", "46", "48", "50"], answer: "48", hint: "8 × 6 = 8 × 5 + 8." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch13-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 260 − 95.", choices: ["155", "160", "163", "165", "170"], answer: "165", hint: "260 − 100 + 5." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch13-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El mercado brilla de noche. »", choices: ["Le marché dort la nuit.", "Le marché brille la nuit.", "Le marché ferme la nuit.", "Le marché crie la nuit.", "Le marché flotte la nuit."], answer: "Le marché brille la nuit.", hint: "« Brilla » = brille." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu des lanternes : une sœur ferme les yeux pendant que les deux autres déplacent doucement une lanterne éteinte le long d'un ponton ; elle doit deviner, au bruit des pas, dans quelle direction elle s'éloigne."
+    closing:
+      - { who: narrateur, text: "La nuit avançait, et peu à peu les derniers clients du marché regagnaient leurs barques, tandis que le marchand commençait à ranger, un à un, les bijoux les plus précieux de son étal." }
+      - { who: marchand, text: "Revenez demain soir. Je vous présenterai quelqu'un qui compte, ici, bien plus que moi : le Peseur. Lui seul décide, au fond, si un échange est vraiment juste." }
+      - { who: rafaelle, text: "Un peseur ? Qui pèse quoi, exactement ?" }
+      - { who: marchand, text: "Vous verrez bien. Disons seulement qu'il n'est pas tout à fait... ordinaire." }
+      - { who: narrateur, text: "Alors que les trois sœurs regagnaient l'Arche, Nilo s'arrêta un instant devant un étal fermé, reniflant l'air chargé d'épices, avec un air légèrement inquiet." }
+      - { who: nilo, text: "Pas ordinaire, il a dit. Venant d'un marché construit sur l'eau avec mille lanternes, ça promet." }
+    reward: "la découverte du marché aux mille lanternes"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Le Peseur de Brume
+    decor: Un coin tranquille du marché, à l'écart des étals bruyants, où flotte un petit nuage de brume argentée muni d'une minuscule balance dorée suspendue en son centre, entouré de bibelots en attente d'être évalués.
+    opening:
+      - { who: narrateur, text: "Le lendemain soir, le marchand les conduisit à l'écart des étals bruyants, jusqu'à un coin tranquille du ponton où flottait, immobile, un petit nuage de brume argentée, muni en son centre d'une minuscule balance dorée." }
+      - { who: marchand, text: "Voici le Peseur. Il ne parle pas beaucoup, mais il ne se trompe jamais sur ce qui a vraiment de la valeur." }
+      - { who: narrateur, text: "Le petit nuage frémit, et une voix légère, comme un souffle, sembla sortir de nulle part et de partout à la fois." }
+      - { who: peseur, text: "Je pèse. C'est tout ce que je sais faire. Et c'est, je crois, bien assez pour un marché comme celui-ci." }
+      - { who: rafaelle, text: "Cette brume... elle ressemble à celle du détroit. Est-ce que vous êtes un morceau du Passeur Sans Rives ?" }
+      - { who: peseur, text: "Un tout petit morceau, oui. Resté accroché à vos capes pendant la traversée, puis tombé ici, sur ce ponton, sans savoir comment repartir. Alors je suis resté. Et j'ai trouvé une place : je pèse." }
+      - { who: axelle, text: "Vous pesez quoi, avec cette toute petite balance ?" }
+      - { who: peseur, text: "Jamais le poids. Toujours la valeur. Ce ne sont pas tout à fait la même chose, petite Veilleuse." }
+      - { who: maelle, text: "Comment peut-on peser quelque chose qui n'a pas de poids ?" }
+      - { who: peseur, text: "En écoutant très attentivement ce que chacun est prêt à donner, et ce que chacun reçoit vraiment en retour. C'est un métier plus patient qu'il n'en a l'air." }
+    manches:
+      - id: m1
+        title: Une balance pas comme les autres
+        tours:
+          axelle:
+            - { id: ch13-j2-ax-m1a, subject: sciences, level: 1, kind: qcm, prompt: "À quoi sert une balance, normalement ?", choices: ["à comparer le poids de deux choses", "à faire la cuisine", "à éclairer la nuit", "à naviguer sur l'eau", "à rien du tout"], answer: "à comparer le poids de deux choses", hint: "Pense à ce qu'on pose sur les deux plateaux." }
+            - { id: ch13-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 6.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "9 + 6 = 9 + 5 + 1." }
+          maelle:
+            - { id: ch13-j2-ma-m1a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « légère » dans « une voix légère » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Elle décrit la voix du Peseur." }
+            - { id: ch13-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 342 ÷ 6.", choices: ["52", "54", "56", "57", "60"], answer: "57", hint: "6 × 57 = 342." }
+          rafaelle:
+            - { id: ch13-j2-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Je pèse. C'est tout ce que je sais faire. » : que révèle cette phrase courte sur le caractère du Peseur ?", choices: ["qu'il est très bavard", "qu'il se définit avant tout par un seul rôle, simple et assumé", "qu'il ne sait rien faire du tout", "qu'il ment sur ce qu'il fait", "qu'il change de métier sans cesse"], answer: "qu'il se définit avant tout par un seul rôle, simple et assumé", hint: "Relis la phrase : courte, directe, sans détour." }
+            - { id: ch13-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 12² − 100.", choices: ["34", "38", "40", "44", "48"], answer: "44", hint: "144 − 100." }
+      - id: m2
+        title: Un fragment de la brume
+        tours:
+          axelle:
+            - { id: ch13-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 17 − 8.", choices: ["6", "7", "8", "9", "10"], answer: "9", hint: "17 − 7 = 10, puis − 1." }
+            - { id: ch13-j2-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "D'où vient, selon le récit, le petit nuage du Peseur ?", choices: ["il est tombé du ciel", "c'est un morceau de la brume du détroit, resté accroché à leurs capes", "il a toujours vécu ici", "c'est un nuage de pluie ordinaire", "personne ne le sait"], answer: "c'est un morceau de la brume du détroit, resté accroché à leurs capes", hint: "Relis ce que répond le Peseur à Rafaelle." }
+          maelle:
+            - { id: ch13-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 5.", choices: ["135", "140", "142", "145", "150"], answer: "145", hint: "30 × 5 − 5." }
+            - { id: ch13-j2-ma-m2b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi un même phénomène naturel (comme la brume) peut-il être raconté très différemment selon les lieux où on le rencontre ?", choices: ["cela n'a jamais aucun sens", "chaque lieu lui donne un rôle et une histoire différents, selon ce qu'on y vit", "la brume change physiquement de nature", "ce n'est jamais vrai, la brume est toujours identique", "les lieux n'ont aucune influence sur les récits"], answer: "chaque lieu lui donne un rôle et une histoire différents, selon ce qu'on y vit", hint: "Pense à la brume du détroit, puis à ce petit fragment devenu Peseur." }
+          rafaelle:
+            - { id: ch13-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 7³ − 300.", choices: ["33", "38", "41", "43", "47"], answer: "43", hint: "343 − 300." }
+            - { id: ch13-j2-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « ¿Cuánto cuesta esto? »", choices: ["Où est-ce ?", "Combien ça coûte ?", "Quand pars-tu ?", "Qui es-tu ?", "Que manges-tu ?"], answer: "Combien ça coûte ?", hint: "« Cuánto cuesta » = combien ça coûte." }
+      - id: m3
+        title: Peser la valeur
+        tours:
+          axelle:
+            - { id: ch13-j2-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Le Peseur ne se trompe jamais. » ?", choices: ["ne se trompe jamais", "Le Peseur", "jamais", "se", "trompe"], answer: "Le Peseur", hint: "Qui ne se trompe jamais ?" }
+            - { id: ch13-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 9.", choices: ["54", "56", "60", "63", "65"], answer: "63", hint: "7 × 9 = 7 × 10 − 7." }
+          maelle:
+            - { id: ch13-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 450 ÷ 5.", choices: ["80", "85", "88", "90", "95"], answer: "90", hint: "5 × 90 = 450." }
+            - { id: ch13-j2-ma-m3b, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi une balance à deux plateaux penche-t-elle toujours du côté le plus lourd ?", choices: ["elle penche au hasard", "le plateau le plus lourd est davantage attiré vers le bas par la gravité", "le vent la fait pencher", "elle ne penche jamais vraiment", "cela dépend de la couleur des objets"], answer: "le plateau le plus lourd est davantage attiré vers le bas par la gravité", hint: "Pense à ce qui tire les objets vers le sol." }
+          rafaelle:
+            - { id: ch13-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 6/7 − 2/7.", choices: ["2/7", "3/7", "4/7", "5/7", "6/7"], answer: "4/7", hint: "6 − 2 = 4, même dénominateur." }
+            - { id: ch13-j2-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au présent : « Nous (peser) chaque échange avec attention. »", choices: ["nous pesons", "nous pesez", "nous pèsent", "nous pesions", "nous peserons"], answer: "nous pesons", hint: "Nous : -ons." }
+      - id: m4
+        title: S'habituer au Peseur
+        tours:
+          axelle:
+            - { id: ch13-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 3.", choices: ["21", "24", "25", "27", "30"], answer: "27", hint: "9 × 3 = 9 + 9 + 9." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch13-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 205 − 88.", choices: ["107", "112", "115", "117", "120"], answer: "117", hint: "205 − 90 + 2." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch13-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Es un intercambio justo. »", choices: ["C'est un échange injuste.", "C'est un échange juste.", "C'est un mauvais prix.", "C'est trop cher.", "C'est gratuit."], answer: "C'est un échange juste.", hint: "« Justo » = juste." }
+            - { gen: maths.ranger }
+    pause: "Le jeu de la balance : une sœur tient les bras tendus comme les plateaux d'une balance ; les deux autres posent, tour à tour, un souvenir du voyage dans chaque main, et elle doit dire, sans réfléchir trop longtemps, lequel lui semble « peser » le plus lourd dans son cœur."
+    closing:
+      - { who: narrateur, text: "Le Peseur resta longtemps immobile après leur dernière question, comme s'il soupesait encore, en silence, tout ce qu'elles venaient de lui raconter." }
+      - { who: marchand, text: "Demain, je vous montrerai ce que mon étal garde de plus précieux. Le Peseur sera là, lui aussi, pour juger de ce que vous proposerez en échange." }
+      - { who: peseur, text: "Je serai là. Je le suis toujours." }
+      - { who: rafaelle, text: "On y réfléchira d'ici là. Toutes les trois." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs s'éloignaient, le petit nuage du Peseur tourna lentement sur lui-même, sa minuscule balance dorée scintillant un instant sous les lanternes, avant de retrouver son immobilité patiente." }
+    reward: "la rencontre du Peseur de Brume, fragment de la traversée"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: Le Juste Prix
+    decor: L'étal du marchand, enfin ouvert tout entier, un tissu violet déployé sur lequel reposent trois objets soigneusement alignés — une boussole dorée, une carte à moitié déchirée, une lanterne dont la flamme ne s'éteint jamais — le Peseur flottant juste à côté.
+    opening:
+      - { who: narrateur, text: "Le troisième soir, le marchand les attendait devant un étal qu'il n'avait encore jamais ouvert devant elles, où reposaient trois objets soigneusement alignés sur un tissu violet : une boussole dorée, une carte à moitié déchirée, et une lanterne dont la flamme, disait-on, ne s'éteignait jamais." }
+      - { who: marchand, text: "Voici ce que je garde pour les voyageuses qui partent vraiment vers les montagnes. Une seule pièce vous sera utile. Mais je ne les vends jamais contre de simples pièces de monnaie." }
+      - { who: axelle, text: "Alors contre quoi, si ce n'est pas de l'argent ?" }
+      - { who: marchand, text: "Contre un échange à ma mesure. Chacune, avant vous, a payé différemment : une chanson, un effort, une histoire. Le Peseur jugera si ce que vous proposerez est juste." }
+      - { who: peseur, text: "Je ne juge jamais à l'avance. J'écoute, je pèse, et je dis ce que je ressens. C'est tout ce que je promets." }
+      - { who: maelle, text: "Cette carte... elle montre un chemin dans les montagnes, mais elle s'arrête à mi-chemin, là où elle est déchirée." }
+      - { who: marchand, text: "Beaucoup de cartes de la montagne s'arrêtent là où personne n'est jamais revenu pour la compléter. C'est ainsi, parfois, qu'on reconnaît un vrai sommet." }
+      - { who: rafaelle, text: "Et la boussole ? Elle pointe vers où, exactement ?" }
+      - { who: marchand, text: "Pas vers le nord, petite Archiviste. Vers le chemin le plus sûr, quel qu'il soit. C'est beaucoup plus rare, et beaucoup plus précieux, qu'une simple direction." }
+    manches:
+      - id: m1
+        title: Trois objets sur le tissu violet
+        tours:
+          axelle:
+            - { id: ch13-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 3 objets sur l'étal. Si le marchand en ajoute 2 de plus pour les montrer, combien y en aura-t-il ?", choices: ["3", "4", "5", "6", "7"], answer: "5", hint: "3 + 2." }
+            - { id: ch13-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Une lanterne ne s'éteint jamais. » ?", choices: ["ne s'éteint jamais", "jamais", "Une lanterne", "s'éteint", "ne"], answer: "Une lanterne", hint: "Qui ne s'éteint jamais ?" }
+          maelle:
+            - { id: ch13-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "À quoi sert, en priorité, une boussole pour un voyageur ?", choices: ["à mesurer le temps", "à indiquer une direction fixe, comme le nord", "à peser des objets", "à éclairer la nuit", "à traverser l'eau"], answer: "à indiquer une direction fixe, comme le nord", hint: "Pense à l'objet que regarde Rafaelle." }
+            - { id: ch13-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 68 + 57.", choices: ["115", "120", "123", "125", "130"], answer: "125", hint: "68 + 60 − 3." }
+          rafaelle:
+            - { id: ch13-j3-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi une carte ancienne, inachevée, peut-elle garder une grande valeur malgré son caractère incomplet ?", choices: ["elle n'a plus aucune valeur dès qu'elle est incomplète", "elle montre déjà un chemin connu, même si le reste reste à découvrir", "une carte inachevée est toujours fausse", "personne n'utilise jamais de carte incomplète", "cela ne dépend que de son âge"], answer: "elle montre déjà un chemin connu, même si le reste reste à découvrir", hint: "Repense à ce que dit le marchand sur les cartes qui s'arrêtent à mi-chemin." }
+            - { id: ch13-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15² − 200.", choices: ["15", "20", "25", "30", "35"], answer: "25", hint: "225 − 200." }
+      - id: m2
+        title: La boussole qui montre le plus sûr
+        tours:
+          axelle:
+            - { id: ch13-j3-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 + 8.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "7 + 8 = 7 + 7 + 1." }
+            - { id: ch13-j3-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi une boussole ordinaire pointe-t-elle toujours vers le nord ?", choices: ["par hasard", "à cause du champ magnétique de la Terre", "parce qu'elle est en or", "parce que le nord attire la lumière", "cela ne dépend de rien"], answer: "à cause du champ magnétique de la Terre", hint: "Pense à ce qui agit sur l'aiguille d'une boussole." }
+          maelle:
+            - { id: ch13-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 616 ÷ 8.", choices: ["68", "72", "75", "77", "80"], answer: "77", hint: "8 × 77 = 616." }
+            - { id: ch13-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « précieux » dans « beaucoup plus précieux » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la boussole." }
+          rafaelle:
+            - { id: ch13-j3-ra-m2a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 3x + 7 = 31.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "3x = 24." }
+            - { id: ch13-j3-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Las linternas iluminan el camino. »", choices: ["Les lanternes cachent le chemin.", "Les lanternes éclairent le chemin.", "Les lanternes suivent le chemin.", "Les lanternes ferment le chemin.", "Les lanternes cherchent le chemin."], answer: "Les lanternes éclairent le chemin.", hint: "« Iluminan » = éclairent." }
+      - id: m3
+        title: La carte inachevée
+        tours:
+          axelle:
+            - { id: ch13-j3-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 12 − 5.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "12 − 5 = 7." }
+            - { id: ch13-j3-ax-m3b, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on la personne qui dessine des cartes ?", choices: ["un cartographe", "un marchand", "un peseur", "un passeur", "un gardien"], answer: "un cartographe", hint: "Pense au surnom de Maelle." }
+          maelle:
+            - { id: ch13-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 81 ÷ 9.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "9 × 9 = 81." }
+            - { id: ch13-j3-ma-m3b, subject: francais, level: 2, kind: qcm, prompt: "Conjugue à l'imparfait : « La carte (s'arrêter) à mi-chemin. »", choices: ["s'arrêtait", "s'arrête", "s'arrêtera", "s'arrêta", "s'arrêtant"], answer: "s'arrêtait", hint: "Imparfait : -ait." }
+          rafaelle:
+            - { id: ch13-j3-ra-m3a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² + 4².", choices: ["85", "90", "93", "97", "101"], answer: "97", hint: "81 + 16." }
+            - { id: ch13-j3-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« C'est ainsi, parfois, qu'on reconnaît un vrai sommet. » : que signifie cette phrase, selon le contexte ?", choices: ["qu'un sommet est toujours visible de loin", "qu'une épreuve incomplète ou difficile peut révéler ce qui compte vraiment", "qu'il n'existe aucun vrai sommet", "que seules les cartes complètes ont de la valeur", "que les sommets ne se reconnaissent jamais"], answer: "qu'une épreuve incomplète ou difficile peut révéler ce qui compte vraiment", hint: "Repense à ce que le marchand dit juste avant, sur les cartes inachevées." }
+      - id: m4
+        title: Préparer l'échange
+        tours:
+          axelle:
+            - { id: ch13-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 7.", choices: ["35", "38", "40", "42", "45"], answer: "42", hint: "6 × 7 = 6 × 6 + 6." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch13-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 330 − 145.", choices: ["175", "180", "183", "185", "190"], answer: "185", hint: "330 − 150 + 5." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch13-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Gracias por tu ayuda. »", choices: ["Merci pour ton aide.", "Désolé pour l'attente.", "Bonsoir à toi.", "Au revoir, à bientôt.", "Bonne chance à toi."], answer: "Merci pour ton aide.", hint: "« Gracias » = merci." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu du troc silencieux : chaque sœur choisit, en secret, l'objet qu'elle préférerait emporter, puis toutes révèlent leur choix en même temps, sans s'être concertées."
+    closing:
+      - { who: narrateur, text: "Le marchand recouvrit soigneusement les trois objets d'un pan du tissu violet, comme pour les protéger jusqu'au lendemain, pendant que le Peseur flottait toujours, immobile, à quelques pas." }
+      - { who: marchand, text: "Réfléchissez bien. Demain, je vous raconterai l'histoire de ce marché, et après-demain, à l'aube, il faudra vous décider." }
+      - { who: axelle, text: "On a toute la nuit pour y penser, alors." }
+      - { who: peseur, text: "Toute la nuit, et un peu plus encore, si nécessaire. Je ne suis jamais pressé." }
+      - { who: narrateur, text: "En regagnant l'Arche, Rafaelle se retourna une dernière fois vers l'étal recouvert, essayant déjà d'imaginer ce que la carte inachevée pourrait bien cacher, au-delà de sa déchirure." }
+    reward: "la découverte des trois objets, et la question du juste prix"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Les Comptes de la Nuit
+    decor: Le marché qui se vide peu à peu, le marchand assis sur une caisse à compter ses gains de la soirée à la lueur vacillante des lanternes, le Peseur flottant tranquillement à ses côtés.
+    opening:
+      - { who: narrateur, text: "Le quatrième soir, alors que les derniers clients repartaient vers leurs barques, le marchand s'assit enfin, comptant ses gains de la soirée à la lueur vacillante des lanternes, le Peseur flottant tranquillement à ses côtés." }
+      - { who: marchand, text: "Ce marché existe depuis plus longtemps que moi, et que mon père avant moi. Des générations de marchands se sont installées ici, exactement au seuil des montagnes, pour que personne ne parte jamais les mains vides vers les sommets." }
+      - { who: maelle, text: "Depuis combien de générations, exactement ?" }
+      - { who: marchand, text: "Je ne sais plus très bien. Le Peseur, lui, pourrait presque vous le dire : il a vu passer plus de voyageurs que moi et mon père réunis." }
+      - { who: peseur, text: "Je ne compte jamais les années. Je compte seulement ce qui a été juste, et ce qui ne l'a pas été. C'est amplement suffisant pour remplir toute une vie, même brumeuse." }
+      - { who: narrateur, text: "Axelle, qui avait passé la soirée à fredonner un petit air inventé entre deux étals, s'approcha du marchand avec curiosité." }
+      - { who: axelle, text: "Est-ce que quelqu'un a déjà payé en chantant, avant nous ?" }
+      - { who: marchand, text: "Plus souvent que vous ne le croiriez, petite Veilleuse. Une chanson bien choisie vaut, pour certains marchands, davantage que n'importe quelle pièce d'or." }
+      - { who: rafaelle, text: "Et en se rendant utile ? En travaillant, je veux dire." }
+      - { who: marchand, text: "Cela aussi, bien sûr. Le travail honnête n'a jamais déçu personne sur ce ponton." }
+    manches:
+      - id: m1
+        title: L'histoire du marché
+        tours:
+          axelle:
+            - { id: ch13-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « plein » ?", choices: ["vide", "lourd", "grand", "clair", "rapide"], answer: "vide", hint: "« les mains vides », dans le texte du premier soir." }
+            - { id: ch13-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 9.", choices: ["15", "16", "17", "18", "19"], answer: "17", hint: "8 + 9 = 8 + 8 + 1." }
+          maelle:
+            - { id: ch13-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi un savoir transmis de génération en génération (comme ce marché) devient-il souvent de plus en plus précieux avec le temps ?", choices: ["il perd toute sa valeur avec le temps", "il accumule l'expérience de chaque génération qui l'a enrichi", "le temps n'a aucun effet sur un savoir", "un savoir ancien est toujours faux", "cela dépend uniquement de la chance"], answer: "il accumule l'expérience de chaque génération qui l'a enrichi", hint: "Pense à ce que représente ce marché pour le marchand et son père." }
+            - { id: ch13-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 504 − 268.", choices: ["226", "230", "233", "236", "240"], answer: "236", hint: "504 − 270 + 2." }
+          rafaelle:
+            - { id: ch13-j4-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi un lieu de passage obligé (comme ce marché, au seuil des montagnes) devient-il souvent, au fil du temps, un lieu de mémoire collective ?", choices: ["cela n'arrive jamais vraiment", "parce que chaque génération de voyageurs y ajoute ses propres histoires et souvenirs", "un lieu de passage reste toujours vide d'histoire", "la mémoire collective n'existe pas vraiment", "parce que personne n'y reste jamais assez longtemps"], answer: "parce que chaque génération de voyageurs y ajoute ses propres histoires et souvenirs", hint: "Repense à ce que le Peseur dit compter, depuis toujours." }
+            - { id: ch13-j4-ra-m1b, subject: maths, level: 5, kind: qcm, prompt: "Calcule 13² − 11².", choices: ["38", "42", "44", "46", "48"], answer: "48", hint: "169 − 121." }
+      - id: m2
+        title: Ce que le Peseur a vu
+        tours:
+          axelle:
+            - { id: ch13-j4-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 2.", choices: ["14", "16", "17", "18", "20"], answer: "18", hint: "9 × 2 = 9 + 9." }
+            - { id: ch13-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "D'où vient, selon ce que le Peseur a raconté, sa forme stable de petit nuage ?", choices: ["cela n'est jamais vraiment possible en réalité", "c'est une forme magique qui lui est propre, née de la brume du détroit", "le nuage est en fait fait de verre", "un nuage ordinaire dure toujours des années", "cela dépend uniquement du vent"], answer: "c'est une forme magique qui lui est propre, née de la brume du détroit", hint: "Souviens-toi : ce n'est pas un nuage ordinaire, mais un fragment de la brume du Passeur." }
+          maelle:
+            - { id: ch13-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 19 × 6.", choices: ["104", "108", "110", "114", "118"], answer: "114", hint: "20 × 6 − 6." }
+            - { id: ch13-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « brumeuse » dans « même brumeuse » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "préposition"], answer: "adjectif", hint: "Elle décrit la vie du Peseur." }
+          rafaelle:
+            - { id: ch13-j4-ra-m2a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 5/6 + 1/6.", choices: ["5/6", "1/6", "7/12", "1", "11/12"], answer: "1", hint: "5/6 + 1/6 = 6/6 = 1." }
+            - { id: ch13-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Merci pour ton aide » en espagnol ?", choices: ["Gracias por tu ayuda.", "Es un intercambio justo.", "¿Cuánto cuesta esto?", "La luna guía el camino.", "El mercado brilla de noche."], answer: "Gracias por tu ayuda.", hint: "Relis la phrase du jour 3." }
+      - id: m3
+        title: Petites générosités
+        tours:
+          axelle:
+            - { id: ch13-j4-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 11 − 4.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "11 − 4 = 7." }
+            - { id: ch13-j4-ax-m3b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Axelle fredonnait un petit air. » ?", choices: ["un petit air", "fredonnait", "Axelle", "petit", "air"], answer: "Axelle", hint: "Qui fredonne ?" }
+          maelle:
+            - { id: ch13-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 275 + 138.", choices: ["403", "408", "410", "413", "418"], answer: "413", hint: "275 + 140 − 2." }
+            - { id: ch13-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi le travail honnête a-t-il, selon le marchand, toujours été bien reçu sur ce ponton ?", choices: ["parce que personne ne travaille jamais vraiment ici", "parce qu'un effort sincère est reconnu comme une vraie forme d'échange", "parce que le travail n'a aucune valeur pour un marchand", "parce que seuls les objets rares comptent ici", "parce que le marchand déteste le travail"], answer: "parce qu'un effort sincère est reconnu comme une vraie forme d'échange", hint: "Relis la dernière phrase du marchand à Rafaelle." }
+          rafaelle:
+            - { id: ch13-j4-ra-m3a, subject: maths, level: 5, kind: qcm, prompt: "Résous : 7x − 10 = 39.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "7x = 49." }
+            - { id: ch13-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Le travail honnête n'a jamais déçu personne sur ce ponton. » : quelle valeur cette phrase met-elle en avant ?", choices: ["la paresse", "la tricherie", "l'honnêteté dans l'effort fourni", "l'indifférence", "la richesse matérielle seule"], answer: "l'honnêteté dans l'effort fourni", hint: "Pense au sens du mot « honnête » dans la phrase." }
+      - id: m4
+        title: Compter les souvenirs
+        tours:
+          axelle:
+            - { id: ch13-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 4.", choices: ["22", "24", "26", "28", "30"], answer: "28", hint: "7 × 4 = 7 × 2 × 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch13-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 360 ÷ 4.", choices: ["80", "85", "88", "90", "95"], answer: "90", hint: "4 × 90 = 360." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch13-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14 × 9.", choices: ["116", "120", "123", "126", "130"], answer: "126", hint: "14 × 9 = 14 × 10 − 14." }
+            - { gen: maths.duree }
+    pause: "Le jeu des souvenirs comptés : chaque sœur doit citer, le plus vite possible, trois moments du voyage entier dont elle se souvient le mieux, sans jamais répéter un souvenir déjà cité par une autre."
+    closing:
+      - { who: narrateur, text: "Le marchand referma sa bourse de pièces, et le Peseur tourna lentement sa minuscule balance vers les trois sœurs, comme s'il pesait déjà, à l'avance, ce que le lendemain leur réserverait." }
+      - { who: marchand, text: "Demain, à l'aube, il faudra vous décider. Le Peseur sera là pour juger, et moi pour vous remettre ce que vous aurez mérité." }
+      - { who: peseur, text: "Je serai juste. Je le suis toujours, même quand ça déplaît." }
+      - { who: maelle, text: "On ne vous demande pas d'être gentil. Juste d'être juste." }
+      - { who: peseur, text: "C'est exactement, petite Cartographe, tout ce que je sais faire." }
+    reward: "les comptes de la nuit, et l'histoire du marché transmise de génération en génération"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: Le Chant du Marché
+    decor: Le marché à son apogée, juste avant l'aube, dernière vague de clients avant le lever du jour ; le marchand et le Peseur attendent, immobiles, devant l'étal aux trois objets.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, à l'heure où le marché amorçait sa dernière vague de clients avant l'aube, le marchand les attendait devant son étal, les trois objets alignés sur le tissu violet, le Peseur flottant juste au-dessus, parfaitement immobile." }
+      - { who: marchand, text: "Voici donc le moment. Dites-moi ce que vous choisissez de m'offrir, et je vous confierai, en échange, celui des trois objets qui vous sera le plus utile dans les montagnes." }
+      - { who: peseur, text: "J'écoute. Je pèse. Et je dirai, simplement, si c'est juste." }
+      - { who: nilo, text: "Allez, les filles. Après la brume, un marché, ça devrait être facile." }
+    manches:
+      - id: m1
+        title: Le choix du marché
+        intro: "Le Peseur interroge chaque sœur sur tout ce que cette semaine au marché lui a appris."
+        tours:
+          axelle:
+            - { id: ch13-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on un lieu où l'on achète et vend toutes sortes de marchandises ?", choices: ["un marché", "un détroit", "un sommet", "une plaine", "un archipel"], answer: "un marché", hint: "C'est le mot du tout premier soir." }
+            - { id: ch13-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 + 7.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "9 + 7 = 9 + 9 − 2." }
+          maelle:
+            - { id: ch13-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi un ponton de bois chargé de lanternes et d'étals ne coule-t-il pas, malgré tout ce poids ?", choices: ["le bois est toujours magique", "sa flottabilité et des flotteurs répartissent bien le poids", "il est secrètement en métal", "il flotte au hasard", "cela dépend uniquement de la lune"], answer: "sa flottabilité et des flotteurs répartissent bien le poids", hint: "Repense à ta propre question du premier soir." }
+            - { id: ch13-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 23 × 5.", choices: ["105", "110", "112", "115", "120"], answer: "115", hint: "23 × 5 = 20 × 5 + 3 × 5." }
+          rafaelle:
+            - { id: ch13-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que le Peseur juge la valeur plutôt que le poids des choses ?", choices: ["parce qu'il n'a aucune règle précise", "parce qu'il évalue ce que chacun donne et reçoit vraiment, au-delà du poids physique", "parce qu'il ne pèse jamais rien du tout", "parce que le poids et la valeur sont toujours la même chose", "parce qu'il invente ses jugements au hasard"], answer: "parce qu'il évalue ce que chacun donne et reçoit vraiment, au-delà du poids physique", hint: "Repense à sa toute première explication, le deuxième soir." }
+            - { id: ch13-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 4/5 − 2/5.", choices: ["1/5", "2/5", "3/5", "4/5", "2/10"], answer: "2/5", hint: "4 − 2 = 2, même dénominateur." }
+      - id: m2
+        title: Avant l'aube
+        intro: "Il faut relier tout ce que la semaine a appris pour choisir, vraiment, ce qui compte le plus."
+        tours:
+          axelle:
+            - { id: ch13-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux un échange où chacun donne et reçoit une juste part ?", choices: ["injuste", "juste", "inutile", "oublié", "interdit"], answer: "juste", hint: "C'est le mot que répète souvent le Peseur." }
+            - { id: ch13-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 16 − 9.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "16 − 6 = 10, puis − 3." }
+          maelle:
+            - { id: ch13-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi ce marché, construit exactement au seuil des montagnes, a-t-il une importance particulière pour les voyageurs ?", choices: ["il n'a aucune importance réelle", "c'est le dernier lieu pour se préparer avant une épreuve difficile", "il empêche tous les voyageurs de continuer", "il se trouve très loin des montagnes", "personne n'y passe jamais vraiment"], answer: "c'est le dernier lieu pour se préparer avant une épreuve difficile", hint: "Repense à la toute première phrase du marchand, le premier soir." }
+            - { id: ch13-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 480 ÷ 6.", choices: ["70", "75", "78", "80", "85"], answer: "80", hint: "6 × 80 = 480." }
+          rafaelle:
+            - { id: ch13-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 6² + 8².", choices: ["64", "90", "96", "100", "110"], answer: "100", hint: "36 + 64." }
+            - { id: ch13-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Je ne juge jamais à l'avance. » : quel est le sujet de cette phrase ?", choices: ["jamais", "à l'avance", "Je", "ne juge", "juge"], answer: "Je", hint: "Qui ne juge jamais à l'avance ?" }
+      - id: m3
+        title: Le Chant du Marché
+        intro: "Le marché lui-même semble répondre : les lanternes ne scintillent plus que si les trois sœurs trouvent, ensemble, le bon rythme."
+        tours:
+          axelle:
+            - { id: ch13-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          maelle:
+            - { id: ch13-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, blanche." }
+          rafaelle:
+            - { id: ch13-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : ronde." }
+    concert:
+      measures:
+        axelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        maelle: { given: [2], missing: 2, prompt: "Blanche, blanche" }
+        rafaelle: { given: [], missing: 4, prompt: "Ronde" }
+    pause: "Le dernier regard sur les lanternes : chacune choisit, avant de partir, la lanterne du marché qu'elle aimerait le plus revoir un jour, et dit pourquoi à voix haute."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant du Marché se répandit sur l'eau, et toutes les lanternes, d'un seul coup, scintillèrent un peu plus fort, comme pour répondre." }
+      - { who: peseur, text: "C'est juste. Parfaitement juste, même. Je n'ai pas besoin d'en dire davantage." }
+      - { who: marchand, text: "Alors voici ce qui vous revient." }
+      - { who: narrateur, text: "Le marchand souleva délicatement la boussole dorée du tissu violet et la déposa, avec une solennité inattendue, dans les mains tendues des trois sœurs, pendant que le Peseur approuvait d'un léger frémissement de brume." }
+      - { who: marchand, text: "Elle ne montre jamais le nord, mais toujours le chemin le plus sûr. Faites-lui confiance, même quand ce chemin vous semblera étrange." }
+      - { who: rafaelle, text: "Merci. Pour la boussole, et pour nous avoir laissées rester, le temps de comprendre." }
+      - { who: marchand, text: "Revenez un jour, si vous passez encore par ici. Il y aura toujours une lanterne allumée pour vous." }
+      - { who: narrateur, text: "Et tandis que les premières lueurs de l'aube se mêlaient à celles des lanternes, les trois sœurs s'éloignèrent du marché, la boussole dorée serrée contre elles, en direction de la chaîne de montagnes qui, enfin, n'attendait plus qu'elles." }
+      - { who: nilo, text: "Bon. Les montagnes, maintenant. J'espère qu'il y a moins de marchandage là-haut." }
+      - { who: axelle, text: "On verra bien. On a toujours fini par trouver notre chemin, jusqu'ici." }
+    reward: "le juste échange accompli, et la boussole dorée pour affronter les montagnes"
