@@ -3,6 +3,7 @@ import { useEffect, useState } from 'preact/hooks';
 import { chapterOf } from '../../content/chapters';
 import { dayKey } from '../../engine/calendar';
 import { SUBJECTS } from '../../engine/difficulty';
+import { FINAL_DAY, LAST_CHAPTER } from '../../engine/game';
 import { effectiveVerdict, isValidPin, pending, sessionLine, summary } from '../../engine/parent';
 import { NAMES } from '../../engine/profile';
 import { PLAYERS, type Option } from '../../engine/types';
@@ -374,6 +375,10 @@ function Reglages({ now }: { now: number }) {
                     {d.n} — {d.title}
                   </option>
                 ))}
+                {/* Le chapitre 30 a un 6e jour, hors contenu YAML : le vote final entre les portes ouvertes (voir engine/game.ts). */}
+                {jump.chapter === LAST_CHAPTER && (
+                  <option value={FINAL_DAY}>{FINAL_DAY} — Vote final (portes ouvertes)</option>
+                )}
               </select>
             </label>
             <button

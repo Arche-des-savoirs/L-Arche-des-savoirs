@@ -39,7 +39,7 @@ export const reviewItem = z.object({ review: z.literal(true), count: z.number().
 export const tourItem = z.union([question, generated, reviewItem]);
 export type TourItem = z.infer<typeof tourItem>;
 
-const line = z.object({ who: z.string(), text: z.string().min(1), to: playerId.optional() });
+export const line = z.object({ who: z.string(), text: z.string().min(1), to: playerId.optional() });
 export type Line = z.infer<typeof line>;
 
 export const manche = z.object({
@@ -103,3 +103,16 @@ export const chapter = z.object({
   repliquesAbsurdes: z.array(z.string()).default([])
 });
 export type Chapter = z.infer<typeof chapter>;
+
+/**
+ * L'une des 5 fins du récit, jouée au jour 6 du chapitre 30 (vote final entre les portes
+ * ouvertes, voir src/engine/counters.ts openDoors()). F5 est volontairement rare et sans
+ * épilogue classique : elle ouvre le retour au carrefour (src/engine/game.ts).
+ */
+export const fin = z.object({
+  id: z.enum(['F1', 'F2', 'F3', 'F4', 'F5']),
+  title: z.string(),
+  opening: z.array(line).min(1),
+  closing: z.array(line).min(1)
+});
+export type Fin = z.infer<typeof fin>;

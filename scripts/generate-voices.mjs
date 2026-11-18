@@ -2,11 +2,13 @@
 // Génère les fichiers audio pré-calculés (narrateur + personnages principaux) via Google Cloud
 // Text-to-Speech (voix Chirp3-HD), pour une lecture 100 % hors ligne en jeu.
 //
-// Portée exacte (voir src/ui/parts/Common.tsx et src/ui/screens/Session.tsx) : seules les
-// répliques jouées via le composant <Dialogue> sont concernées, c'est-à-dire :
+// Portée exacte (voir src/ui/parts/Common.tsx, src/ui/screens/Session.tsx et
+// src/ui/screens/Fin.tsx) : seules les répliques jouées via le composant <Dialogue> sont
+// concernées, c'est-à-dire :
 //   - day.opening (ouverture de chaque jour)
 //   - day.closing (clôture de chaque jour)
 //   - decision.options.{A,B,C}.scene (jouée comme le narrateur) + .line (le personnage choisi)
+//   - content/fins.yaml : opening et closing de chacune des 5 fins (jour 6, chapitre 30)
 // Les répliques absurdes (Maelle), le prompt du vote, et les phrases espagnoles de Rafaelle
 // ne sont actuellement pas lues à voix haute dans le jeu : elles restent hors périmètre.
 //
@@ -26,6 +28,7 @@ import { parse } from 'yaml';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const CHAPTERS_DIR = join(ROOT, 'content', 'chapters');
+const FINS_PATH = join(ROOT, 'content', 'fins.yaml');
 const AUDIO_DIR = join(ROOT, 'public', 'audio', 'voix');
 const MANIFEST_PATH = join(ROOT, 'src', 'content', 'voiceManifest.json');
 const API_KEY_PATH = join(ROOT, '.secrets', 'gcp-tts-api-key.txt');
@@ -110,6 +113,18 @@ function loadChapters() {
   return chapters;
 }
 
+/** Extrait les répliques des 5 fins (jour 6, chapitre 30) : même logique que pour un chapitre. */
+function extractFinLines(fin) {
+  const lines = [];
+  for (const l of fin.opening ?? []) lines.push({ who: l.who, text: l.text });
+  for (const l of fin.closing ?? []) lines.push({ who: l.who, text: l.text });
+  return lines;
+}
+
+function loadFins() {
+  return existsSync(FINS_PATH) ? parse(readFileSync(FINS_PATH, 'utf8')) : [];
+}
+
 async function synthesize(apiKey, who, text) {
   const voiceName = VOICES[who];
   if (!voiceName) {
@@ -137,25 +152,24 @@ async function main() {
   mkdirSync(AUDIO_DIR, { recursive: true });
   const apiKey = readApiKey();
   const chapters = loadChapters();
+  const fins = loadFins();
 
   const manifest = existsSync(MANIFEST_PATH) ? JSON.parse(readFileSync(MANIFEST_PATH, 'utf8')) : {};
   const seen = new Set();
   let toGenerate = 0;
   let totalChars = 0;
 
-  for (const chapter of chapters) {
-    const lines = extractLines(chapter);
-    for (const { who, text } of lines) {
-      const key = manifestKey(who, text);
-      if (seen.has(key)) continue;
-      seen.add(key);
-      if (!VOICES[who]) continue;
-      const hash = hashOf(who, text);
-      manifest[key] = hash;
-      totalChars += text.length;
-      const file = join(AUDIO_DIR, `${hash}.ogg`);
-      if (FORCE || !existsSync(file)) toGenerate++;
-    }
+  const allLines = [...chapters.flatMap(extractLines), ...fins.flatMap(extractFinLines)];
+  for (const { who, text } of allLines) {
+    const key = manifestKey(who, text);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    if (!VOICES[who]) continue;
+    const hash = hashOf(who, text);
+    manifest[key] = hash;
+    totalChars += text.length;
+    const file = join(AUDIO_DIR, `${hash}.ogg`);
+    if (FORCE || !existsSync(file)) toGenerate++;
   }
 
   console.log(`Répliques uniques repérées : ${seen.size} (${totalChars} caractères).`);

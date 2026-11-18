@@ -8,6 +8,7 @@ import { init, route } from './store';
 import { Session } from './screens/Session';
 import { Avatars } from './screens/Avatars';
 import { ADemain, Bientot } from './screens/ADemain';
+import { Fin } from './screens/Fin';
 
 export const wakeLockState = signal<WakeLockState>('released');
 
@@ -38,6 +39,8 @@ export function App() {
       return <Avatars />;
     case 'seance':
       return <Session />;
+    case 'fin':
+      return <Fin />;
     case 'a-demain':
       return <ADemain />;
     case 'parent':
