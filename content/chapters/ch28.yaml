@@ -1,0 +1,379 @@
+# Chapitre 28 — L'Architecte des Hauteurs
+# Personnage mineur à voix partagée (Rasalgethi, comme le Scribe) : une architecte qui
+# conçoit un escalier de pierre taillé à même la montagne, pour atteindre les hauteurs
+# proches du sommet. Pas d'effet ORVANE ni de drapeau pour ce chapitre (absent de
+# decisions.ts) : décision purement narrative sur la façon de concevoir l'escalier final.
+
+id: ch28
+number: 28
+act: 2
+title: L'Architecte des Hauteurs
+introImage: ch28
+scene: escalier-des-hauteurs
+
+espagnol:
+  - { es: "La escalera sube hasta la cumbre.", fr: "L'escalier monte jusqu'au sommet." }
+  - { es: "Cada peldaño tiene su lugar.", fr: "Chaque marche a sa place." }
+  - { es: "Construir pide mediciones exactas.", fr: "Construire demande des mesures exactes." }
+  - { es: "La piedra guarda la forma elegida.", fr: "La pierre garde la forme choisie." }
+  - { es: "Subir requiere un buen plan.", fr: "Monter demande un bon plan." }
+
+decision:
+  prompt: "L'architecte déroule un grand plan couvert de lignes et de chiffres, posé sur un établi de pierre. « Pour que cet escalier mène sans encombre jusqu'aux hauteurs, il me faut choisir sa forme : des marches larges et régulières, plus longues à tailler mais plus sûres, ou des marches étroites et rapides à poser, plus risquées par temps de pluie. Qu'en pensez-vous ? »"
+  options:
+    A:
+      label: Choisir des marches larges et régulières, plus sûres
+      scene: "Maelle conseille à l'architecte de choisir des marches larges et régulières, même si elles demandent plus de temps à tailler, pour garantir la sécurité de tous les voyageurs futurs."
+      line: { who: architecte, text: "Un choix prudent et réfléchi, petite Cartographe. C'est exactement ce que choisirait une architecte soucieuse de la sécurité de tous." }
+      habillage: "Les épreuves prennent la forme d'un travail minutieux et prolongé, marche par marche, pour un escalier durable et sûr."
+    B:
+      label: Choisir des marches étroites et rapides à poser
+      scene: "Rafaelle, pressée de continuer la route, convainc l'architecte de choisir des marches étroites et rapides à poser, pour que l'escalier soit prêt le plus vite possible."
+      line: { who: architecte, text: "Un escalier plus rapide à construire, petite Archiviste, mais qui demandera une prudence redoublée, surtout par temps de pluie." }
+      habillage: "Les épreuves se déroulent dans la rapidité et l'urgence, au prix d'une solution un peu moins sûre à long terme."
+    C:
+      label: Proposer un compromis entre largeur et rapidité
+      scene: "Axelle suggère un compromis : des marches ni trop larges ni trop étroites, pour que l'escalier soit à la fois raisonnablement sûr et raisonnablement rapide à construire."
+      line: { who: architecte, text: "Un compromis réfléchi, petite Veilleuse. Ni la solution la plus sûre, ni la plus rapide, mais un équilibre souvent très judicieux." }
+      habillage: "Les épreuves prennent la forme d'un travail équilibré, mêlant précision et efficacité, pour un escalier à michemin entre les deux extrêmes."
+
+repliquesAbsurdes:
+  - "Si chaque marche a sa place, est-ce qu'il y a des marches jalouses de la place des autres, plus proches du sommet ?"
+  - "Mon renard a essayé de sauter trois marches d'un coup. Résultat : il a roulé jusqu'en bas, très vexé, la queue pleine de poussière de pierre."
+  - "Est-ce qu'on peut demander à l'escalier de nous porter directement, sans qu'on ait à monter nous-mêmes, juste pour cette fois ?"
+  - "Si construire demande des mesures exactes, est-ce que l'architecte compte aussi le nombre exact de soupirs qu'elle pousse par marche ?"
+  - "Après une serre pleine de fleurs et un carrousel réparé, tailler un escalier dans la montagne, ça paraît presque un jeu d'enfant, en fait."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: Un escalier inachevé
+    decor: Un chantier à flanc de montagne, où un escalier de pierre, à moitié taillé, s'arrête brutalement au milieu d'une paroi rocheuse abrupte.
+    opening:
+      - { who: narrateur, text: "Le sentier, après la serre de Dame Alambic, déboucha sur un chantier à flanc de montagne, où un escalier de pierre, à moitié taillé, s'arrêtait brutalement au milieu d'une paroi rocheuse abrupte." }
+      - { who: narrateur, text: "Une femme en tablier de travail, un grand plan déroulé sous le bras, observait la paroi avec une concentration qui ne semblait jamais se relâcher." }
+      - { who: axelle, text: "Bonjour ! Cet escalier a l'air inachevé. Qu'est-ce qui s'est passé, exactement ?" }
+      - { who: narrateur, text: "La femme se retourna, un sourire fatigué mais sincère aux lèvres, et roula son plan avec des gestes précis, habitués." }
+      - { who: architecte, text: "Je suis l'architecte de cet escalier, petites voyageuses. Il doit mener jusqu'aux hauteurs proches du sommet, mais le chantier avance lentement, par manque de bras." }
+      - { who: maelle, text: "Vous construisez cet escalier toute seule, depuis le début ?" }
+      - { who: architecte, text: "Presque seule, petite Cartographe. Quelques aides passagères, de temps en temps, mais jamais bien longtemps." }
+      - { who: rafaelle, text: "Et on pourrait vous aider, nous, pendant quelques jours ?" }
+      - { who: architecte, text: "Avec grand plaisir, petite Archiviste. J'ai justement une décision importante à prendre, et vos avis seront les bienvenus." }
+    manches:
+      - id: m1
+        title: Un chantier à flanc de montagne
+        tours:
+          axelle:
+            - { id: ch28-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on une personne dont le métier est de concevoir des bâtiments, des ponts ou des escaliers ?", choices: ["une architecte", "une bergère", "une messagère", "une tisserande", "une marchande"], answer: "une architecte", hint: "C'est le métier pratiqué par la femme rencontrée sur le chantier." }
+            - { id: ch28-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 + 8.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "7 + 8 = 7 + 7 + 1." }
+          maelle:
+            - { id: ch28-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi tailler des marches directement dans la roche d'une paroi abrupte est-il un travail particulièrement long et exigeant ?", choices: ["la roche est un matériau dur qui demande du temps et de la précision pour être façonné sans risque d'effondrement", "tailler la roche n'a jamais aucune difficulté particulière", "cela n'a aucune explication particulière", "la roche se façonne toujours instantanément, sans aucun effort", "un escalier dans la roche ne présente jamais aucun risque"], answer: "la roche est un matériau dur qui demande du temps et de la précision pour être façonné sans risque d'effondrement", hint: "Pense à la raison pour laquelle le chantier de l'architecte avance si lentement." }
+            - { id: ch28-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 64 + 58.", choices: ["118", "120", "122", "124", "126"], answer: "122", hint: "64 + 60 − 2." }
+          rafaelle:
+            - { id: ch28-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi, historiquement, la construction d'escaliers taillés dans la roche a-t-elle souvent nécessité un travail collectif, sur plusieurs années ?", choices: ["parce que l'ampleur du travail et la dureté du matériau dépassent souvent les capacités d'une seule personne", "parce qu'un tel travail n'a jamais nécessité aucune aide", "cela n'a aucune importance historique", "parce qu'il est toujours possible de tailler un escalier en une seule journée", "parce que la roche se taille toujours plus facilement seule"], answer: "parce que l'ampleur du travail et la dureté du matériau dépassent souvent les capacités d'une seule personne", hint: "Pense à la difficulté de l'architecte, qui travaille presque seule depuis le début." }
+            - { id: ch28-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 17 × 5.", choices: ["75", "80", "82", "85", "88"], answer: "85", hint: "17 × 5 = 17 × 10 ÷ 2." }
+      - id: m2
+        title: Un plan déroulé
+        tours:
+          axelle:
+            - { id: ch28-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Une femme observait la paroi. » ?", choices: ["la paroi", "observait", "Une femme", "une", "femme"], answer: "Une femme", hint: "Qui observe la paroi rocheuse, sur le chantier ?" }
+            - { id: ch28-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 13 − 6.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "13 − 6 = 7." }
+          maelle:
+            - { id: ch28-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « fatigué » dans « un sourire fatigué » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le sourire de l'architecte, après tant de travail." }
+            - { id: ch28-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 376 ÷ 4.", choices: ["86", "88", "90", "92", "94"], answer: "94", hint: "4 × 94 = 376." }
+          rafaelle:
+            - { id: ch28-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Quelques aides passagères, de temps en temps, mais jamais bien longtemps. » : que révèle cette phrase sur la situation de l'architecte ?", choices: ["qu'elle manque d'un soutien stable et continu pour mener à bien son chantier", "qu'elle a toujours bénéficié d'une aide constante et suffisante", "qu'elle refuse systématiquement toute forme d'aide", "qu'elle n'a jamais eu besoin d'aide pour ce chantier", "qu'elle considère son chantier comme terminé depuis longtemps"], answer: "qu'elle manque d'un soutien stable et continu pour mener à bien son chantier", hint: "Repense à ce que dit l'architecte sur les aides passagères qu'elle a reçues." }
+            - { id: ch28-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 12² − 80.", choices: ["58", "60", "62", "64", "68"], answer: "64", hint: "144 − 80." }
+      - id: m3
+        title: Une aide bienvenue
+        tours:
+          axelle:
+            - { id: ch28-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "L'escalier compte déjà 6 marches taillées, et il en manque encore 3 jusqu'au premier palier. Combien de marches au total jusqu'au palier ?", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "6 + 3." }
+            - { id: ch28-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un escalier taillé dans la roche doit-il suivre un plan précis, établi avant de commencer le travail ?", choices: ["un plan permet d'anticiper la forme, la pente et la sécurité de l'ensemble avant de tailler la pierre", "un plan n'a jamais aucune utilité pour un tel chantier", "cela n'a aucune explication particulière", "il vaut toujours mieux tailler sans aucun plan préalable", "la forme d'un escalier n'a jamais besoin d'être anticipée"], answer: "un plan permet d'anticiper la forme, la pente et la sécurité de l'ensemble avant de tailler la pierre", hint: "Pense au grand plan que déroule l'architecte, couvert de lignes et de chiffres." }
+          maelle:
+            - { id: ch28-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 48 × 4.", choices: ["182", "186", "188", "190", "192"], answer: "192", hint: "48 × 4 = 50 × 4 − 2 × 4." }
+            - { id: ch28-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi proposer son aide à quelqu'un visiblement surchargé de travail, comme l'architecte, est-il souvent un geste précieux ?", choices: ["parce que cela permet d'avancer un travail important qui, autrement, risquerait de s'éterniser", "parce qu'une telle aide n'a jamais aucune utilité", "cela n'a aucun lien avec l'avancement d'un chantier", "parce qu'il vaut toujours mieux ne jamais proposer son aide à personne", "parce qu'un chantier avance toujours mieux sans aucune aide extérieure"], answer: "parce que cela permet d'avancer un travail important qui, autrement, risquerait de s'éterniser", hint: "Pense à la proposition de Rafaelle d'aider l'architecte pendant quelques jours." }
+          rafaelle:
+            - { id: ch28-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x + 7 = 42.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "5x = 35." }
+            - { id: ch28-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « L'architecte (rouler) son plan avec des gestes précis. »", choices: ["a roulé", "roulait", "roulera", "roule", "roulant"], answer: "a roulé", hint: "« Rouler » se conjugue avec avoir au passé composé." }
+      - id: m4
+        title: Premiers pas sur le chantier
+        tours:
+          axelle:
+            - { id: ch28-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 4.", choices: ["28", "30", "31", "32", "34"], answer: "32", hint: "8 × 4 = 8 × 2 × 2." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch28-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 305 − 148.", choices: ["155", "157", "159", "161", "163"], answer: "157", hint: "305 − 150 + 2." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch28-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « La escalera sube hasta la cumbre. »", choices: ["L'escalier monte jusqu'au sommet.", "L'escalier descend vers la vallée.", "L'escalier reste immobile.", "L'escalier tombe en ruine.", "L'escalier change de forme."], answer: "L'escalier monte jusqu'au sommet.", hint: "« Sube hasta la cumbre » = monte jusqu'au sommet." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu des marches imaginaires : chaque sœur compte, à voix haute, un nombre de pas qu'elle imagine nécessaires pour grimper jusqu'au sommet, en expliquant brièvement son raisonnement."
+    closing:
+      - { who: narrateur, text: "Le soir tomba sur le chantier, et l'escalier inachevé se découpa, sombre et silencieux, contre le ciel qui s'assombrissait peu à peu au-dessus de la paroi rocheuse." }
+      - { who: architecte, text: "Demain, nous choisirons ensemble la forme exacte des marches restantes. Reposez-vous bien, la décision mérite d'être prise avec l'esprit clair." }
+      - { who: axelle, text: "On y réfléchira sérieusement, c'est promis." }
+      - { who: narrateur, text: "Et tandis que la nuit enveloppait le chantier, l'architecte resta encore un long moment penchée sur son plan, comme si le repos, pour elle, attendrait encore un peu." }
+    reward: "la découverte du chantier inachevé, et de l'architecte"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Les deux formes de marches
+    decor: Le chantier, au petit matin, où l'architecte explique aux trois sœurs la différence entre des marches larges et régulières, et des marches étroites et rapides à poser.
+    opening:
+      - { who: narrateur, text: "Le lendemain matin, l'architecte entreprit d'expliquer aux trois sœurs la différence entre les deux formes de marches possibles pour achever l'escalier." }
+      - { who: architecte, text: "Regardez cette marche-ci, large et régulière : elle offre un appui sûr, même par temps de pluie, mais elle demande deux fois plus de temps à tailler." }
+      - { who: rafaelle, text: "Et l'autre forme, la plus étroite, elle a quel avantage, alors ?" }
+      - { who: architecte, text: "La rapidité, petite Archiviste. On peut en tailler bien davantage en une seule journée, mais elles glissent plus facilement sous la pluie." }
+      - { who: maelle, text: "C'est un vrai choix entre sécurité et rapidité, alors." }
+      - { who: architecte, text: "Exactement, petite Cartographe. Et c'est justement la décision qu'il nous faudra prendre, tous ensemble, dans les jours qui viennent." }
+      - { who: axelle, text: "On va bien y réfléchir, c'est promis." }
+      - { who: architecte, text: "J'en suis certaine, petite Veilleuse." }
+    manches:
+      - id: m1
+        title: Des marches larges et sûres
+        tours:
+          axelle:
+            - { id: ch28-j2-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « large » (en parlant d'une marche) ?", choices: ["étroite", "grande", "longue", "profonde", "haute"], answer: "étroite", hint: "Le contraire de ce qu'est une marche large et régulière." }
+            - { id: ch28-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 6.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "9 + 6 = 9 + 1 + 5." }
+          maelle:
+            - { id: ch28-j2-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi des marches larges offrent-elles généralement une meilleure prise au pied, surtout par temps de pluie ?", choices: ["une surface d'appui plus grande réduit le risque de glisser, même sur une pierre humide", "la largeur d'une marche n'a jamais aucun effet sur la sécurité", "cela n'a aucune explication particulière", "des marches étroites offrent toujours une meilleure prise au pied", "la pluie n'a jamais aucun effet sur la sécurité d'un escalier"], answer: "une surface d'appui plus grande réduit le risque de glisser, même sur une pierre humide", hint: "Pense à l'explication de l'architecte sur l'appui sûr offert par les marches larges." }
+            - { id: ch28-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 455 ÷ 5.", choices: ["81", "85", "88", "91", "94"], answer: "91", hint: "5 × 91 = 455." }
+          rafaelle:
+            - { id: ch28-j2-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi un choix technique, comme la forme d'un escalier, implique-t-il souvent un compromis entre plusieurs qualités opposées ?", choices: ["parce qu'améliorer une qualité, comme la rapidité, se fait souvent au détriment d'une autre, comme la sécurité", "parce qu'un choix technique n'implique jamais aucun compromis", "cela n'a aucun lien avec la conception d'un escalier", "parce qu'il existe toujours une solution parfaite sans aucun compromis", "parce que la rapidité et la sécurité vont toujours ensemble, sans exception"], answer: "parce qu'améliorer une qualité, comme la rapidité, se fait souvent au détriment d'une autre, comme la sécurité", hint: "Pense au compromis entre sécurité et rapidité, expliqué par l'architecte." }
+            - { id: ch28-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 16 × 6.", choices: ["90", "92", "94", "96", "98"], answer: "96", hint: "16 × 6 = 16 × 3 × 2." }
+      - id: m2
+        title: Des marches étroites et rapides
+        tours:
+          axelle:
+            - { id: ch28-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 16 − 9.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "16 − 6 = 10, puis − 3." }
+            - { id: ch28-j2-ax-m2b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Les marches étroites glissent plus facilement. » ?", choices: ["plus facilement", "glissent", "Les marches étroites", "les", "marches"], answer: "Les marches étroites", hint: "Qu'est-ce qui glisse plus facilement sous la pluie, selon l'architecte ?" }
+          maelle:
+            - { id: ch28-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 36 × 4.", choices: ["138", "140", "142", "144", "146"], answer: "144", hint: "36 × 4 = 36 × 2 × 2." }
+            - { id: ch28-j2-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « régulière » dans « une marche large et régulière » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la marche décrite par l'architecte." }
+          rafaelle:
+            - { id: ch28-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 50.", choices: ["28", "31", "33", "35", "38"], answer: "31", hint: "81 − 50." }
+            - { id: ch28-j2-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Cada peldaño tiene su lugar. »", choices: ["Chaque marche a sa place.", "Chaque marche disparaît vite.", "Chaque marche brille au soleil.", "Chaque marche fait du bruit.", "Chaque marche reste froide."], answer: "Chaque marche a sa place.", hint: "« Tiene su lugar » = a sa place." }
+      - id: m3
+        title: Sécurité ou rapidité
+        tours:
+          axelle:
+            - { id: ch28-j2-ax-m3a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on un plan détaillé qui décrit la forme et les mesures d'une construction ?", choices: ["un plan", "une légende", "une carte postale", "un conte", "une recette"], answer: "un plan", hint: "C'est ce que déroule l'architecte sur son établi de pierre." }
+            - { id: ch28-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 4.", choices: ["24", "26", "27", "28", "30"], answer: "28", hint: "7 × 4 = 7 × 2 × 2." }
+          maelle:
+            - { id: ch28-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 288 ÷ 4.", choices: ["68", "70", "72", "74", "76"], answer: "72", hint: "4 × 72 = 288." }
+            - { id: ch28-j2-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi est-il souvent utile de bien comprendre les avantages et les limites de chaque option avant de choisir une solution technique ?", choices: ["parce que cela permet de choisir en toute connaissance de cause, selon ses priorités réelles", "parce que comprendre les options n'a jamais aucune utilité pour décider", "cela n'a aucun lien avec la prise de décision technique", "parce qu'il vaut toujours mieux choisir au hasard, sans réflexion", "parce qu'une seule option est toujours la bonne, sans comparaison possible"], answer: "parce que cela permet de choisir en toute connaissance de cause, selon ses priorités réelles", hint: "Pense à l'explication détaillée de l'architecte, sur les deux formes de marches possibles." }
+          rafaelle:
+            - { id: ch28-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 8x − 6 = 42.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "8x = 48." }
+            - { id: ch28-j2-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« C'est un vrai choix entre sécurité et rapidité. » : que révèle cette phrase sur la nature de la décision à prendre ?", choices: ["qu'il s'agit d'un compromis entre deux qualités qui s'opposent souvent l'une à l'autre", "qu'il n'existe aucune véritable décision à prendre dans ce chapitre", "que la sécurité et la rapidité vont toujours parfaitement ensemble", "que la décision ne concerne en rien la forme des marches", "qu'une seule des deux qualités compte vraiment, l'autre étant sans importance"], answer: "qu'il s'agit d'un compromis entre deux qualités qui s'opposent souvent l'une à l'autre", hint: "Relis bien la phrase de Maelle, et la réponse de l'architecte qui suit." }
+      - id: m4
+        title: S'exercer à mesurer
+        tours:
+          axelle:
+            - { id: ch28-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 6.", choices: ["30", "32", "34", "36", "38"], answer: "36", hint: "6 × 6 = 6 × 3 × 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch28-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 330 − 157.", choices: ["170", "172", "173", "175", "177"], answer: "173", hint: "330 − 160 + 3." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch28-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Construir pide mediciones exactas. »", choices: ["Construire demande des mesures exactes.", "Construire est toujours facile.", "Construire n'apprend jamais rien.", "Construire effraie les architectes.", "Construire prend une minute."], answer: "Construire demande des mesures exactes.", hint: "« Pide mediciones exactas » = demande des mesures exactes." }
+            - { gen: maths.duree }
+    pause: "Le jeu de la marche imaginée : chaque sœur dessine, du pied sur le sol, le contour d'une marche qu'elle imagine, large ou étroite, en expliquant brièvement son choix."
+    closing:
+      - { who: narrateur, text: "Le soir venu, les trois sœurs observèrent longuement les deux types de marches déjà taillées, essayant d'imaginer la meilleure façon d'achever l'escalier jusqu'aux hauteurs." }
+      - { who: architecte, text: "Demain, il faudra choisir : des marches larges et sûres, des marches étroites et rapides, ou un compromis entre les deux. Réfléchissez-y bien, cette nuit." }
+      - { who: rafaelle, text: "On y réfléchira sérieusement, c'est promis." }
+      - { who: narrateur, text: "Et tandis que la nuit tombait sur le chantier, l'escalier inachevé semblait, lui aussi, attendre patiemment la décision qui déciderait de sa forme finale." }
+    reward: "la compréhension des deux formes de marches, enseignée par l'architecte"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: L'histoire d'un escalier effondré
+    decor: Le chantier, où l'architecte raconte aux trois sœurs l'histoire d'un ancien escalier, construit trop vite, qui s'est effondré il y a bien des années.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, tandis que la lumière du matin baignait le chantier, l'architecte raconta aux trois sœurs l'histoire d'un ancien escalier, construit trop vite, qui s'était effondré il y a bien des années." }
+      - { who: architecte, text: "On l'avait taillé à la hâte, avec des marches trop étroites et mal ajustées. Un jour de forte pluie, plusieurs d'entre elles ont cédé sous le poids des voyageurs." }
+      - { who: maelle, text: "Est-ce qu'il y a eu des blessés, à ce moment-là ?" }
+      - { who: architecte, text: "Quelques-uns, petite Cartographe, mais rien d'irréparable, par chance. C'est depuis ce jour-là que je mesure chaque marche avec un soin particulier." }
+      - { who: axelle, text: "C'est pour ça que vous insistez tant sur la sécurité, aujourd'hui ?" }
+      - { who: architecte, text: "Exactement, petite Veilleuse. Une leçon apprise de cette façon-là, on ne l'oublie jamais vraiment." }
+      - { who: rafaelle, text: "Merci de nous avoir raconté ça. Ça aide à comprendre pourquoi vous hésitez tant entre les deux solutions." }
+      - { who: architecte, text: "C'est aussi pour ça que je le raconte, petite Archiviste. Pour que d'autres n'aient pas à vivre la même frayeur que moi, ce jour-là." }
+    manches:
+      - id: m1
+        title: Un escalier effondré
+        tours:
+          axelle:
+            - { id: ch28-j3-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 6 marches effondrées comptées ce jour-là, et 3 marches restées intactes. Combien de marches en tout ?", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "6 + 3." }
+            - { id: ch28-j3-ax-m1b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « irréparable » ?", choices: ["réparable", "grave", "sérieux", "profond", "durable"], answer: "réparable", hint: "Le contraire de ce que craignait l'architecte, lors de l'effondrement." }
+          maelle:
+            - { id: ch28-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi une expérience difficile vécue dans sa jeunesse peut-elle influencer durablement le comportement d'un adulte dans son métier ?", choices: ["parce qu'une expérience marquante laisse une empreinte forte sur les décisions futures", "parce qu'une expérience de jeunesse n'a jamais aucune influence sur l'âge adulte", "cela n'a aucune explication particulière", "parce que seules les expériences récentes comptent, jamais les anciennes", "parce qu'un métier n'est jamais influencé par une expérience personnelle"], answer: "parce qu'une expérience marquante laisse une empreinte forte sur les décisions futures", hint: "Pense à l'effet de l'effondrement passé sur la rigueur actuelle de l'architecte." }
+            - { id: ch28-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 87 + 56.", choices: ["138", "140", "142", "143", "145"], answer: "143", hint: "87 + 60 − 4." }
+          rafaelle:
+            - { id: ch28-j3-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi raconter ses propres erreurs passées à d'autres personnes peut-il avoir une réelle utilité, au-delà du simple récit ?", choices: ["parce que cela permet aux autres d'éviter de répéter la même erreur", "parce que raconter ses erreurs n'a jamais aucune utilité pour les autres", "cela n'a aucun lien avec la transmission d'une expérience", "parce qu'il vaut toujours mieux cacher ses erreurs passées", "parce qu'une erreur personnelle ne concerne jamais que soi-même"], answer: "parce que cela permet aux autres d'éviter de répéter la même erreur", hint: "Repense à ce que dit l'architecte sur la raison pour laquelle elle raconte cette histoire." }
+            - { id: ch28-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14 × 6.", choices: ["80", "82", "84", "86", "88"], answer: "84", hint: "14 × 6 = 14 × 3 × 2." }
+      - id: m2
+        title: Une leçon de prudence
+        tours:
+          axelle:
+            - { id: ch28-j3-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Plusieurs marches ont cédé sous le poids. » ?", choices: ["sous le poids", "ont cédé", "Plusieurs marches", "plusieurs", "marches"], answer: "Plusieurs marches", hint: "Qu'est-ce qui a cédé, dans le récit de l'architecte ?" }
+            - { id: ch28-j3-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 7.", choices: ["14", "15", "16", "17", "18"], answer: "16", hint: "9 + 7 = 9 + 9 − 2." }
+          maelle:
+            - { id: ch28-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 364 ÷ 4.", choices: ["86", "88", "90", "91", "93"], answer: "91", hint: "4 × 91 = 364." }
+            - { id: ch28-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « mal ajustées » dans « des marches trop étroites et mal ajustées » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit les marches de l'ancien escalier effondré." }
+          rafaelle:
+            - { id: ch28-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 11² − 70.", choices: ["48", "51", "53", "56", "58"], answer: "51", hint: "121 − 70." }
+            - { id: ch28-j3-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « La piedra guarda la forma elegida. »", choices: ["La pierre garde la forme choisie.", "La pierre change de forme seule.", "La pierre se brise facilement.", "La pierre reste toujours froide.", "La pierre tombe du mur."], answer: "La pierre garde la forme choisie.", hint: "« Guarda la forma elegida » = garde la forme choisie." }
+      - id: m3
+        title: Transmettre son expérience
+        tours:
+          axelle:
+            - { id: ch28-j3-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 6.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "14 − 6 = 8." }
+            - { id: ch28-j3-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi des marches trop étroites et mal ajustées peuvent-elles céder sous le poids, surtout par temps de pluie ?", choices: ["une surface d'appui réduite et mal fixée résiste moins bien à l'humidité et à la pression répétée", "des marches étroites résistent toujours mieux que des marches larges", "cela n'a aucune explication particulière", "le poids des voyageurs n'a jamais aucun effet sur un escalier", "la pluie n'a jamais aucun effet sur la solidité d'une marche"], answer: "une surface d'appui réduite et mal fixée résiste moins bien à l'humidité et à la pression répétée", hint: "Pense au récit de l'architecte sur l'effondrement de l'ancien escalier." }
+          maelle:
+            - { id: ch28-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 46 × 4.", choices: ["178", "182", "184", "186", "190"], answer: "184", hint: "46 × 4 = 50 × 4 − 4 × 4." }
+            - { id: ch28-j3-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi écouter le récit d'une erreur passée, racontée par quelqu'un d'expérimenté, peut-il aider des voyageurs à mieux décider ?", choices: ["parce que cela leur permet de comprendre concrètement les conséquences possibles d'une mauvaise décision", "parce qu'un tel récit n'a jamais aucune utilité pour décider", "cela n'a aucun lien avec la prise de décision", "parce que seules les décisions des voyageurs eux-mêmes ont de la valeur", "parce qu'écouter un récit retarde toujours inutilement une décision"], answer: "parce que cela leur permet de comprendre concrètement les conséquences possibles d'une mauvaise décision", hint: "Repense à ce que ressentent les trois sœurs après avoir écouté le récit de l'architecte." }
+          rafaelle:
+            - { id: ch28-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 7x − 8 = 34.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "7x = 42." }
+            - { id: ch28-j3-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au futur simple : « Nous (mesurer) chaque marche avec un soin particulier. »", choices: ["nous mesurerons", "nous mesurons", "nous mesurions", "nous mesurâmes", "nous mesurerions"], answer: "nous mesurerons", hint: "Futur simple de « mesurer »." }
+      - id: m4
+        title: Comprendre la prudence
+        tours:
+          axelle:
+            - { id: ch28-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 5.", choices: ["40", "42", "44", "45", "48"], answer: "45", hint: "9 × 5 = 9 × 10 ÷ 2." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch28-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 295 − 137.", choices: ["150", "154", "156", "158", "160"], answer: "158", hint: "295 − 140 + 3." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch28-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Subir requiere un buen plan. »", choices: ["Monter demande un bon plan.", "Monter est toujours facile.", "Monter ne demande rien du tout.", "Monter effraie les voyageurs.", "Monter prend une minute."], answer: "Monter demande un bon plan.", hint: "« Requiere un buen plan » = demande un bon plan." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu du récit transmis : chaque sœur raconte, en une phrase, une petite erreur qu'elle a déjà commise et dont elle a tiré une leçon, pour s'exercer à transmettre une expérience comme l'architecte."
+    closing:
+      - { who: narrateur, text: "La soirée se prolongea doucement sur le chantier, entre récits et silences, tandis que l'escalier inachevé semblait, lui aussi, porter le poids discret de cette vieille histoire." }
+      - { who: architecte, text: "Demain, il faudra enfin vous décider. Prenez cette dernière nuit pour y réfléchir une dernière fois, à la lumière de tout ce qu'on a partagé." }
+      - { who: maelle, text: "On y réfléchira, c'est promis. Merci de nous avoir raconté votre histoire." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs regagnaient leur campement pour la nuit, Nilo observait l'architecte s'affairer encore un peu, pensif, comme s'il comprenait, lui aussi, le poids d'une vieille frayeur jamais tout à fait effacée." }
+    reward: "l'histoire de l'escalier effondré, et sa leçon de prudence"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Se décider ensemble
+    decor: Le chantier, dans la lumière grise du petit matin, où les trois sœurs retrouvent l'architecte pour lui annoncer, enfin, leur décision.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, les trois sœurs retrouvèrent l'architecte sur le chantier, dans la lumière grise du petit matin, prêtes à lui annoncer leur décision." }
+      - { who: architecte, text: "Pour que cet escalier mène sans encombre jusqu'aux hauteurs, il me faut choisir sa forme : des marches larges et sûres, ou des marches étroites et rapides à poser. Qu'en pensez-vous ? »" }
+      - { who: rafaelle, text: "On y a bien réfléchi, architecte. Et on a pris une décision, toutes les trois ensemble." }
+      - { who: architecte, text: "Je vous écoute, petite Archiviste. Quelle qu'elle soit, je ferai de mon mieux pour la mener à bien." }
+    manches:
+      - id: m1
+        title: Peser le pour et le contre
+        tours:
+          axelle:
+            - { id: ch28-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « risquée » (en parlant d'une solution) ?", choices: ["sûre", "dangereuse", "hasardeuse", "incertaine", "périlleuse"], answer: "sûre", hint: "Le contraire de ce que serait l'escalier avec des marches trop étroites." }
+            - { id: ch28-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 6.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "8 + 6 = 8 + 8 − 2." }
+          maelle:
+            - { id: ch28-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi une décision prise après avoir écouté l'expérience d'une spécialiste est-elle souvent plus solide qu'une décision prise sans aucune information ?", choices: ["parce qu'elle s'appuie sur des connaissances concrètes plutôt que sur une simple impression", "parce qu'une décision collective n'a jamais aucun avantage", "cela n'a aucun lien avec la qualité d'une décision", "parce qu'une décision sans information est toujours meilleure", "parce qu'écouter une spécialiste retarde toujours inutilement une décision"], answer: "parce qu'elle s'appuie sur des connaissances concrètes plutôt que sur une simple impression", hint: "Pense à tout ce que l'architecte a enseigné aux sœurs sur les marches, cette semaine." }
+            - { id: ch28-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 92 + 59.", choices: ["146", "148", "150", "151", "153"], answer: "151", hint: "92 + 60 − 1." }
+          rafaelle:
+            - { id: ch28-j4-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Je ferai de mon mieux pour la mener à bien. » : que révèle cette phrase sur l'attitude de l'architecte ?", choices: ["qu'elle reste engagée dans son travail, quelle que soit la décision des sœurs", "qu'elle refusera forcément leur décision", "qu'elle attend d'elles une seule réponse précise", "qu'elle n'a aucune considération pour leur choix", "qu'elle préfère décider seule, à leur place"], answer: "qu'elle reste engagée dans son travail, quelle que soit la décision des sœurs", hint: "Repense à l'attitude de l'architecte depuis le début de ce chapitre." }
+            - { id: ch28-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13² − 100.", choices: ["59", "63", "66", "69", "73"], answer: "69", hint: "169 − 100." }
+      - id: m2
+        title: Les trois propositions
+        tours:
+          axelle:
+            - { id: ch28-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 15 − 8.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "15 − 5 = 10, puis − 3." }
+            - { id: ch28-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un compromis entre deux solutions extrêmes peut-il parfois réduire les inconvénients de chacune, sans en garder tous les avantages ?", choices: ["un compromis équilibre généralement les forces et les faiblesses des deux approches initiales", "un compromis n'a jamais aucun effet sur les inconvénients d'une solution", "cela n'a aucune explication particulière", "il vaut toujours mieux choisir une solution extrême plutôt qu'un compromis", "un compromis technique n'a jamais aucun avantage réel"], answer: "un compromis équilibre généralement les forces et les faiblesses des deux approches initiales", hint: "Pense à la proposition d'Axelle, de trouver un compromis entre largeur et rapidité." }
+          maelle:
+            - { id: ch28-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 351 ÷ 3.", choices: ["107", "111", "115", "117", "119"], answer: "117", hint: "3 × 117 = 351." }
+            - { id: ch28-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « solide » dans « une décision solide » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit une décision bien réfléchie." }
+          rafaelle:
+            - { id: ch28-j4-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 8² + 2 × 10.", choices: ["74", "78", "82", "84", "88"], answer: "84", hint: "64 + 20." }
+            - { id: ch28-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « L'escalier monte jusqu'au sommet » en espagnol ?", choices: ["La escalera sube hasta la cumbre.", "Cada peldaño tiene su lugar.", "Construir pide mediciones exactas.", "La piedra guarda la forma elegida.", "Subir requiere un buen plan."], answer: "La escalera sube hasta la cumbre.", hint: "Relis la phrase du jour 1." }
+      - id: m3
+        title: Annoncer sa décision
+        tours:
+          axelle:
+            - { id: ch28-j4-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Les trois sœurs retrouvèrent l'architecte. » ?", choices: ["l'architecte", "retrouvèrent", "Les trois sœurs", "trois", "sœurs"], answer: "Les trois sœurs", hint: "Qui retrouve l'architecte, sur le chantier ?" }
+            - { id: ch28-j4-ax-m3b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 11 − 5.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "11 − 5 = 6." }
+          maelle:
+            - { id: ch28-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 4.", choices: ["108", "112", "114", "116", "120"], answer: "116", hint: "30 × 4 − 4." }
+            - { id: ch28-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi annoncer une décision claire à une architecte expérimentée lui permet-il de mieux organiser le reste de son chantier ?", choices: ["parce qu'elle peut ainsi anticiper et organiser au mieux les travaux restants selon le choix fait", "parce qu'annoncer une décision n'a jamais aucune utilité pour une architecte", "cela n'a aucun lien avec l'organisation d'un chantier", "parce qu'il vaut toujours mieux rester dans l'incertitude", "parce que la clarté retarde toujours une décision"], answer: "parce qu'elle peut ainsi anticiper et organiser au mieux les travaux restants selon le choix fait", hint: "Pense à l'utilité, pour l'architecte, de connaître la décision des sœurs à l'avance." }
+          rafaelle:
+            - { id: ch28-j4-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 4x + 11 = 35.", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "4x = 24." }
+            - { id: ch28-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Qu'en pensez-vous ? » : quelle est la fonction grammaticale de « en » dans cette phrase ?", choices: ["complément d'objet indirect", "sujet", "attribut du sujet", "complément circonstanciel", "épithète"], answer: "complément d'objet indirect", hint: "« En » reprend l'idée de la question posée juste avant par l'architecte." }
+      - id: m4
+        title: Un moment de vérité
+        tours:
+          axelle:
+            - { id: ch28-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 5.", choices: ["30", "32", "33", "35", "38"], answer: "35", hint: "7 × 5 = 7 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch28-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 260 − 118.", choices: ["138", "140", "142", "144", "146"], answer: "142", hint: "260 − 120 + 2." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch28-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15 × 6.", choices: ["86", "88", "90", "92", "94"], answer: "90", hint: "15 × 6 = 15 × 3 × 2." }
+            - { gen: maths.duree }
+    pause: "Le jeu du compte à rebours avant la décision : chaque sœur compte, à voix haute, de 5 à 1, avant de prononcer, toutes ensemble, le mot qui résume leur décision commune."
+    closing:
+      - { who: narrateur, text: "Les trois sœurs échangèrent un dernier regard, puis, d'une seule voix, annoncèrent à l'architecte la décision qu'elles avaient prise ensemble, après mûre réflexion." }
+      - { who: architecte, text: "Je vous entends, petites voyageuses, et je respecte votre choix. Préparons-nous, alors, pour demain." }
+      - { who: maelle, text: "On espère vraiment que cet escalier tiendra bon, pendant longtemps." }
+      - { who: narrateur, text: "Et tandis que le soir tombait sur le chantier, les trois sœurs se préparèrent, chacune à sa façon, à aider l'architecte dans la dernière partie des travaux." }
+    reward: "la décision prise ensemble, annoncée à l'architecte"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: Les dernières marches
+    decor: Le chantier, dans la lumière du matin, où l'architecte et les trois sœurs s'apprêtent enfin à tailler les dernières marches de l'escalier, selon la décision prise la veille.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, dans la lumière du matin, l'architecte et les trois sœurs s'apprêtèrent enfin à tailler les dernières marches de l'escalier, selon la décision prise la veille." }
+      - { who: architecte, text: "Pour que cet escalier mène sans encombre jusqu'aux hauteurs, il me faut choisir sa forme : des marches larges et sûres, ou des marches étroites et rapides à poser. Qu'en pensez-vous ? »" }
+      - { who: nilo, text: "Allez, les filles. Une dernière vérification avant de se lancer, et on pourra dire qu'on a fait de notre mieux, ici aussi." }
+    manches:
+      - id: m1
+        title: Ce que le chantier a appris
+        intro: "L'architecte interroge chaque sœur sur tout ce que cette semaine passée sur le chantier lui a appris."
+        tours:
+          axelle:
+            - { id: ch28-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on une personne dont le métier est de concevoir des bâtiments, des ponts ou des escaliers ?", choices: ["une architecte", "une bergère", "une messagère", "une tisserande", "une marchande"], answer: "une architecte", hint: "C'est le métier pratiqué par la femme du chantier." }
+            - { id: ch28-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 + 5.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "8 + 5 = 8 + 2 + 3." }
+          maelle:
+            - { id: ch28-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi des marches larges offrent-elles généralement une meilleure prise au pied, comme tu l'as appris cette semaine ?", choices: ["une surface d'appui plus grande réduit le risque de glisser, même sur une pierre humide", "la largeur d'une marche n'a jamais aucun effet sur la sécurité", "cela n'a aucune explication particulière", "des marches étroites offrent toujours une meilleure prise au pied", "la pluie n'a jamais aucun effet sur la sécurité d'un escalier"], answer: "une surface d'appui plus grande réduit le risque de glisser, même sur une pierre humide", hint: "Repense à ta propre question du deuxième jour." }
+            - { id: ch28-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 42 × 4.", choices: ["162", "164", "166", "168", "170"], answer: "168", hint: "42 × 4 = 40 × 4 + 2 × 4." }
+          rafaelle:
+            - { id: ch28-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que l'architecte incarne la valeur de la prudence réfléchie, à travers son métier et son histoire ?", choices: ["parce qu'elle a tiré de son échec passé une rigueur qu'elle applique et partage désormais", "parce que l'architecte n'a jamais aucune prudence réelle", "parce qu'elle refuse toujours de partager ce qu'elle a vécu", "parce qu'il n'y a aucune leçon à tirer de son parcours", "parce que la prudence n'a aucun lien avec son métier"], answer: "parce qu'elle a tiré de son échec passé une rigueur qu'elle applique et partage désormais", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de l'architecte." }
+            - { id: ch28-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 6/7 − 2/7.", choices: ["2/7", "3/7", "4/7", "5/7", "6/7"], answer: "4/7", hint: "6 − 2 = 4, même dénominateur." }
+      - id: m2
+        title: Avant les dernières marches
+        intro: "Il faut relier tout ce que la semaine a appris sur l'escalier et ses deux formes possibles, avant de tailler les dernières marches."
+        tours:
+          axelle:
+            - { id: ch28-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux une marche offrant un bon appui, même par temps de pluie ?", choices: ["large", "étroite", "fragile", "glissante", "mince"], answer: "large", hint: "C'est la qualité recherchée par Maelle, pour la sécurité des marches." }
+            - { id: ch28-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 15 − 7.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "15 − 7 = 8." }
+          maelle:
+            - { id: ch28-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi cette halte sur le chantier de l'architecte a-t-elle une importance particulière dans le voyage des trois sœurs ?", choices: ["elle n'a aucune importance réelle", "elle leur apprend à peser un compromis technique, à comprendre un risque, et à décider ensemble", "elle les empêche d'avancer vers le sommet", "elle se trouve très loin des montagnes", "personne n'y vient jamais vraiment"], answer: "elle leur apprend à peser un compromis technique, à comprendre un risque, et à décider ensemble", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de l'architecte." }
+            - { id: ch28-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 408 ÷ 6.", choices: ["64", "66", "68", "70", "72"], answer: "68", hint: "6 × 68 = 408." }
+          rafaelle:
+            - { id: ch28-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10² − 55.", choices: ["40", "43", "45", "48", "50"], answer: "45", hint: "100 − 55." }
+            - { id: ch28-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Qu'en pensez-vous ? » : à qui l'architecte adresse-t-elle cette question ?", choices: ["aux trois sœurs", "à elle-même", "à Nilo", "au narrateur", "à personne en particulier"], answer: "aux trois sœurs", hint: "Relis le début du cinquième jour." }
+      - id: m3
+        title: Le Chant des Marches Taillées
+        intro: "Avant de poser la dernière marche, l'architecte et les trois sœurs chantent ensemble, pour accompagner, d'un rythme régulier, l'achèvement de l'escalier."
+        tours:
+          axelle:
+            - { id: ch28-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, blanche." }
+          maelle:
+            - { id: ch28-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          rafaelle:
+            - { id: ch28-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, blanche." }
+    concert:
+      measures:
+        axelle: { given: [1, 1], missing: 2, prompt: "Noire, noire, blanche" }
+        maelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        rafaelle: { given: [2], missing: 2, prompt: "Blanche, blanche" }
+    pause: "Le dernier regard vers le sommet : chaque sœur, juste avant de poser la dernière marche, lève les yeux vers les hauteurs que l'escalier s'apprête enfin à rejoindre."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant des Marches Taillées se répandit sur le chantier, et dans un dernier effort commun, la toute dernière marche vint enfin compléter l'escalier jusqu'aux hauteurs." }
+      - { who: architecte, text: "Nous y sommes, petites voyageuses. Cet escalier mènera désormais, en toute sécurité, tous ceux qui voudront gravir ces hauteurs après nous." }
+      - { who: rafaelle, text: "On l'a fait ! On a vraiment achevé cet escalier avec vous !" }
+      - { who: narrateur, text: "Et tandis que le soleil du matin éclairait chaque marche nouvellement taillée, l'architecte posa enfin son plan, un sourire soulagé et sincère sur le visage." }
+      - { who: axelle, text: "C'est impressionnant de penser qu'on a aidé à construire quelque chose qui durera si longtemps." }
+      - { who: nilo, text: "Encore une étape de passée, et un escalier de plus vers les hauteurs. Pas mal, pour une semaine passée à tailler la pierre." }
+    reward: "l'achèvement de l'escalier, et la reconnaissance de l'architecte"
