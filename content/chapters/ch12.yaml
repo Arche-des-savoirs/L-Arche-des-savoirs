@@ -1,0 +1,402 @@
+# Chapitre 12 — La Traversée des Brumes
+# Suite directe du chapitre 11 : la chaîne de montagnes aperçue à l'horizon n'est accessible
+# qu'en traversant un détroit noyé de brume, gardé par un personnage déjà établi au casting :
+# le Passeur Sans Rives (id 'passeur', voix Achird — aucun nouveau personnage, aucun nouveau
+# changement de schéma de personnages nécessaire). Décision MAJEURE (src/content/decisions.ts :
+# major=true, effets Orvane A=+2 / B=-1 / C=+1) — aucun changement moteur requis, déjà couvert.
+# Rédigé directement en YAML, canon établi tiré de la mémoire du projet (« fais au mieux »).
+
+id: ch12
+number: 12
+act: 2
+title: La Traversée des Brumes
+introImage: ch12
+scene: traversee-brumes
+
+espagnol:
+  - { es: "La niebla cubre el agua.", fr: "La brume couvre l'eau." }
+  - { es: "¿Qué llevas contigo?", fr: "Qu'emportes-tu avec toi ?" }
+  - { es: "El barquero espera.", fr: "Le passeur attend." }
+  - { es: "Cruzamos juntas.", fr: "Nous traversons ensemble." }
+  - { es: "La luna guía el camino.", fr: "La lune guide le chemin." }
+
+# Décision MAJEURE du Conseil du Quai de Brume (jour 5). A = Lien, B = Courage, C = Mémoire.
+# Effets déjà définis dans src/content/decisions.ts (major=true : poids double sur le compteur ;
+# Orvane A=+2, B=-1, C=+1) — ne pas dupliquer ces effets ici, seul le texte change.
+decision:
+  prompt: "Le Passeur Sans Rives ne traverse jamais à vide : chaque passager doit laisser quelque chose sur le quai avant d'embarquer. Que choisissez-vous de lui laisser ?"
+  options:
+    A:
+      label: Offrir un souvenir partagé
+      scene: "Les trois sœurs se tiennent par la main sur le quai et racontent ensemble, à voix haute, un seul et même souvenir — le premier soir dans le Hall des Cartes, le jour où Dame Cartéa leur a fait confiance. Elles le laissent sur les planches mouillées comme on dépose une pierre précieuse."
+      line: { who: passeur, text: "Un souvenir donné à trois voix est plus lourd qu'un trésor donné par une seule main. Celui-ci paiera largement votre passage, et au-delà." }
+      habillage: "Chaque épreuve devient un moment où l'on cherche, ensemble, ce qui mérite vraiment d'être partagé plutôt que gardé pour soi."
+    B:
+      label: Payer de sa propre bravoure
+      scene: "Rafaelle s'avance seule jusqu'au bord du quai et annonce qu'elle traversera la première, sans lanterne, rien qu'à la force de ses jambes sur la passerelle de brume, pour prouver qu'elles n'ont besoin de rien laisser derrière elles."
+      line: { who: passeur, text: "Personne n'avait encore essayé de traverser sans rien payer du tout. C'est audacieux. C'est aussi, petite Archiviste, terriblement risqué — mais je vous laisse essayer." }
+      habillage: "Les épreuves deviennent une suite de défis où il faut avancer vite, sans filet, pour prouver sa bravoure."
+    C:
+      label: Offrir une leçon apprise
+      scene: "Maelle ouvre son carnet et choisit, avec soin, une seule leçon parmi toutes celles notées depuis le début du voyage — celle qui lui semble la plus vraie — et la confie au Passeur, mot pour mot, avant de refermer le carnet."
+      line: { who: passeur, text: "Un savoir donné en pleine conscience vaut, lui aussi, son pesant de brume. Vous avez choisi avec soin. C'est tout ce que je demande." }
+      habillage: "Les épreuves deviennent des énigmes où il faut choisir, parmi plusieurs réponses justes, celle qui compte vraiment le plus."
+
+repliquesAbsurdes:
+  - "Si le Passeur n'a pas de rives, est-ce qu'il habite au milieu de l'eau toute l'année ?"
+  - "Mon renard a essayé de payer la traversée avec une noisette. Le Passeur a dit non, mais poliment."
+  - "On a déjà réveillé un jardin qui chante. Un vieux monsieur avec un sablier, ça devrait aller."
+  - "Si je laisse un souvenir sur le quai, est-ce que je peux en racheter un moins cher au retour ?"
+  - "Est-ce que la lune nous regarde parce qu'elle s'ennuie, ou parce qu'elle surveille le Passeur ?"
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: Le Quai de Brume
+    decor: Un vieux quai de bois, posé au bord d'un détroit que la brume nocturne avale presque entièrement, des lanternes suspendues à des mâts tordus, une pleine lune pâle au-dessus de ruines à peine devinées sur l'autre rive.
+    opening:
+      - { who: narrateur, text: "Il était une fois une chaîne de montagnes qu'aucune carte n'avait jamais osé tracer — et qui, pour l'atteindre, obligeait à traverser d'abord un détroit si chargé de brume qu'on n'en voyait jamais l'autre rive. L'Arche se posa en silence au bord d'un vieux quai de bois, les mâts tordus portant encore quelques lanternes allumées." }
+      - { who: narrateur, text: "Sur le quai, immobile, une silhouette encapuchonnée attendait déjà, comme si elle les attendait depuis toujours : un vieil homme au visage patient, un sablier accroché à sa ceinture, la main tendue vers elles sans un mot." }
+      - { who: nilo, text: "D'habitude, c'est moi qui fonce en premier. Là, pour une fois, je crois que je vais laisser quelqu'un d'autre ouvrir la marche." }
+      - { who: narrateur, text: "Rafaelle s'avança la première, et reconnut, à la forme du sablier et au silence patient du vieil homme, celui dont Thessaly leur avait un jour parlé, tout au début de leur voyage : le Passeur Sans Rives." }
+      - { who: rafaelle, text: "C'est vous. On a entendu parler de vous, il y a longtemps. On ne pensait pas vous rencontrer pour de vrai." }
+      - { who: passeur, text: "Peu de gens pensent me rencontrer pour de vrai. Et pourtant, me voilà, comme toujours, au bord de l'eau que personne ne traverse seul." }
+      - { who: narrateur, text: "La lune, pleine et pâle, éclairait juste assez la brume pour qu'on devine, très loin sur l'autre rive, les contours de ruines anciennes — et, plus loin encore, la ligne sombre d'une chaîne de montagnes qui semblait attendre, elle aussi." }
+      - { who: axelle, text: "On doit traverser ça ? Toute cette brume, sans rien voir devant ?" }
+      - { who: passeur, text: "On ne voit jamais l'autre rive avant d'avoir accepté de partir. C'est ainsi, depuis toujours, que fonctionne une traversée." }
+      - { who: maelle, text: "Alors il va falloir qu'on vous fasse confiance avant même de savoir où on va." }
+      - { who: passeur, text: "C'est exactement cela. Et croyez-moi, petite Cartographe, ce n'est pas la partie la plus facile du voyage." }
+    manches:
+      - id: m1
+        title: Le bord de l'eau
+        intro: "Avant de traverser, il faut comprendre où l'on se trouve."
+        tours:
+          axelle:
+            - { id: ch12-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on un bras de mer resserré qui sépare deux terres ?", choices: ["un détroit", "un désert", "un plateau", "une vallée", "un archipel"], answer: "un détroit", hint: "C'est le mot utilisé dans le récit du jour." }
+            - { id: ch12-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 9.", choices: ["15", "16", "17", "18", "19"], answer: "17", hint: "8 + 9 = 8 + 8 + 1." }
+          maelle:
+            - { id: ch12-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi la pleine lune est-elle particulièrement visible et lumineuse dans le ciel nocturne ?", choices: ["elle produit sa propre lumière", "elle reflète la lumière du soleil vers la Terre", "elle est plus proche de la Terre ce soir-là", "elle chauffe comme une lanterne", "cela n'a aucun lien avec le soleil"], answer: "elle reflète la lumière du soleil vers la Terre", hint: "La Lune n'émet pas sa propre lumière." }
+            - { id: ch12-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 76 + 48.", choices: ["114", "118", "120", "122", "124"], answer: "124", hint: "76 + 50 − 2." }
+          rafaelle:
+            - { id: ch12-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi un détroit a-t-il souvent, dans l'histoire, une grande importance stratégique et commerciale ?", choices: ["il n'a jamais aucune importance particulière", "c'est un passage obligé entre deux mers ou deux terres, donc un point de contrôle précieux", "il est toujours trop dangereux pour être traversé", "les détroits sont toujours interdits de navigation", "parce qu'il n'y a jamais de brume ailleurs"], answer: "c'est un passage obligé entre deux mers ou deux terres, donc un point de contrôle précieux", hint: "Pense à ce que représente un passage obligé entre deux lieux." }
+            - { id: ch12-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 17 × 6.", choices: ["92", "96", "100", "102", "108"], answer: "102", hint: "17 × 6 = 17 × 5 + 17." }
+      - id: m2
+        title: Le Passeur Sans Rives
+        tours:
+          axelle:
+            - { id: ch12-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de la phrase « Le Passeur attend sur le quai. » ?", choices: ["attend", "sur le quai", "Le Passeur", "le quai", "sur"], answer: "Le Passeur", hint: "Qui fait l'action d'attendre ?" }
+            - { id: ch12-j1-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 15 − 7.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "15 − 5 = 10, puis − 2." }
+          maelle:
+            - { id: ch12-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « patient » dans « un visage patient » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le visage du Passeur." }
+            - { id: ch12-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 630 ÷ 9.", choices: ["60", "65", "68", "70", "72"], answer: "70", hint: "9 × 70 = 630." }
+          rafaelle:
+            - { id: ch12-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« On ne voit jamais l'autre rive avant d'avoir accepté de partir. » : que suggère cette phrase sur la nature de la confiance ?", choices: ["qu'il faut toujours tout voir avant d'agir", "que la confiance précède parfois la certitude", "que voyager est toujours inutile", "que la brume empêche toute décision", "qu'il vaut mieux ne jamais partir"], answer: "que la confiance précède parfois la certitude", hint: "Pense à ce que Maelle en conclut juste après." }
+            - { id: ch12-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 5/9 + 2/9.", choices: ["7/18", "7/9", "3/9", "1/2", "9/9"], answer: "7/9", hint: "5 + 2 = 7, sur le même dénominateur." }
+      - id: m3
+        title: Les lanternes du quai
+        tours:
+          axelle:
+            - { id: ch12-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 4 mâts sur le quai, chacun porte 3 lanternes. Combien de lanternes en tout ?", choices: ["9", "10", "11", "12", "14"], answer: "12", hint: "4 × 3." }
+            - { id: ch12-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi allume-t-on des lanternes la nuit ?", choices: ["pour se réchauffer uniquement", "pour voir dans l'obscurité", "pour faire du bruit", "pour attirer la pluie", "cela ne sert à rien"], answer: "pour voir dans l'obscurité", hint: "Une lanterne produit de la lumière." }
+          maelle:
+            - { id: ch12-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 4.", choices: ["106", "110", "114", "116", "120"], answer: "116", hint: "30 × 4 − 4." }
+            - { id: ch12-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Avant les cartes modernes, comment les marins s'orientaient-ils souvent la nuit en mer ?", choices: ["ils ne naviguaient jamais la nuit", "en observant les étoiles et la lune", "en comptant les vagues", "en suivant le vent uniquement les yeux fermés", "ils ne s'orientaient jamais"], answer: "en observant les étoiles et la lune", hint: "Pense à ce qui est visible et stable dans le ciel nocturne." }
+          rafaelle:
+            - { id: ch12-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 4x − 5 = 23.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "4x = 28." }
+            - { id: ch12-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Thessaly (parler) de lui, il y a longtemps. »", choices: ["a parlé", "parlait", "parlera", "parle", "parlant"], answer: "a parlé", hint: "Passé composé = avoir + participe passé." }
+      - id: m4
+        title: Premiers pas sur le quai
+        tours:
+          axelle:
+            - { id: ch12-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 5.", choices: ["30", "32", "35", "38", "40"], answer: "35", hint: "7 × 5 = 7 × 4 + 7." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch12-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 310 − 145.", choices: ["155", "160", "165", "170", "175"], answer: "165", hint: "310 − 150 + 5." }
+            - { gen: maths.comparer }
+          rafaelle:
+            - { id: ch12-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « La niebla cubre el agua. »", choices: ["Le soleil chauffe l'eau.", "La brume couvre l'eau.", "La pluie tombe sur l'eau.", "Le vent souffle sur l'eau.", "La lune éclaire l'eau."], answer: "La brume couvre l'eau.", hint: "« Niebla » = brume." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu du brouillard : une sœur ferme les yeux et doit traverser une petite distance guidée uniquement par la voix des deux autres, sans toucher les obstacles posés au sol."
+    closing:
+      - { who: narrateur, text: "À la tombée de la nuit, le Passeur ralluma une à une les lanternes éteintes du quai, d'un geste lent et habitué, comme s'il refaisait, pour la millième fois peut-être, exactement les mêmes gestes." }
+      - { who: passeur, text: "Revenez demain, si vous êtes toujours décidées à traverser. La brume ne s'impatiente jamais, mais elle n'attend pas non plus éternellement sans poser de questions." }
+      - { who: rafaelle, text: "On reviendra. On n'a pas fait tout ce chemin pour s'arrêter devant un peu de brouillard." }
+      - { who: narrateur, text: "Alors que les trois sœurs regagnaient l'Arche, Plume resta un instant immobile sur le quai, les yeux fixés sur le sablier accroché à la ceinture du vieil homme, où le sable semblait s'écouler plus lentement que n'importe quel sablier ordinaire." }
+      - { who: plume, text: "Son sablier ne se vide presque pas. Je me demande depuis combien de temps, au juste, il attend sur ce quai." }
+    reward: "la première rencontre avec le Passeur Sans Rives"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Le Prix de la Traversée
+    decor: Le même quai, la brume un peu plus dense encore, le Passeur assis sur une caisse renversée, son sablier posé devant lui comme pour une discussion sérieuse.
+    opening:
+      - { who: narrateur, text: "Le lendemain soir, le Passeur les attendait assis, son sablier posé devant lui sur une vieille caisse renversée, le sable y coulant si lentement qu'on aurait presque pu compter les grains un par un." }
+      - { who: passeur, text: "Avant d'aller plus loin, il faut que vous compreniez une règle simple : je ne traverse jamais personne à vide. Chaque passager doit laisser quelque chose sur ce quai avant d'embarquer." }
+      - { who: nilo, text: "Laisser quoi, exactement ? Parce que si c'est mon arrosoir, je préviens tout de suite que j'y suis très attaché." }
+      - { who: passeur, text: "Pas un objet, petit renard. Quelque chose de plus léger à porter, et pourtant bien plus lourd à donner : un souvenir, une leçon, un instant de bravoure. Ce que vous jugerez digne du passage." }
+      - { who: axelle, text: "Et si on se trompe ? Si ce qu'on laisse n'est pas assez ?" }
+      - { who: passeur, text: "Alors la brume vous ramènera doucement sur ce quai, sans vous blesser, pour que vous réessayiez. Je ne suis pas cruel. Je suis seulement exigeant." }
+      - { who: narrateur, text: "Maelle observa longuement le sable du sablier, qui semblait s'écouler à un rythme presque imperceptible, comme si le temps lui-même hésitait à avancer trop vite en cette présence." }
+      - { who: maelle, text: "Votre sablier n'a presque pas changé depuis hier. Combien de temps faut-il, pour qu'il se vide entièrement ?" }
+      - { who: passeur, text: "Je ne sais plus, petite Cartographe. J'ai cessé de compter il y a bien longtemps. C'est peut-être cela, au fond, le vrai prix que j'ai moi-même payé, un jour, pour pouvoir traverser." }
+    manches:
+      - id: m1
+        title: Ce que l'on peut laisser
+        tours:
+          axelle:
+            - { id: ch12-j2-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « léger » ?", choices: ["lourd", "doux", "petit", "rapide", "clair"], answer: "lourd", hint: "C'est l'opposé exact." }
+            - { id: ch12-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 8.", choices: ["15", "16", "17", "18", "19"], answer: "17", hint: "9 + 8 = 9 + 9 − 1." }
+          maelle:
+            - { id: ch12-j2-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Dans un sablier, qu'est-ce qui détermine la vitesse à laquelle le sable s'écoule d'un compartiment à l'autre ?", choices: ["la couleur du sable uniquement", "la taille de l'ouverture entre les deux compartiments", "le poids total du sablier", "la température de la pièce uniquement", "cela ne dépend de rien du tout"], answer: "la taille de l'ouverture entre les deux compartiments", hint: "Pense à un goulot d'étranglement plus ou moins large." }
+            - { id: ch12-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 540 ÷ 6.", choices: ["80", "85", "88", "90", "92"], answer: "90", hint: "6 × 90 = 540." }
+          rafaelle:
+            - { id: ch12-j2-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Dans de nombreux récits traditionnels à travers le monde, pourquoi un passeur mythique exige-t-il souvent un paiement avant de faire traverser quelqu'un ?", choices: ["cela n'a jamais aucune signification particulière", "le prix symbolise souvent ce que l'on doit laisser derrière soi pour avancer vers autre chose", "c'est toujours une simple question d'argent", "les passeurs mythiques sont toujours malhonnêtes", "cela sert uniquement à faire durer l'histoire"], answer: "le prix symbolise souvent ce que l'on doit laisser derrière soi pour avancer vers autre chose", hint: "Repense à ce qu'exige le Passeur Sans Rives : pas un objet, mais quelque chose de plus profond." }
+            - { id: ch12-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 8² − 7².", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "64 − 49." }
+      - id: m2
+        title: Le sable qui ne coule presque pas
+        tours:
+          axelle:
+            - { id: ch12-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 16 − 7.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "16 − 6 = 10, puis − 1." }
+            - { id: ch12-j2-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Qu'utilisait-on autrefois, avant les horloges modernes, pour mesurer le temps qui passe ?", choices: ["un sablier ou une clepsydre (horloge à eau)", "un simple caillou", "un arbre", "un nuage", "rien du tout"], answer: "un sablier ou une clepsydre (horloge à eau)", hint: "Pense à l'objet que porte le Passeur." }
+          maelle:
+            - { id: ch12-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Si un sablier normal se vide en 60 minutes et que celui du Passeur coule 10 fois plus lentement, en combien de minutes se viderait-il ?", choices: ["300", "450", "600", "650", "700"], answer: "600", hint: "60 × 10." }
+            - { id: ch12-j2-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 7,3 + 4,8.", choices: ["11,1", "11,9", "12,0", "12,1", "12,3"], answer: "12,1", hint: "73 + 48 = 121." }
+          rafaelle:
+            - { id: ch12-j2-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« C'est peut-être cela, au fond, le vrai prix que j'ai moi-même payé. » : quelle information cette phrase laisse-t-elle deviner sur le passé du Passeur ?", choices: ["qu'il n'a jamais rien payé", "qu'il a lui-même traversé un jour, et que cela a eu un coût durable", "qu'il refuse de parler de lui", "qu'il n'a pas de passé du tout", "qu'il a toujours été un passeur, de naissance"], answer: "qu'il a lui-même traversé un jour, et que cela a eu un coût durable", hint: "Il parle d'un prix « payé », donc d'un passage qu'il a lui-même vécu." }
+            - { id: ch12-j2-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 3/4 × 8.", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "8 ÷ 4 = 2, puis × 3." }
+      - id: m3
+        title: La règle du quai
+        tours:
+          axelle:
+            - { id: ch12-j2-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 11 + 6.", choices: ["15", "16", "17", "18", "19"], answer: "17", hint: "11 + 6 = 17." }
+            - { id: ch12-j2-ax-m3b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « La brume ramène les passagers. » ?", choices: ["ramène", "les passagers", "La brume", "brume", "les"], answer: "La brume", hint: "Qui fait l'action de ramener ?" }
+          maelle:
+            - { id: ch12-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 480 ÷ 8.", choices: ["55", "58", "60", "62", "65"], answer: "60", hint: "8 × 60 = 480." }
+            - { id: ch12-j2-ma-m3b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « exigeant » dans « Je suis seulement exigeant » ?", choices: ["nom", "adjectif", "adverbe", "verbe conjugué", "pronom"], answer: "adjectif", hint: "Il qualifie le Passeur." }
+          rafaelle:
+            - { id: ch12-j2-ra-m3a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 4 × 9.", choices: ["36", "40", "45", "49", "54"], answer: "45", hint: "81 − 36." }
+            - { id: ch12-j2-ra-m3b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « ¿Qué llevas contigo? »", choices: ["Où vas-tu ?", "Qu'emportes-tu avec toi ?", "Que manges-tu ?", "Qui es-tu ?", "Quand pars-tu ?"], answer: "Qu'emportes-tu avec toi ?", hint: "« Llevas » = tu portes/emportes." }
+      - id: m4
+        title: Se préparer au choix
+        tours:
+          axelle:
+            - { id: ch12-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 4.", choices: ["28", "30", "32", "34", "36"], answer: "32", hint: "8 × 4 = 8 + 8 + 8 + 8." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch12-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 94 − 37.", choices: ["53", "55", "57", "59", "61"], answer: "57", hint: "94 − 40 + 3." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch12-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El barquero espera. »", choices: ["Le passeur dort.", "Le passeur attend.", "Le passeur chante.", "Le passeur part.", "Le passeur pleure."], answer: "Le passeur attend.", hint: "« Espera » = attend." }
+            - { gen: maths.conversion }
+    pause: "Le trésor invisible : chaque sœur doit décrire, sans le montrer, un souvenir qu'elle garde précieusement — les deux autres essaient de deviner de quel moment du voyage il s'agit."
+    closing:
+      - { who: narrateur, text: "Le soir tombait sur le quai lorsque le Passeur se leva enfin, remit le sablier à sa ceinture, et observa longuement les trois sœurs, silencieux, comme s'il soupesait déjà, en secret, ce qu'elles choisiraient de lui laisser." }
+      - { who: passeur, text: "Réfléchissez bien d'ici la traversée. Ce que vous me laisserez ne sera jamais perdu — seulement transformé en quelque chose que vous ne reverrez plus sous la même forme." }
+      - { who: maelle, text: "C'est effrayant, dit comme ça." }
+      - { who: passeur, text: "C'est honnête, petite Cartographe. Ce n'est pas toujours la même chose." }
+      - { who: narrateur, text: "En regagnant l'Arche, Axelle se retourna une dernière fois vers le quai et vit, l'espace d'un instant, le sablier du Passeur briller faiblement dans l'obscurité, comme s'il attendait, lui aussi, une réponse." }
+    reward: "la règle du quai, et la promesse d'un choix à venir"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: L'Épreuve de Mémoire
+    decor: Le quai, où le Passeur a disposé, à même les planches, de petits objets familiers — une plume, une pièce de carte, un pétale blanc — comme pour une étrange épreuve.
+    opening:
+      - { who: narrateur, text: "Le troisième soir, les trois sœurs trouvèrent, disposés en ligne sur les planches du quai, plusieurs petits objets qu'elles reconnurent aussitôt : une plume d'oiseau, un fragment de parchemin doré, un pétale blanc à peine fané." }
+      - { who: passeur, text: "Avant de choisir ce que vous me laisserez, il faut d'abord savoir ce que vous portez déjà. Ces objets ne sont pas les miens. Ce sont des échos de votre propre chemin." }
+      - { who: rafaelle, text: "Une plume, comme celle de Plume. Un bout de carte, comme celle de Dame Cartéa. Un pétale, comme ceux du jardin d'Albin." }
+      - { who: passeur, text: "Exactement. Je ne garde jamais rien pour moi-même, mais je vois passer beaucoup de voyageurs, et leur chemin laisse toujours, ici et là, de petites traces que la brume me confie." }
+      - { who: narrateur, text: "Maelle s'agenouilla devant les objets et commença, sans qu'on le lui demande, à reconstituer dans l'ordre les étapes de leur voyage depuis le début de l'Acte II — le Hall des Cartes, puis les Jardins de l'Aube, puis ce quai." }
+      - { who: maelle, text: "Si on met tout ça bout à bout, ça raconte vraiment notre histoire. Je n'avais jamais vu ça comme ça avant." }
+      - { who: axelle, text: "C'est un peu comme si le voyage lui-même se souvenait de nous." }
+      - { who: plume, text: "Ou peut-être que c'est nous qui commençons enfin à nous souvenir vraiment de lui." }
+    manches:
+      - id: m1
+        title: Les échos du chemin
+        tours:
+          axelle:
+            - { id: ch12-j3-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel petit mot relie « une plume » et « comme celle de Plume » pour faire une comparaison ?", choices: ["mais", "comme", "donc", "car", "ou"], answer: "comme", hint: "C'est le mot qui introduit la comparaison." }
+            - { id: ch12-j3-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Il y a 3 objets sur le quai (une plume, un fragment de carte, un pétale). Si on en ajoute 2 de plus, combien y en aura-t-il ?", choices: ["4", "5", "6", "7", "8"], answer: "5", hint: "3 + 2." }
+          maelle:
+            - { id: ch12-j3-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi reconstituer les étapes d'un voyage dans l'ordre aide-t-il à mieux comprendre son propre parcours ?", choices: ["cela n'aide à rien du tout", "cela permet de voir les liens et la progression entre les différents moments vécus", "cela sert uniquement à s'amuser", "l'ordre n'a jamais aucune importance", "cela complique toujours la compréhension"], answer: "cela permet de voir les liens et la progression entre les différents moments vécus", hint: "Pense à ce que ressent Maelle en alignant les objets." }
+            - { id: ch12-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 480 ÷ 6.", choices: ["70", "75", "78", "80", "82"], answer: "80", hint: "6 × 80 = 480." }
+          rafaelle:
+            - { id: ch12-j3-ra-m1a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 6x − 7 = 29.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "6x = 36." }
+            - { id: ch12-j3-ra-m1b, subject: francais, level: 4, kind: qcm, prompt: "« C'est nous qui commençons enfin à nous souvenir vraiment de lui. » : à quoi renvoie le pronom « lui » dans cette phrase ?", choices: ["au Passeur", "au voyage", "à la plume", "au jardin", "au quai"], answer: "au voyage", hint: "Relis la phrase précédente d'Axelle : « le voyage lui-même se souvenait de nous »." }
+      - id: m2
+        title: Le fragment de parchemin
+        tours:
+          axelle:
+            - { id: ch12-j3-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 + 5.", choices: ["17", "18", "19", "20", "21"], answer: "19", hint: "14 + 5 = 19." }
+            - { id: ch12-j3-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "De quoi un vieux parchemin est-il généralement fait ?", choices: ["de plastique", "de peau d'animal préparée ou de papier ancien", "de métal", "de verre", "de bois massif"], answer: "de peau d'animal préparée ou de papier ancien", hint: "Pense à la matière des très vieux documents." }
+          maelle:
+            - { id: ch12-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 19 × 5.", choices: ["85", "90", "95", "100", "105"], answer: "95", hint: "20 × 5 − 5." }
+            - { id: ch12-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Conjugue au présent : « Nous (reconstituer) les étapes du voyage. »", choices: ["nous reconstituons", "nous reconstituez", "nous reconstituent", "nous reconstituions", "nous reconstituerons"], answer: "nous reconstituons", hint: "Nous : -ons." }
+          rafaelle:
+            - { id: ch12-j3-ra-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi les cartographes anciens signaient-ils parfois leurs cartes, un peu comme un artiste signe une œuvre ?", choices: ["c'était purement obligatoire par la loi", "une carte représentait un travail d'observation et de savoir considéré comme précieux", "cela ne servait jamais à rien", "les cartes n'étaient jamais signées", "pour empêcher quiconque de les lire"], answer: "une carte représentait un travail d'observation et de savoir considéré comme précieux", hint: "Repense à l'importance accordée aux cartes par Dame Cartéa." }
+            - { id: ch12-j3-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 7/8 − 3/8.", choices: ["4/8", "1/2", "les deux réponses précédentes sont correctes", "4/16", "3/4"], answer: "les deux réponses précédentes sont correctes", hint: "7/8 − 3/8 = 4/8, qui se simplifie en 1/2." }
+      - id: m3
+        title: Le pétale fané
+        tours:
+          axelle:
+            - { id: ch12-j3-ax-m3a, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un pétale cueilli finit-il, après quelque temps, par se faner ?", choices: ["il devient magique", "il n'est plus relié à la plante qui lui apportait eau et nutriments", "il préfère toujours rester vert", "cela n'arrive jamais vraiment", "il grandit encore plus fort"], answer: "il n'est plus relié à la plante qui lui apportait eau et nutriments", hint: "Pense à ce qui arrive à une fleur coupée dans un vase." }
+            - { id: ch12-j3-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 13 − 6.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "13 − 3 = 10, puis − 3." }
+          maelle:
+            - { id: ch12-j3-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 260 + 175.", choices: ["415", "425", "435", "445", "455"], answer: "435", hint: "260 + 180 − 5." }
+            - { id: ch12-j3-ma-m3b, subject: francais, level: 3, kind: qcm, prompt: "Quelle est la nature du mot « précieusement » dans « un souvenir qu'elle garde précieusement » ?", choices: ["nom", "adjectif", "adverbe", "verbe", "pronom"], answer: "adverbe", hint: "Il modifie le verbe « garde »." }
+          rafaelle:
+            - { id: ch12-j3-ra-m3a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 10² − 6².", choices: ["54", "58", "62", "64", "68"], answer: "64", hint: "100 − 36." }
+            - { id: ch12-j3-ra-m3b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Cruzamos juntas. »", choices: ["Nous partons seules.", "Nous traversons ensemble.", "Nous restons ici.", "Nous attendons encore.", "Nous revenons demain."], answer: "Nous traversons ensemble.", hint: "« Cruzamos » = nous traversons, « juntas » = ensemble." }
+      - id: m4
+        title: Rassembler les indices
+        tours:
+          axelle:
+            - { id: ch12-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 6.", choices: ["30", "32", "34", "36", "38"], answer: "36", hint: "6 × 6 = 6 × 5 + 6." }
+            - { gen: maths.ranger }
+          maelle:
+            - { id: ch12-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 72 + 59.", choices: ["121", "125", "129", "131", "135"], answer: "131", hint: "72 + 60 − 1." }
+            - { gen: maths.arrondi }
+          rafaelle:
+            - { id: ch12-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « La luna guía el camino. »", choices: ["La lune cache le chemin.", "La lune guide le chemin.", "La lune efface le chemin.", "La lune suit le chemin.", "La lune ferme le chemin."], answer: "La lune guide le chemin.", hint: "« Guía » ressemble à « guide »." }
+            - { gen: maths.multiplication }
+    pause: "Le fil des souvenirs : les trois sœurs racontent ensemble, chacune à son tour ajoutant une phrase, l'histoire complète de leur voyage depuis le tout premier jour, sans jamais s'arrêter."
+    closing:
+      - { who: narrateur, text: "Lorsque la dernière phrase du récit commun s'éteignit dans le silence du quai, le Passeur hocha lentement la tête, presque ému, et rassembla les petits objets dans le creux de sa main avec une délicatesse inattendue." }
+      - { who: passeur, text: "Vous venez de me montrer, sans même vous en rendre compte, exactement ce que je voulais voir : que vous savez déjà reconnaître ce qui compte, dans tout ce que vous avez vécu." }
+      - { who: rafaelle, text: "Ça veut dire qu'on est prêtes à traverser ?" }
+      - { who: passeur, text: "Presque. Il me reste à vous raconter, moi aussi, une chose que je n'ai racontée à personne depuis très longtemps." }
+      - { who: narrateur, text: "Et sur ces mots, le Passeur rangea le sablier contre sa poitrine, comme on protège quelque chose de fragile, et regarda longuement la brume qui recouvrait l'autre rive." }
+    reward: "le récit complet du voyage, raconté à trois voix"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Le Passeur d'Autrefois
+    decor: Le bord même de l'eau, où le Passeur s'est assis sur la dernière planche du quai, les pieds presque dans la brume, le regard tourné vers l'autre rive invisible.
+    opening:
+      - { who: narrateur, text: "Le quatrième soir, le Passeur les attendait assis tout au bord du quai, les pieds presque dans la brume, le regard perdu vers une rive qu'on ne pouvait toujours pas voir. Il ne se retourna pas tout de suite en les entendant approcher." }
+      - { who: passeur, text: "Il y a très longtemps, moi aussi j'étais une simple voyageuse. Enfin, un simple voyageur, à l'époque. J'avais une rive à atteindre, comme vous, et un Passeur devant moi, comme je le suis devenu pour vous aujourd'hui." }
+      - { who: narrateur, text: "Il se tut un instant, comme s'il cherchait encore, après tout ce temps, les mots justes pour raconter ce qui avait suivi." }
+      - { who: passeur, text: "On m'a demandé de laisser quelque chose sur ce même quai. Et j'ai refusé. J'ai cru pouvoir traverser sans rien donner en retour, par simple orgueil. Alors la brume m'a ramené, encore et encore, jusqu'à ce que je comprenne enfin ce que je refusais de voir." }
+      - { who: axelle, text: "Qu'est-ce que vous avez fini par comprendre ?" }
+      - { who: passeur, text: "Que refuser de laisser quoi que ce soit derrière soi, ce n'est pas de la force. C'est seulement de la peur, habillée en fierté. Alors j'ai fini par laisser quelque chose. Et le quai, en échange, m'a offert d'y rester, pour aider d'autres voyageurs à ne pas refaire mon erreur." }
+      - { who: narrateur, text: "Maelle s'assit doucement à côté de lui, sans rien dire, pendant que Rafaelle et Axelle restaient debout, silencieuses, à écouter cette histoire qu'aucun livre, aucune carte, n'aurait pu leur raconter." }
+      - { who: maelle, text: "Vous êtes resté ici pour que personne d'autre ne se perde comme vous vous êtes perdu, vous." }
+      - { who: passeur, text: "C'est exactement cela, petite Cartographe. Et c'est pour cela que votre choix, demain, comptera plus que vous ne l'imaginez — pas seulement pour vous, mais pour tous ceux qui traverseront après vous." }
+    manches:
+      - id: m1
+        title: L'histoire du Passeur
+        tours:
+          axelle:
+            - { id: ch12-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « refuser » ?", choices: ["accepter", "partir", "attendre", "oublier", "chercher"], answer: "accepter", hint: "C'est l'opposé exact." }
+            - { id: ch12-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 12 + 8.", choices: ["18", "19", "20", "21", "22"], answer: "20", hint: "12 + 8 = 20." }
+          maelle:
+            - { id: ch12-j4-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "La brume au-dessus de l'eau peut-elle se reformer plusieurs fois, même après avoir disparu un moment ?", choices: ["non, jamais", "oui, tant que les conditions (humidité, température) sont réunies", "seulement une fois par siècle", "uniquement en plein été", "la brume ne disparaît jamais une fois formée"], answer: "oui, tant que les conditions (humidité, température) sont réunies", hint: "Pense à un phénomène météorologique qui peut se reproduire." }
+            - { id: ch12-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 63 × 3.", choices: ["179", "183", "186", "189", "192"], answer: "189", hint: "63 × 3 = 60 × 3 + 3 × 3." }
+          rafaelle:
+            - { id: ch12-j4-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Refuser de laisser quoi que ce soit derrière soi, ce n'est pas de la force. C'est seulement de la peur, habillée en fierté. » : quelle figure de style compare la peur à un vêtement ?", choices: ["une comparaison explicite", "une métaphore", "une hyperbole", "une allitération", "une antithèse seule"], answer: "une métaphore", hint: "La peur est directement présentée comme « habillée », sans mot de comparaison comme « comme »." }
+            - { id: ch12-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 6² + 2³.", choices: ["38", "42", "44", "46", "48"], answer: "44", hint: "36 + 8." }
+      - id: m2
+        title: La peur habillée en fierté
+        tours:
+          axelle:
+            - { id: ch12-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 17 − 9.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "17 − 7 = 10, puis − 2." }
+            - { id: ch12-j4-ax-m2b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Le Passeur raconte son histoire. » ?", choices: ["raconte", "son histoire", "Le Passeur", "histoire", "son"], answer: "Le Passeur", hint: "Qui fait l'action de raconter ?" }
+          maelle:
+            - { id: ch12-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 405 ÷ 5.", choices: ["75", "78", "80", "81", "85"], answer: "81", hint: "5 × 81 = 405." }
+            - { id: ch12-j4-ma-m2b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi certains récits traditionnels mettent-ils en scène un personnage condamné à rester éternellement à un même endroit (comme un passeur, un gardien) ?", choices: ["cela n'a jamais aucun sens dans les récits", "pour représenter une leçon, une dette ou une mission que ce personnage doit continuer d'accomplir", "c'est toujours une punition sans aucune raison", "ces personnages choisissent toujours cela par hasard", "cela n'arrive que dans un seul récit au monde"], answer: "pour représenter une leçon, une dette ou une mission que ce personnage doit continuer d'accomplir", hint: "Repense à pourquoi le Passeur est resté sur le quai." }
+          rafaelle:
+            - { id: ch12-j4-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 11² − 5².", choices: ["94", "96", "98", "100", "102"], answer: "96", hint: "121 − 25." }
+            - { id: ch12-j4-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Comment dit-on « Nous traversons ensemble » en espagnol ?", choices: ["Cruzamos solas.", "Cruzamos juntas.", "Cruzamos nunca.", "Cruzamos lejos.", "Cruzamos rápido."], answer: "Cruzamos juntas.", hint: "Relis la phrase d'espagnol du jour 3." }
+      - id: m3
+        title: Pourquoi il est resté
+        tours:
+          axelle:
+            - { id: ch12-j4-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 10 + 9.", choices: ["17", "18", "19", "20", "21"], answer: "19", hint: "10 + 9 = 19." }
+            - { id: ch12-j4-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Quel sens utilise-t-on surtout pour écouter une histoire racontée à voix haute ?", choices: ["la vue", "l'ouïe", "le toucher", "le goût", "l'odorat"], answer: "l'ouïe", hint: "C'est le sens qui permet d'entendre." }
+          maelle:
+            - { id: ch12-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 6,8 + 3,5.", choices: ["9,9", "10,1", "10,3", "10,5", "10,7"], answer: "10,3", hint: "68 + 35 = 103." }
+            - { id: ch12-j4-ma-m3b, subject: francais, level: 2, kind: qcm, prompt: "Conjugue au présent : « Je (comprendre) enfin son histoire. »", choices: ["je comprends", "je comprenais", "je comprendrai", "je comprenne", "je comprît"], answer: "je comprends", hint: "Je : -ds pour ce verbe." }
+          rafaelle:
+            - { id: ch12-j4-ra-m3a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi raconter une erreur passée à quelqu'un peut-il l'aider à ne pas la reproduire ?", choices: ["cela n'a jamais aucun effet", "cela transmet une expérience vécue qui éclaire une décision à venir", "les erreurs ne se répètent jamais de toute façon", "il vaut toujours mieux ne jamais en parler", "raconter une erreur l'efface automatiquement"], answer: "cela transmet une expérience vécue qui éclaire une décision à venir", hint: "C'est exactement ce que fait le Passeur avec les trois sœurs." }
+            - { id: ch12-j4-ra-m3b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 7/12 + 3/12.", choices: ["10/24", "10/12", "5/6", "les deux réponses précédentes sont correctes", "4/12"], answer: "les deux réponses précédentes sont correctes", hint: "7/12 + 3/12 = 10/12, qui se simplifie en 5/6." }
+      - id: m4
+        title: Se préparer à la traversée
+        tours:
+          axelle:
+            - { id: ch12-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 4.", choices: ["32", "34", "36", "38", "40"], answer: "36", hint: "9 × 4 = 10 × 4 − 4." }
+            - { gen: maths.duree }
+          maelle:
+            - { id: ch12-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 290 − 135.", choices: ["145", "150", "155", "160", "165"], answer: "155", hint: "290 − 140 + 5." }
+            - { gen: maths.conversion }
+          rafaelle:
+            - { id: ch12-j4-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « La luna guía el camino. »", choices: ["La lune suit le chemin.", "La lune guide le chemin.", "La lune ferme le chemin.", "La lune cherche le chemin.", "La lune quitte le chemin."], answer: "La lune guide le chemin.", hint: "« Guía » = guide." }
+            - { gen: maths.arrondi }
+    pause: "Le serment du quai : chacune promet à voix haute une chose qu'elle n'oubliera jamais de cette traversée, avant de regagner l'Arche pour la nuit."
+    closing:
+      - { who: narrateur, text: "Le Passeur se leva enfin, remit le sablier à sa ceinture, et pour la première fois depuis leur rencontre, un sourire discret traversa son visage fatigué." }
+      - { who: passeur, text: "Demain, vous traverserez. Quoi que vous choisissiez de me laisser, sachez que je le recevrai avec autant de soin que si c'était le mien, autrefois." }
+      - { who: rafaelle, text: "On y réfléchira cette nuit. Toutes les trois, ensemble." }
+      - { who: passeur, text: "C'est, je crois, exactement la bonne façon de réfléchir à une telle question." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs s'éloignaient vers l'Arche, la brume, derrière elles, sembla pour la première fois s'éclaircir légèrement au-dessus de l'eau, comme si elle aussi attendait, avec impatience, de voir ce qu'elles choisiraient." }
+    reward: "l'histoire du Passeur, confiée en secret"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: La Traversée
+    decor: Le quai, à l'aube, la brume encore épaisse sur l'eau mais traversée de premiers rayons dorés ; une barque sombre et silencieuse attend, amarrée, prête à partir.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, une barque sombre attendait déjà, amarrée au bout du quai, silencieuse comme tout ce qui entourait le Passeur. La brume, éclairée par les premiers rayons de l'aube, semblait presque dorée, comme si elle aussi se préparait à ce moment." }
+      - { who: passeur, text: "Voici donc le moment. Dites-moi ce que vous choisissez de laisser sur ce quai, et je vous promets de le porter avec tout le soin qu'il mérite." }
+      - { who: nilo, text: "Pas de pression, les filles. C'est juste la décision la plus importante depuis le début de la semaine. Peut-être du mois, même." }
+      - { who: plume, text: "On sait. On a bien écouté chaque mot qu'il nous a confié." }
+    manches:
+      - id: m1
+        title: L'épreuve du Passeur
+        intro: "Le Passeur interroge chaque sœur sur tout ce que cette semaine au bord de l'eau lui a appris."
+        tours:
+          axelle:
+            - { id: ch12-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on un bras de mer resserré qui sépare deux terres ?", choices: ["un fleuve", "un détroit", "un plateau", "une plaine", "un archipel"], answer: "un détroit", hint: "C'est le mot utilisé dès le premier jour." }
+            - { id: ch12-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 13 + 9.", choices: ["20", "21", "22", "23", "24"], answer: "22", hint: "13 + 9 = 13 + 7 + 2." }
+          maelle:
+            - { id: ch12-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi le sable d'un sablier s'écoule-t-il toujours à peu près à la même vitesse, tant que l'ouverture ne change pas ?", choices: ["cela dépend uniquement de la couleur du sable", "l'écoulement dépend de la taille de l'ouverture et de la gravité, qui restent constantes", "le sable ralentit toujours de lui-même sans raison", "cela change selon le jour de la semaine", "un sablier s'arrête toujours après une minute"], answer: "l'écoulement dépend de la taille de l'ouverture et de la gravité, qui restent constantes", hint: "Repense à ce qui a été expliqué sur l'ouverture du sablier." }
+            - { id: ch12-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 17 × 8.", choices: ["126", "130", "134", "136", "140"], answer: "136", hint: "17 × 8 = 17 × 4 × 2." }
+          rafaelle:
+            - { id: ch12-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que l'histoire du Passeur fonctionne comme une leçon transmise plutôt que comme un simple souvenir ?", choices: ["parce qu'elle n'a aucun rapport avec les trois sœurs", "parce qu'elle éclaire directement le choix que les trois sœurs doivent faire aujourd'hui", "parce qu'elle ne parle que du passé, sans lien avec le présent", "parce que c'est juste une anecdote sans importance", "parce qu'elle est racontée par quelqu'un d'autre que le Passeur"], answer: "parce qu'elle éclaire directement le choix que les trois sœurs doivent faire aujourd'hui", hint: "Repense à la toute dernière phrase du Passeur au jour 4." }
+            - { id: ch12-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 2/3 − 1/6.", choices: ["1/3", "1/2", "1/6", "3/6", "4/6"], answer: "1/2", hint: "2/3 = 4/6, donc 4/6 − 1/6 = 3/6." }
+      - id: m2
+        title: Ce que l'on emporte, ce que l'on laisse
+        intro: "Il faut relier les indices rassemblés toute la semaine pour choisir, vraiment, ce qui compte le plus."
+        tours:
+          axelle:
+            - { id: ch12-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux un choix fait après mûre réflexion, et non dans la précipitation ?", choices: ["hâtif", "réfléchi", "distrait", "brutal", "oublié"], answer: "réfléchi", hint: "C'est le contraire de « précipité »." }
+            - { id: ch12-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 19 − 11.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "19 − 9 = 10, puis − 2." }
+          maelle:
+            - { id: ch12-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi un même lieu (comme ce quai) peut-il représenter, selon les voyageurs, soit un passage facile soit une épreuve redoutée ?", choices: ["le lieu change physiquement selon la personne", "cela dépend de ce que chaque voyageur est prêt, ou non, à laisser derrière lui", "ce n'est jamais vrai, un lieu est toujours identique pour tous", "cela dépend uniquement de la météo", "les voyageurs ne ressentent jamais rien de différent"], answer: "cela dépend de ce que chaque voyageur est prêt, ou non, à laisser derrière lui", hint: "Repense à l'histoire du Passeur, qui a longtemps refusé de laisser quoi que ce soit." }
+            - { id: ch12-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 630 ÷ 7.", choices: ["80", "85", "88", "90", "92"], answer: "90", hint: "7 × 90 = 630." }
+          rafaelle:
+            - { id: ch12-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 8² + 6² (indice : tu as peut-être déjà croisé ce couple de nombres).", choices: ["64", "90", "100", "110", "121"], answer: "100", hint: "64 + 36." }
+            - { id: ch12-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Que refuser de laisser quoi que ce soit derrière soi, ce n'est pas de la force. » : quel est le sujet de cette phrase ?", choices: ["ce n'est pas", "de la force", "Refuser de laisser quoi que ce soit derrière soi", "derrière soi", "quoi que ce soit"], answer: "Refuser de laisser quoi que ce soit derrière soi", hint: "De quoi parle-t-on, avant tout, dans cette phrase ?" }
+      - id: m3
+        title: Le Chant du Passage
+        intro: "La brume elle-même semble répondre : elle ne s'écarte que si les trois sœurs trouvent, ensemble, le bon rythme."
+        tours:
+          axelle:
+            - { id: ch12-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          maelle:
+            - { id: ch12-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, blanche." }
+          rafaelle:
+            - { id: ch12-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : ronde." }
+    concert:
+      measures:
+        axelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        maelle: { given: [2], missing: 2, prompt: "Blanche, blanche" }
+        rafaelle: { given: [], missing: 4, prompt: "Ronde" }
+    pause: "Le dernier regard : chacune se tourne vers l'Arche, derrière elle, et dit à voix haute une chose qu'elle a hâte de raconter en rentrant, un jour, à la maison."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant du Passage se répandit sur l'eau, et la brume, lentement, commença à s'écarter devant la barque, dévoilant enfin, pour la première fois, un passage clair vers l'autre rive." }
+      - { who: narrateur, text: "Le Passeur reçut ce que les trois sœurs avaient choisi de lui laisser avec une gravité tranquille, le rangeant tout contre lui comme on range quelque chose dont on sait déjà qu'on en prendra grand soin." }
+      - { who: passeur, text: "C'est fait. Et c'est, je crois, exactement ce qu'il fallait. Montez à bord. La traversée ne dure jamais longtemps, pour qui a vraiment payé son passage." }
+      - { who: narrateur, text: "La barque glissa sur l'eau calme, fendant la brume qui s'écartait d'elle-même, et les trois sœurs virent enfin apparaître, devant elles, l'autre rive : des ruines anciennes, silencieuses, et au-delà, se découpant contre le ciel pâlissant de l'aube, la chaîne de montagnes tant attendue." }
+      - { who: passeur, text: "Voici votre rive. Je ne peux pas aller plus loin avec vous — ce n'est pas ma place. Mais sachez que je me souviendrai de vous, longtemps, et que ce quai vous attendra, si jamais vous deviez repasser par ici." }
+      - { who: rafaelle, text: "Merci. Pour tout. Pour l'histoire aussi, surtout." }
+      - { who: passeur, text: "Merci à vous d'avoir écouté un vieil homme fatigué parler de ses propres erreurs. Peu de voyageurs prennent cette peine." }
+      - { who: narrateur, text: "Et tandis que la barque les déposait sur la rive silencieuse, les trois sœurs se retournèrent une dernière fois : déjà, la brume se refermait doucement sur le Passeur et son quai, comme un rideau tiré sur une scène dont l'histoire, pourtant, continuerait longtemps après elles." }
+      - { who: nilo, text: "Bon. Les montagnes, maintenant. J'espère qu'il y a moins de brouillard là-haut." }
+      - { who: axelle, text: "On verra bien. On a toujours fini par trouver notre chemin, jusqu'ici." }
+    reward: "la traversée accomplie, et le seuil des montagnes"
