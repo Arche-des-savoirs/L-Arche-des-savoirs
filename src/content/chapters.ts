@@ -11,9 +11,10 @@ import ch09 from '../../content/chapters/ch09.yaml';
 import ch10 from '../../content/chapters/ch10.yaml';
 import ch11 from '../../content/chapters/ch11.yaml';
 import ch12 from '../../content/chapters/ch12.yaml';
+import ch13 from '../../content/chapters/ch13.yaml';
 import { chapter, type Chapter } from './schema';
 
-export const CHAPTERS: Chapter[] = [ch01, ch02, ch03, ch04, ch05, ch06, ch07, ch08, ch09, ch10, ch11, ch12].map((raw, i) => {
+export const CHAPTERS: Chapter[] = [ch01, ch02, ch03, ch04, ch05, ch06, ch07, ch08, ch09, ch10, ch11, ch12, ch13].map((raw, i) => {
   const parsed = chapter.safeParse(raw);
   if (!parsed.success) throw new Error(`Chapitre ${i + 1} invalide : ${parsed.error.message}`);
   return parsed.data;

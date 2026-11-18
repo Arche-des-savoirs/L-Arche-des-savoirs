@@ -55,7 +55,9 @@ const VOICES = {
   albin: 'Umbriel',
   axelle: 'Aoede',
   maelle: 'Leda',
-  rafaelle: 'Erinome'
+  rafaelle: 'Erinome',
+  marchand: 'Schedar',
+  peseur: 'Sulafat'
 };
 
 function readApiKey() {
