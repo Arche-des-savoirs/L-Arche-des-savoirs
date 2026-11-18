@@ -1,0 +1,400 @@
+# Chapitre 8 — La Faim du Puits
+# Suite directe du chapitre 7 (Tribunal des Mémoires, le Scribe, la trappe sous le bâtiment).
+# Nouveau personnage : la Dévoreuse (devoreuse), entité d'ombre née de la toute première prisonnière du Tribunal,
+# devenue monstrueuse à force d'absorber des siècles de souvenirs confisqués. Tragique, pas purement maléfique.
+# Jour 3 : elle tente Maelle (échange souvenir contre pouvoir) — tension non résolue, rappelée en fin de journée.
+# Jour 4 : son origine (ancienne prisonnière) est révélée. Jour 5 : décision A/B/C. Fin en cliffhanger vers le chapitre 9.
+
+id: ch08
+number: 8
+act: 1
+title: La Faim du Puits
+introImage: ch08
+scene: puits-sans-fond
+
+espagnol:
+  - { es: "El pozo no tiene fondo.", fr: "Le puits n'a pas de fond." }
+  - { es: "He perdido mi nombre.", fr: "J'ai perdu mon nom." }
+  - { es: "No doy mi recuerdo.", fr: "Je ne donne pas mon souvenir." }
+  - { es: "¿Quién eras tú antes?", fr: "Qui étais-tu avant ?" }
+  - { es: "Te devuelvo tu nombre.", fr: "Je te rends ton nom." }
+
+decision:
+  prompt: "La Dévoreuse n'est pas née monstre : elle a été la toute première prisonnière du Tribunal, vidée de souvenirs pendant des siècles. Que faire d'elle ?"
+  options:
+    A:
+      label: Lui offrir un souvenir heureux et collectif
+      scene: "Les trois sœurs ferment les yeux et pensent ensemble à un même souvenir joyeux. La Dévoreuse l'avale comme un fruit mûr, et pour la première fois depuis des siècles, quelque chose qui ressemble à un sourire traverse son ombre."
+      line: { who: devoreuse, text: "Un souvenir... offert. Pas volé. Je ne me souvenais plus que ça pouvait exister." }
+      habillage: "Le souvenir doit être partagé à parts égales entre les trois lanternes : un calcul de fractions égales en garantit l'équilibre."
+    B:
+      label: La combattre et la contenir
+      scene: "La Dévoreuse se cabre, immense, et ses murmures deviennent un grondement. Les apprenties tracent un cercle de lumière avec leurs trois lanternes pour la repousser vers les profondeurs du puits."
+      line: { who: devoreuse, text: "Vous aussi... vous voulez m'enfermer. Comme Eux. Alors je me défendrai." }
+      habillage: "Le cercle de lumière doit être parfaitement fermé : un calcul de périmètre et d'angles détermine où planter chaque lanterne."
+    C:
+      label: L'aider à se souvenir de qui elle était
+      scene: "Les apprenties rassemblent les fragments de pages qui tapissent le puits, comme une frise de sa propre vie. Peu à peu, un visage, un nom, une enfance refont surface sous l'ombre de la Dévoreuse."
+      line: { who: devoreuse, text: "Je... je m'appelais... Attendez. Ça revient. Comme une page qu'on tourne enfin dans le bon sens." }
+      habillage: "Les fragments de pages doivent être remis dans l'ordre chronologique : classer des dates et des durées avant de pouvoir lire la page entière."
+
+repliquesAbsurdes:
+  - "Madame la Dévoreuse, si vous mangez les souvenirs, vous mangez aussi les mauvaises notes ? Parce que j'en ai deux ou trois à vous proposer."
+  - "Moi, mon souvenir le plus embarrassant, je vous le donne gratuitement. Comme ça, on est tranquilles."
+  - "Vous grondez comme mon ventre avant le goûter. On devrait peut-être vous nourrir autrement."
+  - "Si vous oubliez votre nom, prenez le mien. Je vous le prête. Juste pour un jour, hein, je le veux récupérer."
+  - "Un conseil de grande sœur à grande ombre : respirez un bon coup avant de dévorer quoi que ce soit. Ça aide, chez moi."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: La spirale sans fond
+    decor: Un escalier de pierre qui tourne sans fin autour d'un puits noir. Les parois sont tapissées de pages flottantes, de plus en plus pâles à mesure qu'on descend.
+    opening:
+      - { who: narrateur, text: "Sous le Tribunal des Mémoires, la trappe s'était ouverte sur un escalier en spirale, taillé droit dans la roche. Il n'avait ni rambarde ni fin visible. Juste des marches, encore des marches, qui tournaient autour d'un puits si profond que la lumière des lanternes n'en touchait jamais le fond." }
+      - { who: narrateur, text: "Sur les parois, des pages voltigeaient, accrochées à rien, comme des feuilles mortes qui refusent de tomber. Certaines portaient une phrase entière. D'autres, plus bas, n'étaient déjà plus que des taches grises, presque effacées." }
+      - { who: nilo, text: "Je connais les voleurs, les portes dérobées, les coffres mal fermés. Mais un puits sans fond, non. Ça, c'est nouveau pour moi aussi." }
+      - { who: maelle, text: "Regardez les pages ! Il y en a avec des dessins d'enfants. Et là, une recette de gâteau. Pourquoi est-ce qu'on jetterait une recette de gâteau dans un puits ?" }
+      - { who: plume, text: "On ne jette pas ces pages. On les a arrachées à quelqu'un. Le Tribunal n'efface pas que les méchants souvenirs. Il efface aussi les souvenirs gênants. Et ceux-là finissent ici." }
+      - { who: axelle, text: "Mais alors, plus on descend, plus il fait noir. Comment on va savoir où on va ?" }
+      - { who: narrateur, text: "Rafaelle leva sa lanterne rose. La lumière éclaira une marche, puis une autre, puis plus rien. Le noir, en bas, n'était pas un noir ordinaire. C'était un noir qui semblait, lui aussi, regarder." }
+    manches:
+      - id: m1
+        title: Les marches comptées
+        intro: "Pour ne pas se perdre dans la spirale, il faut compter les marches et les tours."
+        tours:
+          axelle:
+            - { id: ch08-j1-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "On descend 6 marches, puis encore 4. Combien de marches en tout ?", choices: ["8", "9", "10", "11", "12"], answer: "10", hint: "6 + 4." }
+            - { id: ch08-j1-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 15 − 7.", choices: ["7", "8", "9", "6", "22"], answer: "8", hint: "15 − 5 = 10, puis encore − 2." }
+          maelle:
+            - { id: ch08-j1-ma-m1a, subject: maths, level: 2, kind: qcm, prompt: "Un tour complet de l'escalier compte 8 marches. Combien de marches pour 3 tours ?", choices: ["11", "16", "24", "21", "32"], answer: "24", hint: "8 × 3." }
+            - { id: ch08-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 45 ÷ 9.", choices: ["4", "5", "6", "9", "36"], answer: "5", hint: "9 × 5 = 45." }
+          rafaelle:
+            - { id: ch08-j1-ra-m1a, subject: maths, level: 3, kind: qcm, prompt: "Une spirale descend de 2,5 m à chaque tour. Combien de mètres pour 6 tours ?", choices: ["12,5", "15", "10", "17,5", "20"], answer: "15", hint: "2,5 × 6." }
+            - { id: ch08-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Résous : 3x + 5 = 20.", choices: ["3", "5", "7", "15", "25"], answer: "5", hint: "3x = 15." }
+      - id: m2
+        title: Les pages qui s'effacent
+        tours:
+          axelle:
+            - { id: ch08-j1-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel est le contraire de « se souvenir » ?", choices: ["revoir", "oublier", "rêver", "écrire", "parler"], answer: "oublier", hint: "C'est perdre un souvenir." }
+            - { id: ch08-j1-ax-m2b, subject: francais, level: 1, kind: qcm, prompt: "Quelle est la nature du mot « page » ?", choices: ["verbe", "nom", "adjectif", "adverbe", "pronom"], answer: "nom", hint: "On peut dire « une page »." }
+          maelle:
+            - { id: ch08-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Conjugue au présent : « Les pages (voler) ».", choices: ["les pages vole", "les pages volent", "les pages volons", "les pages volez", "les pages volait"], answer: "les pages volent", hint: "Elles : -ent." }
+            - { id: ch08-j1-ma-m2b, subject: francais, level: 3, kind: qcm, prompt: "« Le puits semble regarder. » Quelle est la figure de style employée ?", choices: ["une rime", "une personnification", "une énumération", "une comparaison", "une répétition"], answer: "une personnification", hint: "On prête un comportement humain à une chose." }
+          rafaelle:
+            - { id: ch08-j1-ra-m2a, subject: francais, level: 3, kind: qcm, prompt: "Quelle est la nature du mot « sans » dans « puits sans fond » ?", choices: ["nom", "verbe", "préposition", "adjectif", "adverbe"], answer: "préposition", hint: "Elle introduit un groupe nominal sans en faire partie." }
+            - { id: ch08-j1-ra-m2b, subject: francais, level: 2, kind: qcm, prompt: "Accorde : « Des pages (effacé) ».", choices: ["effacé", "effacés", "effacée", "effacées", "effacer"], answer: "effacées", hint: "Pages : féminin pluriel." }
+      - id: m3
+        title: Les repères dans le noir
+        tours:
+          axelle:
+            - { id: ch08-j1-ax-m3a, subject: sciences, level: 2, kind: qcm, prompt: "Pour voir dans le noir, de quoi a-t-on besoin ?", choices: ["de silence", "de lumière", "de froid", "de musique", "de vent"], answer: "de lumière", hint: "Sans elle, on ne voit rien." }
+            - { id: ch08-j1-ax-m3b, subject: maths, level: 1, kind: qcm, prompt: "Combien de côtés a un rond (cercle) ?", choices: ["0", "1", "4", "3", "8"], answer: "0", hint: "Un cercle n'a pas de coin." }
+          maelle:
+            - { id: ch08-j1-ma-m3a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi voit-on de moins en moins bien en descendant dans le puits ?", choices: ["il y a plus de bruit", "la lumière des lanternes diminue avec la distance", "l'air devient liquide", "les yeux grossissent", "le puits tourne trop vite"], answer: "la lumière des lanternes diminue avec la distance", hint: "Plus on s'éloigne d'une source de lumière, moins elle éclaire." }
+            - { id: ch08-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Avant les lampes électriques, avec quoi les gens s'éclairaient-ils la nuit ?", choices: ["des écrans", "des bougies et des torches", "des ventilateurs", "des miroirs seuls", "des horloges"], answer: "des bougies et des torches", hint: "Une flamme qu'on peut porter avec soi." }
+          rafaelle:
+            - { id: ch08-j1-ra-m3a, subject: sciences, level: 3, kind: qcm, prompt: "L'intensité d'une lumière diminue avec la distance. On dit qu'elle…", choices: ["s'évapore", "décroît", "se multiplie", "se solidifie", "reste identique"], answer: "décroît", hint: "Elle devient de plus en plus faible." }
+            - { id: ch08-j1-ra-m3b, subject: maths, level: 3, kind: qcm, prompt: "Si l'escalier tourne de 360° à chaque tour complet, quel angle pour un demi-tour ?", choices: ["90°", "120°", "180°", "270°", "360°"], answer: "180°", hint: "La moitié de 360°." }
+      - id: m4
+        title: Le Défi de la Spirale
+        tours:
+          axelle:
+            - { id: ch08-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 + 7.", choices: ["14", "15", "16", "17", "13"], answer: "15", hint: "8 + 2 = 10, puis + 5." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch08-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 72 ÷ 8.", choices: ["7", "8", "9", "6", "10"], answer: "9", hint: "8 × 9 = 72." }
+            - { gen: maths.comparer }
+          rafaelle:
+            - { id: ch08-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « el pozo ».", choices: ["le mur", "le puits", "la marche", "la page", "l'ombre"], answer: "le puits", hint: "Regarde la phrase du jour." }
+            - { gen: maths.fraction-de }
+    pause: "Le fil d'Ariane vivant : une sœur ferme les yeux, les deux autres la guident seulement par la voix, sans la toucher, le long d'un petit parcours. On change de rôle à chaque tour !"
+    closing:
+      - { who: narrateur, text: "Au bout de ce qui semblait être cent marches, ou mille, les apprenties atteignirent un petit palier de pierre. L'air y était plus froid, plus lourd, comme s'il avait traversé trop d'années sans jamais sortir." }
+      - { who: rafaelle, text: "On a dû descendre de plusieurs étages. Je ne vois même plus la trappe au-dessus de nous." }
+      - { who: plume, text: "Le Tribunal ne veut pas qu'on remonte vite. Il veut qu'on oublie, nous aussi, pourquoi on est descendues." }
+      - { who: axelle, text: "Moi je m'en souviens très bien. On cherche ce qui dévore les souvenirs. Même si j'aimerais autant ne pas le trouver tout de suite." }
+      - { who: narrateur, text: "Très loin en dessous, dans le noir du puits, quelque chose remua. Pas un bruit de pierre qui tombe. Un bruit de respiration. Lente. Immense. Comme si le puits lui-même venait d'inspirer." }
+
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Ceux qui n'ont plus de nom
+    decor: Un palier plus large, où errent des silhouettes grises et floues, incapables de dire leur propre nom.
+    opening:
+      - { who: narrateur, text: "Le deuxième jour de la descente, l'escalier s'ouvrit sur un palier plus large, presque une petite place. Et sur cette place, des silhouettes grises erraient en rond, lentement, sans jamais se cogner les unes aux autres, comme de vieilles habitudes." }
+      - { who: narrateur, text: "L'une d'elles s'approcha des apprenties. C'était un marin, ou ce qu'il en restait : une veste élimée, un regard vide, une main qui cherchait dans le vide quelque chose qu'elle ne retrouvait pas." }
+      - { who: narrateur, text: "— Qui… qui êtes-vous ? murmura-t-il. Et qui suis-je, moi ? J'avais un nom, je crois. Un bateau aussi. Je ne sais plus lequel venait en premier." }
+      - { who: nilo, text: "Des marins disparus. On en parle, dans les tavernes du port. On dit qu'ils se sont perdus en mer. Personne ne dit qu'ils sont tombés ici, dans le puits du Tribunal." }
+      - { who: maelle, text: "Il ne se souvient même plus de son nom. C'est affreux. On ne peut pas juste le laisser comme ça." }
+      - { who: plume, text: "On ne peut pas lui rendre tout d'un coup. Mais on peut peut-être l'aider à retrouver des petites choses. Une couleur. Une lettre. Le début d'un fil." }
+      - { who: narrateur, text: "D'autres silhouettes s'approchèrent à leur tour : une marchande qui ne se souvenait plus du nombre de ses doigts, un enfant qui ne savait plus compter les pattes de son propre chat de compagnie, resté quelque part là-haut, à la surface." }
+      - { who: rafaelle, text: "Ce ne sont pas des épreuves pour nous. Ce sont des épreuves pour eux. On va les aider à se rappeler, un petit morceau à la fois." }
+    manches:
+      - id: m1
+        title: Le marin sans nom
+        intro: "Le marin a tout oublié. On commence par les bases : couleurs et formes."
+        tours:
+          axelle:
+            - { id: ch08-j2-ax-m1a, subject: sciences, level: 1, kind: qcm, prompt: "De quelle couleur est le ciel par une belle journée ?", choices: ["vert", "bleu", "rouge", "noir", "violet"], answer: "bleu", hint: "La couleur de la mer aussi, souvent." }
+            - { id: ch08-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Combien de mâts a un petit bateau à un seul mât ?", choices: ["0", "1", "2", "3", "4"], answer: "1", hint: "Un seul : c'est écrit dans la question." }
+          maelle:
+            - { id: ch08-j2-ma-m1a, subject: francais, level: 2, kind: qcm, prompt: "Quelle lettre vient juste après le M dans l'alphabet ?", choices: ["L", "N", "O", "K", "P"], answer: "N", hint: "L, M, puis…" }
+            - { id: ch08-j2-ma-m1b, subject: maths, level: 2, kind: qcm, prompt: "Un bateau a 3 voiles. Deux voiles de plus arrivent. Combien de voiles en tout ?", choices: ["4", "5", "6", "3", "2"], answer: "5", hint: "3 + 2." }
+          rafaelle:
+            - { id: ch08-j2-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Autrefois, sans boussole ni GPS, les marins se repéraient en mer surtout grâce…", choices: ["aux nuages uniquement", "aux étoiles et au soleil", "aux poissons", "au vent seul", "à l'odeur de la mer"], answer: "aux étoiles et au soleil", hint: "Des repères toujours dans le ciel." }
+            - { id: ch08-j2-ra-m1b, subject: maths, level: 2, kind: qcm, prompt: "Un équipage de 24 marins se répartit en 6 groupes égaux. Combien de marins par groupe ?", choices: ["3", "4", "5", "6", "8"], answer: "4", hint: "24 ÷ 6." }
+      - id: m2
+        title: Les pattes du chat oublié
+        tours:
+          axelle:
+            - { id: ch08-j2-ax-m2a, subject: sciences, level: 1, kind: qcm, prompt: "Combien de pattes a un chat ?", choices: ["2", "4", "6", "8", "3"], answer: "4", hint: "Comme un chien." }
+            - { id: ch08-j2-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "3 chats ont chacun 4 pattes. Combien de pattes en tout ?", choices: ["7", "8", "10", "12", "16"], answer: "12", hint: "4 + 4 + 4." }
+          maelle:
+            - { id: ch08-j2-ma-m2a, subject: sciences, level: 2, kind: qcm, prompt: "Une araignée a combien de pattes ?", choices: ["4", "6", "8", "10", "12"], answer: "8", hint: "Deux fois plus qu'un chat." }
+            - { id: ch08-j2-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Un poulpe a 8 bras. Combien de bras pour 5 poulpes ?", choices: ["13", "35", "40", "45", "32"], answer: "40", hint: "8 × 5." }
+          rafaelle:
+            - { id: ch08-j2-ra-m2a, subject: sciences, level: 3, kind: qcm, prompt: "Quel est le point commun entre les insectes (comme la fourmi) ?", choices: ["ils ont 4 pattes", "ils ont 6 pattes", "ils ont 8 pattes", "ils n'ont pas de pattes", "ils ont 10 pattes"], answer: "ils ont 6 pattes", hint: "Trois paires." }
+            - { id: ch08-j2-ra-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 7² (7 au carré).", choices: ["14", "21", "42", "49", "77"], answer: "49", hint: "7 × 7." }
+      - id: m3
+        title: La marchande qui ne compte plus
+        tours:
+          axelle:
+            - { id: ch08-j2-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "La marchande a 5 pièces, puis elle en trouve 3 de plus. Combien a-t-elle de pièces ?", choices: ["6", "7", "8", "9", "2"], answer: "8", hint: "5 + 3." }
+            - { id: ch08-j2-ax-m3b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « marchande » ici ?", choices: ["verbe", "adjectif", "nom", "adverbe", "préposition"], answer: "nom", hint: "C'est une personne : « une marchande »." }
+          maelle:
+            - { id: ch08-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "La marchande vend des pommes par paquets de 4. Combien de pommes dans 7 paquets ?", choices: ["24", "28", "32", "21", "11"], answer: "28", hint: "4 × 7." }
+            - { id: ch08-j2-ma-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue à l'imparfait : « Elle (compter) ses pièces ».", choices: ["elle compte", "elle comptait", "elle a compté", "elle comptera", "elle comptera it"], answer: "elle comptait", hint: "L'imparfait se termine en -ait." }
+          rafaelle:
+            - { id: ch08-j2-ra-m3a, subject: maths, level: 3, kind: qcm, prompt: "La marchande partage 56 pièces entre 7 paniers. Combien de pièces par panier ?", choices: ["6", "7", "8", "9", "14"], answer: "8", hint: "56 ÷ 7." }
+            - { id: ch08-j2-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« Elle cherche dans le vide quelque chose qu'elle ne retrouve pas. » Quelle est la proposition subordonnée ?", choices: ["elle cherche dans le vide", "quelque chose", "qu'elle ne retrouve pas", "dans le vide", "elle ne retrouve pas"], answer: "qu'elle ne retrouve pas", hint: "Elle commence par un pronom relatif." }
+      - id: m4
+        title: Le Défi des Noms Perdus
+        tours:
+          axelle:
+            - { id: ch08-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 14 + 9.", choices: ["21", "22", "23", "24", "13"], answer: "23", hint: "14 + 10 − 1." }
+            - { id: ch08-j2-ax-m4b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 20 − 13.", choices: ["6", "7", "8", "9", "33"], answer: "7", hint: "20 − 10 = 10, puis − 3." }
+          maelle:
+            - { id: ch08-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 144 ÷ 12.", choices: ["10", "11", "12", "13", "14"], answer: "12", hint: "12 × 12 = 144." }
+            - { id: ch08-j2-ma-m4b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au futur : « Ils (se souvenir) ».", choices: ["ils se souviennent", "ils se souvenaient", "ils se souviendront", "ils se sont souvenus", "ils se souviendraient"], answer: "ils se souviendront", hint: "Le futur du verbe se souvenir." }
+          rafaelle:
+            - { id: ch08-j2-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15 % de 60.", choices: ["6", "9", "12", "15", "45"], answer: "9", hint: "10 % = 6, puis ajoute 5 % = 3." }
+            - { id: ch08-j2-ra-m4b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Dans l'Antiquité, pourquoi les peuples gravaient-ils des noms sur la pierre ?", choices: ["pour décorer uniquement", "pour ne jamais les oublier", "par manque de papier", "pour faire du bruit", "pour les cacher"], answer: "pour ne jamais les oublier", hint: "C'était une façon de conserver la mémoire." }
+    pause: "Le jeu du nom perdu : une sœur ferme les yeux et dit le premier mot qui lui vient ; les autres doivent inventer une petite histoire avec ce mot, en trente secondes !"
+    closing:
+      - { who: narrateur, text: "Petit à petit, les silhouettes grises retrouvèrent des bouts d'elles-mêmes. Pas tout. Juste des bouts. Le marin se souvint que son bateau avait une voile rouge. La marchande recompta ses doigts en souriant, comme une découverte." }
+      - { who: narrateur, text: "Mais aucun d'eux ne retrouva son nom. C'était comme si quelque chose, plus bas dans le puits, le gardait jalousement, et ne voulait pas le rendre." }
+      - { who: axelle, text: "On a aidé, un peu. Mais c'est triste, ils ne savent toujours pas comment ils s'appellent." }
+      - { who: nilo, text: "Un nom, c'est souvent le premier souvenir qu'on vole, et le dernier qu'on rend. Celui qui les garde doit en avoir besoin plus que tout le reste." }
+      - { who: plume, text: "Plus on descend, plus je sens quelque chose. Une présence. Elle n'est pas loin. Et elle sait qu'on est là." }
+      - { who: narrateur, text: "Dans le noir, tout en bas, deux petites lumières s'allumèrent. Pas des flammes. Des yeux. Et une voix, douce comme un murmure de pages qu'on tourne, remonta jusqu'à elles." }
+      - { who: devoreuse, text: "Trois lueurs, qui descendent chez moi… Voilà longtemps qu'on ne m'avait rien apporté de si beau." }
+
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: La voix qui propose
+    decor: Une immense caverne au cœur du puits, tapissée de milliers de pages empilées comme des dunes. Au centre, une ombre immense aux yeux pâles.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, l'escalier s'arrêta net au bord d'une caverne si vaste que les lanternes n'en éclairaient même pas les murs. Le sol était fait de pages, des milliers et des milliers, empilées comme des dunes de sable gris." }
+      - { who: narrateur, text: "Et au centre de cette caverne, une forme se dressait. Immense, faite d'ombre et de murmures, avec deux yeux pâles comme deux lunes éteintes. Ce n'était ni un monstre de légende, ni une bête. C'était quelque chose de plus triste que ça." }
+      - { who: devoreuse, text: "N'ayez pas peur. Ou plutôt, ayez un peu peur, c'est plus prudent. Je m'appelle… Oh. Je n'ai plus de nom à vous donner. On dit de moi : la Dévoreuse. Alors soit." }
+      - { who: rafaelle, text: "C'est vous qui dévorez les souvenirs confisqués par le Tribunal ?" }
+      - { who: devoreuse, text: "Je ne les dévore pas. Je les… recueille. Personne d'autre ne le fait. Sinon ils se perdraient pour toujours dans le noir, et moi avec eux." }
+      - { who: narrateur, text: "La Dévoreuse se pencha, immense, et son regard pâle se posa sur Maelle plus longtemps que sur les autres. Sa voix se fit plus douce, presque caressante, comme une grande sœur qui chuchote un secret." }
+      - { who: devoreuse, text: "Toi, petite lueur blanche, tu es curieuse. Je le sens. Je pourrais t'offrir un pouvoir magnifique : voir dans le noir absolu, pour toujours. Il me suffirait, en échange, d'un tout petit souvenir. Un seul. Tu n'en remarquerais même pas l'absence." }
+      - { who: maelle, text: "Un souvenir… lequel ?" }
+      - { who: devoreuse, text: "Peu importe lequel. Choisis-le toi-même. Le plus léger, le plus inutile. Un jour de pluie sans importance. Rien qui compte vraiment, promis." }
+      - { who: plume, text: "Maelle. Ne réponds pas tout de suite. Rien n'est jamais « sans importance », ici." }
+    manches:
+      - id: m1
+        title: Les pages-dunes
+        intro: "Pour avancer sur ce sol fait de souvenirs, il faut en reconnaître la nature."
+        tours:
+          axelle:
+            - { id: ch08-j3-ax-m1a, subject: francais, level: 2, kind: qcm, prompt: "Une page qui raconte une histoire inventée, c'est…", choices: ["un conte", "une recette", "une facture", "un horaire", "un plan"], answer: "un conte", hint: "Comme celui que tu lis le soir." }
+            - { id: ch08-j3-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Une dune de pages mesure 12 pages. Une autre, deux fois plus. Combien de pages dans la deuxième dune ?", choices: ["6", "14", "24", "22", "36"], answer: "24", hint: "12 × 2." }
+          maelle:
+            - { id: ch08-j3-ma-m1a, subject: maths, level: 3, kind: qcm, prompt: "Une dune compte 150 pages. On en retire 1/3. Combien en reste-t-il ?", choices: ["50", "100", "75", "120", "90"], answer: "100", hint: "1/3 de 150 = 50. 150 − 50." }
+            - { id: ch08-j3-ma-m1b, subject: francais, level: 3, kind: qcm, prompt: "« La Dévoreuse recueille les souvenirs. » Quelle est la fonction de « les souvenirs » ?", choices: ["sujet", "complément d'objet direct", "complément circonstanciel", "attribut du sujet", "épithète"], answer: "complément d'objet direct", hint: "Elle recueille quoi ?" }
+          rafaelle:
+            - { id: ch08-j3-ra-m1a, subject: maths, level: 3, kind: qcm, prompt: "Les pages s'empilent sur 240 cm de haut. Chaque page fait 0,2 mm. Environ combien de pages (arrondis à la centaine) ?", choices: ["1 200", "12 000", "120 000", "120", "1 200 000"], answer: "12 000", hint: "240 cm = 2 400 mm. 2 400 ÷ 0,2." }
+            - { id: ch08-j3-ra-m1b, subject: francais, level: 4, kind: qcm, prompt: "« Ce n'était ni un monstre, ni une bête. » Quel est le registre de cette phrase ?", choices: ["comique", "fantastique et compassionnel", "scientifique", "publicitaire", "argumentatif pur"], answer: "fantastique et compassionnel", hint: "On décrit une créature surnaturelle avec tendresse." }
+      - id: m2
+        title: Le murmure qui charme
+        tours:
+          axelle:
+            - { id: ch08-j3-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quand une voix est « douce et caressante », elle cherche surtout à…", choices: ["faire peur", "convaincre gentiment", "faire du bruit", "se taire", "crier"], answer: "convaincre gentiment", hint: "Pense à une voix qui essaie de te séduire." }
+            - { id: ch08-j3-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "La Dévoreuse propose d'échanger 1 souvenir contre 1 pouvoir. Si on refuse 3 fois, combien de pouvoirs a-t-on obtenus ?", choices: ["0", "1", "2", "3", "4"], answer: "0", hint: "Refuser, c'est ne rien échanger." }
+          maelle:
+            - { id: ch08-j3-ma-m2a, subject: francais, level: 3, kind: qcm, prompt: "Quel est le piège, dans la proposition de la Dévoreuse ?", choices: ["elle demande trop d'argent", "elle fait croire qu'un souvenir « sans importance » n'a pas de valeur", "elle parle trop fort", "elle ne propose rien de concret", "elle ment sur son nom seulement"], answer: "elle fait croire qu'un souvenir « sans importance » n'a pas de valeur", hint: "Relis ce qu'elle dit sur le souvenir à donner." }
+            - { id: ch08-j3-ma-m2b, subject: maths, level: 4, kind: qcm, prompt: "Un pouvoir « magnifique » coûterait 1 souvenir. Si chaque souvenir vaut en réalité 10 points de mémoire, combien de points perd-on pour 1 pouvoir ?", choices: ["1", "5", "10", "100", "0"], answer: "10", hint: "1 souvenir = 10 points." }
+          rafaelle:
+            - { id: ch08-j3-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "Quelle figure de style dans « deux yeux pâles comme deux lunes éteintes » ?", choices: ["une métaphore", "une comparaison", "une antithèse", "une répétition", "une allitération"], answer: "une comparaison", hint: "Il y a un mot-outil de comparaison : « comme »." }
+            - { id: ch08-j3-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x − 4 = 3x + 10.", choices: ["3", "5", "7", "14", "2"], answer: "7", hint: "5x − 3x = 10 + 4." }
+      - id: m3
+        title: Les voix anciennes
+        intro: "Pour comprendre pourquoi la Dévoreuse parle ainsi, il faut écouter les plus vieilles pages du sol."
+        tours:
+          axelle:
+            - { id: ch08-j3-ax-m3a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Une chose « très ancienne », c'est une chose qui existe depuis…", choices: ["hier", "longtemps", "une minute", "demain", "jamais"], answer: "longtemps", hint: "Le contraire de récent." }
+            - { id: ch08-j3-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 4.", choices: ["13", "36", "32", "40", "27"], answer: "36", hint: "9 × 4 = 9 + 9 + 9 + 9." }
+          maelle:
+            - { id: ch08-j3-ma-m3a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Si une prisonnière a été enfermée « depuis des siècles », cela veut dire depuis…", choices: ["quelques jours", "quelques mois", "au moins plusieurs centaines d'années", "une seule année", "une seule heure"], answer: "au moins plusieurs centaines d'années", hint: "Un siècle, c'est 100 ans." }
+            - { id: ch08-j3-ma-m3b, subject: maths, level: 3, kind: qcm, prompt: "Un siècle dure 100 ans. Combien d'années dans 3 siècles et demi ?", choices: ["300", "320", "350", "305", "355"], answer: "350", hint: "100 × 3 = 300, puis + 50." }
+          rafaelle:
+            - { id: ch08-j3-ra-m3a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Dans beaucoup de légendes, le « premier prisonnier » d'un lieu est souvent celui qui…", choices: ["n'a jamais existé", "a créé le lieu lui-même", "a le plus souffert et connaît le mieux ses secrets", "s'est échappé immédiatement", "n'a aucun lien avec le lieu"], answer: "a le plus souffert et connaît le mieux ses secrets", hint: "Il y est depuis le tout début." }
+            - { id: ch08-j3-ra-m3b, subject: maths, level: 4, kind: qcm, prompt: "Une prisonnière enfermée depuis 7 siècles a vu passer environ combien de générations (une génération ≈ 25 ans) ?", choices: ["7", "14", "28", "35", "70"], answer: "28", hint: "700 ans ÷ 25 ans." }
+      - id: m4
+        title: Le Défi du Murmure
+        tours:
+          axelle:
+            - { id: ch08-j3-ax-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 1/2 de 18.", choices: ["6", "9", "12", "36", "4"], answer: "9", hint: "Partage 18 en deux parts égales." }
+            - { id: ch08-j3-ax-m4b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 25 + 48.", choices: ["63", "73", "83", "68", "70"], answer: "73", hint: "25 + 50 − 2." }
+          maelle:
+            - { id: ch08-j3-ma-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 3/4 de 60.", choices: ["15", "30", "40", "45", "20"], answer: "45", hint: "1/4 de 60 = 15. Fois 3." }
+            - { id: ch08-j3-ma-m4b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au conditionnel : « Elle (donner) son souvenir si... ».", choices: ["elle donne", "elle donnait", "elle donnera", "elle donnerait", "elle a donné"], answer: "elle donnerait", hint: "L'infinitif + -ait, forme du conditionnel." }
+          rafaelle:
+            - { id: ch08-j3-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Développe : 4(2x + 3).", choices: ["8x + 3", "8x + 12", "2x + 12", "6x + 7", "8x + 7"], answer: "8x + 12", hint: "4 × 2x et 4 × 3." }
+            - { id: ch08-j3-ra-m4b, subject: francais, level: 4, kind: qcm, prompt: "« Rien n'est jamais sans importance, ici. » À quelle forme est cette phrase ?", choices: ["interrogative", "exclamative", "négative", "impérative", "injonctive"], answer: "négative", hint: "Elle contient « n'…jamais »." }
+    pause: "Le jeu du souvenir léger : chacune propose à voix haute un souvenir « sans importance » ; les autres doivent trouver pourquoi, en fait, il compte un peu. Trois tours chacune !"
+    closing:
+      - { who: narrateur, text: "Maelle regarda la Dévoreuse, puis ses deux sœurs, puis encore la Dévoreuse. Sa bouche s'ouvrit, se referma, se rouvrit. Un mot tout prêt à sortir, et qui ne sortait pas." }
+      - { who: maelle, text: "Je... je ne sais pas. Un pouvoir magnifique, ce serait tellement pratique. Mais vous dites ça comme on dirait « juste un petit biscuit », et je n'aime pas ça." }
+      - { who: devoreuse, text: "Prends ton temps, petite lueur blanche. Je ne pars nulle part. Je n'ai jamais pu partir nulle part." }
+      - { who: rafaelle, text: "Maelle, ne décide rien ce soir. Promets-le." }
+      - { who: maelle, text: "Je promets. Mais... je ne dis pas non plus tout à fait non." }
+      - { who: narrateur, text: "Cette nuit-là, dans la caverne de pages, aucune des trois sœurs ne dormit vraiment bien. Et tout près d'elles, dans le noir, les yeux pâles de la Dévoreuse restèrent ouverts, à les regarder, patients comme seule peut l'être une très vieille faim." }
+    reward: "un Fragment de Page Ancienne"
+
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: La toute première prisonnière
+    decor: Une chambre secrète creusée dans la paroi du puits, tapissée de très vieux fragments, les plus anciens de tous, presque illisibles.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, en fouillant plus loin dans la caverne, Rafaelle découvrit une ouverture étroite, presque invisible, cachée derrière un amas de pages. Elle y mena ses sœurs, et toutes trois débouchèrent dans une petite chambre, creusée à même la roche." }
+      - { who: narrateur, text: "Les fragments, ici, étaient différents des autres. Plus épais, plus jaunis, presque illisibles. Ce n'étaient pas des souvenirs volés aux autres. C'était comme un seul et même journal, déchiré en mille morceaux, et éparpillé sur des siècles." }
+      - { who: nilo, text: "Une dernière légende, pour cette fois. On raconte que le Tribunal des Mémoires, à sa toute première année, a jugé une femme accusée d'avoir trop aimé se souvenir de tout. On dit qu'elle a refusé d'oublier, même sous la contrainte. Alors le Tribunal l'a enfermée ici, dans le puits, pour qu'elle apprenne enfin à oublier." }
+      - { who: axelle, text: "Mais alors… elle a oublié tellement de choses, à force, qu'elle est devenue la Dévoreuse ?" }
+      - { who: plume, text: "Pire. Elle a oublié elle-même, à force d'avaler les souvenirs des autres pour ne pas devenir folle de vide. Elle n'a jamais choisi de dévorer. On l'y a obligée." }
+      - { who: narrateur, text: "Rafaelle rassembla trois fragments côte à côte. Un nom à moitié effacé. Une date impossible à lire tant elle était ancienne. Et un dessin, tout simple, d'une petite fille qui tenait la main d'une grande fille aux cheveux longs." }
+      - { who: rafaelle, text: "Elle avait une petite sœur. Avant. Avant le Tribunal, avant le puits, avant d'être la Dévoreuse." }
+      - { who: maelle, text: "Alors ce n'est pas un monstre qui nous veut du mal. C'est quelqu'un qu'on a cassé, il y a très, très longtemps. Comme la Reine Sans Ombre, mais en pire." }
+      - { who: narrateur, text: "Depuis la grande caverne, la voix de la Dévoreuse remonta, tremblante, comme si elle avait entendu chaque mot." }
+      - { who: devoreuse, text: "Vous avez trouvé... ça ? Rendez-le-moi. Ou alors... non. Non, dites-moi. Dites-moi ce que vous avez trouvé. Je ne me souviens même plus si j'ai le droit de vouloir le savoir." }
+    manches:
+      - id: m1
+        title: Les fragments du journal
+        intro: "Il faut dater et ordonner les plus vieux fragments pour comprendre l'histoire de la prisonnière."
+        tours:
+          axelle:
+            - { id: ch08-j4-ax-m1a, subject: histoire-geo, level: 2, kind: ordre, prompt: "Range du plus ancien au plus récent.", choices: ["aujourd'hui", "il y a cent ans", "il y a mille ans"], answer: ["il y a mille ans", "il y a cent ans", "aujourd'hui"], hint: "Mille ans, c'est dix fois plus que cent ans." }
+            - { id: ch08-j4-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Un fragment porte le chiffre 3, un autre le chiffre 8. Lequel est le plus grand ?", choices: ["3", "8", "ils sont égaux", "aucun", "les deux"], answer: "8", hint: "8 vient après 3 en comptant." }
+          maelle:
+            - { id: ch08-j4-ma-m1a, subject: histoire-geo, level: 3, kind: ordre, prompt: "Range ces trois dates dans l'ordre chronologique.", choices: ["l'an 1850", "l'an 900", "l'an 1200"], answer: ["l'an 900", "l'an 1200", "l'an 1850"], hint: "Compare les nombres : le plus petit est le plus ancien." }
+            - { id: ch08-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Si la prisonnière a été enfermée en l'an 900 et qu'on est maintenant en l'an 1500, depuis combien d'années est-elle enfermée ?", choices: ["400", "500", "600", "700", "900"], answer: "600", hint: "1 500 − 900." }
+          rafaelle:
+            - { id: ch08-j4-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pour dater un très vieux document abîmé, les historiens cherchent surtout…", choices: ["la couleur du papier préférée", "des indices comme l'écriture, le style, les événements cités", "la taille du document", "son odeur", "le nombre de pages uniquement"], answer: "des indices comme l'écriture, le style, les événements cités", hint: "On compare avec ce qu'on connaît déjà d'autres époques." }
+            - { id: ch08-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "La prisonnière a été enfermée il y a 11 siècles. En quelle année sommes-nous si elle a été enfermée en l'an 950 ?", choices: ["1950", "2050", "2150", "1850", "2000"], answer: "2050", hint: "950 + 1 100." }
+      - id: m2
+        title: Le dessin des deux sœurs
+        tours:
+          axelle:
+            - { id: ch08-j4-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Dans « une petite fille et une grande fille », qui est la plus jeune ?", choices: ["la grande fille", "la petite fille", "aucune", "les deux pareil", "on ne sait pas"], answer: "la petite fille", hint: "« Petite » veut dire plus jeune ici." }
+            - { id: ch08-j4-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 + 6.", choices: ["12", "13", "14", "11", "15"], answer: "13", hint: "7 + 3 = 10, puis + 3." }
+          maelle:
+            - { id: ch08-j4-ma-m2a, subject: francais, level: 3, kind: qcm, prompt: "« Elle a oublié elle-même, à force d'avaler les souvenirs des autres. » Quel est le sens de « à force de » ?", choices: ["grâce à la force physique", "parce qu'elle a répété l'action trop longtemps", "contre sa volonté totale", "par hasard", "pour s'amuser"], answer: "parce qu'elle a répété l'action trop longtemps", hint: "L'expression indique une cause due à la répétition." }
+            - { id: ch08-j4-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 2,5 × 6.", choices: ["12", "13", "14", "15", "10"], answer: "15", hint: "2 × 6 = 12, et 0,5 × 6 = 3." }
+          rafaelle:
+            - { id: ch08-j4-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "Quelle tonalité domine quand on découvre que la Dévoreuse avait une petite sœur ?", choices: ["comique", "tragique et pathétique", "ironique", "épique guerrière", "satirique"], answer: "tragique et pathétique", hint: "On ressent de la pitié et de la tristesse pour elle." }
+            - { id: ch08-j4-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 60 % de 150.", choices: ["60", "90", "100", "120", "15"], answer: "90", hint: "10 % de 150 = 15, fois 6." }
+      - id: m3
+        title: Ce que le Tribunal lui a fait
+        tours:
+          axelle:
+            - { id: ch08-j4-ax-m3a, subject: francais, level: 2, kind: qcm, prompt: "Quel est le contraire du mot « enfermer » ?", choices: ["libérer", "cacher", "fermer", "voler", "garder"], answer: "libérer", hint: "C'est le fait de laisser sortir." }
+            - { id: ch08-j4-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 16 − 9.", choices: ["5", "6", "7", "8", "25"], answer: "7", hint: "16 − 10 = 6, puis + 1." }
+          maelle:
+            - { id: ch08-j4-ma-m3a, subject: francais, level: 3, kind: qcm, prompt: "« Elle a refusé d'oublier, même sous la contrainte. » Quel est le COD du verbe « a refusé » ?", choices: ["elle", "d'oublier", "même sous la contrainte", "la contrainte", "sous la contrainte"], answer: "d'oublier", hint: "Elle a refusé quoi ?" }
+            - { id: ch08-j4-ma-m3b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 196 ÷ 14.", choices: ["12", "13", "14", "15", "16"], answer: "14", hint: "14 × 14 = 196." }
+          rafaelle:
+            - { id: ch08-j4-ra-m3a, subject: espagnol, level: 3, kind: qcm, prompt: "« He perdido mi nombre » veut dire…", choices: ["Je trouve mon nom.", "J'ai perdu mon nom.", "Je donne mon nom.", "Elle perd son nom.", "Nous perdons nos noms."], answer: "J'ai perdu mon nom.", read: "He perdido mi nombre.", hint: "He perdido = j'ai perdu." }
+            - { id: ch08-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "« La Dévoreuse n'a jamais choisi de dévorer. On l'y a obligée. » Que révèle cette phrase sur son statut moral ?", choices: ["elle est entièrement coupable", "elle est une victime devenue dangereuse malgré elle", "elle est innocente et sans danger", "elle n'a aucun lien avec le Tribunal", "elle a toujours voulu faire le mal"], answer: "elle est une victime devenue dangereuse malgré elle", hint: "Elle n'a pas choisi ce qu'elle est devenue." }
+      - id: m4
+        title: Le Défi de la Vérité
+        intro: "Les trois apprenties rassemblent tout ce qu'elles savent pour comprendre la Dévoreuse."
+        tours:
+          axelle:
+            - { id: ch08-j4-ax-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 6 × 7.", choices: ["36", "42", "48", "35", "40"], answer: "42", hint: "6 × 7 = 6 × 6 + 6." }
+            - { id: ch08-j4-ax-m4b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 1/4 de 20.", choices: ["4", "5", "6", "10", "8"], answer: "5", hint: "Partage 20 en 4 parts égales." }
+          maelle:
+            - { id: ch08-j4-ma-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 17 × 6.", choices: ["92", "96", "102", "108", "112"], answer: "102", hint: "17 × 6 = 10 × 6 + 7 × 6." }
+            - { id: ch08-j4-ma-m4b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au passé simple : « Elle (comprendre) tout. »", choices: ["elle comprend", "elle a compris", "elle comprit", "elle comprenait", "elle comprendra"], answer: "elle comprit", hint: "Passé simple de comprendre, 3e personne." }
+          rafaelle:
+            - { id: ch08-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 2(x + 3) = 16.", choices: ["5", "6", "7", "8", "10"], answer: "5", hint: "2x + 6 = 16." }
+            - { id: ch08-j4-ra-m4b, subject: histoire-geo, level: 4, kind: qcm, prompt: "Dans beaucoup de récits, le véritable « monstre » d'une histoire est souvent…", choices: ["toujours né mauvais", "une victime du système qui l'a créé", "toujours vaincu facilement", "sans aucun lien avec les humains", "toujours seul dès le début"], answer: "une victime du système qui l'a créé", hint: "Pense à ce qu'on vient de découvrir sur la Dévoreuse." }
+    pause: "Le jeu du miroir triste : une sœur mime une émotion (joie, tristesse, peur, colère) très lentement, les autres doivent deviner laquelle avant qu'elle ne change !"
+    closing:
+      - { who: narrateur, text: "Rafaelle porta elle-même le dessin des deux sœurs jusqu'à la grande caverne, et le leva devant les yeux pâles de la Dévoreuse. Un long silence suivit. Puis, tout doucement, l'immense ombre se pencha, comme pour mieux voir." }
+      - { who: devoreuse, text: "Une petite fille... et une grande. C'est moi, ça. Je crois. J'avais complètement oublié que j'avais été petite, un jour. Que quelqu'un m'avait tenu la main." }
+      - { who: maelle, text: "Vous aviez une petite sœur. Comme moi, j'ai Rafaelle et Axelle. Vous ne vous souvenez pas de ce qui lui est arrivé ?" }
+      - { who: devoreuse, text: "Non. Ça, le puits l'a pris en premier. C'est toujours le premier souvenir qu'on arrache à quelqu'un : celui de la personne qu'on aimait le plus." }
+      - { who: axelle, text: "Alors vous n'êtes pas méchante. Vous êtes juste... très, très fatiguée d'avoir tout porté toute seule." }
+      - { who: narrateur, text: "La Dévoreuse ne répondit pas tout de suite. Ses yeux pâles tremblèrent, comme une flamme de bougie qu'un courant d'air vient de frôler. Et tout autour d'elle, dans la caverne, des milliers de pages se mirent à frissonner doucement, comme si elles aussi, enfin, se souvenaient qu'elles avaient appartenu à quelqu'un." }
+    reward: "le Dessin des Deux Sœurs"
+
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: Ce qui remonte du fond
+    decor: Le cœur même de la caverne, où la Dévoreuse, immobile, attend ce que les apprenties décideront pour elle.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, la Dévoreuse ne bougeait plus du tout. Elle se tenait au centre de sa caverne, immense et silencieuse, comme une personne qui retient son souffle avant une nouvelle qu'elle redoute." }
+      - { who: devoreuse, text: "J'ai attendu des siècles qu'on vienne me juger de nouveau. Je pensais que ce serait le Scribe, encore, avec ses grands mots froids. Pas trois petites lueurs avec des lanternes de couleur." }
+      - { who: maelle, text: "On n'est pas venues vous juger. Enfin... pas comme le Tribunal. On est venues décider quoi faire. Avec vous, pas contre vous, si possible." }
+      - { who: plume, text: "Thessaly dirait : il n'y a pas une seule bonne réponse. Il n'y a que des choix, et ce qu'on en fait après." }
+      - { who: rafaelle, text: "Alors décidons ensemble. On peut lui offrir un souvenir heureux, pour l'apaiser. On peut la contenir, pour protéger le puits et ceux qui y tombent encore. Ou on peut l'aider à se souvenir vraiment de qui elle était." }
+      - { who: narrateur, text: "Autour d'elles, les pages du sol s'immobilisèrent toutes en même temps, comme si la caverne entière attendait la réponse des apprenties. Et tout là-haut, très loin, un grondement sourd traversa la pierre — comme une porte, ailleurs, qui commençait à bouger." }
+    manches:
+      - id: m1
+        title: Le poids d'un souvenir
+        intro: "Avant de choisir, il faut comprendre ce qu'un souvenir pèse vraiment, pour mieux mesurer ce qu'on s'apprête à offrir, retenir ou restaurer."
+        tours:
+          axelle:
+            - { id: ch08-j5-ax-m1a, subject: maths, level: 4, kind: qcm, prompt: "Si on partage un souvenir en 2 parts égales, chaque part vaut…", choices: ["le double", "la moitié", "le triple", "le quart", "le même"], answer: "la moitié", hint: "Partager en 2, c'est diviser par 2." }
+            - { id: ch08-j5-ax-m1b, subject: maths, level: 3, kind: qcm, prompt: "Combien de côtés a un cercle de lumière (un rond) ?", choices: ["0", "1", "3", "4", "6"], answer: "0", hint: "Un cercle n'a pas de coin ni de côté droit." }
+          maelle:
+            - { id: ch08-j5-ma-m1a, subject: maths, level: 3, kind: qcm, prompt: "Un souvenir partagé entre 3 sœurs à parts égales : quelle fraction pour chacune ?", choices: ["1/2", "1/3", "2/3", "1/4", "3/3"], answer: "1/3", hint: "Trois parts égales d'un tout." }
+            - { id: ch08-j5-ma-m1b, subject: maths, level: 4, kind: qcm, prompt: "Pour fermer un cercle de lumière avec 3 lanternes placées à égale distance, quel angle entre deux lanternes voisines ?", choices: ["90°", "120°", "180°", "60°", "360°"], answer: "120°", hint: "360° ÷ 3." }
+          rafaelle:
+            - { id: ch08-j5-ra-m1a, subject: maths, level: 4, kind: qcm, prompt: "Un cercle de lumière a un rayon de 4 m. Quel est son périmètre (π ≈ 3,14) ?", choices: ["12,56 m", "25,12 m", "8 m", "16 m", "50,24 m"], answer: "25,12 m", hint: "2 × π × rayon." }
+            - { id: ch08-j5-ra-m1b, subject: francais, level: 4, kind: qcm, prompt: "« Comme une porte, ailleurs, qui commençait à bouger. » Quel effet produit cette phrase en fin de journée ?", choices: ["elle conclut toute l'histoire", "elle crée un suspense tourné vers la suite", "elle n'a aucune utilité narrative", "elle décrit un lieu déjà visité", "elle résout le mystère du Tribunal"], answer: "elle crée un suspense tourné vers la suite", hint: "Elle annonce quelque chose qui n'est pas encore montré." }
+      - id: m2
+        title: Le choix des apprenties
+        intro: "Pour que la décision tienne, chaque sœur relève un dernier défi, un peu plus difficile que les autres."
+        tours:
+          axelle:
+            - { id: ch08-j5-ax-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 1/2 de 50.", choices: ["20", "25", "30", "100", "15"], answer: "25", hint: "Partage 50 en deux parts égales." }
+            - { id: ch08-j5-ax-m2b, subject: maths, level: 5, kind: qcm, prompt: "Périmètre d'un carré de 6 cm de côté ?", choices: ["12 cm", "18 cm", "24 cm", "36 cm", "30 cm"], answer: "24 cm", hint: "4 côtés de 6 cm." }
+          maelle:
+            - { id: ch08-j5-ma-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 25 % de 80.", choices: ["15", "20", "25", "40", "60"], answer: "20", hint: "25 %, c'est le quart." }
+            - { id: ch08-j5-ma-m2b, subject: maths, level: 5, kind: qcm, prompt: "Aire d'un cercle de rayon 5 (π ≈ 3,14) ?", choices: ["15,7", "31,4", "78,5", "62,8", "25"], answer: "78,5", hint: "Aire = π × rayon²." }
+          rafaelle:
+            - { id: ch08-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Résous : 7x − 2 = 4x + 13.", choices: ["3", "4", "5", "6", "15"], answer: "5", hint: "7x − 4x = 13 + 2." }
+            - { id: ch08-j5-ra-m2b, subject: maths, level: 5, kind: qcm, prompt: "Un triangle rectangle a une hypoténuse de 10 et un côté de 6. Quelle est la mesure de l'autre côté ?", choices: ["4", "8", "14", "64", "16"], answer: "8", hint: "10² − 6² = 100 − 36." }
+      - id: m3
+        title: La parole rendue
+        intro: "Pour sceller la décision, chaque sœur offre à la Dévoreuse une petite parole, à sa manière."
+        tours:
+          axelle:
+            - { id: ch08-j5-ax-m3a, subject: sciences, level: 3, kind: libre, validation: soeurs, prompt: "Mime, sans un mot, une émotion douce que tu voudrais offrir à la Dévoreuse. Tes sœurs doivent la deviner !" }
+          maelle:
+            - { id: ch08-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Invente une petite berceuse de deux phrases pour la Dévoreuse, qui rime avec « oubli »." }
+          rafaelle:
+            - { id: ch08-j5-ra-m3a, subject: espagnol, level: 3, kind: libre, validation: soeurs, prompt: "Dis en espagnol : « Je te rends ton nom. » Puis invente une deuxième phrase en espagnol avec « recuerdo ».", read: "Te devuelvo tu nombre." }
+    pause: "La ronde des lanternes : formez un cercle en vous tenant la main, lanternes levées, et tournez lentement en chantonnant, comme pour entourer quelqu'un de lumière."
+    closing:
+      - { who: narrateur, text: "Quand les trois sœurs eurent fait leur choix, quelque chose changea dans la caverne. Les pages, au sol, se mirent à trembler toutes ensemble, comme un seul grand souffle retenu depuis trop longtemps." }
+      - { who: devoreuse, text: "Vous avez décidé. Je le sens, au fond de moi, là où il ne restait presque plus rien. Petites lueurs… qu'est-ce que vous avez fait ?" }
+      - { who: narrateur, text: "Mais avant qu'aucune des trois sœurs n'ait pu répondre, un grondement immense traversa tout le puits, de haut en bas, comme si la terre elle-même venait de se réveiller. Très loin au-dessus d'elles, à la surface, quelque chose se fissura dans le Tribunal des Mémoires." }
+      - { who: nilo, text: "Ça vient de là-haut. De la salle du Tribunal. On dirait que ce qu'on vient de faire ici, en bas, ça remonte." }
+      - { who: plume, text: "Ou alors c'est autre chose qui descend vers nous. Je ne sais pas lequel des deux me fait le plus peur." }
+      - { who: narrateur, text: "Dans l'obscurité du puits, une lueur nouvelle apparut, tout en haut de la spirale. Elle grossissait, lentement, et avec elle descendait un bruit de pas. Beaucoup de pas. Comme si tout le Tribunal des Mémoires, d'un seul coup, venait de se souvenir qu'il avait oublié quelque chose de très important au fond de son propre puits." }
+    reward: "un éclat du Puits Sans Fond"

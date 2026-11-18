@@ -1,0 +1,413 @@
+# Chapitre 7 — Le Tribunal des Mémoires
+# Début de la conclusion de l'Acte I (chapitres 7, 8, 9). Ce chapitre ouvre l'intrigue du Tribunal sans la résoudre :
+# le verdict reste suspendu à la fin, pour laisser la main au chapitre 8.
+# Nouveau personnage : le Scribe, clerc-juge qui parle presque uniquement par questions, froid mais pas cruel.
+# Décor général : une archive flottante de pages à la dérive, dans un brouillard qui étouffe le son.
+
+id: ch07
+number: 7
+act: 1
+title: Le Tribunal des Mémoires
+introImage: ch07
+scene: tribunal-des-memoires
+
+espagnol:
+  - { es: "¿Quién eres tú?", fr: "Qui es-tu ?" }
+  - { es: "La memoria es un tesoro.", fr: "La mémoire est un trésor." }
+  - { es: "No recuerdo mi nombre.", fr: "Je ne me souviens pas de mon nom." }
+  - { es: "El pozo no tiene fondo.", fr: "Le puits n'a pas de fond." }
+  - { es: "Decimos la verdad.", fr: "Nous disons la vérité." }
+
+decision:
+  prompt: "Le jury de silhouettes attend le verdict. Comment les apprenties plaident-elles leur cause devant le Tribunal ?"
+  options:
+    A:
+      label: Plaider par la bonté
+      scene: "Rafaelle raconte la Reine qui rit de nouveau, Axelle montre le petit geste de la main à l'ombre qui attendait, Maelle parle du berger et du cadran réveillé. Les silhouettes du jury se penchent, comme pour mieux écouter."
+      line: { who: scribe, text: "La bonté serait-elle donc, pour vous, une preuve ?" }
+      habillage: "Chaque épreuve du jury est un souvenir à raconter dans le bon ordre, pour montrer ce que la gentillesse a changé."
+    B:
+      label: Défier l'autorité du Tribunal
+      scene: "Rafaelle se redresse et refuse d'être jugée par des silhouettes sans visage. Le papier autour d'elles frémit, comme vexé, comme intéressé."
+      line: { who: scribe, text: "Refuser le jugement… voilà une réponse que je n'ai pas entendue depuis longtemps." }
+      habillage: "Les épreuves du jury deviennent des défis de rapidité et d'assurance, pour tenir devant des juges qui ne veulent rien laisser passer."
+    C:
+      label: Présenter les preuves trouvées
+      scene: "Maelle dépose sur le pupitre du Scribe les fragments de dossiers d'enfants et de marins disparus. Le silence devient différent : plus lourd, plus gêné."
+      line: { who: scribe, text: "Où avez-vous trouvé cela ? Et pourquoi vos mains tremblent-elles moins que les miennes ?" }
+      habillage: "Les épreuves du jury consistent à relier chaque fragment de dossier à la bonne question, pour retourner l'accusation contre le Tribunal lui-même."
+
+repliquesAbsurdes:
+  - "Monsieur le Scribe, votre plume est plus grande que moi. Elle écrit aussi les devoirs de vacances ?"
+  - "Si vous posez toujours des questions, qui vous répond, à vous, quand vous en avez une ?"
+  - "Mon renard sait aussi changer de forme. Il pourrait être votre avocat, si vous voulez."
+  - "On a traversé un royaume d'ombres, une ville de brume et un câble à pigeon. Le Tribunal, c'est presque des vacances."
+  - "Est-ce qu'on peut être jugées après le goûter ? J'ai plus les idées claires avec un biscuit."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: La Convocation
+    decor: Un quai de pages à la dérive, suspendu dans un brouillard si épais qu'il avale les sons. Au bout du quai, un immense pupitre de bois sombre, et derrière lui, une silhouette qui n'en finit pas d'écrire.
+    opening:
+      - { who: narrateur, text: "Il était une fois un tribunal qu'on ne trouvait jamais deux fois au même endroit, parce qu'il flottait, tout simplement, au milieu d'un brouillard où le son ne portait pas. On y arrivait porté par une lettre scellée de cire grise, et on en repartait, disait-on, changé." }
+      - { who: narrateur, text: "L'Arche se posa en douceur sur un quai fait de pages reliées entre elles, qui ondulaient doucement comme de l'eau. Tout autour, des étagères immenses flottaient dans le brouillard, silencieuses, chargées de dossiers qu'on ne voyait jamais bouger, et qui pourtant changeaient de place dès qu'on tournait le dos." }
+      - { who: nilo, text: "Je n'ai pas de carte pour cet endroit. Même le Brouillard, qui pourtant connaît tout ce qui se perd, n'ose pas s'approcher d'ici. C'est pour dire." }
+      - { who: narrateur, text: "Au bout du quai se dressait un pupitre de bois sombre, haut comme trois Nilo l'un sur l'autre. Derrière lui se tenait une silhouette toute en angles, vêtue d'une longue robe de papier froissé, et tenant une plume si grande qu'elle aurait pu servir de rame." }
+      - { who: scribe, text: "Trois apprenties. Trois lanternes. Une Reine qui riait encore hier, et qui n'avait pas ri depuis cent ans. Savez-vous ce que vous avez réveillé ?" }
+      - { who: axelle, text: "On a rendu son ombre à la Reine. C'était triste, de n'avoir plus de souvenirs." }
+      - { who: scribe, text: "Triste, dites-vous. Et vous, petite, avez-vous songé qu'un souvenir pourrait être rangé là où il est pour une bonne raison ?" }
+      - { who: maelle, text: "Quelle raison ? On ne lui a rendu que de jolis souvenirs. Sa poupée, sa mère qui chantait." }
+      - { who: scribe, text: "Les souvenirs ne viennent jamais seuls, apprentie. On ne réveille jamais une seule mémoire. On réveille toute la maison." }
+      - { who: narrateur, text: "Le Scribe trempa sa plume immense dans un encrier de brouillard, et traça, sur un grand registre ouvert, une seule ligne : « Les apprenties de l'Arche sont convoquées devant le Tribunal des Mémoires, pour avoir réveillé ce qui doit rester oublié. » Les mêmes mots que sur la lettre." }
+      - { who: scribe, text: "Voici l'accusation. Voici aussi votre chance : prouvez, par le savoir, que vous méritez de garder vos propres souvenirs. Car c'est bien cela que ce Tribunal confisque, en dernier recours. Et il ne le rend jamais." }
+      - { who: rafaelle, text: "Des épreuves de savoir ? Ça, on sait faire. On a traversé bien pire qu'un examen." }
+      - { who: plume, text: "Ne te vante pas trop vite, Rafaelle. Ici, je sens quelque chose… de froid. Pas méchant. Juste froid. Comme une porte qu'on referme très soigneusement." }
+    manches:
+      - id: m1
+        title: L'accusation
+        intro: "Le Scribe pose ses premières questions, presque pour lui-même."
+        tours:
+          axelle:
+            - { id: ch07-j1-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de la phrase « Le Scribe écrit une ligne. » ?", choices: ["écrit", "une ligne", "Le Scribe", "ligne", "le"], answer: "Le Scribe", hint: "Qui fait l'action d'écrire ?" }
+            - { id: ch07-j1-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 + 7.", choices: ["14", "15", "16", "17", "13"], answer: "15", hint: "8 + 2 = 10, puis + 5." }
+          maelle:
+            - { id: ch07-j1-ma-m1a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « tribunal » ?", choices: ["verbe", "adjectif", "nom", "adverbe", "pronom"], answer: "nom", hint: "On peut dire « un tribunal »." }
+            - { id: ch07-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 48 × 5.", choices: ["200", "220", "240", "250", "480"], answer: "240", hint: "48 × 10 = 480, puis la moitié." }
+          rafaelle:
+            - { id: ch07-j1-ra-m1a, subject: francais, level: 3, kind: qcm, prompt: "Dans « Savez-vous ce que vous avez réveillé ? », quelle est la nature de « que » ?", choices: ["pronom relatif", "conjonction de coordination", "adverbe", "préposition", "nom"], answer: "pronom relatif", hint: "Il relie la question à ce qu'elle désigne." }
+            - { id: ch07-j1-ra-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 15 % de 200.", choices: ["15", "20", "30", "25", "35"], answer: "30", hint: "10 % de 200 = 20, puis ajoute la moitié." }
+      - id: m2
+        title: Le registre du Tribunal
+        tours:
+          axelle:
+            - { id: ch07-j1-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Combien de lettres scellées sont arrivées à la fin du chapitre dernier ?", choices: ["trois", "deux", "une", "quatre", "zéro"], answer: "une", hint: "Une seule lettre, posée sur le trône." }
+            - { id: ch07-j1-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 2.", choices: ["16", "17", "18", "19", "20"], answer: "18", hint: "9 + 9." }
+          maelle:
+            - { id: ch07-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Conjugue au présent : « Elles (savoir) ».", choices: ["elles savent", "elles savons", "elles sait", "elles savaient", "elles sauront"], answer: "elles savent", hint: "Ils, elles : -ent." }
+            - { id: ch07-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 144 ÷ 4.", choices: ["34", "36", "38", "40", "32"], answer: "36", hint: "120 ÷ 4 = 30, puis 24 ÷ 4 = 6." }
+          rafaelle:
+            - { id: ch07-j1-ra-m2a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Dans l'Antiquité, qui rendait souvent la justice dans les cités grecques ?", choices: ["les rois seulement", "des tribunaux de citoyens", "les prêtres seulement", "personne, chacun se jugeait", "les marchands"], answer: "des tribunaux de citoyens", hint: "Pense à l'Agora et au vote des citoyens." }
+            - { id: ch07-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Résous : 3x + 5 = 20.", choices: ["3", "5", "15", "25", "7"], answer: "5", hint: "3x = 15." }
+      - id: m3
+        title: Les étagères silencieuses
+        intro: "Les étagères de l'archive changent de place sans bruit. Il faut les comprendre pour avancer."
+        tours:
+          axelle:
+            - { id: ch07-j1-ax-m3a, subject: sciences, level: 2, kind: qcm, prompt: "Dans un brouillard très épais, pourquoi voit-on moins loin ?", choices: ["il fait plus froid", "la lumière est bloquée par les gouttes d'eau", "il fait nuit", "le vent souffle plus fort", "le ciel change de couleur"], answer: "la lumière est bloquée par les gouttes d'eau", hint: "Le brouillard est fait de minuscules gouttes." }
+            - { id: ch07-j1-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Combien de côtés a un rectangle ?", choices: ["3", "4", "5", "6", "8"], answer: "4", hint: "Compte-les en faisant le tour." }
+          maelle:
+            - { id: ch07-j1-ma-m3a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi le son ne porte-t-il pas bien dans un brouillard épais et feutré ?", choices: ["le son a peur du noir", "les gouttelettes et l'humidité absorbent une partie du son", "le son n'existe pas dans le brouillard", "il n'y a pas d'air dans le brouillard", "le son va plus vite"], answer: "les gouttelettes et l'humidité absorbent une partie du son", hint: "Pense à une pièce pleine de coussins : elle amortit aussi le bruit." }
+            - { id: ch07-j1-ma-m3b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 7,2 + 3,9.", choices: ["10,1", "11,1", "10,9", "11,9", "10,2"], answer: "11,1", hint: "72 + 39 = 111." }
+          rafaelle:
+            - { id: ch07-j1-ra-m3a, subject: sciences, level: 3, kind: qcm, prompt: "Le son se propage-t-il dans le vide (sans air) ?", choices: ["oui, toujours", "non, il a besoin d'un milieu matériel", "seulement les sons graves", "seulement la nuit", "oui, mais très lentement"], answer: "non, il a besoin d'un milieu matériel", hint: "Pas de molécules à faire vibrer, pas de son." }
+            - { id: ch07-j1-ra-m3b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 2/3 + 1/6.", choices: ["3/9", "5/6", "3/6", "1/2", "7/6"], answer: "5/6", hint: "2/3 = 4/6." }
+      - id: m4
+        title: Le Défi de la Convocation
+        tours:
+          axelle:
+            - { id: ch07-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 6.", choices: ["30", "32", "36", "42", "66"], answer: "36", hint: "6, 12, 18, 24, 30, 36." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch07-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 96 ÷ 8.", choices: ["10", "11", "12", "13", "14"], answer: "12", hint: "80 ÷ 8 = 10, puis 16 ÷ 8 = 2." }
+            - { gen: maths.comparer }
+          rafaelle:
+            - { id: ch07-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « ¿Quién eres tú? »", choices: ["Comment t'appelles-tu ?", "Où es-tu ?", "Qui es-tu ?", "Que fais-tu ?", "Quand es-tu né ?"], answer: "Qui es-tu ?", hint: "Regarde la phrase du jour." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu du silence : une sœur mime une accusation sans un mot, les deux autres doivent deviner de quoi elle est accusée. On change de juge à chaque tour !"
+    closing:
+      - { who: narrateur, text: "Le Scribe referma son grand registre d'un coup sec, et pourtant, on n'entendit presque rien, comme si le bruit lui-même avait été confisqué en entrant dans l'archive." }
+      - { who: scribe, text: "Vous commencerez demain, dans les couloirs de l'archive. Chaque salle y teste un savoir différent. Réussissez, et vous garderez vos souvenirs. Échouez, et… nous verrons." }
+      - { who: axelle, text: "Et si on échoue un petit peu, juste un peu ?" }
+      - { who: scribe, text: "Il n'y a pas de « un peu », petite. La mémoire ne se perd jamais à moitié." }
+      - { who: narrateur, text: "Le Scribe désigna, d'un geste de sa plume immense, une porte de papier au fond du quai, qui n'était pas là une minute plus tôt. Derrière, on entendait un bruissement de pages, comme mille livres qu'on tourne tous à la fois." }
+      - { who: nilo, text: "Je n'aime pas cet endroit. Mais j'aime encore moins l'idée de perdre un souvenir de vous trois. Alors on va réussir ces épreuves, et vite." }
+      - { who: narrateur, text: "Dans un coin du quai, presque invisible dans le brouillard, une petite ombre à lanterne regardait partir les apprenties. Et pour la première fois, elle ne les suivit pas." }
+
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Les Couloirs de Papier
+    decor: Un dédale de couloirs faits de pages suspendues, chacune menant à une salle différente. Au sol, des fragments de dossiers oubliés, à moitié effacés.
+    opening:
+      - { who: narrateur, text: "Le deuxième jour, la porte de papier s'ouvrit sur un dédale. Des couloirs entiers faits de pages suspendues dans le vide, reliées entre elles par du fil et par rien d'autre, qui ondulaient doucement au passage des apprenties." }
+      - { who: narrateur, text: "Chaque couloir menait à une salle. Et chaque salle, semblait-il, testait un savoir différent : ici les chiffres, là les mots, plus loin les grandes histoires du monde. Nilo avançait en tête, reniflant l'air comme s'il pouvait sentir le bon chemin." }
+      - { who: nilo, text: "Je ne connais pas ce labyrinthe. Mais je connais les labyrinthes en général, et un labyrinthe, ça se résout toujours de la même façon : on avance, on compte ses pas, et on ne fait jamais confiance à un couloir trop silencieux." }
+      - { who: narrateur, text: "Au détour d'un couloir, Maelle buta sur quelque chose. Un fragment de dossier, tombé d'une étagère, à moitié effacé par l'humidité du brouillard. On y lisait encore un nom d'enfant, un âge, et une ligne : « Mémoire confisquée, non restituée. »" }
+      - { who: maelle, text: "« Non restituée » ? Ça veut dire que ce dossier, c'est un enfant qui a perdu ses souvenirs ici, au Tribunal, et qui ne les a jamais récupérés ?" }
+      - { who: rafaelle, text: "Il y en a d'autres, regarde. Là, un marin. Là, encore un enfant. Tous avec la même ligne. Le Tribunal ne protège pas que des souvenirs qui font du mal. Il en garde beaucoup. Pour toujours." }
+      - { who: plume, text: "Ça ne me plaît pas du tout. Un tribunal qui juge, c'est une chose. Un tribunal qui garde tout ce qu'il confisque, sans jamais rien rendre… c'est autre chose." }
+      - { who: axelle, text: "Alors le Scribe, il nous protège ou il nous punit ? Je ne sais plus très bien." }
+      - { who: nilo, text: "Bonne question, petite lueur. Peut-être qu'il ne le sait plus très bien lui-même. Avançons. Chaque salle réussie, c'est un peu plus de vérité qu'on gagne." }
+    manches:
+      - id: m1
+        title: La salle des Nombres
+        tours:
+          axelle:
+            - { id: ch07-j2-ax-m1a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 14 + 9.", choices: ["21", "22", "23", "24", "25"], answer: "23", hint: "14 + 10 = 24, puis − 1." }
+            - { id: ch07-j2-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 20 − 7.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "20 − 10 = 10, puis + 3." }
+          maelle:
+            - { id: ch07-j2-ma-m1a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 7,5 × 2.", choices: ["14", "14,5", "15", "15,5", "9,5"], answer: "15", hint: "7 × 2 = 14 et 0,5 × 2 = 1." }
+            - { id: ch07-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 210 ÷ 7.", choices: ["20", "28", "30", "32", "35"], answer: "30", hint: "210 = 7 × 30." }
+          rafaelle:
+            - { id: ch07-j2-ra-m1a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x − 4 = 21.", choices: ["3", "4", "5", "6", "17"], answer: "5", hint: "5x = 25." }
+            - { id: ch07-j2-ra-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 7/9 − 2/9.", choices: ["5/9", "9/9", "5/18", "9/18", "1/9"], answer: "5/9", hint: "Mêmes dénominateurs : soustrais les numérateurs." }
+      - id: m2
+        title: La salle des Mots
+        tours:
+          axelle:
+            - { id: ch07-j2-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel est le verbe de la phrase « Le dossier tombe. » ?", choices: ["Le", "dossier", "tombe", "Le dossier", "aucun"], answer: "tombe", hint: "Que fait le dossier ?" }
+            - { id: ch07-j2-ax-m2b, subject: francais, level: 2, kind: qcm, prompt: "Mets au pluriel : « un couloir ».", choices: ["des couloir", "des couloirs", "des couloires", "des couloirx", "des couloi"], answer: "des couloirs", hint: "La règle générale : on ajoute un -s." }
+          maelle:
+            - { id: ch07-j2-ma-m2a, subject: francais, level: 3, kind: qcm, prompt: "Choisis : « Ils ont (confisquer) le souvenir. »", choices: ["confisqué", "confisqués", "confisquées", "confisquer", "confisque"], answer: "confisqué", hint: "Avoir + participe passé, pas d'accord avec le sujet ici." }
+            - { id: ch07-j2-ma-m2b, subject: francais, level: 3, kind: qcm, prompt: "« Les apprenties avancent dans le couloir. » Quel est le groupe nominal sujet ?", choices: ["avancent", "dans le couloir", "Les apprenties", "le couloir", "apprenties avancent"], answer: "Les apprenties", hint: "Qui avance ?" }
+          rafaelle:
+            - { id: ch07-j2-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Un tribunal qui garde tout ce qu'il confisque. » Quelle est la fonction de « que » dans « ce qu'il confisque » ?", choices: ["sujet", "COD", "complément du nom", "attribut", "complément circonstanciel"], answer: "COD", hint: "Il confisque quoi ? « que », mis pour « ce »." }
+            - { id: ch07-j2-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au conditionnel présent : « Elle (devoir) le rendre. »", choices: ["elle devra", "elle devait", "elle devrait", "elle doit", "elle a dû"], answer: "elle devrait", hint: "Radical dev- + -rait." }
+      - id: m3
+        title: La salle des Dossiers oubliés
+        intro: "Les fragments de dossiers trouvés dans le couloir posent une question qui dérange : à qui appartenaient ces souvenirs ?"
+        tours:
+          axelle:
+            - { id: ch07-j2-ax-m3a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Un dossier, c'est un peu comme…", choices: ["une chanson", "un objet qui garde des informations écrites", "un jouet", "un repas", "un vêtement"], answer: "un objet qui garde des informations écrites", hint: "On y range des papiers, pour ne pas oublier." }
+            - { id: ch07-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Il y a 5 dossiers d'enfants et 3 dossiers de marins. Combien de dossiers en tout ?", choices: ["6", "7", "8", "9", "2"], answer: "8", hint: "5 + 3." }
+          maelle:
+            - { id: ch07-j2-ma-m3a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Autrefois, avant les ordinateurs, comment conservait-on les informations importantes d'un royaume ?", choices: ["on les oubliait exprès", "dans des registres et des archives papier", "on ne les gardait jamais", "uniquement de mémoire", "dans des coffres vides"], answer: "dans des registres et des archives papier", hint: "Pense aux grands livres des tribunaux et des rois." }
+            - { id: ch07-j2-ma-m3b, subject: maths, level: 3, kind: qcm, prompt: "Sur 20 dossiers trouvés, 12 sont des enfants. Quelle fraction cela représente-t-il ?", choices: ["12/20 = 3/5", "12/20 = 2/5", "12/20 = 1/2", "12/20 = 3/4", "12/20 = 1/5"], answer: "12/20 = 3/5", hint: "Simplifie en divisant par 4." }
+          rafaelle:
+            - { id: ch07-j2-ra-m3a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi, dans l'Histoire, des archives ont-elles parfois été détruites ou cachées par les pouvoirs en place ?", choices: ["par accident uniquement", "pour effacer des traces gênantes ou des injustices", "parce que le papier coûtait trop cher", "parce que personne ne savait lire", "pour faire de la place"], answer: "pour effacer des traces gênantes ou des injustices", hint: "Ce que le Tribunal fait ici n'est pas si différent." }
+            - { id: ch07-j2-ra-m3b, subject: maths, level: 4, kind: qcm, prompt: "Le Tribunal a 150 dossiers « non restitués ». 40 % concernent des enfants. Combien de dossiers d'enfants ?", choices: ["40", "50", "60", "70", "15"], answer: "60", hint: "10 % de 150 = 15, donc 40 % = 15 × 4." }
+      - id: m4
+        title: Le Défi des Couloirs
+        tours:
+          axelle:
+            - { id: ch07-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 11 + 11.", choices: ["20", "21", "22", "23", "24"], answer: "22", hint: "Le double de 11." }
+            - { id: ch07-j2-ax-m4b, subject: francais, level: 2, kind: qcm, prompt: "« Le fragment est à moitié effacé. » Quelle est la nature de « effacé » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit l'état du fragment." }
+          maelle:
+            - { id: ch07-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 13 × 6.", choices: ["68", "76", "78", "82", "88"], answer: "78", hint: "13 × 6 = 13 × 5 + 13." }
+            - { id: ch07-j2-ma-m4b, subject: sciences, level: 3, kind: qcm, prompt: "Le papier est fabriqué principalement à partir de…", choices: ["pétrole", "fibres de bois", "sable", "métal", "coton uniquement"], answer: "fibres de bois", hint: "Pense à la pâte à papier." }
+          rafaelle:
+            - { id: ch07-j2-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 2(x + 3) = 16.", choices: ["5", "6", "7", "8", "10"], answer: "5", hint: "2x + 6 = 16, donc 2x = 10." }
+            - { id: ch07-j2-ra-m4b, subject: francais, level: 4, kind: qcm, prompt: "Accorde : « Les archives (détruit) par le temps. »", choices: ["détruit", "détruits", "détruites", "détruite", "détruir"], answer: "détruites", hint: "Archives : féminin pluriel." }
+    pause: "Le labyrinthe silencieux : une sœur guide les deux autres les yeux fermés dans la pièce, seulement avec sa voix, sans jamais dire « gauche » ou « droite » !"
+    closing:
+      - { who: narrateur, text: "Les apprenties sortirent du dédale juste au moment où le brouillard, au-dessus d'elles, se teintait d'une lumière grise, comme un soir qui n'ose pas vraiment tomber." }
+      - { who: rafaelle, text: "On a réussi toutes les salles. Mais ces dossiers… je n'arrive pas à les oublier. « Non restituée. » C'est écrit comme un simple mot administratif. Mais derrière, il y a un enfant qui ne sait plus qui il est." }
+      - { who: maelle, text: "Le Scribe a dit qu'il fallait prouver qu'on méritait de garder nos souvenirs. Mais qui a décidé que ces enfants-là, eux, ne méritaient pas de garder les leurs ?" }
+      - { who: nilo, text: "C'est la question qui compte, Maelle. Gardez-la bien au chaud. On la reposera, au bon moment, au bon juge." }
+      - { who: narrateur, text: "Au bout du couloir, une petite porte de pages froissées s'ouvrit sur une cellule. Et dans cette cellule, immobile, se tenait quelqu'un. Quelqu'un de tout blanc, comme taillé dans une page vide." }
+      - { who: plume, text: "Oh. Ça, je ne l'avais pas senti venir. Et ça ne me plaît pas non plus." }
+
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: Le Prisonnier de Pages
+    decor: Une cellule faite de pages blanches empilées en murs, sans porte visible. Au centre, une silhouette figée, pâle comme du papier neuf.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, les apprenties s'approchèrent de la cellule de pages blanches. Il n'y avait pas de barreaux, pas de serrure : seulement des murs faits de centaines de feuilles empilées, si serrées qu'aucune lumière ne passait entre elles." }
+      - { who: narrateur, text: "Au centre, debout, parfaitement immobile, se tenait une silhouette. Un homme, ou ce qui en restait : la peau pâle comme du papier neuf, les yeux ouverts mais vides, comme deux pages qu'on aurait oublié de remplir." }
+      - { who: axelle, text: "Monsieur ? Monsieur, vous m'entendez ?" }
+      - { who: narrateur, text: "Le prisonnier tourna lentement la tête vers Axelle. Sa voix, quand elle vint, sonna comme un froissement de papier." }
+      - { who: habitant, text: "Je… je ne sais pas qui je suis. Je ne sais plus. Il y avait un nom, avant. Je crois. Il y avait un bateau, aussi. Ou un cerf-volant. Je ne sais plus lequel." }
+      - { who: nilo, text: "C'est donc ça, « effacé ». Pas juste oublier un détail. Oublier qu'on a été quelqu'un, tout entier." }
+      - { who: rafaelle, text: "Le Scribe a dit qu'un souvenir ne vient jamais seul. Peut-être que pour l'aider, il faut lui rendre, un par un, des petits morceaux de lui, comme on a rendu son ombre à la Reine." }
+      - { who: maelle, text: "Chaque bonne réponse pourrait lui rendre une bribe. Un mot, une image, un geste." }
+      - { who: plume, text: "Essayons. Doucement. Il est fragile comme une page qu'on n'a pas encore pliée." }
+    manches:
+      - id: m1
+        title: Une bribe de nom
+        intro: "Chaque bonne réponse rend au prisonnier une petite bribe de lui-même."
+        tours:
+          axelle:
+            - { id: ch07-j3-ax-m1a, subject: francais, level: 2, kind: qcm, prompt: "Comment s'appelle le mot qui désigne une personne, un animal ou une chose ?", choices: ["un verbe", "un adjectif", "un nom", "un adverbe", "une virgule"], answer: "un nom", hint: "C'est ce qu'il cherche : son nom." }
+            - { id: ch07-j3-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 10 + 8.", choices: ["16", "17", "18", "19", "20"], answer: "18", hint: "10 + 8, c'est facile avec les dizaines." }
+          maelle:
+            - { id: ch07-j3-ma-m1a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « prisonnier » ?", choices: ["verbe", "nom", "adverbe", "préposition", "conjonction"], answer: "nom", hint: "On peut dire « un prisonnier »." }
+            - { id: ch07-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 56 ÷ 8.", choices: ["6", "7", "8", "9", "10"], answer: "7", hint: "8 × 7 = 56." }
+          rafaelle:
+            - { id: ch07-j3-ra-m1a, subject: francais, level: 3, kind: qcm, prompt: "« Il y avait un bateau, ou un cerf-volant. » Quelle est la nature de « ou » ici ?", choices: ["adverbe", "conjonction de coordination", "pronom", "préposition", "déterminant"], answer: "conjonction de coordination", hint: "Elle relie deux possibilités." }
+            - { id: ch07-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Résous : x/4 + 2 = 9.", choices: ["7", "14", "28", "11", "4"], answer: "28", hint: "x/4 = 7, donc x = 7 × 4." }
+      - id: m2
+        title: Un bateau ou un cerf-volant
+        intro: "Pour retrouver l'objet de son souvenir, il faut comprendre la mer et le vent."
+        tours:
+          axelle:
+            - { id: ch07-j3-ax-m2a, subject: sciences, level: 2, kind: qcm, prompt: "Qu'est-ce qui fait avancer un cerf-volant dans le ciel ?", choices: ["le soleil", "le vent", "la pluie", "la lune", "le silence"], answer: "le vent", hint: "Sans lui, le cerf-volant retombe." }
+            - { id: ch07-j3-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Un bateau a 2 voiles. Combien de voiles ont 3 bateaux ?", choices: ["5", "6", "4", "3", "9"], answer: "6", hint: "2 + 2 + 2." }
+          maelle:
+            - { id: ch07-j3-ma-m2a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi un bateau en bois flotte-t-il sur l'eau ?", choices: ["parce qu'il est peint", "parce qu'il est plus léger que le volume d'eau qu'il déplace", "parce que l'eau est magique", "parce qu'il n'a pas de poids", "parce qu'il est rond"], answer: "parce qu'il est plus léger que le volume d'eau qu'il déplace", hint: "C'est le principe de la poussée d'Archimède." }
+            - { id: ch07-j3-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Un cerf-volant monte à 2 m par rafale. Après 6 rafales, à quelle hauteur est-il ?", choices: ["8 m", "10 m", "12 m", "14 m", "16 m"], answer: "12 m", hint: "2 × 6." }
+          rafaelle:
+            - { id: ch07-j3-ra-m2a, subject: sciences, level: 3, kind: qcm, prompt: "Qu'est-ce qui permet à un voilier d'avancer même contre le vent, en zigzaguant ?", choices: ["un moteur caché", "le louvoyage (naviguer en zigzag)", "la chance", "les vagues seulement", "les rames"], answer: "le louvoyage (naviguer en zigzag)", hint: "On ne va jamais droit contre le vent, mais en biais." }
+            - { id: ch07-j3-ra-m2b, subject: maths, level: 3, kind: qcm, prompt: "Un cerf-volant est relié par un fil de 50 m, tendu, formant un angle de 90° avec le sol au niveau de l'enfant. Si le fil fait un triangle rectangle de côtés 30 et 40, le fil mesure-t-il bien 50 ?", choices: ["oui, 30² + 40² = 50²", "non, il faudrait 60", "non, il faudrait 70", "oui, mais seulement par coïncidence", "non, c'est impossible à savoir"], answer: "oui, 30² + 40² = 50²", hint: "900 + 1 600 = 2 500, et 50² = 2 500." }
+      - id: m3
+        title: Le visage qui revient
+        tours:
+          axelle:
+            - { id: ch07-j3-ax-m3a, subject: francais, level: 2, kind: qcm, prompt: "Complète : « Le prisonnier (sourire) un peu. »", choices: ["sourit", "souriait", "sourira", "souris", "sourire"], answer: "sourit", hint: "Au présent, avec « il »." }
+            - { id: ch07-j3-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 3.", choices: ["18", "20", "21", "24", "17"], answer: "21", hint: "7 + 7 + 7." }
+          maelle:
+            - { id: ch07-j3-ma-m3a, subject: francais, level: 3, kind: qcm, prompt: "« Il se souvient d'un bateau. » Quelle est la fonction de « d'un bateau » ?", choices: ["sujet", "complément d'objet indirect", "complément du nom", "attribut", "épithète"], answer: "complément d'objet indirect", hint: "Se souvenir DE quelque chose." }
+            - { id: ch07-j3-ma-m3b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 3/4 de 48.", choices: ["12", "24", "36", "40", "16"], answer: "36", hint: "1/4 de 48 = 12." }
+          rafaelle:
+            - { id: ch07-j3-ra-m3a, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au plus-que-parfait : « Il (oublier) son nom. »", choices: ["il oublie", "il a oublié", "il avait oublié", "il oubliera", "il oubliait"], answer: "il avait oublié", hint: "Avoir à l'imparfait + participe passé." }
+            - { id: ch07-j3-ra-m3b, subject: maths, level: 4, kind: qcm, prompt: "Développe : 3(2x − 5).", choices: ["6x − 5", "6x − 15", "2x − 15", "6x − 8", "5x − 15"], answer: "6x − 15", hint: "3 × 2x et 3 × 5." }
+      - id: m4
+        title: Le Défi du Prisonnier
+        intro: "Il ne manque plus qu'un dernier souvenir pour que le prisonnier retrouve son nom."
+        tours:
+          axelle:
+            - { id: ch07-j3-ax-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 12 × 4.", choices: ["36", "40", "44", "48", "52"], answer: "48", hint: "12 × 4 = 12 × 2 × 2." }
+            - { id: ch07-j3-ax-m4b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 1/2 de 30.", choices: ["10", "15", "20", "25", "5"], answer: "15", hint: "Partage 30 en 2 parts égales." }
+          maelle:
+            - { id: ch07-j3-ma-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 72 ÷ 6.", choices: ["10", "11", "12", "13", "14"], answer: "12", hint: "60 ÷ 6 = 10, puis 12 ÷ 6 = 2." }
+            - { id: ch07-j3-ma-m4b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au futur : « Il (se souvenir) de tout. »", choices: ["il se souvient", "il se souviendra", "il s'est souvenu", "il se souvenait", "il se souviendrait"], answer: "il se souviendra", hint: "Se souvenir : radical se souvien-dr- + a." }
+          rafaelle:
+            - { id: ch07-j3-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 2x + 3 = 5x − 9.", choices: ["2", "3", "4", "5", "6"], answer: "4", hint: "12 = 3x." }
+            - { id: ch07-j3-ra-m4b, subject: francais, level: 4, kind: qcm, prompt: "« Lequel des deux souvenirs était le vrai ? » Quelle est la nature de « lequel » ?", choices: ["adjectif", "pronom interrogatif", "nom", "adverbe", "conjonction"], answer: "pronom interrogatif", hint: "Il remplace un groupe nominal dans une question." }
+    pause: "Le jeu du miroir figé : une sœur fait la statue de papier, immobile, les deux autres essaient de la faire sourire sans la toucher. Dix secondes, puis on change !"
+    closing:
+      - { who: narrateur, text: "À la dernière bonne réponse, le prisonnier ferma les yeux, puis les rouvrit. Et cette fois, il y avait quelque chose dedans. Pas tout. Mais quelque chose." }
+      - { who: habitant, text: "Un cerf-volant… c'était un cerf-volant rouge. Je le faisais voler avec mon fils, sur une plage. Je crois que je m'appelais… Trame. On m'appelait Trame, parce que je tissais toujours une nouvelle histoire pour mon fils, entre deux coups de vent." }
+      - { who: narrateur, text: "Il n'était pas redevenu lui-même tout entier. Mais ses yeux, maintenant, avaient un regard. Et ce regard se posa sur les apprenties avec une gratitude si grande qu'il n'avait pas besoin de mots pour se faire comprendre." }
+      - { who: rafaelle, text: "Trame. On va s'en souvenir, nous, de ce nom. Même si le Tribunal, lui, l'avait oublié." }
+      - { who: maelle, text: "Ce n'est pas juste une épreuve, alors. C'est une vraie personne qu'on a aidée. Je n'arrive plus à croire que le Tribunal protège vraiment quoi que ce soit." }
+      - { who: nilo, text: "Gardez cette colère. Pas pour la laisser déborder. Pour la garder prête, pour le jour du jugement." }
+      - { who: narrateur, text: "Dans le mur de pages, une fissure minuscule apparut, juste derrière le prisonnier. Par cette fissure, on sentait un courant d'air glacé, et un bruit, tout en bas, très loin. Un bruit comme une bouche énorme qui respire." }
+    reward: "un Fragment du Prisonnier, qui porte le nom « Trame »"
+
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: La Trappe sous le Tribunal
+    decor: Une salle basse, humide, où le sol de pages devient fragile. Au centre, une trappe de métal noirci, entrouverte sur un puits sans fond.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, Trame, le prisonnier aux bribes retrouvées, guida les apprenties jusqu'à une salle basse qu'il connaissait, disait-il, « d'avant, de quand j'étais encore tout entier »." }
+      - { who: narrateur, text: "Le sol, ici, n'était plus fait de pages solides, mais de feuilles humides, presque molles, qui s'enfonçaient un peu sous les pas. Au centre de la salle se trouvait une trappe de métal noirci, entrouverte, et de cette ouverture montait un souffle froid." }
+      - { who: trame, text: "C'est là qu'on descendait, les condamnés. Ceux dont le Tribunal décidait que la mémoire ne devait jamais, jamais revenir. On nous disait que nos souvenirs seraient « conservés ». Je n'y ai jamais cru tout à fait." }
+      - { who: plume, text: "Conservés où, en bas de ce trou ? On n'entend pas d'écho. Un puits normal, ça renvoie un écho." }
+      - { who: narrateur, text: "Rafaelle se pencha, prudemment, au-dessus de la trappe. Elle ne vit que du noir, un noir sans fond, sans reflet, qui semblait avaler jusqu'à la lumière des lanternes." }
+      - { who: rafaelle, text: "Il n'y a pas de fond. Ou alors, le fond est tellement loin que la lumière n'arrive jamais jusqu'à lui pour nous le montrer." }
+      - { who: narrateur, text: "Et alors, de très loin, en bas, un bruit monta. Lent, profond, régulier. Comme un souffle immense. Comme une bouche qui attend son prochain repas depuis très, très longtemps." }
+      - { who: maelle, text: "Les souvenirs confisqués… ils ne sont pas rangés, en bas. Ils sont… mangés ?" }
+      - { who: nilo, text: "Je ne sais pas ce qui vit là-dessous, et pour une fois, je préfère ne pas le savoir tout de suite. Reculons. Ce soir." }
+      - { who: narrateur, text: "Personne ne protesta. Même Plume, d'habitude si bavard, referma la trappe en silence, et resta un long moment immobile devant elle, comme s'il écoutait quelque chose que les autres n'entendaient pas." }
+    manches:
+      - id: m1
+        title: Le sol fragile
+        tours:
+          axelle:
+            - { id: ch07-j4-ax-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi le papier devient-il mou quand il est mouillé ?", choices: ["il devient magique", "l'eau abîme les fibres qui le tiennent solide", "le papier a froid", "le papier a peur", "il se transforme en verre"], answer: "l'eau abîme les fibres qui le tiennent solide", hint: "Pense à une feuille tombée dans une flaque." }
+            - { id: ch07-j4-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 13 + 8.", choices: ["19", "20", "21", "22", "23"], answer: "21", hint: "13 + 7 = 20, puis + 1." }
+          maelle:
+            - { id: ch07-j4-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi n'entend-on pas d'écho dans certains très grands puits ?", choices: ["il n'y a jamais d'écho dans un puits", "le son met trop longtemps à revenir, ou se perd en route", "l'écho a peur du noir", "les puits absorbent toujours tout le son", "c'est impossible, il y a toujours un écho"], answer: "le son met trop longtemps à revenir, ou se perd en route", hint: "Plus la distance est grande, plus le son s'affaiblit." }
+            - { id: ch07-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 9,5 − 3,8.", choices: ["5,3", "5,7", "6,3", "5,9", "6,7"], answer: "5,7", hint: "95 − 38 = 57." }
+          rafaelle:
+            - { id: ch07-j4-ra-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Un son met du temps à revenir en écho parce que…", choices: ["le son est immortel", "le son se propage à une vitesse finie dans l'air", "le son n'existe pas dans un puits", "l'écho part avant le son", "le son recule"], answer: "le son se propage à une vitesse finie dans l'air", hint: "Environ 340 mètres par seconde." }
+            - { id: ch07-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Le son met 6 secondes pour faire l'aller-retour dans le puits, à 340 m/s. Quelle est la profondeur approximative ?", choices: ["340 m", "680 m", "1 020 m", "2 040 m", "170 m"], answer: "1 020 m", hint: "Distance totale = 340 × 6, puis divise par 2." }
+      - id: m2
+        title: Le souffle du puits
+        tours:
+          axelle:
+            - { id: ch07-j4-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « froid » dans « un souffle froid » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit le souffle." }
+            - { id: ch07-j4-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 16 − 9.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "16 − 10 = 6, puis + 1." }
+          maelle:
+            - { id: ch07-j4-ma-m2a, subject: francais, level: 3, kind: qcm, prompt: "« Comme une bouche qui attend son repas. » Quelle figure de style reconnais-tu ?", choices: ["une rime", "une comparaison", "une énumération", "une question", "un dialogue"], answer: "une comparaison", hint: "Le mot « comme » introduit un rapprochement." }
+            - { id: ch07-j4-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 180 ÷ 9.", choices: ["18", "19", "20", "21", "22"], answer: "20", hint: "9 × 20 = 180." }
+          rafaelle:
+            - { id: ch07-j4-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Les souvenirs confisqués ne sont pas conservés. » Identifie la négation.", choices: ["ne… que", "ne… jamais", "ne… pas", "ne… plus", "ne… rien"], answer: "ne… pas", hint: "La forme la plus simple de négation." }
+            - { id: ch07-j4-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Simplifie : (2x + 4)/2.", choices: ["x + 2", "x + 4", "2x + 2", "x + 1", "2x"], answer: "x + 2", hint: "Divise chaque terme par 2." }
+      - id: m3
+        title: Le vertige du vide
+        tours:
+          axelle:
+            - { id: ch07-j4-ax-m3a, subject: maths, level: 2, kind: qcm, prompt: "Une trappe est entrouverte de 20 cm. Si elle s'ouvre encore de 15 cm, de combien est-elle ouverte ?", choices: ["25 cm", "30 cm", "35 cm", "40 cm", "5 cm"], answer: "35 cm", hint: "20 + 15." }
+            - { id: ch07-j4-ax-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Un puits sans fond, dans les légendes, sert souvent à représenter…", choices: ["un jardin", "un marché", "un mystère immense ou un danger caché", "une fête", "un pont"], answer: "un mystère immense ou un danger caché", hint: "Ce qu'on ne voit pas fait souvent peur." }
+          maelle:
+            - { id: ch07-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Le puits semble descendre de 50 m tous les 2 étages. Combien de mètres pour 8 étages ?", choices: ["100", "150", "200", "250", "400"], answer: "200", hint: "50 × (8 ÷ 2)." }
+            - { id: ch07-j4-ma-m3b, subject: francais, level: 3, kind: qcm, prompt: "« Reculons. » Quel est le mode de ce verbe ?", choices: ["indicatif", "impératif", "conditionnel", "subjonctif", "infinitif"], answer: "impératif", hint: "C'est un ordre, sans sujet exprimé." }
+          rafaelle:
+            - { id: ch07-j4-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 4³ (4 au cube).", choices: ["12", "16", "48", "64", "81"], answer: "64", hint: "4 × 4 × 4." }
+            - { id: ch07-j4-ra-m3b, subject: histoire-geo, level: 4, kind: qcm, prompt: "Dans certains systèmes de justice anciens, qu'arrivait-il parfois aux preuves gênantes pour le pouvoir ?", choices: ["elles étaient toujours montrées à tous", "elles étaient détruites ou cachées", "elles étaient célébrées", "elles n'existaient jamais", "elles devenaient publiques immédiatement"], answer: "elles étaient détruites ou cachées", hint: "Le pouvoir protège parfois surtout lui-même." }
+      - id: m4
+        title: Le Défi de la Trappe
+        intro: "Les trois apprenties referment la trappe ensemble, sans se laisser aspirer par le vertige du puits."
+        tours:
+          axelle:
+            - { id: ch07-j4-ax-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 9 × 7.", choices: ["56", "60", "63", "66", "70"], answer: "63", hint: "9 × 7 = 9 × 5 + 9 × 2." }
+            - { id: ch07-j4-ax-m4b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 1/3 de 21.", choices: ["3", "5", "7", "9", "11"], answer: "7", hint: "Partage 21 en 3 parts égales." }
+          maelle:
+            - { id: ch07-j4-ma-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 204 ÷ 6.", choices: ["32", "34", "36", "38", "40"], answer: "34", hint: "180 ÷ 6 = 30, puis 24 ÷ 6 = 4." }
+            - { id: ch07-j4-ma-m4b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 6,5 × 4.", choices: ["24", "25", "26", "27", "28"], answer: "26", hint: "6 × 4 = 24 et 0,5 × 4 = 2." }
+          rafaelle:
+            - { id: ch07-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 7x = 3x + 24.", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "4x = 24." }
+            - { id: ch07-j4-ra-m4b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au subjonctif présent : « Il faut que vous (savoir) la vérité. »", choices: ["que vous savez", "que vous sachiez", "que vous saviez", "que vous saurez", "que vous sauriez"], answer: "que vous sachiez", hint: "Radical irrégulier sach- + -iez." }
+    pause: "Le jeu de l'équilibre : marchez toutes les trois sur une ligne imaginaire au sol, sans tomber, en vous tenant par la main. Le sol est fragile, pas de bousculade !"
+    closing:
+      - { who: narrateur, text: "La trappe se referma avec un bruit mat, étouffé, comme si même le métal avait peur de faire trop de bruit ici. Les apprenties reculèrent de plusieurs pas, sans quitter la salle des yeux." }
+      - { who: trame, text: "Je ne savais pas, pour le puits. On nous disait juste : « en bas ». Je n'avais jamais imaginé qu'il y avait quelque chose, tout au fond, qui… respirait." }
+      - { who: axelle, text: "Moi, j'ai pas envie de savoir ce qu'il y a au fond. Enfin, un petit peu envie. Mais surtout pas envie." }
+      - { who: rafaelle, text: "Ce qui est sûr, c'est que ça change tout. Le Scribe ne nous juge pas juste sur un savoir. Il garde, en bas, quelque chose qui a faim de mémoires. On ne peut plus plaider comme si on ne le savait pas." }
+      - { who: nilo, text: "Demain, le Scribe convoque le jury. C'est le jour du jugement. Choisissez bien vos mots, mes lueurs. Je sens que cette nuit va être longue." }
+      - { who: narrateur, text: "Cette nuit-là, dans le brouillard qui entourait le quai de pages, on entendit à nouveau, très loin, ce souffle profond et régulier. Et pour la première fois depuis le début du voyage, Pigeon refusa de dormir sur l'épaule de Rafaelle. Il préféra se percher tout en haut d'une étagère, aussi loin que possible du sol." }
+    reward: "un Éclat du Puits, froid au toucher, qui ne fond jamais"
+
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: Le Jugement
+    decor: La grande salle du Tribunal, cerclée de silhouettes de papier assises en demi-cercle. Le pupitre du Scribe domine la scène, et au loin, la trappe du puits reste entrouverte.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, le Scribe convoqua les apprenties dans la grande salle du Tribunal. Elle n'était pas immense comme la salle du trône de la Reine : elle était pire, d'une certaine façon, parce qu'elle était pleine de monde, et que ce monde n'avait pas de visage." }
+      - { who: narrateur, text: "En demi-cercle, assises sur des bancs de pages pliées, se tenaient des dizaines de silhouettes de papier, immobiles, muettes, qui tournaient toutes la tête en même temps quand les apprenties entrèrent. Le jury." }
+      - { who: scribe, text: "Voici venu le jour du jugement. Vous avez traversé les salles de savoir. Vous avez rencontré Trame, et vous savez, maintenant, ce que ce Tribunal garde sous ses pieds. Que plaidez-vous ?" }
+      - { who: maelle, text: "Vous saviez qu'on avait vu la trappe ? Vous saviez, et vous ne nous avez rien dit ?" }
+      - { who: scribe, text: "Je ne dis jamais rien, apprentie. Je demande. C'est à vous de répondre, maintenant, devant ce jury : pourquoi devrait-on vous laisser vos souvenirs, à vous, et pas à tous les autres, en bas ?" }
+      - { who: narrateur, text: "Un silence tomba sur la salle, si lourd qu'on l'aurait cru fait de pierre plutôt que de papier. Rafaelle regarda ses sœurs, puis Nilo, puis Plume, qui pour une fois ne dit rien du tout, pour les laisser décider." }
+      - { who: nilo, text: "C'est à vous trois de choisir comment plaider. Moi, je connais des légendes. Mais là, il n'y a pas de légende qui réponde à votre place." }
+      - { who: axelle, text: "On a trouvé plein de choses, en chemin. De la bonté, des preuves, et du courage pour dire non quand il faut. On peut peut-être se servir de tout ça." }
+      - { who: narrateur, text: "Le Scribe trempa sa plume dans l'encrier de brouillard, et attendit, immobile, que les apprenties choisissent leur plaidoirie." }
+    manches:
+      - id: m1
+        title: La plaidoirie
+        intro: "Chaque apprentie prépare un argument pour le jury, selon la voie choisie dans la Convergence."
+        tours:
+          axelle:
+            - { id: ch07-j5-ax-m1a, subject: francais, level: 3, kind: qcm, prompt: "Dans une plaidoirie, quel est le but de celui qui parle ?", choices: ["raconter une blague", "endormir le jury", "convaincre le jury", "chanter une chanson", "poser des questions sans fin"], answer: "convaincre le jury", hint: "On cherche à persuader, pas juste à parler." }
+            - { id: ch07-j5-ax-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 15 + 17.", choices: ["30", "31", "32", "33", "34"], answer: "32", hint: "15 + 15 = 30, puis + 2." }
+          maelle:
+            - { id: ch07-j5-ma-m1a, subject: francais, level: 4, kind: qcm, prompt: "Quel registre convient le mieux pour convaincre un juge très sérieux ?", choices: ["familier et plein de blagues", "soutenu et argumenté", "en chuchotant tout le temps", "en chantant", "en répétant le même mot"], answer: "soutenu et argumenté", hint: "Un juge écoute des arguments solides." }
+            - { id: ch07-j5-ma-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15 % de 60.", choices: ["6", "9", "12", "15", "18"], answer: "9", hint: "10 % = 6, 5 % = 3." }
+          rafaelle:
+            - { id: ch07-j5-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Dans un procès, à quoi servent les preuves présentées devant un jury ?", choices: ["à décorer la salle", "à appuyer un argument par des faits", "à faire durer le temps", "à distraire le juge", "elles ne servent à rien"], answer: "à appuyer un argument par des faits", hint: "Un fait vérifiable pèse plus qu'une simple parole." }
+            - { id: ch07-j5-ra-m1b, subject: maths, level: 5, kind: qcm, prompt: "Résous : 3(x − 2) = 2x + 1.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "3x − 6 = 2x + 1." }
+      - id: m2
+        title: Le silence du jury
+        intro: "Pour que le jury de silhouettes se laisse convaincre, chaque apprentie relève un défi de la classe supérieure."
+        tours:
+          axelle:
+            - { id: ch07-j5-ax-m2a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 1/2 de 50.", choices: ["20", "22", "25", "28", "30"], answer: "25", hint: "La moitié de 50." }
+            - { id: ch07-j5-ax-m2b, subject: maths, level: 4, kind: qcm, prompt: "Périmètre d'un triangle de côtés 4 cm, 5 cm et 6 cm ?", choices: ["10 cm", "12 cm", "15 cm", "20 cm", "9 cm"], answer: "15 cm", hint: "4 + 5 + 6." }
+          maelle:
+            - { id: ch07-j5-ma-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 25 % de 160.", choices: ["20", "30", "40", "50", "60"], answer: "40", hint: "25 % = un quart." }
+            - { id: ch07-j5-ma-m2b, subject: maths, level: 5, kind: qcm, prompt: "Aire d'un cercle de rayon 4 (prends π = 3,14) ?", choices: ["12,56", "25,12", "50,24", "16", "8"], answer: "50,24", hint: "Aire = π × rayon²." }
+          rafaelle:
+            - { id: ch07-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Factorise : 8x + 12.", choices: ["4(2x + 3)", "8(x + 12)", "2(4x + 6)", "4(2x + 12)", "4x(2 + 3)"], answer: "4(2x + 3)", hint: "8 et 12 sont tous les deux multiples de 4." }
+            - { id: ch07-j5-ra-m2b, subject: maths, level: 5, kind: qcm, prompt: "Un triangle rectangle a des côtés de l'angle droit de 9 et 12. Combien mesure l'hypoténuse ?", choices: ["15", "21", "13", "225", "11"], answer: "15", hint: "9² + 12² = 81 + 144 = 225." }
+      - id: m3
+        title: Le dernier mot
+        intro: "Chacune dit, dans sa langue ou dans son art, un dernier mot pour le jury."
+        tours:
+          axelle:
+            - { id: ch07-j5-ax-m3a, subject: francais, level: 3, kind: libre, validation: soeurs, prompt: "Invente une phrase courte et courageuse à dire au jury, comme un dernier mot." }
+          maelle:
+            - { id: ch07-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Invente une petite phrase chantée de deux vers pour apaiser le jury, qui rime avec « mémoire »." }
+          rafaelle:
+            - { id: ch07-j5-ra-m3a, subject: espagnol, level: 3, kind: libre, validation: soeurs, prompt: "Dis en espagnol : « Nous disons la vérité. » Puis invente une deuxième phrase en espagnol avec « memoria ».", read: "Decimos la verdad." }
+    pause: "Le jeu des silhouettes : une sœur se tient très droite et immobile comme un membre du jury, les deux autres essaient de deviner, à son seul regard, si elle est convaincue ou pas !"
+    closing:
+      - { who: narrateur, text: "Quand la dernière réponse eut résonné dans la grande salle, les silhouettes du jury se penchèrent toutes ensemble, dans un bruissement de papier qui ressemblait à un murmure. Elles se consultèrent sans un mot, sans un geste qu'on puisse vraiment voir." }
+      - { who: scribe, text: "Le jury s'est consulté. Le jury va délibérer. Et moi… moi, pour la première fois depuis que je tiens cette plume, je ne sais pas d'avance ce qu'il décidera." }
+      - { who: narrateur, text: "Le Scribe leva la main, et dans la salle, toutes les bougies se mirent à vaciller, comme sous l'effet d'un grand courant d'air venu de nulle part. Au loin, derrière un rideau de pages, on entendit, très nettement cette fois, ce souffle lent et profond qui montait de la trappe du puits." }
+      - { who: rafaelle, text: "Quoi qu'il arrive, on a dit la vérité. Toute la vérité. Même celle qui dérange le Tribunal lui-même." }
+      - { who: maelle, text: "Regardez… le sol, là-bas, près de la trappe. Il bouge." }
+      - { who: narrateur, text: "Et en effet, loin derrière le jury, les pages du sol se soulevaient doucement, l'une après l'autre, comme si quelque chose, tout en bas, commençait, enfin, à se réveiller." }
+      - { who: scribe, text: "Silence. Le verdict… n'est pas encore rendu." }
+      - { who: narrateur, text: "La plume du Scribe resta suspendue au-dessus du registre, une goutte d'encre de brouillard tremblant à sa pointe, sans jamais tomber. Et tandis que les apprenties retenaient leur souffle, la trappe, tout au fond de la salle, s'ouvrit un peu plus grand." }
+    reward: "une Page Blanche du Tribunal, qui n'accepte d'être écrite que par la vérité"

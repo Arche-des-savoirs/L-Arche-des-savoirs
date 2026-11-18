@@ -34,7 +34,9 @@ export type Question = z.infer<typeof question>;
 
 /** Question produite par un générateur à graine fixe. */
 export const generated = z.object({ gen: z.string(), count: z.number().int().min(1).max(5).default(1) });
-export const tourItem = z.union([question, generated]);
+/** Révision : pioche pondérée dans l'historique réel de la fille parmi les questions des chapitres précédents (vraie répétition espacée, pas une simple réutilisation). */
+export const reviewItem = z.object({ review: z.literal(true), count: z.number().int().min(1).max(10) });
+export const tourItem = z.union([question, generated, reviewItem]);
 export type TourItem = z.infer<typeof tourItem>;
 
 const line = z.object({ who: z.string(), text: z.string().min(1), to: playerId.optional() });

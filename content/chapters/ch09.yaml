@@ -1,0 +1,386 @@
+# Chapitre 9 — Le Sceau des Trois Lueurs
+# Dernier chapitre de l'Acte I. Suite directe du chapitre 8 (la Dévoreuse, le puits sans fond).
+# Une faille s'est ouverte à la surface du Tribunal des Mémoires : il faut réunir des fragments de
+# lumière pour la sceller avant qu'elle n'engloutisse le Tribunal, puis davantage.
+# Jour 5 : Épreuve de Mémoire — les 3 manches utilisent le mécanisme de révision à graine réelle
+# (resolveReview), aucune question écrite à la main. Décision A/B/C sur la manière de sceller le puits.
+# Clôture d'Acte I chaleureuse, puis touche discrète de mystère pour l'Acte II.
+
+id: ch09
+number: 9
+act: 1
+title: Le Sceau des Trois Lueurs
+introImage: ch09
+scene: sceau-des-trois-lueurs
+
+espagnol:
+  - { es: "La grieta se abre.", fr: "La faille s'ouvre." }
+  - { es: "Buscamos la luz perdida.", fr: "Nous cherchons la lumière perdue." }
+  - { es: "Ella también tiene miedo.", fr: "Elle aussi a peur." }
+  - { es: "Tres luces, un solo sello.", fr: "Trois lumières, un seul sceau." }
+  - { es: "Cerramos el pozo con alegría.", fr: "Nous refermons le puits avec joie." }
+
+decision:
+  prompt: "Le puits est presque refermé. Comment les apprenties doivent-elles poser le dernier sceau ?"
+  options:
+    A:
+      label: Sceller par la joie
+      scene: "Les trois lanternes se mettent à rire — oui, à rire, d'une petite lumière chaude et pétillante. Axelle éclate de rire la première, puis Maelle, puis Rafaelle, et leur joie tombe dans la faille comme une pluie dorée."
+      line: { who: devoreuse, text: "Je n'avais pas senti ça depuis si longtemps. C'est tiède. C'est bon." }
+      habillage: "Le sceau se calcule comme une proportion de lumière : plus on partage, plus on en a, et il faut trouver le bon dosage pour que la faille se referme sans un à-coup."
+    B:
+      label: Sceller par le petit renoncement
+      scene: "Chacune des trois sœurs choisit, dans sa lanterne, un tout petit souvenir — pas un gros, juste un flocon de rien — et le laisse glisser dans la faille, comme une offrande. La faille l'accepte et se resserre d'un cran."
+      line: { who: scribe, text: "Un don librement choisi referme mieux qu'un vol. Voilà la différence entre vous et nous." }
+      habillage: "Le sceau se calcule par soustraction : il faut retirer juste ce qu'il faut, pas plus, pour équilibrer la faille sans se vider."
+    C:
+      label: Sceller en laissant une petite porte
+      scene: "Les apprenties referment presque tout le puits, mais laissent, tout en bas, une fente large comme un fil, par miséricorde. Juste assez pour qu'un souvenir égaré puisse un jour remonter, lui aussi."
+      line: { who: devoreuse, text: "Une porte… pour que personne, jamais, ne soit enfermé comme je l'ai été. Merci." }
+      habillage: "Le sceau se calcule comme un périmètre presque complet : il faut mesurer très précisément la petite ouverture qu'on laisse, ni trop grande, ni fermée tout à fait."
+
+repliquesAbsurdes:
+  - "Monsieur le Scribe, votre puits a un courant d'air. Vous devriez mettre un rideau. Un très grand rideau."
+  - "Moi, mes souvenirs, je les range dans un tiroir. Le tiroir est plein. Il faudrait un deuxième tiroir."
+  - "La Dévoreuse n'a pas mangé mes devoirs, c'est dommage, j'aurais eu une bonne excuse."
+  - "Je répare les failles avec de la colle à paillettes. C'est moins solide, mais c'est plus joli."
+  - "Si le Tribunal efface les mémoires, est-ce qu'il efface aussi les mauvais résultats de maths ? Juste pour savoir."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: La Faille
+    decor: La cour de pierre grise du Tribunal des Mémoires, à la surface, lézardée d'une large faille noire qui fume doucement.
+    opening:
+      - { who: narrateur, text: "Elles remontèrent du puits sans fond les jambes tremblantes, les lanternes presque éteintes, et Plume en forme de petit oiseau noir perché sur l'épaule d'Axelle. Mais la surface qu'elles retrouvèrent n'était plus celle qu'elles avaient quittée." }
+      - { who: narrateur, text: "La grande cour de pierre grise du Tribunal des Mémoires était fendue en deux. Une faille, large comme un bras, courait d'un bout à l'autre des dalles, et il en montait une fumée sombre qui sentait le papier brûlé et les vieux secrets." }
+      - { who: narrateur, text: "Autour, des clercs couraient en tous sens, affolés, serrant contre eux des registres et des dossiers comme s'ils pouvaient empêcher la faille de grandir. Au bord du gouffre, immobile, se tenait le Scribe. Sa longue robe grise était couverte de poussière, et pour la première fois, il n'avait pas l'air d'un juge." }
+      - { who: scribe, text: "Nous avons eu tort. Pendant des siècles, nous avons effacé des mémoires par peur de ce qu'elles pouvaient réveiller. Et c'est cette peur, entassée, qui a creusé ce gouffre. Je le vois, maintenant. Trop tard, peut-être." }
+      - { who: rafaelle, text: "Il n'est jamais trop tard pour dire la vérité. Même un juge peut se tromper. C'est même plutôt courageux de le dire devant tout le monde." }
+      - { who: narrateur, text: "Sous leurs pieds, les dalles craquèrent encore un peu, et un pan de la cour bascula dans la fumée noire, en silence, comme avalé. Plume frissonna et reprit sa forme de renard, bien plus rassurante pour parler." }
+      - { who: plume, text: "Ce n'est pas qu'une faille dans la pierre. C'est une faille dans tout ce qui tient le Tribunal debout. Si elle continue de s'ouvrir, elle n'avalera pas que ces vieux murs." }
+      - { who: nilo, text: "J'ai déjà vu des brèches, des gouffres, des trous sans fond. J'ai même un jour vendu une carte pour en sortir — fausse, celle-là. Mais je n'ai jamais vu une faille qui fume des souvenirs. On va avoir besoin d'autre chose que d'une carte." }
+      - { who: scribe, text: "Il existe une vieille méthode, oubliée de tous sauf des archives les plus profondes : le Sceau des Trois Lueurs. Trois lumières différentes, nées de trois cœurs différents, peuvent refermer ce que la peur a ouvert. Mais il faut les rassembler, fragment par fragment, à travers tout le Tribunal." }
+      - { who: axelle, text: "Alors on a cinq jours pour sauver un tribunal entier qui, hier, voulait nous enfermer ? C'est un monde bizarre." }
+      - { who: narrateur, text: "Le Scribe baissa les yeux, presque honteux, et pour la première fois depuis qu'elles le connaissaient, il s'inclina devant les trois sœurs — un vrai salut, pas une formalité de cour de justice." }
+    manches:
+      - id: m1
+        title: Le gouffre qui fume
+        intro: "La faille grandit à vue d'œil. Il faut d'abord comprendre comment elle se comporte pour espérer la freiner."
+        tours:
+          axelle:
+            - { id: ch09-j1-ax-m1a, subject: sciences, level: 1, kind: qcm, prompt: "De la fumée, ça monte ou ça descend dans l'air ?", choices: ["ça descend toujours", "ça reste immobile", "ça monte", "ça tourne en rond", "ça disparaît tout de suite"], answer: "ça monte", hint: "Regarde la fumée d'une bougie qu'on vient de souffler." }
+            - { id: ch09-j1-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "La faille mesure 4 m, puis elle s'allonge de 3 m. Combien mesure-t-elle maintenant ?", choices: ["5 m", "6 m", "7 m", "8 m", "1 m"], answer: "7 m", hint: "4 + 3." }
+          maelle:
+            - { id: ch09-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi une fumée s'élève-t-elle dans l'air ?", choices: ["elle est plus froide que l'air", "elle est plus chaude et plus légère que l'air", "elle est attirée par le ciel", "elle fuit la lumière", "elle est poussée par le vent uniquement"], answer: "elle est plus chaude et plus légère que l'air", hint: "L'air chaud monte, comme dans une montgolfière." }
+            - { id: ch09-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "La faille s'agrandit de 12 cm chaque heure. De combien s'agrandit-elle en 5 heures ?", choices: ["50 cm", "55 cm", "60 cm", "65 cm", "17 cm"], answer: "60 cm", hint: "12 × 5." }
+          rafaelle:
+            - { id: ch09-j1-ra-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Un gaz chaud est, à volume égal, en général…", choices: ["plus dense qu'un gaz froid", "moins dense qu'un gaz froid", "aussi dense qu'un gaz froid", "toujours plus lourd", "sans rapport avec sa densité"], answer: "moins dense qu'un gaz froid", hint: "C'est pour ça que l'air chaud s'élève." }
+            - { id: ch09-j1-ra-m1b, subject: maths, level: 3, kind: qcm, prompt: "La faille s'ouvre de 8 % par heure. Au bout d'une heure, une faille de 200 cm mesure environ…", choices: ["208 cm", "216 cm", "280 cm", "160 cm", "192 cm"], answer: "216 cm", hint: "8 % de 200, c'est 16." }
+      - id: m2
+        title: Les clercs affolés
+        tours:
+          axelle:
+            - { id: ch09-j1-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "« Le Scribe est courageux. » Quelle est la nature du mot « courageux » ?", choices: ["un nom", "un adjectif", "un verbe", "un adverbe", "un pronom"], answer: "un adjectif", hint: "Il décrit le Scribe." }
+            - { id: ch09-j1-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Il y a 9 clercs qui courent, puis 6 de plus arrivent. Combien de clercs en tout ?", choices: ["13", "14", "15", "16", "3"], answer: "15", hint: "9 + 6." }
+          maelle:
+            - { id: ch09-j1-ma-m2a, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Ils (courir) dans la cour. »", choices: ["ils courraient", "ils ont couru", "ils courent", "ils couraient", "ils courront"], answer: "ils ont couru", hint: "Avoir + participe passé de courir." }
+            - { id: ch09-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "24 clercs se répartissent en 4 groupes égaux. Combien de clercs par groupe ?", choices: ["4", "5", "6", "8", "12"], answer: "6", hint: "24 ÷ 4." }
+          rafaelle:
+            - { id: ch09-j1-ra-m2a, subject: francais, level: 3, kind: qcm, prompt: "« Le Scribe, honteux, s'inclina devant les trois sœurs. » Quelle est la fonction de « honteux » ?", choices: ["complément du nom", "épithète détachée (apposition)", "complément d'objet direct", "sujet", "complément circonstanciel"], answer: "épithète détachée (apposition)", hint: "Il est séparé du nom par des virgules et le qualifie." }
+            - { id: ch09-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Un registre pèse 1,2 kg. Combien pèsent 15 registres ?", choices: ["15 kg", "16,2 kg", "18 kg", "13,2 kg", "20 kg"], answer: "18 kg", hint: "1,2 × 15." }
+      - id: m3
+        title: La vieille méthode
+        intro: "Le Scribe explique le Sceau des Trois Lueurs : une question d'équilibre entre trois forces."
+        tours:
+          axelle:
+            - { id: ch09-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Combien font 3 lanternes + 3 lanternes + 3 lanternes ?", choices: ["6", "9", "12", "3", "15"], answer: "9", hint: "3 + 3 + 3." }
+            - { id: ch09-j1-ax-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Un tribunal, c'est un lieu où l'on…", choices: ["cuisine", "rend la justice", "dort", "cultive des légumes", "répare des bateaux"], answer: "rend la justice", hint: "On y juge ce qui est juste ou pas." }
+          maelle:
+            - { id: ch09-j1-ma-m3a, subject: maths, level: 2, kind: qcm, prompt: "Trois lumières identiques éclairent ensemble. Si une seule vaut 4, que valent les trois ensemble ?", choices: ["8", "10", "12", "16", "4"], answer: "12", hint: "4 × 3." }
+            - { id: ch09-j1-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Dans un tribunal, la personne qui juge s'appelle…", choices: ["le témoin", "l'avocat", "le juge", "le greffier seulement", "le public"], answer: "le juge", hint: "C'est lui qui décide, à la fin." }
+          rafaelle:
+            - { id: ch09-j1-ra-m3a, subject: maths, level: 3, kind: qcm, prompt: "Trois lumières égales doivent totaliser 90. Quelle est la valeur de chacune ?", choices: ["20", "25", "30", "45", "15"], answer: "30", hint: "90 ÷ 3." }
+            - { id: ch09-j1-ra-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "La justice, dans beaucoup de sociétés anciennes, était souvent symbolisée par une balance. Que représente l'équilibre de la balance ?", choices: ["la rapidité du jugement", "l'impartialité, peser le pour et le contre", "la richesse du tribunal", "le nombre de juges", "le poids des registres"], answer: "l'impartialité, peser le pour et le contre", hint: "Les deux plateaux doivent être à égalité." }
+      - id: m4
+        title: Le Défi de la Faille
+        tours:
+          axelle:
+            - { id: ch09-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 + 7.", choices: ["14", "15", "16", "17", "13"], answer: "15", hint: "8 + 8 = 16, donc 8 + 7, c'est un de moins." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch09-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 48 × 5.", choices: ["200", "220", "240", "250", "480"], answer: "240", hint: "48 × 10 = 480, puis la moitié." }
+            - { gen: maths.comparer }
+          rafaelle:
+            - { id: ch09-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « la grieta ».", choices: ["le puits", "le mur", "la faille", "la lumière", "la peur"], answer: "la faille", hint: "Regarde la phrase du jour." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu de la faille : tracez une ligne au sol (ou imaginez-la). Sautez par-dessus tous ensemble, en comptant jusqu'à trois, sans se toucher !"
+    closing:
+      - { who: narrateur, text: "Le Scribe tendit aux apprenties trois petits coffrets de cristal, un pour chacune, vides pour l'instant. « Les fragments de lumière s'y rangeront d'eux-mêmes, dit-il, si vous les trouvez honnêtement. » Puis il désigna les couloirs qui partaient en étoile depuis la cour fendue." }
+      - { who: narrateur, text: "« Allez voir ceux que vous avez déjà croisés sur votre route. Un voleur sans carte, un fantôme étourdi, un épouvantail bavard. Ils gardent peut-être, sans le savoir, un peu de la lumière qu'il nous faut. »" }
+      - { who: nilo, text: "Si c'est un voleur sans carte que tu cherches, je suis juste là. Enchanté de me chercher moi-même, pour une fois." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs s'élançaient dans le premier couloir, la faille, derrière elles, émit un long soupir sombre — presque une plainte — avant de se taire, pour un moment." }
+
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Les fragments épars
+    decor: Les couloirs et les archives du Tribunal, où errent encore les silhouettes familières rencontrées aux chapitres précédents.
+    opening:
+      - { who: narrateur, text: "Le deuxième jour, les apprenties partirent chacune de leur côté, puis se retrouvèrent, puis repartirent encore, dans un tourbillon de couloirs qui ne menaient jamais tout à fait où l'on croyait. Le Tribunal, sans ses certitudes, ressemblait à un labyrinthe un peu perdu, lui aussi." }
+      - { who: narrateur, text: "Dans la salle des archives poussiéreuses, elles tombèrent sur Nilo, en train de fouiller un tiroir qui n'était manifestement pas le sien." }
+      - { who: nilo, text: "Je ne vole rien ! Je cherche. C'est très différent. Enfin, presque. Tenez, regardez ce que j'ai trouvé coincé entre deux vieux dossiers : un fragment qui brille comme une pièce d'or. Je vous le donne. Gratuitement. C'est historique." }
+      - { who: narrateur, text: "Plus loin, dans une alcôve humide, l'Épouvantail du marché aux souvenirs s'était pris les manches dans une corde à linge tendue entre deux étagères, et pestait tout seul contre son propre bras de paille." }
+      - { who: epouvantail, text: "Ah ! Vous voilà ! Aidez-moi donc à me démêler, et en échange, je vous raconte où j'ai caché un petit bout de lumière, il y a bien longtemps, pour le protéger des voleurs. Pas Nilo, hein. D'autres voleurs. Enfin, peut-être Nilo aussi, un peu." }
+      - { who: mouf, text: "Moi j'ai vu une lumière, l'autre jour. Ou peut-être que c'était hier. Ou avant-hier. Enfin, elle était jolie, je m'en souviens de ça." }
+      - { who: maelle, text: "Mouf, concentre-toi juste une minute : c'était où ?" }
+      - { who: mouf, text: "Dans un endroit avec beaucoup de poussière et un peu d'écho. Ça aide ?" }
+      - { who: rafaelle, text: "Ça décrit à peu près tout le Tribunal, Mouf. Mais on va chercher quand même." }
+    manches:
+      - id: m1
+        title: Le fragment de Nilo
+        tours:
+          axelle:
+            - { id: ch09-j2-ax-m1a, subject: maths, level: 1, kind: qcm, prompt: "Combien de pièces d'or dans 2 petits sacs de 5 pièces chacun ?", choices: ["7", "8", "9", "10", "15"], answer: "10", hint: "5 + 5." }
+            - { id: ch09-j2-ax-m1b, subject: francais, level: 2, kind: qcm, prompt: "Quel est le contraire de « honnête » ?", choices: ["gentil", "menteur", "rapide", "gourmand", "fatigué"], answer: "menteur", hint: "Quelqu'un qui ne dit pas la vérité." }
+          maelle:
+            - { id: ch09-j2-ma-m1a, subject: maths, level: 2, kind: qcm, prompt: "Nilo trouve 7 pièces, puis en perd 3 en courant. Combien lui en reste-t-il ?", choices: ["3", "4", "5", "10", "2"], answer: "4", hint: "7 − 3." }
+            - { id: ch09-j2-ma-m1b, subject: francais, level: 3, kind: qcm, prompt: "« Je ne vole rien, je cherche. » Quel est le sujet du verbe « cherche » ?", choices: ["rien", "vole", "je", "ne", "cherche"], answer: "je", hint: "Qui cherche ?" }
+          rafaelle:
+            - { id: ch09-j2-ra-m1a, subject: maths, level: 3, kind: qcm, prompt: "Nilo partage équitablement 45 pièces entre 5 personnes. Combien chacune en reçoit-elle ?", choices: ["7", "8", "9", "10", "15"], answer: "9", hint: "45 ÷ 5." }
+            - { id: ch09-j2-ra-m1b, subject: francais, level: 3, kind: qcm, prompt: "« Enchanté de me chercher moi-même. » Quelle figure de style Nilo utilise-t-il, en plaisantant sur lui-même ?", choices: ["la métaphore", "l'autodérision (ironie sur soi)", "la comparaison", "l'hyperbole uniquement", "la personnification"], answer: "l'autodérision (ironie sur soi)", hint: "Il se moque gentiment de lui-même." }
+      - id: m2
+        title: Les manches de l'Épouvantail
+        intro: "Il faut démêler les cordes de l'Épouvantail avant qu'il n'accepte de parler."
+        tours:
+          axelle:
+            - { id: ch09-j2-ax-m2a, subject: maths, level: 2, kind: qcm, prompt: "Une corde mesure 12 m, on en coupe 5 m. Combien reste-t-il ?", choices: ["5 m", "6 m", "7 m", "8 m", "17 m"], answer: "7 m", hint: "12 − 5." }
+            - { id: ch09-j2-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Un épouvantail est fait surtout de…", choices: ["pierre", "paille et de tissu", "métal", "verre", "chocolat"], answer: "paille et de tissu", hint: "Pour faire peur aux oiseaux, pas cher à fabriquer." }
+          maelle:
+            - { id: ch09-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Trois cordes de 2,5 m chacune. Quelle longueur au total ?", choices: ["5 m", "6,5 m", "7 m", "7,5 m", "8 m"], answer: "7,5 m", hint: "2,5 × 3." }
+            - { id: ch09-j2-ma-m2b, subject: francais, level: 3, kind: qcm, prompt: "Accorde : « Les manches (emmêlé) de l'épouvantail. »", choices: ["emmêlé", "emmêlés", "emmêlées", "emmêlée", "emmêler"], answer: "emmêlées", hint: "Manches : féminin pluriel." }
+          rafaelle:
+            - { id: ch09-j2-ra-m2a, subject: maths, level: 3, kind: qcm, prompt: "Une corde de 15 m est coupée en morceaux de 1,5 m. Combien de morceaux obtient-on ?", choices: ["8", "9", "10", "12", "15"], answer: "10", hint: "15 ÷ 1,5." }
+            - { id: ch09-j2-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Pas Nilo, hein. D'autres voleurs. » Quel effet produit cette phrase courte et hésitante ?", choices: ["elle rend le discours plus solennel", "elle crée un effet comique d'hésitation", "elle allonge la description", "elle sert à citer un proverbe", "elle n'a aucun effet particulier"], answer: "elle crée un effet comique d'hésitation", hint: "L'Épouvantail se reprend en plein doute." }
+      - id: m3
+        title: La mémoire brouillée de Mouf
+        tours:
+          axelle:
+            - { id: ch09-j2-ax-m3a, subject: francais, level: 2, kind: qcm, prompt: "« Mouf ne se souvient de rien. » Quelle est la nature du mot « rien » ici ?", choices: ["un adjectif", "un verbe", "un pronom", "un adverbe", "un nom propre"], answer: "un pronom", hint: "Il remplace quelque chose qu'on ne nomme pas." }
+            - { id: ch09-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Mouf a oublié 4 souvenirs hier et 3 aujourd'hui. Combien au total ?", choices: ["5", "6", "7", "8", "1"], answer: "7", hint: "4 + 3." }
+          maelle:
+            - { id: ch09-j2-ma-m3a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Quand on raconte des événements « hier », « avant-hier », de quoi parle-t-on ?", choices: ["de l'avenir", "du passé", "du présent seulement", "d'un lieu", "d'une légende uniquement"], answer: "du passé", hint: "Ce sont des jours déjà écoulés." }
+            - { id: ch09-j2-ma-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au plus-que-parfait : « Elle (voir) une lumière. »", choices: ["elle voit", "elle a vu", "elle avait vu", "elle verra", "elle voyait"], answer: "elle avait vu", hint: "Avoir à l'imparfait + participe passé." }
+          rafaelle:
+            - { id: ch09-j2-ra-m3a, subject: francais, level: 4, kind: qcm, prompt: "« Ça décrit à peu près tout le Tribunal, Mouf. » Que cherche à faire comprendre Rafaelle par cette réplique ?", choices: ["que la description est trop précise", "que la description de Mouf ne permet pas de localiser l'endroit", "qu'elle connaît déjà cet endroit", "qu'elle ne croit pas Mouf", "qu'elle veut changer de sujet"], answer: "que la description de Mouf ne permet pas de localiser l'endroit", hint: "« poussière » et « écho » décrivent presque tout le bâtiment." }
+            - { id: ch09-j2-ra-m3b, subject: maths, level: 3, kind: qcm, prompt: "Mouf se souvient d'un quart de ce qu'il a vu, soit 6 détails. Combien de détails a-t-il vus en tout ?", choices: ["10", "18", "24", "30", "12"], answer: "24", hint: "6 représente 1/4 du total." }
+      - id: m4
+        title: Le Défi des Couloirs
+        tours:
+          axelle:
+            - { id: ch09-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 23 + 29.", choices: ["42", "50", "52", "62", "53"], answer: "52", hint: "23 + 30 = 53, puis − 1." }
+            - { id: ch09-j2-ax-m4b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 80 − 34.", choices: ["46", "44", "54", "56", "36"], answer: "46", hint: "80 − 30 = 50, puis − 4." }
+          maelle:
+            - { id: ch09-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 144 ÷ 4.", choices: ["32", "34", "36", "38", "40"], answer: "36", hint: "120 ÷ 4 = 30, et 24 ÷ 4 = 6." }
+            - { id: ch09-j2-ma-m4b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au futur : « Elles (retrouver) ».", choices: ["elles retrouvent", "elles retrouvaient", "elles retrouveront", "elles ont retrouvé", "elles retrouveraient"], answer: "elles retrouveront", hint: "L'infinitif + -ont." }
+          rafaelle:
+            - { id: ch09-j2-ra-m4a, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au conditionnel présent : « Tu (pouvoir) ».", choices: ["tu pouvais", "tu pourras", "tu pourrais", "tu as pu", "tu peux"], answer: "tu pourrais", hint: "Un futur un peu adouci : pourr- + ais." }
+            - { id: ch09-j2-ra-m4b, subject: maths, level: 3, kind: qcm, prompt: "Calcule la moyenne de 4, 6, 8 et 10.", choices: ["6", "7", "8", "9", "28"], answer: "7", hint: "La somme fait 28. Divise par 4." }
+    pause: "Le jeu du fil démêlé : une sœur fait semblant d'être emmêlée dans une corde invisible, les autres doivent la libérer par des gestes mimés, sans parler !"
+    closing:
+      - { who: narrateur, text: "À la fin de la journée, les trois coffrets de cristal n'étaient plus tout à fait vides. Une petite lueur dorée dansait au fond de chacun, minuscule, mais bien réelle. Nilo, l'Épouvantail et même Mouf, à sa manière embrouillée, avaient tenu leur promesse." }
+      - { who: epouvantail, text: "Voilà. Et maintenant, démêlez-moi pour de bon, s'il vous plaît. J'ai des cordes bien plus intéressantes à embrouiller ailleurs." }
+      - { who: narrateur, text: "En traversant la cour fendue pour rentrer, les apprenties remarquèrent que la faille avait un peu grandi, encore. Mais, pour la première fois, elle ne fumait plus de noir. Elle fumait d'un gris plus pâle, presque doré par endroits." }
+      - { who: plume, text: "C'est elle. La Dévoreuse. Elle sent qu'on cherche à réparer, et pas à punir. Je crois qu'elle hésite, en bas, à savoir si elle doit nous aider ou se méfier." }
+
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: Le geste envers la Dévoreuse
+    decor: Le bord du puits, rouvert par la faille. Une ombre immense s'y tient, à moitié hors de l'eau de ténèbres, hésitante.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, les apprenties redescendirent au bord du puits, non pour y plonger cette fois, mais pour s'y pencher. La faille, en grandissant, l'avait rouvert tout près de la surface, et l'on pouvait désormais voir, sans descendre, l'immense forme sombre qui s'y tenait." }
+      - { who: narrateur, text: "La Dévoreuse n'avait plus tout à fait la même allure que lors de leur première rencontre. Elle semblait plus petite, ou peut-être était-ce elles qui la regardaient différemment, maintenant qu'elles savaient qui elle avait été." }
+      - { who: devoreuse, text: "Vous revenez. Pour me refermer dans mon trou, cette fois, pour de bon ? Ou pour autre chose ?" }
+      - { who: maelle, text: "On revient parce qu'on a promis qu'on reviendrait. Pas pour te punir. On ne t'a jamais vue comme une punition à donner." }
+      - { who: narrateur, text: "L'ombre immense trembla, comme secouée d'un frisson, et un peu de sa fumée noire s'éclaircit encore, par plaques, comme une nuit qui commence à laisser passer l'aube." }
+      - { who: devoreuse, text: "Personne, avant vous, n'était jamais redescendu juste pour parler. Ils venaient tous jeter quelque chose, ou reprendre quelque chose. Jamais juste… venir." }
+      - { who: nilo, text: "Dans ma vie de voleur, j'ai croisé beaucoup de monde qui n'attendait qu'une chose : qu'on revienne, pour de vrai. On dirait que c'est plutôt rare, dans n'importe quel royaume." }
+      - { who: plume, text: "Elle a gardé tant de mémoires volées en elle, pendant si longtemps, qu'elle en a presque oublié la sienne. Peut-être qu'on peut l'aider à la retrouver, un petit bout à la fois." }
+      - { who: axelle, text: "On pourrait lui offrir un de nos souvenirs, nous. Un joli. Pour qu'elle en ait au moins un qui ne fait pas peur." }
+    manches:
+      - id: m1
+        title: Les souvenirs volés
+        tours:
+          axelle:
+            - { id: ch09-j3-ax-m1a, subject: francais, level: 2, kind: qcm, prompt: "Quel est le contraire de « voler » (prendre sans permission) ?", choices: ["offrir", "cacher", "garder", "oublier", "perdre"], answer: "offrir", hint: "Donner, au lieu de prendre." }
+            - { id: ch09-j3-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "La Dévoreuse a gardé des souvenirs pendant 100 ans, puis encore 50 ans. Total ?", choices: ["100", "120", "140", "150", "160"], answer: "150", hint: "100 + 50." }
+          maelle:
+            - { id: ch09-j3-ma-m1a, subject: francais, level: 3, kind: qcm, prompt: "« Elle en a presque oublié la sienne. » Que remplace le pronom « la sienne » ?", choices: ["sa fumée", "sa mémoire", "sa peur", "sa punition", "sa couronne"], answer: "sa mémoire", hint: "Relis la phrase juste avant." }
+            - { id: ch09-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Sur 300 souvenirs volés, 1/3 sont joyeux. Combien de souvenirs joyeux ?", choices: ["50", "90", "100", "150", "200"], answer: "100", hint: "300 ÷ 3." }
+          rafaelle:
+            - { id: ch09-j3-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Personne, avant vous, n'était jamais redescendu juste pour parler. » Quel type de phrase est-ce, par sa construction (négation renforcée) ?", choices: ["une phrase exclamative", "une phrase négative restrictive (« ne… jamais »)", "une phrase interrogative", "une phrase injonctive", "une phrase nominale"], answer: "une phrase négative restrictive (« ne… jamais »)", hint: "Deux mots de négation s'y ajoutent : personne et jamais." }
+            - { id: ch09-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "La Dévoreuse a absorbé des souvenirs pendant 12 siècles. Combien d'années cela représente-t-il ?", choices: ["120", "1 200", "12 000", "1 020", "2 100"], answer: "1 200", hint: "1 siècle = 100 ans." }
+      - id: m2
+        title: Le cadeau d'Axelle
+        intro: "Les apprenties choisissent un souvenir joyeux à offrir à la Dévoreuse."
+        tours:
+          axelle:
+            - { id: ch09-j3-ax-m2a, subject: musique, level: 2, kind: qcm, prompt: "Pour offrir un souvenir joyeux en musique, on choisit plutôt…", choices: ["une musique très triste et lente", "une musique joyeuse et entraînante", "le silence complet", "un bruit de tonnerre", "une seule note très grave"], answer: "une musique joyeuse et entraînante", hint: "Pense à une fête, pas à un enterrement." }
+            - { id: ch09-j3-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule le double de 7.", choices: ["12", "13", "14", "15", "21"], answer: "14", hint: "7 + 7." }
+          maelle:
+            - { id: ch09-j3-ma-m2a, subject: francais, level: 3, kind: qcm, prompt: "Choisis l'adjectif qui décrit le mieux un souvenir qu'on veut offrir à la Dévoreuse : un souvenir…", choices: ["effrayant", "chaleureux", "glacial", "oublié", "volé"], answer: "chaleureux", hint: "Le but est de la rassurer, pas de lui faire peur." }
+            - { id: ch09-j3-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Trois souvenirs offerts valent 15 points de lumière chacun. Total ?", choices: ["30", "35", "40", "45", "18"], answer: "45", hint: "15 × 3." }
+          rafaelle:
+            - { id: ch09-j3-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Offrir, au lieu de reprendre. » Quelle relation logique exprime « au lieu de » ?", choices: ["la cause", "la conséquence", "l'opposition / la substitution", "le but", "la comparaison d'égalité"], answer: "l'opposition / la substitution", hint: "On remplace une action par une autre, différente." }
+            - { id: ch09-j3-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Un souvenir perd 20 % de son intensité chaque année. Une intensité de départ de 50 vaut, après un an, environ…", choices: ["30", "40", "45", "48", "10"], answer: "40", hint: "20 % de 50, c'est 10." }
+      - id: m3
+        title: La fumée qui s'éclaircit
+        tours:
+          axelle:
+            - { id: ch09-j3-ax-m3a, subject: sciences, level: 2, kind: qcm, prompt: "Quand un ciel très sombre laisse passer un peu de lumière, il devient…", choices: ["plus sombre encore", "plus clair", "invisible", "plus bruyant", "plus froid uniquement"], answer: "plus clair", hint: "La lumière éclaircit toujours ce qu'elle touche." }
+            - { id: ch09-j3-ax-m3b, subject: francais, level: 2, kind: qcm, prompt: "« La fumée s'éclaircit. » Quel est le verbe de cette phrase ?", choices: ["la", "fumée", "s'éclaircit", "la fumée", "s'"], answer: "s'éclaircit", hint: "Que fait la fumée ?" }
+          maelle:
+            - { id: ch09-j3-ma-m3a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi le ciel semble-t-il s'éclaircir avant le lever du soleil ?", choices: ["parce que les étoiles s'approchent", "parce que la lumière du soleil, encore sous l'horizon, diffuse déjà dans l'atmosphère", "parce que la lune s'éteint", "parce que le vent nettoie le ciel", "ce n'est pas vrai, le ciel ne s'éclaircit pas avant"], answer: "parce que la lumière du soleil, encore sous l'horizon, diffuse déjà dans l'atmosphère", hint: "C'est ce qu'on appelle l'aube." }
+            - { id: ch09-j3-ma-m3b, subject: maths, level: 3, kind: qcm, prompt: "La noirceur de la Dévoreuse diminue de 1/4 chaque jour. Au bout de 4 jours égaux, elle a diminué de…", choices: ["1/4", "2/4", "3/4", "4/4 (la totalité)", "1/2"], answer: "4/4 (la totalité)", hint: "4 fois 1/4, ça fait 4/4." }
+          rafaelle:
+            - { id: ch09-j3-ra-m3a, subject: sciences, level: 4, kind: qcm, prompt: "Le phénomène qui disperse la lumière du soleil dans l'atmosphère avant le lever du jour s'appelle principalement…", choices: ["la réfraction uniquement", "la diffusion de la lumière (diffusion de Rayleigh)", "la réflexion totale", "l'absorption complète", "l'éclipse"], answer: "la diffusion de la lumière (diffusion de Rayleigh)", hint: "C'est aussi ce qui donne sa couleur au ciel bleu." }
+            - { id: ch09-j3-ra-m3b, subject: maths, level: 4, kind: qcm, prompt: "Une noirceur de 80 diminue de 15 % par jour pendant 2 jours. Que vaut-elle environ après ces 2 jours ?", choices: ["68", "65", "58", "56", "50"], answer: "58", hint: "80 → 68 → 68 − 10,2 ≈ 58." }
+    pause: "Le théâtre d'ombres apaisées : une sœur mime une émotion douce (joie, calme, tendresse) avec juste ses mains devant une lumière, les autres devinent."
+    closing:
+      - { who: narrateur, text: "Quand Axelle tendit, au bord du puits, un petit éclat de lumière tiède — un souvenir de rire partagé entre les trois sœurs —, la Dévoreuse resta longtemps sans bouger. Puis, très lentement, une forme de main sombre s'avança et referma ses doigts d'ombre autour du don, avec une douceur étonnante pour une créature si immense." }
+      - { who: devoreuse, text: "Un rire… je n'en avais plus un seul, à moi. Merci. Je crois… je crois que je peux vous aider, pour le sceau. Juste cette fois." }
+      - { who: narrateur, text: "Et dans la fumée qui montait du puits, une toute petite lueur dorée se mit à flotter, hésitante, avant de venir se poser doucement au fond du coffret de cristal de Rafaelle, comme un oiseau timide qui se décide enfin à atterrir." }
+      - { who: scribe, text: "Si même elle accepte d'aider à refermer ce qu'elle a si longtemps gardé ouvert… alors peut-être que nous aussi, un jour, nous pourrons réparer ce que nous avons cassé." }
+
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Les préparatifs du sceau
+    decor: La grande salle du Tribunal, vidée de ses bancs de justice, transformée en atelier de fortune pour préparer le sceau.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, le Scribe fit évacuer la grande salle du Tribunal, celle-là même où, quelques jours plus tôt, les apprenties avaient été jugées. Les bancs du public furent repoussés contre les murs, et l'on installa au centre un grand cercle tracé à la craie blanche, juste au-dessus de l'endroit où la faille passait, deux étages plus bas." }
+      - { who: narrateur, text: "« C'est ici, dit le Scribe, que se fera le sceau, demain, au cinquième jour. Mais un sceau mal préparé se brise. Il faut que chaque fragment de lumière trouve sa juste place, et que chacune de vous soit prête, dans son cœur, à ce qu'elle va faire. »" }
+      - { who: veilleur, text: "J'ai vu bien des rituels se dérouler dans ce Tribunal, au fil des années. Jamais un comme celui-ci. D'habitude, on efface. Cette fois, on construit." }
+      - { who: rafaelle, text: "Construire, c'est toujours plus difficile qu'effacer. Mais c'est aussi beaucoup plus solide, à la fin." }
+      - { who: narrateur, text: "Le Passeur du fleuve de brume, convoqué lui aussi on ne sait comment, déposa sur le cercle de craie trois petites barques miniatures, taillées dans un bois clair. « Pour que chaque lumière traverse jusqu'au bon endroit, sans se perdre en chemin », expliqua-t-il, avant de repartir aussi discrètement qu'il était venu." }
+      - { who: fil, text: "Moi, je peux vous aider à mesurer l'exactitude du cercle. Un fil tendu ne ment jamais sur une distance." }
+      - { who: nilo, text: "Et moi, je connais un dernier raccourci pour remonter les trois coffrets au même instant. C'est le seul moment de ma vie où je serai pile à l'heure pour quelque chose." }
+      - { who: narrateur, text: "Mais alors que tous s'activaient autour du cercle, Maelle remarqua que le Scribe, un peu à l'écart, regardait fixement une vieille cicatrice sur le mur de pierre — un endroit où, visiblement, on avait autrefois gratté une inscription entière, comme pour la faire disparaître." }
+      - { who: maelle, text: "Qu'est-ce qui était écrit là, avant qu'on l'efface ?" }
+      - { who: scribe, text: "Le nom de la toute première prisonnière de ce Tribunal. Celle qu'on appelle aujourd'hui la Dévoreuse. Nous avions même effacé jusqu'à son nom. Demain, avec votre aide, j'aimerais le lui rendre." }
+    manches:
+      - id: m1
+        title: Le cercle de craie
+        tours:
+          axelle:
+            - { id: ch09-j4-ax-m1a, subject: maths, level: 3, kind: qcm, prompt: "Un cercle a-t-il des côtés droits ?", choices: ["oui, quatre", "oui, trois", "non, aucun", "oui, six", "ça dépend de sa taille"], answer: "non, aucun", hint: "Un cercle est une courbe, sans angle." }
+            - { id: ch09-j4-ax-m1b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Qu'est-ce qu'un « rituel » ?", choices: ["un repas ordinaire", "une suite d'actions précises répétées pour un moment important", "un jeu de cartes", "un simple mot magique", "une punition"], answer: "une suite d'actions précises répétées pour un moment important", hint: "On le fait toujours de la même façon, pour un moment solennel." }
+          maelle:
+            - { id: ch09-j4-ma-m1a, subject: maths, level: 3, kind: qcm, prompt: "Le centre d'un cercle est à 3 m de chaque point du bord. Comment appelle-t-on cette distance ?", choices: ["le diamètre", "le périmètre", "le rayon", "la corde", "la circonférence"], answer: "le rayon", hint: "C'est la distance du centre jusqu'au bord." }
+            - { id: ch09-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Si le rayon d'un cercle est 4 m, quel est son diamètre ?", choices: ["2 m", "4 m", "6 m", "8 m", "16 m"], answer: "8 m", hint: "Le diamètre, c'est deux fois le rayon." }
+          rafaelle:
+            - { id: ch09-j4-ra-m1a, subject: maths, level: 4, kind: qcm, prompt: "Calcule le périmètre d'un cercle de rayon 3 (prends π = 3,14).", choices: ["9,42", "18,84", "28,26", "6,28", "12,56"], answer: "18,84", hint: "Périmètre = 2 × π × rayon." }
+            - { id: ch09-j4-ra-m1b, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi, historiquement, beaucoup de rituels et de cercles sacrés utilisent-ils des formes géométriques très précises ?", choices: ["par simple hasard", "parce que la précision symbolise l'ordre et la protection", "parce que c'est plus rapide à tracer", "parce que les formes rondes sont les seules possibles", "parce que la loi l'imposait partout"], answer: "parce que la précision symbolise l'ordre et la protection", hint: "Une forme exacte rassure et structure le rite." }
+      - id: m2
+        title: Les trois barques du Passeur
+        tours:
+          axelle:
+            - { id: ch09-j4-ax-m2a, subject: maths, level: 3, kind: qcm, prompt: "Trois barques transportent chacune 2 fragments. Combien de fragments en tout ?", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "2 + 2 + 2." }
+            - { id: ch09-j4-ax-m2b, subject: francais, level: 3, kind: qcm, prompt: "Quel est le pluriel de « bateau » ?", choices: ["bateaus", "bateaux", "bateaut", "bâteaux", "bateaud"], answer: "bateaux", hint: "Comme chapeau → chapeaux." }
+          maelle:
+            - { id: ch09-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Une barque avance à 2 m par seconde. Quelle distance parcourt-elle en 6 secondes ?", choices: ["8 m", "10 m", "12 m", "14 m", "16 m"], answer: "12 m", hint: "2 × 6." }
+            - { id: ch09-j4-ma-m2b, subject: francais, level: 3, kind: qcm, prompt: "« Pour que chaque lumière traverse jusqu'au bon endroit. » Quel est le mot qui introduit le but ?", choices: ["chaque", "jusqu'au", "pour que", "bon", "endroit"], answer: "pour que", hint: "Il annonce pourquoi on fait quelque chose." }
+          rafaelle:
+            - { id: ch09-j4-ra-m2a, subject: maths, level: 4, kind: qcm, prompt: "Une barque met 45 secondes pour traverser à vitesse constante de 2 m/s. Quelle est la largeur traversée ?", choices: ["45 m", "60 m", "80 m", "90 m", "100 m"], answer: "90 m", hint: "Distance = vitesse × temps." }
+            - { id: ch09-j4-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Le Passeur déposa trois petites barques, taillées dans un bois clair. » Quelle est la fonction du groupe « taillées dans un bois clair » ?", choices: ["sujet", "complément d'objet direct", "épithète détachée, complément du nom « barques »", "complément circonstanciel de temps", "attribut du sujet"], answer: "épithète détachée, complément du nom « barques »", hint: "Il précise de quoi sont faites les barques." }
+      - id: m3
+        title: Le nom effacé
+        intro: "Sous l'inscription grattée, un indice subsiste. Il faut l'aider à reconstituer le nom de la Dévoreuse."
+        tours:
+          axelle:
+            - { id: ch09-j4-ax-m3a, subject: francais, level: 2, kind: qcm, prompt: "Quand on « efface » un mot, que fait-on ?", choices: ["on l'écrit en plus gros", "on le fait disparaître", "on le souligne", "on le répète", "on le traduit"], answer: "on le fait disparaître", hint: "Comme avec une gomme." }
+            - { id: ch09-j4-ax-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi, dans l'histoire, certains noms ont-ils été effacés des monuments ?", choices: ["pour faire de la place", "pour punir ou faire oublier quelqu'un", "parce que la pierre était abîmée", "par erreur, toujours", "pour économiser de l'encre"], answer: "pour punir ou faire oublier quelqu'un", hint: "Effacer un nom, c'est parfois une punition très dure." }
+          maelle:
+            - { id: ch09-j4-ma-m3a, subject: francais, level: 3, kind: qcm, prompt: "« Nous avions même effacé jusqu'à son nom. » Quel est le temps de « avions effacé » ?", choices: ["le passé simple", "le plus-que-parfait", "le futur antérieur", "le présent", "l'imparfait"], answer: "le plus-que-parfait", hint: "Avoir à l'imparfait + participe passé : une action avant une autre action passée." }
+            - { id: ch09-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Rendre son nom à quelqu'un qu'on avait effacé de l'histoire, c'est un acte de…", choices: ["oubli", "réparation et de reconnaissance", "punition", "moquerie", "indifférence"], answer: "réparation et de reconnaissance", hint: "On répare une injustice ancienne." }
+          rafaelle:
+            - { id: ch09-j4-ra-m3a, subject: francais, level: 4, kind: qcm, prompt: "« Le nom de la toute première prisonnière de ce Tribunal. » Quelle est la fonction de ce groupe nominal dans la réponse du Scribe ?", choices: ["sujet", "attribut", "complément d'objet direct (ce qu'était écrit là)", "complément circonstanciel", "apposition"], answer: "complément d'objet direct (ce qu'était écrit là)", hint: "C'est la réponse à « qu'est-ce qui était écrit ? »." }
+            - { id: ch09-j4-ra-m3b, subject: histoire-geo, level: 4, kind: qcm, prompt: "Dans l'histoire réelle, certaines sociétés pratiquaient la « damnatio memoriae » (condamnation de la mémoire). En quoi cela consistait-il ?", choices: ["célébrer une personne après sa mort", "effacer délibérément toute trace du souvenir d'une personne", "construire des statues géantes", "organiser un procès public filmé", "offrir des cadeaux à la personne"], answer: "effacer délibérément toute trace du souvenir d'une personne", hint: "C'est exactement ce que le Tribunal a fait à la Dévoreuse." }
+      - id: m4
+        title: Le Défi des Préparatifs
+        tours:
+          axelle:
+            - { id: ch09-j4-ax-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 9 × 6.", choices: ["45", "48", "54", "56", "63"], answer: "54", hint: "9 × 5 = 45, puis + 9." }
+            - { id: ch09-j4-ax-m4b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 100 − 37.", choices: ["53", "63", "73", "67", "57"], answer: "63", hint: "100 − 40 = 60, puis + 3." }
+          maelle:
+            - { id: ch09-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 7,2 + 2,9.", choices: ["9,1", "10,1", "10,01", "9,01", "11,1"], answer: "10,1", hint: "72 + 29 = 101." }
+            - { id: ch09-j4-ma-m4b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au subjonctif présent : « Qu'elle (rendre) son nom. »", choices: ["qu'elle rend", "qu'elle rendra", "qu'elle rende", "qu'elle rendait", "qu'elle a rendu"], answer: "qu'elle rende", hint: "Que je rende, que tu rendes, qu'elle rende." }
+          rafaelle:
+            - { id: ch09-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x + 4 = 29.", choices: ["4", "5", "6", "33", "25"], answer: "5", hint: "5x = 25." }
+            - { id: ch09-j4-ra-m4b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 7/10 − 2/5.", choices: ["5/10", "3/10", "1/2", "9/10", "1/5"], answer: "3/10", hint: "2/5 = 4/10." }
+    pause: "Le cercle parfait : à trois, en se tenant par la main, essayez de former le cercle le plus régulier possible autour d'un point imaginaire !"
+    closing:
+      - { who: narrateur, text: "Le soir venu, le cercle de craie était achevé, parfaitement rond, et les trois petites barques du Passeur reposaient à leur place, prêtes pour le lendemain. Le Scribe s'était remis au travail sur le mur gratté, armé d'un simple morceau de craie et d'une immense patience." }
+      - { who: scribe, text: "Je ne connais pas encore son vrai nom. Mais demain, peut-être, elle voudra bien nous le confier elle-même. Ce sera à elle de choisir, et à personne d'autre." }
+      - { who: narrateur, text: "Dans leurs trois coffrets de cristal, les fragments de lumière amassés au fil des jours se mirent à vibrer doucement, comme s'ils sentaient que l'heure du sceau approchait. Et par la fenêtre de la grande salle, on voyait la faille, loin en dessous, luire d'un gris doré de plus en plus clair." }
+      - { who: axelle, text: "Demain, c'est le grand jour. J'ai un peu le trac. Un gros trac, même." }
+      - { who: rafaelle, text: "C'est normal d'avoir le trac avant quelque chose d'important. Ça veut juste dire qu'on sait que ça compte." }
+    reward: "trois Fragments de Lueur, prêts pour le sceau"
+
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: L'Épreuve de Mémoire
+    decor: Le grand cercle de craie, au-dessus de la faille apaisée. Les trois coffrets de cristal, pleins de lumière, posés en triangle.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, tout le Tribunal des Mémoires retint son souffle. Les apprenties se tenaient debout dans le grand cercle de craie, leurs trois coffrets de cristal posés devant elles, chacun débordant d'une petite lumière chaude. Le Scribe se tenait à l'extérieur du cercle, n'osant pas y entrer." }
+      - { who: scribe, text: "Le sceau n'accepte pas n'importe quelle lumière. Il n'accepte que les savoirs vraiment acquis, pas récités par cœur sans les comprendre. C'est pour cela que l'épreuve d'aujourd'hui ne vous demandera rien de nouveau : elle ira chercher, dans tout ce que vous avez déjà appris sur l'Arche, ce qui est resté vraiment ancré en vous." }
+      - { who: nilo, text: "Autrement dit : pas de nouvelle leçon aujourd'hui. Juste la preuve que les anciennes ont tenu bon. Ça me plaît, ce genre d'épreuve. Ça ressemble à un examen qu'on a déjà révisé sans le savoir." }
+      - { who: narrateur, text: "Au bord de la faille, la Dévoreuse remonta un peu, juste assez pour que sa forme sombre affleure à la surface, silencieuse, attentive. Et dans un coin du cercle, la petite ombre à lanterne, celle qui suivait les trois sœurs depuis si longtemps, se tenait immobile, comme suspendue elle aussi à ce qui allait se passer." }
+      - { who: maelle, text: "Alors c'est maintenant qu'on sait si tout ce chemin a vraiment servi à quelque chose." }
+      - { who: plume, text: "Il a déjà servi, Maelle. Quoi qu'il arrive aujourd'hui. Mais oui, c'est maintenant qu'on le prouve au sceau." }
+    manches:
+      - id: m1
+        title: La lumière d'Axelle
+        intro: "Le sceau interroge Axelle sur tout ce qu'elle a appris depuis le premier jour."
+        tours:
+          axelle:
+            - { review: true, count: 3 }
+          maelle:
+            - { review: true, count: 3 }
+          rafaelle:
+            - { review: true, count: 3 }
+      - id: m2
+        title: La lumière de Maelle
+        intro: "Le sceau interroge Maelle à son tour, puisant dans tout ce qu'elle porte déjà en elle."
+        tours:
+          axelle:
+            - { review: true, count: 3 }
+          maelle:
+            - { review: true, count: 3 }
+          rafaelle:
+            - { review: true, count: 3 }
+      - id: m3
+        title: La lumière de Rafaelle
+        intro: "Le sceau interroge enfin Rafaelle, pour que les trois lueurs soient, toutes, bien réelles."
+        tours:
+          axelle:
+            - { review: true, count: 3 }
+          maelle:
+            - { review: true, count: 3 }
+          rafaelle:
+            - { review: true, count: 3 }
+    pause: "La ronde des trois lueurs : tenez-vous par la main en cercle, fermez les yeux une seconde, puis ouvrez-les tous ensemble sur « trois » !"
+    closing:
+      - { who: narrateur, text: "Quand la troisième lueur se fut posée, à son tour, dans le cercle de craie, les trois coffrets de cristal s'ouvrirent d'eux-mêmes, dans un même souffle, et toute la lumière qu'ils contenaient s'éleva en une seule colonne dorée, droite comme un rayon, qui plongea dans la faille jusqu'à la toucher, loin en dessous." }
+      - { who: narrateur, text: "Alors vint le moment de choisir comment poser le dernier sceau — et ce choix, elles le firent ensemble, les mains jointes au centre du cercle." }
+      - { who: narrateur, text: "La faille se referma, lentement, dans un grondement sourd qui n'avait rien d'effrayant, plutôt le bruit d'une porte énorme qui se calait enfin bien droite sur ses gonds. Les dalles de la cour se ressoudèrent une à une, et la fumée noire disparut tout à fait, remplacée par une petite brume dorée qui flotta un instant avant de se dissiper." }
+      - { who: scribe, text: "Il est fait. Le Tribunal est sauvé. Et moi, je crois, un peu changé aussi." }
+      - { who: narrateur, text: "Du bord du puits refermé — presque refermé, en tout cas — monta un murmure, à peine audible, qui n'était ni une plainte ni une menace. Juste un soupir de quelqu'un qui, pour la première fois depuis des siècles, n'avait plus à porter seul tout ce poids." }
+      - { who: devoreuse, text: "Merci, petites lueurs. Je ne serai plus la Dévoreuse, maintenant. Juste… quelqu'un qui se souvient, enfin, d'elle-même." }
+      - { who: narrateur, text: "Le Scribe s'avança alors vers le mur gratté, et traça, de sa main un peu tremblante, un nom tout neuf, que la Dévoreuse elle-même lui avait soufflé à l'oreille. Personne, pas même Plume, ne le répéta à voix haute. C'était à elle seule qu'il appartenait, désormais." }
+      - { who: narrateur, text: "Ce soir-là, sur l'Arche enfin retrouvée, les trois sœurs s'installèrent toutes les trois dans le même hamac, ce qui n'était pas franchement prévu pour trois, et qui manqua deux fois de les renverser toutes par terre." }
+      - { who: axelle, text: "On a sauvé un tribunal, délivré une dévoreuse de souvenirs, et rendu un nom à quelqu'un qui n'en avait plus. Pas mal, pour une semaine." }
+      - { who: maelle, text: "Et en plus on a eu le temps de faire nos leçons. Enfin. L'Épreuve de Mémoire, ça compte comme des leçons, non ?" }
+      - { who: rafaelle, text: "Ça compte double, je trouve. On n'a pas appris pour l'épreuve. On a juste découvert que ce qu'on savait déjà était plus solide qu'on ne le pensait." }
+      - { who: narrateur, text: "Plume, redevenu petit renard pour l'occasion, se glissa entre les trois sœurs dans le hamac trop petit, et manqua une troisième fois de tout faire basculer, ce qui déclencha un fou rire général entendu jusqu'à la bibliothèque du bas." }
+      - { who: narrateur, text: "Et tandis que les rires s'apaisaient doucement, Nilo, resté seul sur le pont, déroulait sa Carte Vivante sous la lumière des étoiles. Elle qui, d'habitude, s'arrêtait toujours au même endroit, continua cette fois à se déplier, encore, et encore, bien plus loin que prévu — vers une région qu'aucune carte, même menteuse, n'avait jamais osé dessiner." }
+      - { who: nilo, text: "Ça, par exemple… je n'avais jamais vu ce bout-là, avant. On dirait qu'il vient d'apparaître. Ou alors qu'il attendait juste qu'on soit prêtes à le regarder." }
+    reward: "la Carte Vivante tout entière, et un nouveau chemin qui s'ouvre sur l'horizon"

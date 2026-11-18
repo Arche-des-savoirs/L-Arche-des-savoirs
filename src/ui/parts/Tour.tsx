@@ -18,7 +18,10 @@ export function Tour({ mancheIndex, player }: { mancheIndex: number; player: Pla
   const game = save.value.game;
   const order = game.session!.turnOrder;
   const roles = supportRoles(order, player);
-  const questions = useMemo(() => resolveTour(ch, d.n, manche.id, player, levelOf(player, 'maths'), `s${game.sessionsPlayed}`), [manche.id, player]);
+  const questions = useMemo(
+    () => resolveTour(ch, d.n, manche.id, player, levelOf(player, 'maths'), `s${game.sessionsPlayed}`, save.value.history),
+    [manche.id, player]
+  );
   const [started, setStarted] = useState(false);
   const [i, setI] = useState(0);
   const [ladder, setLadder] = useState<Array<{ level: number; correct: boolean; helped: boolean }>>([]);
