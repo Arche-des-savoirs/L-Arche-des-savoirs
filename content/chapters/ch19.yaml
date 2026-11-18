@@ -1,0 +1,379 @@
+# Chapitre 19 — Le Village Suspendu
+# Suite du chapitre 18 : après le plateau de la Reine de Brume, le chemin redescend vers un
+# village accroché à flanc de falaise, où vit l'Habitant (déjà établi, voix Enceladus). Pas
+# d'effet ORVANE ni de MAJOR pour ce chapitre (absent de decisions.ts) : décision générique,
+# non majeure, sans conséquence mécanique — uniquement de l'habillage narratif.
+
+id: ch19
+number: 19
+act: 2
+title: Le Village Suspendu
+introImage: ch19
+scene: village-suspendu
+
+espagnol:
+  - { es: "El pueblo cuelga del acantilado.", fr: "Le village pend de la falaise." }
+  - { es: "Todos se ayudan aquí.", fr: "Tout le monde s'entraide ici." }
+  - { es: "La vida es sencilla en la montaña.", fr: "La vie est simple en montagne." }
+  - { es: "Gracias por la hospitalidad.", fr: "Merci pour l'hospitalité." }
+  - { es: "Cada casa tiene una historia.", fr: "Chaque maison a une histoire." }
+
+decision:
+  prompt: "L'Habitant propose aux trois sœurs de participer, à leur façon, à la vie du village suspendu pour la soirée. « Vous pouvez nous aider comme bon vous semble. Que voulez-vous faire ? »"
+  options:
+    A:
+      label: Aider à réparer les passerelles du village
+      scene: "Axelle propose de donner un coup de main aux habitants pour réparer les passerelles de bois qui relient les maisons accrochées à la falaise."
+      line: { who: habitant, text: "Des mains supplémentaires pour les passerelles, ça ne se refuse jamais. Venez, je vous montre comment les cordes se nouent ici." }
+      habillage: "Les épreuves du soir prennent la forme de petits travaux manuels, à faire avec soin et attention, comme toute réparation qui doit tenir bon."
+    B:
+      label: Écouter les histoires des anciens du village
+      scene: "Rafaelle préfère s'asseoir avec les plus âgés du village, pour écouter les récits qu'ils ont à raconter sur la vie accrochée à cette falaise."
+      line: { who: habitant, text: "Les anciens seront ravis, petite Archiviste. Ici, une histoire bien écoutée vaut souvent plus qu'une corvée bien faite." }
+      habillage: "Les épreuves du soir prennent la forme de récits à suivre avec attention, pleins de détails à ne pas laisser échapper."
+    C:
+      label: Préparer le repas commun avec les familles
+      scene: "Maelle rejoint les familles qui préparent, ensemble, le grand repas du soir partagé par tout le village suspendu."
+      line: { who: habitant, text: "Le repas commun, c'est le cœur de nos soirées, petite Cartographe. Vous êtes la bienvenue aux fourneaux." }
+      habillage: "Les épreuves du soir prennent la forme de petites tâches de cuisine, à faire à plusieurs mains, dans la bonne humeur."
+
+repliquesAbsurdes:
+  - "Si les maisons sont accrochées à la falaise, est-ce qu'elles ont peur du vide, elles aussi, ou juste nous ?"
+  - "Mon renard a essayé de traverser une passerelle en courant. Résultat : plus de peur que de mal, mais beaucoup de peur."
+  - "Est-ce qu'on peut demander un deuxième repas commun, si le premier était vraiment très bon ?"
+  - "Si chaque maison a une histoire, est-ce que la plus petite maison a juste une histoire plus courte ?"
+  - "Après la Reine de Brume, un village accroché à une falaise, ça paraît presque tranquille, en fait."
+
+days:
+  # ─────────────────────────── JOUR 1 ───────────────────────────
+  - n: 1
+    title: Un village accroché à la falaise
+    decor: Un village de bois et de pierre, accroché à flanc de falaise, relié par un réseau de passerelles suspendues, où la vie semble s'organiser tout en hauteur, au-dessus du vide.
+    opening:
+      - { who: narrateur, text: "En quittant le plateau de la Reine de Brume, le chemin redescendit en serpentant jusqu'à un village de bois et de pierre, accroché tout entier à flanc de falaise." }
+      - { who: narrateur, text: "Des passerelles suspendues reliaient les maisons entre elles, et des habitants allaient et venaient, sans la moindre hésitation, au-dessus du vide." }
+      - { who: rafaelle, text: "Comment est-ce qu'on construit un village entier sur le flanc d'une falaise, sans que tout s'écroule ?" }
+      - { who: narrateur, text: "Une voix familière leur répondit depuis une passerelle proche : l'Habitant, qu'elles avaient déjà rencontré plus bas dans la vallée, les salua d'un grand geste." }
+      - { who: habitant, text: "Ah, les voyageuses du bas de la vallée ! On construit patiemment, petite Archiviste, poutre après poutre, génération après génération." }
+      - { who: axelle, text: "Ça ne vous fait jamais peur, de vivre comme ça, suspendus au-dessus du vide ?" }
+      - { who: habitant, text: "On s'y habitue, petite Veilleuse. Et puis, le vide fait moins peur quand tout le village veille sur chacune de ses passerelles." }
+      - { who: maelle, text: "C'est très beau, en tout cas. On dirait un village suspendu entre ciel et terre." }
+      - { who: habitant, text: "C'est exactement ce que nous sommes, petite Cartographe. Venez, installez-vous, vous êtes nos invitées pour quelques jours." }
+    manches:
+      - id: m1
+        title: Des passerelles suspendues
+        tours:
+          axelle:
+            - { id: ch19-j1-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on un pont étroit, souvent fait de bois ou de corde, qui relie deux points en hauteur ?", choices: ["une passerelle", "un tunnel", "un escalier", "une route", "un barrage"], answer: "une passerelle", hint: "C'est le mot utilisé pour relier les maisons du village." }
+            - { id: ch19-j1-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 6 + 7.", choices: ["11", "12", "13", "14", "15"], answer: "13", hint: "6 + 7 = 6 + 6 + 1." }
+          maelle:
+            - { id: ch19-j1-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi un village construit à flanc de falaise doit-il faire particulièrement attention à la solidité de ses constructions ?", choices: ["parce qu'une chute de hauteur y serait bien plus dangereuse qu'en plaine", "parce que les falaises sont toujours parfaitement plates", "cela n'a aucune importance particulière", "parce que le vent n'existe jamais en falaise", "parce que les constructions en falaise ne risquent jamais rien"], answer: "parce qu'une chute de hauteur y serait bien plus dangereuse qu'en plaine", hint: "Pense au vide évoqué par Rafaelle et Axelle." }
+            - { id: ch19-j1-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 68 + 57.", choices: ["118", "122", "125", "128", "130"], answer: "125", hint: "68 + 60 − 3." }
+          rafaelle:
+            - { id: ch19-j1-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi certaines communautés ont-elles historiquement choisi de s'installer dans des lieux difficiles d'accès, comme une falaise ?", choices: ["pour se protéger plus facilement des dangers extérieurs", "parce que c'était toujours plus confortable qu'ailleurs", "cela n'a jamais eu aucune raison particulière", "parce qu'il était interdit de vivre en plaine", "parce que les falaises offraient toujours plus de terres cultivables"], answer: "pour se protéger plus facilement des dangers extérieurs", hint: "Pense à l'avantage défensif d'un village difficile d'accès." }
+            - { id: ch19-j1-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 15 × 7.", choices: ["98", "100", "103", "105", "108"], answer: "105", hint: "15 × 7 = 15 × 7." }
+      - id: m2
+        title: Génération après génération
+        tours:
+          axelle:
+            - { id: ch19-j1-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Des habitants allaient et venaient. » ?", choices: ["allaient et venaient", "Des habitants", "venaient", "des", "habitants"], answer: "Des habitants", hint: "Qui va et vient sur les passerelles ?" }
+            - { id: ch19-j1-ax-m2b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 14 − 8.", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "14 − 8 = 6." }
+          maelle:
+            - { id: ch19-j1-ma-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « patiemment » dans « on construit patiemment » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adverbe", hint: "Il modifie le verbe « construit »." }
+            - { id: ch19-j1-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 288 ÷ 4.", choices: ["68", "70", "72", "74", "76"], answer: "72", hint: "4 × 72 = 288." }
+          rafaelle:
+            - { id: ch19-j1-ra-m2a, subject: francais, level: 4, kind: qcm, prompt: "« Le vide fait moins peur quand tout le village veille sur chacune de ses passerelles. » : que signifie cette phrase ?", choices: ["que la solidarité collective réduit le danger ressenti face à un risque individuel", "que le vide n'a jamais existé dans ce village", "que chaque habitant doit affronter seul le danger", "que les passerelles n'ont besoin d'aucune surveillance", "que seule la peur protège vraiment les habitants"], answer: "que la solidarité collective réduit le danger ressenti face à un risque individuel", hint: "Repense à ce que dit l'Habitant sur le fait de vivre suspendu." }
+            - { id: ch19-j1-ra-m2b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 11² − 50.", choices: ["61", "65", "68", "71", "75"], answer: "71", hint: "121 − 50." }
+      - id: m3
+        title: Entre ciel et terre
+        tours:
+          axelle:
+            - { id: ch19-j1-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 5 maisons d'un côté du village, et 4 de l'autre. Combien de maisons en tout ?", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "5 + 4." }
+            - { id: ch19-j1-ax-m3b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi les constructeurs d'un village en falaise choisissent-ils souvent le bois pour les passerelles plutôt que la pierre ?", choices: ["le bois est plus léger et plus souple, donc plus facile à poser en hauteur", "le bois est toujours plus lourd que la pierre", "cela n'a aucune explication particulière", "la pierre flotte toujours mieux que le bois", "le bois n'a jamais été utilisé en construction"], answer: "le bois est plus léger et plus souple, donc plus facile à poser en hauteur", hint: "Pense au matériau utilisé pour les passerelles du village." }
+          maelle:
+            - { id: ch19-j1-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 47 × 4.", choices: ["178", "182", "186", "188", "190"], answer: "188", hint: "47 × 4 = 50 × 4 − 3 × 4." }
+            - { id: ch19-j1-ma-m3b, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi un visiteur découvrant un village suspendu pour la première fois peut-il ressentir à la fois de l'admiration et un peu de vertige ?", choices: ["parce que le lieu est à la fois impressionnant et inhabituel pour quelqu'un qui n'y est pas habitué", "parce qu'un village suspendu n'impressionne jamais personne", "cela n'a aucune explication particulière", "parce que le vertige n'existe que dans les histoires", "parce que les visiteurs ne ressentent jamais rien de nouveau"], answer: "parce que le lieu est à la fois impressionnant et inhabituel pour quelqu'un qui n'y est pas habitué", hint: "Pense à la réaction de Rafaelle et Axelle en découvrant le village." }
+          rafaelle:
+            - { id: ch19-j1-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 4x + 7 = 31.", choices: ["4", "5", "6", "7", "8"], answer: "6", hint: "4x = 24." }
+            - { id: ch19-j1-ra-m3b, subject: francais, level: 3, kind: qcm, prompt: "Conjugue au passé composé : « Les habitants (construire) leur village avec soin. »", choices: ["ont construit", "construisaient", "construiront", "construisent", "construisant"], answer: "ont construit", hint: "Passé composé = avoir + participe passé." }
+      - id: m4
+        title: Des invitées pour quelques jours
+        tours:
+          axelle:
+            - { id: ch19-j1-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 3.", choices: ["24", "25", "27", "29", "30"], answer: "27", hint: "9 × 3 = 9 + 9 + 9." }
+            - { gen: maths.addition }
+          maelle:
+            - { id: ch19-j1-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 346 − 178.", choices: ["164", "168", "170", "172", "174"], answer: "168", hint: "346 − 180 + 2." }
+            - { gen: maths.multiplication }
+          rafaelle:
+            - { id: ch19-j1-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « El pueblo cuelga del acantilado. »", choices: ["Le village grimpe la montagne.", "Le village pend de la falaise.", "Le village traverse la rivière.", "Le village flotte sur le lac.", "Le village brille dans la nuit."], answer: "Le village pend de la falaise.", hint: "« Cuelga del acantilado » = pend de la falaise." }
+            - { gen: maths.fraction-de }
+    pause: "Le jeu de l'équilibre : chaque sœur essaie de rester en équilibre sur une seule jambe le plus longtemps possible, comme pour s'entraîner à marcher sur une passerelle suspendue."
+    closing:
+      - { who: narrateur, text: "La nuit tomba doucement sur le village suspendu, et de petites lanternes s'allumèrent une à une le long des passerelles, dessinant comme une constellation accrochée à la falaise." }
+      - { who: habitant, text: "Demain, je vous proposerai de participer à la vie du village, chacune à votre façon. Reposez-vous bien cette nuit." }
+      - { who: axelle, text: "Avec plaisir ! On a hâte de voir comment tout fonctionne, ici." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs s'endormaient dans la maison qu'on leur avait prêtée, le village continuait de bruire doucement, comme une ruche paisible suspendue entre ciel et terre." }
+    reward: "la découverte du village suspendu et de ses passerelles"
+  # ─────────────────────────── JOUR 2 ───────────────────────────
+  - n: 2
+    title: Participer à la vie du village
+    decor: Les abords du village au petit matin, où les habitants s'activent déjà, chacun occupé à une tâche différente, dans une ambiance tranquille et organisée.
+    opening:
+      - { who: narrateur, text: "Le lendemain matin, les trois sœurs retrouvèrent l'Habitant sur la place centrale du village, déjà animée par les activités du matin." }
+      - { who: habitant, text: "Vous pouvez nous aider comme bon vous semble, petites voyageuses. Que voulez-vous faire ?" }
+      - { who: rafaelle, text: "Moi, j'aimerais surtout écouter ce que les plus âgés du village ont à raconter." }
+      - { who: maelle, text: "Et moi, j'aimerais bien aider à préparer le repas commun, si c'est possible." }
+      - { who: axelle, text: "Moi, je préférerais donner un coup de main pour les passerelles ! Ça a l'air intéressant à apprendre." }
+      - { who: habitant, text: "Chacune à sa façon, alors. C'est exactement l'esprit du village : chacun contribue selon ce qu'il sait faire, ou ce qu'il souhaite apprendre." }
+    manches:
+      - id: m1
+        title: Contribuer à sa façon
+        tours:
+          axelle:
+            - { id: ch19-j2-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « contribuer » ?", choices: ["s'abstenir", "participer", "aider", "donner", "collaborer"], answer: "s'abstenir", hint: "Le contraire de prendre part à quelque chose." }
+            - { id: ch19-j2-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 8 + 9.", choices: ["15", "16", "17", "18", "19"], answer: "17", hint: "8 + 9 = 8 + 8 + 1." }
+          maelle:
+            - { id: ch19-j2-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi une communauté qui répartit les tâches selon les goûts de chacun fonctionne-t-elle souvent mieux qu'une communauté où tout le monde fait la même chose ?", choices: ["parce que chacun est plus efficace et plus motivé dans une tâche qui lui convient", "parce que répartir les tâches n'a jamais aucun effet", "cela n'a aucun lien avec l'efficacité d'une communauté", "parce qu'il vaut toujours mieux que tous fassent exactement la même chose", "parce que la motivation n'a aucune importance dans le travail"], answer: "parce que chacun est plus efficace et plus motivé dans une tâche qui lui convient", hint: "Repense à ce que dit l'Habitant sur l'esprit du village." }
+            - { id: ch19-j2-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 91 + 68.", choices: ["155", "157", "159", "161", "163"], answer: "159", hint: "91 + 70 − 2." }
+          rafaelle:
+            - { id: ch19-j2-ra-m1a, subject: histoire-geo, level: 4, kind: qcm, prompt: "Pourquoi la transmission orale des récits par les anciens d'une communauté est-elle, historiquement, importante pour préserver la mémoire d'un lieu ?", choices: ["parce qu'elle permet de conserver et de partager des savoirs et des événements qui ne sont pas toujours écrits", "parce que les récits oraux n'ont jamais aucune valeur historique", "cela n'a aucun lien avec la mémoire d'un lieu", "parce que seuls les écrits comptent vraiment dans une communauté", "parce que les anciens n'ont jamais rien à raconter d'utile"], answer: "parce qu'elle permet de conserver et de partager des savoirs et des événements qui ne sont pas toujours écrits", hint: "Pense à ce que Rafaelle souhaite faire ce jour-là." }
+            - { id: ch19-j2-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 13 × 6.", choices: ["74", "76", "78", "80", "82"], answer: "78", hint: "13 × 6 = 13 × 3 × 2." }
+      - id: m2
+        title: Nouer les cordes
+        tours:
+          axelle:
+            - { id: ch19-j2-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 12 − 5.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "12 − 5 = 7." }
+            - { id: ch19-j2-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un nœud bien serré est-il essentiel pour la sécurité d'une passerelle suspendue ?", choices: ["parce qu'un nœud mal fait peut se desserrer et rendre la passerelle dangereuse", "parce que les nœuds n'ont jamais aucune importance", "parce qu'une passerelle n'a jamais besoin de cordes", "cela n'a aucune explication particulière", "parce qu'un nœud serré rend toujours la passerelle plus lourde"], answer: "parce qu'un nœud mal fait peut se desserrer et rendre la passerelle dangereuse", hint: "Pense à ce qu'Axelle apprend à faire avec les habitants." }
+          maelle:
+            - { id: ch19-j2-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 504 ÷ 7.", choices: ["68", "70", "72", "74", "76"], answer: "72", hint: "7 × 72 = 504." }
+            - { id: ch19-j2-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « animée » dans « déjà animée par les activités » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la place centrale du village." }
+          rafaelle:
+            - { id: ch19-j2-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 8² − 3².", choices: ["46", "50", "52", "55", "58"], answer: "55", hint: "64 − 9." }
+            - { id: ch19-j2-ra-m2b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Todos se ayudan aquí. »", choices: ["Tout le monde s'entraide ici.", "Tout le monde dort ici.", "Tout le monde chante ici.", "Tout le monde part ici.", "Tout le monde attend ici."], answer: "Tout le monde s'entraide ici.", hint: "« Se ayudan » = s'entraident." }
+      - id: m3
+        title: Les fourneaux communs
+        tours:
+          axelle:
+            - { id: ch19-j2-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Le repas commun rassemble tout le village. » ?", choices: ["tout le village", "rassemble", "Le repas commun", "commun", "le repas"], answer: "Le repas commun", hint: "Qu'est-ce qui rassemble tout le village ?" }
+            - { id: ch19-j2-ax-m3b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 7 × 4.", choices: ["24", "26", "27", "28", "30"], answer: "28", hint: "7 × 4 = 7 × 2 × 2." }
+          maelle:
+            - { id: ch19-j2-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 29 × 5.", choices: ["135", "140", "142", "145", "148"], answer: "145", hint: "30 × 5 − 5." }
+            - { id: ch19-j2-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi un repas pris en commun, partagé par tout un village, renforce-t-il souvent les liens entre les habitants ?", choices: ["parce qu'il crée un moment régulier de rencontre et de partage pour toute la communauté", "parce qu'un repas commun n'a jamais aucun effet sur les liens entre habitants", "cela n'a aucun lien avec la vie d'une communauté", "parce qu'il vaut toujours mieux manger chacun de son côté", "parce que les repas communs ont toujours été interdits"], answer: "parce qu'il crée un moment régulier de rencontre et de partage pour toute la communauté", hint: "Pense à ce que représente le repas commun pour Maelle et les familles." }
+          rafaelle:
+            - { id: ch19-j2-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 7x − 4 = 38.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "7x = 42." }
+            - { id: ch19-j2-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au présent : « Les anciens (raconter) des histoires chaque soir. »", choices: ["racontent", "racontez", "racontons", "racontais", "raconteront"], answer: "racontent", hint: "Ils/elles : -ent." }
+      - id: m4
+        title: Le travail du soir
+        tours:
+          axelle:
+            - { id: ch19-j2-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 6 × 5.", choices: ["25", "27", "28", "30", "32"], answer: "30", hint: "6 × 5 = 6 × 10 ÷ 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch19-j2-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 265 − 97.", choices: ["162", "166", "168", "170", "172"], answer: "168", hint: "265 − 100 + 3." }
+            - { gen: maths.duree }
+          rafaelle:
+            - { id: ch19-j2-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « La vida es sencilla en la montaña. »", choices: ["La vie est simple en montagne.", "La vie est difficile en mer.", "La vie est rapide en ville.", "La vie est triste en hiver.", "La vie est courte en été."], answer: "La vie est simple en montagne.", hint: "« Sencilla » = simple." }
+            - { gen: maths.ranger }
+    pause: "Le jeu du nœud improvisé : chaque sœur essaie de nouer un bout de corde ou de ficelle de la façon la plus solide possible, et les deux autres testent si le nœud tient bon."
+    closing:
+      - { who: narrateur, text: "Le soir venu, chaque sœur regagna la maison prêtée, fatiguée mais satisfaite de sa journée passée à contribuer, chacune à sa façon, à la vie du village suspendu." }
+      - { who: habitant, text: "Vous avez bien travaillé, aujourd'hui, peu importe ce que vous avez choisi de faire. Demain, je vous montrerai quelque chose que peu de visiteurs voient." }
+      - { who: rafaelle, text: "On a hâte de voir ça !" }
+      - { who: narrateur, text: "Et tandis que le village s'endormait doucement, les lanternes des passerelles continuaient de scintiller, comme pour veiller sur le sommeil de tous ses habitants." }
+    reward: "la satisfaction d'avoir contribué, chacune à sa façon, à la vie du village"
+  # ─────────────────────────── JOUR 3 ───────────────────────────
+  - n: 3
+    title: Le belvédère caché
+    decor: Un petit belvédère de bois, dissimulé derrière les maisons du village, offrant une vue imprenable sur toute la vallée et les montagnes environnantes.
+    opening:
+      - { who: narrateur, text: "Le troisième jour, l'Habitant conduisit les trois sœurs vers un petit belvédère de bois, dissimulé derrière les maisons, que peu de visiteurs connaissaient." }
+      - { who: habitant, text: "Voici le secret du village, petites voyageuses. On vient ici quand on a besoin de voir plus loin que ses propres soucis." }
+      - { who: maelle, text: "On voit toute la vallée, d'ici ! Et même, je crois, le plateau de la Reine de Brume, tout là-haut !" }
+      - { who: habitant, text: "Exactement, petite Cartographe. D'ici, on voit tout le chemin parcouru, et tout celui qui reste à parcourir." }
+      - { who: axelle, text: "Pourquoi le village garde-t-il ce belvédère secret, s'il est aussi beau que ça ?" }
+      - { who: habitant, text: "Pas secret, petite Veilleuse. Simplement discret. Certaines beautés se savourent mieux quand on prend le temps de les chercher un peu." }
+      - { who: rafaelle, text: "On a de la chance que vous ayez voulu nous le montrer, alors." }
+      - { who: habitant, text: "C'est aussi une façon de vous remercier pour votre aide, petite Archiviste. Le village n'oublie jamais ceux qui lui donnent un peu de leur temps." }
+    manches:
+      - id: m1
+        title: Une vue sur toute la vallée
+        tours:
+          axelle:
+            - { id: ch19-j3-ax-m1a, subject: histoire-geo, level: 1, kind: qcm, prompt: "Comment appelle-t-on un point en hauteur aménagé pour admirer un paysage ?", choices: ["un belvédère", "un tunnel", "un pont", "un barrage", "un phare"], answer: "un belvédère", hint: "C'est le mot utilisé pour le secret du village." }
+            - { id: ch19-j3-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 9 + 8.", choices: ["15", "16", "17", "18", "19"], answer: "17", hint: "9 + 8 = 9 + 9 − 1." }
+          maelle:
+            - { id: ch19-j3-ma-m1a, subject: sciences, level: 2, kind: qcm, prompt: "Pourquoi un point de vue en hauteur permet-il souvent de voir beaucoup plus loin qu'au niveau du sol ?", choices: ["parce que l'altitude dégage l'horizon de nombreux obstacles proches", "parce que la hauteur n'a aucun effet sur la vue", "cela n'a aucune explication connue", "parce qu'on voit toujours moins loin en hauteur", "parce que les obstacles disparaissent toujours en altitude"], answer: "parce que l'altitude dégage l'horizon de nombreux obstacles proches", hint: "Pense à ce que voit Maelle depuis le belvédère." }
+            - { id: ch19-j3-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 76 + 49.", choices: ["120", "123", "125", "128", "130"], answer: "125", hint: "76 + 50 − 1." }
+          rafaelle:
+            - { id: ch19-j3-ra-m1a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi certains lieux d'une communauté restent-ils connus seulement de quelques habitants, sans être réellement secrets ?", choices: ["parce qu'ils demandent un peu d'effort ou de connaissance locale pour y accéder", "parce qu'ils sont toujours interdits à tout le monde", "cela n'a aucune raison particulière", "parce que seuls les secrets ont une valeur dans une communauté", "parce que personne ne connaît jamais ces lieux"], answer: "parce qu'ils demandent un peu d'effort ou de connaissance locale pour y accéder", hint: "Repense à la nuance que fait l'Habitant entre « secret » et « discret »." }
+            - { id: ch19-j3-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 18 × 5.", choices: ["80", "85", "88", "90", "92"], answer: "90", hint: "18 × 5 = 18 × 10 ÷ 2." }
+      - id: m2
+        title: Secret ou discret
+        tours:
+          axelle:
+            - { id: ch19-j3-ax-m2a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « discret » ?", choices: ["voyant", "silencieux", "caché", "calme", "simple"], answer: "voyant", hint: "Le contraire de ce qui attire peu l'attention." }
+            - { id: ch19-j3-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 15 − 6.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "15 − 5 = 10, puis − 1." }
+          maelle:
+            - { id: ch19-j3-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 336 ÷ 4.", choices: ["78", "80", "82", "84", "86"], answer: "84", hint: "4 × 84 = 336." }
+            - { id: ch19-j3-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « imprenable » dans « une vue imprenable » ?", choices: ["nom", "verbe", "adjectif", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit la vue offerte par le belvédère." }
+          rafaelle:
+            - { id: ch19-j3-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 12² − 95.", choices: ["45", "47", "49", "51", "53"], answer: "49", hint: "144 − 95." }
+            - { id: ch19-j3-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Le village n'oublie jamais ceux qui lui donnent un peu de leur temps. » : que révèle cette phrase sur les valeurs du village ?", choices: ["qu'il valorise la générosité et la réciprocité entre ses habitants et ses visiteurs", "qu'il oublie toujours rapidement ses visiteurs", "qu'il n'accorde aucune importance à l'aide reçue", "qu'il ne garde jamais aucun souvenir", "qu'il préfère ignorer ceux qui l'aident"], answer: "qu'il valorise la générosité et la réciprocité entre ses habitants et ses visiteurs", hint: "Repense à ce que dit l'Habitant en remerciant les sœurs." }
+      - id: m3
+        title: Tout le chemin, d'un seul regard
+        tours:
+          axelle:
+            - { id: ch19-j3-ax-m3a, subject: maths, level: 1, kind: qcm, prompt: "Il y a 3 belvédères sur ce versant, et 2 sur l'autre. Combien de belvédères en tout ?", choices: ["3", "4", "5", "6", "7"], answer: "5", hint: "3 + 2." }
+            - { id: ch19-j3-ax-m3b, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « D'ici, on voit tout le chemin parcouru. » ?", choices: ["d'ici", "tout le chemin", "on", "parcouru", "voit"], answer: "on", hint: "Qui voit tout le chemin, dans cette phrase ?" }
+          maelle:
+            - { id: ch19-j3-ma-m3a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi prendre un peu de hauteur et de recul peut-il aider à mieux comprendre un trajet déjà parcouru ?", choices: ["parce que cela permet de percevoir l'ensemble du chemin, au lieu de ses seuls détails", "parce que prendre du recul n'a jamais aucun effet", "cela n'a aucun lien avec la compréhension d'un trajet", "parce qu'il vaut toujours mieux rester concentré sur chaque détail", "parce que le recul empêche toujours de bien voir"], answer: "parce que cela permet de percevoir l'ensemble du chemin, au lieu de ses seuls détails", hint: "Repense à ce que dit l'Habitant sur le chemin parcouru et celui qui reste." }
+            - { id: ch19-j3-ma-m3b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 48 × 4.", choices: ["182", "186", "188", "190", "192"], answer: "192", hint: "48 × 4 = 50 × 4 − 2 × 4." }
+          rafaelle:
+            - { id: ch19-j3-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 8x − 3 = 45.", choices: ["5", "6", "7", "8", "9"], answer: "6", hint: "8x = 48." }
+            - { id: ch19-j3-ra-m3b, subject: espagnol, level: 3, kind: qcm, prompt: "Traduis : « Gracias por la hospitalidad. »", choices: ["Merci pour l'hospitalité.", "Au revoir et bonne nuit.", "Désolé pour le dérangement.", "Bravo pour le repas.", "Pardon pour le retard."], answer: "Merci pour l'hospitalité.", hint: "« Gracias por » = merci pour." }
+      - id: m4
+        title: Un remerciement silencieux
+        tours:
+          axelle:
+            - { id: ch19-j3-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 × 6.", choices: ["42", "44", "46", "48", "50"], answer: "48", hint: "8 × 6 = 8 × 3 × 2." }
+            - { gen: maths.suite }
+          maelle:
+            - { id: ch19-j3-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 300 − 142.", choices: ["154", "156", "158", "160", "162"], answer: "158", hint: "300 − 150 + 8." }
+            - { gen: maths.addition }
+          rafaelle:
+            - { id: ch19-j3-ra-m4a, subject: espagnol, level: 2, kind: qcm, prompt: "Traduis : « Cada casa tiene una historia. »", choices: ["Chaque maison a une histoire.", "Chaque maison est vide.", "Chaque maison est neuve.", "Chaque maison a un jardin.", "Chaque maison est fermée."], answer: "Chaque maison a une histoire.", hint: "« Cada casa » = chaque maison." }
+            - { gen: maths.multiplication }
+    pause: "Le jeu du point de vue : chaque sœur choisit un objet du quotidien et décrit comment il paraîtrait vu depuis très haut, comme depuis le belvédère du village."
+    closing:
+      - { who: narrateur, text: "Le soleil se coucha lentement derrière les montagnes, teintant tout le ciel au-dessus de la vallée d'un orange profond, tandis que les trois sœurs restaient silencieuses, absorbées par le spectacle." }
+      - { who: habitant, text: "Demain sera votre dernier jour parmi nous, avant de reprendre votre chemin vers les sommets. Profitez bien de cette dernière soirée." }
+      - { who: maelle, text: "On n'oubliera pas ce belvédère, ni votre village, c'est certain." }
+      - { who: narrateur, text: "Et tandis que la nuit tombait doucement sur la vallée, les premières étoiles se mirent à scintiller, presque aussi nombreuses que les lanternes du village suspendu." }
+    reward: "la vue depuis le belvédère caché, rarement montrée aux visiteurs"
+  # ─────────────────────────── JOUR 4 ───────────────────────────
+  - n: 4
+    title: Le dernier jour au village
+    decor: Le village suspendu, dans la lumière douce du matin, où les habitants se rassemblent pour un dernier moment de partage avec les trois sœurs avant leur départ.
+    opening:
+      - { who: narrateur, text: "Le quatrième jour, tout le village sembla se rassembler sur la place centrale, pour saluer, une dernière fois, les trois sœurs avant leur départ vers les sommets." }
+      - { who: habitant, text: "On ne reçoit pas souvent des voyageuses aussi curieuses et aussi généreuses de leur temps. Le village voulait vous remercier, à sa façon." }
+      - { who: rafaelle, text: "C'est nous qui devrions vous remercier ! Vous nous avez tellement appris, en quelques jours seulement." }
+      - { who: habitant, text: "L'apprentissage, petite Archiviste, va toujours dans les deux sens, même quand on ne s'en rend pas compte tout de suite." }
+      - { who: axelle, text: "Qu'avez-vous appris de nous, alors, pendant ces quelques jours ?" }
+      - { who: habitant, text: "Que la curiosité et le courage peuvent tenir dans des mains aussi petites que les vôtres, petite Veilleuse. Ce n'est pas rien, croyez-moi." }
+    manches:
+      - id: m1
+        title: Un apprentissage dans les deux sens
+        tours:
+          axelle:
+            - { id: ch19-j4-ax-m1a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le contraire de « généreuse » ?", choices: ["avare", "gentille", "curieuse", "patiente", "joyeuse"], answer: "avare", hint: "Le contraire de quelqu'un qui donne facilement de son temps." }
+            - { id: ch19-j4-ax-m1b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 7 + 8.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "7 + 8 = 7 + 7 + 1." }
+          maelle:
+            - { id: ch19-j4-ma-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Pourquoi un échange entre voyageurs et habitants locaux profite-t-il souvent aux deux parties à la fois ?", choices: ["parce que chacun apporte et reçoit des connaissances, des expériences ou un regard différent", "parce qu'un échange ne profite jamais qu'à une seule partie", "cela n'a aucun lien avec la rencontre entre voyageurs et habitants", "parce que seuls les habitants apprennent quelque chose", "parce que seuls les voyageurs apprennent quelque chose"], answer: "parce que chacun apporte et reçoit des connaissances, des expériences ou un regard différent", hint: "Repense à ce que dit l'Habitant sur l'apprentissage dans les deux sens." }
+            - { id: ch19-j4-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 83 + 59.", choices: ["138", "140", "142", "144", "146"], answer: "142", hint: "83 + 60 − 1." }
+          rafaelle:
+            - { id: ch19-j4-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "« Que la curiosité et le courage peuvent tenir dans des mains aussi petites que les vôtres. » : que signifie cette phrase ?", choices: ["que l'âge ou la taille ne limitent pas la valeur des qualités d'une personne", "que seules les mains des adultes peuvent être courageuses", "que la curiosité ne concerne jamais les enfants", "que les petites mains sont toujours moins capables", "que le courage n'a aucun lien avec les qualités personnelles"], answer: "que l'âge ou la taille ne limitent pas la valeur des qualités d'une personne", hint: "Repense à ce que l'Habitant dit avoir appris des trois sœurs." }
+            - { id: ch19-j4-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 4/5 − 1/5.", choices: ["1/5", "2/5", "3/5", "4/5", "5/5"], answer: "3/5", hint: "4 − 1 = 3, même dénominateur." }
+      - id: m2
+        title: Les cadeaux du village
+        tours:
+          axelle:
+            - { id: ch19-j4-ax-m2a, subject: maths, level: 1, kind: qcm, prompt: "Calcule 16 − 7.", choices: ["7", "8", "9", "10", "11"], answer: "9", hint: "16 − 6 = 10, puis − 1." }
+            - { id: ch19-j4-ax-m2b, subject: sciences, level: 1, kind: qcm, prompt: "Pourquoi un petit objet fabriqué à la main garde-t-il souvent plus de valeur sentimentale qu'un objet acheté ?", choices: ["parce qu'il porte le temps et l'attention de la personne qui l'a confectionné", "parce qu'un objet fabriqué à la main n'a jamais aucune valeur", "cela n'a aucune explication particulière", "parce qu'un objet acheté a toujours plus de valeur", "parce que la fabrication à la main n'existe plus nulle part"], answer: "parce qu'il porte le temps et l'attention de la personne qui l'a confectionné", hint: "Pense à ce que représente un cadeau offert par les habitants du village." }
+          maelle:
+            - { id: ch19-j4-ma-m2a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 342 ÷ 6.", choices: ["55", "57", "59", "61", "63"], answer: "57", hint: "6 × 57 = 342." }
+            - { id: ch19-j4-ma-m2b, subject: francais, level: 2, kind: qcm, prompt: "Quelle est la nature du mot « curieuses » dans « voyageuses curieuses » ?", choices: ["nom", "adjectif", "verbe", "adverbe", "pronom"], answer: "adjectif", hint: "Il décrit les trois sœurs vues par l'Habitant." }
+          rafaelle:
+            - { id: ch19-j4-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 9² − 4².", choices: ["55", "58", "61", "63", "65"], answer: "65", hint: "81 − 16." }
+            - { id: ch19-j4-ra-m2b, subject: espagnol, level: 2, kind: qcm, prompt: "Comment dit-on « Merci pour l'hospitalité » en espagnol ?", choices: ["Gracias por la hospitalidad.", "Cada casa tiene una historia.", "Todos se ayudan aquí.", "El pueblo cuelga del acantilado.", "La vida es sencilla en la montaña."], answer: "Gracias por la hospitalidad.", hint: "Relis la phrase du jour 3." }
+      - id: m3
+        title: Se dire au revoir
+        tours:
+          axelle:
+            - { id: ch19-j4-ax-m3a, subject: francais, level: 1, kind: qcm, prompt: "Quel est le sujet de « Tout le village sembla se rassembler. » ?", choices: ["se rassembler", "sembla", "Tout le village", "tout", "le village"], answer: "Tout le village", hint: "Qui se rassemble sur la place centrale ?" }
+            - { id: ch19-j4-ax-m3b, subject: maths, level: 1, kind: qcm, prompt: "Calcule 11 − 4.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "11 − 4 = 7." }
+          maelle:
+            - { id: ch19-j4-ma-m3a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 31 × 4.", choices: ["114", "118", "120", "122", "124"], answer: "124", hint: "31 × 4 = 30 × 4 + 4." }
+            - { id: ch19-j4-ma-m3b, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi un au revoir chaleureux à la fin d'un séjour marque-t-il souvent autant que l'accueil au début ?", choices: ["parce qu'il confirme que les liens tissés pendant le séjour étaient sincères", "parce qu'un au revoir n'a jamais aucune importance", "cela n'a aucun lien avec les liens tissés", "parce que seul l'accueil compte vraiment dans une rencontre", "parce qu'un au revoir efface toujours ce qui a été vécu"], answer: "parce qu'il confirme que les liens tissés pendant le séjour étaient sincères", hint: "Pense à l'ambiance du dernier jour au village." }
+          rafaelle:
+            - { id: ch19-j4-ra-m3a, subject: maths, level: 4, kind: qcm, prompt: "Résous : 5x + 9 = 44.", choices: ["5", "6", "7", "8", "9"], answer: "7", hint: "5x = 35." }
+            - { id: ch19-j4-ra-m3b, subject: francais, level: 4, kind: qcm, prompt: "Conjugue au futur simple : « Nous (revenir) un jour visiter ce village. »", choices: ["nous reviendrons", "nous revenons", "nous revenions", "nous revîntes", "nous revenions"], answer: "nous reviendrons", hint: "Futur simple de « revenir »." }
+      - id: m4
+        title: Un dernier moment de partage
+        tours:
+          axelle:
+            - { id: ch19-j4-ax-m4a, subject: maths, level: 2, kind: qcm, prompt: "Calcule 9 × 4.", choices: ["32", "34", "35", "36", "38"], answer: "36", hint: "9 × 4 = 9 × 2 × 2." }
+            - { gen: maths.comparer }
+          maelle:
+            - { id: ch19-j4-ma-m4a, subject: maths, level: 3, kind: qcm, prompt: "Calcule 275 − 128.", choices: ["143", "145", "147", "149", "151"], answer: "147", hint: "275 − 130 + 2." }
+            - { gen: maths.ranger }
+          rafaelle:
+            - { id: ch19-j4-ra-m4a, subject: maths, level: 4, kind: qcm, prompt: "Calcule 14 × 6.", choices: ["80", "82", "84", "86", "88"], answer: "84", hint: "14 × 6 = 14 × 3 × 2." }
+            - { gen: maths.duree }
+    pause: "Le jeu des souvenirs partagés : chaque sœur raconte, en une phrase, le moment du village qu'elle préfère garder en mémoire, et les deux autres devinent de quel moment il s'agit avant qu'elle ne le révèle."
+    closing:
+      - { who: narrateur, text: "La soirée se prolongea doucement sur la place centrale, entre rires, histoires et dernières chansons, tandis que les lanternes du village brillaient plus fort que jamais." }
+      - { who: habitant, text: "Demain, le chemin vous appellera de nouveau. Partez l'esprit léger, et sachez que ce village se souviendra de vous." }
+      - { who: rafaelle, text: "Et nous, on se souviendra de vous, et de ce village suspendu entre ciel et terre." }
+      - { who: narrateur, text: "Et tandis que les trois sœurs regagnaient leur maison prêtée pour la dernière fois, Nilo observait la scène avec une tendresse inhabituelle, presque ému par tant de chaleur humaine." }
+    reward: "un dernier moment de partage avec les habitants du village"
+  # ─────────────────────────── JOUR 5 ───────────────────────────
+  - n: 5
+    title: Le départ du village
+    decor: Les abords du village au petit matin, où tous les habitants se sont rassemblés pour accompagner les trois sœurs jusqu'au premier tournant du chemin, avant leur départ définitif.
+    opening:
+      - { who: narrateur, text: "Le cinquième jour, tout le village s'était rassemblé dès l'aube pour accompagner les trois sœurs jusqu'au premier tournant du chemin, avant leur départ définitif vers les sommets." }
+      - { who: habitant, text: "Vous pouvez nous aider comme bon vous semble, petites voyageuses. Que voulez-vous faire, pour cette toute dernière matinée parmi nous ?" }
+      - { who: nilo, text: "Après un village entier, il va falloir se faire à l'idée qu'on redevient juste nous quatre sur le chemin. Mais bon, on a l'habitude, non ?" }
+    manches:
+      - id: m1
+        title: Ce que le village a appris
+        intro: "L'Habitant interroge chaque sœur sur tout ce que ce séjour au village lui a appris, avant leur départ."
+        tours:
+          axelle:
+            - { id: ch19-j5-ax-m1a, subject: histoire-geo, level: 2, kind: qcm, prompt: "Comment appelle-t-on un pont étroit, souvent fait de bois ou de corde, qui relie deux points en hauteur ?", choices: ["une passerelle", "un tunnel", "un escalier", "une route", "un barrage"], answer: "une passerelle", hint: "C'est le mot du premier jour." }
+            - { id: ch19-j5-ax-m1b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 8 + 7.", choices: ["13", "14", "15", "16", "17"], answer: "15", hint: "8 + 7 = 8 + 8 − 1." }
+          maelle:
+            - { id: ch19-j5-ma-m1a, subject: sciences, level: 3, kind: qcm, prompt: "Pourquoi un village construit à flanc de falaise doit-il faire particulièrement attention à la solidité de ses constructions, comme tu l'as appris cette semaine ?", choices: ["parce qu'une chute de hauteur y serait bien plus dangereuse qu'en plaine", "parce que les falaises sont toujours parfaitement plates", "cela n'a aucune importance particulière", "parce que le vent n'existe jamais en falaise", "parce que les constructions en falaise ne risquent jamais rien"], answer: "parce qu'une chute de hauteur y serait bien plus dangereuse qu'en plaine", hint: "Repense à ta propre question du premier jour." }
+            - { id: ch19-j5-ma-m1b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 39 × 4.", choices: ["148", "152", "154", "156", "158"], answer: "156", hint: "40 × 4 − 4." }
+          rafaelle:
+            - { id: ch19-j5-ra-m1a, subject: francais, level: 4, kind: qcm, prompt: "Pourquoi peut-on dire que ce village a appris aux trois sœurs la valeur de la contribution collective ?", choices: ["parce qu'il leur a montré que chacun peut aider à sa façon, selon ses goûts et ses talents", "parce que le village n'a jamais rien demandé aux sœurs", "parce que seule l'Habitant travaille réellement dans ce village", "parce qu'il n'y a aucune leçon à tirer de ce séjour", "parce que la contribution collective n'a jamais existé dans ce village"], answer: "parce qu'il leur a montré que chacun peut aider à sa façon, selon ses goûts et ses talents", hint: "Repense à la décision du deuxième jour, et à ce qu'elle représente." }
+            - { id: ch19-j5-ra-m1b, subject: maths, level: 4, kind: qcm, prompt: "Calcule 5/6 − 2/6.", choices: ["1/6", "2/6", "3/6", "4/6", "5/6"], answer: "3/6", hint: "5 − 2 = 3, même dénominateur." }
+      - id: m2
+        title: Avant de repartir
+        intro: "Il faut relier tout ce que la semaine au village a appris, avant de reprendre le chemin vers les sommets."
+        tours:
+          axelle:
+            - { id: ch19-j5-ax-m2a, subject: francais, level: 2, kind: qcm, prompt: "Quel adjectif décrit le mieux un endroit qui demande un peu d'effort pour être trouvé, sans être réellement caché ?", choices: ["discret", "voyant", "bruyant", "immense", "ordinaire"], answer: "discret", hint: "C'est le mot utilisé par l'Habitant pour le belvédère." }
+            - { id: ch19-j5-ax-m2b, subject: maths, level: 2, kind: qcm, prompt: "Calcule 14 − 6.", choices: ["6", "7", "8", "9", "10"], answer: "8", hint: "14 − 6 = 8." }
+          maelle:
+            - { id: ch19-j5-ma-m2a, subject: histoire-geo, level: 3, kind: qcm, prompt: "Pourquoi ce village suspendu, et son mode de vie entraidant, ont-ils une importance particulière dans le voyage des trois sœurs ?", choices: ["il n'a aucune importance réelle", "il leur apprend la solidarité, la contribution collective et la valeur de l'hospitalité", "il les empêche d'avancer vers le sommet", "il se trouve très loin des montagnes", "personne n'y vit jamais vraiment"], answer: "il leur apprend la solidarité, la contribution collective et la valeur de l'hospitalité", hint: "Repense à tout ce que les sœurs ont appris cette semaine, auprès de l'Habitant." }
+            - { id: ch19-j5-ma-m2b, subject: maths, level: 3, kind: qcm, prompt: "Calcule 288 ÷ 6.", choices: ["44", "46", "48", "50", "52"], answer: "48", hint: "6 × 48 = 288." }
+          rafaelle:
+            - { id: ch19-j5-ra-m2a, subject: maths, level: 5, kind: qcm, prompt: "Calcule 11² − 85.", choices: ["32", "34", "36", "38", "40"], answer: "36", hint: "121 − 85." }
+            - { id: ch19-j5-ra-m2b, subject: francais, level: 4, kind: qcm, prompt: "« Que voulez-vous faire, pour cette toute dernière matinée parmi nous ? » : quel est le sujet de cette phrase ?", choices: ["cette toute dernière matinée", "voulez-vous", "faire", "vous", "nous"], answer: "vous", hint: "À qui l'Habitant pose-t-il cette question ?" }
+      - id: m3
+        title: Le Chant du Village
+        intro: "Tous les habitants se rassemblent pour chanter une dernière fois avec les trois sœurs, avant leur départ vers les sommets."
+        tours:
+          axelle:
+            - { id: ch19-j5-ax-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, blanche." }
+          maelle:
+            - { id: ch19-j5-ma-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : noire, noire, noire, noire." }
+          rafaelle:
+            - { id: ch19-j5-ra-m3a, subject: musique, level: 3, kind: libre, validation: soeurs, prompt: "Tape ta mesure en rythme : blanche, blanche." }
+    concert:
+      measures:
+        axelle: { given: [1, 1], missing: 2, prompt: "Noire, noire, blanche" }
+        maelle: { given: [1, 1, 1], missing: 1, prompt: "Noire, noire, noire, noire" }
+        rafaelle: { given: [2], missing: 2, prompt: "Blanche, blanche" }
+    pause: "Le dernier salut collectif : chaque sœur choisit une personne du village à qui adresser un dernier mot de remerciement, avant de reprendre la route."
+    closing:
+      - { who: narrateur, text: "La dernière note du Chant du Village se répandit dans l'air frais du matin, et tous les habitants, d'un même geste, saluèrent les trois sœurs qui s'éloignaient déjà vers le premier tournant du chemin." }
+      - { who: habitant, text: "Portez-vous bien, petites voyageuses. Le village n'oubliera pas votre passage, et nous espérons sincèrement vous revoir un jour." }
+      - { who: maelle, text: "On reviendra, c'est promis. Et on racontera votre village à tous ceux qu'on croisera sur notre chemin." }
+      - { who: narrateur, text: "Et tandis que le village suspendu disparaissait peu à peu derrière elles, le chemin se remit à grimper vers les sommets, toujours plus haut, vers de nouvelles rencontres encore inconnues." }
+      - { who: axelle, text: "Je crois que ce village va me manquer. Mais j'ai aussi hâte de voir ce qui nous attend plus haut." }
+      - { who: rafaelle, text: "On a toujours fini par avancer, jusqu'ici. Et chaque étape nous a appris quelque chose qu'on n'oubliera pas." }
+    reward: "l'amitié du village suspendu, et un chemin dégagé vers les prochains sommets"
