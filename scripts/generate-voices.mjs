@@ -125,6 +125,14 @@ function loadFins() {
   return existsSync(FINS_PATH) ? parse(readFileSync(FINS_PATH, 'utf8')) : [];
 }
 
+/** Les voix Chirp3-HD élident mal l'apostrophe droite (ASCII, ') dans les contractions
+ * françaises (n'est, j'ai, l'Arche…), la prononçant parfois comme un symbole à part au lieu
+ * d'une élision. L'apostrophe typographique (’) est normalisée correctement : on la substitue
+ * uniquement pour la synthèse (le texte affiché à l'écran garde l'apostrophe droite). */
+function forSpeech(text) {
+  return text.replace(/'/g, '’');
+}
+
 async function synthesize(apiKey, who, text) {
   const voiceName = VOICES[who];
   if (!voiceName) {
@@ -135,7 +143,7 @@ async function synthesize(apiKey, who, text) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      input: { text },
+      input: { text: forSpeech(text) },
       voice: { languageCode: 'fr-FR', name: `fr-FR-Chirp3-HD-${voiceName}` },
       audioConfig: { audioEncoding: 'OGG_OPUS' }
     })

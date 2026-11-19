@@ -92,6 +92,8 @@ body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color
 .ui-key:active { background: #34407a; }
 .ui-key-wide { grid-column: span 3; font-size: 1.1rem; }
 .ui-key-ok { background: var(--gold); color: var(--night); border-color: var(--gold); }
+.ui-key-cancel { color: #ff6b6b; border-color: #ff6b6b; font-size: 1.3rem; }
+.ui-key-cancel:active { background: rgba(255, 107, 107, .18); }
 .ui-key:disabled { opacity: .5; }
 .ui-choices { display: flex; flex-wrap: wrap; gap: 12px; }
 .ui-choice { font-size: 1.25rem; min-width: 180px; }
@@ -137,6 +139,13 @@ body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color
 @keyframes ui-intro-in { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .ui-intro-image { animation: none; } }
 
+/* ───────── Page magique (dédicace, mot de la fin) ───────── */
+.ui-magic-page { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 48px; background: #000; padding: 40px; text-align: center; }
+.ui-magic-text { margin: 0; max-width: 42em; font-family: var(--font-epic); font-weight: 600; font-size: clamp(1.5rem, 3.2vw, 2.4rem); line-height: 1.55; color: var(--gold); text-shadow: var(--gold-glow); letter-spacing: .03em; opacity: 0; animation: ui-magic-in 3.5s ease-out forwards; }
+.ui-magic-cta { opacity: 0; animation: ui-magic-in 1.5s ease-out 2.8s forwards; }
+@keyframes ui-magic-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .ui-magic-text, .ui-magic-cta { animation: none; opacity: 1; } }
+
 /* ───────── Mode parent ───────── */
 .ui-title { pointer-events: auto; touch-action: none; -webkit-touch-callout: none; }
 .ui-modal { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; background: rgba(10, 13, 30, .75); }
@@ -163,7 +172,7 @@ body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color
 .ui-input-pin { max-width: 200px; min-width: 0; letter-spacing: .3em; }
 .ui-file { display: inline-flex; align-items: center; position: relative; overflow: hidden; }
 .ui-file input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
-.ui-input-pin::placeholder { letter-spacing: normal; }
+.ui-input-pin::placeholder { letter-spacing: normal; font-size: .95rem; }
 
 /* ───────── Grimoire : titres gravés et récit ───────── */
 :root {

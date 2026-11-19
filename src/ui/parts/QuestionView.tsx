@@ -8,6 +8,7 @@ import type { PlayerId } from '../../engine/types';
 import { Clock } from './Clock';
 import { Choices, NumberPad, Order, TextAnswer } from './Inputs';
 import { say } from '../voice';
+import { autoRead } from '../store';
 
 export interface Outcome {
   verdict: FinalVerdict;
@@ -38,8 +39,9 @@ export function QuestionView(props: {
   const helped = hint || team;
 
   // Le parent remonte ce composant à chaque question (key) : l'état repart de zéro sans effet de bord.
+  // Lue pour les trois filles (pas seulement Axelle), sous réserve du conteur activé.
   useEffect(() => {
-    if (player === 'axelle') say(q.prompt);
+    if (autoRead()) say(q.prompt);
   }, []);
 
   const submit = (r: string | string[]) => {

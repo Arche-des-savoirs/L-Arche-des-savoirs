@@ -62,6 +62,16 @@ export async function loadFrenchVoices(synth: SynthLike | undefined = globalThis
   return (await loadVoices(synth, timeoutMs)).filter((v) => v.lang.toLowerCase().startsWith('fr'));
 }
 
+/** Voix par défaut choisie par Hasina : « Google français (en ligne) » quand l'appareil l'expose, sinon la première voix de la liste (déjà triée, hors ligne en premier). */
+const isGoogleFrancais = (name: string) => /^google fran[çc]ais$/i.test(name);
+export function preferredVoiceName(voices: VoiceInfo[]): string | undefined {
+  return voices.find((v) => isGoogleFrancais(v.name))?.name ?? voices[0]?.name;
+}
+
+/** Même substitution que scripts/generate-voices.mjs (forSpeech) : l'apostrophe droite (ASCII)
+ * est mal élidée par certaines voix (dont Google français) dans les contractions françaises. */
+const forSpeech = (text: string) => text.replace(/'/g, '’');
+
 /** Lit un texte. Hors ligne, seule une voix locale fonctionne : on la préfère. */
 export function speak(text: string, voiceName?: string, rate = 0.95): boolean {
   const synth = globalThis.speechSynthesis;
@@ -71,7 +81,7 @@ export function speak(text: string, voiceName?: string, rate = 0.95): boolean {
   const usable = frenchVoices(all).filter((v) => online || v.localService);
   const voice = all.find((v) => v.name === voiceName) ?? usable[0];
   synth.cancel();
-  const u = new SpeechSynthesisUtterance(text);
+  const u = new SpeechSynthesisUtterance(forSpeech(text));
   u.lang = voice?.lang ?? 'fr-FR';
   if (voice) u.voice = voice;
   u.rate = rate;

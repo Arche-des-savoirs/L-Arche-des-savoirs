@@ -31,8 +31,8 @@ export function PinPad({ title, onSubmit, onCancel, error }: { title: string; on
               {d}
             </button>
           ))}
-          <button class="ui-key" onClick={onCancel}>
-            Annuler
+          <button class="ui-key ui-key-cancel" onClick={onCancel} aria-label="Annuler">
+            ✕
           </button>
           <button class="ui-key" onClick={() => press('0')}>
             0
