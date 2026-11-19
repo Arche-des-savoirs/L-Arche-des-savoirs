@@ -7,6 +7,7 @@ import { Diagnostic } from './Diagnostic';
 import { init, route } from './store';
 import { Session } from './screens/Session';
 import { Avatars } from './screens/Avatars';
+import { Dedicace } from './screens/Dedicace';
 import { ADemain, Bientot } from './screens/ADemain';
 import { Fin } from './screens/Fin';
 
@@ -37,6 +38,8 @@ export function App() {
       return <Diagnostic onBack={() => (route.value = 'accueil')} />;
     case 'avatars':
       return <Avatars />;
+    case 'dedicace':
+      return <Dedicace />;
     case 'seance':
       return <Session />;
     case 'fin':

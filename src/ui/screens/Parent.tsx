@@ -8,7 +8,7 @@ import { effectiveVerdict, isValidPin, pending, sessionLine, summary } from '../
 import { NAMES } from '../../engine/profile';
 import { PLAYERS, type Option } from '../../engine/types';
 import type { Subject } from '../../content/schema';
-import { loadFrenchVoices, type VoiceInfo } from '../../platform/voices';
+import { loadFrenchVoices, preferredVoiceName, type VoiceInfo } from '../../platform/voices';
 import { fromExport, toExport } from '../../storage/save';
 import { autoRead, dispatch, jumpTo, lastError, parentDecide, replaceSave, resetEverything, route, save, setAutoRead, setPin, setTestMode, setVoice, testMode } from '../store';
 import { CHAPTERS } from '../../content/chapters';
@@ -309,7 +309,7 @@ function Reglages({ now }: { now: number }) {
         ) : (
           <div class="ui-row ui-wrap">
             {voices.map((v) => {
-              const selected = (settings.voiceName ?? voices[0]!.name) === v.name;
+              const selected = (settings.voiceName ?? preferredVoiceName(voices)) === v.name;
               return (
                 <button key={v.name} class={`ui-btn ui-btn-small${selected ? ' ui-selected' : ''}`} aria-pressed={selected} onClick={() => setVoice(v.name, rate)}>
                   {v.name}

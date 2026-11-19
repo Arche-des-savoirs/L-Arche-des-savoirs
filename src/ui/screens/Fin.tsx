@@ -10,8 +10,11 @@ import { epilogueImage } from '../../content/images';
 import { dispatch, finishFinalSession, route, save } from '../store';
 import { Card, Dialogue, roman } from '../parts/Common';
 import { VoteFinal } from '../parts/VoteFinal';
+import { MagicPage } from '../parts/MagicPage';
 
-type Phase = 'vote' | 'recit' | 'carrefour' | 'termine';
+const MOT_DE_LA_FIN = "Fin de l'aventure. J'espère que vous avez aimé. Bisous mes chéries.";
+
+type Phase = 'vote' | 'recit' | 'carrefour' | 'mot' | 'termine';
 
 function initialPhase(): Phase {
   const g = save.value.game;
@@ -51,8 +54,9 @@ export function Fin() {
         fin={fin}
         onDone={() => {
           finishFinalSession();
-          if (save.value.game.final!.result === 'F5') setPhase('carrefour');
-          else route.value = 'accueil';
+          // Fin 5 (rare) : l'aventure continue, retour au carrefour. Les autres fins sont
+          // définitives : le mot de la fin ferme l'aventure après la dernière image du récit.
+          setPhase(save.value.game.final!.result === 'F5' ? 'carrefour' : 'mot');
         }}
       />
     );
@@ -85,7 +89,11 @@ export function Fin() {
     );
   }
 
+  if (phase === 'mot') {
+    return <MagicPage text={MOT_DE_LA_FIN} onDone={() => (route.value = 'accueil')} />;
+  }
+
   // phase === 'termine' : relecture de la fin déjà atteinte, le jeu est terminé.
   const ending: Ending = save.value.game.final!.result;
-  return <Recit fin={finOf(ending)!} onDone={() => (route.value = 'accueil')} />;
+  return <Recit fin={finOf(ending)!} onDone={() => setPhase('mot')} />;
 }

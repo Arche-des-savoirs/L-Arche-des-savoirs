@@ -50,6 +50,8 @@ async function createAvatars(page: Page) {
     await page.getByRole('button', { name: "C'est moi !" }).click();
     await page.getByRole('button', { name: /^Bienvenue/ }).click();
   }
+  // Dédicace montrée une seule fois, juste avant le chapitre I, jour I.
+  await page.getByRole('button', { name: 'Continuer' }).click();
 }
 
 const NEXT = ['Ouvrir le chapitre', 'Suivant →', 'Continuer', 'Commencer la manche', 'On reprend !', 'Terminer la séance', 'Voir ce qui se passe', 'Second vote', 'Commencer le vote secret', 'Voir la traduction'];

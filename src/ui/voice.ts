@@ -1,10 +1,10 @@
 // Lecture à voix haute : voix fr-FR locale en priorité (Surface Go 3 : « français France »).
 import { precomputedVoiceUrl } from '../content/audio';
-import { loadFrenchVoices, speak } from '../platform/voices';
+import { loadFrenchVoices, preferredVoiceName, speak } from '../platform/voices';
 import { save } from './store';
 
 let preferred: string | undefined;
-void loadFrenchVoices(undefined, 10000).then((v) => (preferred = v[0]?.name)).catch(() => undefined);
+void loadFrenchVoices(undefined, 10000).then((v) => (preferred = preferredVoiceName(v))).catch(() => undefined);
 
 let playing: HTMLAudioElement | undefined;
 

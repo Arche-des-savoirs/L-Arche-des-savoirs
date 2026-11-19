@@ -11,10 +11,13 @@ import type { Subject } from '../content/schema';
 import { emptySave, loadSave, wipeSave, writeSave, type SaveData } from '../storage/save';
 import { decide } from '../engine/parent';
 
-export type Route = 'chargement' | 'accueil' | 'diagnostic' | 'parent' | 'avatars' | 'seance' | 'a-demain' | 'bientot' | 'fin';
+export type Route = 'chargement' | 'accueil' | 'diagnostic' | 'parent' | 'avatars' | 'dedicace' | 'seance' | 'a-demain' | 'bientot' | 'fin';
 export const route = signal<Route>('chargement');
 export const save = signal<SaveData>(emptySave());
 export const lastError = signal<string | null>(null);
+/** Dédicace déjà montrée dans cette session d'app (en mémoire seulement, pas sauvegardée : si
+ * l'appli redémarre avant le tout premier jour, elle peut réapparaître une fois, sans gravité). */
+let dedicaceSeen = false;
 
 const reduce = createReducer(decisionOf);
 
@@ -74,6 +77,14 @@ export function startOrResume(now = Date.now()) {
   // retour au carrefour (Fin 5) ou la relecture de la fin se font depuis l'écran « fin ».
   if (s.game.final) {
     route.value = 'fin';
+    return;
+  }
+  // Tout premier jour de l'aventure (aucune séance jamais jouée, aucune en cours) : dédicace
+  // avant d'entrer dans le chapitre I, jour I — une seule fois.
+  const isVeryFirstDay = s.game.sessionsPlayed === 0 && !s.game.session && s.game.position.chapter === 1 && s.game.position.day === 1;
+  if (isVeryFirstDay && !dedicaceSeen) {
+    dedicaceSeen = true;
+    route.value = 'dedicace';
     return;
   }
   if (!s.game.session) {
