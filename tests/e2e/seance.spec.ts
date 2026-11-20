@@ -38,8 +38,8 @@ async function seed(page: Page, patch: (data: Record<string, any>) => void, chap
 
 async function createAvatars(page: Page) {
   await page.getByRole('button', { name: "Commencer l'aventure" }).click();
-  await page.getByRole('button', { name: 'Une tresse' }).click();
-  await page.getByRole('button', { name: 'Turquoise' }).click();
+  await page.getByRole('button', { name: 'Déterminée' }).click();
+  await page.getByRole('button', { name: 'Bras croisés' }).click();
   await expect(page.getByRole('img', { name: "Avatar d'Axelle" }).or(page.getByRole('img', { name: 'Avatar de Axelle' }))).toBeVisible();
   await cap(page, 'avatar-creation');
   await page.getByRole('button', { name: "C'est moi !" }).click();

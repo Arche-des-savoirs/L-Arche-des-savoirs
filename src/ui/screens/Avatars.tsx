@@ -1,6 +1,6 @@
 // Création des avatars, une fille après l'autre, puis présentation du compagnon.
 import { useState } from 'preact/hooks';
-import { ACCESSORIES, CAPE_COLORS, CAPE_LABELS, COMPANIONS, DEFAULT_PROFILE, HAIRSTYLES, NAMES, ROLES, type Accessory, type CapeColor, type Hairstyle, type Profile } from '../../engine/profile';
+import { ACCESSORIES, COMPANIONS, DECORS, DEFAULT_PROFILE, EXPRESSIONS, NAMES, POSES, ROLES, type Accessory, type Decor, type Expression, type Pose, type Profile } from '../../engine/profile';
 import { PLAYERS, type PlayerId } from '../../engine/types';
 import { route, save, saveProfiles, startOrResume } from '../store';
 import { Avatar } from '../parts/Avatar';
@@ -38,15 +38,9 @@ export function Avatars() {
           <div class="ui-avatar-editor">
             <Avatar player={p} profile={prof} size={240} label={`Avatar de ${NAMES[p]}`} />
             <div class="ui-avatar-options">
-              <Picker label="Coiffure" options={HAIRSTYLES} value={prof.hair} onPick={(hair: Hairstyle) => set({ hair })} />
-              <fieldset class="ui-fieldset">
-                <legend>Broderie de la cape</legend>
-                <div class="ui-row ui-wrap">
-                  {(Object.keys(CAPE_COLORS) as CapeColor[]).map((c) => (
-                    <button key={c} class={`ui-swatch${prof.cape === c ? ' ui-selected' : ''}`} style={{ background: CAPE_COLORS[c] }} aria-pressed={prof.cape === c} aria-label={CAPE_LABELS[c]} onClick={() => set({ cape: c })} />
-                  ))}
-                </div>
-              </fieldset>
+              <Picker label="Expression" options={EXPRESSIONS} value={prof.expression} onPick={(expression: Expression) => set({ expression })} />
+              <Picker label="Pose" options={POSES} value={prof.pose} onPick={(pose: Pose) => set({ pose })} />
+              <Picker label="Décor" options={DECORS} value={prof.decor} onPick={(decor: Decor) => set({ decor })} />
               <Picker label="Accessoire" options={ACCESSORIES} value={prof.accessory} onPick={(accessory: Accessory) => set({ accessory })} />
               <button class="ui-btn ui-btn-main" onClick={() => setPhase('compagnon')}>
                 C'est moi !
