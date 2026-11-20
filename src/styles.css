@@ -149,7 +149,7 @@ body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color
 
 /* ───────── Page magique (dédicace, mot de la fin) : texte manuscrit qui s'écrit lettre à lettre ───────── */
 .ui-magic-page { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 48px; background: #000; padding: 40px; text-align: center; }
-.ui-magic-text { margin: 0; max-width: 42em; font-family: 'Parisienne', cursive; font-weight: 400; font-size: clamp(1.9rem, 4.2vw, 3.1rem); line-height: 1.5; color: var(--gold); text-shadow: var(--gold-glow); }
+.ui-magic-text { margin: 0; max-width: 46em; font-family: 'Parisienne', cursive; font-weight: 400; font-size: clamp(2.6rem, 6vw, 4.2rem); line-height: 1.45; color: var(--gold); text-shadow: var(--gold-glow); }
 .ui-magic-caret { display: inline-block; width: .06em; height: .9em; margin-left: .04em; background: var(--gold); vertical-align: -.1em; animation: ui-magic-blink 1s step-end infinite; }
 .ui-magic-cta { opacity: 0; pointer-events: none; transition: opacity .6s ease-out; }
 .ui-magic-cta-visible { opacity: 1; pointer-events: auto; }
