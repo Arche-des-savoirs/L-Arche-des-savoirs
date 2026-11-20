@@ -81,7 +81,7 @@ export function Avatars() {
             )}
             <div>
               <p class="ui-line">
-                Plume prend la forme de <strong>{COMPANIONS[p].name}</strong>. Il t'accompagnera dans toute l'aventure.
+                Plume prend la forme d'<strong>{COMPANIONS[p].indef}</strong>. Il t'accompagnera dans toute l'aventure.
               </p>
               <div class="ui-row">
                 <button class="ui-btn" onClick={() => setPhase('look')}>

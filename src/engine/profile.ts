@@ -15,10 +15,10 @@ export const ROLES: Record<PlayerId, string> = { axelle: 'la Veilleuse', maelle:
 export const LUEURS: Record<PlayerId, string> = { axelle: '#f4c95d', maelle: '#fbfaff', rafaelle: '#f5a3c7' };
 /** Nombre de bustes illustrés disponibles par sœur (public/images/avatars/<joueur>-1..N.webp). */
 export const BUST_COUNT: Record<PlayerId, number> = { axelle: 5, maelle: 5, rafaelle: 5 };
-export const COMPANIONS: Record<PlayerId, { name: string; emoji: string }> = {
-  axelle: { name: 'le lionceau', emoji: '🦁' },
-  maelle: { name: 'le louveteau', emoji: '🐺' },
-  rafaelle: { name: 'le fauconneau', emoji: '🦅' }
+export const COMPANIONS: Record<PlayerId, { name: string; indef: string; emoji: string }> = {
+  axelle: { name: 'le lionceau', indef: 'un lionceau', emoji: '🦁' },
+  maelle: { name: 'le louveteau', indef: 'un louveteau', emoji: '🐺' },
+  rafaelle: { name: 'le fauconneau', indef: 'un fauconneau', emoji: '🦅' }
 };
 /** Portrait illustré du compagnon disponible (public/images/avatars/companion-<joueur>.webp) ;
  * tant que false, l'écran affiche l'emoji de repli (COMPANIONS[joueur].emoji). */

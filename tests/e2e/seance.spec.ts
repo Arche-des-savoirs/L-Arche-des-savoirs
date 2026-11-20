@@ -42,7 +42,7 @@ async function createAvatars(page: Page) {
   await expect(page.getByRole('img', { name: "Avatar d'Axelle" }).or(page.getByRole('img', { name: 'Avatar de Axelle' }))).toBeVisible();
   await cap(page, 'avatar-creation');
   await page.getByRole('button', { name: "C'est moi !" }).click();
-  await expect(page.getByText('Plume prend la forme de')).toBeVisible();
+  await expect(page.getByText("Plume prend la forme d'")).toBeVisible();
   await cap(page, 'avatar-compagnon');
   await page.getByRole('button', { name: /^Bienvenue/ }).click();
   for (let i = 0; i < 2; i++) {
