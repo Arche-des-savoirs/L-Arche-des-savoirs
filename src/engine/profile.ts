@@ -1,31 +1,27 @@
-// Profil d'avatar de chaque fille. Peau et cheveux longs noirs sont fixes ; le reste se choisit.
+// Profil d'avatar de chaque fille : un buste illustré (généré par IA, voir docs/prompts-avatars-bustes.md)
+// choisi parmi plusieurs variantes par sœur — plus de personnalisation procédurale (SVG). Voir
+// public/images/avatars/<joueur>-<n>.webp et BUST_COUNT ci-dessous pour le nombre de variantes
+// disponibles par sœur (mis à jour au fur et à mesure que les images sont livrées).
 import type { PlayerId } from './types';
 
-export type Hairstyle = 'laches' | 'tresse' | 'queue';
-export type Accessory = 'etoile' | 'noeud' | 'fleur' | 'aucun';
-export const HAIRSTYLES: Record<Hairstyle, string> = { laches: 'Cheveux lâchés', tresse: 'Une tresse', queue: 'Une queue de cheval' };
-export const ACCESSORIES: Record<Accessory, string> = { etoile: 'Barrette étoile', noeud: 'Nœud', fleur: 'Fleur', aucun: 'Rien' };
-export const CAPE_COLORS = { or: '#f4c95d', argent: '#e8ecf7', rose: '#f5a3c7', turquoise: '#5fd4c8', violet: '#b48cf0', vert: '#8fd16a' } as const;
-export type CapeColor = keyof typeof CAPE_COLORS;
-export const CAPE_LABELS: Record<CapeColor, string> = { or: 'Or', argent: 'Argent', rose: 'Rose', turquoise: 'Turquoise', violet: 'Violet', vert: 'Vert' };
-
 export interface Profile {
-  hair: Hairstyle;
-  cape: CapeColor;
-  accessory: Accessory;
+  bust: number; // 1-based, voir BUST_COUNT[joueur] pour la plage valide
   companionConfirmed: boolean;
 }
 
 export const NAMES: Record<PlayerId, string> = { axelle: 'Axelle', maelle: 'Maelle', rafaelle: 'Rafaelle' };
 export const ROLES: Record<PlayerId, string> = { axelle: 'la Veilleuse', maelle: 'la Cartographe', rafaelle: "l'Archiviste" };
-export const LUEURS: Record<PlayerId, string> = { axelle: '#f4c95d', maelle: '#f4f1ff', rafaelle: '#f5a3c7' };
+/** Couleur canon de la lanterne (et de la cape sur les bustes) — utilisée ailleurs pour les badges/accents de couleur par joueuse. */
+export const LUEURS: Record<PlayerId, string> = { axelle: '#f4c95d', maelle: '#fbfaff', rafaelle: '#f5a3c7' };
+/** Nombre de bustes illustrés disponibles par sœur (public/images/avatars/<joueur>-1..N.webp). */
+export const BUST_COUNT: Record<PlayerId, number> = { axelle: 5, maelle: 5, rafaelle: 5 };
 export const COMPANIONS: Record<PlayerId, { name: string; emoji: string }> = {
   axelle: { name: 'le lionceau', emoji: '🦁' },
   maelle: { name: 'le louveteau', emoji: '🐺' },
   rafaelle: { name: 'le fauconneau', emoji: '🦅' }
 };
 export const DEFAULT_PROFILE: Record<PlayerId, Profile> = {
-  axelle: { hair: 'laches', cape: 'or', accessory: 'etoile', companionConfirmed: false },
-  maelle: { hair: 'tresse', cape: 'argent', accessory: 'noeud', companionConfirmed: false },
-  rafaelle: { hair: 'queue', cape: 'rose', accessory: 'fleur', companionConfirmed: false }
+  axelle: { bust: 1, companionConfirmed: false },
+  maelle: { bust: 1, companionConfirmed: false },
+  rafaelle: { bust: 1, companionConfirmed: false }
 };

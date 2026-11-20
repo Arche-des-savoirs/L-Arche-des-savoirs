@@ -6,3 +6,6 @@ export const chapterImage = (chapter: number) => `${base()}images/chapitres/ch${
 export const epilogueImage = () => `${base()}images/chapitres/epilogue.webp`;
 /** Noms des fichiers attendus dans public/images/chapitres (vérifiés par les tests). */
 export const IMAGE_FILES = [...Array.from({ length: 30 }, (_, i) => `ch${pad(i + 1)}.webp`), 'epilogue.webp'];
+
+/** Bustes d'avatar (générés par IA, voir docs/prompts-avatars-bustes.md), plusieurs variantes par sœur. */
+export const bustImage = (player: string, bust: number) => `${base()}images/avatars/${player}-${bust}.webp`;

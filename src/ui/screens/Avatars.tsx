@@ -1,6 +1,9 @@
 // Création des avatars, une fille après l'autre, puis présentation du compagnon.
+// L'avatar est un buste illustré par IA (voir docs/prompts-avatars-bustes.md), choisi parmi
+// plusieurs variantes par sœur (BUST_COUNT) — plus de personnalisation procédurale.
 import { useState } from 'preact/hooks';
-import { ACCESSORIES, CAPE_COLORS, CAPE_LABELS, COMPANIONS, DEFAULT_PROFILE, HAIRSTYLES, NAMES, ROLES, type Accessory, type CapeColor, type Hairstyle, type Profile } from '../../engine/profile';
+import { bustImage } from '../../content/images';
+import { BUST_COUNT, COMPANIONS, DEFAULT_PROFILE, NAMES, ROLES, type Profile } from '../../engine/profile';
 import { PLAYERS, type PlayerId } from '../../engine/types';
 import { route, save, saveProfiles, startOrResume } from '../store';
 import { Avatar } from '../parts/Avatar';
@@ -14,6 +17,7 @@ export function Avatars() {
   const p = PLAYERS[k]!;
   const prof = profiles[p];
   const set = (patch: Partial<Profile>) => setProfiles({ ...profiles, [p]: { ...prof, ...patch } });
+  const count = BUST_COUNT[p];
 
   const confirm = () => {
     const next = { ...profiles, [p]: { ...prof, companionConfirmed: true } };
@@ -34,20 +38,30 @@ export function Avatars() {
         <span>Les apprenties · {k + 1} sur 3</span>
       </header>
       {phase === 'look' ? (
-        <Card title={`${NAMES[p]}, ${ROLES[p]} : crée ton avatar`} wide>
+        <Card title={`${NAMES[p]}, ${ROLES[p]} : choisis ton avatar`} wide>
           <div class="ui-avatar-editor">
             <Avatar player={p} profile={prof} size={240} label={`Avatar de ${NAMES[p]}`} />
             <div class="ui-avatar-options">
-              <Picker label="Coiffure" options={HAIRSTYLES} value={prof.hair} onPick={(hair: Hairstyle) => set({ hair })} />
-              <fieldset class="ui-fieldset">
-                <legend>Broderie de la cape</legend>
-                <div class="ui-row ui-wrap">
-                  {(Object.keys(CAPE_COLORS) as CapeColor[]).map((c) => (
-                    <button key={c} class={`ui-swatch${prof.cape === c ? ' ui-selected' : ''}`} style={{ background: CAPE_COLORS[c] }} aria-pressed={prof.cape === c} aria-label={CAPE_LABELS[c]} onClick={() => set({ cape: c })} />
-                  ))}
-                </div>
-              </fieldset>
-              <Picker label="Accessoire" options={ACCESSORIES} value={prof.accessory} onPick={(accessory: Accessory) => set({ accessory })} />
+              {count > 0 ? (
+                <fieldset class="ui-fieldset">
+                  <legend>Choisis ton visage</legend>
+                  <div class="ui-bust-grid">
+                    {Array.from({ length: count }, (_, i) => i + 1).map((n) => (
+                      <button
+                        key={n}
+                        class={`ui-bust-option${prof.bust === n ? ' ui-selected' : ''}`}
+                        aria-pressed={prof.bust === n}
+                        aria-label={`Visage ${n}`}
+                        onClick={() => set({ bust: n })}
+                      >
+                        <img src={bustImage(p, n)} alt="" />
+                      </button>
+                    ))}
+                  </div>
+                </fieldset>
+              ) : (
+                <p class="ui-line">Les visages de {NAMES[p]} arrivent bientôt !</p>
+              )}
               <button class="ui-btn ui-btn-main" onClick={() => setPhase('compagnon')}>
                 C'est moi !
               </button>
@@ -78,20 +92,5 @@ export function Avatars() {
         </Card>
       )}
     </main>
-  );
-}
-
-function Picker<T extends string>({ label, options, value, onPick }: { label: string; options: Record<T, string>; value: T; onPick: (v: T) => void }) {
-  return (
-    <fieldset class="ui-fieldset">
-      <legend>{label}</legend>
-      <div class="ui-row ui-wrap">
-        {(Object.keys(options) as T[]).map((o) => (
-          <button key={o} class={`ui-btn ui-btn-small${value === o ? ' ui-selected' : ''}`} aria-pressed={value === o} onClick={() => onPick(o)}>
-            {options[o]}
-          </button>
-        ))}
-      </div>
-    </fieldset>
   );
 }
