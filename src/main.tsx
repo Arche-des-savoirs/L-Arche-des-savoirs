@@ -12,6 +12,7 @@ import '@fontsource/cinzel/latin-700.css';
 import '@fontsource/cormorant-garamond/latin-500.css';
 import '@fontsource/cormorant-garamond/latin-500-italic.css';
 import '@fontsource/cormorant-garamond/latin-600.css';
+import '@fontsource/parisienne/latin-400.css';
 import './styles.css';
 
 setupPWA();
