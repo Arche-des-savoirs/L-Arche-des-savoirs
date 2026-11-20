@@ -22,7 +22,7 @@ export const COMPANIONS: Record<PlayerId, { name: string; emoji: string }> = {
 };
 /** Portrait illustré du compagnon disponible (public/images/avatars/companion-<joueur>.webp) ;
  * tant que false, l'écran affiche l'emoji de repli (COMPANIONS[joueur].emoji). */
-export const COMPANION_IMAGE_READY: Record<PlayerId, boolean> = { axelle: false, maelle: false, rafaelle: false };
+export const COMPANION_IMAGE_READY: Record<PlayerId, boolean> = { axelle: true, maelle: true, rafaelle: true };
 export const DEFAULT_PROFILE: Record<PlayerId, Profile> = {
   axelle: { bust: 1, companionConfirmed: false },
   maelle: { bust: 1, companionConfirmed: false },
