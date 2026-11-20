@@ -2,8 +2,8 @@
 // L'avatar est un buste illustré par IA (voir docs/prompts-avatars-bustes.md), choisi parmi
 // plusieurs variantes par sœur (BUST_COUNT) — plus de personnalisation procédurale.
 import { useState } from 'preact/hooks';
-import { bustImage } from '../../content/images';
-import { BUST_COUNT, COMPANIONS, DEFAULT_PROFILE, NAMES, ROLES, type Profile } from '../../engine/profile';
+import { bustImage, companionImage } from '../../content/images';
+import { BUST_COUNT, COMPANION_IMAGE_READY, COMPANIONS, DEFAULT_PROFILE, NAMES, ROLES, type Profile } from '../../engine/profile';
 import { PLAYERS, type PlayerId } from '../../engine/types';
 import { route, save, saveProfiles, startOrResume } from '../store';
 import { Avatar } from '../parts/Avatar';
@@ -38,9 +38,9 @@ export function Avatars() {
         <span>Les apprenties · {k + 1} sur 3</span>
       </header>
       {phase === 'look' ? (
-        <Card title={`${NAMES[p]}, ${ROLES[p]} : choisis ton avatar`} wide>
+        <Card title={`${NAMES[p]}, ${ROLES[p]} : choisis ton avatar`}>
           <div class="ui-avatar-editor">
-            <Avatar player={p} profile={prof} size={240} label={`Avatar de ${NAMES[p]}`} />
+            <Avatar player={p} profile={prof} size={130} label={`Avatar de ${NAMES[p]}`} />
             <div class="ui-avatar-options">
               {count > 0 ? (
                 <fieldset class="ui-fieldset">
@@ -69,13 +69,17 @@ export function Avatars() {
           </div>
         </Card>
       ) : (
-        <Card title={`${NAMES[p]}, voici ton compagnon`} wide>
+        <Card title={`${NAMES[p]}, voici ton compagnon`}>
           <div class="ui-handover">
-            <Avatar player={p} profile={prof} size={200} label={`Avatar de ${NAMES[p]}`} />
-            <div>
+            <Avatar player={p} profile={prof} size={110} label={`Avatar de ${NAMES[p]}`} />
+            {COMPANION_IMAGE_READY[p] ? (
+              <img src={companionImage(p)} alt={COMPANIONS[p].name} class="ui-companion-img" />
+            ) : (
               <p class="ui-companion" aria-hidden="true">
                 {COMPANIONS[p].emoji}
               </p>
+            )}
+            <div>
               <p class="ui-line">
                 Plume prend la forme de <strong>{COMPANIONS[p].name}</strong>. Il t'accompagnera dans toute l'aventure.
               </p>

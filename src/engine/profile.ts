@@ -20,6 +20,9 @@ export const COMPANIONS: Record<PlayerId, { name: string; emoji: string }> = {
   maelle: { name: 'le louveteau', emoji: '🐺' },
   rafaelle: { name: 'le fauconneau', emoji: '🦅' }
 };
+/** Portrait illustré du compagnon disponible (public/images/avatars/companion-<joueur>.webp) ;
+ * tant que false, l'écran affiche l'emoji de repli (COMPANIONS[joueur].emoji). */
+export const COMPANION_IMAGE_READY: Record<PlayerId, boolean> = { axelle: false, maelle: false, rafaelle: false };
 export const DEFAULT_PROFILE: Record<PlayerId, Profile> = {
   axelle: { bust: 1, companionConfirmed: false },
   maelle: { bust: 1, companionConfirmed: false },
