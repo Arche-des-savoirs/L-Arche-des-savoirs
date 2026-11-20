@@ -14,7 +14,7 @@ describe('sauvegarde de la partie', () => {
     await writeSave(data, db);
     const back = await loadSave(db);
     expect(back.progress?.step).toBe(7);
-    expect(back.profiles?.maelle.accessory).toBe('noeud');
+    expect(back.profiles?.maelle.bust).toBe(1);
     expect(back.game.sessionsPlayed).toBe(3);
   });
 
