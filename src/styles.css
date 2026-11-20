@@ -64,9 +64,10 @@ body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color
 .ui-spanish { font-size: 2rem; font-weight: 700; color: #f5a3c7; margin: 12px 0; }
 .ui-selected { background: var(--gold) !important; color: var(--night) !important; }
 
-.ui-handover { display: flex; gap: 32px; align-items: center; }
+.ui-handover { display: flex; gap: 20px; align-items: center; }
 .ui-big-name { font-size: 2.6rem; font-weight: 800; margin: 0 0 4px; color: var(--lueur, var(--gold)); }
-.ui-companion { font-size: 5rem; margin: 0; }
+.ui-companion { font-size: 3.2rem; margin: 0; flex-shrink: 0; }
+.ui-companion-img { width: 110px; height: 110px; flex-shrink: 0; border-radius: 16px; object-fit: cover; box-shadow: 0 0 0 3px var(--gold), 0 0 16px rgba(244, 201, 93, .4); }
 
 .ui-tour { width: min(1160px, 100%); }
 .ui-tour-head { display: flex; align-items: center; gap: 16px; padding: 4px 8px 8px; }
@@ -115,9 +116,9 @@ body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color
 .ui-slot-full { border-style: solid; }
 .ui-note-btn { min-height: 110px; display: flex; flex-direction: column; align-items: center; gap: 4px; color: var(--ink); }
 
-.ui-avatar-editor { display: flex; gap: 32px; align-items: flex-start; }
-.ui-avatar-options { flex: 1; display: grid; gap: 12px; justify-items: start; }
-.ui-fieldset { border: 1px solid #34407a; border-radius: 14px; padding: 10px 16px 14px; width: 100%; }
+.ui-avatar-editor { display: flex; gap: 20px; align-items: center; }
+.ui-avatar-options { flex: 1; display: grid; gap: 8px; justify-items: start; }
+.ui-fieldset { border: 1px solid #34407a; border-radius: 14px; padding: 6px 12px 10px; width: 100%; }
 .ui-fieldset legend { color: var(--muted); padding: 0 6px; }
 .ui-swatch { width: 56px; height: 56px; border-radius: 50%; border: 3px solid #10152f; cursor: pointer; }
 .ui-swatch.ui-selected { outline: 4px solid var(--ink); outline-offset: 2px; }
@@ -125,8 +126,8 @@ body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color
 /* ───────── Buste d'avatar (illustration IA, voir docs/prompts-avatars-bustes.md) ───────── */
 .ui-avatar-bust { display: inline-flex; border-radius: 50%; overflow: hidden; background: #10152f; flex-shrink: 0; }
 .ui-avatar { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-.ui-bust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 14px; width: 100%; max-width: 420px; }
-.ui-bust-option { border: 3px solid transparent; border-radius: 50%; padding: 0; cursor: pointer; background: none; overflow: hidden; aspect-ratio: 1; }
+.ui-bust-grid { display: flex; flex-wrap: wrap; gap: 8px; max-width: 360px; }
+.ui-bust-option { width: 56px; height: 56px; flex-shrink: 0; border: 3px solid transparent; border-radius: 50%; padding: 0; cursor: pointer; background: none; overflow: hidden; }
 .ui-bust-option img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .ui-bust-option.ui-selected { border-color: var(--ink); }
 .ui-summary { display: flex; gap: 24px; justify-content: center; margin-bottom: 12px; }

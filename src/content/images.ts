@@ -9,3 +9,5 @@ export const IMAGE_FILES = [...Array.from({ length: 30 }, (_, i) => `ch${pad(i +
 
 /** Bustes d'avatar (générés par IA, voir docs/prompts-avatars-bustes.md), plusieurs variantes par sœur. */
 export const bustImage = (player: string, bust: number) => `${base()}images/avatars/${player}-${bust}.webp`;
+/** Portrait illustré du compagnon (généré par IA), voir COMPANION_IMAGE_READY dans profile.ts. */
+export const companionImage = (player: string) => `${base()}images/avatars/companion-${player}.webp`;
