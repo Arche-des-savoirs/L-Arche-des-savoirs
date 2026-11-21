@@ -35,7 +35,7 @@ function Recit({ fin, onDone }: { fin: FinEntry; onDone: () => void }) {
             key={part}
             lines={part === 'opening' ? fin.opening : fin.closing}
             onDone={() => (part === 'opening' ? setPart('closing') : onDone())}
-            image={epilogueImage()}
+            images={(part === 'opening' ? fin.opening : fin.closing).map(() => epilogueImage())}
           />
         </Card>
       </div>

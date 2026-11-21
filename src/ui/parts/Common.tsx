@@ -138,10 +138,10 @@ export function ChapterHeading({ chapter, title, day, dayTitle }: { chapter: num
 /**
  * Dialogue ligne par ligne, lu à voix haute automatiquement (le conteur, toujours actif).
  * Mise en page scindée image/texte (50/50), le côté de l'image basculant à chaque ligne —
- * `image` est pour l'instant l'illustration du chapitre (un visuel par ligne reste à produire,
- * voir docs/prompts-avatars-bustes.md pour le précédent des bustes : même logique à prévoir ici).
+ * `images` donne une image par ligne (voir src/content/images.ts:lineImages, chantier en cours
+ * chapitre par chapitre ; repli sur l'illustration du chapitre tant qu'une ligne n'a pas la sienne).
  */
-export function Dialogue({ lines, onDone, doneLabel = 'Continuer', image }: { lines: Line[]; onDone: () => void; doneLabel?: string; image: string }) {
+export function Dialogue({ lines, onDone, doneLabel = 'Continuer', images }: { lines: Line[]; onDone: () => void; doneLabel?: string; images: string[] }) {
   const [i, setI] = useState(0);
   const line = lines[i]!;
   const rootRef = useRef<HTMLDivElement>(null);
@@ -164,7 +164,7 @@ export function Dialogue({ lines, onDone, doneLabel = 'Continuer', image }: { li
   return (
     <div class={`ui-dialogue-split${inverse ? ' ui-dialogue-inverse' : ''}`} ref={rootRef}>
       <div class="ui-dialogue-image" aria-hidden="true">
-        <img src={image} alt="" />
+        <img src={images[i]} alt="" />
       </div>
       <div class={`ui-dialogue-text${narrator ? ' ui-dialogue-narrator' : ''}`}>
         <p class="ui-speaker">
