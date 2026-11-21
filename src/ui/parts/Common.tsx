@@ -1,5 +1,5 @@
 // Éléments partagés : passage de main, en-tête de séance, dialogue.
-import { useEffect, useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import type { ComponentChildren } from 'preact';
 import type { Line } from '../../content/schema';
 import { COMPANIONS, LUEURS, NAMES, ROLES } from '../../engine/profile';
@@ -7,6 +7,41 @@ import type { PlayerId } from '../../engine/types';
 import { save } from '../store';
 import { Avatar } from './Avatar';
 import { sayLine, stopSpeaking } from '../voice';
+
+function prefersReducedMotion() {
+  return typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+/**
+ * Défilement de `.ui-session-body` calé sur la durée de la réplique (approximatif : vitesse
+ * constante sur toute la durée, pas de synchronisation mot-à-mot). Remonte en haut au départ,
+ * puis descend jusqu'en bas du débordement pile quand la voix se termine.
+ */
+function scrollAlongSpeech(root: HTMLElement | null, durationMs: Promise<number>): () => void {
+  let cancelled = false;
+  let raf = 0;
+  const container = root?.closest<HTMLElement>('.ui-session-body') ?? null;
+  if (container) container.scrollTop = 0;
+  if (container && !prefersReducedMotion()) {
+    void durationMs.then((ms) => {
+      if (cancelled || !ms) return;
+      const overflow = container.scrollHeight - container.clientHeight;
+      if (overflow <= 0) return;
+      const start = performance.now();
+      const step = (now: number) => {
+        if (cancelled) return;
+        const t = Math.min(1, (now - start) / ms);
+        container.scrollTop = overflow * t;
+        if (t < 1) raf = requestAnimationFrame(step);
+      };
+      raf = requestAnimationFrame(step);
+    });
+  }
+  return () => {
+    cancelled = true;
+    if (raf) cancelAnimationFrame(raf);
+  };
+}
 
 const SPEAKERS: Record<string, string> = {
   narrateur: 'Le narrateur',
@@ -109,15 +144,25 @@ export function ChapterHeading({ chapter, title, day, dayTitle }: { chapter: num
 export function Dialogue({ lines, onDone, doneLabel = 'Continuer', image }: { lines: Line[]; onDone: () => void; doneLabel?: string; image: string }) {
   const [i, setI] = useState(0);
   const line = lines[i]!;
+  const rootRef = useRef<HTMLDivElement>(null);
+  const cancelScrollRef = useRef<() => void>(() => undefined);
+  const jouer = () => {
+    cancelScrollRef.current();
+    const { durationMs } = sayLine(line.who, line.text, spoken(line));
+    cancelScrollRef.current = scrollAlongSpeech(rootRef.current, durationMs);
+  };
   useEffect(() => {
-    sayLine(line.who, line.text, spoken(line));
-    return stopSpeaking;
+    jouer();
+    return () => {
+      cancelScrollRef.current();
+      stopSpeaking();
+    };
   }, [i]);
   const last = i >= lines.length - 1;
   const narrator = line.who === 'narrateur';
   const inverse = i % 2 === 1;
   return (
-    <div class={`ui-dialogue-split${inverse ? ' ui-dialogue-inverse' : ''}`}>
+    <div class={`ui-dialogue-split${inverse ? ' ui-dialogue-inverse' : ''}`} ref={rootRef}>
       <div class="ui-dialogue-image" aria-hidden="true">
         <img src={image} alt="" />
       </div>
@@ -130,7 +175,7 @@ export function Dialogue({ lines, onDone, doneLabel = 'Continuer', image }: { li
           {line.text}
         </p>
         <div class="ui-row ui-dialogue-actions">
-          <button class="ui-btn ui-btn-icon" onClick={() => sayLine(line.who, line.text, spoken(line))} aria-label="Réécouter">
+          <button class="ui-btn ui-btn-icon" onClick={jouer} aria-label="Réécouter">
             🔊
           </button>
           {i > 0 && (
