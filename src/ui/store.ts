@@ -165,10 +165,6 @@ export async function resetEverything(reload: () => void = () => location.reload
   reload();
 }
 
-export const autoRead = () => save.value.settings.autoRead !== false;
-export function setAutoRead(on: boolean) {
-  update((s) => ({ ...s, settings: { ...s.settings, autoRead: on } }));
-}
 export function parentDecide(session: number, index: number, verdict: 'ok' | 'ko') {
   update((s) => ({ ...s, history: decide(s.history, session, index, verdict) }));
 }

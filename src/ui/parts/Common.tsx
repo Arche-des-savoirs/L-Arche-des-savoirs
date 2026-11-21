@@ -4,7 +4,7 @@ import type { ComponentChildren } from 'preact';
 import type { Line } from '../../content/schema';
 import { COMPANIONS, LUEURS, NAMES, ROLES } from '../../engine/profile';
 import type { PlayerId } from '../../engine/types';
-import { autoRead, save, setAutoRead } from '../store';
+import { save } from '../store';
 import { Avatar } from './Avatar';
 import { sayLine, stopSpeaking } from '../voice';
 
@@ -100,15 +100,14 @@ export function ChapterHeading({ chapter, title, day, dayTitle }: { chapter: num
   );
 }
 
-/** Dialogue ligne par ligne, lu à voix haute automatiquement (le conteur), avec bouton pour couper la voix. */
+/** Dialogue ligne par ligne, lu à voix haute automatiquement (le conteur, toujours actif). */
 export function Dialogue({ lines, onDone, doneLabel = 'Continuer' }: { lines: Line[]; onDone: () => void; doneLabel?: string }) {
   const [i, setI] = useState(0);
-  const voiceOn = autoRead();
   const line = lines[i]!;
   useEffect(() => {
-    if (voiceOn) sayLine(line.who, line.text, spoken(line));
+    sayLine(line.who, line.text, spoken(line));
     return stopSpeaking;
-  }, [i, voiceOn]);
+  }, [i]);
   const last = i >= lines.length - 1;
   const narrator = line.who === 'narrateur';
   return (
@@ -123,9 +122,6 @@ export function Dialogue({ lines, onDone, doneLabel = 'Continuer' }: { lines: Li
       <div class="ui-row">
         <button class="ui-btn" onClick={() => sayLine(line.who, line.text, spoken(line))}>
           🔊 Réécouter
-        </button>
-        <button class="ui-btn ui-btn-small" aria-pressed={!voiceOn} onClick={() => (voiceOn ? (stopSpeaking(), setAutoRead(false)) : setAutoRead(true))}>
-          {voiceOn ? '🔇 Couper le conteur' : '🗣️ Activer le conteur'}
         </button>
         {i > 0 && (
           <button class="ui-btn" onClick={() => setI(i - 1)}>
