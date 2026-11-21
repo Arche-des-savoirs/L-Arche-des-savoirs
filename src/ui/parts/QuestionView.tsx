@@ -7,7 +7,8 @@ import { NAMES } from '../../engine/profile';
 import type { PlayerId } from '../../engine/types';
 import { Clock } from './Clock';
 import { Choices, NumberPad, Order, TextAnswer } from './Inputs';
-import { say } from '../voice';
+import { say, sayLine } from '../voice';
+import { EXERCICE_WHO } from '../../content/audio';
 
 export interface Outcome {
   verdict: FinalVerdict;
@@ -39,8 +40,10 @@ export function QuestionView(props: {
 
   // Le parent remonte ce composant à chaque question (key) : l'état repart de zéro sans effet de bord.
   // Lue pour les trois filles (pas seulement Axelle) : le conteur est désormais obligatoire.
+  // Voix pré-générée dédiée (EXERCICE_WHO) si le prompt est fixe (question manuscrite) ; sinon
+  // (question générée/révision, texte variable) repli automatique sur la synthèse du navigateur.
   useEffect(() => {
-    say(q.prompt);
+    sayLine(EXERCICE_WHO, q.prompt, q.prompt);
   }, []);
 
   const submit = (r: string | string[]) => {
@@ -63,7 +66,7 @@ export function QuestionView(props: {
       <div class="ui-question-main">
         <p class="ui-prompt">
           {q.prompt}
-          <button class="ui-btn ui-btn-icon" onClick={() => say(q.prompt)} aria-label="Écouter la question">
+          <button class="ui-btn ui-btn-icon" onClick={() => sayLine(EXERCICE_WHO, q.prompt, q.prompt)} aria-label="Écouter la question">
             🔊
           </button>
         </p>

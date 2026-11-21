@@ -1,10 +1,15 @@
 // Voix pré-générées (narrateur + personnages principaux, Google Cloud TTS Chirp3-HD),
 // précachées par le service worker pour une lecture 100 % hors ligne en jeu.
 import manifest from './voiceManifest.json';
-import type { Chapter, Fin } from './schema';
+import type { Chapter, Fin, Question, TourItem } from './schema';
 
 const base = () => import.meta.env.BASE_URL;
 export const manifestKey = (who: string, text: string) => `${who}\u0000${text}`;
+
+/** Voix dédiée aux questions d'exercice (distincte des personnages du récit). */
+export const EXERCICE_WHO = 'exercice';
+
+const isQuestion = (item: TourItem): item is Question => 'kind' in item;
 
 /** Chemin du fichier audio pré-généré pour cette réplique, ou undefined si aucune voix n'a été générée pour elle. */
 export function precomputedVoiceUrl(who: string, text: string): string | undefined {
@@ -29,6 +34,26 @@ export function extractVoicedLines(chapter: Chapter): Array<{ who: string; text:
       const opt = chapter.decision.options[key];
       lines.push({ who: 'narrateur', text: opt.scene });
       lines.push({ who: opt.line.who, text: opt.line.text });
+    }
+  }
+  return lines;
+}
+
+/**
+ * Prompts des questions d'exercice rédigées à la main (voir QuestionView.tsx), lues par la voix
+ * dédiée EXERCICE_WHO. Les questions générées procéduralement (`gen`) et les révisions
+ * (`review`) sont hors périmètre : leur texte varie à chaque tirage, non pré-générable. Doit
+ * rester synchronisé avec scripts/generate-voices.mjs (extractQuestionLines).
+ */
+export function extractVoicedLinesQuestions(chapter: Chapter): Array<{ who: string; text: string }> {
+  const lines: Array<{ who: string; text: string }> = [];
+  for (const day of chapter.days) {
+    for (const manche of day.manches) {
+      for (const items of Object.values(manche.tours)) {
+        for (const item of items) {
+          if (isQuestion(item)) lines.push({ who: EXERCICE_WHO, text: item.prompt });
+        }
+      }
     }
   }
   return lines;
