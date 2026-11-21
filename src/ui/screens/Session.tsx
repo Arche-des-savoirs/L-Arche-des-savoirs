@@ -1,7 +1,7 @@
 // Séance du jour : aiguille vers l'écran de l'étape courante. Chaque étape terminée est sauvegardée.
 import { useEffect, useState } from 'preact/hooks';
 import { NAMES } from '../../engine/profile';
-import { chapterImage } from '../../content/images';
+import { chapterImage, lineImages } from '../../content/images';
 import { chapter, currentStep, day, finishSession, nextStep, plan, prevStep, route, save, testMode } from '../store';
 import { Card, ChapterHeading, Dialogue, roman } from '../parts/Common';
 import { Tour } from '../parts/Tour';
@@ -44,7 +44,7 @@ export function Session() {
         <Card wide>
           <ChapterHeading chapter={ch.number} title={ch.title} day={d.n} dayTitle={d.title} />
           <p class="ui-decor">{d.decor}</p>
-          <Dialogue lines={d.opening} onDone={nextStep} image={chapterImage(ch.number)} />
+          <Dialogue lines={d.opening} onDone={nextStep} images={lineImages(ch.number, d.n, 'opening', d.opening.length)} />
         </Card>
       );
       break;
@@ -58,7 +58,11 @@ export function Session() {
       const opt = choice && ch.decision ? ch.decision.options[choice.result] : null;
       body = opt ? (
         <Card title={`Convergence : ${opt.label}`} wide>
-          <Dialogue lines={[{ who: 'narrateur', text: opt.scene }, { who: opt.line.who, text: opt.line.text }]} onDone={nextStep} image={chapterImage(ch.number)} />
+          <Dialogue
+            lines={[{ who: 'narrateur', text: opt.scene }, { who: opt.line.who, text: opt.line.text }]}
+            onDone={nextStep}
+            images={lineImages(ch.number, 'decision', `decision-${choice!.result}`, 2)}
+          />
         </Card>
       ) : null;
       if (!opt) queueMicrotask(nextStep);
@@ -92,7 +96,12 @@ export function Session() {
       body = (
         <Card wide>
           <ChapterHeading chapter={ch.number} title={ch.title} day={d.n} dayTitle="la nuit tombe" />
-          <Dialogue lines={d.closing} onDone={finishSession} doneLabel="Terminer la séance" image={chapterImage(ch.number)} />
+          <Dialogue
+            lines={d.closing}
+            onDone={finishSession}
+            doneLabel="Terminer la séance"
+            images={lineImages(ch.number, d.n, 'closing', d.closing.length)}
+          />
           {d.reward && <p class="ui-reward">🏅 Récompense : {d.reward}</p>}
         </Card>
       );
