@@ -31,7 +31,12 @@ function Recit({ fin, onDone }: { fin: FinEntry; onDone: () => void }) {
       <img class="ui-backdrop ui-backdrop-dim" src={epilogueImage()} alt="" aria-hidden="true" />
       <div class="ui-session-body">
         <Card wide title={fin.title}>
-          <Dialogue key={part} lines={part === 'opening' ? fin.opening : fin.closing} onDone={() => (part === 'opening' ? setPart('closing') : onDone())} />
+          <Dialogue
+            key={part}
+            lines={part === 'opening' ? fin.opening : fin.closing}
+            onDone={() => (part === 'opening' ? setPart('closing') : onDone())}
+            image={epilogueImage()}
+          />
         </Card>
       </div>
     </main>

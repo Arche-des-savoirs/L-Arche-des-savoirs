@@ -100,8 +100,13 @@ export function ChapterHeading({ chapter, title, day, dayTitle }: { chapter: num
   );
 }
 
-/** Dialogue ligne par ligne, lu à voix haute automatiquement (le conteur, toujours actif). */
-export function Dialogue({ lines, onDone, doneLabel = 'Continuer' }: { lines: Line[]; onDone: () => void; doneLabel?: string }) {
+/**
+ * Dialogue ligne par ligne, lu à voix haute automatiquement (le conteur, toujours actif).
+ * Mise en page scindée image/texte (50/50), le côté de l'image basculant à chaque ligne —
+ * `image` est pour l'instant l'illustration du chapitre (un visuel par ligne reste à produire,
+ * voir docs/prompts-avatars-bustes.md pour le précédent des bustes : même logique à prévoir ici).
+ */
+export function Dialogue({ lines, onDone, doneLabel = 'Continuer', image }: { lines: Line[]; onDone: () => void; doneLabel?: string; image: string }) {
   const [i, setI] = useState(0);
   const line = lines[i]!;
   useEffect(() => {
@@ -110,31 +115,37 @@ export function Dialogue({ lines, onDone, doneLabel = 'Continuer' }: { lines: Li
   }, [i]);
   const last = i >= lines.length - 1;
   const narrator = line.who === 'narrateur';
+  const inverse = i % 2 === 1;
   return (
-    <div class={`ui-dialogue${narrator ? ' ui-dialogue-narrator' : ''}`}>
-      <p class="ui-speaker">
-        {speaker(line.who)}
-        {line.to && <span class="ui-speaker-to"> à {NAMES[line.to]}</span>}
-      </p>
-      <p class={`ui-line ui-tale${narrator ? ' ui-tale-narrator' : ' ui-tale-voice'}`} key={i}>
-        {line.text}
-      </p>
-      <div class="ui-row">
-        <button class="ui-btn" onClick={() => sayLine(line.who, line.text, spoken(line))}>
-          🔊 Réécouter
-        </button>
-        {i > 0 && (
-          <button class="ui-btn" onClick={() => setI(i - 1)}>
-            ← Retour
-          </button>
-        )}
-        <button class="ui-btn ui-btn-main" onClick={() => (last ? onDone() : setI(i + 1))}>
-          {last ? doneLabel : 'Suivant →'}
-        </button>
+    <div class={`ui-dialogue-split${inverse ? ' ui-dialogue-inverse' : ''}`}>
+      <div class="ui-dialogue-image" aria-hidden="true">
+        <img src={image} alt="" />
       </div>
-      <p class="ui-muted ui-progress-dots" aria-hidden="true">
-        {lines.map((_, k) => (k === i ? '●' : '○')).join(' ')}
-      </p>
+      <div class={`ui-dialogue-text${narrator ? ' ui-dialogue-narrator' : ''}`}>
+        <p class="ui-speaker">
+          {speaker(line.who)}
+          {line.to && <span class="ui-speaker-to"> à {NAMES[line.to]}</span>}
+        </p>
+        <p class={`ui-line ui-tale${narrator ? ' ui-tale-narrator' : ' ui-tale-voice'}`} key={i}>
+          {line.text}
+        </p>
+        <div class="ui-row ui-dialogue-actions">
+          <button class="ui-btn ui-btn-icon" onClick={() => sayLine(line.who, line.text, spoken(line))} aria-label="Réécouter">
+            🔊
+          </button>
+          {i > 0 && (
+            <button class="ui-btn ui-btn-icon" onClick={() => setI(i - 1)} aria-label="Retour">
+              ←
+            </button>
+          )}
+          <button class="ui-btn ui-btn-main" onClick={() => (last ? onDone() : setI(i + 1))}>
+            {last ? doneLabel : 'Suivant →'}
+          </button>
+        </div>
+        <p class="ui-muted ui-progress-dots" aria-hidden="true">
+          {lines.map((_, k) => (k === i ? '●' : '○')).join(' ')}
+        </p>
+      </div>
     </div>
   );
 }
