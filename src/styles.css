@@ -213,10 +213,12 @@ body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color
 /* ───────── Dialogue scindé image/texte (50/50), le côté bascule à chaque ligne ─────────
    Pas de scroll interne : l'image a un ratio fixe et suit la hauteur naturelle du texte ;
    le débordement éventuel (paragraphe long) est géré par le scroll existant de .ui-session-body,
-   pour rester cohérent avec l'ancien affichage une-colonne (un seul contexte de scroll). */
-.ui-dialogue-split { display: flex; gap: 20px; align-items: stretch; }
+   pour rester cohérent avec l'ancien affichage une-colonne (un seul contexte de scroll).
+   L'image est épinglée (position: sticky) pendant ce scroll : seul le texte doit défiler visuellement,
+   l'illustration reste fixe à l'écran tant que la ligne est affichée (demande du 21/11). */
+.ui-dialogue-split { display: flex; gap: 20px; align-items: flex-start; }
 .ui-dialogue-split.ui-dialogue-inverse { flex-direction: row-reverse; }
-.ui-dialogue-image { flex: 0 0 50%; position: relative; border-radius: 18px; overflow: hidden; background: #000; aspect-ratio: 4 / 3; align-self: flex-start; }
+.ui-dialogue-image { flex: 0 0 50%; position: sticky; top: 0; border-radius: 18px; overflow: hidden; background: #000; aspect-ratio: 4 / 3; }
 .ui-dialogue-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .ui-dialogue-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(10, 13, 30, .55) 100%); }
 .ui-dialogue-text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
