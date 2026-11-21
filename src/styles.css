@@ -56,7 +56,6 @@ body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color
 .ui-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
 .ui-wrap { flex-wrap: wrap; }
 .ui-speaker { margin: 0; color: var(--gold); font-weight: 700; font-size: 1.1rem; }
-.ui-dialogue { min-height: 200px; }
 .ui-progress-dots { letter-spacing: .2em; font-size: .8rem; }
 .ui-reward { font-size: 1.2rem; color: var(--gold); }
 .ui-hint { background: rgba(244, 201, 93, .12); border-left: 4px solid var(--gold); padding: 10px 16px; border-radius: 8px; font-size: 1.1rem; }
@@ -209,8 +208,26 @@ body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color
 .ui-tale-voice { font-style: italic; padding-left: 18px; border-left: 3px solid rgba(244, 201, 93, .55); }
 .ui-tale-voice::before { content: '« '; color: var(--gold); font-style: normal; }
 .ui-tale-voice::after { content: ' »'; color: var(--gold); font-style: normal; }
-.ui-dialogue { min-height: 260px; }
 .ui-dialogue-narrator .ui-speaker { color: #d8b968; }
+
+/* ───────── Dialogue scindé image/texte (50/50), le côté bascule à chaque ligne ─────────
+   Pas de scroll interne : l'image a un ratio fixe et suit la hauteur naturelle du texte ;
+   le débordement éventuel (paragraphe long) est géré par le scroll existant de .ui-session-body,
+   pour rester cohérent avec l'ancien affichage une-colonne (un seul contexte de scroll). */
+.ui-dialogue-split { display: flex; gap: 20px; align-items: stretch; }
+.ui-dialogue-split.ui-dialogue-inverse { flex-direction: row-reverse; }
+.ui-dialogue-image { flex: 0 0 50%; position: relative; border-radius: 18px; overflow: hidden; background: #000; aspect-ratio: 4 / 3; align-self: flex-start; }
+.ui-dialogue-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ui-dialogue-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(10, 13, 30, .55) 100%); }
+.ui-dialogue-text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.ui-dialogue-actions { padding-top: 10px; }
+.ui-dialogue-actions .ui-btn-icon { min-width: 44px; min-height: 44px; margin-left: 0; border-radius: 12px; }
+.ui-dialogue-actions .ui-btn-main { min-height: 44px; padding: 0 18px; font-size: .95rem; border-radius: 12px; }
+@media (max-width: 640px) {
+  .ui-dialogue-split { flex-direction: column; }
+  .ui-dialogue-split.ui-dialogue-inverse { flex-direction: column; }
+  .ui-dialogue-image { aspect-ratio: 16 / 9; }
+}
 .ui-card { background: radial-gradient(120% 140% at 50% 0%, rgba(43, 54, 110, .96) 0%, rgba(26, 33, 69, .96) 60%); border: 1px solid rgba(244, 201, 93, .35); box-shadow: 0 10px 40px rgba(0, 0, 0, .45), inset 0 0 0 1px rgba(255, 255, 255, .03), inset 0 0 40px rgba(244, 201, 93, .05); }
 .ui-intro-title { font-weight: 700; font-size: 2.6rem; text-shadow: var(--gold-glow); }
 .ui-reward { font-family: var(--font-tale); font-size: 1.4rem; font-style: italic; }

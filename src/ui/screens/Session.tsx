@@ -44,7 +44,7 @@ export function Session() {
         <Card wide>
           <ChapterHeading chapter={ch.number} title={ch.title} day={d.n} dayTitle={d.title} />
           <p class="ui-decor">{d.decor}</p>
-          <Dialogue lines={d.opening} onDone={nextStep} />
+          <Dialogue lines={d.opening} onDone={nextStep} image={chapterImage(ch.number)} />
         </Card>
       );
       break;
@@ -58,7 +58,7 @@ export function Session() {
       const opt = choice && ch.decision ? ch.decision.options[choice.result] : null;
       body = opt ? (
         <Card title={`Convergence : ${opt.label}`} wide>
-          <Dialogue lines={[{ who: 'narrateur', text: opt.scene }, { who: opt.line.who, text: opt.line.text }]} onDone={nextStep} />
+          <Dialogue lines={[{ who: 'narrateur', text: opt.scene }, { who: opt.line.who, text: opt.line.text }]} onDone={nextStep} image={chapterImage(ch.number)} />
         </Card>
       ) : null;
       if (!opt) queueMicrotask(nextStep);
@@ -92,7 +92,7 @@ export function Session() {
       body = (
         <Card wide>
           <ChapterHeading chapter={ch.number} title={ch.title} day={d.n} dayTitle="la nuit tombe" />
-          <Dialogue lines={d.closing} onDone={finishSession} doneLabel="Terminer la séance" />
+          <Dialogue lines={d.closing} onDone={finishSession} doneLabel="Terminer la séance" image={chapterImage(ch.number)} />
           {d.reward && <p class="ui-reward">🏅 Récompense : {d.reward}</p>}
         </Card>
       );
