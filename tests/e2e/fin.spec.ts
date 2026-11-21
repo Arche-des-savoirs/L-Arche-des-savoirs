@@ -74,7 +74,8 @@ async function playFinalVote(page: Page) {
     for (const name of ['Commencer le vote secret', 'Voir ce qui se passe', 'Suivant →', 'Continuer']) {
       const btn = page.getByRole('button', { name, exact: true });
       if (await btn.isVisible()) {
-        await btn.click();
+        // « Continuer » du mot de la fin reste désactivé tant que le texte manuscrit s'écrit encore.
+        await btn.click({ timeout: name === 'Continuer' ? 15_000 : 5_000 });
         clicked = true;
         break;
       }
