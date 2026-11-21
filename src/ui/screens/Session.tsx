@@ -41,10 +41,18 @@ export function Session() {
       return <ChapterIntro key={key} />;
     case 'ouverture':
       body = (
-        <Card wide>
-          <ChapterHeading chapter={ch.number} title={ch.title} day={d.n} dayTitle={d.title} />
-          <p class="ui-decor">{d.decor}</p>
-          <Dialogue lines={d.opening} onDone={nextStep} images={lineImages(ch.number, d.n, 'opening', d.opening.length)} />
+        <Card wide fill>
+          <Dialogue
+            header={
+              <>
+                <ChapterHeading chapter={ch.number} title={ch.title} day={d.n} dayTitle={d.title} />
+                <p class="ui-decor">{d.decor}</p>
+              </>
+            }
+            lines={d.opening}
+            onDone={nextStep}
+            images={lineImages(ch.number, d.n, 'opening', d.opening.length)}
+          />
         </Card>
       );
       break;
@@ -57,8 +65,9 @@ export function Session() {
     case 'convergence': {
       const opt = choice && ch.decision ? ch.decision.options[choice.result] : null;
       body = opt ? (
-        <Card title={`Convergence : ${opt.label}`} wide>
+        <Card wide fill>
           <Dialogue
+            header={<h2 class="ui-card-title">Convergence : {opt.label}</h2>}
             lines={[{ who: 'narrateur', text: opt.scene }, { who: opt.line.who, text: opt.line.text }]}
             onDone={nextStep}
             images={lineImages(ch.number, 'decision', `decision-${choice!.result}`, 2)}
@@ -94,15 +103,15 @@ export function Session() {
       break;
     case 'cloture':
       body = (
-        <Card wide>
-          <ChapterHeading chapter={ch.number} title={ch.title} day={d.n} dayTitle="la nuit tombe" />
+        <Card wide fill>
           <Dialogue
+            header={<ChapterHeading chapter={ch.number} title={ch.title} day={d.n} dayTitle="la nuit tombe" />}
             lines={d.closing}
             onDone={finishSession}
             doneLabel="Terminer la séance"
             images={lineImages(ch.number, d.n, 'closing', d.closing.length)}
+            footer={d.reward ? <p class="ui-reward">🏅 Récompense : {d.reward}</p> : undefined}
           />
-          {d.reward && <p class="ui-reward">🏅 Récompense : {d.reward}</p>}
         </Card>
       );
       break;

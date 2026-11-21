@@ -13,14 +13,16 @@ function prefersReducedMotion() {
 }
 
 /**
- * Défilement de `.ui-session-body` calé sur la durée de la réplique (approximatif : vitesse
- * constante sur toute la durée, pas de synchronisation mot-à-mot). Remonte en haut au départ,
- * puis descend jusqu'en bas du débordement pile quand la voix se termine.
+ * Défilement de `.ui-dialogue-text` (colonne de texte, seule zone défilante) calé sur la durée
+ * de la réplique (approximatif : vitesse constante sur toute la durée, pas de synchronisation
+ * mot-à-mot). Remonte en haut au départ, puis descend jusqu'en bas du débordement pile quand la
+ * voix se termine. L'image, elle, occupe toute la hauteur de sa colonne et ne fait partie
+ * d'aucune zone de scroll : elle ne bouge jamais (demande du 21/11, après test en jeu — le
+ * `position: sticky` utilisé avant dérivait encore un peu avant de se figer).
  */
-function scrollAlongSpeech(root: HTMLElement | null, durationMs: Promise<number>): () => void {
+function scrollAlongSpeech(container: HTMLElement | null, durationMs: Promise<number>): () => void {
   let cancelled = false;
   let raf = 0;
-  const container = root?.closest<HTMLElement>('.ui-session-body') ?? null;
   if (container) container.scrollTop = 0;
   if (container && !prefersReducedMotion()) {
     void durationMs.then((ms) => {
@@ -76,9 +78,9 @@ const speaker = (who: string) => SPEAKERS[who] ?? NAMES[who as PlayerId] ?? who;
 /** Texte réellement lu à voix haute : annonce le personnage avant sa réplique, sauf pour le narrateur (prose, pas une citation). */
 const spoken = (line: Line) => (line.who === 'narrateur' ? line.text : `${speaker(line.who)} dit : ${line.text}`);
 
-export function Card({ title, children, wide }: { title?: string; children: ComponentChildren; wide?: boolean }) {
+export function Card({ title, children, wide, fill }: { title?: string; children: ComponentChildren; wide?: boolean; fill?: boolean }) {
   return (
-    <div class={`ui-card${wide ? ' ui-card-wide' : ''}`}>
+    <div class={`ui-card${wide ? ' ui-card-wide' : ''}${fill ? ' ui-card-fill' : ''}`}>
       {title && <h2 class="ui-card-title">{title}</h2>}
       {children}
     </div>
@@ -140,16 +142,34 @@ export function ChapterHeading({ chapter, title, day, dayTitle }: { chapter: num
  * Mise en page scindée image/texte (50/50), le côté de l'image basculant à chaque ligne —
  * `images` donne une image par ligne (voir src/content/images.ts:lineImages, chantier en cours
  * chapitre par chapitre ; repli sur l'illustration du chapitre tant qu'une ligne n'a pas la sienne).
+ * L'image occupe toute la hauteur de sa colonne et est totalement statique ; `header`/`footer`
+ * (titre de carte, en-tête de chapitre, décor, récompense…) sont rendus À L'INTÉRIEUR de la
+ * colonne de texte pour qu'ils défilent avec elle plutôt que de rester au-dessus de l'image.
+ * Utiliser avec <Card fill> côté appelant pour que la colonne défilante ait une hauteur définie.
  */
-export function Dialogue({ lines, onDone, doneLabel = 'Continuer', images }: { lines: Line[]; onDone: () => void; doneLabel?: string; images: string[] }) {
+export function Dialogue({
+  lines,
+  onDone,
+  doneLabel = 'Continuer',
+  images,
+  header,
+  footer
+}: {
+  lines: Line[];
+  onDone: () => void;
+  doneLabel?: string;
+  images: string[];
+  header?: ComponentChildren;
+  footer?: ComponentChildren;
+}) {
   const [i, setI] = useState(0);
   const line = lines[i]!;
-  const rootRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
   const cancelScrollRef = useRef<() => void>(() => undefined);
   const jouer = () => {
     cancelScrollRef.current();
     const { durationMs } = sayLine(line.who, line.text, spoken(line));
-    cancelScrollRef.current = scrollAlongSpeech(rootRef.current, durationMs);
+    cancelScrollRef.current = scrollAlongSpeech(textRef.current, durationMs);
   };
   useEffect(() => {
     jouer();
@@ -162,11 +182,12 @@ export function Dialogue({ lines, onDone, doneLabel = 'Continuer', images }: { l
   const narrator = line.who === 'narrateur';
   const inverse = i % 2 === 1;
   return (
-    <div class={`ui-dialogue-split${inverse ? ' ui-dialogue-inverse' : ''}`} ref={rootRef}>
+    <div class={`ui-dialogue-split${inverse ? ' ui-dialogue-inverse' : ''}`}>
       <div class="ui-dialogue-image" aria-hidden="true">
         <img src={images[i]} alt="" />
       </div>
-      <div class={`ui-dialogue-text${narrator ? ' ui-dialogue-narrator' : ''}`}>
+      <div class={`ui-dialogue-text${narrator ? ' ui-dialogue-narrator' : ''}`} ref={textRef}>
+        {header}
         <p class="ui-speaker">
           {speaker(line.who)}
           {line.to && <span class="ui-speaker-to"> à {NAMES[line.to]}</span>}
@@ -190,6 +211,7 @@ export function Dialogue({ lines, onDone, doneLabel = 'Continuer', images }: { l
         <p class="ui-muted ui-progress-dots" aria-hidden="true">
           {lines.map((_, k) => (k === i ? '●' : '○')).join(' ')}
         </p>
+        {footer}
       </div>
     </div>
   );
