@@ -9,8 +9,11 @@
 //   - day.closing (clôture de chaque jour)
 //   - decision.options.{A,B,C}.scene (jouée comme le narrateur) + .line (le personnage choisi)
 //   - content/fins.yaml : opening et closing de chacune des 5 fins (jour 6, chapitre 30)
-// Les répliques absurdes (Maelle), le prompt du vote, et les phrases espagnoles de Rafaelle
-// ne sont actuellement pas lues à voix haute dans le jeu : elles restent hors périmètre.
+//   - les questions d'exercice rédigées à la main (manche.tours[joueuse][].prompt), lues par la
+//     voix dédiée EXERCICE_WHO ('exercice')
+// Les répliques absurdes (Maelle), le prompt du vote, les phrases espagnoles de Rafaelle, et les
+// questions générées procéduralement (gen) ou de révision (review) — texte non fixe, tiré à
+// chaque partie — ne sont pas lues à voix haute pré-générée : elles restent hors périmètre.
 //
 // Idempotent : un fichier déjà présent sur disque n'est jamais régénéré (coûte un appel API) ;
 // seule une réplique dont le texte a changé (donc un nouveau hash) relance une synthèse.
@@ -67,7 +70,10 @@ const VOICES = {
   vera: 'Pulcherrima',
   alambic: 'Zubenelgenubi',
   architecte: 'Rasalgethi',
-  solen: 'Achernar'
+  solen: 'Achernar',
+  // Voix dédiée aux questions d'exercice (QuestionView.tsx) : volontairement distincte de
+  // toutes les voix de personnages ci-dessus, pour bien séparer « récit » et « exercice » à l'oreille.
+  exercice: 'Vindemiatrix'
 };
 
 function readApiKey() {
@@ -99,6 +105,21 @@ function extractLines(chapter) {
       if (!opt) continue;
       lines.push({ who: 'narrateur', text: opt.scene });
       lines.push({ who: opt.line.who, text: opt.line.text });
+    }
+  }
+  return lines;
+}
+
+/** Extrait les prompts des questions d'exercice rédigées à la main (hors `gen` et `review`). */
+function extractQuestionLines(chapter) {
+  const lines = [];
+  for (const day of chapter.days ?? []) {
+    for (const manche of day.manches ?? []) {
+      for (const items of Object.values(manche.tours ?? {})) {
+        for (const item of items) {
+          if ('kind' in item) lines.push({ who: 'exercice', text: item.prompt });
+        }
+      }
     }
   }
   return lines;
@@ -167,7 +188,7 @@ async function main() {
   let toGenerate = 0;
   let totalChars = 0;
 
-  const allLines = [...chapters.flatMap(extractLines), ...fins.flatMap(extractFinLines)];
+  const allLines = [...chapters.flatMap(extractLines), ...chapters.flatMap(extractQuestionLines), ...fins.flatMap(extractFinLines)];
   for (const { who, text } of allLines) {
     const key = manifestKey(who, text);
     if (seen.has(key)) continue;
