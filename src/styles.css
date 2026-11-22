@@ -105,7 +105,9 @@ body { overscroll-behavior: none; user-select: none; -webkit-tap-highlight-color
 .ui-order { display: grid; gap: 12px; }
 .ui-order-row { display: flex; flex-wrap: wrap; gap: 10px; min-height: 56px; align-items: center; }
 .ui-chip { font-size: 1.25rem; }
-.ui-chip-set { padding: 10px 16px; border-radius: 12px; background: #34407a; font-size: 1.2rem; font-weight: 600; }
+.ui-chip-set { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px 6px 6px; border-radius: 999px; background: #34407a; font-size: 1.2rem; font-weight: 600; }
+.ui-chip-rank { display: inline-flex; align-items: center; justify-content: center; min-width: 26px; height: 26px; border-radius: 50%; background: var(--gold); color: #1a2145; font-size: 1rem; font-weight: 800; }
+.ui-chip-value { }
 .ui-text-answer { display: flex; gap: 12px; align-items: flex-start; flex-wrap: wrap; }
 .ui-input { flex: 1; min-width: 300px; min-height: 56px; padding: 10px 16px; font: inherit; font-size: 1.35rem; border-radius: 14px; border: 2px solid var(--gold); background: #10152f; color: var(--ink); user-select: text; }
 
