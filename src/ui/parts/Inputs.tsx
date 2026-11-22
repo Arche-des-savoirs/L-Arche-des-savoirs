@@ -50,7 +50,16 @@ export function Order({ choices, onSubmit }: { choices: string[]; onSubmit: (ord
   return (
     <div class="ui-order">
       <div class="ui-order-row" aria-label="Ton rangement">
-        {picked.length === 0 ? <span class="ui-muted">Touche les étiquettes dans l'ordre.</span> : picked.map((c, i) => <span key={c} class="ui-chip ui-chip-set">{i + 1}. {c}</span>)}
+        {picked.length === 0 ? (
+          <span class="ui-muted">Touche les étiquettes dans l'ordre.</span>
+        ) : (
+          picked.map((c, i) => (
+            <span key={c} class="ui-chip ui-chip-set" aria-label={`Position ${i + 1} : ${c}`}>
+              <span class="ui-chip-rank" aria-hidden="true">{i + 1}</span>
+              <span class="ui-chip-value" aria-hidden="true">{c}</span>
+            </span>
+          ))
+        )}
       </div>
       <div class="ui-order-row">
         {left.map((c) => (
